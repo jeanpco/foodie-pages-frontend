@@ -1,0 +1,103 @@
+/* Prevent all click and hover interaction with an element */
+.pointer-events-off {
+	pointer-events: none;
+}
+
+/* Enables all click and hover interaction with an element */
+.pointer-events-on {
+  pointer-events: auto;
+}
+
+/* Create a class of .div-square which maintains a 1:1 dimension of a div */
+.div-square::after {
+	content: "";
+	display: block;
+	padding-bottom: 100%;
+}
+
+/* Adds inline flex display */
+.display-inlineflex {
+  display: inline-flex;
+}
+
+/* These classes are never overwritten */
+.hide {
+  display: none !important;
+}
+
+@media screen and (max-width: 991px) {
+  .hide, .hide-tablet{
+    display: none !important;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .hide, .hide-tablet{
+    display: none !important;
+  }
+}
+
+@media screen and (max-width: 479px){
+  .hide, .hide-tablet{
+    display: none !important;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .hide-mobile-landscape{
+    display: none !important;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .hide-mobile{
+    display: none !important;
+  }
+}
+
+.overflow-auto {
+  overflow: auto;
+}
+
+.z-index-2 {
+  position: relative;
+  z-index: 2;
+}
+
+.z-index-1 {
+  position: relative;
+  z-index: 1;
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.overflow-visible {
+  overflow: visible;
+}
+
+.overflow-scroll {
+  overflow: scroll;
+}
+
+.align-center {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.hide {
+  display: none;
+}
+
+@media screen and (max-width: 767px) {  
+  .hide-mobile-landscape {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .hide-mobile-portrait {
+    display: none;
+  }
+}
