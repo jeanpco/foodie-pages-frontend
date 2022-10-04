@@ -221,23 +221,6 @@ h6:empty {
   display: none;
 }
 
-.link,
-a {
-  cursor: pointer;
-  display: inline-block;
-  border: none;
-  box-shadow: none;
-  text-decoration: none;
-  background-color: transparent;
-  color: var(--color-primary);
-  text-decoration: underline;
-  font-size: 1rem;
-}
-
-a:not([href]) {
-  cursor: not-allowed;
-}
-
 .circle-divider::after {
   content: '\2022';
   margin: 0 1.3rem 0 1.5rem;

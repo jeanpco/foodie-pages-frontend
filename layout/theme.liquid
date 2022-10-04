@@ -235,16 +235,54 @@
         --color-grey-700: #424242;
         --color-grey-800: #343434;
 
-        --color-primary: var(--color-black);
-        --color-secondary: var(--color-white);
-        --color-tertiary: var(--color-azul-verdoso-100);
-        --color-accent: var(--color-azul-verdoso-50);
+        --color-primary: #000000;
+        --color-secondary: #ffffff;
+        --color-tertiary: #006D77;
+        --color-accent: #83BEB7;
 
 /* Transitions */
 
         --duration-short: 100ms;
         --duration-default: 200ms;
         --duration-long: 500ms;
+        --ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
+
+/* Buttons */
+
+        --button-padding-desktop: 0.5rem 1.5rem;
+        --button-font-size-desktop: 1rem;
+
+    /* Primary */
+
+        --button-border-radius-primary: 1.875rem; /* 30px */
+
+        --button-text-color-primary: #ffffff;
+        --button-background-color-primary: #006D77;
+        --button-border-color-primary: #006D77;
+
+        --button-text-color-primary-hover: #ffffff;
+        --button-background-color-primary-hover: #83BEB7;
+        --button-border-color-primary-hover: #83BEB7;
+
+        --button-text-color-primary-disabled: #424242;
+        --button-background-color-primary-disabled: #BDBDBD;
+        --button-border-color-primary-disabled: #BDBDBD;
+
+    /* Secondary */
+
+        --button-border-radius-secondary: 1.875rem; /* 30px */
+
+        --button-text-color-secondary: #006D77;
+        --button-background-color-secondary: #ffffff;
+        --button-border-color-secondary: #006D77;
+
+        --button-text-color-secondary-hover: #ffffff;
+        --button-background-color-secondary-hover: #006D77;
+        --button-border-color-secondary-hover: #006D77;
+
+        --button-text-color-secondary-disabled: #757575;
+        --button-background-color-secondary-disabled: #ffffff;
+        --button-border-color-secondary-disabled: #757575;
       }
 
     {% endstyle %}
