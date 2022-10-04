@@ -15,7 +15,7 @@
 .disclosure__list-wrapper {
   border-width: var(--popup-border-width);
   border-style: solid;
-  border-color: rgba(var(--color-foreground), var(--popup-border-opacity));
+  border-color: rgba(var(--color-primary), var(--popup-border-opacity));
   overflow: hidden;
   position: absolute;
   bottom: 100%;

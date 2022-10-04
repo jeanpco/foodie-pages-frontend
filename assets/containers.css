@@ -38,21 +38,43 @@
   max-width: 64rem;
 }
 
+.page-wrapper,
 .container {
   width: 100%;
-  max-width: 82rem;
+  max-width: var(--width-large-desktop);
   margin-right: auto !important;
   margin-left: auto !important;
+  padding: 0 var(--padding-large-desktop);
+}
+
+@media screen and (max-width: 1680px) {   
+  .page-wrapper,
+  .container {
+    max-width: var(--width-desktop);
+    padding: 0 var(--padding-desktop);
+  }
 }
 
 @media screen and (max-width: 767px) {   
+  .page-wrapper,
+  .container {
+    max-width: var(--width-tablet);
+    padding: 0 var(--padding-tablet);
+  }
+
   .max-width-full-mobile-landscape {
     width: 100%;
     max-width: none;
   }
 }
 
-@media screen and (max-width: 479px) {
+@media screen and (max-width: 479px) {   
+  .page-wrapper,
+  .container {
+    max-width: var(--width-mobile);
+    padding: 0 var(--padding-mobile);
+  }
+
   .max-width-full-mobile-portrait {
     width: 100%;
     max-width: none;

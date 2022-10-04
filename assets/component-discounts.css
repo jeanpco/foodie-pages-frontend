@@ -23,7 +23,7 @@
 }
 
 .discounts__discount > .icon {
-  color: rgb(var(--color-foreground));
+  color: rgb(var(--color-primary));
   width: 1.2rem;
   height: 1.2rem;
   margin-right: 0.7rem;

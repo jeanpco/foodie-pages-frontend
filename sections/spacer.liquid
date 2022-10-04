@@ -1,0 +1,161 @@
+<div id="section-id-{{ section.id }}" class="spacer"></div>
+
+<style>
+  #section-id-{{ section.id }}.spacer {
+    display: block !important;
+    height: {{ section.settings.add_spacing_desktop }}px;
+    margin-bottom: -{{ section.settings.remove_spacing_desktop }}px;
+    background: {{ section.settings.background_color }};
+  }
+
+  @media screen and (max-width: 991px) {
+    #section-id-{{ section.id }}.spacer {
+      height: {{ section.settings.add_spacing_tablet }}px;
+      margin-bottom: -{{ section.settings.remove_spacing_tablet }}px;
+    }
+  }
+
+  @media screen and (max-width: 479px) {
+    #section-id-{{ section.id }}.spacer {
+      height: {{ section.settings.add_spacing_mobile }}px;
+      margin-bottom: -{{ section.settings.remove_spacing_mobile }}px;
+    }
+  }
+</style>
+
+{% schema %}
+  {
+    "name": "Spacer - Section",
+    "tag": "div",
+    "class": "c-section-login wf-section",
+    "settings": [ 
+      {
+        "type": "select",
+        "id": "background_color",
+        "options": [
+          {
+            "value": "#E01E2B",
+            "label": "Color - Atari Red"
+          },
+          {
+            "value": "#171717",
+            "label": "Color - Black"
+          },
+          {
+            "value": "#FFFFFF",
+            "label": "Color - White"
+          },
+          {
+            "value": "#F7F7F5",
+            "label": "Color - Off-White"
+          },
+          {
+            "value": "#F5F5F5",
+            "label": "Color - Grey 100"
+          },
+          {
+            "value": "#EDEDED",
+            "label": "Color - Grey 150"
+          },
+          {
+            "value": "#C5C5C5",
+            "label": "Color - Grey 200"
+          },
+          {
+            "value": "#666666",
+            "label": "Color - Grey 300"
+          },
+          {
+            "value": "#2D2D2D",
+            "label": "Color - Grey 400"
+          },
+          {
+            "value": "#FCCE01",
+            "label": "Color - Yellow"
+          },
+          {
+            "value": "#FF6B00",
+            "label": "Color - Orange"
+          },
+          {
+            "value": "#FF0000",
+            "label": "Color - Bright Red"
+          },
+          {
+            "value": "#FF008D",
+            "label": "Color - Pink"
+          },
+          {
+            "value": "#A4009F",
+            "label": "Color - Purple"
+          },
+          {
+            "value": "#0065B9",
+            "label": "Color - Blue"
+          }
+        ],
+        "default": "#F7F7F5",
+        "label": "Background Color"
+      }, 
+      {
+        "type": "range",
+        "id": "add_spacing_mobile",
+        "label": "ADD Spacing [MOBILE]",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "default": 0
+      },
+      {
+        "type": "range",
+        "id": "remove_spacing_mobile",
+        "label": "REMOVE Spacing [MOBILE]",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "default": 0
+      },
+      {
+        "type": "range",
+        "id": "add_spacing_tablet",
+        "label": "ADD Spacing [TABLET]",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "default": 0
+      },
+      {
+        "type": "range",
+        "id": "remove_spacing_tablet",
+        "label": "REMOVE Spacing [TABLET]",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "default": 0
+      },
+      {
+        "type": "range",
+        "id": "add_spacing_desktop",
+        "label": "ADD Spacing [DESKTOP]",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "default": 0
+      },
+      {
+        "type": "range",
+        "id": "remove_spacing_desktop",
+        "label": "REMOVE Spacing [DESKTOP]",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "default": 0
+      }
+    ],
+    "presets": [
+      {
+        "name": "Spacer - Section"
+      }
+    ]
+  }
+{% endschema %}

@@ -8,7 +8,6 @@
   background-color: var(--color-secondary);
 }
 
-
 .background-color-tertiary {
   background-color: var(--color-tertiary);
 }
@@ -16,6 +15,8 @@
 .background-color-accent {
   background-color: var(--color-accent);
 }
+
+/* Greys */
 
 .background-color-grey-50 {
   background-color: var(--color-grey-50);
@@ -52,6 +53,77 @@
 .background-color-grey-800 {
   background-color: var(--color-grey-800);
 }
+
+/* Custom */
+
+/* Azul Verdoso */
+
+.background-color-azul-verdoso-10 {
+  background-color: var(--color-azul-verdoso-10);
+}
+
+.background-color-azul-verdoso-18 {
+  background-color: var(--color-azul-verdoso-18);
+}
+
+.background-color-azul-verdoso-25 {
+  background-color: var(--color-azul-verdoso-25);
+}
+
+.background-color-azul-verdoso-50 {
+  background-color: var(--color-azul-verdoso-50);
+}
+
+.background-color-azul-verdoso-100 {
+  background-color: var(--color-azul-verdoso-100);
+}
+
+/* Sandia */
+
+.background-color-sandia-10 {
+  background-color: var(--color-sandia-10);
+}
+
+.background-color-sandia-18 {
+  background-color: var(--color-sandia-18);
+}
+
+.background-color-sandia-25 {
+  background-color: var(--color-sandia-25);
+}
+
+.background-color-sandia-50 {
+  background-color: var(--color-sandia-50);
+}
+
+.background-color-sandia-100 {
+  background-color: var(--color-sandia-100);
+}
+
+/* Mar */
+
+.background-color-mar-10 {
+  background-color: var(--color-mar-10);
+}
+
+.background-color-mar-50 {
+  background-color: var(--color-mar-50);
+}
+
+.background-color-mar-100 {
+  background-color: var(--color-mar-100);
+}
+
+.background-color-mar-darker {
+  background-color: var(--color-mar-darker);
+}
+
+/* Red */
+
+.background-color-red {
+  background-color: var(--color-red);
+}
+
 /* Text Colors */
 
 .text-color-primary {
@@ -69,6 +141,8 @@
 .text-color-accent {
   color: var(--color-accent);
 }
+
+/* Greys */
 
 .text-color-grey-50 {
     color: var(--color-grey-50);
@@ -104,4 +178,74 @@
 
 .text-color-grey-800 {
   color: var(--color-grey-800);
+}
+
+/* Custom */
+
+/* Azul Verdoso */
+
+.text-color-azul-verdoso-10 {
+  color: var(--color-azul-verdoso-10);
+}
+
+.text-color-azul-verdoso-18 {
+  color: var(--color-azul-verdoso-18);
+}
+
+.text-color-azul-verdoso-25 {
+  color: var(--color-azul-verdoso-25);
+}
+
+.text-color-azul-verdoso-50 {
+  color: var(--color-azul-verdoso-50);
+}
+
+.text-color-azul-verdoso-100 {
+  color: var(--color-azul-verdoso-100);
+}
+
+/* Sandia */
+
+.text-color-sandia-10 {
+  color: var(--color-sandia-10);
+}
+
+.text-color-sandia-18 {
+  color: var(--color-sandia-18);
+}
+
+.text-color-sandia-25 {
+  color: var(--color-sandia-25);
+}
+
+.text-color-sandia-50 {
+  color: var(--color-sandia-50);
+}
+
+.text-color-sandia-100 {
+  color: var(--color-sandia-100);
+}
+
+/* Mar */
+
+.text-color-mar-10 {
+  color: var(--color-mar-10);
+}
+
+.text-color-mar-50 {
+  color: var(--color-mar-50);
+}
+
+.text-color-mar-100 {
+  color: var(--color-mar-100);
+}
+
+.text-color-mar-darker {
+  color: var(--color-mar-darker);
+}
+
+/* Red */
+
+.text-color-red {
+  color: var(--color-red);
 }

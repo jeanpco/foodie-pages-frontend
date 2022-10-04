@@ -1,12 +1,12 @@
 {{ 'section-styleguide.css' | asset_url | stylesheet_tag }}
 
 
-<div class="page-wrapper">
+<div>
   <div class="fs-styleguide_component">
     <header class="fs-styleguide_header">
       <div class="padding-section-large">
         <div class="padding-global">
-          <div class="container-large">
+          <div class="container">
             <div class="fs-styleguide_header-block"><a href="https://client-first.webflow.io/" target="_blank"
                 class="fs-styleguide_version">Client-First — Version 2</a>
               <h1 class="fs-styleguide_heading-large">Style Guide</h1>
@@ -25,7 +25,7 @@
       <section class="fs-styleguide_structure">
         <div class="padding-section-large">
           <div class="padding-global">
-            <div class="container-large">
+            <div class="container">
               <div class="fs-styleguide_section is-vertical">
                 <div class="fs-styleguide_section-header">
                   <h2 class="fs-styleguide_heading-medium">Structure Classes</h2>
@@ -41,23 +41,9 @@
                       </div>
                     </div>
                     <div class="fs-styleguide_item is-stretch">
-                      <div id="w-node-_32eadc24-e391-a089-abe0-fb5b6627ca17-68d8d4d4" class="fs-styleguide_label">
-                        container-small</div>
-                      <div class="container-small">
-                        <div class="fs-styleguide_empty-box"></div>
-                      </div>
-                    </div>
-                    <div class="fs-styleguide_item is-stretch">
-                      <div id="w-node-_32eadc24-e391-a089-abe0-fb5b6627ca1c-68d8d4d4" class="fs-styleguide_label">
-                        container-medium</div>
-                      <div class="container-medium">
-                        <div class="fs-styleguide_empty-box"></div>
-                      </div>
-                    </div>
-                    <div class="fs-styleguide_item is-stretch">
                       <div id="w-node-_32eadc24-e391-a089-abe0-fb5b6627ca21-68d8d4d4" class="fs-styleguide_label">
-                        container-large</div>
-                      <div class="container-large">
+                        container</div>
+                      <div class="container">
                         <div class="fs-styleguide_empty-box"></div>
                       </div>
                     </div>
@@ -114,7 +100,7 @@
       <section class="fs-styleguide_heading-tags">
         <div class="padding-section-large">
           <div class="padding-global">
-            <div class="container-large">
+            <div class="container">
               <div class="fs-styleguide_section">
                 <div class="fs-styleguide_section-header">
                   <h2 class="fs-styleguide_heading-medium">HTML Heading Tags</h2>
@@ -127,8 +113,16 @@
                       <h1>The quick brown fox jumps over the lazy dog.</h1>
                     </div>
                     <div class="fs-styleguide_item">
+                      <div class="fs-styleguide_label is-tag">H1 Serif</div>
+                      <h1 class="serif">Serif - The quick brown fox jumps over the lazy dog.</h1>
+                    </div>
+                    <div class="fs-styleguide_item">
                       <div class="fs-styleguide_label is-tag">H2</div>
                       <h2>The quick brown fox jumps over the lazy dog.</h2>
+                    </div>
+                    <div class="fs-styleguide_item">
+                      <div class="fs-styleguide_label is-tag">H2 Serif</div>
+                      <h2 class="serif">Serif - The quick brown fox jumps over the lazy dog.</h2>
                     </div>
                     <div class="fs-styleguide_item">
                       <div class="fs-styleguide_label is-tag">H3</div>
@@ -154,10 +148,72 @@
           </div>
         </div>
       </section>
+      <section class="fs-styleguide_heading-styles">
+        <div class="padding-section-large">
+          <div class="padding-global">
+            <div class="container">
+              <div class="fs-styleguide_section">
+                <div class="fs-styleguide_section-header">
+                  <h2 class="fs-styleguide_heading-medium">Heading Styles</h2>
+                  <p class="text-size-medium">Heading classes when typography style doesn&#x27;t match the default
+                    HTML tag.<br /></p>
+                </div>
+                <div class="fs-styleguide_item-wrapper">
+                  <div class="fs-styleguide_1-col">
+                    <div class="fs-styleguide_item">
+                      <div class="fs-styleguide_label">heading-style-h1</div>
+                      <h2 class="heading-style-h1">Sample text helps you understand how real text may look.</h2>
+                    </div>
+                    <div class="fs-styleguide_item">
+                      <div class="fs-styleguide_label">heading-style-h1 serif</div>
+                      <h2 class="heading-style-h1 serif">Sample text helps you understand how real text may look.</h2>
+                    </div>
+                    <div class="fs-styleguide_item">
+                      <div class="fs-styleguide_label">heading-style-h2</div>
+                      <h2 class="heading-style-h2">Sample text is being used as a placeholder. Sample text helps you
+                        understand how real text may look.</h2>
+                    </div>
+                    <div class="fs-styleguide_item">
+                      <div class="fs-styleguide_label">heading-style-h2 serif</div>
+                      <h2 class="heading-style-h2 serif">Sample text is being used as a placeholder. Sample text helps you
+                        understand how real text may look.</h2>
+                    </div>
+                    <div class="fs-styleguide_item">
+                      <div class="fs-styleguide_label">heading-style-h3</div>
+                      <h2 class="heading-style-h3">Sample text helps you understand how real text may look on your
+                        website. Sample text is being used as a placeholder for real text that is normally present.
+                      </h2>
+                    </div>
+                    <div class="fs-styleguide_item">
+                      <div class="fs-styleguide_label">heading-style-h4</div>
+                      <h2 class="heading-style-h4">Sample text is being used as a placeholder. Sample text helps you
+                        understand how real text may look. Sample text is being used as a placeholder for real text
+                        that is normally present.</h2>
+                    </div>
+                    <div class="fs-styleguide_item">
+                      <div class="fs-styleguide_label">heading-style-h5</div>
+                      <h2 class="heading-style-h5">Sample text is being used as a placeholder. Sample text helps you
+                        understand how real text may look. Sample text is being used as a placeholder for real text
+                        that is normally present. Sample text helps you understand how real text may look.</h2>
+                    </div>
+                    <div class="fs-styleguide_item">
+                      <div class="fs-styleguide_label">heading-style-h6</div>
+                      <h2 class="heading-style-h6">Sample text is being used as a placeholder for real text that is
+                        normally present. Sample text helps you understand how real text may look. Sample text is
+                        being used as a placeholder for real text that is normally present. Sample text helps you
+                        understand how real text may look.</h2>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
       <section class="fs-styleguide_other-tags">
         <div class="padding-section-large">
           <div class="padding-global">
-            <div class="container-large">
+            <div class="container">
               <div class="fs-styleguide_section">
                 <div class="fs-styleguide_section-header">
                   <h2 class="fs-styleguide_heading-medium">Other HTML Tags</h2>
@@ -199,67 +255,10 @@
           </div>
         </div>
       </section>
-      <section class="fs-styleguide_heading-styles">
-        <div class="padding-section-large">
-          <div class="padding-global">
-            <div class="container-large">
-              <div class="fs-styleguide_section">
-                <div class="fs-styleguide_section-header">
-                  <h2 class="fs-styleguide_heading-medium">Heading Styles</h2>
-                  <p class="text-size-medium">Heading classes when typography style doesn&#x27;t match the default
-                    HTML tag.<br /></p>
-                </div>
-                <div class="fs-styleguide_item-wrapper">
-                  <div class="fs-styleguide_1-col">
-                    <div class="fs-styleguide_item">
-                      <div class="fs-styleguide_label">heading-style-h1-xl</div>
-                      <h2 class="heading-style-h1-xl">Sample text helps you understand how real text may look.</h2>
-                    </div>
-                    <div class="fs-styleguide_item">
-                      <div class="fs-styleguide_label">heading-style-h1</div>
-                      <h2 class="heading-style-h1">Sample text helps you understand how real text may look.</h2>
-                    </div>
-                    <div class="fs-styleguide_item">
-                      <div class="fs-styleguide_label">heading-style-h2</div>
-                      <h2 class="heading-style-h2">Sample text is being used as a placeholder. Sample text helps you
-                        understand how real text may look.</h2>
-                    </div>
-                    <div class="fs-styleguide_item">
-                      <div class="fs-styleguide_label">heading-style-h3</div>
-                      <h2 class="heading-style-h3">Sample text helps you understand how real text may look on your
-                        website. Sample text is being used as a placeholder for real text that is normally present.
-                      </h2>
-                    </div>
-                    <div class="fs-styleguide_item">
-                      <div class="fs-styleguide_label">heading-style-h4</div>
-                      <h2 class="heading-style-h4">Sample text is being used as a placeholder. Sample text helps you
-                        understand how real text may look. Sample text is being used as a placeholder for real text
-                        that is normally present.</h2>
-                    </div>
-                    <div class="fs-styleguide_item">
-                      <div class="fs-styleguide_label">heading-style-h5</div>
-                      <h2 class="heading-style-h5">Sample text is being used as a placeholder. Sample text helps you
-                        understand how real text may look. Sample text is being used as a placeholder for real text
-                        that is normally present. Sample text helps you understand how real text may look.</h2>
-                    </div>
-                    <div class="fs-styleguide_item">
-                      <div class="fs-styleguide_label">heading-style-h6</div>
-                      <h2 class="heading-style-h6">Sample text is being used as a placeholder for real text that is
-                        normally present. Sample text helps you understand how real text may look. Sample text is
-                        being used as a placeholder for real text that is normally present. Sample text helps you
-                        understand how real text may look.</h2>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
       <section class="fs-styleguide_text-classes">
         <div class="padding-section-large">
           <div class="padding-global">
-            <div class="container-large">
+            <div class="container">
               <div class="fs-styleguide_section">
                 <div class="fs-styleguide_section-header">
                   <h2 class="fs-styleguide_heading-medium">Text Classes</h2>
@@ -271,11 +270,6 @@
                     <h3 class="text-weight-semibold">Text Sizes</h3>
                   </div>
                   <div class="fs-styleguide_3-col">
-                    <div class="fs-styleguide_item">
-                      <div class="fs-styleguide_label">text-size-large</div>
-                      <p class="text-size-large">Sample text is being used as a placeholder for real text that is
-                        normally present.<br /></p>
-                    </div>
                     <div class="fs-styleguide_item">
                       <div class="fs-styleguide_label">text-size-medium</div>
                       <p class="text-size-medium">Sample text is being used as a placeholder for real text that is
@@ -415,7 +409,7 @@
       <section class="fs-styleguide_buttons">
         <div class="padding-section-large">
           <div class="padding-global">
-            <div class="container-large">
+            <div class="container">
               <div class="fs-styleguide_section">
                 <div class="fs-styleguide_section-header">
                   <h2 class="fs-styleguide_heading-medium">Buttons</h2>
@@ -518,7 +512,7 @@
       <section class="fs-styleguide_colors">
         <div class="padding-section-large">
           <div class="padding-global">
-            <div class="container-large">
+            <div class="container">
               <div class="fs-styleguide_section">
                 <div class="fs-styleguide_section-header">
                   <h2 class="fs-styleguide_heading-medium">Colors</h2>
@@ -540,7 +534,7 @@
                     </div>
                     <div class="fs-styleguide_item">
                       <div class="fs-styleguide_label">text-color-tertiary</div>
-                      <div class="text-color-tertiary background-color-primary">text-color-tertiary</div>
+                      <div class="text-color-tertiary">text-color-tertiary</div>
                     </div>
                     <div class="fs-styleguide_item">
                       <div class="fs-styleguide_label">text-color-accent</div>
@@ -610,6 +604,104 @@
                       <div id="w-node-_32eadc24-e391-a089-abe0-fb5b6627cbc2-68d8d4d4" class="">
                         <div id="w-node-_32eadc24-e391-a089-abe0-fb5b6627cbc3-68d8d4d4" class="text-color-grey-800">
                           text-color-grey-800</div>
+                      </div>
+                    </div>
+                    <div class="fs-styleguide_item">
+                      <div class="fs-styleguide_label">text-color-azul-verdoso-10</div>
+                      <div id="w-node-_32eadc24-e391-a089-abe0-fb5b6627cbc2-68d8d4d4" class="">
+                        <div id="w-node-_32eadc24-e391-a089-abe0-fb5b6627cbc3-68d8d4d4" class="text-color-azul-verdoso-10">
+                          text-color-azul-verdoso-10</div>
+                      </div>
+                    </div>
+                    <div class="fs-styleguide_item">
+                      <div class="fs-styleguide_label">text-color-azul-verdoso-18</div>
+                      <div id="w-node-_32eadc24-e391-a089-abe0-fb5b6627cbc2-68d8d4d4" class="">
+                        <div id="w-node-_32eadc24-e391-a089-abe0-fb5b6627cbc3-68d8d4d4" class="text-color-azul-verdoso-18">
+                          text-color-azul-verdoso-18</div>
+                      </div>
+                    </div>
+                    <div class="fs-styleguide_item">
+                      <div class="fs-styleguide_label">text-color-azul-verdoso-25</div>
+                      <div id="w-node-_32eadc24-e391-a089-abe0-fb5b6627cbc2-68d8d4d4" class="">
+                        <div id="w-node-_32eadc24-e391-a089-abe0-fb5b6627cbc3-68d8d4d4" class="text-color-azul-verdoso-25">
+                          text-color-azul-verdoso-25</div>
+                      </div>
+                    </div>
+                    <div class="fs-styleguide_item">
+                      <div class="fs-styleguide_label">text-color-azul-verdoso-50</div>
+                      <div id="w-node-_32eadc24-e391-a089-abe0-fb5b6627cbc2-68d8d4d4" class="">
+                        <div id="w-node-_32eadc24-e391-a089-abe0-fb5b6627cbc3-68d8d4d4" class="text-color-azul-verdoso-50">
+                          text-color-azul-verdoso-50</div>
+                      </div>
+                    </div>
+                    <div class="fs-styleguide_item">
+                      <div class="fs-styleguide_label">text-color-azul-verdoso-100</div>
+                      <div id="w-node-_32eadc24-e391-a089-abe0-fb5b6627cbc2-68d8d4d4" class="">
+                        <div id="w-node-_32eadc24-e391-a089-abe0-fb5b6627cbc3-68d8d4d4" class="text-color-azul-verdoso-100">
+                          text-color-azul-verdoso-100</div>
+                      </div>
+                    </div>
+                    <div class="fs-styleguide_item">
+                      <div class="fs-styleguide_label">text-color-sandia-10</div>
+                      <div id="w-node-_32eadc24-e391-a089-abe0-fb5b6627cbc2-68d8d4d4" class="">
+                        <div id="w-node-_32eadc24-e391-a089-abe0-fb5b6627cbc3-68d8d4d4" class="text-color-sandia-10">
+                          text-color-sandia-10</div>
+                      </div>
+                    </div>
+                    <div class="fs-styleguide_item">
+                      <div class="fs-styleguide_label">text-color-sandia-18</div>
+                      <div id="w-node-_32eadc24-e391-a089-abe0-fb5b6627cbc2-68d8d4d4" class="">
+                        <div id="w-node-_32eadc24-e391-a089-abe0-fb5b6627cbc3-68d8d4d4" class="text-color-sandia-18">
+                          text-color-sandia-18</div>
+                      </div>
+                    </div>
+                    <div class="fs-styleguide_item">
+                      <div class="fs-styleguide_label">text-color-sandia-25</div>
+                      <div id="w-node-_32eadc24-e391-a089-abe0-fb5b6627cbc2-68d8d4d4" class="">
+                        <div id="w-node-_32eadc24-e391-a089-abe0-fb5b6627cbc3-68d8d4d4" class="text-color-sandia-25">
+                          text-color-sandia-25</div>
+                      </div>
+                    </div>
+                    <div class="fs-styleguide_item">
+                      <div class="fs-styleguide_label">text-color-sandia-50</div>
+                      <div id="w-node-_32eadc24-e391-a089-abe0-fb5b6627cbc2-68d8d4d4" class="">
+                        <div id="w-node-_32eadc24-e391-a089-abe0-fb5b6627cbc3-68d8d4d4" class="text-color-sandia-50">
+                          text-color-sandia-50</div>
+                      </div>
+                    </div>
+                    <div class="fs-styleguide_item">
+                      <div class="fs-styleguide_label">text-color-sandia-100</div>
+                      <div id="w-node-_32eadc24-e391-a089-abe0-fb5b6627cbc2-68d8d4d4" class="">
+                        <div id="w-node-_32eadc24-e391-a089-abe0-fb5b6627cbc3-68d8d4d4" class="text-color-sandia-100">
+                          text-color-sandia-100</div>
+                      </div>
+                    </div>
+                    <div class="fs-styleguide_item">
+                      <div class="fs-styleguide_label">text-color-mar-10</div>
+                      <div id="w-node-_32eadc24-e391-a089-abe0-fb5b6627cbc2-68d8d4d4" class="">
+                        <div id="w-node-_32eadc24-e391-a089-abe0-fb5b6627cbc3-68d8d4d4" class="text-color-mar-10">
+                          text-color-mar-10</div>
+                      </div>
+                    </div>
+                    <div class="fs-styleguide_item">
+                      <div class="fs-styleguide_label">text-color-mar-50</div>
+                      <div id="w-node-_32eadc24-e391-a089-abe0-fb5b6627cbc2-68d8d4d4" class="">
+                        <div id="w-node-_32eadc24-e391-a089-abe0-fb5b6627cbc3-68d8d4d4" class="text-color-mar-50">
+                          text-color-mar-50</div>
+                      </div>
+                    </div>
+                    <div class="fs-styleguide_item">
+                      <div class="fs-styleguide_label">text-color-mar-100</div>
+                      <div id="w-node-_32eadc24-e391-a089-abe0-fb5b6627cbc2-68d8d4d4" class="">
+                        <div id="w-node-_32eadc24-e391-a089-abe0-fb5b6627cbc3-68d8d4d4" class="text-color-mar-100">
+                          text-color-mar-100</div>
+                      </div>
+                    </div>
+                    <div class="fs-styleguide_item">
+                      <div class="fs-styleguide_label">text-color-mar-darker</div>
+                      <div id="w-node-_32eadc24-e391-a089-abe0-fb5b6627cbc2-68d8d4d4" class="">
+                        <div id="w-node-_32eadc24-e391-a089-abe0-fb5b6627cbc3-68d8d4d4" class="text-color-mar-darker">
+                          text-color-mar-darker</div>
                       </div>
                     </div>
                   </div>
@@ -723,6 +815,126 @@
                         </div>
                       </div>
                     </div>
+                    <div class="fs-styleguide_item">
+                      <div class="fs-styleguide_label">background-color-azul-verdoso-10</div>
+                      <div class="fs-styleguide_background">
+                        <div class="background-color-azul-verdoso-10">
+                          <div class="fs-styleguide_background-space"></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="fs-styleguide_item">
+                      <div class="fs-styleguide_label">background-color-azul-verdoso-18</div>
+                      <div class="fs-styleguide_background">
+                        <div class="background-color-azul-verdoso-18">
+                          <div class="fs-styleguide_background-space"></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="fs-styleguide_item">
+                      <div class="fs-styleguide_label">background-color-azul-verdoso-25</div>
+                      <div class="fs-styleguide_background">
+                        <div class="background-color-azul-verdoso-25">
+                          <div class="fs-styleguide_background-space"></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="fs-styleguide_item">
+                      <div class="fs-styleguide_label">background-color-azul-verdoso-50</div>
+                      <div class="fs-styleguide_background">
+                        <div class="background-color-azul-verdoso-50">
+                          <div class="fs-styleguide_background-space"></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="fs-styleguide_item">
+                      <div class="fs-styleguide_label">background-color-azul-verdoso-100</div>
+                      <div class="fs-styleguide_background">
+                        <div class="background-color-azul-verdoso-100">
+                          <div class="fs-styleguide_background-space"></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="fs-styleguide_item">
+                      <div class="fs-styleguide_label">background-color-sandia-10</div>
+                      <div class="fs-styleguide_background">
+                        <div class="background-color-sandia-10">
+                          <div class="fs-styleguide_background-space"></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="fs-styleguide_item">
+                      <div class="fs-styleguide_label">background-color-sandia-18</div>
+                      <div class="fs-styleguide_background">
+                        <div class="background-color-sandia-18">
+                          <div class="fs-styleguide_background-space"></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="fs-styleguide_item">
+                      <div class="fs-styleguide_label">background-color-sandia-25</div>
+                      <div class="fs-styleguide_background">
+                        <div class="background-color-sandia-25">
+                          <div class="fs-styleguide_background-space"></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="fs-styleguide_item">
+                      <div class="fs-styleguide_label">background-color-sandia-50</div>
+                      <div class="fs-styleguide_background">
+                        <div class="background-color-sandia-50">
+                          <div class="fs-styleguide_background-space"></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="fs-styleguide_item">
+                      <div class="fs-styleguide_label">background-color-sandia-100</div>
+                      <div class="fs-styleguide_background">
+                        <div class="background-color-sandia-100">
+                          <div class="fs-styleguide_background-space"></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="fs-styleguide_item">
+                      <div class="fs-styleguide_label">background-color-mar-10</div>
+                      <div class="fs-styleguide_background">
+                        <div class="background-color-mar-10">
+                          <div class="fs-styleguide_background-space"></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="fs-styleguide_item">
+                      <div class="fs-styleguide_label">background-color-mar-50</div>
+                      <div class="fs-styleguide_background">
+                        <div class="background-color-mar-50">
+                          <div class="fs-styleguide_background-space"></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="fs-styleguide_item">
+                      <div class="fs-styleguide_label">background-color-mar-100</div>
+                      <div class="fs-styleguide_background">
+                        <div class="background-color-mar-100">
+                          <div class="fs-styleguide_background-space"></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="fs-styleguide_item">
+                      <div class="fs-styleguide_label">background-color-mar-darker</div>
+                      <div class="fs-styleguide_background">
+                        <div class="background-color-mar-darker">
+                          <div class="fs-styleguide_background-space"></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="fs-styleguide_item">
+                      <div class="fs-styleguide_label">background-color-red</div>
+                      <div class="fs-styleguide_background">
+                        <div class="background-color-red">
+                          <div class="fs-styleguide_background-space"></div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -733,7 +945,7 @@
       <section class="fs-styleguide_max-width">
         <div class="padding-section-large">
           <div class="padding-global">
-            <div class="container-large">
+            <div class="container">
               <div class="fs-styleguide_section is-vertical">
                 <div class="fs-styleguide_section-header">
                   <h2 class="fs-styleguide_heading-medium">Max widths</h2>
@@ -818,7 +1030,7 @@
       <section class="fs-styleguide_paddings">
         <div class="padding-section-large">
           <div class="padding-global">
-            <div class="container-large">
+            <div class="container">
               <div class="fs-styleguide_section">
                 <div class="fs-styleguide_section-header">
                   <h2 class="fs-styleguide_heading-medium">Paddings</h2>
@@ -963,27 +1175,6 @@
                         <div class="fs-styleguide_empty-box"></div>
                       </div>
                     </div>
-                    <div class="fs-styleguide_spacing">
-                      <div id="w-node-_32eadc24-e391-a089-abe0-fb5b6627cc90-68d8d4d4" class="fs-styleguide_label">
-                        padding-custom1</div>
-                      <div class="padding-custom1">
-                        <div class="fs-styleguide_empty-box"></div>
-                      </div>
-                    </div>
-                    <div class="fs-styleguide_spacing">
-                      <div id="w-node-_32eadc24-e391-a089-abe0-fb5b6627cc95-68d8d4d4" class="fs-styleguide_label">
-                        padding-custom2</div>
-                      <div class="padding-custom2">
-                        <div class="fs-styleguide_empty-box"></div>
-                      </div>
-                    </div>
-                    <div class="fs-styleguide_spacing">
-                      <div id="w-node-_32eadc24-e391-a089-abe0-fb5b6627cc9a-68d8d4d4" class="fs-styleguide_label">
-                        padding-custom3</div>
-                      <div class="padding-custom3">
-                        <div class="fs-styleguide_empty-box"></div>
-                      </div>
-                    </div>
                   </div>
                 </div>
               </div>
@@ -994,7 +1185,7 @@
       <section class="fs-styleguide_paddings">
         <div class="padding-section-large">
           <div class="padding-global">
-            <div class="container-large">
+            <div class="container">
               <div class="fs-styleguide_section">
                 <div class="fs-styleguide_section-header">
                   <h2 class="fs-styleguide_heading-medium">Paddings BreakPoints</h2>
@@ -1008,78 +1199,78 @@
                   <div class="fs-styleguide_2-col is-align-start">
                     <div class="fs-styleguide_spacing">
                       <div id="w-node-_32eadc24-e391-a089-abe0-fb5b6627cc59-68d8d4d4" class="fs-styleguide_label">
-                        desktop-padding-tiny</div>
-                      <div class="desktop-padding-tiny">
+                        padding-tiny</div>
+                      <div class="padding-tiny">
                         <div class="fs-styleguide_empty-box"></div>
                       </div>
                     </div>
                     <div class="fs-styleguide_spacing">
                       <div id="w-node-_32eadc24-e391-a089-abe0-fb5b6627cc5e-68d8d4d4" class="fs-styleguide_label">
-                        desktop-padding-xxsmall</div>
-                      <div class="desktop-padding-xxsmall">
+                        padding-xxsmall</div>
+                      <div class="padding-xxsmall">
                         <div class="fs-styleguide_empty-box"></div>
                       </div>
                     </div>
                     <div class="fs-styleguide_spacing">
                       <div id="w-node-_32eadc24-e391-a089-abe0-fb5b6627cc63-68d8d4d4" class="fs-styleguide_label">
-                        desktop-padding-xsmall</div>
-                      <div class="desktop-padding-xsmall">
+                        padding-xsmall</div>
+                      <div class="padding-xsmall">
                         <div class="fs-styleguide_empty-box"></div>
                       </div>
                     </div>
                     <div class="fs-styleguide_spacing">
                       <div id="w-node-_32eadc24-e391-a089-abe0-fb5b6627cc68-68d8d4d4" class="fs-styleguide_label">
-                        desktop-padding-small</div>
-                      <div class="desktop-padding-small">
+                        padding-small</div>
+                      <div class="padding-small">
                         <div class="fs-styleguide_empty-box"></div>
                       </div>
                     </div>
                     <div class="fs-styleguide_spacing">
                       <div id="w-node-_32eadc24-e391-a089-abe0-fb5b6627cc6d-68d8d4d4" class="fs-styleguide_label">
-                       desktop-padding-medium</div>
-                      <div class="desktop-padding-medium">
+                       padding-medium</div>
+                      <div class="padding-medium">
                         <div class="fs-styleguide_empty-box"></div>
                       </div>
                     </div>
                     <div class="fs-styleguide_spacing">
                       <div id="w-node-_32eadc24-e391-a089-abe0-fb5b6627cc72-68d8d4d4" class="fs-styleguide_label">
-                        desktop-padding-large</div>
-                      <div class="desktop-padding-large">
+                        padding-large</div>
+                      <div class="padding-large">
                         <div class="fs-styleguide_empty-box"></div>
                       </div>
                     </div>
                     <div class="fs-styleguide_spacing">
                       <div id="w-node-_32eadc24-e391-a089-abe0-fb5b6627cc77-68d8d4d4" class="fs-styleguide_label">
-                        desktop-padding-xlarge</div>
-                      <div class="desktop-padding-xlarge">
+                        padding-xlarge</div>
+                      <div class="padding-xlarge">
                         <div class="fs-styleguide_empty-box"></div>
                       </div>
                     </div>
                     <div class="fs-styleguide_spacing">
                       <div id="w-node-_32eadc24-e391-a089-abe0-fb5b6627cc7c-68d8d4d4" class="fs-styleguide_label">
-                        desktop-padding-xxlarge</div>
-                      <div class="desktop-padding-xxlarge">
+                        padding-xxlarge</div>
+                      <div class="padding-xxlarge">
                         <div class="fs-styleguide_empty-box"></div>
                       </div>
                     </div>
                     <div class="fs-styleguide_spacing">
                       <div id="w-node-_32eadc24-e391-a089-abe0-fb5b6627cc81-68d8d4d4" class="fs-styleguide_label">
-                        desktop-padding-huge</div>
-                      <div class="desktop-padding-huge">
+                        padding-huge</div>
+                      <div class="padding-huge">
                         <div class="fs-styleguide_empty-box"></div>
                       </div>
                     </div>
                     <div class="fs-styleguide_spacing">
                       <div id="w-node-_32eadc24-e391-a089-abe0-fb5b6627cc86-68d8d4d4" class="fs-styleguide_label">
-                        desktop-padding-xhuge</div>
-                      <div class="desktop-padding-xhuge">
+                        padding-xhuge</div>
+                      <div class="padding-xhuge">
                         <div class="fs-styleguide_empty-box"></div>
                       </div>
                     </div>
                     <div id="w-node-_32eadc24-e391-a089-abe0-fb5b6627cc8a-68d8d4d4" class="fs-styleguide_spacing">
                       <div id="w-node-_32eadc24-e391-a089-abe0-fb5b6627cc8b-68d8d4d4" class="fs-styleguide_label">
-                        desktop-padding-xxhuge</div>
-                      <div id="w-node-_32eadc24-e391-a089-abe0-fb5b6627cc8d-68d8d4d4" class="desktop-padding-xxhuge">
+                        padding-xxhuge</div>
+                      <div id="w-node-_32eadc24-e391-a089-abe0-fb5b6627cc8d-68d8d4d4" class="padding-xxhuge">
                         <div class="fs-styleguide_empty-box"></div>
                       </div>
                     </div>
@@ -1263,7 +1454,7 @@
       <section class="fs-styleguide_margins">
         <div class="padding-section-large">
           <div class="padding-global">
-            <div class="container-large">
+            <div class="container">
               <div class="fs-styleguide_section">
                 <div class="fs-styleguide_section-header">
                   <h2 class="fs-styleguide_heading-medium">Margins</h2>
@@ -1408,27 +1599,6 @@
                         <div class="fs-styleguide_empty-box"></div>
                       </div>
                     </div>
-                    <div class="fs-styleguide_spacing">
-                      <div id="w-node-_32eadc24-e391-a089-abe0-fb5b6627cd0e-68d8d4d4" class="fs-styleguide_label">
-                        margin-custom1</div>
-                      <div class="margin-custom1">
-                        <div class="fs-styleguide_empty-box"></div>
-                      </div>
-                    </div>
-                    <div class="fs-styleguide_spacing">
-                      <div id="w-node-_32eadc24-e391-a089-abe0-fb5b6627cd13-68d8d4d4" class="fs-styleguide_label">
-                        margin-custom2</div>
-                      <div class="margin-custom2">
-                        <div class="fs-styleguide_empty-box"></div>
-                      </div>
-                    </div>
-                    <div class="fs-styleguide_spacing">
-                      <div id="w-node-_32eadc24-e391-a089-abe0-fb5b6627cd18-68d8d4d4" class="fs-styleguide_label">
-                        margin-custom3</div>
-                      <div class="margin-custom3">
-                        <div class="fs-styleguide_empty-box"></div>
-                      </div>
-                    </div>
                   </div>
                 </div>
               </div>
@@ -1439,7 +1609,7 @@
       <section class="fs-styleguide_margins">
         <div class="padding-section-large">
           <div class="padding-global">
-            <div class="container-large">
+            <div class="container">
               <div class="fs-styleguide_section">
                 <div class="fs-styleguide_section-header">
                   <h2 class="fs-styleguide_heading-medium">Margins Breakpoints</h2>
@@ -1717,9 +1887,6 @@
           <div class="margin-huge"></div>
           <div class="margin-xhuge"></div>
           <div class="margin-xxhuge"></div>
-          <div class="margin-custom1"></div>
-          <div class="margin-custom2"></div>
-          <div class="margin-custom3"></div>
           <div class="padding-0"></div>
           <div class="padding-tiny"></div>
           <div class="padding-xxsmall"></div>
@@ -1732,9 +1899,6 @@
           <div class="padding-huge"></div>
           <div class="padding-xhuge"></div>
           <div class="padding-xxhuge"></div>
-          <div class="padding-custom1"></div>
-          <div class="padding-custom2"></div>
-          <div class="padding-custom3"></div>
         </div>
         <div class="fs-styleguide_spacing-directions">
           <div class="margin-top"></div>
@@ -1754,7 +1918,7 @@
       <section class="fs-styleguide_utility-classes">
         <div class="padding-section-large">
           <div class="padding-global">
-            <div class="container-large">
+            <div class="container">
               <div class="fs-styleguide_section">
                 <div class="fs-styleguide_section-header">
                   <h2 class="fs-styleguide_heading-medium">Useful utility systems</h2>
