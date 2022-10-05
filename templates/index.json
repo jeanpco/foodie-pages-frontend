@@ -59,11 +59,43 @@
             "cta_text": "Corporate Gifting",
             "cta_link": "\/"
           }
+        },
+        "7e63476c-2c94-4994-b3dd-640813bcc65b": {
+          "type": "trusted_by",
+          "settings": {
+            "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0601\/1709\/0544\/files\/Path.svg?v=1664989934",
+            "icon_alt_text": "Some alt"
+          }
+        },
+        "78b14c75-4b50-4101-83ac-06ff54813f08": {
+          "type": "trusted_by",
+          "settings": {
+            "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0601\/1709\/0544\/files\/Path.svg?v=1664989934",
+            "icon_alt_text": "Some alt"
+          }
+        },
+        "4d3e89e3-d2e6-4f06-8fcc-a9551dba6173": {
+          "type": "trusted_by",
+          "settings": {
+            "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0601\/1709\/0544\/files\/Path.svg?v=1664989934",
+            "icon_alt_text": "Some alt"
+          }
+        },
+        "376b3cc3-baa8-4c5a-a246-d3c2a833f8b2": {
+          "type": "trusted_by",
+          "settings": {
+            "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0601\/1709\/0544\/files\/Path.svg?v=1664989934",
+            "icon_alt_text": "Some alt"
+          }
         }
       },
       "block_order": [
         "fb0b7578-d3a7-47df-9c96-0f6374f1d2dd",
-        "0a79a883-faf9-4609-8190-ce1392d3723b"
+        "0a79a883-faf9-4609-8190-ce1392d3723b",
+        "7e63476c-2c94-4994-b3dd-640813bcc65b",
+        "78b14c75-4b50-4101-83ac-06ff54813f08",
+        "4d3e89e3-d2e6-4f06-8fcc-a9551dba6173",
+        "376b3cc3-baa8-4c5a-a246-d3c2a833f8b2"
       ],
       "settings": {
         "overline": "Quick shop",
