@@ -1,0 +1,108 @@
+<div class="container">
+
+  <div>{{ section.settings.overline }}</div>
+  <div>{{ section.settings.title }}</div>
+  <div>{{ section.settings.body }}</div>
+  <div>{{ section.settings.cta_text }}</div>
+  <div>{{ section.settings.cta_link }}</div>
+  
+  {% comment %} {%- capture sizes -%}(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 | divided_by: 2 }}px, (min-width: 750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2){%- endcapture -%}
+
+  {{ section.settings.image | image_url: width: 1500 | image_tag:
+    loading: 'lazy',
+    sizes: sizes,
+    widths: '165, 360, 535, 750, 1070, 1500'
+  }} {% endcomment %}
+
+  {% for block in section.blocks %}
+    <div>{{ block.settings.icon_url }}</div>
+    <div>{{ block.settings.title }}</div>
+    <div>{{ block.settings.body }}</div>
+    <div>{{ block.settings.cta_text }}</div>
+    <div>{{ block.settings.cta_link }}</div>
+  {% endfor %}
+</div>
+
+{% schema %}
+{
+  "name": "Features",
+  "tag": "section",
+  "class": "section section-features",
+  "settings": [
+    {
+      "type": "text",
+      "id": "overline",
+      "default": "Quick shop",
+      "label": "Overline"
+    },
+    {
+      "type": "richtext",
+      "id": "title",
+      "default": "<p>Show your team you care</p>",
+      "label": "Title"
+    },
+    {
+      "type": "textarea",
+      "id": "body",
+      "default": "Choose from a selection of pre-built team care packages, or build your own custom care package. All of our care packages are filled with high quality locally-sourced goods and designed to delight your team.",
+      "label": "Body"
+    },
+    {
+      "type": "text",
+      "id": "cta_text",
+      "default": "Shop all",
+      "label": "CTA Text"
+    },
+    {
+      "type": "url",
+      "id": "cta_link",
+      "label": "CTA Link"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "features",
+      "name": "Features",
+      "limit": 4,
+      "settings": [
+        {
+          "type": "url",
+          "id": "icon_url",
+          "label": "Icon"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "textarea",
+          "id": "body",
+          "label": "Body"
+        },
+        {
+          "type": "text",
+          "id": "cta_text",
+          "default": "Learn More",
+          "label": "CTA Text"
+        },
+        {
+          "type": "url",
+          "id": "cta_link",
+          "label": "CTA Link"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Features"
+    }
+  ]
+}
+{% endschema %}

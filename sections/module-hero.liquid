@@ -1,0 +1,132 @@
+<div class="{{ section.settings.background_color }}">
+  <div>
+    <div class="container">
+      <h1>hero</h1>
+    </div>
+  </div>
+</div>
+
+{%- comment -%} 
+{{ section.settings.overline }}
+{{ section.settings.title }}
+{% for block in section.blocks %}
+  {{ block.settings.cta_text }}
+  {{ block.settings.cta_link }}
+{% endfor %} 
+{%- endcomment -%}
+
+{% schema %}
+{
+  "name": "Hero",
+  "tag": "section",
+  "class": "section section-hero",
+  "settings": [
+    {
+      "type": "text",
+      "id": "overline",
+      "default": "Quick shop",
+      "label": "Overline"
+    },
+    {
+      "type": "richtext",
+      "id": "title",
+      "default": "<p>Gifts that <i>celebrate</i> small business</p>",
+      "label": "Title"
+    },
+    {
+      "type": "textarea",
+      "id": "body",
+      "default": "Each foodiepages gift basket is designed with premium goods from diverse, independently-owned makers and brands across Canada.",
+      "label": "Body"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "header",
+      "content": "Layout Settings"
+    },
+    {
+      "type": "select",
+      "id": "layout_style",
+      "options": [
+        {
+          "value": "two-columns",
+          "label": "Two Columns"
+        },
+        {
+          "value": "rows",
+          "label": "Rows"
+        }
+      ],
+      "default": "two-columns",
+      "label": "Layout Style"
+    },
+    {
+      "type": "select",
+      "id": "background_color",
+      "options": [
+        {
+          "value": "background-color-azul-verdoso-10",
+          "label": "Color - Azul Verdoso 10"
+        },
+        {
+          "value": "background-color-secondary",
+          "label": "Color - White"
+        }
+      ],
+      "default": "background-color-azul-verdoso-10",
+      "label": "Background Color"
+    },
+    {
+      "type": "header",
+      "content": "Trusted By Settings"
+    },
+    {
+      "type": "text",
+      "id": "trusted_by_text",
+      "default": "Trusted by",
+      "label": "Trusted by - Text"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "cta",
+      "name": "CTA",
+      "limit": 2,
+      "settings": [
+        {
+          "type": "text",
+          "id": "cta_text",
+          "default": "Shop all",
+          "label": "CTA Text"
+        },
+        {
+          "type": "url",
+          "id": "cta_link",
+          "label": "CTA Link"
+        }
+      ]
+    },
+    {
+      "type": "trusted_by",
+      "name": "Trusted By",
+      "limit": 4,
+      "settings": [
+        {
+          "type": "url",
+          "id": "icon_url",
+          "label": "Icon"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Hero"
+    }
+  ]
+}
+{% endschema %}

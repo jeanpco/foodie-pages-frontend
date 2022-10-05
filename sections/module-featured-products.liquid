@@ -1,0 +1,120 @@
+{{ 'component-card.css' | asset_url | stylesheet_tag }}
+{{ 'component-price.css' | asset_url | stylesheet_tag }}
+
+{% comment %} <link rel="stylesheet" href="{{ 'component-slider.css' | asset_url }}" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="{{ 'template-collection.css' | asset_url }}" media="print" onload="this.media='all'">
+<noscript>{{ 'component-slider.css' | asset_url | stylesheet_tag }}</noscript>
+<noscript>{{ 'template-collection.css' | asset_url | stylesheet_tag }}</noscript> {% endcomment %}
+
+{%- liquid
+  assign products_to_display = section.settings.collection.all_products_count
+
+  if section.settings.collection.all_products_count > 5
+    assign products_to_display = 5
+    assign more_in_collection = true
+  endif
+-%}
+
+<p>{{ section.settings.overline }}</p>
+<h2>{{ section.settings.title }}</h2>
+<p>{{ section.settings.cta_text }}</p>
+<p>{{ section.settings.cta_link }}</p>
+<p>{{ section.settings.collection.title }}</p>
+<p>{{ section.settings.collection.icon_url }}</p>
+<p>{{ section.settings.collection.promo_title }}</p>
+<p>{{ section.settings.collection.promo_body }}</p>
+<p>{{ section.settings.collection.promo_cta_text }}</p>
+<p>{{ section.settings.collection.promo_cta_link }}</p>
+
+{% comment %} {%- for product in section.settings.collection.products limit: 5 -%}
+    <li class="grid__item">
+      {% render 'card-product',
+        card_product: product,
+        media_aspect_ratio: 'square',
+        show_secondary_image: false,
+        show_vendor: false,
+        show_rating: false,
+        show_quick_add: false,
+        section_id: section.id
+      %}
+    </li>
+  {%- endfor -%} {% endcomment %}
+
+{% schema %}
+{
+  "name": "Featured Products",
+  "tag": "section",
+  "class": "section section-featured-products",
+  "settings": [
+    {
+      "type": "text",
+      "id": "overline",
+      "default": "Quick shop",
+      "label": "Overline"
+    },
+    {
+      "type": "richtext",
+      "id": "title",
+      "default": "<p>Meet our <i>bestsellers</i></p>",
+      "label": "Title"
+    },
+    {
+      "type": "textarea",
+      "id": "body",
+      "default": "Discover beautifully packaged products from small companies doing big things.",
+      "label": "Body"
+    },
+    {
+      "type": "text",
+      "id": "cta_text",
+      "default": "Shop all",
+      "label": "CTA Text"
+    },
+    {
+      "type": "url",
+      "id": "cta_link",
+      "label": "CTA Link"
+    },
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "Select a collection"
+    },
+    {
+      "type": "header",
+      "content": "Promo card settings"
+    },
+    {
+      "type": "url",
+      "id": "icon_url",
+      "label": "Icon"
+    },
+    {
+      "type": "text",
+      "id": "promo_title",
+      "label": "Promo - Title"
+    },
+    {
+      "type": "textarea",
+      "id": "promo_body",
+      "label": "Promo - Body"
+    },
+    {
+      "type": "text",
+      "id": "promo_cta_text",
+      "default": "Shop all",
+      "label": "Promo - CTA Text"
+    },
+    {
+      "type": "url",
+      "id": "promo_cta_link",
+      "label": "Promo - CTA Link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Featured Products"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,40 @@
+<div class="container">
+  <div>{{ section.settings.overline }}</div>
+  {% for block in section.blocks %}
+    <div>{{ block.settings.logo_url }}</div>
+  {% endfor %}
+</div>
+
+{% schema %}
+{
+  "name": "Logos",
+  "tag": "section",
+  "class": "section section-logos",
+  "settings": [
+    {
+      "type": "text",
+      "id": "overline",
+      "default": "Trusted by the world's best companies",
+      "label": "Overline"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "logo",
+      "name": "Logo",
+      "settings": [
+        {
+          "type": "url",
+          "id": "logo_url",
+          "label": "Logo - URL"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Logos"
+    }
+  ]
+}
+{% endschema %}

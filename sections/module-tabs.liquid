@@ -1,0 +1,43 @@
+<div class="container">
+  <h1>Module Tabs</h1>
+  <div>{{ section.settings.richtext }}</div>
+  {% for block in section.blocks %}
+    <div>{{ block.settings.richtext }}</div>
+  {% endfor %}
+</div>
+
+{% schema %}
+{
+  "name": "Tabs",
+  "tag": "section",
+  "class": "section section-tabs",
+  "settings": [
+    {
+      "type": "richtext",
+      "id": "richtext",
+      "default": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.</p>",
+      "label": "t:sections.rich-text.blocks.text.settings.text.label"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "cta",
+      "name": "CTA",
+      "limit": 2,
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "text",
+          "default": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.</p>",
+          "label": "t:sections.rich-text.blocks.text.settings.text.label"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Tabs"
+    }
+  ]
+}
+{% endschema %}

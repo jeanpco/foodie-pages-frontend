@@ -1,0 +1,93 @@
+<div class="container">
+  <div>{{ section.settings.overline }}</div>
+  <div>{{ section.settings.title }}</div>
+  <div>{{ section.settings.cta_text }}</div>
+  <div>{{ section.settings.cta_link }}</div>
+  {% for block in section.blocks %}
+    {%- capture sizes -%}(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 | divided_by: 2 }}px, (min-width: 750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2){%- endcapture -%}
+
+    {{ section.settings.image | image_url: width: 1500 | image_tag:
+      loading: 'lazy',
+      sizes: sizes,
+      widths: '165, 360, 535, 750, 1070, 1500'
+    }}
+    <div>{{ block.settings.title }}</div>
+    <div>{{ block.settings.body }}</div>
+    <div>{{ block.settings.cta_text }}</div>
+    <div>{{ block.settings.cta_link }}</div>
+  {% endfor %}
+</div>
+
+{% schema %}
+{
+  "name": "Columns",
+  "tag": "section",
+  "class": "section section-columns",
+  "settings": [
+    {
+      "type": "text",
+      "id": "overline",
+      "label": "Overline",
+      "default": "Corporate solutions"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Team Solutions"
+    },
+    {
+      "type": "textarea",
+      "id": "body",
+      "label": "Body",
+      "default": "We help businesses connect with people and make lasting impressions."
+    },
+    {
+      "type": "text",
+      "id": "cta_text",
+      "label": "CTA Text",
+      "default": "Get a quote"
+    },
+    {
+      "type": "url",
+      "id": "cta_link",
+      "label": "CTA Link"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "cta",
+      "name": "CTA",
+      "limit": 4,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "text",
+          "id": "cta_text",
+          "label": "CTA Text",
+          "default": "Get a quote"
+        },
+        {
+          "type": "url",
+          "id": "cta_link",
+          "label": "CTA Link"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Columns"
+    }
+  ]
+}
+{% endschema %}
