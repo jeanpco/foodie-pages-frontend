@@ -4,7 +4,7 @@
       <div class="hero-content">
         <small class="hero-content_overline text-size-tiny uppercase text-color-tertiary">{{ section.settings.overline }}</small>
         <h1 class="hero-content_title dual-font-title">{{ section.settings.title }}</h1> 
-        <p class="hero-content_body">{{ section.settings.body }}</p> 
+        <p class="hero-content_body margin-top margin-medium">{{ section.settings.body }}</p> 
         {% assign numberOfCtas = section.blocks | where: "type", "cta" | size %}
 
         {% if numberOfCtas > 0 %}
@@ -26,28 +26,29 @@
         {% assign numberOfTrustedBy = section.blocks | where: "type", "trusted_by" | size %}
 
         {% if numberOfTrustedBy > 0 %}
-          <div class="hero-content_trusted_by margin-top margin-xxlarge">
-            <p class="hero-content_trusted_by__text margin-right margin-medium">{{ section.settings.trusted_by_text }}</p>
-            {% for block in section.blocks %}
-              {% if block.type == 'trusted_by' %}
-                  <img src="{{ block.settings.icon_url }}" alt="{{ block.settings.icon_alt_text }}" />
-              {% endif %}
-            {% endfor %} 
+          <div class="margin-bottom margin-medium">
+            <div class="hero-content_trusted_by margin-top margin-xxlarge">
+              <p class="hero-content_trusted_by__text text-size-tiny text-color-grey-400 uppercase">{{ section.settings.trusted_by_text }}</p>
+              {% for block in section.blocks %}
+                {% if block.type == 'trusted_by' %}
+                    <img class="margin-left margin-medium" src="{{ block.settings.icon_url }}" alt="{{ block.settings.icon_alt_text }}" />
+                {% endif %}
+              {% endfor %} 
+            </div>
           </div>
         {% endif %}
+      </div>
+      <div class="hero-image">
+        {%- comment -%} <img src="{{ section.settings.image_url | image_url }}" alt="{{ section.settings.image_alt_text }}" /> {%- endcomment -%}
+
+        {{ section.settings.image | image_url: width: 800 | image_tag:
+          loading: 'lazy',
+          widths: '550, 720, 990, 1100, 1500, 2200, 3000'
+        }}
       </div>
     </div>
   </div>
 </div>
-
-{%- comment -%} 
-{{ section.settings.overline }}
-{{ section.settings.title }}
-{% for block in section.blocks %}
-  {{ block.settings.cta_text }}
-  {{ block.settings.cta_link }}
-{% endfor %} 
-{%- endcomment -%}
 
 <style>
 
@@ -55,6 +56,31 @@
   @media (max-width: 990px) {}
   @media (max-width: 767px) {}
   @media (max-width: 479px) {}
+
+  .hero-content_trusted_by {
+    display: flex;
+    align-items: center;
+  }
+
+  .hero-container {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+  }
+
+  .hero-content {
+    width: 41%;
+  }
+
+  .hero-image {
+    width: 40.7%;
+  }
+
+  .hero-image img {
+    width: auto;
+    height: 100%;
+    aspect-ratio: 599/603;
+  }
   
 </style>
 
