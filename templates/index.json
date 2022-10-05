@@ -1,48 +1,5 @@
 {
   "sections": {
-    "module-columns": {
-      "type": "module-columns",
-      "settings": {
-        "overline": "Corporate solutions",
-        "title": "Team Solutions",
-        "body": "We help businesses connect with people and make lasting impressions.",
-        "cta_text": "Get a quote",
-        "cta_link": ""
-      }
-    },
-    "module-contact-form": {
-      "type": "module-contact-form",
-      "settings": {
-        "overline": "Contact",
-        "title": "Get in touch!"
-      }
-    },
-    "module-featured-products": {
-      "type": "module-featured-products",
-      "settings": {
-        "overline": "Quick shop",
-        "title": "<p>Meet our <i>bestsellers<\/i><\/p>",
-        "body": "Discover beautifully packaged products from small companies doing big things.",
-        "cta_text": "Shop all",
-        "cta_link": "",
-        "collection": "",
-        "icon_url": "",
-        "promo_title": "",
-        "promo_body": "",
-        "promo_cta_text": "Shop all",
-        "promo_cta_link": ""
-      }
-    },
-    "module-features": {
-      "type": "module-features",
-      "settings": {
-        "overline": "Quick shop",
-        "title": "<p>Show your team you care<\/p>",
-        "body": "Choose from a selection of pre-built team care packages, or build your own custom care package. All of our care packages are filled with high quality locally-sourced goods and designed to delight your team.",
-        "cta_text": "Shop all",
-        "cta_link": ""
-      }
-    },
     "module-hero": {
       "type": "module-hero",
       "blocks": {
@@ -107,14 +64,63 @@
         "trusted_by_text": "Trusted by"
       }
     },
+    "module-columns": {
+      "type": "module-columns",
+      "disabled": true,
+      "settings": {
+        "overline": "Corporate solutions",
+        "title": "Team Solutions",
+        "body": "We help businesses connect with people and make lasting impressions.",
+        "cta_text": "Get a quote",
+        "cta_link": ""
+      }
+    },
+    "module-contact-form": {
+      "type": "module-contact-form",
+      "disabled": true,
+      "settings": {
+        "overline": "Contact",
+        "title": "Get in touch!"
+      }
+    },
+    "module-featured-products": {
+      "type": "module-featured-products",
+      "disabled": true,
+      "settings": {
+        "overline": "Quick shop",
+        "title": "<p>Meet our <i>bestsellers<\/i><\/p>",
+        "body": "Discover beautifully packaged products from small companies doing big things.",
+        "cta_text": "Shop all",
+        "cta_link": "",
+        "collection": "",
+        "icon_url": "",
+        "promo_title": "",
+        "promo_body": "",
+        "promo_cta_text": "Shop all",
+        "promo_cta_link": ""
+      }
+    },
+    "module-features": {
+      "type": "module-features",
+      "disabled": true,
+      "settings": {
+        "overline": "Quick shop",
+        "title": "<p>Show your team you care<\/p>",
+        "body": "Choose from a selection of pre-built team care packages, or build your own custom care package. All of our care packages are filled with high quality locally-sourced goods and designed to delight your team.",
+        "cta_text": "Shop all",
+        "cta_link": ""
+      }
+    },
     "module-logos": {
       "type": "module-logos",
+      "disabled": true,
       "settings": {
         "overline": "Trusted by the world's best companies"
       }
     },
     "module-newsletter": {
       "type": "module-newsletter",
+      "disabled": true,
       "settings": {
         "title": "We have high standards for emails too.",
         "body": "Sign up with your email to receive news and updates on our new gift box releases."
@@ -122,65 +128,74 @@
     },
     "module-popup": {
       "type": "module-popup",
+      "disabled": true,
       "settings": {
         "richtext": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.<\/p>"
       }
     },
     "module-recommended-products": {
       "type": "module-recommended-products",
+      "disabled": true,
       "settings": {
         "richtext": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.<\/p>"
       }
     },
     "module-rich-text": {
       "type": "module-rich-text",
+      "disabled": true,
       "settings": {
         "richtext": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.<\/p>"
       }
     },
     "module-split-content": {
       "type": "module-split-content",
+      "disabled": true,
       "settings": {
         "richtext": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.<\/p>"
       }
     },
     "module-vertical-tabs": {
       "type": "module-vertical-tabs",
+      "disabled": true,
       "settings": {
         "richtext": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.<\/p>"
       }
     },
     "module-tabs": {
       "type": "module-tabs",
+      "disabled": true,
       "settings": {
         "richtext": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.<\/p>"
       }
     },
     "module-tag-slider": {
       "type": "module-tag-slider",
+      "disabled": true,
       "settings": {
         "richtext": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.<\/p>"
       }
     },
     "module-testimonials": {
       "type": "module-testimonials",
+      "disabled": true,
       "settings": {
         "richtext": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.<\/p>"
       }
     },
     "module-split-content-simple": {
       "type": "module-split-content-simple",
+      "disabled": true,
       "settings": {
         "richtext": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.<\/p>"
       }
     }
   },
   "order": [
+    "module-hero",
     "module-columns",
     "module-contact-form",
     "module-featured-products",
     "module-features",
-    "module-hero",
     "module-logos",
     "module-newsletter",
     "module-popup",
