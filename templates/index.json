@@ -59,7 +59,7 @@
         "title": "<p>Gifts that <em>celebrate<\/em> small business<\/p>",
         "body": "Each foodiepages gift basket is designed with premium goods from diverse, independently-owned makers and brands across Canada.",
         "image": "shopify:\/\/shop_images\/Frame_43428_2.png",
-        "layout_style": "rows",
+        "layout_style": "two-columns",
         "background_color": "background-color-azul-verdoso-10",
         "trusted_by_text": "Trusted by"
       }
