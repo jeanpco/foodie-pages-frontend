@@ -1,7 +1,41 @@
-<div class="{{ section.settings.background_color }}">
-  <div>
-    <div class="container">
-      <h1>hero</h1>
+<div class="hero-background {{ section.settings.background_color }}">
+  <div class="padding-vertical padding-xlarge">
+    <div class="container hero-container">
+      <div class="hero-content">
+        <small class="hero-content_overline text-size-tiny uppercase text-color-tertiary">{{ section.settings.overline }}</small>
+        <h1 class="hero-content_title dual-font-title">{{ section.settings.title }}</h1> 
+        <p class="hero-content_body">{{ section.settings.body }}</p> 
+        {% assign numberOfCtas = section.blocks | where: "type", "cta" | size %}
+
+        {% if numberOfCtas > 0 %}
+          <div class="hero-content_ctas margin-top margin-top margin-medium">
+
+            {% for block in section.blocks %}
+              {% if block.type == 'cta' %}
+                  <a 
+                    class="button {% if forloop.first %}margin-right margin-small{% endif %}{% if forloop.first == false %} is-secondary{% endif %}" 
+                    href="{{ block.settings.cta_link }}"
+                  >
+                    <span>{{ block.settings.cta_text }}</span>
+                  </a>
+              {% endif %}
+            {% endfor %} 
+          </div>
+        {% endif %}
+
+        {% assign numberOfTrustedBy = section.blocks | where: "type", "trusted_by" | size %}
+
+        {% if numberOfTrustedBy > 0 %}
+          <div class="hero-content_trusted_by margin-top margin-xxlarge">
+            <p class="hero-content_trusted_by__text margin-right margin-medium">{{ section.settings.trusted_by_text }}</p>
+            {% for block in section.blocks %}
+              {% if block.type == 'trusted_by' %}
+                  <img src="{{ block.settings.icon_url }}" alt="{{ block.settings.icon_alt_text }}" />
+              {% endif %}
+            {% endfor %} 
+          </div>
+        {% endif %}
+      </div>
     </div>
   </div>
 </div>
@@ -14,6 +48,15 @@
   {{ block.settings.cta_link }}
 {% endfor %} 
 {%- endcomment -%}
+
+<style>
+
+  @media (min-width: 1920px) {}
+  @media (max-width: 990px) {}
+  @media (max-width: 767px) {}
+  @media (max-width: 479px) {}
+  
+</style>
 
 {% schema %}
 {
@@ -119,6 +162,11 @@
           "type": "url",
           "id": "icon_url",
           "label": "Icon"
+        },
+        {
+          "type": "text",
+          "id": "icon_alt_text",
+          "label": "Icon Alt Text"
         }
       ]
     }

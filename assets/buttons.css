@@ -33,7 +33,6 @@
   overflow: hidden;
   pointer-events: auto;
   cursor: pointer;
-  margin: 0;
   position: relative;
   display: inline-block;
 }
@@ -124,7 +123,7 @@
 
 .button.is-secondary {
   color: var(--button-text-color-secondary);
-  background-color: var(--button-background-color-secondary);
+  background-color: transparent;
   font-size: var(--button-font-size-desktop);
   padding: var(--button-padding-desktop);
   border-radius: var(--button-border-radius-secondary);

@@ -45,6 +45,7 @@
   margin-right: auto !important;
   margin-left: auto !important;
   padding: 0 var(--padding-large-desktop);
+  box-sizing: border-box;
 }
 
 @media screen and (max-width: 1680px) {   
