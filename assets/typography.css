@@ -22,7 +22,7 @@ h1.serif {
   font-size: var(--font-h1-serif-size-desktop);
   font-family: var(--font-heading-secondary-family);
   font-style: italic;
-  line-height: 1;
+  line-height: 0;
   font-weight: 500;
 }
 
@@ -48,7 +48,7 @@ h2.serif {
   font-size: var(--font-h2-serif-size-desktop);
   font-family: var(--font-heading-secondary-family);
   font-style: italic;
-  line-height: 1.1;
+  line-height: 0;
   font-weight: 500;
 }
 
@@ -113,7 +113,7 @@ h6 * {
   h1.dual-font-title strong,
   h1.serif {
     font-size: var(--font-h1-serif-size-tablet);
-    line-height: 1;
+    line-height: 0;
   }
 
   .heading-style-h2,
@@ -130,7 +130,7 @@ h6 * {
   h2.dual-font-title em,
   h2.serif {
     font-size: var(--font-h2-serif-size-tablet);
-    line-height: 1.1;
+    line-height: 0;
   }
 
   .heading-style-h3,
@@ -163,7 +163,7 @@ h6 * {
   h1.dual-font-title strong,
   h1.dual-font-title em,
   h1.serif {
-    line-height: 1;
+    line-height: 0;
     font-size: var(--font-h1-serif-size-mobile);
   }
 
@@ -180,7 +180,7 @@ h6 * {
   h2.dual-font-title em,
   h2.dual-font-title strong,
   h2.serif {
-    line-height: 1.1;
+    line-height: 0;
     font-size: var(--font-h2-serif-size-mobile);
   }
 

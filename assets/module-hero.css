@@ -1,0 +1,135 @@
+.hero-content_overline {
+  display: block;
+}
+
+.hero-content_trusted_by {
+  display: flex;
+  align-items: center;
+}
+
+@media (max-width: 479px) {
+  .hero-content_trusted_by {
+    display: flex;
+    flex-wrap: wrap;
+  } 
+
+  .hero-content_trusted_by__text {
+    width: 100%;
+  }
+
+  .hero-content_trusted_by__logo {
+    max-height: 1rem;
+  }
+}
+
+.hero-container.rows {
+  flex-direction: column;
+}
+
+.hero-content_ctas {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 990px) {
+  .hero-container {
+    display: flex;
+    flex-direction: column;
+  } 
+}
+
+.hero-content {
+  width: 45%;
+}
+
+.hero-content.rows {
+  order: 1;
+}
+
+.hero-image.rows {
+  order: 2;
+}
+
+@media (min-width: 991px) {
+  .hero-content.rows {
+    display: flex;
+    width: 100%;
+    align-items: flex-end;
+    justify-content: space-between;
+  }
+
+  .hero-content.rows .hero-content_primary {
+    max-width: 37.5rem;
+    padding-right: 3rem;
+    margin-right: auto;
+  }
+
+  .hero-content.rows .hero-content_secondary {
+    max-width: 37.5rem;
+    margin-left: auto;
+  }
+}
+
+.hero-content.rows .hero-content_secondary .hero-content_trusted_by__container {
+  margin-bottom: 0;
+}
+
+.hero-image {
+  width: 45.7%;
+  border-radius: 1rem;
+  overflow: hidden;
+  display: flex;
+}
+
+.hero-image.rows {
+  width: 100%;
+  margin-top: 3rem;
+}
+
+.hero-image.rows img {
+  aspect-ratio: unset;
+  margin: 0 auto;
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+  @media (max-width: 990px) {
+
+  .hero-image.two-columns {
+    margin-bottom: 2rem;
+  }
+
+  .hero-content {
+    order: 2;
+  }
+
+  .hero-content,
+  .hero-image {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .hero-image {
+    justify-content: center;
+    align-items: center;
+    order: 1;
+  }
+}
+
+.hero-image img {
+  width: auto;
+  height: 100%;
+  aspect-ratio: 599/603;
+  object-fit: contain;
+}
+
+@media (max-width: 990px) {
+  .hero-image img {
+    margin: 0 auto;
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 550/550;
+  }
+}
