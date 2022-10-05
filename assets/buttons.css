@@ -19,6 +19,7 @@
 /* PRIMARY BUTTON */
 
 .button {
+  -webkit-mask-image: -webkit-radial-gradient(white, black);
   color: var(--button-text-color-primary);
   background-color: var(--button-background-color-primary);
   font-size: var(--button-font-size-desktop);
