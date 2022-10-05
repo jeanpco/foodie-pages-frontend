@@ -1,6 +1,6 @@
 <div class="hero-background {{ section.settings.background_color }}">
   <div class="padding-vertical padding-xlarge">
-    <div class="container hero-container">
+    <div class="container hero-container {{ section.settings.layout_style }}">
       <div class="hero-content {{ section.settings.layout_style }}">
         <div class="hero-content_primary">
           <small class="hero-content_overline text-size-tiny uppercase text-color-tertiary">{{ section.settings.overline }}</small>
@@ -32,7 +32,7 @@
           {% assign numberOfTrustedBy = trustedByArray | size %}
 
           {% if numberOfTrustedBy > 0 %}
-            <div class="margin-bottom margin-medium">
+            <div class="hero-content_trusted_by__container margin-bottom margin-medium">
               <div class="hero-content_trusted_by margin-top margin-xxlarge mobile-margin-xlarge">
                 <p class="hero-content_trusted_by__text text-size-tiny text-color-grey-400 uppercase margin-bottom mobile-margin-small">{{ section.settings.trusted_by_text }}</p>
                 {% for block in trustedByArray %}
@@ -87,6 +87,10 @@
     justify-content: space-between;
   }
 
+  .hero-container.rows {
+    flex-direction: column;
+  }
+
   .hero-content_ctas {
     display: flex;
     flex-wrap: wrap;
@@ -104,10 +108,35 @@
   }
 
   .hero-content.rows {
-    display: flex;
-    width: 100%;
-    align-items: center;
-    justify-content: space-between;
+    order: 1;
+  }
+
+  .hero-image.rows {
+    order: 2;
+  }
+
+  @media (min-width: 991px) {
+    .hero-content.rows {
+      display: flex;
+      width: 100%;
+      align-items: flex-end;
+      justify-content: space-between;
+    }
+
+    .hero-content.rows .hero-content_primary {
+      max-width: 37.5rem;
+      padding-right: 3rem;
+      margin-right: auto;
+    }
+
+    .hero-content.rows .hero-content_secondary {
+      max-width: 37.5rem;
+      margin-left: auto;
+    }
+  }
+
+  .hero-content.rows .hero-content_secondary .hero-content_trusted_by__container {
+    margin-bottom: 0;
   }
 
   .hero-image {
@@ -122,10 +151,19 @@
   }
 
   .hero-image.rows img {
-    aspect-ratio: 1344/600;
+    aspect-ratio: unset;
+    margin: 0 auto;
+    display: block;
+    width: 100%;
+    height: auto;
   }
 
     @media (max-width: 990px) {
+
+    .hero-content {
+      order: 2;
+    }
+
     .hero-content,
     .hero-image {
       width: 100%;
@@ -136,6 +174,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      order: 1;
     }
   }
 
