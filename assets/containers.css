@@ -56,6 +56,14 @@
   }
 }
 
+@media screen and (max-width: 990px) {   
+  .page-wrapper,
+  .container {
+    max-width: var(--width-tablet);
+    padding: 0 var(--padding-tablet);
+  }
+}
+
 @media screen and (max-width: 767px) {   
   .page-wrapper,
   .container {
