@@ -141,6 +141,58 @@
         "title": "<p>The <em>best<\/em> gifting service in Canada<\/p>"
       }
     },
+    "module-tag-slider": {
+      "type": "module-tag-slider",
+      "blocks": {
+        "6771ce22-b64c-42dd-b6a7-f03fa2cf7df9": {
+          "type": "collection",
+          "settings": {
+            "title": "New Arrivals",
+            "collection": "fathers-day"
+          }
+        },
+        "f2d9af43-61a5-4c7b-8cdf-81d774905352": {
+          "type": "collection",
+          "settings": {
+            "title": "",
+            "collection": "one-of-a-kind"
+          }
+        },
+        "c0b96aab-ebea-45f5-883d-582f92cab111": {
+          "type": "collection",
+          "settings": {
+            "title": "",
+            "collection": "mothers-day"
+          }
+        },
+        "f00d0e50-db70-498b-9cbe-dac1ab8c7341": {
+          "type": "collection",
+          "settings": {
+            "title": "",
+            "collection": "holiday-gift-baskets"
+          }
+        },
+        "1ed4348a-d03e-4198-a7e5-c2ac4b470fb3": {
+          "type": "collection",
+          "settings": {
+            "title": "",
+            "collection": "desk-essentials"
+          }
+        }
+      },
+      "block_order": [
+        "6771ce22-b64c-42dd-b6a7-f03fa2cf7df9",
+        "f2d9af43-61a5-4c7b-8cdf-81d774905352",
+        "c0b96aab-ebea-45f5-883d-582f92cab111",
+        "f00d0e50-db70-498b-9cbe-dac1ab8c7341",
+        "1ed4348a-d03e-4198-a7e5-c2ac4b470fb3"
+      ],
+      "settings": {
+        "overline": "Quick Shop",
+        "title": "<p>Explore gifts by category<\/p>",
+        "cta_text": "Shop now"
+      }
+    },
     "module-columns": {
       "type": "module-columns",
       "disabled": true,
@@ -238,13 +290,6 @@
         "richtext": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.<\/p>"
       }
     },
-    "module-tag-slider": {
-      "type": "module-tag-slider",
-      "disabled": true,
-      "settings": {
-        "richtext": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.<\/p>"
-      }
-    },
     "module-testimonials": {
       "type": "module-testimonials",
       "disabled": true,
@@ -263,6 +308,7 @@
   "order": [
     "module-hero",
     "module-tabs",
+    "module-tag-slider",
     "module-columns",
     "module-contact-form",
     "module-featured-products",
@@ -274,7 +320,6 @@
     "module-rich-text",
     "module-split-content",
     "module-vertical-tabs",
-    "module-tag-slider",
     "module-testimonials",
     "module-split-content-simple"
   ]
