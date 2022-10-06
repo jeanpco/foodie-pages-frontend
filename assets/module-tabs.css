@@ -67,12 +67,15 @@
 
 .module-tab_tabs-header_container {
   overflow: scroll;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
 }
 
 /* hide scrollbar for .module-tab_tabs-header */
 .module-tab_tabs-header_container::-webkit-scrollbar {
   display: none;
 }
+
 
 @media (max-width: 990px) {
   .module-tab_tabs-header {
