@@ -67,7 +67,6 @@
     },
     "module-tabs": {
       "type": "module-tabs",
-      "disabled": true,
       "blocks": {
         "2fe0704d-6ca9-4bdf-8869-4644f4802edb": {
           "type": "tab",
