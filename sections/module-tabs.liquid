@@ -13,23 +13,58 @@
   "class": "section section-tabs",
   "settings": [
     {
+      "type": "text",
+      "id": "overline",
+      "default": "How we do it",
+      "label": "Overline"
+    },
+    {
       "type": "richtext",
-      "id": "richtext",
-      "default": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.</p>",
-      "label": "t:sections.rich-text.blocks.text.settings.text.label"
+      "id": "title",
+      "default": "<p>The <em>best</em> gifting service in Canada</p>",
+      "label": "Title"
     }
   ],
   "blocks": [
     {
-      "type": "cta",
-      "name": "CTA",
-      "limit": 2,
+      "type": "tab",
+      "name": "Tab",
+      "limit": 5,
       "settings": [
         {
-          "type": "richtext",
-          "id": "text",
-          "default": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.</p>",
-          "label": "t:sections.rich-text.blocks.text.settings.text.label"
+          "type": "url",
+          "id": "icon_url",
+          "label": "Icon URL"
+        },
+        {
+          "type": "text",
+          "id": "tab_text",
+          "label": "Tab Text"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "textarea",
+          "id": "body",
+          "label": "Body"
+        },
+        {
+          "type": "text",
+          "id": "cta_text",
+          "label": "CTA Text"
+        },
+        {
+          "type": "text",
+          "id": "cta_link",
+          "label": "CTA Link"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
         }
       ]
     }
