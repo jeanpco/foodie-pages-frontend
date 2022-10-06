@@ -26,29 +26,26 @@
 
         <!-- Slides -->
         <div class="tag-slide swiper-slide background-color-azul-verdoso-10 center padding-horizontal padding-small">
-          <div class="tag-slider_inner">
+          <a href="{{ block_collection.url }}" class="tag-slider_inner">
             <h3 class="heading-style-h4">{{ block_title }}</h3>
             {% 
               render 'button', 
               cta_text: section.settings.cta_text, 
-              cta_link: block_collection.url,
+              cta_link: '',
               class: 'margin-top margin-xsmall',
-              theme: ''
+              theme: '',
+              preventClick: true,
             %}
-          </div>
+          </a>
         </div>
 
         {% endfor %}
 
       </div>
 
-      <!-- If we need navigation buttons -->
-      {%- comment -%} <div class="swiper-button-prev"></div>
-      <div class="swiper-button-next"></div> {%- endcomment -%}
       {% render 'icon-prev-arrow' %}
       {% render 'icon-next-arrow' %}
 
-      <!-- If we need scrollbar -->
       <div class="swiper-scrollbar"></div>
     </div>
   </div>
@@ -57,8 +54,6 @@
 <script type="module">
   const initTagSlider = () => {
     const swiperSliderContainer = document.querySelector("[data-js-element='tag-slider-module-swiper-{{ section.id }}']")
-
-    console.log('swiperSliderContainer', swiperSliderContainer)
 
     const swiper = new Swiper(swiperSliderContainer, {
       spaceBetween: 24,

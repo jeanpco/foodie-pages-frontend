@@ -1,8 +1,10 @@
 
-
-<a 
-  class="button {{ theme }} {{ class }}" 
-  href="{{ cta_link }}"
->
-  <span>{{ cta_text }}</span>
-</a>
+{% if preventClick %}
+  <button class="button {{ theme }} {{ class }}">
+    <span>{{ cta_text }}</span>
+  </button>
+{% else %}
+  <a class="button {{ theme }} {{ class }}" href="{{ cta_link }}">
+    <span>{{ cta_text }}</span>
+  </a>
+{% endif %}
