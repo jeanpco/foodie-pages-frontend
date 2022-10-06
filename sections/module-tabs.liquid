@@ -1,5 +1,10 @@
+{{ 'module-tabs.css' | asset_url | stylesheet_tag }}
+
 <div class="container">
-  <h1>Module Tabs</h1>
+  <div class="padding-vertical padding-xlarge">
+    <small class="text-size-tiny">{{ section.settings.overline }}</small>
+    <h2 class="dual-font-title">{{ section.settings.title }}</h2>
+  </div>
   <div>{{ section.settings.richtext }}</div>
   {% for block in section.blocks %}
     <div>{{ block.settings.richtext }}</div>
