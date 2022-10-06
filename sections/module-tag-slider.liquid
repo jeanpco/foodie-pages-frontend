@@ -1,8 +1,22 @@
-<div class="container">
-  <h1>Module Tag</h1>
-  <div>{{ section.settings.richtext }}</div>
+{{ 'module-tag-slider.css' | asset_url | stylesheet_tag }}
+
+{% assign overline = section.settings.overline %}
+{% assign title = section.settings.title %}
+
+<div class="module-tab_container container" data-js-element="tab-module-{{ section.id }}">
+  <div class="padding-vertical padding-huge">
+    {% render 'module-header', overline: overline, title: title %}
+  </div>
+
+
+  
   {% for block in section.blocks %}
-    <div>{{ block.settings.richtext }}</div>
+
+    {%- comment -%} {% for product in collections['sale-potions'].products %}
+      {{- product.title | link_to: product.url }}
+    {% endfor %} {%- endcomment -%}
+    <pre>{{ block.settings.collection }}</pre>
+    <div>{{ block.settings.title }}</div>
   {% endfor %}
 </div>
 
@@ -13,23 +27,38 @@
   "class": "section section-tag",
   "settings": [
     {
+      "type": "text",
+      "id": "overline",
+      "default": "Quick Shop",
+      "label": "Overline"
+    },
+    {
       "type": "richtext",
-      "id": "richtext",
-      "default": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.</p>",
-      "label": "t:sections.rich-text.blocks.text.settings.text.label"
+      "id": "title",
+      "default": "<p>Explore gifts by category</p>",
+      "label": "Title"
+    },
+    {
+      "type": "text",
+      "id": "cta_text",
+      "default": "Shop now",
+      "label": "CTA Text"
     }
   ],
   "blocks": [
     {
-      "type": "cta",
-      "name": "CTA",
-      "limit": 2,
+      "type": "collection",
+      "name": "Collection",
       "settings": [
         {
-          "type": "richtext",
-          "id": "text",
-          "default": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.</p>",
-          "label": "t:sections.rich-text.blocks.text.settings.text.label"
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "collection",
+          "id": "collection",
+          "label": "Collection"
         }
       ]
     }
