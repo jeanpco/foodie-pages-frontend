@@ -1,24 +1,91 @@
+{{ 'swiper.css' | asset_url | stylesheet_tag }}
 {{ 'module-tag-slider.css' | asset_url | stylesheet_tag }}
 
 {% assign overline = section.settings.overline %}
 {% assign title = section.settings.title %}
 
-<div class="module-tab_container container" data-js-element="tab-module-{{ section.id }}">
-  <div class="padding-vertical padding-huge">
-    {% render 'module-header', overline: overline, title: title %}
+<div class="module-tag-slider container" data-js-element="tag-slider-module-{{ section.id }}">
+  <div class="margin-vertical margin-huge">
+    <div class="padding-bottom padding-xxlarge">
+      {% render 'module-header', overline: overline, title: title %}
+    </div>
+
+    <div class="swiper tag-slider-module-swiper" data-js-element="tag-slider-module-swiper-{{ section.id }}">
+
+      <!-- Additional required wrapper -->
+      <div class="swiper-wrapper padding-bottom padding-xlarge">
+
+        {% for block in section.blocks %}
+
+        {% assign block_title = block.settings.title %}
+        {% assign block_collection = collections[block.settings.collection] %}
+
+        {% unless block_title != '' %}
+          {% assign block_title = block_collection.title %}
+        {% endunless %}
+
+        <!-- Slides -->
+        <div class="tag-slide swiper-slide background-color-azul-verdoso-10 center padding-horizontal padding-small">
+          <div class="tag-slider_inner">
+            <h3 class="heading-style-h4">{{ block_title }}</h3>
+            {% 
+              render 'button', 
+              cta_text: section.settings.cta_text, 
+              cta_link: block_collection.url,
+              class: 'margin-top margin-xsmall',
+              theme: ''
+            %}
+          </div>
+        </div>
+
+        {% endfor %}
+
+      </div>
+
+      <!-- If we need navigation buttons -->
+      {%- comment -%} <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div> {%- endcomment -%}
+      {% render 'icon-prev-arrow' %}
+      {% render 'icon-next-arrow' %}
+
+      <!-- If we need scrollbar -->
+      <div class="swiper-scrollbar"></div>
+    </div>
   </div>
-
-
-  
-  {% for block in section.blocks %}
-
-    {%- comment -%} {% for product in collections['sale-potions'].products %}
-      {{- product.title | link_to: product.url }}
-    {% endfor %} {%- endcomment -%}
-    <pre>{{ block.settings.collection }}</pre>
-    <div>{{ block.settings.title }}</div>
-  {% endfor %}
 </div>
+
+<script type="module">
+  const initTagSlider = () => {
+    const swiperSliderContainer = document.querySelector("[data-js-element='tag-slider-module-swiper-{{ section.id }}']")
+
+    console.log('swiperSliderContainer', swiperSliderContainer)
+
+    const swiper = new Swiper(swiperSliderContainer, {
+      spaceBetween: 24,
+      freeMode: true,
+      slidesPerView: "auto",
+      mousewheel: {
+          forceToAxis: true,
+        },
+      scrollbar: {
+        el: ".swiper-scrollbar",
+        draggable: true,
+      },
+      navigation: {
+        nextEl: '.icon-next-arrow',
+        prevEl: '.icon-prev-arrow',
+      },
+      breakpoints: {
+      // when window width is >= 320px
+      1729: {
+        slidesPerView: 5,
+      },
+    }
+    });
+  }
+
+  initTagSlider()
+</script>
 
 {% schema %}
 {

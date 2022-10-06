@@ -1,0 +1,47 @@
+.swiper {
+   
+}
+
+.swiper-button-prev,
+.swiper-button-next,
+.swiper-scrollbar-drag {
+  display: block !important;
+}
+
+.icon-prev-arrow *,
+.icon-next-arrow * {
+  pointer-events: none;
+}
+
+.icon-prev-arrow,
+.icon-next-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+  cursor: pointer;
+  transition: opacity 0.3s;
+}
+
+.icon-prev-arrow.swiper-button-disabled,
+.icon-next-arrow.swiper-button-disabled {
+  opacity: 0;
+} 
+
+.swiper .icon-prev-arrow {
+  left: 0;
+}
+
+.swiper .icon-next-arrow {
+  right: 0;
+}
+
+.swiper-scrollbar {
+  background: transparent !important;
+  border-bottom: 1px solid var(--color-grey-200);
+  height: 3px !important;
+}
+
+.swiper-scrollbar-drag {
+  background: var(--color-tertiary) !important;
+}
