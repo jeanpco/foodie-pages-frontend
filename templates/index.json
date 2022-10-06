@@ -116,13 +116,26 @@
             "cta_link": "\/",
             "image": "shopify:\/\/shop_images\/Screen_Shot_2022-08-30_at_3.03_2.jpg"
           }
+        },
+        "3732abc5-67af-4c3c-85d8-758c6aea36c1": {
+          "type": "tab",
+          "settings": {
+            "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0601\/1709\/0544\/files\/Path.svg?v=1664989934",
+            "tab_text": "10+ years of gifting",
+            "title": "Reach anyone, anywhere.",
+            "body": "We source exclusively from small and underrepresented businesses across the country. Sharing their stories and values with you is one of our greatest joys.",
+            "cta_text": "Learn more",
+            "cta_link": "\/",
+            "image": "shopify:\/\/shop_images\/HeroImage.png"
+          }
         }
       },
       "block_order": [
         "2fe0704d-6ca9-4bdf-8869-4644f4802edb",
         "cb796b97-5135-4a60-b2fa-c710855e013a",
         "881fd230-0ff5-475a-80ab-394c30599557",
-        "82370e0b-29ef-4ff4-9ed1-ff7fd169f7ff"
+        "82370e0b-29ef-4ff4-9ed1-ff7fd169f7ff",
+        "3732abc5-67af-4c3c-85d8-758c6aea36c1"
       ],
       "settings": {
         "overline": "How we do it",
