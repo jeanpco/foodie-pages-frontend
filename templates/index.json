@@ -108,12 +108,13 @@
         "82370e0b-29ef-4ff4-9ed1-ff7fd169f7ff": {
           "type": "tab",
           "settings": {
-            "icon_url": "",
-            "tab_text": "",
-            "title": "",
-            "body": "",
-            "cta_text": "",
-            "cta_link": ""
+            "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0601\/1709\/0544\/files\/Path.svg?v=1664989934",
+            "tab_text": "100% custom gift design",
+            "title": "Reach anyone, anywhere.",
+            "body": "We source exclusively from small and underrepresented businesses across the country. Sharing their stories and values with you is one of our greatest joys.",
+            "cta_text": "Shop now",
+            "cta_link": "\/",
+            "image": "shopify:\/\/shop_images\/Screen_Shot_2022-08-30_at_3.03_2.jpg"
           }
         }
       },
