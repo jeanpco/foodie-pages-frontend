@@ -59,9 +59,34 @@
         "title": "<p>Gifts that <em>celebrate<\/em> small business<\/p>",
         "body": "Each foodiepages gift basket is designed with premium goods from diverse, independently-owned makers and brands across Canada.",
         "image": "shopify:\/\/shop_images\/Frame_43428_2.png",
+        "text_vertical_alignment": "flex-end",
         "layout_style": "two-columns",
         "background_color": "background-color-azul-verdoso-10",
         "trusted_by_text": "Trusted by"
+      }
+    },
+    "module-tabs": {
+      "type": "module-tabs",
+      "disabled": true,
+      "blocks": {
+        "2fe0704d-6ca9-4bdf-8869-4644f4802edb": {
+          "type": "tab",
+          "settings": {
+            "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0601\/1709\/0544\/files\/Path.svg?v=1664989934",
+            "tab_text": "Values-based gifting",
+            "title": "Reach anyone, anywhere.",
+            "body": "We source exclusively from small and underrepresented businesses across the country. Sharing their stories and values with you is one of our greatest joys.",
+            "cta_text": "Shop now",
+            "cta_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "2fe0704d-6ca9-4bdf-8869-4644f4802edb"
+      ],
+      "settings": {
+        "overline": "How we do it",
+        "title": "<p>The <em>best<\/em> gifting service in Canada<\/p>"
       }
     },
     "module-columns": {
@@ -161,13 +186,6 @@
         "richtext": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.<\/p>"
       }
     },
-    "module-tabs": {
-      "type": "module-tabs",
-      "disabled": true,
-      "settings": {
-        "richtext": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.<\/p>"
-      }
-    },
     "module-tag-slider": {
       "type": "module-tag-slider",
       "disabled": true,
@@ -192,6 +210,7 @@
   },
   "order": [
     "module-hero",
+    "module-tabs",
     "module-columns",
     "module-contact-form",
     "module-featured-products",
@@ -203,7 +222,6 @@
     "module-rich-text",
     "module-split-content",
     "module-vertical-tabs",
-    "module-tabs",
     "module-tag-slider",
     "module-testimonials",
     "module-split-content-simple"
