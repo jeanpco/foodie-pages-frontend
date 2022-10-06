@@ -5,6 +5,139 @@
  
 }
 
+.module-tab_container {
+
+}
+
+.module-tab_header {
+  
+}
+
+.tab-header {
+  flex: 1;
+  cursor: pointer;
+  position: relative;
+}
+
+.tab-header img {
+  opacity: 0.7;
+  transition: opacity 0.3s;
+}
+
+.tab-header p {
+  transition: color 0.3s;
+}
+
+.tab-header.is-active p,
+.tab-header:hover p {
+  color: var(--color-grey-800);
+}
+
+.tab-header.is-active img,
+.tab-header:hover img {
+  opacity: 1;
+}
+
+.tab-header_progress-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: var(--color-tertiary);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s;
+  display: block !important;
+  border-radius: 5px;
+}
+
+.tab-header.is-active .tab-header_progress-bar,
+.tab-header:hover .tab-header_progress-bar {
+  transform: scaleX(1);
+}
+
+.module-tab_tabs-header {
+  display: flex;
+  border-bottom: 1px solid var(--color-grey-200);
+  margin: 0 auto;
+  transition: transform 0.3s;
+  overflow: hidden;
+}
+
+.module-tab_tabs-header_container {
+  overflow: scroll;
+}
+
+/* hide scrollbar for .module-tab_tabs-header */
+.module-tab_tabs-header_container::-webkit-scrollbar {
+  display: none;
+}
+
+@media (max-width: 990px) {
+  .module-tab_tabs-header {
+    min-width: 48rem;
+  }
+}
+
 @media (min-width: 991px) {
- 
+  .module-tab_tabs-header {
+    width: calc(100% - 13.75rem);
+  }
+}
+
+.module-tab_tabs-content {
+  border-radius: 1.25rem;
+  overflow: hidden;
+}
+
+.module-tab_tabs-block {
+  justify-content: space-between;
+  transform: translateX(30px);
+  opacity: 0;
+  display: flex;
+  position: absolute;
+  visibility: hidden;
+  width: 0;
+}
+
+.module-tab_tabs-block.is-active {
+  opacity: 1;
+  transition: transform 0.3s, opacity 0.3s;
+  visibility: visible;
+  transform: translateX(0);
+  position: relative;
+  width: 100%;
+}
+
+.tab-block_img {
+  width: 41%;
+  overflow: hidden;
+}
+
+.tab-block_img img {
+  aspect-ratio: 551/453;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  border-radius: 20px;
+}
+
+.tab-block_content {
+  width: 46.9%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+@media (max-width: 767px) {
+  .module-tab_tabs-block {
+    flex-direction: column;
+  }
+
+  .tab-block_img,
+  .tab-block_content {
+    width: 100%;
+  }
 }

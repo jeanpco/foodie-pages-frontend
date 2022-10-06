@@ -61,7 +61,7 @@ body,
   padding: 0;
   margin: 0;
   font-family: var(--font-body-family);
-  color: var(--color-primary);
+  color: var(--color-grey-700);
   font-size: var(--font-text-size-regular-desktop);
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
@@ -156,7 +156,7 @@ h6 {
   font-family: var(--font-heading-family);
   margin-top: 0rem;
   margin-bottom: 0rem;
-  color: var(--color-primary);
+  color: var(--color-grey-800);
 }
 
 .caption-large,
@@ -183,22 +183,6 @@ table:not([class]) td,
 table:not([class]) th {
   padding: 1em;
   border: 0.1rem solid rgba(var(--color-primary), 0.2);
-}
-
-.left {
-  text-align: left;
-}
-
-.center {
-  text-align: center;
-}
-
-.right {
-  text-align: right;
-}
-
-.uppercase {
-  text-transform: uppercase;
 }
 
 .light {

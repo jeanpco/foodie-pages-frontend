@@ -98,7 +98,7 @@ h6 * {
   line-height: 1.5;
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 990px) {
   .heading-style-h1,
   h1 {
     font-size: var(--font-h1-size-tablet);
