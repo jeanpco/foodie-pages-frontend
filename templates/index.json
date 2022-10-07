@@ -61,6 +61,7 @@
         "body": "Each foodiepages gift basket is designed with premium goods from diverse, independently-owned makers and brands across Canada.",
         "image": "shopify:\/\/shop_images\/Frame_43428_2.png",
         "text_vertical_alignment": "flex-end",
+        "enable_card_style": false,
         "layout_style": "two-columns",
         "background_color": "background-color-azul-verdoso-10",
         "trusted_by_text": "Trusted by"
@@ -295,6 +296,7 @@
         "body": "We're not about boring or generic corporate gifts. We'll bring your vision to life with unique gift ideas that live up to your brand and its values.",
         "image": "shopify:\/\/shop_images\/Frame_43428_2.png",
         "text_vertical_alignment": "flex-end",
+        "enable_card_style": true,
         "layout_style": "two-columns",
         "background_color": "background-color-azul-verdoso-10",
         "trusted_by_text": "Trusted by"
