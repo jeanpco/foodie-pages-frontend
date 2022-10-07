@@ -5,6 +5,11 @@
     <div class="container hero-container {{ section.settings.layout_style }}">
       <div class="hero-content {{ section.settings.layout_style }}">
         <div class="hero-content_primary">
+          {% render 'module-header', 
+            overline: section.settings.overline, 
+            title: section.settings.title,
+            text_horizontal_alignment: 'left',
+          %}
           {% if section.settings.overline != blank %}
             <small class="hero-content_overline text-size-tiny uppercase text-color-tertiary margin-bottom margin-xxsmall mobile-margin-xsmall">{{ section.settings.overline }}</small>
           {% endif %}
@@ -88,6 +93,22 @@
       "id": "title",
       "default": "<p>Gifts that <i>celebrate</i> small business</p>",
       "label": "Title"
+    },
+    {
+      "type": "select",
+      "id": "heading_style",
+      "options": [
+        {
+          "value": "h2",
+          "label": "Heading 2"
+        },
+        {
+          "value": "h1",
+          "label": "Heading 1"
+        }
+      ],
+      "default": "h1",
+      "label": "Heading 1"
     },
     {
       "type": "textarea",

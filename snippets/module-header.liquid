@@ -1,9 +1,14 @@
-<div class="center">
+{% unless text_horizontal_alignment %}
+  {% assign text_horizontal_alignment = 'center' %}
+{% endunless %}
+
+
+<div class="{{ text_horizontal_alignment }}">
   {% if overline != blank %}
     <small class="module-header_overline text-size-tiny uppercase text-color-tertiary margin-bottom margin-xxsmall mobile-margin-xsmall text-weight-semibold">{{ overline }}</small>
   {% endif %}
   {% if title != blank %}
-    {% if heading_type == 'h1' %}
+    {% if heading_style == 'h1' %}
       <h1 class="module-header_title dual-font-title">{{ title }}</h2>
     {% else %}
       <h2 class="module-header_title dual-font-title">{{ title }}</h2>
