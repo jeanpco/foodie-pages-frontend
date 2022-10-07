@@ -57,6 +57,7 @@
       "settings": {
         "overline": "Quick shop",
         "title": "<p>Gifts that <em>celebrate<\/em> small business<\/p>",
+        "heading_style": "h1",
         "body": "Each foodiepages gift basket is designed with premium goods from diverse, independently-owned makers and brands across Canada.",
         "image": "shopify:\/\/shop_images\/Frame_43428_2.png",
         "text_vertical_alignment": "flex-end",
@@ -201,6 +202,72 @@
         "cta_text": "Shop now"
       }
     },
+    "5810d53f-1644-49ef-8085-4cce0ae7ae81": {
+      "type": "module-hero",
+      "blocks": {
+        "d5048f1b-509c-474f-92ca-047ab6b71a4c": {
+          "type": "cta",
+          "settings": {
+            "cta_text": "Learn More",
+            "cta_link": "shopify:\/\/pages\/about-us"
+          }
+        },
+        "54c84020-796f-46f9-a861-eecbf0f12ebf": {
+          "type": "cta",
+          "settings": {
+            "cta_text": "Download Catalogue",
+            "cta_link": "\/"
+          }
+        },
+        "5b00fc58-27f1-4648-8ba7-a6ce319c83a3": {
+          "type": "trusted_by",
+          "settings": {
+            "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0601\/1709\/0544\/files\/Path.svg?v=1664989934",
+            "icon_alt_text": ""
+          }
+        },
+        "06704300-8bc7-4d4a-8086-83662f0729ef": {
+          "type": "trusted_by",
+          "settings": {
+            "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0601\/1709\/0544\/files\/Path.svg?v=1664989934",
+            "icon_alt_text": ""
+          }
+        },
+        "a25ae151-34a5-4203-b6d8-b4e102e0b763": {
+          "type": "trusted_by",
+          "settings": {
+            "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0601\/1709\/0544\/files\/Path.svg?v=1664989934",
+            "icon_alt_text": ""
+          }
+        },
+        "cee361ac-9d82-416e-86ba-9f8cbe6376a9": {
+          "type": "trusted_by",
+          "settings": {
+            "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0601\/1709\/0544\/files\/Path.svg?v=1664989934",
+            "icon_alt_text": ""
+          }
+        }
+      },
+      "block_order": [
+        "d5048f1b-509c-474f-92ca-047ab6b71a4c",
+        "54c84020-796f-46f9-a861-eecbf0f12ebf",
+        "5b00fc58-27f1-4648-8ba7-a6ce319c83a3",
+        "06704300-8bc7-4d4a-8086-83662f0729ef",
+        "a25ae151-34a5-4203-b6d8-b4e102e0b763",
+        "cee361ac-9d82-416e-86ba-9f8cbe6376a9"
+      ],
+      "settings": {
+        "overline": "Need a corporate account?",
+        "title": "<p>Corporate <em>gifting<\/em> done right<\/p>",
+        "heading_style": "h2",
+        "body": "We're not about boring or generic corporate gifts. We'll bring your vision to life with unique gift ideas that live up to your brand and its values.",
+        "image": "shopify:\/\/shop_images\/Frame_43428_2.png",
+        "text_vertical_alignment": "flex-end",
+        "layout_style": "two-columns",
+        "background_color": "background-color-azul-verdoso-10",
+        "trusted_by_text": "Trusted by"
+      }
+    },
     "module-columns": {
       "type": "module-columns",
       "disabled": true,
@@ -317,6 +384,7 @@
     "module-hero",
     "module-tabs",
     "module-tag-slider",
+    "5810d53f-1644-49ef-8085-4cce0ae7ae81",
     "module-columns",
     "module-contact-form",
     "module-featured-products",
