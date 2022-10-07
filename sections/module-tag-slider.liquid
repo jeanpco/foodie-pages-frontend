@@ -4,7 +4,7 @@
 {% assign overline = section.settings.overline %}
 {% assign title = section.settings.title %}
 
-<div class="module-tag-slider container" data-js-element="tag-slider-module-{{ section.id }}">
+<div class="module-tag-slider container" style="overflow: hidden;" data-js-element="tag-slider-module-{{ section.id }}">
   <div class="margin-vertical margin-huge">
     <div class="padding-bottom padding-xxlarge">
       {% render 'module-header', overline: overline, title: title %}

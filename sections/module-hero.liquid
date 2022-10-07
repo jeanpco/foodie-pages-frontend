@@ -2,66 +2,71 @@
 
 {% assign enable_card_style = section.settings.enable_card_style %}
 
-<div class="hero-background {{ section.settings.background_color }}">
-  <div class="padding-vertical padding-xlarge">
-    <div class="container hero-container {{ section.settings.layout_style }}">
-      <div class="hero-content {{ section.settings.layout_style }}">
-        <div class="hero-content_primary">
-          {% render 'module-header', 
-            overline: section.settings.overline, 
-            title: section.settings.title,
-            text_horizontal_alignment: 'left',
-            heading_style: section.settings.heading_style,
-          %}
-        </div>
-        <div class="hero-content_secondary">
-          {% if section.settings.body != blank %}
-            <p class="hero-content_body margin-top margin-medium mobile-margin-small">{{ section.settings.body }}</p> 
-          {% endif %}
 
-          {% assign ctasArray = section.blocks | where: "type", "cta" %}
-          {% assign numberOfCtas = ctasArray | size %}
-
-          {% if numberOfCtas > 0 %}
-            <div class="hero-content_ctas margin-top margin-top margin-medium mobile-margin-0">
-
-              {% for block in ctasArray %}
-                <div class="margin-top mobile-margin-small">
-                  <a 
-                    class="button {% if forloop.first %}margin-right margin-small{% endif %}{% if forloop.first == false %} is-secondary{% endif %}" 
-                    href="{{ block.settings.cta_link }}"
-                  >
-                    <span>{{ block.settings.cta_text }}</span>
-                  </a>
-                </div>
-              {% endfor %} 
+<div class="{% if enable_card_style %}padding-vertical padding-huge{% endif %}">
+  <div class="{% if enable_card_style %}container{% endif %}">
+    <div class="hero-background {% if enable_card_style %}is-card-style{% endif %} {{ section.settings.background_color }}">
+      <div class="padding-vertical padding-xlarge">
+        <div class="hero-container padding-horizontal padding-xxlarge mobile-padding-medium {% unless enable_card_style %}container{% endunless %} {{ section.settings.layout_style }}">
+          <div class="hero-content {{ section.settings.layout_style }}">
+            <div class="hero-content_primary">
+              {% render 'module-header', 
+                overline: section.settings.overline, 
+                title: section.settings.title,
+                text_horizontal_alignment: 'left',
+                heading_style: section.settings.heading_style,
+              %}
             </div>
-          {% endif %}
+            <div class="hero-content_secondary">
+              {% if section.settings.body != blank %}
+                <p class="hero-content_body margin-top margin-medium mobile-margin-xsmall">{{ section.settings.body }}</p> 
+              {% endif %}
 
-          {% assign trustedByArray = section.blocks | where: "type", "trusted_by" %}
-          {% assign numberOfTrustedBy = trustedByArray | size %}
+              {% assign ctasArray = section.blocks | where: "type", "cta" %}
+              {% assign numberOfCtas = ctasArray | size %}
 
-          {% if numberOfTrustedBy > 0 %}
-            <div class="hero-content_trusted_by__container margin-bottom margin-medium">
-              <div class="hero-content_trusted_by margin-top margin-xlarge">
-                <p class="hero-content_trusted_by__text text-size-tiny text-color-grey-400 uppercase margin-bottom margin-small">{{ section.settings.trusted_by_text }}</p>
-                <div class="hero-content_grid">
-                  {% for block in trustedByArray %}
-                    <img class="hero-content_trusted_by__logo" src="{{ block.settings.icon_url }}" alt="{{ block.settings.icon_alt_text }}" />
+              {% if numberOfCtas > 0 %}
+                <div class="hero-content_ctas margin-top margin-top margin-medium mobile-margin-0">
+
+                  {% for block in ctasArray %}
+                    <div class="margin-top mobile-margin-small">
+                      <a 
+                        class="button {% if forloop.first %}margin-right margin-small{% endif %}{% if forloop.first == false %} is-secondary{% endif %}" 
+                        href="{{ block.settings.cta_link }}"
+                      >
+                        <span>{{ block.settings.cta_text }}</span>
+                      </a>
+                    </div>
                   {% endfor %} 
                 </div>
-              </div>
-            </div>
-          {% endif %}
-        </div>
-      </div>
-      <div class="hero-image {{ section.settings.layout_style }}">
-        {%- comment -%} <img src="{{ section.settings.image_url | image_url }}" alt="{{ section.settings.image_alt_text }}" /> {%- endcomment -%}
+              {% endif %}
 
-        {{ section.settings.image | image_url: width: 800 | image_tag:
-          loading: 'lazy',
-          widths: '550, 720, 990, 1100, 1500, 2200, 3000'
-        }}
+              {% assign trustedByArray = section.blocks | where: "type", "trusted_by" %}
+              {% assign numberOfTrustedBy = trustedByArray | size %}
+
+              {% if numberOfTrustedBy > 0 %}
+                <div class="hero-content_trusted_by__container margin-bottom margin-medium">
+                  <div class="hero-content_trusted_by margin-top margin-xlarge">
+                    <p class="hero-content_trusted_by__text text-size-tiny text-color-grey-400 uppercase margin-bottom margin-small">{{ section.settings.trusted_by_text }}</p>
+                    <div class="hero-content_grid">
+                      {% for block in trustedByArray %}
+                        <img class="hero-content_trusted_by__logo" src="{{ block.settings.icon_url }}" alt="{{ block.settings.icon_alt_text }}" />
+                      {% endfor %} 
+                    </div>
+                  </div>
+                </div>
+              {% endif %}
+            </div>
+          </div>
+          <div class="hero-image {{ section.settings.layout_style }}">
+            {%- comment -%} <img src="{{ section.settings.image_url | image_url }}" alt="{{ section.settings.image_alt_text }}" /> {%- endcomment -%}
+
+            {{ section.settings.image | image_url: width: 800 | image_tag:
+              loading: 'lazy',
+              widths: '550, 720, 990, 1100, 1500, 2200, 3000'
+            }}
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -125,6 +130,11 @@
       "content": "Layout Settings"
     },
     {
+      "type": "checkbox",
+      "id": "enable_card_style",
+      "label": "Enable Card Style"
+    },
+    {
       "type": "select",
       "id": "text_vertical_alignment",
       "options": [
@@ -139,11 +149,6 @@
       ],
       "default": "flex-end",
       "label": "Text Vertical Alignment (Desktop)"
-    },
-    {
-      "type": "checkbox",
-      "id": "enable_card_style",
-      "label": "Enable Card Style"
     },
     {
       "type": "select",
