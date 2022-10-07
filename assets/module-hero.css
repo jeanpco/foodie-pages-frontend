@@ -2,9 +2,14 @@
   display: block;
 }
 
-.hero-content_trusted_by {
-  display: flex;
+.hero-content_grid {
+  display: grid;
   align-items: center;
+  /* first row is full, rest of rows are by 4 */
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-gap: 1rem;
+  column-gap: 2rem;
 }
 
 .hero-content_trusted_by {

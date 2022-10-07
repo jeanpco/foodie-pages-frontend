@@ -41,11 +41,13 @@
 
           {% if numberOfTrustedBy > 0 %}
             <div class="hero-content_trusted_by__container margin-bottom margin-medium">
-              <div class="hero-content_trusted_by margin-top margin-xxlarge mobile-margin-large">
+              <div class="hero-content_trusted_by margin-top margin-xlarge">
                 <p class="hero-content_trusted_by__text text-size-tiny text-color-grey-400 uppercase margin-bottom margin-small">{{ section.settings.trusted_by_text }}</p>
-                {% for block in trustedByArray %}
-                  <img class="{% if forloop.first %}margin-0{% endif %} hero-content_trusted_by__logo margin-left margin-medium" src="{{ block.settings.icon_url }}" alt="{{ block.settings.icon_alt_text }}" />
-                {% endfor %} 
+                <div class="hero-content_grid">
+                  {% for block in trustedByArray %}
+                    <img class="hero-content_trusted_by__logo" src="{{ block.settings.icon_url }}" alt="{{ block.settings.icon_alt_text }}" />
+                  {% endfor %} 
+                </div>
               </div>
             </div>
           {% endif %}
