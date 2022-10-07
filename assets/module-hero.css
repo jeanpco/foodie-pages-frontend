@@ -7,21 +7,18 @@
   align-items: center;
 }
 
-@media (max-width: 479px) {
-  .hero-content_trusted_by {
-    display: flex;
-    flex-wrap: wrap;
-  } 
+.hero-content_trusted_by {
+  display: flex;
+  flex-wrap: wrap;
+} 
 
-  .hero-content_trusted_by__text {
-    width: 100%;
-  }
-
-  .hero-content_trusted_by__logo {
-    max-height: 1rem;
-  }
+.hero-content_trusted_by__text {
+  width: 100%;
 }
 
+.hero-content_trusted_by__logo {
+  max-height: 1rem;
+}
 .hero-container.rows {
   flex-direction: column;
 }

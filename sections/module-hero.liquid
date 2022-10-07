@@ -9,13 +9,8 @@
             overline: section.settings.overline, 
             title: section.settings.title,
             text_horizontal_alignment: 'left',
+            heading_style: section.settings.heading_style,
           %}
-          {% if section.settings.overline != blank %}
-            <small class="hero-content_overline text-size-tiny uppercase text-color-tertiary margin-bottom margin-xxsmall mobile-margin-xsmall">{{ section.settings.overline }}</small>
-          {% endif %}
-          {% if section.settings.title != blank %}
-            <h1 class="hero-content_title dual-font-title">{{ section.settings.title }}</h1> 
-          {% endif %}
         </div>
         <div class="hero-content_secondary">
           {% if section.settings.body != blank %}
@@ -46,10 +41,10 @@
 
           {% if numberOfTrustedBy > 0 %}
             <div class="hero-content_trusted_by__container margin-bottom margin-medium">
-              <div class="hero-content_trusted_by margin-top margin-xxlarge mobile-margin-xlarge">
-                <p class="hero-content_trusted_by__text text-size-tiny text-color-grey-400 uppercase margin-bottom mobile-margin-small">{{ section.settings.trusted_by_text }}</p>
+              <div class="hero-content_trusted_by margin-top margin-xxlarge mobile-margin-large">
+                <p class="hero-content_trusted_by__text text-size-tiny text-color-grey-400 uppercase margin-bottom margin-small">{{ section.settings.trusted_by_text }}</p>
                 {% for block in trustedByArray %}
-                  <img class="{% if forloop.first %}mobile-margin-0{% endif %} hero-content_trusted_by__logo margin-left margin-medium" src="{{ block.settings.icon_url }}" alt="{{ block.settings.icon_alt_text }}" />
+                  <img class="{% if forloop.first %}margin-0{% endif %} hero-content_trusted_by__logo margin-left margin-medium" src="{{ block.settings.icon_url }}" alt="{{ block.settings.icon_alt_text }}" />
                 {% endfor %} 
               </div>
             </div>
@@ -206,7 +201,7 @@
     {
       "type": "trusted_by",
       "name": "Trusted By",
-      "limit": 4,
+      "limit": 8,
       "settings": [
         {
           "type": "url",
