@@ -1,5 +1,7 @@
 {{ 'module-hero.css' | asset_url | stylesheet_tag }}
 
+{% assign enable_card_style = section.settings.enable_card_style %}
+
 <div class="hero-background {{ section.settings.background_color }}">
   <div class="padding-vertical padding-xlarge">
     <div class="container hero-container {{ section.settings.layout_style }}">
@@ -137,6 +139,11 @@
       ],
       "default": "flex-end",
       "label": "Text Vertical Alignment (Desktop)"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_card_style",
+      "label": "Enable Card Style"
     },
     {
       "type": "select",
