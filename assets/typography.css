@@ -456,3 +456,7 @@ figcaption {
 .text-rich-text ol {
   margin-bottom: 1.5rem;
 }
+
+small {
+  display: block;
+}

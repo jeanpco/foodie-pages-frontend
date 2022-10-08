@@ -1,0 +1,92 @@
+<script src="{{ 'inview.min.js' | asset_url }}"></script>
+<script src="https://unpkg.com/split-type"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js" integrity="sha512-VEBjfxWUOyzl0bAwh4gdLEaQyDYPvLrZql3pw1ifgb6fhEvZl9iDDehwHZ+dsMzA0Jfww8Xt7COSZuJ/slxc4Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<style>
+  .line {
+    transform: translateY(107%);
+    transform: skewY(2deg);
+    opacity: 0;
+  }
+
+  .line-wrapper {
+    overflow: hidden;
+  }
+
+  .overline {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+</style>
+
+<script type="module">
+  CSSPlugin.defaultTransformPerspective = 1200;
+
+  const initAnimation = () => {
+    const staggerGroups = Array.from(document.querySelectorAll('.shopify-section'))
+    const richTextHeadings = Array.from(document.querySelectorAll('h1:not(:empty) > p, h2:not(:empty) > p'))
+    const regularHeadings = Array.from(document.querySelectorAll('h1:not(:has(p)), h2:not(:has(p))'))
+
+    const headings = [...richTextHeadings, ...regularHeadings]
+
+    if (!staggerGroups.length) return
+
+    new SplitType(headings, {
+      types: 'words, lines',
+      linesClass: 'gsap-stagger-line',
+    })
+
+    Array.from(document.querySelectorAll('.line')).forEach(line => {
+        const wrapper = document.createElement('div')
+        wrapper.classList.add('line-wrapper')
+        line.parentNode.insertBefore(wrapper, line)
+        wrapper.appendChild(line)
+      })
+
+    inView.threshold(0.2) 
+
+    // find scrolling direction
+    let lastScrollTop = 0
+    let scrollDirection = 'down'
+
+    window.addEventListener('scroll', () => {
+      const st = window.pageYOffset || document.documentElement.scrollTop
+      if (st > lastScrollTop) {
+        scrollDirection = 'down'
+      } else {
+        scrollDirection = 'up'
+      }
+      lastScrollTop = st <= 0 ? 0 : st
+    })
+
+    inView('.shopify-section').on('enter', (section) => {
+
+      if (scrollDirection == 'up') return
+
+      // section in view
+      const sectionId = section.id
+      const overlines = Array.from(section.querySelectorAll('.overline'))
+
+      const lines = section.querySelectorAll('.line');
+
+      gsap.fromTo([...overlines, ...section.querySelectorAll('.line')], {
+        y: '107%',
+        opacity: 0,
+      }, 
+      {
+        y: '0%',
+        opacity: 1,
+        duration: 1,
+        ease: 'power4.out',
+        transform: 'skewY(0deg)',
+        stagger: {
+          each: 0.2,
+          from: 'start',
+        },
+      })
+    })
+  }
+
+  initAnimation()
+  
+</script>
