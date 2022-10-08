@@ -24,8 +24,8 @@
 
   const initAnimation = () => {
     const staggerGroups = Array.from(document.querySelectorAll('.shopify-section'))
-    const richTextHeadings = Array.from(document.querySelectorAll('h1:not(:empty) > p, h2:not(:empty) > p'))
-    const regularHeadings = Array.from(document.querySelectorAll('h1:not(:has(p)), h2:not(:has(p))'))
+    const richTextHeadings = Array.from(document.querySelectorAll('h1:not(:empty) > *, h2:not(:empty) > *'))
+    const regularHeadings = Array.from(document.querySelectorAll('h1:not(:has(*)), h2:not(:has(*))'))
 
     const headings = [...richTextHeadings, ...regularHeadings]
 
