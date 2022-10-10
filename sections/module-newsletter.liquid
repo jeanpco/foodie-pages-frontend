@@ -56,7 +56,7 @@
       </div>
 
       {%- if form.errors -%}
-        <small class="newsletter-form__message form__message" id="Newsletter-error--{{ section.id }}">
+        <small class="text-size-tiny text-color-grey-500 newsletter-form__message form__message" id="Newsletter-error--{{ section.id }}">
           {% render 'icon-error' %}
           {{ form.errors.translated_fields['email'] | capitalize }} 
           {{ form.errors.messages['email'] }}
@@ -64,7 +64,7 @@
       {%- endif -%}
 
       {%- if form.posted_successfully? -%}
-        <h3 class="newsletter-form__message newsletter-form__message--success form__message" id="Newsletter-success--{{ section.id }}" tabindex="-1" autofocus>
+        <h3 class="text-size-tiny text-color-grey-500 newsletter-form__message newsletter-form__message--success form__message" id="Newsletter-success--{{ section.id }}" tabindex="-1" autofocus>
           {% render 'icon-success' %}
           {{ success_message }}
         </h3>
