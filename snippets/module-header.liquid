@@ -14,4 +14,17 @@
       <h2 class="module-header_title dual-font-title">{{ title }}</h2>
     {% endif %}
   {% endif %}
+
+  {% if cta_text != blank and cta_link != blank %}
+    <div class="margin-auto">
+      {% 
+        render 'button', 
+        cta_text: cta_text, 
+        cta_link: cta_link,
+        class: 'margin-top margin-medium',
+        theme: '',
+        preventClick: false,
+      %}
+    </div>
+  {% endif %}
 </div>

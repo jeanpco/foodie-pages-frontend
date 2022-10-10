@@ -2,6 +2,10 @@
    
 }
 
+.swiper-slide {
+  box-sizing: border-box;
+}
+
 .swiper-button-prev,
 .swiper-button-next,
 .swiper-scrollbar-drag {
@@ -34,6 +38,16 @@
 
 .swiper .icon-next-arrow {
   right: 0;
+}
+
+@media (min-width: 991px) {
+  .swiper .icon-prev-arrow {
+    left: -1.5rem;
+  }
+  
+  .swiper .icon-next-arrow {
+    right: -1.5rem;
+  }
 }
 
 .swiper-scrollbar {

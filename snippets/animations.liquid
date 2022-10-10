@@ -4,8 +4,7 @@
 
 <style>
   .line {
-    transform: translateY(107%);
-    transform: skewY(2deg);
+    transform: translateY(107%) skewY(2deg);
     opacity: 0;
   }
 
@@ -37,43 +36,20 @@
     })
 
     Array.from(document.querySelectorAll('.line')).forEach(line => {
-        const wrapper = document.createElement('div')
-        wrapper.classList.add('line-wrapper')
-        line.parentNode.insertBefore(wrapper, line)
-        wrapper.appendChild(line)
-      })
+      const wrapper = document.createElement('div')
+      wrapper.classList.add('line-wrapper')
+      line.parentNode.insertBefore(wrapper, line)
+      wrapper.appendChild(line)
+    })
 
     inView.threshold(0.2) 
 
-    // find scrolling direction
-    let lastScrollTop = 0
-    let scrollDirection = 'down'
-
-    window.addEventListener('scroll', () => {
-      const st = window.pageYOffset || document.documentElement.scrollTop
-      if (st > lastScrollTop) {
-        scrollDirection = 'down'
-      } else {
-        scrollDirection = 'up'
-      }
-      lastScrollTop = st <= 0 ? 0 : st
-    })
-
     inView('.shopify-section').on('enter', (section) => {
-
-      if (scrollDirection == 'up') return
-
-      // section in view
       const sectionId = section.id
       const overlines = Array.from(section.querySelectorAll('.overline'))
-
       const lines = section.querySelectorAll('.line');
 
-      gsap.fromTo([...overlines, ...section.querySelectorAll('.line')], {
-        y: '107%',
-        opacity: 0,
-      }, 
-      {
+      gsap.to([...overlines, ...section.querySelectorAll('.line')], {
         y: '0%',
         opacity: 1,
         duration: 1,

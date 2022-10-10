@@ -8,24 +8,16 @@
 
 <div class="module-testimonial-slider container" style="overflow: hidden;" data-js-element="testimonial-slider-module-{{ section.id }}">
   <div class="margin-vertical margin-huge">
-    <div class="padding-bottom padding-xxlarge">
+    <div class="padding-bottom padding-xlarge">
       {% render 'module-header', 
         overline: overline, 
         title: title,
         cta_text: cta_text,
         cta_link: cta_link,
       %}
-      {% 
-        render 'button', 
-        cta_text: cta_text, 
-        cta_link: cta_link,
-        class: 'margin-top margin-xsmall',
-        theme: '',
-        preventClick: false,
-      %}
     </div>
 
-    <div class="swiper module-testimonial-slider-module-swiper" data-js-element="module-testimonial-slider-module-swiper-{{ section.id }}">
+    <div class="swiper testimonial-slider-module-swiper" data-js-element="testimonial-slider-module-swiper-{{ section.id }}">
 
       <!-- Additional required wrapper -->
       <div class="swiper-wrapper padding-bottom padding-xlarge">
@@ -33,13 +25,16 @@
         {% for block in section.blocks %}
 
         <!-- Slides -->
-        <div class="testimonial-slide swiper-slide background-color-mar-10 center padding-horizontal padding-small">
-
-          <div class="padding-vertical padding-large">
-              <img class="testimonial-icon" src="https://cdn.shopify.com/s/files/1/0264/5000/2013/files/bxs_quote-alt-right.png?v=1665429847" alt="Quote Icon" />
-              <p>{{ block.settings.text }}</p>
-            </div>
-
+        <div class="testimonial-slide swiper-slide background-color-mar-10 center padding-horizontal padding-large">
+          <div class="testimonial-slide-content padding-vertical padding-large left">
+            <img class="testimonial-icon margin-bottom margin-medium" src="https://cdn.shopify.com/s/files/1/0264/5000/2013/files/bxs_quote-alt-right.png?v=1665429847" alt="Quote Icon" />
+            <p>{{ block.settings.text }}</p>
+            <img src="{{ block.settings.image | image_url: width: 300 }}"
+              class="testimonial-client-logo margin-top margin-medium"
+              alt="Quote Icon"
+              loading="lazy"
+            >
+          </div>
         </div>
 
         {% endfor %}
@@ -60,11 +55,9 @@
 
 <script type="module">
   const initTestimonialsSlider = () => {
-    const swiperSliderContainer = document.querySelector("[data-js-element='testimonial-slider-module-{{ section.id }}']")
+    const swiperTestimonialSliderContainer = document.querySelector("[data-js-element='testimonial-slider-module-swiper-{{ section.id }}']")
 
-    console.log('swiperSliderContainer', swiperSliderContainer)
-
-    const swiper = new Swiper(swiperSliderContainer, {
+    const swiper = new Swiper(swiperTestimonialSliderContainer, {
       spaceBetween: 24,
       freeMode: true,
       slidesPerView: "auto",
@@ -82,7 +75,16 @@
       breakpoints: {
       // when window width is >= 320px
       1681: {
-        slidesPerView: 5,
+        slidesPerView: 3,
+      },
+      1100: {
+        slidesPerView: 2.7,
+      },
+      991: {
+        slidesPerView: 2.4,
+      },
+      500: {
+        slidesPerView: 1,
       },
     }
     });

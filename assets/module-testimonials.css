@@ -1,9 +1,29 @@
 .testimonial-slide {
   border-radius: 16px;
-  width: 31.25rem !important;
 }
 
 .testimonial-icon {
   width: 2.5rem;
   height: auto;
+}
+
+.testimonial-client-logo {
+  height: 1.5rem;
+  width: auto;
+}
+
+@media (max-width: 1680px) {
+  .testimonial-slider-module-swiper {
+    overflow: visible !important;
+  }
+}
+
+@media (min-width: 1681px) {
+  .module-testimonial-slider .icon-prev-arrow {
+    left: 1rem;
+  }
+  
+  .module-testimonial-slider .icon-next-arrow {
+    right: 1rem;
+  }
 }
