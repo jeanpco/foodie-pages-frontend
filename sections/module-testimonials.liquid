@@ -1,10 +1,85 @@
-<div class="container">
-  <h1>Module Testimonials</h1>
-  <div>{{ section.settings.richtext }}</div>
-  {% for block in section.blocks %}
-    <div>{{ block.settings.richtext }}</div>
-  {% endfor %}
+{{ 'swiper.css' | asset_url | stylesheet_tag }}
+
+{% assign overline = section.settings.overline %}
+{% assign title = section.settings.title %}
+{% assign cta_text = section.settings.cta_text %}
+{% assign cta_link = section.settings.cta_link %}
+
+<div class="module-testimonial-slider container" style="overflow: hidden;" data-js-element="module-testimonial-slider-module-{{ section.id }}">
+  <div class="margin-vertical margin-huge">
+    <div class="padding-bottom padding-xxlarge">
+      {% render 'module-header', 
+        overline: overline, 
+        title: title,
+        cta_text: cta_text,
+        cta_link: cta_link,
+      %}
+    </div>
+
+    <div class="swiper module-testimonial-slider-module-swiper" data-js-element="module-testimonial-slider-module-swiper-{{ section.id }}">
+
+      <!-- Additional required wrapper -->
+      <div class="swiper-wrapper padding-bottom padding-xlarge">
+
+        {% for block in section.blocks %}
+
+
+
+        <!-- Slides -->
+        <div class="tag-slide swiper-slide background-color-azul-verdoso-10 center padding-horizontal padding-small">
+          <h3 class="heading-style-h4">{{ block_title }}</h3>
+          {% 
+            render 'button', 
+            cta_text: section.settings.cta_text, 
+            cta_link: '',
+            class: 'margin-top margin-xsmall',
+            theme: '',
+            preventClick: true,
+          %}
+        </div>
+
+        {% endfor %}
+
+      </div>
+
+      {% render 'icon-prev-arrow' %}
+      {% render 'icon-next-arrow' %}
+
+      <div class="swiper-scrollbar"></div>
+    </div>
+  </div>
 </div>
+
+<script type="module">
+  const initTagSlider = () => {
+    const swiperSliderContainer = document.querySelector("[data-js-element='testimonial-slider-{{ section.id }}']")
+
+    const swiper = new Swiper(swiperSliderContainer, {
+      spaceBetween: 24,
+      freeMode: true,
+      slidesPerView: "auto",
+      mousewheel: {
+          forceToAxis: true,
+        },
+      scrollbar: {
+        el: ".swiper-scrollbar",
+        draggable: true,
+      },
+      navigation: {
+        nextEl: '.icon-next-arrow',
+        prevEl: '.icon-prev-arrow',
+      },
+      breakpoints: {
+      // when window width is >= 320px
+      1681: {
+        slidesPerView: 5,
+      },
+    }
+    });
+  }
+
+  initTagSlider()
+</script>
 
 {% schema %}
 {
@@ -13,23 +88,49 @@
   "class": "section section-testimonials",
   "settings": [
     {
+      "type": "text",
+      "id": "overline",
+      "default": "Quick Shop",
+      "label": "Overline"
+    },
+    {
       "type": "richtext",
-      "id": "richtext",
-      "default": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.</p>",
-      "label": "t:sections.rich-text.blocks.text.settings.text.label"
+      "id": "title",
+      "default": "<p>Explore gifts by category</p>",
+      "label": "Title"
+    },
+    {
+      "type": "text",
+      "id": "cta_text",
+      "default": "Shop now",
+      "label": "CTA Text"
+    },
+    {
+      "type": "url",
+      "id": "cta_link",
+      "label": "CTA Link"
     }
   ],
   "blocks": [
     {
-      "type": "cta",
-      "name": "CTA",
-      "limit": 2,
+      "type": "testimonial",
+      "name": "Testimonial",
       "settings": [
         {
-          "type": "richtext",
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "textarea",
           "id": "text",
-          "default": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.</p>",
-          "label": "t:sections.rich-text.blocks.text.settings.text.label"
+          "default": "Foodiepages has been a trusted partner of Dynacare for several years, providing quality, trusted and reliable services for important gifts for staff, clients, and executives. Not only are they thorough and dependable – but Foodiepages also makes strategic and impactful recommendations for us to bring our gifting to the next level. The costs are affordable and they go the extra mile to ensure the recipient(s) feel important and valued. I would recommend Foodiepages to anyone looking for a quality gifting partner.",
+          "label": "Body"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Client Logo"
         }
       ]
     }
