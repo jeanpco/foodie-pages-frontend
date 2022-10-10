@@ -145,6 +145,7 @@
     },
     "module-tag-slider": {
       "type": "module-tag-slider",
+      "disabled": true,
       "blocks": {
         "6771ce22-b64c-42dd-b6a7-f03fa2cf7df9": {
           "type": "collection",
