@@ -400,6 +400,13 @@
         "overline": "Trusted by the world's best companies"
       }
     },
+    "module-newsletter": {
+      "type": "module-newsletter",
+      "settings": {
+        "title": "We have high standards for emails too.",
+        "body": "Sign up with your email to receive news and updates on our new gift box releases."
+      }
+    },
     "module-columns": {
       "type": "module-columns",
       "disabled": true,
@@ -445,14 +452,6 @@
         "body": "Choose from a selection of pre-built team care packages, or build your own custom care package. All of our care packages are filled with high quality locally-sourced goods and designed to delight your team.",
         "cta_text": "Shop all",
         "cta_link": ""
-      }
-    },
-    "module-newsletter": {
-      "type": "module-newsletter",
-      "disabled": true,
-      "settings": {
-        "title": "We have high standards for emails too.",
-        "body": "Sign up with your email to receive news and updates on our new gift box releases."
       }
     },
     "module-popup": {
@@ -505,11 +504,11 @@
     "5810d53f-1644-49ef-8085-4cce0ae7ae81",
     "module-testimonials",
     "module-logos",
+    "module-newsletter",
     "module-columns",
     "module-contact-form",
     "module-featured-products",
     "module-features",
-    "module-newsletter",
     "module-popup",
     "module-recommended-products",
     "module-rich-text",
