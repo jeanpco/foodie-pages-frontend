@@ -59,8 +59,6 @@
             </div>
           </div>
           <div class="hero-image {{ section.settings.layout_style }}">
-            {%- comment -%} <img src="{{ section.settings.image_url | image_url }}" alt="{{ section.settings.image_alt_text }}" /> {%- endcomment -%}
-
             {{ section.settings.image | image_url: width: 800 | image_tag:
               loading: 'lazy',
               widths: '550, 720, 990, 1100, 1500, 2200, 3000'

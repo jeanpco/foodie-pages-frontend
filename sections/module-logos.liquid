@@ -17,7 +17,7 @@
 
             <div class="module-logos">
               {% for block in section.blocks %}
-                <img src="{{ block.settings.image }}" class="logos-client-logo margin-right margin-large" alt="Quote Icon" />
+                <img src="{{ block.settings.icon_url }}" class="logos-client-logo margin-right margin-large" alt="Quote Icon" />
               {% endfor %}
             </div>
         </div>
@@ -62,7 +62,7 @@
       "settings": [
         {
           "type": "image_picker",
-          "id": "image",
+          "id": "icon_url",
           "label": "Client Logo"
         }
       ]
