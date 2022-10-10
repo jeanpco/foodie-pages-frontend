@@ -15,9 +15,9 @@
       <div>
         <div class="marquee3k" data-speed="0.5" data-reverse="">
 
-            <div class="module-logos">
+            <div class="module-logos margin-right margin-large">
               {% for block in section.blocks %}
-                <img src="{{ block.settings.icon_url }}" class="logos-client-logo margin-right margin-large" alt="Quote Icon" />
+                <img src="{{ block.settings.icon_url }}" class="logos-client-logo {% unless forloop.last %}margin-right margin-large{% endunless %}" alt="Quote Icon" />
               {% endfor %}
             </div>
         </div>
