@@ -145,7 +145,6 @@
     },
     "module-tag-slider": {
       "type": "module-tag-slider",
-      "disabled": true,
       "blocks": {
         "6771ce22-b64c-42dd-b6a7-f03fa2cf7df9": {
           "type": "collection",
@@ -309,7 +308,6 @@
         "413596fd-9194-4b45-a548-2a8f4a2b02e7": {
           "type": "testimonial",
           "settings": {
-            "title": "",
             "text": "Foodiepages has been a trusted partner of Dynacare for several years, providing quality, trusted and reliable services for important gifts for staff, clients, and executives. Not only are they thorough and dependable – but Foodiepages also makes strategic and impactful recommendations for us to bring our gifting to the next level. The costs are affordable and they go the extra mile to ensure the recipient(s) feel important and valued. I would recommend Foodiepages to anyone looking for a quality gifting partner.",
             "image": "shopify:\/\/shop_images\/Dynacare_master_logo_EN_RGB_copy.png"
           }
@@ -317,7 +315,6 @@
         "5a9625b0-d533-4873-9e69-ed01dccf2d33": {
           "type": "testimonial",
           "settings": {
-            "title": "",
             "text": "Before Foodiepages, we didn't have a formal New Hire gifting program. Now that we've moved to a hybrid workforce model, partnering with Foodiepages has allowed us to streamline the process, ensure a consistent, memorable and welcoming onboarding experience for all new employees, whether they are in the office or working remotely.",
             "image": "shopify:\/\/shop_images\/Symcor_Symcor_Releases_Real_time_API_Helping_Financial_Instituti_copy.png"
           }
@@ -325,7 +322,6 @@
         "90ef79c2-d540-4cf3-aa0c-ff6af8769aef": {
           "type": "testimonial",
           "settings": {
-            "title": "",
             "text": "We've had the pleasure of working with the Foodiepages team on gifts for our company of 500+ on numerous occasions over the past couple of years. The Foodiepages team offers the highest level of customer service and curates gifts that perfectly fit the occasion you are celebrating. No detail is ever forgotten, and even the shipping process has always been top-notch. I would highly recommend working with Foodiepages for individual gift boxes, or large-scale corporate gifting projects.",
             "image": "shopify:\/\/shop_images\/Jobber-NavyFull_copy.png"
           }
@@ -333,7 +329,6 @@
         "20ab2288-3c55-4bac-9b41-9d5e76f2153d": {
           "type": "testimonial",
           "settings": {
-            "title": "",
             "text": "Foodiepages has been a trusted partner of Dynacare for several years, providing quality, trusted and reliable services for important gifts for staff, clients, and executives. Not only are they thorough and dependable.",
             "image": "shopify:\/\/shop_images\/Jobber-NavyFull_copy.png"
           }
@@ -341,7 +336,6 @@
         "08490811-f40b-41f0-9609-d353019e95fd": {
           "type": "testimonial",
           "settings": {
-            "title": "",
             "text": "Foodiepages has been a trusted partner of Dynacare for several years, providing quality, trusted and reliable services for important gifts for staff, clients, and executives. Not only are they thorough and dependable – but Foodiepages also makes strategic and impactful recommendations for us to bring our gifting to the next level. The costs are affordable and they go the extra mile to ensure the recipient(s) feel important and valued. I would recommend Foodiepages to anyone looking for a quality gifting partner.",
             "image": "shopify:\/\/shop_images\/Symcor_Symcor_Releases_Real_time_API_Helping_Financial_Instituti_copy.png"
           }
