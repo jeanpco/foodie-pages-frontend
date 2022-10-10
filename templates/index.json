@@ -400,13 +400,6 @@
         "overline": "Trusted by the world's best companies"
       }
     },
-    "module-newsletter": {
-      "type": "module-newsletter",
-      "settings": {
-        "title": "We have high standards for emails too.",
-        "body": "Sign up with your email to receive news and updates on our new gift box releases."
-      }
-    },
     "module-columns": {
       "type": "module-columns",
       "disabled": true,
@@ -504,7 +497,6 @@
     "5810d53f-1644-49ef-8085-4cce0ae7ae81",
     "module-testimonials",
     "module-logos",
-    "module-newsletter",
     "module-columns",
     "module-contact-form",
     "module-featured-products",
