@@ -1,9 +1,46 @@
-<div class="container">
-  <div>{{ section.settings.overline }}</div>
-  {% for block in section.blocks %}
-    <div>{{ block.settings.logo_url }}</div>
-  {% endfor %}
+{% assign overline = section.settings.overline %}
+
+<div style="overflow: hidden;">
+  <div class="module-logos container" data-js-element="logos-module-{{ section.id }}">
+    <div class="margin-vertical margin-huge">
+      <div class="padding-bottom padding-xlarge">
+        {% render 'module-header', 
+          overline: overline, 
+          title: '',
+          cta_text: '',
+          cta_link: '',
+        %}
+      </div>
+
+      <div class="padding-bottom padding-xlarge">
+        <div class="marquee3k" data-speed="0.5" data-reverse="">
+
+            <div class="module-logos">
+              {% for block in section.blocks %}
+                <img src="{{ block.settings.image }}" class="logos-client-logo margin-right margin-large" alt="Quote Icon" />
+              {% endfor %}
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
+
+<style>
+
+  .module-logos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  }
+
+</style>
+
+<script src="https://cdn.jsdelivr.net/npm/marquee3000@1.1.1/marquee3k.min.js"></script>
+
+<script type="module">
+  Marquee3k.init();
+  console.log("marquee", Marquee3k)
+</script> 
 
 {% schema %}
 {
@@ -14,7 +51,7 @@
     {
       "type": "text",
       "id": "overline",
-      "default": "Trusted by the world's best companies",
+      "default": "Quick Shop",
       "label": "Overline"
     }
   ],
@@ -24,9 +61,9 @@
       "name": "Logo",
       "settings": [
         {
-          "type": "url",
-          "id": "logo_url",
-          "label": "Logo - URL"
+          "type": "image_picker",
+          "id": "image",
+          "label": "Client Logo"
         }
       ]
     }
