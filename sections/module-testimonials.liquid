@@ -1,11 +1,12 @@
 {{ 'swiper.css' | asset_url | stylesheet_tag }}
+{{ 'module-testimonials.css' | asset_url | stylesheet_tag }}
 
 {% assign overline = section.settings.overline %}
 {% assign title = section.settings.title %}
 {% assign cta_text = section.settings.cta_text %}
 {% assign cta_link = section.settings.cta_link %}
 
-<div class="module-testimonial-slider container" style="overflow: hidden;" data-js-element="module-testimonial-slider-module-{{ section.id }}">
+<div class="module-testimonial-slider container" style="overflow: hidden;" data-js-element="testimonial-slider-module-{{ section.id }}">
   <div class="margin-vertical margin-huge">
     <div class="padding-bottom padding-xxlarge">
       {% render 'module-header', 
@@ -13,6 +14,14 @@
         title: title,
         cta_text: cta_text,
         cta_link: cta_link,
+      %}
+      {% 
+        render 'button', 
+        cta_text: cta_text, 
+        cta_link: cta_link,
+        class: 'margin-top margin-xsmall',
+        theme: '',
+        preventClick: false,
       %}
     </div>
 
@@ -23,19 +32,14 @@
 
         {% for block in section.blocks %}
 
-
-
         <!-- Slides -->
-        <div class="tag-slide swiper-slide background-color-azul-verdoso-10 center padding-horizontal padding-small">
-          <h3 class="heading-style-h4">{{ block_title }}</h3>
-          {% 
-            render 'button', 
-            cta_text: section.settings.cta_text, 
-            cta_link: '',
-            class: 'margin-top margin-xsmall',
-            theme: '',
-            preventClick: true,
-          %}
+        <div class="testimonial-slide swiper-slide background-color-mar-10 center padding-horizontal padding-small">
+
+          <div class="padding-vertical padding-large">
+              <img class="testimonial-icon" src="https://cdn.shopify.com/s/files/1/0264/5000/2013/files/bxs_quote-alt-right.png?v=1665429847" alt="Quote Icon" />
+              <p>{{ block.settings.text }}</p>
+            </div>
+
         </div>
 
         {% endfor %}
@@ -50,9 +54,15 @@
   </div>
 </div>
 
+<style>
+  
+</style>
+
 <script type="module">
-  const initTagSlider = () => {
-    const swiperSliderContainer = document.querySelector("[data-js-element='testimonial-slider-{{ section.id }}']")
+  const initTestimonialsSlider = () => {
+    const swiperSliderContainer = document.querySelector("[data-js-element='testimonial-slider-module-{{ section.id }}']")
+
+    console.log('swiperSliderContainer', swiperSliderContainer)
 
     const swiper = new Swiper(swiperSliderContainer, {
       spaceBetween: 24,
@@ -62,12 +72,12 @@
           forceToAxis: true,
         },
       scrollbar: {
-        el: ".swiper-scrollbar",
+        el: ".module-testimonial-slider .swiper-scrollbar",
         draggable: true,
       },
       navigation: {
-        nextEl: '.icon-next-arrow',
-        prevEl: '.icon-prev-arrow',
+        nextEl: '.module-testimonial-slider .icon-next-arrow',
+        prevEl: '.module-testimonial-slider .icon-prev-arrow',
       },
       breakpoints: {
       // when window width is >= 320px
@@ -78,7 +88,7 @@
     });
   }
 
-  initTagSlider()
+  initTestimonialsSlider()
 </script>
 
 {% schema %}
@@ -116,11 +126,6 @@
       "type": "testimonial",
       "name": "Testimonial",
       "settings": [
-        {
-          "type": "text",
-          "id": "title",
-          "label": "Title"
-        },
         {
           "type": "textarea",
           "id": "text",
