@@ -355,6 +355,58 @@
         "cta_link": "shopify:\/\/pages\/contact-us"
       }
     },
+    "module-logos": {
+      "type": "module-logos",
+      "blocks": {
+        "d16463c9-aaba-4de8-9849-e283bdd1cbb0": {
+          "type": "logo",
+          "settings": {
+            "logo_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0601\/1709\/0544\/files\/Path.svg?v=1664989934"
+          }
+        },
+        "e5d543c3-801b-4ebf-8c23-e0f99191af2f": {
+          "type": "logo",
+          "settings": {
+            "logo_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0601\/1709\/0544\/files\/Path.svg?v=1664989934"
+          }
+        },
+        "cf18777b-4730-49c1-8cd2-aa7ab06ea0f4": {
+          "type": "logo",
+          "settings": {
+            "logo_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0601\/1709\/0544\/files\/Path.svg?v=1664989934"
+          }
+        },
+        "dd4d842b-cde5-4275-a9a5-578d74341c1b": {
+          "type": "logo",
+          "settings": {
+            "logo_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0601\/1709\/0544\/files\/Path.svg?v=1664989934"
+          }
+        },
+        "166cc9e1-af24-425f-acf6-5a0408f6dc50": {
+          "type": "logo",
+          "settings": {
+            "logo_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0601\/1709\/0544\/files\/Path.svg?v=1664989934"
+          }
+        },
+        "9f865652-2932-4244-a04a-7a7986155a2e": {
+          "type": "logo",
+          "settings": {
+            "logo_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0601\/1709\/0544\/files\/Path.svg?v=1664989934"
+          }
+        }
+      },
+      "block_order": [
+        "d16463c9-aaba-4de8-9849-e283bdd1cbb0",
+        "e5d543c3-801b-4ebf-8c23-e0f99191af2f",
+        "cf18777b-4730-49c1-8cd2-aa7ab06ea0f4",
+        "dd4d842b-cde5-4275-a9a5-578d74341c1b",
+        "166cc9e1-af24-425f-acf6-5a0408f6dc50",
+        "9f865652-2932-4244-a04a-7a7986155a2e"
+      ],
+      "settings": {
+        "overline": "Trusted by the world's best companies"
+      }
+    },
     "module-columns": {
       "type": "module-columns",
       "disabled": true,
@@ -400,13 +452,6 @@
         "body": "Choose from a selection of pre-built team care packages, or build your own custom care package. All of our care packages are filled with high quality locally-sourced goods and designed to delight your team.",
         "cta_text": "Shop all",
         "cta_link": ""
-      }
-    },
-    "module-logos": {
-      "type": "module-logos",
-      "disabled": true,
-      "settings": {
-        "overline": "Trusted by the world's best companies"
       }
     },
     "module-newsletter": {
@@ -466,11 +511,11 @@
     "module-tag-slider",
     "5810d53f-1644-49ef-8085-4cce0ae7ae81",
     "module-testimonials",
+    "module-logos",
     "module-columns",
     "module-contact-form",
     "module-featured-products",
     "module-features",
-    "module-logos",
     "module-newsletter",
     "module-popup",
     "module-recommended-products",
