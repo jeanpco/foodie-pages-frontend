@@ -15,6 +15,10 @@
     {% endif %}
   {% endif %}
 
+  {% if body != blank %}
+    <p class="margin-vertical margin-small text-color-grey-500">{{ body }}</p>
+  {% endif %}
+
   {% if cta_text != blank and cta_link != blank %}
     <div class="margin-auto">
       {% 

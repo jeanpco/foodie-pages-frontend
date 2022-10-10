@@ -875,9 +875,13 @@ deferred-media {
 }
 
 .field_input {
-  padding: 0.5rem 1.5rem 0.5rem 1.5rem;
-  border: 1px solid #757575;
+  padding: 0.5rem 0.75rem 0.5rem 0.75rem;
+  border: 1px solid var(--color-grey-200);
   flex: 1;
+  border-radius: 6px;
+  font-size: 1rem;
+  min-height: 2.5rem;
+  box-sizing: border-box;
 }
 
 .field_input:focus {
@@ -885,8 +889,6 @@ deferred-media {
 }
 
 .field_input::placeholder {
-  font-family: var(--font-body-family);
-  font-size: 1rem;
   color: var(--color-grey-500)
 }
 

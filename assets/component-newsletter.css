@@ -5,13 +5,15 @@
   align-items: center;
   width: 100%;
   position: relative;
+  max-width: var(--width-tablet);
+  margin: 0 auto;
 }
 
 @media screen and (min-width: 750px) {
   .newsletter-form {
     align-items: flex-start;
     margin: 0 auto;
-    max-width: 36rem;
+    max-width: 32.1875rem;
   }
 }
 
@@ -68,4 +70,24 @@
 
 .newsletter-form__button .icon {
   width: 1.5rem;
+}
+
+.input-container {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  margin: 0 auto;
+  gap: 1rem;
+}
+
+.input-container .field-wrapper {
+  max-width: calc(100% - 1rem);
+  margin-right: auto;
+}
+
+#Subscribe.button {
+  white-space: nowrap;
+  min-width: 6.5625rem;
+  min-height: 2.5rem;
 }

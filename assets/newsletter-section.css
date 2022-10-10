@@ -48,3 +48,9 @@
     margin: 0 0 0 1rem;
   }
 }
+
+.newsletter-header {
+  max-width: 48rem;
+  box-sizing: border-box;
+  margin: 0 auto;
+}
