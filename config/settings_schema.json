@@ -367,24 +367,8 @@
         "id": "card_color_scheme",
         "options": [
           {
-            "value": "accent-1",
-            "label": "t:sections.all.colors.accent_1.label"
-          },
-          {
-            "value": "accent-2",
-            "label": "t:sections.all.colors.accent_2.label"
-          },
-          {
-            "value": "background-1",
-            "label": "t:sections.all.colors.background_1.label"
-          },
-          {
             "value": "grey-75",
             "label": "Grey 75"
-          },
-          {
-            "value": "inverse",
-            "label": "t:sections.all.colors.inverse.label"
           }
         ],
         "default": "grey-75",
