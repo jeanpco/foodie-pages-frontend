@@ -1,4 +1,4 @@
-{{ 'component-card.css' | asset_url | stylesheet_tag }}
+{{ 'card-pdp.css' | asset_url | stylesheet_tag }}
 {{ 'component-price.css' | asset_url | stylesheet_tag }}
 
 {%- comment -%} <p>{{ section.settings.collection.title }}</p>
@@ -9,7 +9,7 @@
 <p>{{ section.settings.collection.promo_cta_link }}</p> {%- endcomment -%}
 
 <div class="featured-product_container container">
-  <div class="featured-product_header">
+  <div class="featured-product_header margin-bottom margin-xxlarge">
     {% render 'module-header', 
       overline: section.settings.overline, 
       title: section.settings.title,
@@ -21,8 +21,8 @@
   </div>
   <div class="featured-product_content">
     {%- for product in section.settings.collection.products limit: 5 -%}
-      <li class="product-card-container grid__item">
-        {% render 'card-product',
+      <li class="product-card-container">
+        {% render 'card-pdp',
           card_product: product,
           show_quick_add: false,
           section_id: section.id
@@ -37,8 +37,8 @@
   .featured-product_content {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-column-gap: 0px;
-    grid-row-gap: 0px;
+    grid-column-gap: 1rem;
+    grid-row-gap: 2rem;
   }
 
   .product-card-container {

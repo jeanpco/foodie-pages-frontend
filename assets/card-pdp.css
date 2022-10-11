@@ -1,0 +1,41 @@
+.product-card {
+  cursor: pointer;
+}
+
+.product-card_image-container {
+  position: relative;
+  border-radius: 1.5rem;
+  overflow: hidden;
+}
+
+.product-card_image-container img {
+  aspect-ratio: 1/1;
+  height: 30vw;
+  max-height: 27.5rem;
+  object-fit: contain;
+  transition: transform 0.5s var(--custom-easing);
+}
+
+.product-card:hover img {
+  transform: scale(1.075);
+}
+
+.product-card_badge {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  border-radius: 30px;
+  z-index: 1;
+}
+
+.product-card_badge span {
+  margin-top: -1px;
+  display: block;
+}
+
+.product-card-price .price {
+  font-size: var(--font-h6-size-desktop);
+  line-height: 1.5;
+  font-weight: 300;
+  letter-spacing: 0;
+}
