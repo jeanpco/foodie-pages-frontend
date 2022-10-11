@@ -22,6 +22,10 @@
   background-color: var(--color-grey-50);
 }
 
+.background-color-grey-75 {
+  background-color: var(--color-grey-75);
+}
+
 .background-color-grey-100 {
   background-color: var(--color-grey-100);
 }
@@ -146,6 +150,10 @@
 
 .text-color-grey-50 {
     color: var(--color-grey-50);
+}
+
+.text-color-grey-75 {
+  color: var(--color-grey-75);
 }
 
 .text-color-grey-100 {
