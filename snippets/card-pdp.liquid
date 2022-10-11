@@ -17,7 +17,7 @@
   class="full-unstyled-link product-card"
   aria-labelledby="StandardCardNoMediaLink-{{ section_id }}-{{ card_product.id }} NoMediaStandardBadge-{{ section_id }}-{{ card_product.id }}">
   <div class="product-card_image-container background-color-grey-75">
-    {%- if compare_at_price > price %}
+    {%- if card_product.compare_at_price > card_product.price %}
       <div class="product-card_badge background-color-azul-verdoso-50 text-color-secondary padding-horizontal padding-small">
         <div class="padding-vertical padding-xxsmall"><span>Sale</span></div>
       </div>
