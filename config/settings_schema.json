@@ -379,15 +379,15 @@
             "label": "t:sections.all.colors.background_1.label"
           },
           {
-            "value": "background-2",
-            "label": "t:sections.all.colors.background_2.label"
+            "value": "grey-75",
+            "label": "Grey 75"
           },
           {
             "value": "inverse",
             "label": "t:sections.all.colors.inverse.label"
           }
         ],
-        "default": "background-2",
+        "default": "grey-75",
         "label": "t:sections.all.colors.label"
       },
       {
