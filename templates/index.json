@@ -212,11 +212,11 @@
         "cta_text": "Shop all",
         "cta_link": "shopify:\/\/collections\/all",
         "collection": "gift-baskets",
-        "icon_url": "",
-        "promo_title": "",
-        "promo_body": "",
-        "promo_cta_text": "Shop all",
-        "promo_cta_link": ""
+        "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/Frame_43418.png?v=1665521287",
+        "promo_title": "Looking for gifts for your company?",
+        "promo_body": "Whether it's 25 or 2,500 custom gifts, we've done it. Get in touch with our team today.",
+        "promo_cta_text": "View catalog",
+        "promo_cta_link": "shopify:\/\/collections\/gift-baskets"
       }
     },
     "5810d53f-1644-49ef-8085-4cce0ae7ae81": {
@@ -425,47 +425,6 @@
         "submit_button_text": "Sign up",
         "success_message": "Thank you for subscribing!"
       }
-    },
-    "71b3dd35-4519-4a20-97de-d2c862a844e0": {
-      "type": "collage",
-      "blocks": {
-        "template--15938946662559__71b3dd35-4519-4a20-97de-d2c862a844e0-16655104275b25d4d4-0": {
-          "type": "video",
-          "settings": {
-            "video_url": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
-            "description": "Describe the video",
-            "image_padding": false
-          }
-        },
-        "template--15938946662559__71b3dd35-4519-4a20-97de-d2c862a844e0-16655104275b25d4d4-1": {
-          "type": "product",
-          "settings": {
-            "product": "foodie-gift-box",
-            "second_image": false
-          }
-        },
-        "template--15938946662559__71b3dd35-4519-4a20-97de-d2c862a844e0-16655104275b25d4d4-2": {
-          "type": "collection",
-          "settings": {
-            "collection": ""
-          }
-        }
-      },
-      "block_order": [
-        "template--15938946662559__71b3dd35-4519-4a20-97de-d2c862a844e0-16655104275b25d4d4-0",
-        "template--15938946662559__71b3dd35-4519-4a20-97de-d2c862a844e0-16655104275b25d4d4-1",
-        "template--15938946662559__71b3dd35-4519-4a20-97de-d2c862a844e0-16655104275b25d4d4-2"
-      ],
-      "settings": {
-        "heading": "Multimedia collage",
-        "heading_size": "h1",
-        "desktop_layout": "left",
-        "mobile_layout": "collage",
-        "card_styles": "product-card-wrapper",
-        "color_scheme": "background-1",
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
     }
   },
   "order": [
@@ -476,7 +435,6 @@
     "5810d53f-1644-49ef-8085-4cce0ae7ae81",
     "module-testimonials",
     "module-logos",
-    "7932d37c-a24c-4fe9-827f-8714687431af",
-    "71b3dd35-4519-4a20-97de-d2c862a844e0"
+    "7932d37c-a24c-4fe9-827f-8714687431af"
   ]
 }
