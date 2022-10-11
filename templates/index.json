@@ -426,76 +426,45 @@
         "success_message": "Thank you for subscribing!"
       }
     },
-    "module-columns": {
-      "type": "module-columns",
-      "disabled": true,
+    "71b3dd35-4519-4a20-97de-d2c862a844e0": {
+      "type": "collage",
+      "blocks": {
+        "template--15938946662559__71b3dd35-4519-4a20-97de-d2c862a844e0-16655104275b25d4d4-0": {
+          "type": "video",
+          "settings": {
+            "video_url": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
+            "description": "Describe the video",
+            "image_padding": false
+          }
+        },
+        "template--15938946662559__71b3dd35-4519-4a20-97de-d2c862a844e0-16655104275b25d4d4-1": {
+          "type": "product",
+          "settings": {
+            "product": "foodie-gift-box",
+            "second_image": false
+          }
+        },
+        "template--15938946662559__71b3dd35-4519-4a20-97de-d2c862a844e0-16655104275b25d4d4-2": {
+          "type": "collection",
+          "settings": {
+            "collection": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--15938946662559__71b3dd35-4519-4a20-97de-d2c862a844e0-16655104275b25d4d4-0",
+        "template--15938946662559__71b3dd35-4519-4a20-97de-d2c862a844e0-16655104275b25d4d4-1",
+        "template--15938946662559__71b3dd35-4519-4a20-97de-d2c862a844e0-16655104275b25d4d4-2"
+      ],
       "settings": {
-        "overline": "Corporate solutions",
-        "title": "Team Solutions",
-        "body": "We help businesses connect with people and make lasting impressions.",
-        "cta_text": "Get a quote",
-        "cta_link": ""
-      }
-    },
-    "module-contact-form": {
-      "type": "module-contact-form",
-      "disabled": true,
-      "settings": {
-        "overline": "Contact",
-        "title": "Get in touch!"
-      }
-    },
-    "module-features": {
-      "type": "module-features",
-      "disabled": true,
-      "settings": {
-        "overline": "Quick shop",
-        "title": "<p>Show your team you care<\/p>",
-        "body": "Choose from a selection of pre-built team care packages, or build your own custom care package. All of our care packages are filled with high quality locally-sourced goods and designed to delight your team.",
-        "cta_text": "Shop all",
-        "cta_link": ""
-      }
-    },
-    "module-popup": {
-      "type": "module-popup",
-      "disabled": true,
-      "settings": {
-        "richtext": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.<\/p>"
-      }
-    },
-    "module-recommended-products": {
-      "type": "module-recommended-products",
-      "disabled": true,
-      "settings": {
-        "richtext": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.<\/p>"
-      }
-    },
-    "module-rich-text": {
-      "type": "module-rich-text",
-      "disabled": true,
-      "settings": {
-        "richtext": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.<\/p>"
-      }
-    },
-    "module-split-content": {
-      "type": "module-split-content",
-      "disabled": true,
-      "settings": {
-        "richtext": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.<\/p>"
-      }
-    },
-    "module-vertical-tabs": {
-      "type": "module-vertical-tabs",
-      "disabled": true,
-      "settings": {
-        "richtext": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.<\/p>"
-      }
-    },
-    "module-split-content-simple": {
-      "type": "module-split-content-simple",
-      "disabled": true,
-      "settings": {
-        "richtext": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.<\/p>"
+        "heading": "Multimedia collage",
+        "heading_size": "h1",
+        "desktop_layout": "left",
+        "mobile_layout": "collage",
+        "card_styles": "product-card-wrapper",
+        "color_scheme": "background-1",
+        "padding_top": 36,
+        "padding_bottom": 36
       }
     }
   },
@@ -508,14 +477,6 @@
     "module-testimonials",
     "module-logos",
     "7932d37c-a24c-4fe9-827f-8714687431af",
-    "module-columns",
-    "module-contact-form",
-    "module-features",
-    "module-popup",
-    "module-recommended-products",
-    "module-rich-text",
-    "module-split-content",
-    "module-vertical-tabs",
-    "module-split-content-simple"
+    "71b3dd35-4519-4a20-97de-d2c862a844e0"
   ]
 }
