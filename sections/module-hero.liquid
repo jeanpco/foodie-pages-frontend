@@ -31,7 +31,7 @@
                   {% for block in ctasArray %}
                     <div class="margin-top mobile-margin-small">
                       <a 
-                        class="button {% if forloop.first %}margin-right margin-small{% endif %}{% if forloop.first == false %} is-secondary{% endif %}" 
+                        class="button {% if forloop.first %}margin-right margin-small{% endif %}{% if forloop.first == false %} secondary{% endif %}" 
                         href="{{ block.settings.cta_link }}"
                       >
                         <span>{{ block.settings.cta_text }}</span>

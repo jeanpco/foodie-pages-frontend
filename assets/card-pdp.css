@@ -16,6 +16,18 @@
   transition: transform 0.5s var(--custom-easing);
 }
 
+@media screen and (max-width: 767px) {
+  .product-card_image-container img {
+     height: calc(50vw - 2rem);
+   } 
+ }
+
+ @media screen and (max-width: 479px) {
+  .product-card_image-container img {
+     height: calc(100vw - 2.5rem);
+   } 
+ }
+
 .product-card:hover img {
   transform: scale(1.075);
 }

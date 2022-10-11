@@ -123,7 +123,7 @@
 
 /* SECONDARY  BUTTON */
 
-.button.is-secondary {
+.button.secondary {
   color: var(--button-text-color-secondary);
   background-color: transparent;
   font-size: var(--button-font-size-desktop);
@@ -132,25 +132,25 @@
   border: 1px solid var(--button-border-color-secondary);
 }
 
-.button.is-secondary.reversed {
+.button.secondary.reversed {
   background-color: var(--button-text-color-secondary);
   color: var(--button-background-color-secondary);
 }
 
-.button.is-secondary::before, 
-.button.is-secondary::after {
+.button.secondary::before, 
+.button.secondary::after {
   background-color: var(--button-background-color-secondary-hover);
 }
 
-.button.is-secondary:hover {
+.button.secondary:hover {
   border: 1px solid var(--button-border-color-secondary-hover);
 }
 
-.button.is-secondary:hover span {
+.button.secondary:hover span {
   color: var(--button-text-color-secondary-hover);
 }
 
-.button.is-secondary:disabled {
+.button.secondary:disabled {
   color: var(--button-text-color-secondary-disabled);
   background-color: var(--button-background-color-secondary-disabled);
   border: 1px solid var(--button-border-color-secondary-disabled);
@@ -162,36 +162,39 @@
 
 /* TERTIARY BUTTON */
 
-/* 
-.button.is-tertiary {
-  background-color: transparent;
-  color: var(--color-primary);
-  border: 1px solid var(--color-primary);
+.button.tertiary {
+  color: var(--button-text-color-tertiary);
+  background-color: var(--button-background-color-tertiary);
+  font-size: var(--button-font-size-desktop);
+  padding: var(--button-padding-desktop);
+  border-radius: var(--button-border-radius-tertiary);
+  border: 1px solid var(--button-border-color-tertiary);
 }
 
-.button.is-tertiary:hover {
-  background-color: var(--color-primary);
-  color: var(--color-secondary);
+.button.tertiary.reversed {
+  background-color: var(--button-text-color-tertiary);
+  color: var(--button-background-color-tertiary);
 }
 
+.button.tertiary::before, 
+.button.tertiary::after {
+  background-color: var(--button-background-color-tertiary-hover);
+}
 
-.button.is-tertiary.is-inactive {
-  color: var(--color-grey-500);
-  background-color: transparent;
+.button.tertiary:hover {
+  border: 1px solid var(--button-border-color-tertiary-hover);
+}
+
+.button.tertiary:hover span {
+  color: var(--button-text-color-tertiary-hover);
+}
+
+.button.tertiary:disabled {
+  color: var(--button-text-color-tertiary-disabled);
+  background-color: var(--button-background-color-tertiary-disabled);
+  border: 1px solid var(--button-border-color-tertiary-disabled);
   cursor: not-allowed;
-  border: 1px solid var(--color-grey-700);
 }
-
-.button.is-tertiary.is-inactive:hover {
-  color: var(--color-grey-500);
-}
-
-.button.is-tertiary:disabled {
-  color: var(--color-grey-500);
-  background-color: transparent;
-  cursor: not-allowed;
-  border: 1px solid var(--color-grey-700);
-} */
 
 /* END TERTIARY BUTTON */
 
