@@ -1,3 +1,47 @@
+.promo-card {
+  border-radius: 30px;
+  min-height: 30vw;
+  height: auto;
+  max-height: 27.5rem;
+}
+
+@media screen and (max-width: 1100px) {
+  .promo-card {
+    min-height: calc(45.5vw - 2rem);
+  }
+ }
+
+ @media screen and (max-width: 550px) {
+  .promo-card {
+    height: unset;
+  }
+ }
+
+ @media screen and (min-width: 1480px) {
+  .promo-card {
+    min-height: 25.6vw;
+  }
+ }
+
+ @media screen and (min-width: 1730px) {
+  .promo-card {
+    min-height: unset;
+  }
+ }
+
+
 .promo-card .button {
   width: 100%;
+  box-sizing: border-box;
+} 
+
+.promo-card_icon {
+  width: 80px;
+}
+
+.product-card_image-container img {
+  aspect-ratio: 1/1;
+  
+  object-fit: contain;
+  transition: transform 0.5s var(--custom-easing);
 }

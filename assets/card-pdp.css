@@ -16,13 +16,13 @@
   transition: transform 0.5s var(--custom-easing);
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 1100px) {
   .product-card_image-container img {
      height: calc(50vw - 2rem);
    } 
  }
 
- @media screen and (max-width: 479px) {
+ @media screen and (max-width: 550px) {
   .product-card_image-container img {
      height: calc(100vw - 2.5rem);
    } 

@@ -1,18 +1,30 @@
+{{ 'promo-card.css' | asset_url | stylesheet_tag }}
+
 {%- comment -%} icon_url
 title
 body
 cta_text
 cta_link {%- endcomment -%}
 
-<div class="promo-card background-color-mar-10">
-  <img src="{{ icon_url }}" alt="{{ title }}" class="promo-card_icon">
-  <h3 class="promo-card_title">{{ title }}</h3>
-  <p class="promo-card_body">{{ body }}</p>
-  {% 
-    render 'button', 
-    cta_text: cta_text, 
-    cta_link: cta_text,
-    class: 'margin-top margin-medium promo-card_button',
-    theme: 'tertiary',
-  %}
+<div class="promo-card background-color-mar-10 padding-horizontal padding-medium">
+  <div class="padding-vertical padding-large">
+    {% if icon_url != blank %}
+      <img src="{{ icon_url }}" alt="{{ title }}" class="promo-card_icon margin-bottom margin-small">
+    {% endif %}
+    {% if title %}
+      <h3 class="promo-card_title">{{ title }}</h3>
+    {% endif %}
+    {% if body %}
+      <p class="promo-card_body margin-top margin-medium">{{ body }}</p>
+    {% endif %}
+    {% if cta_text != blank and cta_link != blank %}
+      {% 
+        render 'button', 
+        cta_text: cta_text, 
+        cta_link: cta_link,
+        class: 'margin-top margin-medium promo-card_button',
+        theme: 'tertiary',
+      %}
+    {% endif %}
+  </div>
 </div>
