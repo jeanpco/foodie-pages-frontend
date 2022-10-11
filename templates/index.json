@@ -203,6 +203,22 @@
         "cta_text": "Shop now"
       }
     },
+    "module-featured-products": {
+      "type": "module-featured-products",
+      "settings": {
+        "overline": "Quick shop",
+        "title": "<p>Meet our <em>bestsellers<\/em><\/p>",
+        "body": "Discover beautifully packaged products from small companies doing big things.",
+        "cta_text": "Shop all",
+        "cta_link": "shopify:\/\/collections\/all",
+        "collection": "gift-baskets",
+        "icon_url": "",
+        "promo_title": "",
+        "promo_body": "",
+        "promo_cta_text": "Shop all",
+        "promo_cta_link": ""
+      }
+    },
     "5810d53f-1644-49ef-8085-4cce0ae7ae81": {
       "type": "module-hero",
       "blocks": {
@@ -429,23 +445,6 @@
         "title": "Get in touch!"
       }
     },
-    "module-featured-products": {
-      "type": "module-featured-products",
-      "disabled": true,
-      "settings": {
-        "overline": "Quick shop",
-        "title": "<p>Meet our <i>bestsellers<\/i><\/p>",
-        "body": "Discover beautifully packaged products from small companies doing big things.",
-        "cta_text": "Shop all",
-        "cta_link": "",
-        "collection": "",
-        "icon_url": "",
-        "promo_title": "",
-        "promo_body": "",
-        "promo_cta_text": "Shop all",
-        "promo_cta_link": ""
-      }
-    },
     "module-features": {
       "type": "module-features",
       "disabled": true,
@@ -504,13 +503,13 @@
     "module-hero",
     "module-tabs",
     "module-tag-slider",
+    "module-featured-products",
     "5810d53f-1644-49ef-8085-4cce0ae7ae81",
     "module-testimonials",
     "module-logos",
     "7932d37c-a24c-4fe9-827f-8714687431af",
     "module-columns",
     "module-contact-form",
-    "module-featured-products",
     "module-features",
     "module-popup",
     "module-recommended-products",
