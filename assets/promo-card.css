@@ -3,6 +3,9 @@
   min-height: 30vw;
   height: auto;
   max-height: 27.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 @media screen and (max-width: 1100px) {
