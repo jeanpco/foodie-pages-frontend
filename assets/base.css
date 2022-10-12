@@ -159,17 +159,6 @@ h6 {
   color: var(--color-grey-800);
 }
 
-.caption-large,
-.customer .field input,
-.customer select,
-.field__input,
-.form__label,
-.select__select {
-  font-size: 1.3rem;
-  line-height: calc(1 + 0.5 / var(--font-body-scale));
-  letter-spacing: 0.04rem;
-}
-
 table:not([class]) {
   table-layout: fixed;
   border-collapse: collapse;
