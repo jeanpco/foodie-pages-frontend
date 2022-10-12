@@ -27,9 +27,6 @@ slider-component.slider-component-full-width {
 }
 
 .slider__slide {
-  --focus-outline-padding: 0.5rem;
-  --shadow-padding-top: calc((var(--shadow-vertical-offset) * -1 + var(--shadow-blur-radius)) * var(--shadow-visible));
-  --shadow-padding-bottom: calc((var(--shadow-vertical-offset) + var(--shadow-blur-radius)) * var(--shadow-visible));
   scroll-snap-align: start;
   flex-shrink: 0;
   padding-bottom: 0;
@@ -56,8 +53,6 @@ slider-component.slider-component-full-width {
 
   .slider.slider--mobile .slider__slide {
     margin-bottom: 0;
-    padding-top: max(var(--focus-outline-padding), var(--shadow-padding-top));
-    padding-bottom: max(var(--focus-outline-padding), var(--shadow-padding-bottom));
   }
 
   .slider.slider--mobile.contains-card--standard .slider__slide:not(.collection-list__item--no-media) {
@@ -107,8 +102,6 @@ slider-component.slider-component-full-width {
 
   .slider.slider--tablet .slider__slide {
     margin-bottom: 0;
-    padding-top: max(var(--focus-outline-padding), var(--shadow-padding-top));
-    padding-bottom: max(var(--focus-outline-padding), var(--shadow-padding-bottom));
   }
 
   .slider.slider--tablet.contains-card--standard .slider__slide:not(.collection-list__item--no-media) {

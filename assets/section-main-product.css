@@ -312,10 +312,6 @@ a.product__text {
   margin-top: -1.5rem;
 }
 
-.product__accordion .accordion__content {
-  padding: 0 1rem;
-}
-
 .product .price .badge {
   margin-bottom: 0.5rem;
 }
@@ -477,6 +473,14 @@ a.product__text {
   .product--mobile-columns .product__media-item {
     width: calc(50% - 1.5rem - var(--grid-mobile-horizontal-spacing));
   }
+}
+
+.product__media-item {
+  border-radius: 8px;
+  box-sizing: border-box;
+  background: var(--color-grey-75);
+  overflow: hidden;
+  border: 1px solid black;
 }
 
 @media screen and (min-width: 750px) {
@@ -1206,4 +1210,16 @@ a.product__text {
   width: 1.2rem;
   margin-left: 1.2rem;
   flex-shrink: 0;
+}
+
+.variant-details {
+  display: none;
+}
+
+.variant-details > ul {
+  margin-top: 1rem;
+}
+
+.variant-details.is-visible {
+  display: block;
 }
