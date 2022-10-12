@@ -1,6 +1,8 @@
 {{ 'card-pdp.css' | asset_url | stylesheet_tag }}
 {{ 'component-price.css' | asset_url | stylesheet_tag }}
 
+{%- comment -%} @jeanpco TODO: Threshold of animation reveal takes too long because of height of section {%- endcomment -%}
+
 <div class="featured-product_container container">
   <div class="featured-product_header margin-bottom margin-xxlarge">
     {% render 'module-header', 
