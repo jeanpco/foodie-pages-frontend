@@ -353,38 +353,7 @@
                 </details>
               </div>
             {%- when 'quantity_selector' -%}
-              <div
-                class="product-form__input product-form__quantity{% if settings.inputs_shadow_vertical_offset != 0 and settings.inputs_shadow_vertical_offset < 0 %} product-form__quantity-top{% endif %}"
-                {{ block.shopify_attributes }}
-              >
-                <label class="form__label" for="Quantity-{{ section.id }}">
-                  {{ 'products.product.quantity.label' | t }}
-                </label>
-
-                <quantity-input class="quantity">
-                  <button class="quantity__button no-js-hidden" name="minus" type="button">
-                    <span class="visually-hidden">
-                      {{- 'products.product.quantity.decrease' | t: product: product.title | escape -}}
-                    </span>
-                    {% render 'icon-minus' %}
-                  </button>
-                  <input
-                    class="quantity__input"
-                    type="number"
-                    name="quantity"
-                    id="Quantity-{{ section.id }}"
-                    min="1"
-                    value="1"
-                    form="{{ product_form_id }}"
-                  >
-                  <button class="quantity__button no-js-hidden" name="plus" type="button">
-                    <span class="visually-hidden">
-                      {{- 'products.product.quantity.increase' | t: product: product.title | escape -}}
-                    </span>
-                    {% render 'icon-plus' %}
-                  </button>
-                </quantity-input>
-              </div>
+              {% render 'product-quantity-selector', product: product, block: block %}
             {%- when 'popup' -%}
               <modal-opener
                 class="product-popup-modal__opener no-js-hidden quick-add-hidden"
@@ -616,29 +585,7 @@
 
                 {{ 'component-pickup-availability.css' | asset_url | stylesheet_tag }}
 
-                {%- assign pick_up_availabilities = product.selected_or_first_available_variant.store_availabilities | where: 'pick_up_enabled', true -%}
-
-                <pickup-availability
-                  class="product__pickup-availabilities no-js-hidden quick-add-hidden"
-                  {% if product.selected_or_first_available_variant.available and pick_up_availabilities.size > 0 %}
-                    available
-                  {% endif %}
-                  data-root-url="{{ routes.root_url }}"
-                  data-variant-id="{{ product.selected_or_first_available_variant.id }}"
-                  data-has-only-default-variant="{{ product.has_only_default_variant }}"
-                >
-                  <template>
-                    <pickup-availability-preview class="pickup-availability-preview">
-                      {% render 'icon-unavailable' %}
-                      <div class="pickup-availability-info">
-                        <p class="caption-large">{{ 'products.product.pickup_availability.unavailable' | t }}</p>
-                        <button class="pickup-availability-button link link--text underlined-link">
-                          {{ 'products.product.pickup_availability.refresh' | t }}
-                        </button>
-                      </div>
-                    </pickup-availability-preview>
-                  </template>
-                </pickup-availability>
+                {%- comment -%} {% render 'pickup-availability-preview', product: product %} {%- endcomment -%}
               </div>
 
               <script src="{{ 'pickup-availability.js' | asset_url }}" defer="defer"></script>
