@@ -167,7 +167,7 @@ predictive-search[loading] .predictive-search__results-list:first-child {
   height: calc(var(--font-heading-scale) * 1.4rem);
   flex-shrink: 0;
   margin-left: calc(var(--font-heading-scale) * 2rem);
-  color: rgb(var(--color-link));
+  color: rgb(var(--color-primary));
 }
 
 .predictive-search__image {

@@ -1,0 +1,29 @@
+{% assign numberOfTags = product.tags | size %}
+
+{% if numberOfTags > 0 %}
+
+  <div class="product__tags margin-vertical margin-medium">
+    {% for tag in product.tags %}
+      <div class="product_tag background-color-azul-verdoso-50 text-color-secondary padding-horizontal padding-small">
+        <div class="padding-vertical padding-xxsmall"><span>{{ tag }}</span></div>
+      </div>
+    {% endfor %}
+  </div>
+
+{% endif %}
+
+<style>
+  .product__tags {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  .product_tag span {
+    transform: translateY(-1px);
+    display: block;
+  }
+
+  .product_tag {
+    border-radius: 30px;
+  }
+</style>

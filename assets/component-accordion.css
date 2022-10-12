@@ -8,10 +8,12 @@
 .accordion .summary__title {
   display: flex;
   flex: 1;
+  align-items: center;
 }
 
 .accordion .summary__title + .icon-caret {
-  height: calc(var(--font-heading-scale) * 0.6rem);
+  height: 1rem;
+  width: 1rem;
 }
 
 .accordion + .accordion {
@@ -37,9 +39,8 @@
 .accordion .icon-accordion {
   align-self: center;
   fill: rgb(var(--color-primary));
-  height: calc(var(--font-heading-scale) * 2rem);
-  margin-right: calc(var(--font-heading-scale) * 1rem);
-  width: calc(var(--font-heading-scale) * 2rem);
+  height: 1rem;
+  width: 1rem;
 }
 
 .accordion details[open] > summary .icon-caret {

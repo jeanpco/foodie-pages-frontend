@@ -649,16 +649,16 @@ a.active-facets__button.focused .active-facets__button-inner,
   padding-bottom: 0.5rem;
   display: flex;
   align-items: center;
-  color: rgba(var(--color-link), var(--alpha-link));
+  color: rgba(var(--color-primary), var(--alpha-link));
 }
 
 .mobile-facets__open:hover {
-  color: rgb(var(--color-link));
+  color: rgb(var(--color-primary));
 }
 
 .mobile-facets__open:hover line,
 .mobile-facets__open:hover circle {
-  stroke: rgb(var(--color-link));
+  stroke: rgb(var(--color-primary));
 }
 
 .mobile-facets__open-label {
@@ -680,7 +680,7 @@ a.active-facets__button.focused .active-facets__button-inner,
 
 .mobile-facets__open line,
 .mobile-facets__open circle {
-  stroke: rgba(var(--color-link), var(--alpha-link));
+  stroke: rgba(var(--color-primary), var(--alpha-link));
 }
 
 .mobile-facets__close {

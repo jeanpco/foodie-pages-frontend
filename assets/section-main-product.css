@@ -161,7 +161,6 @@
 
 /* Form Elements */
 .product-form__input {
-  flex: 0 0 100%;
   padding: 0;
   max-width: 30.5rem;
   min-width: fit-content;
@@ -296,11 +295,6 @@ variant-selects {
   max-width: 100%;
 }
 
-.product__info-container .product-form,
-.product__info-container .product__description {
-  margin: 2.5rem 0;
-}
-
 a.product__text {
   display: block;
   text-decoration: none;
@@ -430,6 +424,8 @@ a.product__text {
 
 .product-form__buttons {
   max-width: 44rem;
+  display: flex;
+  gap: 1rem;
 }
 
 .product--no-media .product__info-container > modal-opener {

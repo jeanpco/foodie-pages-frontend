@@ -38,6 +38,10 @@
   display: inline-block;
 }
 
+.button--full-width {
+  width: 100%;
+}
+
 .button.reversed {
   background-color: var(--button-text-color-primary);
   color: var(--button-background-color-primary);
