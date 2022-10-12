@@ -41,12 +41,10 @@
           "settings": {
           }
         },
-        "collapsible-row-0": {
-          "type": "collapsible_tab",
+        "30d0b0b9-e8a9-49a3-8455-abac982ffadc": {
+          "type": "variant_collapsible_tab",
           "settings": {
-            "heading": "Product details",
-            "content": "",
-            "page": ""
+            "heading": "Product Details"
           }
         },
         "collapsible-row-1": {
@@ -66,7 +64,7 @@
         "variant_picker",
         "buy_buttons",
         "description",
-        "collapsible-row-0",
+        "30d0b0b9-e8a9-49a3-8455-abac982ffadc",
         "collapsible-row-1"
       ],
       "settings": {
