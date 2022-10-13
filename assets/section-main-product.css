@@ -1278,3 +1278,7 @@ a.product__text {
 .variant-details.is-visible {
   display: block;
 }
+
+.selected-option {
+  display: inline-block;
+}

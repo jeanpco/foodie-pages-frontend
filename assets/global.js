@@ -772,6 +772,7 @@ class VariantSelects extends HTMLElement {
       this.renderProductInfo();
       this.updateShareUrl();
       this.updateVariantDetails();
+      this.updateSelectedOption();
     }
   }
 
@@ -828,6 +829,24 @@ class VariantSelects extends HTMLElement {
     variantDetails.forEach(v => v.classList.remove('is-visible'))
     const selectedVariantDetail = variantDetails.find(v => +v.dataset.variantId === this.currentVariant.id)
     selectedVariantDetail.classList.add('is-visible')
+  }
+
+  updateSelectedOption() {
+    const selectedOptionElements = Array.from(document.querySelectorAll('[data-js-element="selected-option"]'));
+
+    if (!selectedOptionElements) return
+
+    selectedOptionElements.forEach(option => {
+      const options = Array.from(option.querySelectorAll('.single-option'));
+
+      if (!options) return
+
+      options.forEach(o => o.classList.add('hide'))
+
+      const selectedOption = options.find(opt => this.currentVariant.options.find(o => o === opt.innerText));
+
+      selectedOption.classList.remove('hide')
+    })
   }
 
   updatePickupAvailability() {

@@ -470,8 +470,19 @@
                     >
                       {%- for option in product.options_with_values -%}
                         <fieldset class="js product-form__input">
-                          <legend class="form__label text-size-tiny text-weight-medium margin-xsmall">Select: <span class="text-weight-bold">{{ option.name }}</span></legend>
-                          {%- for value in option.values -%} 
+                          <legend class="form__label text-size-tiny text-weight-medium margin-xsmall">
+                            Select: <span class="text-weight-bold">{{ option.name }}
+                            <span class="margin-xxsmall margin-left selected-option" data-js-element="selected-option">
+                              {%- for value in option.values -%}
+                                {% assign valueEscaped = value | escape %}
+                                {% assign selectedVariantOptions = product.selected_or_first_available_variant.options %}
+
+                                <div class="single-option {% unless selectedVariantOptions contains valueEscaped %}hide{% endunless %}">{{ valueEscaped }}</div>
+                              {% endfor %}
+                            </span>
+                            </span>
+                          </legend>
+                          {%- for value in option.values -%}
                             <input
                               type="radio"
                               id="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}"
