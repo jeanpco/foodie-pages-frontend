@@ -1072,7 +1072,7 @@ a.product__text {
     margin: 0 !important;
   }
 
-  media-gallery {
+  .product__media-wrapper {
     position: relative;
   }
 
