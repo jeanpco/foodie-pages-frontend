@@ -31,7 +31,6 @@ body {
   background-color: rgb(var(--color-base-background-1));
   color: rgb(var(--color-base-text));
   font-size: 1.5rem;
-  letter-spacing: 0.07rem;
   line-height: calc(1 + 0.8 / var(--font-body-scale));
   max-width: var(--page-width);
   margin: 0 auto;
@@ -61,7 +60,6 @@ h2,
   font-family: var(--font-heading-family);
   font-style: var(--font-heading-style);
   font-weight: var(--font-heading-weight);
-  letter-spacing: calc(var(--font-heading-scale) * 0.06rem);
   line-height: calc(1 + 0.3 / max(1, var(--font-heading-scale)));
 }
 
@@ -130,7 +128,6 @@ h2,
   min-width: 12rem;
   height: auto;
   font-size: 1.5rem;
-  letter-spacing: 0.1rem;
   line-height: calc(1 + 0.2 / var(--font-body-scale));
 }
 
@@ -212,7 +209,6 @@ h2,
   justify-content: center;
   font-size: 1.6rem;
   font-weight: 400;
-  letter-spacing: 1px;
   line-height: calc(1 + 0.5 / var(--font-body-scale));
   opacity: 0.85;
 }
@@ -262,7 +258,6 @@ h2,
 
 .gift-card__label {
   font-size: 1.3rem;
-  letter-spacing: 0.05rem;
   font-weight: 500;
   display: inline;
   margin-left: 1rem;
@@ -274,7 +269,6 @@ h2,
   border-radius: 4rem;
   display: inline-block;
   font-size: 1.2rem;
-  letter-spacing: 0.1rem;
   line-height: 1;
   padding: 0.6rem 1.3rem;
   text-align: center;
@@ -292,7 +286,6 @@ h2,
 .caption-large {
   font-size: 1.3rem;
   line-height: calc(1 + 0.5 / var(--font-body-scale));
-  letter-spacing: 0.04rem;
 }
 
 .gift-card__copy-code {

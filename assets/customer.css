@@ -113,7 +113,6 @@
 
 .customer thead th {
   font-size: 1.2rem;
-  letter-spacing: 0.07rem;
   text-transform: uppercase;
 }
 
@@ -641,7 +640,6 @@
 
 .order .unit-price {
   font-size: 1.1rem;
-  letter-spacing: 0.07rem;
   line-height: calc(1 + 0.2 / var(--font-body-scale));
   margin-top: 0.2rem;
   text-transform: uppercase;

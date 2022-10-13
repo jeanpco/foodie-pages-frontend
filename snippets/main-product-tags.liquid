@@ -2,10 +2,10 @@
 
 {% if numberOfTags > 0 %}
 
-  <div class="product__tags margin-bottom margin-medium">
+  <div class="product__tags margin-vertical margin-small">
     {% for tag in product.tags %}
-      <div class="product_tag background-color-azul-verdoso-50 text-color-secondary padding-horizontal padding-small">
-        <div class="padding-vertical padding-xxsmall"><span>{{ tag }}</span></div>
+      <div class="product_tag background-color-grey-100 text-color-primary padding-horizontal padding-small text-size-tiny">
+        <div class="padding-vertical padding-xsmall"><span>{{ tag }}</span></div>
       </div>
     {% endfor %}
   </div>

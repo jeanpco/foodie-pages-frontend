@@ -36,7 +36,8 @@
 
   <div class="margin-vertical margin-huge">
     <div class="product container product--{{ section.settings.media_size }} product--{{ section.settings.media_position }} product--{{ section.settings.gallery_layout }} product--mobile-{{ section.settings.mobile_thumbnails }} grid grid--1-col {% if product.media.size > 0 %}grid--2-col-tablet{% else %}product--no-media{% endif %}">
-      <div class="grid__item product__media-wrapper{% if section.settings.media_position == 'right' %} medium-hide large-up-hide{% endif %}">
+
+      <div class="grid__item product__media-wrapper">
         <media-gallery
           id="MediaGallery-{{ section.id }}"
           role="region"
@@ -118,7 +119,7 @@
               >
                 {% render 'icon-caret' %}
               </button>
-              <div class="slider-counter caption">
+              <div class="slider-counter caption text-size-tiny text-color-grey-500">
                 <span class="slider-counter--current">1</span>
                 <span aria-hidden="true"> / </span>
                 <span class="visually-hidden">{{ 'general.slider.of' | t }}</span>
@@ -231,7 +232,7 @@
                     -%}
                     <li
                       id="Slide-Thumbnails-{{ section.id }}-{{ forloop.index }}"
-                      class="thumbnail-list__item slider__slide{% if section.settings.hide_variants and variant_images contains media.src %} thumbnail-list_item--variant{% endif %}"
+                      class="thumbnail-list__item slider__slide{% if section.settings.hide_variants and variant_images contains media.src %} thumbnail-list_item--variant{% endif %}{% if forloop.last %} is-last-thumbnail{% endif %}"
                       data-target="{{ section.id }}-{{ media.id }}"
                       data-media-position="{{ media_index }}"
                     >
@@ -253,17 +254,24 @@
                         aria-controls="GalleryViewer-{{ section.id }}"
                         aria-describedby="Thumbnail-{{ section.id }}-{{ forloop.index }}"
                       >
+
+                        {% assign media_url = media | image_url: width: 500, height: 500 %}
+
+                        {% if forloop.last %}
+                          {% assign media_url = media | image_url: width: 1500, height: 1500 %}
+                        {% endif %}
+
                         <img
                           id="Thumbnail-{{ section.id }}-{{ forloop.index }}"
                           srcset="
-                            {% if media.preview_image.width >= 59 %}{{ media.preview_image | image_url: width: 59 }} 59w,{% endif %}
-                            {% if media.preview_image.width >= 118 %}{{ media.preview_image | image_url: width: 118 }} 118w,{% endif %}
-                            {% if media.preview_image.width >= 84 %}{{ media.preview_image | image_url: width: 84 }} 84w,{% endif %}
-                            {% if media.preview_image.width >= 168 %}{{ media.preview_image | image_url: width: 168 }} 168w,{% endif %}
-                            {% if media.preview_image.width >= 130 %}{{ media.preview_image | image_url: width: 130 }} 130w,{% endif %}
-                            {% if media.preview_image.width >= 260 %}{{ media.preview_image | image_url: width: 260 }} 260w{% endif %}
+                            {% if media.preview_image.width >= 59 %}{{ media.preview_image | image_url: width: 236 }} 59w,{% endif %}
+                            {% if media.preview_image.width >= 118 %}{{ media.preview_image | image_url: width: 472 }} 118w,{% endif %}
+                            {% if media.preview_image.width >= 84 %}{{ media.preview_image | image_url: width: 336 }} 84w,{% endif %}
+                            {% if media.preview_image.width >= 168 %}{{ media.preview_image | image_url: width: 672 }} 168w,{% endif %}
+                            {% if media.preview_image.width >= 130 %}{{ media.preview_image | image_url: width: 520 }} 130w,{% endif %}
+                            {% if media.preview_image.width >= 260 %}{{ media.preview_image | image_url: width: 1,040 }} 260w{% endif %}
                           "
-                          src="{{ media | image_url: width: 84, height: 84 }}"
+                          src="{{ media_url }}"
                           sizes="(min-width: 1200px) calc((1200px - 19.5rem) / 12), (min-width: 750px) calc((100vw - 16.5rem) / 8), calc((100vw - 8rem) / 5)"
                           alt="{{ media.alt | escape }}"
                           height="200"
@@ -289,7 +297,8 @@
           {%- endif -%}
         </media-gallery>
       </div>
-      <div class="product__info-wrapper grid__item{% if settings.page_width > 1400 and section.settings.media_size == "small" %} product__info-wrapper--extra-padding{% endif %}">
+
+      <div class="product__info-wrapper grid__item tablet-padding-0 margin-top tablet-margin-large {% if settings.page_width > 1400 and section.settings.media_size == "small" %} product__info-wrapper--extra-padding{% endif %}">
         <div
           id="ProductInfo-{{ section.id }}"
           class="product__info-container{% if section.settings.enable_sticky_info %} product__info-container--sticky{% endif %}"
@@ -341,25 +350,36 @@
               {%- when 'custom_liquid' -%}
                 {{ block.settings.custom_liquid }}
               {%- when 'variant_collapsible_tab' -%}
-                <div class="product__accordion accordion quick-add-hidden" {{ block.shopify_attributes }}>
-                  <details id="Details-{{ block.id }}-{{ section.id }}">
-                    <summary>
-                      <div class="summary__title">
-                        <h2 class="accordion__title text-size-regular">
-                          {{ block.settings.heading }}
-                        </h2>
-                      </div>
-                      {% render 'icon-caret' %}
-                    </summary>
-                    <div class="accordion__content rte background-color-mar-10" id="ProductAccordion-{{ block.id }}-{{ section.id }}">
-                      {% for variant in product.variants %}
-                        <div data-variant-id="{{ variant.id }}" data-js-element="variant-details" class="variant-details {% if product.selected_or_first_available_variant.id == variant.id %}is-visible{% endif %}">
-                          {{ variant.metafields.custom.details }}
+
+                {% assign hasVariantDetails = false %}
+
+                {% for variant in product.variants %}
+                  {% if variant.metafields.custom.details %}
+                    {% assign hasVariantDetails = true %}
+                  {% endif %}
+                {% endfor %}
+
+                {% if hasVariantDetails %}
+                  <div class="product__accordion accordion quick-add-hidden" {{ block.shopify_attributes }}>
+                    <details id="Details-{{ block.id }}-{{ section.id }}">
+                      <summary>
+                        <div class="summary__title">
+                          <h2 class="accordion__title text-size-regular">
+                            {{ block.settings.heading }}
+                          </h2>
                         </div>
-                      {% endfor %}
-                    </div>
-                  </details>
-                </div>
+                        {% render 'icon-caret' %}
+                      </summary>
+                      <div class="accordion__content rte background-color-mar-10" id="ProductAccordion-{{ block.id }}-{{ section.id }}">
+                        {% for variant in product.variants %}
+                          <div data-variant-id="{{ variant.id }}" data-js-element="variant-details" class="variant-details {% if product.selected_or_first_available_variant.id == variant.id %}is-visible{% endif %}">
+                            {{ variant.metafields.custom.details }}
+                          </div>
+                        {% endfor %}
+                      </div>
+                    </details>
+                  </div>
+                {% endif %}
               {%- when 'collapsible_tab' -%}
                 {% if block.settings.content != blank or block.settings.page.content != blank %}
                   <div class="product__accordion accordion quick-add-hidden" {{ block.shopify_attributes }}>
@@ -450,7 +470,7 @@
                     >
                       {%- for option in product.options_with_values -%}
                         <fieldset class="js product-form__input">
-                          <legend class="form__label text-size-tiny text-weight-medium margin-bottom margin-small">Select: <span class="text-weight-bold">{{ option.name }}</span></legend>
+                          <legend class="form__label text-size-tiny text-weight-medium margin-xsmall">Select: <span class="text-weight-bold">{{ option.name }}</span></legend>
                           {%- for value in option.values -%} 
                             <input
                               type="radio"
@@ -462,7 +482,7 @@
                                 checked
                               {% endif %}
                             >
-                            <label class="margin-right margin-xsmall" for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}">
+                            <label class="margin-xsmall" for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}">
                               {{ value }}
                             </label>
                           {%- endfor -%}
@@ -621,16 +641,7 @@
                             {%- endif -%}
                           </span>
                           <div class="loading-overlay__spinner hidden">
-                            <svg
-                              aria-hidden="true"
-                              focusable="false"
-                              role="presentation"
-                              class="spinner"
-                              viewBox="0 0 66 66"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <circle class="path" fill="none" stroke-width="6" cx="33" cy="33" r="30"></circle>
-                            </svg>
+                            <div class="loading-icon perpetuum-mobile"></div>
                           </div>
                         </button>
                         {%- if block.settings.show_dynamic_checkout -%}

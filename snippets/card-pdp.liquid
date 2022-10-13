@@ -22,6 +22,11 @@
         <div class="padding-vertical padding-xxsmall"><span>Sale</span></div>
       </div>
     {% endif -%}
+    {%- unless card_product.selected_or_first_available_variant.available %}
+      <div class="product-card_badge background-color-grey-100 text-color-primary padding-horizontal padding-small">
+        <div class="padding-vertical padding-xxsmall"><span>Sold out</span></div>
+      </div>
+    {% endunless -%}
     <img
       srcset="
         {%- if card_product.featured_media.width >= 165 -%}{{ card_product.featured_media | image_url: width: 165 }} 165w,{%- endif -%}

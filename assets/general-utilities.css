@@ -25,6 +25,12 @@
   display: none !important;
 }
 
+@media screen and (min-width: 992px) {
+  .hide-tablet-and-up {
+    display: none !important;
+  }
+}
+
 @media screen and (max-width: 991px) {
   .hide, .hide-tablet{
     display: none !important;
