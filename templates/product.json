@@ -14,13 +14,13 @@
           "settings": {
           }
         },
-        "price": {
-          "type": "price",
+        "tags": {
+          "type": "tags",
           "settings": {
           }
         },
-        "tags": {
-          "type": "tags",
+        "price": {
+          "type": "price",
           "settings": {
           }
         },
@@ -59,8 +59,8 @@
       "block_order": [
         "vendor",
         "title",
-        "price",
         "tags",
+        "price",
         "variant_picker",
         "buy_buttons",
         "description",
