@@ -90,10 +90,38 @@
         "promo_cta_text": "Shop now",
         "promo_cta_link": "shopify:\/\/collections\/gift-baskets"
       }
+    },
+    "26f84045-3ccb-4414-8c41-4b9ae7745a78": {
+      "type": "module-hero",
+      "blocks": {
+        "094eca24-7e2c-4cee-a9d5-10a772fffe51": {
+          "type": "cta",
+          "settings": {
+            "cta_text": "Shop all",
+            "cta_link": "shopify:\/\/collections\/gift-baskets"
+          }
+        }
+      },
+      "block_order": [
+        "094eca24-7e2c-4cee-a9d5-10a772fffe51"
+      ],
+      "settings": {
+        "overline": "Need a corporate account?",
+        "title": "<p>Corporate gifting <em>done right<\/em><\/p>",
+        "heading_style": "h2",
+        "body": "We're not about boring or generic corporate gifts. We'll bring your vision to life with unique gift ideas that live up to your brand and its values.",
+        "image": "shopify:\/\/shop_images\/Frame_43428_2.png",
+        "enable_card_style": false,
+        "text_vertical_alignment": "flex-end",
+        "layout_style": "two-columns",
+        "background_color": "background-color-azul-verdoso-10",
+        "trusted_by_text": "Trusted by"
+      }
     }
   },
   "order": [
     "main",
-    "product-recommendations"
+    "product-recommendations",
+    "26f84045-3ccb-4414-8c41-4b9ae7745a78"
   ]
 }
