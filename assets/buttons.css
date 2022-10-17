@@ -339,6 +339,11 @@ a:not([href]) {
   transform: scaleX(0);
   transform-origin: left;
 }
+
+.link.secondary::after {
+  display: none;
+}
+
 .link::after {
   transform-origin: right;
   transition-delay: 0.25s;
