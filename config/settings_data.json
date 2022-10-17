@@ -145,6 +145,33 @@
         "settings": {
           "color_scheme": "background-1"
         }
+      },
+      "footer": {
+        "type": "footer",
+        "blocks": {
+          "ead5356c-121a-4cd1-a1e2-dadb811f6f03": {
+            "type": "link_list",
+            "settings": {
+              "title": "Main Menu",
+              "menu": "footer-1"
+            }
+          },
+          "footer-0": {
+            "type": "link_list",
+            "settings": {
+              "title": "Account",
+              "menu": "account"
+            }
+          }
+        },
+        "block_order": [
+          "ead5356c-121a-4cd1-a1e2-dadb811f6f03",
+          "footer-0"
+        ],
+        "settings": {
+          "image": "shopify:\/\/shop_images\/foodie-logo.png",
+          "legal_menu": ""
+        }
       }
     },
     "content_for_index": [
