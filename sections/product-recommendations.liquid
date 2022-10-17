@@ -27,6 +27,16 @@
             section_id: section.id,
           %}
         </li>
+
+        {% if forloop.index == 3 %}
+          {% render 'promo-card',
+            icon_url: section.settings.icon_url,
+            title: section.settings.promo_title,
+            body: section.settings.promo_body,
+            cta_text: section.settings.promo_cta_text,
+            cta_link: section.settings.promo_cta_link
+          %}
+        {% endif %}
       {% endfor %}
     {% endif %}
   </product-recommendations>
