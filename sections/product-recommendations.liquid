@@ -6,76 +6,59 @@
 <noscript>{{ 'component-price.css' | asset_url | stylesheet_tag }}</noscript>
 <noscript>{{ 'section-product-recommendations.css' | asset_url | stylesheet_tag }}</noscript>
 
-{%- style -%}
-  .section-{{ section.id }}-padding {
-    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
-    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
-  }
-
-  @media screen and (min-width: 750px) {
-    .section-{{ section.id }}-padding {
-      padding-top: {{ section.settings.padding_top }}px;
-      padding-bottom: {{ section.settings.padding_bottom }}px;
-    }
-  }
-{%- endstyle -%}
-
-<div class="color-{{ section.settings.color_scheme }} gradient no-js-hidden">
+<div class="no-js-hidden">
   <product-recommendations class="product-recommendations page-width section-{{ section.id }}-padding isolate" data-url="{{ routes.product_recommendations_url }}?section_id={{ section.id }}&product_id={{ product.id }}&limit={{ section.settings.products_to_show }}">
     {% if recommendations.performed and recommendations.products_count > 0 %}
-      <h2 class="product-recommendations__heading {{ section.settings.heading_size }}">{{ section.settings.heading | escape }}</h2>
-      <ul class="grid product-grid grid--{{ section.settings.columns_desktop }}-col-desktop grid--{{ section.settings.columns_mobile }}-col-tablet-down" role="list">
-        {% for recommendation in recommendations.products %}
-          <li class="grid__item">
-            {% render 'card-product',
-              card_product: recommendation,
-              media_aspect_ratio: section.settings.image_ratio,
-              show_secondary_image: section.settings.show_secondary_image,
-              show_vendor: section.settings.show_vendor,
-              show_rating: section.settings.show_rating
-            %}
-          </li>
-        {% endfor %}
-      </ul>
+      
+      {% render 'module-header', 
+        overline: section.settings.overline, 
+        title: section.settings.title,
+        body: section.settings.body,
+        text_horizontal_alignment: 'center',
+        cta_text: section.settings.cta_text,
+        cta_link: section.settings.cta_link
+      %}
+
+      {% for recommendation in recommendations.products %}
+        <li class="grid__item">
+          {% render 'card-pdp',
+            card_product: recommendation,
+            show_quick_add: false,
+            section_id: section.id,
+          %}
+        </li>
+      {% endfor %}
     {% endif %}
   </product-recommendations>
 </div>
 
 {% schema %}
 {
-  "name": "t:sections.product-recommendations.name",
+  "name": "Product Recommendations",
   "tag": "section",
   "class": "section",
   "settings": [
     {
       "type": "paragraph",
-      "content": "t:sections.product-recommendations.settings.paragraph__1.content"
+      "content": "Dynamic recommendations use order and product information to change and improve over time. [Learn more](https:\/\/help.shopify.com\/themes\/development\/recommended-products)"
     },
     {
       "type": "text",
-      "id": "heading",
-      "default": "You may also like",
-      "label": "t:sections.product-recommendations.settings.heading.label"
+      "id": "overline",
+      "default": "Product recommendations",
+      "label": "Overline"
     },
     {
-      "type": "select",
-      "id": "heading_size",
-      "options": [
-        {
-          "value": "h2",
-          "label": "t:sections.all.heading_size.options__1.label"
-        },
-        {
-          "value": "h1",
-          "label": "t:sections.all.heading_size.options__2.label"
-        },
-        {
-          "value": "h0",
-          "label": "t:sections.all.heading_size.options__3.label"
-        }
-      ],
-      "default": "h1",
-      "label": "t:sections.all.heading_size.label"
+      "type": "richtext",
+      "id": "title",
+      "default": "<p>You may also like</p>",
+      "label": "Title"
+    },
+    {
+      "type": "textarea",
+      "id": "body",
+      "default": "Discover more products that may be of interest to you.",
+      "label": "Body"
     },
     {
       "type": "range",
@@ -94,35 +77,6 @@
       "step": 1,
       "default": 4,
       "label": "t:sections.product-recommendations.settings.columns_desktop.label"
-    },
-    {
-      "type": "select",
-      "id": "color_scheme",
-      "options": [
-        {
-          "value": "accent-1",
-          "label": "t:sections.all.colors.accent_1.label"
-        },
-        {
-          "value": "accent-2",
-          "label": "t:sections.all.colors.accent_2.label"
-        },
-        {
-          "value": "background-1",
-          "label": "t:sections.all.colors.background_1.label"
-        },
-        {
-          "value": "background-2",
-          "label": "t:sections.all.colors.background_2.label"
-        },
-        {
-          "value": "inverse",
-          "label": "t:sections.all.colors.inverse.label"
-        }
-      ],
-      "default": "background-1",
-      "label": "t:sections.all.colors.label",
-      "info": "t:sections.all.colors.has_cards_info"
     },
     {
       "type": "header",
@@ -189,27 +143,33 @@
     },
     {
       "type": "header",
-      "content": "t:sections.all.padding.section_padding_heading"
+      "content": "Promo card settings"
     },
     {
-      "type": "range",
-      "id": "padding_top",
-      "min": 0,
-      "max": 100,
-      "step": 4,
-      "unit": "px",
-      "label": "t:sections.all.padding.padding_top",
-      "default": 36
+      "type": "url",
+      "id": "icon_url",
+      "label": "Icon"
     },
     {
-      "type": "range",
-      "id": "padding_bottom",
-      "min": 0,
-      "max": 100,
-      "step": 4,
-      "unit": "px",
-      "label": "t:sections.all.padding.padding_bottom",
-      "default": 36
+      "type": "text",
+      "id": "promo_title",
+      "label": "Promo - Title"
+    },
+    {
+      "type": "textarea",
+      "id": "promo_body",
+      "label": "Promo - Body"
+    },
+    {
+      "type": "text",
+      "id": "promo_cta_text",
+      "default": "Shop all",
+      "label": "Promo - CTA Text"
+    },
+    {
+      "type": "url",
+      "id": "promo_cta_link",
+      "label": "Promo - CTA Link"
     }
   ]
 }
