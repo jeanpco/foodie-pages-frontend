@@ -170,7 +170,7 @@
         ],
         "settings": {
           "image": "shopify:\/\/shop_images\/foodie-logo.png",
-          "legal_menu": ""
+          "legal_menu": "legal-menu"
         }
       }
     },
