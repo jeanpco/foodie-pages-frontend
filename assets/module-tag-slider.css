@@ -20,6 +20,16 @@
   }
 }
 
+@media (min-width: 1681px) {
+  .tag-slider-module-swiper .icon-prev-arrow {
+    left: 1rem !important;
+  }
+  
+  .tag-slider-module-swiper .icon-next-arrow {
+    right: 1rem !important;
+  }
+}
+
 .tag-slide {
   border-radius: 16px;
   display: flex;
