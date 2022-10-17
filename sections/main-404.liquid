@@ -1,23 +1,41 @@
 <style type="text/css">
-  .template-404 .title + * {
-    margin-top: 1rem;
+  .template-404 {
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 30px;
+  }
+  
+  .content {
+    width: 100%;
   }
 
   @media screen and (min-width: 750px) {
-    .template-404 .title + * {
-      margin-top: 2rem;
+    .template-404 {
+      min-height: 800px;
     }
   }
 </style>
 
-<div class="template-404 page-width page-margin center">
-  <p>
-    {{ 'templates.404.subtext' | t }}
-  </p>
-  <h1 class="title">
-    {{ 'templates.404.title' | t }}
-  </h1>
-  <a href="{{ routes.all_products_collection_url }}" class="button">
-    {{ 'general.continue_shopping' | t }}
-  </a>
+{% assign cta_text = 'general.continue_shopping' | t %}
+{% assign title = 'templates.404.title' | t %}
+{% assign overline = 'templates.404.subtext' | t %}
+
+<div class="margin-vertical margin-huge">
+  <div class="margin-horizontal margin-large">
+    <div class="template-404 center container background-color-mar-10">
+      <div class="content">
+        {% render 'module-header', 
+          overline: overline, 
+          title: title,
+          body: '',
+          text_horizontal_alignment: 'center',
+          cta_text: cta_text,
+          heading_style: 'h1',
+          cta_link: routes.all_products_collection_url
+        %}
+      </div>
+    </div>  
+  </div>
 </div>
