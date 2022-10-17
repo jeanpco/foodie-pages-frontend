@@ -957,13 +957,17 @@ class ProductRecommendations extends HTMLElement {
             this.innerHTML = recommendations.innerHTML;
           }
 
-          if (!this.querySelector('slideshow-component') && this.classList.contains('complementary-products')) {
-            this.remove();
-          }
+          // if (!this.querySelector('slideshow-component') && this.classList.contains('complementary-products')) {
+          //   this.remove();
+          // }
 
-          if (html.querySelector('.grid__item')) {
-            this.classList.add('product-recommendations--loaded');
-          }
+          this.classList.add('product-recommendations--loaded');
+          // dispatch custom event product-recommendations-loader
+
+          const productRecommendationsLoaded = new CustomEvent('product-recommendations-loaded', { detail: {} });
+
+          document.dispatchEvent(productRecommendationsLoaded)
+
         })
         .catch(e => {
           console.error(e);

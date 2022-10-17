@@ -1,46 +1,113 @@
-<link rel="stylesheet" href="{{ 'component-card.css' | asset_url }}" media="print" onload="this.media='all'">
-<link rel="stylesheet" href="{{ 'component-price.css' | asset_url }}" media="print" onload="this.media='all'">
+{{ 'swiper.css' | asset_url | stylesheet_tag }}
+
 <link rel="stylesheet" href="{{ 'section-product-recommendations.css' | asset_url }}" media="print" onload="this.media='all'">
 
-<noscript>{{ 'component-card.css' | asset_url | stylesheet_tag }}</noscript>
-<noscript>{{ 'component-price.css' | asset_url | stylesheet_tag }}</noscript>
 <noscript>{{ 'section-product-recommendations.css' | asset_url | stylesheet_tag }}</noscript>
 
-<div class="no-js-hidden">
-  <product-recommendations class="product-recommendations page-width section-{{ section.id }}-padding isolate" data-url="{{ routes.product_recommendations_url }}?section_id={{ section.id }}&product_id={{ product.id }}&limit={{ section.settings.products_to_show }}">
+<div class="product-recommendations-slider container" style="overflow: hidden;">
+  <product-recommendations class="product-recommendations" data-url="{{ routes.product_recommendations_url }}?section_id={{ section.id }}&product_id={{ product.id }}&limit={{ section.settings.products_to_show }}">
+
     {% if recommendations.performed and recommendations.products_count > 0 %}
-      
-      {% render 'module-header', 
-        overline: section.settings.overline, 
-        title: section.settings.title,
-        body: section.settings.body,
-        text_horizontal_alignment: 'center',
-        cta_text: section.settings.cta_text,
-        cta_link: section.settings.cta_link
-      %}
 
-      {% for recommendation in recommendations.products %}
-        <li class="grid__item">
-          {% render 'card-pdp',
-            card_product: recommendation,
-            show_quick_add: false,
-            section_id: section.id,
-          %}
-        </li>
+      <div class="margin-vertical margin-huge">
 
-        {% if forloop.index == 3 %}
-          {% render 'promo-card',
-            icon_url: section.settings.icon_url,
-            title: section.settings.promo_title,
-            body: section.settings.promo_body,
-            cta_text: section.settings.promo_cta_text,
-            cta_link: section.settings.promo_cta_link
+        <div class="padding-bottom padding-xlarge">
+          {% render 'module-header', 
+            overline: section.settings.overline, 
+            title: section.settings.title,
+            body: section.settings.body,
+            text_horizontal_alignment: 'center',
+            cta_text: section.settings.cta_text,
+            cta_link: section.settings.cta_link,
+            text_horizontal_alignment: 'left',
           %}
-        {% endif %}
-      {% endfor %}
+        </div>
+
+        <div class="swiper product-recommendations-slider-module-swiper" data-js-element="product-recommendations-module-swiper-{{ section.id }}">
+
+          <div class="swiper-wrapper padding-bottom padding-xlarge">
+
+            {% for recommendation in recommendations.products %}
+              <li class="product-card-container swiper-slide">
+                {% render 'card-pdp',
+                  card_product: recommendation,
+                  show_quick_add: false,
+                  section_id: section.id,
+                %}
+              </li>
+
+              {% if forloop.index == 2 and section.settings.promo_title != blank %}
+                <li class="product-card-container swiper-slide">
+                  {% render 'promo-card',
+                    icon_url: section.settings.icon_url,
+                    title: section.settings.promo_title,
+                    body: section.settings.promo_body,
+                    cta_text: section.settings.promo_cta_text,
+                    cta_link: section.settings.promo_cta_link,
+                    spacing_class: 'padding-vertical padding-medium',
+                  %}
+                </li>
+              {% endif %}
+            {% endfor %}
+
+          </div>
+
+          {% render 'icon-prev-arrow' %}
+          {% render 'icon-next-arrow' %}
+    
+          <div class="swiper-scrollbar"></div>
+        
+        </div>
+
+      </div>
+
     {% endif %}
   </product-recommendations>
 </div>
+
+<script type="module">
+
+  const initProductRecommendationsSlider = () => {
+    const swiperProductRecommendationsliderContainer = document.querySelector("[data-js-element='product-recommendations-module-swiper-{{ section.id }}']")
+
+    const swiper = new Swiper(swiperProductRecommendationsliderContainer, {
+      spaceBetween: 24,
+      freeMode: true,
+      slidesPerView: "auto",
+      slidesPerView: 1.2,
+      mousewheel: {
+          forceToAxis: true,
+        },
+      scrollbar: {
+        el: ".product-recommendations-slider .swiper-scrollbar",
+        draggable: true,
+      },
+      navigation: {
+        nextEl: '.product-recommendations-slider .icon-next-arrow',
+        prevEl: '.product-recommendations-slider .icon-prev-arrow',
+      },
+      breakpoints: {
+      // when window width is >= 320px
+      1681: {
+        slidesPerView: 3,
+      },
+      1100: {
+        slidesPerView: 2.7,
+      },
+      800: {
+        slidesPerView: 2.4,
+      },
+      600: {
+        slidesPerView: 1.5,
+      },
+    }
+    });
+  }
+
+  document.addEventListener('product-recommendations-loaded', () => {
+    initProductRecommendationsSlider()
+  })
+</script>
 
 {% schema %}
 {

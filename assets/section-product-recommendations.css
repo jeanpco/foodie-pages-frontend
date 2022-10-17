@@ -2,6 +2,50 @@
   display: block;
 }
 
-.product-recommendations__heading {
-  margin: 0 0 3rem;
+.product-recommendations-slider .product-card-container {
+  width: 27.1875rem;
+}
+
+.product-recommendations-slider .icon-next-arrow,
+.product-recommendations-slider .icon-prev-arrow {
+  top: 44%;
+}
+
+@media (max-width: 1680px) {
+  .product-recommendations-slider-module-swiper {
+    overflow: visible !important;
+  }
+
+  .product-recommendations-slider .promo-card {
+    height: 27.1875rem;
+  }
+}
+
+@media (min-width: 1681px) {
+  .module-product-recommendations-slider .icon-prev-arrow {
+    left: 1rem;
+  }
+  
+  .module-product-recommendations-slider .icon-next-arrow {
+    right: 1rem;
+  }
+
+  .product-recommendations-slider .promo-card {
+    height: 26.4vw;
+    max-height: 27.1875rem;
+  }
+
+  .product-recommendations-slider .icon-prev-arrow {
+    left: 1rem;
+  }
+  
+  .product-recommendations-slider .icon-next-arrow {
+    right: 1rem;
+  }
+}
+
+@media (max-width: 991px) {
+  .product-recommendations-slider .promo-card {
+    height: unset;
+  }
 }

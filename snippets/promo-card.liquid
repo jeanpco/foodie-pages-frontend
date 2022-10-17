@@ -1,5 +1,9 @@
 {{ 'promo-card.css' | asset_url | stylesheet_tag }}
 
+{% if spacing_class == blank %}
+  {% assign spacing_class = 'padding-vertical padding-large' %}
+{% endif %}
+
 {%- comment -%} icon_url
 title
 body
@@ -7,7 +11,7 @@ cta_text
 cta_link {%- endcomment -%}
 
 <div class="promo-card background-color-mar-10 padding-horizontal padding-medium">
-  <div class="padding-vertical padding-large">
+  <div class="{{ spacing_class }}">
     {% if icon_url != blank %}
       <img src="{{ icon_url }}" alt="{{ title }}" class="promo-card_icon margin-bottom margin-small">
     {% endif %}
