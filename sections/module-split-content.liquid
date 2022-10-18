@@ -1,9 +1,19 @@
-<div class="container">
-  <h1>Module Split Content</h1>
-  <div>{{ section.settings.richtext }}</div>
-  {% for block in section.blocks %}
-    <div>{{ block.settings.richtext }}</div>
-  {% endfor %}
+<div class="split-content container">
+  <div class="split-content_container margin-vertical margin-huge">
+    {% render 'module-header' %}
+    {% if section.settings.image != blank %}
+      <div class="split-content_image">
+        {{ section.settings.image | image_url: width: 800 | image_tag:
+          loading: 'lazy',
+          widths: '550, 720, 990, 1100, 1500, 2200, 3000'
+        }}
+      </div>
+    {% endif %}
+    <div>{{ section.settings.richtext }}</div>
+    {% for block in section.blocks %}
+      <div>{{ block.settings.richtext }}</div>
+    {% endfor %}
+  </div>
 </div>
 
 {% schema %}
@@ -13,10 +23,63 @@
   "class": "section section-split-content",
   "settings": [
     {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "overline",
+      "default": "Quick shop",
+      "label": "Overline"
+    },
+    {
       "type": "richtext",
-      "id": "richtext",
-      "default": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.</p>",
-      "label": "t:sections.rich-text.blocks.text.settings.text.label"
+      "id": "title",
+      "default": "<p>Gifts that <i>celebrate</i> small business</p>",
+      "label": "Title"
+    },
+    {
+      "type": "select",
+      "id": "heading_style",
+      "options": [
+        {
+          "value": "h2",
+          "label": "Heading 2"
+        },
+        {
+          "value": "h1",
+          "label": "Heading 1"
+        }
+      ],
+      "default": "h1",
+      "label": "Heading 1"
+    },
+    {
+      "type": "textarea",
+      "id": "body",
+      "default": "Each foodiepages gift basket is designed with premium goods from diverse, independently-owned makers and brands across Canada.",
+      "label": "Body"
+    },
+    {
+      "type": "header",
+      "content": "Layout Settings"
+    },
+    {
+      "type": "select",
+      "id": "layout_style",
+      "options": [
+        {
+          "value": "content-left",
+          "label": "Content left / Image right"
+        },
+        {
+          "value": "content-right",
+          "label": "Content right / Image left"
+        }
+      ],
+      "default": "content-right",
+      "label": "Layout Style"
     }
   ],
   "blocks": [
@@ -26,10 +89,15 @@
       "limit": 2,
       "settings": [
         {
-          "type": "richtext",
-          "id": "text",
-          "default": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.</p>",
-          "label": "t:sections.rich-text.blocks.text.settings.text.label"
+          "type": "text",
+          "id": "cta_text",
+          "default": "Shop all",
+          "label": "CTA Text"
+        },
+        {
+          "type": "url",
+          "id": "cta_link",
+          "label": "CTA Link"
         }
       ]
     }
