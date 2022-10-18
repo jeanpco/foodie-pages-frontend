@@ -41,10 +41,98 @@
         "background_color": "background-color-azul-verdoso-10",
         "trusted_by_text": "Trusted by"
       }
+    },
+    "03e88420-41ef-4ba1-b416-54657d1f10ab": {
+      "type": "module-logos",
+      "blocks": {
+        "1e332423-b16d-4a90-aaae-54561d553c3f": {
+          "type": "logo",
+          "settings": {
+            "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0601\/1709\/0544\/files\/Path.svg?v=1664989934"
+          }
+        },
+        "1320182d-6f20-4196-abe5-354267a5a492": {
+          "type": "logo",
+          "settings": {
+            "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0601\/1709\/0544\/files\/Path.svg?v=1664989934"
+          }
+        },
+        "33864129-693e-46ed-9333-2708bb3a2b56": {
+          "type": "logo",
+          "settings": {
+            "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0601\/1709\/0544\/files\/Path.svg?v=1664989934"
+          }
+        },
+        "152baad5-1790-4c68-90bb-289a87748763": {
+          "type": "logo",
+          "settings": {
+            "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0601\/1709\/0544\/files\/Path.svg?v=1664989934"
+          }
+        },
+        "93497ebc-7e57-49db-a1d0-1bf581a8d654": {
+          "type": "logo",
+          "settings": {
+            "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0601\/1709\/0544\/files\/Path.svg?v=1664989934"
+          }
+        },
+        "c656c54f-4158-40a3-97a5-e2d84a6bd340": {
+          "type": "logo",
+          "settings": {
+            "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0601\/1709\/0544\/files\/Path.svg?v=1664989934"
+          }
+        },
+        "172e9d73-6545-4976-aabf-1b9dc9b72200": {
+          "type": "logo",
+          "settings": {
+            "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0601\/1709\/0544\/files\/Path.svg?v=1664989934"
+          }
+        },
+        "7dd6ffb9-2fdf-4089-b302-8642a2f3b7b4": {
+          "type": "logo",
+          "settings": {
+            "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0601\/1709\/0544\/files\/Path.svg?v=1664989934"
+          }
+        },
+        "7d3c8ea7-5644-4518-97a4-c758bfbbf6e3": {
+          "type": "logo",
+          "settings": {
+            "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0601\/1709\/0544\/files\/Path.svg?v=1664989934"
+          }
+        },
+        "62a63773-bd87-49cd-ab3e-e074d611e450": {
+          "type": "logo",
+          "settings": {
+            "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0601\/1709\/0544\/files\/Path.svg?v=1664989934"
+          }
+        },
+        "0c640300-131a-4352-8353-70596fc3305e": {
+          "type": "logo",
+          "settings": {
+            "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0601\/1709\/0544\/files\/Path.svg?v=1664989934"
+          }
+        }
+      },
+      "block_order": [
+        "1e332423-b16d-4a90-aaae-54561d553c3f",
+        "1320182d-6f20-4196-abe5-354267a5a492",
+        "33864129-693e-46ed-9333-2708bb3a2b56",
+        "152baad5-1790-4c68-90bb-289a87748763",
+        "93497ebc-7e57-49db-a1d0-1bf581a8d654",
+        "c656c54f-4158-40a3-97a5-e2d84a6bd340",
+        "172e9d73-6545-4976-aabf-1b9dc9b72200",
+        "7dd6ffb9-2fdf-4089-b302-8642a2f3b7b4",
+        "7d3c8ea7-5644-4518-97a4-c758bfbbf6e3",
+        "62a63773-bd87-49cd-ab3e-e074d611e450",
+        "0c640300-131a-4352-8353-70596fc3305e"
+      ],
+      "settings": {
+        "overline": "Quick Shop"
+      }
     }
   },
   "order": [
     "main",
-    "6e5a08e9-482a-4417-9cab-892e4964e7d8"
+    "6e5a08e9-482a-4417-9cab-892e4964e7d8",
+    "03e88420-41ef-4ba1-b416-54657d1f10ab"
   ]
 }
