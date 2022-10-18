@@ -136,7 +136,7 @@
           "type": "cta",
           "settings": {
             "cta_text": "Download Catalogue",
-            "cta_link": "#download-catalog"
+            "cta_link": "#download"
           }
         }
       },
@@ -148,7 +148,7 @@
         "image": "shopify:\/\/shop_images\/Image.jpg",
         "overline": "Quick shop",
         "title": "<p>Gifts that <em>celebrate<\/em> small business<\/p>",
-        "heading_style": "h1",
+        "heading_style": "h2",
         "body": "Each foodiepages gift basket is designed with premium goods from diverse, independently-owned makers and brands across Canada.",
         "layout_style": "content-right"
       }
