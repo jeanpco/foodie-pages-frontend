@@ -1,6 +1,8 @@
+{{ 'module-split-content.css' | asset_url | stylesheet_tag }}
+
 <div class="split-content container">
-  <div class="split-content_container margin-vertical margin-huge">
-    {% render 'module-header' %}
+  <div class="split-content_container margin-vertical margin-huge {{ section.settings.layout_style }}">
+
     {% if section.settings.image != blank %}
       <div class="split-content_image">
         {{ section.settings.image | image_url: width: 800 | image_tag:
@@ -9,10 +11,53 @@
         }}
       </div>
     {% endif %}
-    <div>{{ section.settings.richtext }}</div>
-    {% for block in section.blocks %}
-      <div>{{ block.settings.richtext }}</div>
-    {% endfor %}
+
+    {% assign numberOfCtas = section.blocks | size %}
+
+    <div class="split-content_content">
+
+      {% render 'module-header', 
+        overline: section.settings.overline, 
+        title: section.settings.title,
+        body: section.settings.body,
+        text_horizontal_alignment: 'left',
+        heading_style: section.settings.heading_style,
+      %}
+
+      {% if numberOfCtas > 0 %}
+        <div class="split-content_ctas margin-top margin-top margin-large mobile-margin-0">
+
+          {% for block in section.blocks %}
+            <div class="margin-top mobile-margin-large">
+              {% if forloop.first %}
+                
+                {% 
+                  render 'button', 
+                  cta_text: block.settings.cta_text, 
+                  cta_link: block.settings.cta_link,
+                  class: "button margin-right margin-small"
+                  theme: '',
+                  preventClick: false,
+                %}
+              
+              {% else %}
+
+                {% 
+                  render 'button', 
+                  cta_text: block.settings.cta_text, 
+                  cta_link: block.settings.cta_link,
+                  class: "button secondary"
+                  theme: '',
+                  preventClick: false,
+                %}
+
+              {% endif %}
+              
+            </div>
+          {% endfor %} 
+        </div>
+      {% endif %}
+    </div>
   </div>
 </div>
 
@@ -53,7 +98,7 @@
         }
       ],
       "default": "h1",
-      "label": "Heading 1"
+      "label": "Heading style"
     },
     {
       "type": "textarea",

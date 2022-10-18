@@ -3,12 +3,12 @@
 .heading-style-h1,
 h1 {
   font-size: var(--font-h1-size-desktop);
-  line-height: 1.1;
+  line-height: 1;
   font-weight: 500;
 }
 
 h1 * {
-  line-height: 1.1;
+  line-height: 1;
 }
 
 .heading-style-h1.serif,
