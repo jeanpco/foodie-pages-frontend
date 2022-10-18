@@ -26,10 +26,10 @@
               {% assign numberOfCtas = ctasArray | size %}
 
               {% if numberOfCtas > 0 %}
-                <div class="hero-content_ctas margin-top margin-top margin-medium mobile-margin-0">
+                <div class="hero-content_ctas margin-top margin-top margin-medium mobile-margin-small">
 
                   {% for block in ctasArray %}
-                    <div class="margin-top {% if forloop.first == false %} mobile-margin-xsmall{% else %} mobile-margin-large{% endif %}">
+                    <div class="margin-top mobile-margin-xsmall">
                       <a 
                         class="button {% if forloop.first %}margin-right margin-small{% endif %}{% if forloop.first == false %} secondary{% endif %}" 
                         href="{{ block.settings.cta_link }}"
