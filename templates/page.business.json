@@ -124,6 +124,26 @@
     },
     "8d1281ee-ecd6-4a95-ba83-f047c9b8007b": {
       "type": "module-split-content",
+      "blocks": {
+        "0f6671cc-6927-451b-b37c-da38925cd5b4": {
+          "type": "cta",
+          "settings": {
+            "cta_text": "Learn More",
+            "cta_link": "shopify:\/\/pages\/team-care-packages"
+          }
+        },
+        "a3d4eb6b-e000-4180-bb22-2f3c38f6af79": {
+          "type": "cta",
+          "settings": {
+            "cta_text": "Download Catalogue",
+            "cta_link": "#download-catalog"
+          }
+        }
+      },
+      "block_order": [
+        "0f6671cc-6927-451b-b37c-da38925cd5b4",
+        "a3d4eb6b-e000-4180-bb22-2f3c38f6af79"
+      ],
       "settings": {
         "image": "shopify:\/\/shop_images\/Image.jpg",
         "overline": "Quick shop",
