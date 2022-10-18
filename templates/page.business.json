@@ -125,7 +125,12 @@
     "8d1281ee-ecd6-4a95-ba83-f047c9b8007b": {
       "type": "module-split-content",
       "settings": {
-        "richtext": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.<\/p>"
+        "image": "shopify:\/\/shop_images\/Image.jpg",
+        "overline": "Quick shop",
+        "title": "<p>Gifts that <em>celebrate<\/em> small business<\/p>",
+        "heading_style": "h1",
+        "body": "Each foodiepages gift basket is designed with premium goods from diverse, independently-owned makers and brands across Canada.",
+        "layout_style": "content-right"
       }
     }
   },
