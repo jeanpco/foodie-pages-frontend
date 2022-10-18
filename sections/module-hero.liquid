@@ -19,7 +19,7 @@
             </div>
             <div class="hero-content_secondary">
               {% if section.settings.body != blank %}
-                <p class="hero-content_body margin-top margin-medium mobile-margin-xsmall">{{ section.settings.body }}</p> 
+                <p class="hero-content_body margin-top margin-medium">{{ section.settings.body }}</p> 
               {% endif %}
 
               {% assign ctasArray = section.blocks | where: "type", "cta" %}
@@ -29,7 +29,7 @@
                 <div class="hero-content_ctas margin-top margin-top margin-medium mobile-margin-0">
 
                   {% for block in ctasArray %}
-                    <div class="margin-top mobile-margin-small">
+                    <div class="margin-top {% if forloop.first == false %} mobile-margin-xsmall{% else %} mobile-margin-large{% endif %}">
                       <a 
                         class="button {% if forloop.first %}margin-right margin-small{% endif %}{% if forloop.first == false %} secondary{% endif %}" 
                         href="{{ block.settings.cta_link }}"

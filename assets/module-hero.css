@@ -138,3 +138,11 @@
     aspect-ratio: 550/550;
   }
 }
+
+
+@media (min-width: 479px) {
+  .hero-content_ctas .margin-top.mobile-margin-large,
+  .hero-content_ctas .margin-top.mobile-margin-xsmall {
+    margin-top: 0; 
+  }
+}

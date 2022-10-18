@@ -33,6 +33,7 @@
   aspect-ratio: 320/309;
   object-fit: cover;
   border-radius: 16px;
+  max-height: 100vw;
 }
 
 .split-content_content p.margin-top.margin-small.text-color-grey-500 {
@@ -42,9 +43,23 @@
 @media (min-width: 991px) {
   .split-content_image img {
     aspect-ratio: 607/557;
+    max-height: unset;
   }
 
   .split-content_content p.margin-top.margin-small.text-color-grey-500 {
     margin-top: 1.5rem;
+  }
+}
+
+@media (max-width: 479px) {
+  .split-content_ctas {
+    flex-direction: column;
+  }
+}
+
+@media (min-width: 479px) {
+  .split-content_ctas .margin-top.mobile-margin-large,
+  .split-content_ctas .margin-top.mobile-margin-xsmall {
+    margin-top: 0; 
   }
 }

@@ -28,7 +28,7 @@
         <div class="split-content_ctas margin-top margin-top margin-large mobile-margin-0">
 
           {% for block in section.blocks %}
-            <div class="margin-top mobile-margin-large">
+            <div class="margin-top {% if forloop.first %}mobile-margin-large{% endif %} {% if forloop.first == false %} mobile-margin-xsmall{% endif %}">
               {% if forloop.first %}
                 
                 {% 
