@@ -6,9 +6,45 @@
         "padding_top": 28,
         "padding_bottom": 28
       }
+    },
+    "6e5a08e9-482a-4417-9cab-892e4964e7d8": {
+      "type": "module-hero",
+      "blocks": {
+        "19806096-63a2-4a47-8ace-62ad44b1c836": {
+          "type": "cta",
+          "settings": {
+            "cta_text": "Shop all",
+            "cta_link": "shopify:\/\/collections\/all"
+          }
+        },
+        "b851d519-4870-4981-9906-52b4404d2953": {
+          "type": "cta",
+          "settings": {
+            "cta_text": "Corporate Gifting",
+            "cta_link": "shopify:\/\/pages\/team-care-packages"
+          }
+        }
+      },
+      "block_order": [
+        "19806096-63a2-4a47-8ace-62ad44b1c836",
+        "b851d519-4870-4981-9906-52b4404d2953"
+      ],
+      "settings": {
+        "overline": "Quick shop",
+        "title": "<p>Gifts that <em>celebrate<\/em> small business<\/p>",
+        "heading_style": "h1",
+        "body": "Each foodiepages gift basket is designed with premium goods from diverse, independently-owned makers and brands across Canada.",
+        "image": "shopify:\/\/shop_images\/Frame_43428_2.png",
+        "enable_card_style": false,
+        "text_vertical_alignment": "flex-end",
+        "layout_style": "two-columns",
+        "background_color": "background-color-azul-verdoso-10",
+        "trusted_by_text": "Trusted by"
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "6e5a08e9-482a-4417-9cab-892e4964e7d8"
   ]
 }
