@@ -326,7 +326,7 @@
     </script>
   </head>
 
-  <body class="gradient">
+  <body>
     <a class="skip-to-content-link button visually-hidden" href="#MainContent">
       {{ "accessibility.skip_to_text" | t }}
     </a>
@@ -384,6 +384,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
 
+    {% render 'modal' %}
     {% render 'animations' %}
   </body>
 </html>

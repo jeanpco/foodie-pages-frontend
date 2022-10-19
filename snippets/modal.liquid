@@ -1,0 +1,78 @@
+<div role="dialog" aria-expanded="false" aria-controls="dialog" aria-label="dialog" aria-description="Handles contact form, download catalog form and add gift message form" class="dialog-modal">
+  <button class="dialog-modal--close">{% render 'icon-x' %}</button>
+
+  <div class="download-catalogue-form">
+    download-catalogue-form
+  </div>
+
+  <div class="contact-form">
+    contact-form
+  </div>
+
+  <div class="gift-message-form">
+    gift-message-form
+  </div>
+</div>
+
+<style>
+  .dialog::backdrop {
+    background: rgba(0,0,0,.85);
+  }
+
+  .dialog[aria-expanded="true"] {
+    display: block;
+  }
+
+  .download-catalogue-form,
+  .contact-form,
+  .gift-message-form {
+    display: none;
+  }
+
+  .dialog[aria-controls="download-catalogue"] {
+    display: block;
+  }
+
+  .dialog[aria-controls="contact"] {
+    display: block;
+  }
+
+  .dialog[aria-controls="gift-message"] {
+    display: block;
+  }
+
+</style>
+
+<script type="module">
+  
+  const initDialog = () => {
+    const dialog = document.querySelector('.dialog-modal');
+
+    const openDialog = (dialogType) => {
+      dialog.setAttribute('aria-expanded', true);
+      dialog.setAttribute('aria-controls', dialogType);
+    };
+
+    const closeDialog = () => {
+      dialog.setAttribute('aria-expanded', false);
+      dialog.setAttribute('aria-controls', 'dialog');
+    };
+
+    const toggleDialog = () => {
+      dialog.setAttribute('aria-expanded', dialog.getAttribute('aria-expanded') === 'true' ? 'false' : 'true');
+    };
+
+    // find all a tag with a string that contains download-catalogue
+    const downloadCatalogueLinks = document.querySelectorAll('a[href*="download-catalogue"]');
+
+    // add event listener to each link
+    downloadCatalogueLinks.forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        openDialog('download-catalogue');
+      });
+    });
+  }
+
+  initDialog()
+</script>
