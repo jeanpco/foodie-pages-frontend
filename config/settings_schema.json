@@ -1490,5 +1490,44 @@
         "label": "Success Message"
       }
     ]
+  },
+  {
+    "name": "Popup - Add Gift Message Form",
+    "settings": [
+      {
+        "type": "text",
+        "id": "gift_message_title",
+        "label": "Title"
+      },
+      {
+        "type": "textarea",
+        "id": "gift_message_body",
+        "label": "Body"
+      },
+      {
+        "type": "header",
+        "content": "Form Settings"
+      },
+      {
+        "type": "text",
+        "id": "gift_message_input_message_label",
+        "label": "Input Message Label"
+      },
+      {
+        "type": "text",
+        "id": "gift_message_input_message_placeholder",
+        "label": "Input Message Placeholder"
+      },
+      {
+        "type": "text",
+        "id": "gift_message_cta_text",
+        "label": "Submit CTA Text"
+      },
+      {
+        "type": "text",
+        "id": "success_message",
+        "label": "Success Message"
+      }
+    ]
   }
 ]
