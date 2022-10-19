@@ -155,6 +155,26 @@
     },
     "ff6debb7-9198-4031-89bf-4dba97bf8f37": {
       "type": "module-split-content",
+      "blocks": {
+        "bb7441af-23eb-413e-9e53-583d86d17048": {
+          "type": "cta",
+          "settings": {
+            "cta_text": "Shop all",
+            "cta_link": "shopify:\/\/collections\/all"
+          }
+        },
+        "276a7a27-7127-4129-8ca0-d68003063232": {
+          "type": "cta",
+          "settings": {
+            "cta_text": "Download Catalogue",
+            "cta_link": "#download-catalogue"
+          }
+        }
+      },
+      "block_order": [
+        "bb7441af-23eb-413e-9e53-583d86d17048",
+        "276a7a27-7127-4129-8ca0-d68003063232"
+      ],
       "settings": {
         "image": "shopify:\/\/shop_images\/Image.jpg",
         "overline": "Quick shop",
