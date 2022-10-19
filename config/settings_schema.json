@@ -1486,7 +1486,7 @@
       },
       {
         "type": "text",
-        "id": "success_message",
+        "id": "contact_form_success_message",
         "label": "Success Message"
       }
     ]
@@ -1525,7 +1525,7 @@
       },
       {
         "type": "text",
-        "id": "success_message",
+        "id": "gift_message_success_message",
         "label": "Success Message"
       }
     ]
