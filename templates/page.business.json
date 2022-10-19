@@ -136,7 +136,7 @@
           "type": "cta",
           "settings": {
             "cta_text": "Download Catalogue",
-            "cta_link": "#download"
+            "cta_link": "#download-catalogue"
           }
         }
       },
@@ -152,11 +152,43 @@
         "body": "Each foodiepages gift basket is designed with premium goods from diverse, independently-owned makers and brands across Canada.",
         "layout_style": "content-right"
       }
+    },
+    "ff6debb7-9198-4031-89bf-4dba97bf8f37": {
+      "type": "module-split-content",
+      "blocks": {
+        "bb7441af-23eb-413e-9e53-583d86d17048": {
+          "type": "cta",
+          "settings": {
+            "cta_text": "Shop all",
+            "cta_link": "shopify:\/\/collections\/all"
+          }
+        },
+        "276a7a27-7127-4129-8ca0-d68003063232": {
+          "type": "cta",
+          "settings": {
+            "cta_text": "Download Catalogue",
+            "cta_link": "#download-catalogue"
+          }
+        }
+      },
+      "block_order": [
+        "bb7441af-23eb-413e-9e53-583d86d17048",
+        "276a7a27-7127-4129-8ca0-d68003063232"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/Image.jpg",
+        "overline": "Quick shop",
+        "title": "<p>Gifts that <em>celebrate<\/em> small business<\/p>",
+        "heading_style": "h2",
+        "body": "Each foodiepages gift basket is designed with premium goods from diverse, independently-owned makers and brands across Canada.",
+        "layout_style": "content-left"
+      }
     }
   },
   "order": [
     "main",
     "03e88420-41ef-4ba1-b416-54657d1f10ab",
-    "8d1281ee-ecd6-4a95-ba83-f047c9b8007b"
+    "8d1281ee-ecd6-4a95-ba83-f047c9b8007b",
+    "ff6debb7-9198-4031-89bf-4dba97bf8f37"
   ]
 }
