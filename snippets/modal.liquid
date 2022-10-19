@@ -1,26 +1,55 @@
-<div role="dialog" aria-expanded="false" aria-controls="dialog" aria-label="dialog" aria-description="Handles contact form, download catalog form and add gift message form" class="dialog-modal">
-  <button class="dialog-modal--close">{% render 'icon-x' %}</button>
+<dialog class="dialog-modal" role="dialog" aria-expanded="false" aria-controls="dialog" aria-label="dialog" aria-description="Handles contact form, download catalog form and add gift message form">
+  <div class="dialog-modal-container background-color-secondary padding-medium">
+    <button class="dialog-modal--close padding-medium">{% render 'icon-x' %}</button>
 
-  <div class="download-catalogue-form">
-    download-catalogue-form
-  </div>
+    <div class="download-catalogue-form">
+      download-catalogue-form
+    </div>
 
-  <div class="contact-form">
-    contact-form
-  </div>
+    <div class="contact-form">
+      contact-form
+    </div>
 
-  <div class="gift-message-form">
-    gift-message-form
+    <div class="gift-message-form">
+      gift-message-form
+    </div>
   </div>
-</div>
+</dialog>
 
 <style>
-  .dialog::backdrop {
-    background: rgba(0,0,0,.85);
+
+  .dialog-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 100;
+    display: none;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0,0,0,.25);
   }
 
-  .dialog[aria-expanded="true"] {
-    display: block;
+  .dialog-modal--close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+  }
+
+  .dialog-modal-container {
+    width: 48rem;
+    border-radius: 24px;
+    height: auto;
+    position: relative;
+  }
+
+  .dialog-modal[aria-expanded="true"] {
+    display: flex;
   }
 
   .download-catalogue-form,
@@ -29,15 +58,9 @@
     display: none;
   }
 
-  .dialog[aria-controls="download-catalogue"] {
-    display: block;
-  }
-
-  .dialog[aria-controls="contact"] {
-    display: block;
-  }
-
-  .dialog[aria-controls="gift-message"] {
+  .dialog-modal[aria-controls="download-catalogue"] .download-catalogue-form,
+  .dialog-modal[aria-controls="contact"] .contact-form,
+  .dialog-modal[aria-controls="gift-message"] .gift-message-form {
     display: block;
   }
 
@@ -47,6 +70,7 @@
   
   const initDialog = () => {
     const dialog = document.querySelector('.dialog-modal');
+    const dialogContainer = dialog.querySelector('.dialog-modal-container');
 
     const openDialog = (dialogType) => {
       dialog.setAttribute('aria-expanded', true);
@@ -62,15 +86,53 @@
       dialog.setAttribute('aria-expanded', dialog.getAttribute('aria-expanded') === 'true' ? 'false' : 'true');
     };
 
-    // find all a tag with a string that contains download-catalogue
+    // get links that can open the popup
     const downloadCatalogueLinks = document.querySelectorAll('a[href*="download-catalogue"]');
+    const contactLinks = document.querySelectorAll('a[href*="contact"]');
+    const giftMessageLinks = document.querySelectorAll('a[href*="gift-message"]');
 
-    // add event listener to each link
+    // reveal the download-catalogue form
     downloadCatalogueLinks.forEach(link => {
       link.addEventListener('click', (e) => {
         e.preventDefault();
         openDialog('download-catalogue');
       });
+    });
+
+    // reveal the contact form
+    contactLinks.forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        openDialog('contact');
+      });
+    });
+
+    // reveal the gift-message form
+    giftMessageLinks.forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        openDialog('gift-message');
+      });
+    });
+
+    // close the dialog when clicking on the close button
+    dialog.querySelector('.dialog-modal--close').addEventListener('click', (e) => {
+      e.preventDefault();
+      closeDialog();
+    });
+
+    // close the dialog when clicking outside of dialogContainer
+    dialog.addEventListener('click', (e) => {
+      if (e.target === dialog) {
+        closeDialog();
+      }
+    });
+
+    // close the dialog when pressing escape
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closeDialog();
+      }
     });
   }
 

@@ -1371,5 +1371,124 @@
         "info": "t:settings_schema.cart.settings.cart_drawer.collection.info"
       }
     ]
+  },
+  {
+    "name": "Popup - Download Catalogue",
+    "settings": [
+      {
+        "type": "url",
+        "id": "download_catalogue_icon_url",
+        "label": "Icon",
+        "info": "Add an icon in your file manager and paste the URL here"
+      },
+      {
+        "type": "text",
+        "id": "download_catalogue_title",
+        "label": "Title"
+      },
+      {
+        "type": "textarea",
+        "id": "download_catalogue_body",
+        "label": "Body"
+      },
+      {
+        "type": "header",
+        "content": "Form Settings"
+      },
+      {
+        "type": "text",
+        "id": "download_catalogue_input_name_label",
+        "label": "Input Name Label"
+      },
+      {
+        "type": "text",
+        "id": "download_catalogue_input_name_placeholder",
+        "label": "Input Name Placeholder"
+      },
+      {
+        "type": "text",
+        "id": "download_catalogue_input_email_label",
+        "label": "Input Email Label"
+      },
+      {
+        "type": "text",
+        "id": "download_catalogue_input_email_placeholder",
+        "label": "Input Email Placeholder"
+      },
+      {
+        "type": "text",
+        "id": "download_catalogue_cta_text",
+        "label": "Submit CTA Text"
+      },
+      {
+        "type": "url",
+        "id": "download_catalogue_download_file_url",
+        "label": "Download File URL"
+      },
+      {
+        "type": "text",
+        "id": "download_catalogue_success_message",
+        "label": "Success Message"
+      }
+    ]
+  },
+  {
+    "name": "Popup - Contact Form",
+    "settings": [
+      {
+        "type": "text",
+        "id": "contact_form_title",
+        "label": "Title"
+      },
+      {
+        "type": "textarea",
+        "id": "contact_form_body",
+        "label": "Body"
+      },
+      {
+        "type": "header",
+        "content": "Form Settings"
+      },
+      {
+        "type": "text",
+        "id": "contact_form_input_name_label",
+        "label": "Input Name Label"
+      },
+      {
+        "type": "text",
+        "id": "contact_form_input_name_placeholder",
+        "label": "Input Name Placeholder"
+      },
+      {
+        "type": "text",
+        "id": "contact_form_input_email_label",
+        "label": "Input Email Label"
+      },
+      {
+        "type": "text",
+        "id": "contact_form_input_email_placeholder",
+        "label": "Input Email Placeholder"
+      },
+      {
+        "type": "text",
+        "id": "contact_form_input_message_label",
+        "label": "Input Message Label"
+      },
+      {
+        "type": "text",
+        "id": "contact_form_input_message_placeholder",
+        "label": "Input Message Placeholder"
+      },
+      {
+        "type": "text",
+        "id": "contact_form_cta_text",
+        "label": "Submit CTA Text"
+      },
+      {
+        "type": "text",
+        "id": "success_message",
+        "label": "Success Message"
+      }
+    ]
   }
 ]
