@@ -864,6 +864,13 @@ deferred-media {
   margin-bottom: 1.25rem;
 }
 
+.field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+}
+
 .field_input {
   padding: 0.5rem 0.75rem 0.5rem 0.75rem;
   border: 1px solid var(--color-grey-200);
