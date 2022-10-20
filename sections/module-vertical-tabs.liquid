@@ -1,6 +1,6 @@
 <div class="vertical-tabs container">
-  <div class="vertical-tabs-container padding-vertical padding-huge display-flex justify-content-space-between">
-    <div class="vertical-tabs_header display-flex flex-direction-column justify-content-space-between padding-right padding-huge tablet-padding-0">
+  <div class="vertical-tabs-container padding-vertical padding-huge display-flex justify-content-between">
+    <div class="vertical-tabs_header display-flex flex-direction-column justify-content-between padding-right padding-huge tablet-padding-0">
       <div class="vertical-tabs_header--top">
 
         {% if section.settings.title != blank %}
@@ -17,7 +17,7 @@
       </div>
 
       {% if section.settings.body != blank or section.settings.secondary_cta_text != blank %}
-        <div class="vertical-tabs_header--bottom">
+        <div class="vertical-tabs_header--bottom is-desktop margin-top margin-xlarge">
           {% if section.settings.body != blank %}
             <p class="text-size-medium text-color-grey-500 margin-bottom margin-small">{{ section.settings.body }}</p>
           {% endif %}
@@ -45,6 +45,17 @@
         {% endfor %}
       </div>
     {% endif %}
+
+    {% if section.settings.body != blank or section.settings.secondary_cta_text != blank %}
+      <div class="vertical-tabs_header--bottom is-mobile margin-top margin-xlarge">
+        {% if section.settings.body != blank %}
+          <p class="text-size-medium text-color-grey-500 margin-bottom margin-small">{{ section.settings.body }}</p>
+        {% endif %}
+        {% if section.settings.secondary_cta_text != blank and section.settings.secondary_cta_link != blank %}
+          <a href="{{ section.settings.secondary_cta_link }}">{{ section.settings.secondary_cta_text }}</a>
+        {% endif %}
+      </div>
+    {% endif %}
   </div>
 </div>
 
@@ -62,6 +73,15 @@
     right: 2rem;
     transition: 300ms ease;
     transform: rotate(180deg);
+  }
+
+  .vertical-tabs_header--bottom.is-desktop {
+    display: block;
+    max-width: 25.9375rem;
+  }
+
+  .vertical-tabs_header--bottom.is-mobile {
+    display: none;
   }
 
   .accordion-block.is-active .accordion-block_body {
@@ -104,6 +124,14 @@
 
     .vertical-tabs_header {
       margin-bottom: 2.5rem;
+    }
+
+    .vertical-tabs_header--bottom.is-desktop {
+      display: none;
+    }
+  
+    .vertical-tabs_header--bottom.is-mobile {
+      display: block;
     }
   }
 
@@ -169,8 +197,8 @@
     {
       "type": "textarea",
       "id": "body",
-      "default": "Get in touch",
-      "label": "CTA Text"
+      "default": "Couldn’t find what you were looking for? write to us at",
+      "label": "Body"
     },
     {
       "type": "text",
