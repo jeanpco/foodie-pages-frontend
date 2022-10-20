@@ -288,8 +288,12 @@
       "settings": {
         "overline": "How it works",
         "title": "<p>Exceptional times call for <em>exceptional gifts<\/em><\/p>",
+        "heading_style": "h2",
         "cta_text": "Get in touch",
-        "cta_link": "shopify:\/\/pages\/contact-us"
+        "cta_link": "shopify:\/\/pages\/contact-us",
+        "body": "Couldn’t find what you were looking for? write to us at",
+        "secondary_cta_text": "example@mail.com",
+        "secondary_cta_link": "mailto:example@mail.com"
       }
     }
   },
