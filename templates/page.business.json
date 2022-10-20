@@ -191,7 +191,7 @@
           "type": "cta",
           "settings": {
             "image": "shopify:\/\/shop_images\/Image_ece8a130-10d5-442c-8531-af02ad89d323.jpg",
-            "title": "",
+            "title": "Events",
             "cta_text": "Get a quote",
             "cta_link": ""
           }
@@ -200,7 +200,7 @@
           "type": "cta",
           "settings": {
             "image": "shopify:\/\/shop_images\/Image.png",
-            "title": "",
+            "title": "Employee Engagement",
             "cta_text": "Get a quote",
             "cta_link": ""
           }
@@ -209,7 +209,16 @@
           "type": "cta",
           "settings": {
             "image": "shopify:\/\/shop_images\/Image_f29ab4aa-62e1-4233-87fd-d001a0874562.jpg",
-            "title": "",
+            "title": "Sales & Marketing",
+            "cta_text": "Get a quote",
+            "cta_link": ""
+          }
+        },
+        "1ec42543-bdff-402c-a8d4-5a761f07de85": {
+          "type": "cta",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Image_4156cd82-50c2-40f5-ab2f-94ea44745172.jpg",
+            "title": "Design",
             "cta_text": "Get a quote",
             "cta_link": ""
           }
@@ -218,7 +227,8 @@
       "block_order": [
         "0e270e0b-60b0-4200-bad1-e5614738e911",
         "09f61078-a30c-47f3-a3b0-602d4831444b",
-        "9522efb4-31a6-4855-a642-745fb947c102"
+        "9522efb4-31a6-4855-a642-745fb947c102",
+        "1ec42543-bdff-402c-a8d4-5a761f07de85"
       ],
       "settings": {
         "overline": "Corporate solutions",
