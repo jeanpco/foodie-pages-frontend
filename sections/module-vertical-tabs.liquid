@@ -1,10 +1,125 @@
-<div class="container">
-  <h1>Module Vertical Tabs</h1>
-  <div>{{ section.settings.richtext }}</div>
-  {% for block in section.blocks %}
-    <div>{{ block.settings.richtext }}</div>
-  {% endfor %}
+<div class="vertical-tabs container">
+  <div class="vertical-tabs-container padding-vertical padding-huge display-flex justify-content-space-between">
+    <div class="vertical-tabs_header display-flex flex-direction-column justify-content-space-between padding-right padding-huge tablet-padding-0">
+      <div class="vertical-tabs_header--top">
+
+        {% if section.settings.title != blank %}
+          {% render 'module-header', 
+            overline: section.settings.overline, 
+            title: section.settings.title,
+            text_horizontal_alignment: 'left',
+            heading_style: section.settings.heading_style,
+            cta_text: section.settings.cta_text,
+            cta_link: section.settings.cta_link
+          %}
+        {% endif %}
+
+      </div>
+
+      {% if section.settings.body != blank or section.settings.secondary_cta_text != blank %}
+        <div class="vertical-tabs_header--bottom">
+          {% if section.settings.body != blank %}
+            <p class="text-size-medium text-color-grey-500 margin-bottom margin-small">{{ section.settings.body }}</p>
+          {% endif %}
+          {% if section.settings.secondary_cta_text != blank and section.settings.secondary_cta_link != blank %}
+            <a href="{{ section.settings.secondary_cta_link }}">{{ section.settings.secondary_cta_text }}</a>
+          {% endif %}
+        </div>
+      {% endif %}
+
+    </div>
+
+    {% assign numberOfAccordionItems = section.blocks | size %}
+
+    {% if numberOfAccordionItems > 0 %}
+      <div class="vertical-tabs_content" data-js-element="accordion--{{ section.id }}">
+        {% for block in section.blocks %}
+          <div class="accordion-block padding-small {% if forloop.first %}is-active{% endif %}" data-js-element="accordion-item">
+            <div class="accordion-block_container padding-xsmall">
+              {% render 'icon-accordion-arrow' %}
+              <p class="accordion-block_overline uppercase text-size-tiny text-color-tertiary margin-bottom margin-xsmall">{{ block.settings.overline }}</p>
+              <h4 class="accordion-block_title">{{ block.settings.title }}</h4>
+              <div class="accordion-block_body margin-top margin-small">{{ block.settings.body }}</div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    {% endif %}
+  </div>
 </div>
+
+<style>
+
+  .accordion-block {
+    border-bottom: 1px solid var(--color-grey-200);
+    cursor: pointer;
+    position: relative;
+  }
+
+  .accordion-block .accordion-arrow {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    transition: 300ms ease;
+    transform: rotate(180deg);
+  }
+
+  .accordion-block.is-active .accordion-block_body {
+    display: block;
+  }
+
+  .accordion-block .accordion-block_body {
+    display: none;
+  }
+
+  .accordion-block.is-active {
+    border-bottom: 1px solid transparent;
+    border-radius: 6px;
+    transition: height 300ms ease;
+    background: var(--color-mar-10);
+  }
+
+  .accordion-block.is-active .accordion-arrow {
+    transform: rotate(0deg);
+  }
+
+  .vertical-tabs_header {
+    width: 47%;
+  }
+
+  .vertical-tabs_content {
+    width: 53%;
+  }
+
+  @media screen and (max-width: 769px) {
+
+    .vertical-tabs_header,
+    .vertical-tabs_content {
+      width: 100%;
+    }
+
+    .vertical-tabs-container {
+      flex-direction: column;
+    }
+
+    .vertical-tabs_header {
+      margin-bottom: 2.5rem;
+    }
+  }
+
+</style>
+
+<script type="module">
+  const accordion = document.querySelector('[data-js-element="accordion--{{ section.id }}"]');
+  const accordionItems = [...accordion.querySelectorAll('[data-js-element="accordion-item"]')];
+
+  accordionItems.forEach(item => {
+    item.addEventListener('click', () => {
+      accordionItems.forEach(item => item.classList.remove('is-active'));
+      item.classList.add('is-active');
+    });
+  })
+</script>
 
 {% schema %}
 {
@@ -13,23 +128,84 @@
   "class": "section section-vertical-tabs",
   "settings": [
     {
+      "type": "text",
+      "id": "overline",
+      "default": "How it works",
+      "label": "Overline"
+    },
+    {
       "type": "richtext",
-      "id": "richtext",
-      "default": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.</p>",
-      "label": "t:sections.rich-text.blocks.text.settings.text.label"
+      "id": "title",
+      "default": "<p>Exceptional times call for <em>exceptional gifts</em></p>",
+      "label": "Title"
+    },
+    {
+      "type": "select",
+      "id": "heading_style",
+      "options": [
+        {
+          "value": "h2",
+          "label": "Heading 2"
+        },
+        {
+          "value": "h1",
+          "label": "Heading 1"
+        }
+      ],
+      "default": "h2",
+      "label": "Heading style"
+    },
+    {
+      "type": "text",
+      "id": "cta_text",
+      "default": "Get in touch",
+      "label": "CTA Text"
+    },
+    {
+      "type": "url",
+      "id": "cta_link",
+      "label": "CTA Link"
+    },
+    {
+      "type": "textarea",
+      "id": "body",
+      "default": "Get in touch",
+      "label": "CTA Text"
+    },
+    {
+      "type": "text",
+      "id": "secondary_cta_text",
+      "default": "Get in touch",
+      "label": "CTA Text - Secondary"
+    },
+    {
+      "type": "url",
+      "id": "secondary_cta_link",
+      "label": "CTA Link - Secondary"
     }
   ],
   "blocks": [
     {
-      "type": "cta",
-      "name": "CTA",
-      "limit": 2,
+      "type": "tab",
+      "name": "Tab",
       "settings": [
         {
-          "type": "richtext",
-          "id": "text",
-          "default": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.</p>",
-          "label": "t:sections.rich-text.blocks.text.settings.text.label"
+          "type": "text",
+          "id": "overline",
+          "default": "Step 1",
+          "label": "Overline"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "default": "Create a Campaign",
+          "label": "Title"
+        },
+        {
+          "type": "textarea",
+          "id": "body",
+          "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ut lorem qui lectus molestie malesuada vitae vel purus.",
+          "label": "Body"
         }
       ]
     }
