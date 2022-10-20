@@ -183,12 +183,57 @@
         "body": "Each foodiepages gift basket is designed with premium goods from diverse, independently-owned makers and brands across Canada.",
         "layout_style": "content-left"
       }
+    },
+    "19291dd4-710b-4313-9d7d-4847e4b2ab64": {
+      "type": "module-columns",
+      "blocks": {
+        "0e270e0b-60b0-4200-bad1-e5614738e911": {
+          "type": "cta",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Image_ece8a130-10d5-442c-8531-af02ad89d323.jpg",
+            "title": "",
+            "cta_text": "Get a quote",
+            "cta_link": ""
+          }
+        },
+        "09f61078-a30c-47f3-a3b0-602d4831444b": {
+          "type": "cta",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Image.png",
+            "title": "",
+            "cta_text": "Get a quote",
+            "cta_link": ""
+          }
+        },
+        "9522efb4-31a6-4855-a642-745fb947c102": {
+          "type": "cta",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Image_f29ab4aa-62e1-4233-87fd-d001a0874562.jpg",
+            "title": "",
+            "cta_text": "Get a quote",
+            "cta_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "0e270e0b-60b0-4200-bad1-e5614738e911",
+        "09f61078-a30c-47f3-a3b0-602d4831444b",
+        "9522efb4-31a6-4855-a642-745fb947c102"
+      ],
+      "settings": {
+        "overline": "Corporate solutions",
+        "title": "Team Solutions",
+        "body": "We help businesses connect with people and make lasting impressions.",
+        "cta_text": "Get a quote",
+        "cta_link": "#contact"
+      }
     }
   },
   "order": [
     "main",
     "03e88420-41ef-4ba1-b416-54657d1f10ab",
     "8d1281ee-ecd6-4a95-ba83-f047c9b8007b",
-    "ff6debb7-9198-4031-89bf-4dba97bf8f37"
+    "ff6debb7-9198-4031-89bf-4dba97bf8f37",
+    "19291dd4-710b-4313-9d7d-4847e4b2ab64"
   ]
 }
