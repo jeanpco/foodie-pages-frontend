@@ -1,22 +1,96 @@
 <div class="container">
-  <div>{{ section.settings.overline }}</div>
-  <div>{{ section.settings.title }}</div>
-  <div>{{ section.settings.cta_text }}</div>
-  <div>{{ section.settings.cta_link }}</div>
-  {% for block in section.blocks %}
-    {%- capture sizes -%}(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 | divided_by: 2 }}px, (min-width: 750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2){%- endcapture -%}
 
-    {{ section.settings.image | image_url: width: 1500 | image_tag:
-      loading: 'lazy',
-      sizes: sizes,
-      widths: '165, 360, 535, 750, 1070, 1500'
-    }}
-    <div>{{ block.settings.title }}</div>
-    <div>{{ block.settings.body }}</div>
-    <div>{{ block.settings.cta_text }}</div>
-    <div>{{ block.settings.cta_link }}</div>
-  {% endfor %}
+  <div class="columns_header margin-bottom margin-xlarge display-flex justify-content-space-between align-items-end">
+    <div class="columns_header-content">
+      {% render 'module-header', 
+        overline: section.settings.overline, 
+        title: section.settings.title,
+        body: section.settings.body,
+        text_horizontal_alignment: 'left',
+        heading_style: section.settings.heading_style,
+      %}
+    </div>
+  
+    {% 
+      render 'button', 
+      cta_text: section.settings.cta_text, 
+      cta_link: section.settings.cta_link,
+      class: '',
+      theme: '',
+      preventClick: false,
+    %}
+  </div>
+
+  <div class="columns display-flex flex-direction-column gap-3">
+    {% for block in section.blocks %}
+      <div class="card display-flex flex-direction-column align-items-start gap-1">
+        {%- capture sizes -%}
+          (min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 | divided_by: 2 }}px, (min-width: 750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2)
+        {%- endcapture -%}
+    
+        {{ block.settings.image | image_url: width: 1500 | image_tag:
+          loading: 'lazy',
+          sizes: sizes,
+          widths: '165, 360, 535, 750, 1070, 1500'
+        }}
+        <h4 class="text-color-tertiary">{{ block.settings.title }}</h4>
+        <p class="text-color-grey-500">{{ block.settings.body }}</p>
+        <a class="link" href="{{ block.settings.cta_link }}">{{ block.settings.cta_text }}</a>
+      </div>
+    {% endfor %}
+  </div>
 </div>
+
+<style>
+
+  .card {
+
+  }
+
+  .card img {
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    max-height: 19.5rem;
+    border-radius: 24px;
+  }
+
+  @media screen and (max-width: 991px) {
+    .columns {
+      flex-wrap: wrap;
+      flex-direction: row;
+    }
+
+    .columns > * {
+      width: calc(50% - 1.5rem);
+    }
+  }
+
+  @media screen and (max-width: 650px) {
+    .columns {
+      flex-wrap: nowrap;
+      flex-direction: column;
+    }
+
+    .columns > * {
+      width: 100%;
+    }
+  }
+   
+
+  @media screen and (min-width: 991px) {
+    .columns {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      gap: 2rem;
+    } 
+
+    .columns_header-content {
+      margin-right: auto;
+    }
+  }
+
+</style>
 
 {% schema %}
 {
@@ -52,6 +126,22 @@
       "type": "url",
       "id": "cta_link",
       "label": "CTA Link"
+    },
+    {
+      "type": "select",
+      "id": "heading_style",
+      "options": [
+        {
+          "value": "h2",
+          "label": "Heading 2"
+        },
+        {
+          "value": "h1",
+          "label": "Heading 1"
+        }
+      ],
+      "default": "h2",
+      "label": "Heading style"
     }
   ],
   "blocks": [
