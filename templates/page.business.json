@@ -216,12 +216,23 @@
             "cta_text": "Learn More",
             "cta_link": "\/"
           }
+        },
+        "99e17bc6-8c7d-4127-9269-5ed3314e7bc8": {
+          "type": "card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Image_4156cd82-50c2-40f5-ab2f-94ea44745172.jpg",
+            "title": "Design",
+            "body": "Great design makes all the difference. We'll make your brand shine with creative, bold packaging and high-quality branded swag.",
+            "cta_text": "Learn More",
+            "cta_link": "\/"
+          }
         }
       },
       "block_order": [
         "0d45905e-ac44-49ba-a59d-128cacbe1c96",
         "faec134e-e72c-4f0d-8052-11bb37fec86a",
-        "640e588a-8b8f-49e9-8151-8d7f751d35ac"
+        "640e588a-8b8f-49e9-8151-8d7f751d35ac",
+        "99e17bc6-8c7d-4127-9269-5ed3314e7bc8"
       ],
       "settings": {
         "overline": "Corporate solutions",
