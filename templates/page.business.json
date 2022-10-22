@@ -295,6 +295,16 @@
         "secondary_cta_text": "example@mail.com",
         "secondary_cta_link": "mailto:example@mail.com"
       }
+    },
+    "3d380ef2-30ad-4948-8fdf-6906d4063a49": {
+      "type": "module-cta-banner",
+      "settings": {
+        "overline": "Quick shop",
+        "heading_style": "h2",
+        "title": "<p>Gifts that <em>celebrate<\/em> small business<\/p>",
+        "body": "Each foodiepages gift basket is designed with premium goods from diverse, independently-owned makers and brands across Canada.",
+        "image": "shopify:\/\/shop_images\/109690423_3445893215421577_4016513816616394806_n_copy_1.png"
+      }
     }
   },
   "order": [
@@ -303,6 +313,7 @@
     "8d1281ee-ecd6-4a95-ba83-f047c9b8007b",
     "ff6debb7-9198-4031-89bf-4dba97bf8f37",
     "19291dd4-710b-4313-9d7d-4847e4b2ab64",
-    "67c66074-dbe7-48ca-909f-8416d2e86d32"
+    "67c66074-dbe7-48ca-909f-8416d2e86d32",
+    "3d380ef2-30ad-4948-8fdf-6906d4063a49"
   ]
 }
