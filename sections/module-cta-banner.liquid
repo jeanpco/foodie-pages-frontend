@@ -1,0 +1,111 @@
+<div class="cta-banner padding-vertical padding-large">
+  <div class="cta-banner_container container background-color-mar-10 display-flex justify-content-between">
+    <div class="cta-banner_content padding-right padding-large tablet-padding-0">
+      {% if section.settings.title != blank %}
+        {% render 'module-header', 
+          overline: section.settings.overline, 
+          title: section.settings.title,
+          text_horizontal_alignment: 'left',
+          heading_style: section.settings.heading_style,
+          cta_text: section.settings.cta_text,
+          cta_link: section.settings.cta_link
+        %}
+      {% endif %}
+    </div>
+    {% if section.settings.image != blank %}
+      <div class="cta-banner_image">
+        {{ section.settings.image | image_url: width: 800 | image_tag:
+          loading: 'lazy',
+          widths: '550, 720, 990, 1100, 1500, 2200, 3000'
+        }}
+      </div>
+    {% endif %}
+  </div>
+</div>
+
+
+
+<style>
+
+  .cta-banner_container {
+    overflow: hidden;
+    border-radius: 30px;
+  }
+
+  .cta-banner_image {
+    max-width: 43.75rem;
+    margin-left: auto;
+    width: 100%;
+  }
+
+  
+  @media (max-width: 991px) {
+    .cta-banner_container {
+      flex-direction: column;
+
+    }
+
+    .cta-banner_content {
+      order: 2;
+    }    
+
+    .cta-banner_image {
+      order: 1;
+    }
+  }
+  
+</style>
+
+{% schema %}
+{
+  "name": "CTA Banner",
+  "tag": "section",
+  "class": "section section-cta-banner",
+  "settings": [
+    {
+      "type": "text",
+      "id": "overline",
+      "default": "Quick shop",
+      "label": "Overline"
+    },
+    {
+      "type": "richtext",
+      "id": "title",
+      "default": "<p>Gifts that <i>celebrate</i> small business</p>",
+      "label": "Title"
+    },
+    {
+      "type": "select",
+      "id": "heading_style",
+      "options": [
+        {
+          "value": "h2",
+          "label": "Heading 2"
+        },
+        {
+          "value": "h1",
+          "label": "Heading 1"
+        }
+      ],
+      "default": "h1",
+      "label": "Heading style"
+    },
+    {
+      "type": "textarea",
+      "id": "body",
+      "default": "Each foodiepages gift basket is designed with premium goods from diverse, independently-owned makers and brands across Canada.",
+      "label": "Body"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    }
+  ],
+  "presets": [
+    {
+      "name": "CTA Banner"
+    }
+  ]
+}
+{% endschema %}
