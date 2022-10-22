@@ -1,5 +1,5 @@
 <div class="cta-banner padding-vertical padding-large">
-  <div class="cta-banner_container container background-color-mar-10 display-flex justify-content-between">
+  <div class="cta-banner_container container background-color-mar-10 display-flex align-items-center justify-content-between">
     <div class="cta-banner_content padding-right padding-large tablet-padding-0">
       {% if section.settings.title != blank %}
         {% render 'module-header', 
@@ -12,7 +12,7 @@
         {% render 'button',
           cta_text: section.settings.cta_text,
           cta_link: section.settings.cta_link,
-          class: '',
+          class: 'margin-top margin-medium',
           theme: 'secondary',
         %}
       {% endif %}
