@@ -1,21 +1,23 @@
-<div class="cta-banner padding-vertical padding-large">
-  <div class="cta-banner_container container background-color-mar-10 display-flex align-items-center justify-content-between">
-    <div class="cta-banner_content padding-right padding-large tablet-padding-0">
-      {% if section.settings.title != blank %}
-        {% render 'module-header', 
-          overline: section.settings.overline, 
-          title: section.settings.title,
-          body: section.settings.body,
-          text_horizontal_alignment: 'left',
-          heading_style: section.settings.heading_style,
-        %}
-        {% render 'button',
-          cta_text: section.settings.cta_text,
-          cta_link: section.settings.cta_link,
-          class: 'margin-top margin-medium',
-          theme: 'secondary',
-        %}
-      {% endif %}
+<div class="cta-banner_container container">
+  <div class="cta-banner_wrapper margin-vertical margin-large background-color-mar-10 display-flex align-items-center justify-content-between tablet-padding-small">
+    <div class="cta-banner_content padding-horizontal padding-large tablet-padding-0">
+      <div class="padding-vertical padding-huge">
+        {% if section.settings.title != blank %}
+          {% render 'module-header', 
+            overline: section.settings.overline, 
+            title: section.settings.title,
+            body: section.settings.body,
+            text_horizontal_alignment: 'left',
+            heading_style: section.settings.heading_style,
+          %}
+          {% render 'button',
+            cta_text: section.settings.cta_text,
+            cta_link: section.settings.cta_link,
+            class: 'margin-top margin-medium',
+            theme: 'secondary',
+          %}
+        {% endif %}
+      </div>
     </div>
     {% if section.settings.image != blank %}
       <div class="cta-banner_image">
@@ -32,30 +34,62 @@
 
 <style>
 
-  .cta-banner_container {
+  .cta-banner_wrapper {
     overflow: hidden;
     border-radius: 30px;
+    position: relative;
   }
 
   .cta-banner_image {
     max-width: 43.75rem;
     margin-left: auto;
     width: 100%;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%) scale(1.05);
   }
+
+  .cta-banner_image img {
+    aspect-ratio: 640/400;
+    object-fit: fill;
+    width: 100%;
+  }
+
+  .cta-banner_content {
+    max-width: 35rem;
+    width: 100%;
+    margin-right: auto;
+    z-index: 1;
+  }  
 
   
   @media (max-width: 991px) {
-    .cta-banner_container {
+    .cta-banner_wrapper {
       flex-direction: column;
-
     }
 
     .cta-banner_content {
       order: 2;
-    }    
+      max-width: unset;
+    } 
+    
+    .cta-banner_content > div {
+      padding: 1.5rem 0 1rem;
+    }
 
     .cta-banner_image {
+      margin-top: -1rem;
+      transform: unset;
+      max-width: unset;
       order: 1;
+      position: unset;
+    }
+
+    .cta-banner_image img {
+      aspect-ratio: 660∶401;
+      object-fit: cover;
+      max-height: 100vw;
     }
   }
   
