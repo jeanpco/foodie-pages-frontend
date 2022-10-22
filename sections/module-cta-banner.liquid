@@ -5,10 +5,15 @@
         {% render 'module-header', 
           overline: section.settings.overline, 
           title: section.settings.title,
+          body: section.settings.body,
           text_horizontal_alignment: 'left',
           heading_style: section.settings.heading_style,
+        %}
+        {% render 'button',
           cta_text: section.settings.cta_text,
-          cta_link: section.settings.cta_link
+          cta_link: section.settings.cta_link,
+          class: '',
+          theme: 'secondary',
         %}
       {% endif %}
     </div>
@@ -69,12 +74,6 @@
       "label": "Overline"
     },
     {
-      "type": "richtext",
-      "id": "title",
-      "default": "<p>Gifts that <i>celebrate</i> small business</p>",
-      "label": "Title"
-    },
-    {
       "type": "select",
       "id": "heading_style",
       "options": [
@@ -87,8 +86,14 @@
           "label": "Heading 1"
         }
       ],
-      "default": "h1",
+      "default": "h2",
       "label": "Heading style"
+    },
+    {
+      "type": "richtext",
+      "id": "title",
+      "default": "<p>Gifts that <i>celebrate</i> small business</p>",
+      "label": "Title"
     },
     {
       "type": "textarea",
@@ -100,6 +105,17 @@
       "type": "image_picker",
       "id": "image",
       "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "cta_text",
+      "default": "Learn more",
+      "label": "CTA Text"
+    },
+    {
+      "type": "url",
+      "id": "cta_link",
+      "label": "CTA Link"
     }
   ],
   "presets": [
