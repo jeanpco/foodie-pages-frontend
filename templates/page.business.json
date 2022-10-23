@@ -159,8 +159,8 @@
         "bb7441af-23eb-413e-9e53-583d86d17048": {
           "type": "cta",
           "settings": {
-            "cta_text": "Shop all",
-            "cta_link": "shopify:\/\/collections\/all"
+            "cta_text": "Contact us",
+            "cta_link": "shopify:\/\/pages\/contact-us"
           }
         },
         "276a7a27-7127-4129-8ca0-d68003063232": {
@@ -178,9 +178,9 @@
       "settings": {
         "image": "shopify:\/\/shop_images\/Image.jpg",
         "overline": "Quick shop",
-        "title": "<p>Gifts that <em>celebrate<\/em> small business<\/p>",
+        "title": "<p>Curate and send hundreds of gifts at a time<\/p>",
         "heading_style": "h2",
-        "body": "Each foodiepages gift basket is designed with premium goods from diverse, independently-owned makers and brands across Canada.",
+        "body": "Choose from a selection of pre-built team care packages, or build your own custom care package. All of our care packages are filled with high quality locally-sourced goods and designed to delight your team.",
         "layout_style": "content-left"
       }
     },
