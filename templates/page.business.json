@@ -23,10 +23,10 @@
         "b851d519-4870-4981-9906-52b4404d2953"
       ],
       "settings": {
-        "overline": "Quick shop",
-        "title": "<p>Gifts that <em>celebrate<\/em> small business<\/p>",
+        "overline": "Foodiepages for business",
+        "title": "<p>Unique Gifts for <em>Modern Companies<\/em><\/p>",
         "heading_style": "h1",
-        "body": "Each foodiepages gift basket is designed with premium goods from diverse, independently-owned makers and brands across Canada.",
+        "body": "Engage employees, stand out to clients and elevate events.",
         "image": "shopify:\/\/shop_images\/Frame_43428_2.png",
         "enable_card_style": false,
         "text_vertical_alignment": "flex-end",
@@ -119,7 +119,7 @@
         "0c640300-131a-4352-8353-70596fc3305e"
       ],
       "settings": {
-        "overline": "Quick Shop"
+        "overline": "Trusted by the world's best companiese"
       }
     },
     "8d1281ee-ecd6-4a95-ba83-f047c9b8007b": {
@@ -146,10 +146,10 @@
       ],
       "settings": {
         "image": "shopify:\/\/shop_images\/Image.jpg",
-        "overline": "Quick shop",
-        "title": "<p>Gifts that <em>celebrate<\/em> small business<\/p>",
+        "overline": "Corporate Gifting",
+        "title": "<p>Send a Choice of Gifts with <em>Branded Gift<\/em> Portals<\/p>",
         "heading_style": "h2",
-        "body": "Each foodiepages gift basket is designed with premium goods from diverse, independently-owned makers and brands across Canada.",
+        "body": "Let employees & clients pick their preferred gift and enter their shipping address, or donate the value to a cause of their choice. Portals are perfect for special events or coordinated gift sends of  100+ gifts.",
         "layout_style": "content-right"
       }
     },
@@ -303,7 +303,9 @@
         "heading_style": "h2",
         "title": "<p>Gifts that <em>celebrate<\/em> small business<\/p>",
         "body": "Each foodiepages gift basket is designed with premium goods from diverse, independently-owned makers and brands across Canada.",
-        "image": "shopify:\/\/shop_images\/109690423_3445893215421577_4016513816616394806_n_copy_1.png"
+        "image": "shopify:\/\/shop_images\/109690423_3445893215421577_4016513816616394806_n_copy_1.png",
+        "cta_text": "Learn more",
+        "cta_link": ""
       }
     }
   },
