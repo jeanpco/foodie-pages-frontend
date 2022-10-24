@@ -1377,7 +1377,7 @@
     "settings": [
       {
         "type": "header",
-        "content": "To use this form on one of your CTA (Link/Button). Have the URL of your CTA point to: 'download-catalogue'"
+        "content": "To use this form on one of your CTA (Link\/Button). Have the URL of your CTA point to: 'download-catalogue'"
       },
       {
         "type": "url",
@@ -1441,7 +1441,7 @@
     "settings": [
       {
         "type": "header",
-        "content": "To use this form on one of your CTA (Link/Button). Have the URL of your CTA point to: 'contact_form'"
+        "content": "To use this form on one of your CTA (Link\/Button). Have the URL of your CTA point to: 'contact_form'"
       },
       {
         "type": "text",
