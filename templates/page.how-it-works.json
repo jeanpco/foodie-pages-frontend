@@ -96,10 +96,37 @@
         "secondary_cta_text": "Get in touch",
         "secondary_cta_link": ""
       }
+    },
+    "05ea480d-037b-4297-9c3d-d6160866116b": {
+      "type": "module-columns",
+      "blocks": {
+        "765a0837-b3a6-417e-a20d-8c4151c40912": {
+          "type": "card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Image_ece8a130-10d5-442c-8531-af02ad89d323.jpg",
+            "title": "Events",
+            "body": "Planning your company event or conference? You’re juggling a lot. We’ll take care of the perfect custom gift, or food & drink box.",
+            "cta_text": "Get a quote",
+            "cta_link": "#contact"
+          }
+        }
+      },
+      "block_order": [
+        "765a0837-b3a6-417e-a20d-8c4151c40912"
+      ],
+      "settings": {
+        "overline": "Corporate solutions",
+        "title": "Team Solutions",
+        "body": "We help businesses connect with people and make lasting impressions.",
+        "cta_text": "Get a quote",
+        "cta_link": "#contact",
+        "heading_style": "h2"
+      }
     }
   },
   "order": [
     "main",
-    "823bd50c-3555-4282-8b34-ab0e8584323d"
+    "823bd50c-3555-4282-8b34-ab0e8584323d",
+    "05ea480d-037b-4297-9c3d-d6160866116b"
   ]
 }
