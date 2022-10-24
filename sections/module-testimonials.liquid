@@ -29,11 +29,13 @@
           <div class="testimonial-slide-content padding-vertical padding-large left">
             <img class="testimonial-icon margin-bottom margin-medium" src="https://cdn.shopify.com/s/files/1/0264/5000/2013/files/bxs_quote-alt-right.png?v=1665429847" alt="Quote Icon" />
             <p>{{ block.settings.text }}</p>
-            <img src="{{ block.settings.image | image_url: width: 300 }}"
-              class="testimonial-client-logo margin-top margin-medium"
-              alt="Quote Icon"
-              loading="lazy"
-            >
+            {% if block.settings.image != blank %}
+              <img src="{{ block.settings.image | image_url: width: 300 }}"
+                class="testimonial-client-logo margin-top margin-medium"
+                alt="Quote Icon"
+                loading="lazy"
+              >
+            {% endif %}
           </div>
         </div>
 

@@ -1,13 +1,6 @@
 {
   "sections": {
     "main": {
-      "type": "main-page",
-      "settings": {
-        "padding_top": 28,
-        "padding_bottom": 28
-      }
-    },
-    "29ef1cfa-7743-4d6d-b954-8e2bf22514ac": {
       "type": "module-hero",
       "blocks": {
         "02d55e23-f307-4138-a9bd-10d797daa746": {
@@ -58,7 +51,6 @@
   },
   "order": [
     "main",
-    "29ef1cfa-7743-4d6d-b954-8e2bf22514ac",
     "823bd50c-3555-4282-8b34-ab0e8584323d"
   ]
 }
