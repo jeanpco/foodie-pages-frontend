@@ -323,6 +323,21 @@
         "trusted_by_text": "Trusted by"
       }
     },
+    "fda3c8e7-0321-460c-b8b8-b9edd8abe0e7": {
+      "type": "product-recommendations",
+      "settings": {
+        "overline": "Product recommendations",
+        "title": "<p>You may also like<\/p>",
+        "body": "Discover more products that may be of interest to you.",
+        "products_to_show": 4,
+        "collection": "gift-baskets",
+        "icon_url": "",
+        "promo_title": "",
+        "promo_body": "",
+        "promo_cta_text": "Shop all",
+        "promo_cta_link": ""
+      }
+    },
     "3d380ef2-30ad-4948-8fdf-6906d4063a49": {
       "type": "module-cta-banner",
       "settings": {
@@ -344,6 +359,7 @@
     "19291dd4-710b-4313-9d7d-4847e4b2ab64",
     "67c66074-dbe7-48ca-909f-8416d2e86d32",
     "d5778432-2fd8-4a16-8893-9bb2eaa2e555",
+    "fda3c8e7-0321-460c-b8b8-b9edd8abe0e7",
     "3d380ef2-30ad-4948-8fdf-6906d4063a49"
   ]
 }
