@@ -195,10 +195,43 @@
             "cta_text": "Learn More",
             "cta_link": "shopify:\/\/pages\/about-us"
           }
+        },
+        "fae23ace-5ca1-43a0-a58b-9c5d1bef7e5b": {
+          "type": "features",
+          "settings": {
+            "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/placeholder-svg-square.svg?v=1666645913",
+            "title": "Whats in the box",
+            "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.",
+            "cta_text": "Learn More",
+            "cta_link": ""
+          }
+        },
+        "94353301-183f-4ec1-9b25-4d500681640f": {
+          "type": "features",
+          "settings": {
+            "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/placeholder-svg-square.svg?v=1666645913",
+            "title": "Whats in the box",
+            "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.",
+            "cta_text": "Learn More",
+            "cta_link": "shopify:\/\/pages\/contact-us"
+          }
+        },
+        "29189724-18f8-43ad-ad45-9aea0d08c6f0": {
+          "type": "features",
+          "settings": {
+            "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/placeholder-svg-square.svg?v=1666645913",
+            "title": "Whats in the box",
+            "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.",
+            "cta_text": "Learn More",
+            "cta_link": "shopify:\/\/pages\/experiences"
+          }
         }
       },
       "block_order": [
-        "2c55f2d5-0c58-4b13-af11-302a514fa449"
+        "2c55f2d5-0c58-4b13-af11-302a514fa449",
+        "fae23ace-5ca1-43a0-a58b-9c5d1bef7e5b",
+        "94353301-183f-4ec1-9b25-4d500681640f",
+        "29189724-18f8-43ad-ad45-9aea0d08c6f0"
       ],
       "settings": {
         "overline": "Quick shop",
