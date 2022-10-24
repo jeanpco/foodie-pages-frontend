@@ -326,9 +326,9 @@
     "fda3c8e7-0321-460c-b8b8-b9edd8abe0e7": {
       "type": "product-recommendations",
       "settings": {
-        "overline": "Product recommendations",
+        "overline": "Ready-to-ship",
         "title": "<p>You may also like<\/p>",
-        "body": "Discover more products that may be of interest to you.",
+        "body": "Shop from Women Owned and lead businesses",
         "products_to_show": 4,
         "collection": "gift-baskets",
         "icon_url": "",
