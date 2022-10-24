@@ -338,6 +338,51 @@
         "promo_cta_link": ""
       }
     },
+    "ada08afb-e351-43c7-83ae-1d4cb75ae1b2": {
+      "type": "module-testimonials",
+      "blocks": {
+        "e57b2477-e95f-4251-9502-f25f570daae6": {
+          "type": "testimonial",
+          "settings": {
+            "text": "Foodiepages has been a trusted partner of Dynacare for several years, providing quality, trusted and reliable services for important gifts for staff, clients, and executives. Not only are they thorough and dependable – but Foodiepages also makes strategic and impactful recommendations for us to bring our gifting to the next level.",
+            "image": "shopify:\/\/shop_images\/Dynacare_master_logo_EN_RGB_copy.png"
+          }
+        },
+        "aae994ac-b7c7-4b43-9697-deb07ffad3e4": {
+          "type": "testimonial",
+          "settings": {
+            "text": "Foodiepages has been a trusted partner of Dynacare for several years, providing quality, trusted and reliable services for important gifts for staff, clients, and executives. Not only are they thorough and dependable – but Foodiepages also makes strategic and impactful recommendations for us to bring our gifting to the next level. The costs are affordable and they go the extra mile to ensure the recipient(s) feel important and valued. I would recommend Foodiepages to anyone looking for a quality gifting partner.",
+            "image": "shopify:\/\/shop_images\/Dynacare_master_logo_EN_RGB_copy.png"
+          }
+        },
+        "6cd624df-edf9-4889-b6a5-7a3cffad7274": {
+          "type": "testimonial",
+          "settings": {
+            "text": "Foodiepages has been a trusted partner of Dynacare for several years, providing quality, trusted and reliable services for important gifts for staff, clients, and executives. Not only are they thorough and dependable – but Foodiepages also makes strategic and impactful recommendations for us to bring our gifting to the next level. The costs are affordable and they go the extra mile to ensure the recipient(s) feel important and valued. I would recommend Foodiepages to anyone looking for a quality gifting partner.",
+            "image": "shopify:\/\/shop_images\/Dynacare_master_logo_EN_RGB_copy.png"
+          }
+        },
+        "982db299-9c2c-4ba4-9ede-5b0fd0f3b29f": {
+          "type": "testimonial",
+          "settings": {
+            "text": "Foodiepages has been a trusted partner of Dynacare for several years, providing quality, trusted and reliable services for important gifts for staff, clients, and executives. Not only are they thorough and dependable – but Foodiepages also makes strategic and impactful recommendations for us to bring our gifting to the next level. The costs are affordable and they go the extra mile to ensure the recipient(s) feel important and valued. I would recommend Foodiepages to anyone looking for a quality gifting partner.",
+            "image": "shopify:\/\/shop_images\/Symcor_Symcor_Releases_Real_time_API_Helping_Financial_Instituti_copy.png"
+          }
+        }
+      },
+      "block_order": [
+        "e57b2477-e95f-4251-9502-f25f570daae6",
+        "aae994ac-b7c7-4b43-9697-deb07ffad3e4",
+        "6cd624df-edf9-4889-b6a5-7a3cffad7274",
+        "982db299-9c2c-4ba4-9ede-5b0fd0f3b29f"
+      ],
+      "settings": {
+        "overline": "Our happy customers",
+        "title": "<p>Don’t just take it from us<\/p>",
+        "cta_text": "Get in touch",
+        "cta_link": "shopify:\/\/pages\/contact-us"
+      }
+    },
     "3d380ef2-30ad-4948-8fdf-6906d4063a49": {
       "type": "module-cta-banner",
       "settings": {
@@ -360,6 +405,7 @@
     "67c66074-dbe7-48ca-909f-8416d2e86d32",
     "d5778432-2fd8-4a16-8893-9bb2eaa2e555",
     "fda3c8e7-0321-460c-b8b8-b9edd8abe0e7",
+    "ada08afb-e351-43c7-83ae-1d4cb75ae1b2",
     "3d380ef2-30ad-4948-8fdf-6906d4063a49"
   ]
 }
