@@ -135,9 +135,9 @@
           "settings": {
             "image": "shopify:\/\/shop_images\/Image.jpg",
             "title": "Events",
-            "body": "",
+            "body": "Planning your company event or conference?",
             "cta_text": "Get a quote",
-            "cta_link": ""
+            "cta_link": "#contact"
           }
         }
       },
