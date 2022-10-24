@@ -27,6 +27,14 @@
 
           <div class="swiper-wrapper padding-bottom padding-xlarge">
 
+            {% if template != 'product' %}
+
+              YES
+
+            {% endif %}
+
+            
+
             {% for recommendation in recommendations.products %}
               <li class="product-card-container swiper-slide">
                 {% render 'card-pdp',
@@ -145,6 +153,11 @@
       "step": 1,
       "default": 4,
       "label": "t:sections.product-recommendations.settings.products_to_show.label"
+    },
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "Collection - [When using module outside of product page]"
     },
     {
       "type": "header",
