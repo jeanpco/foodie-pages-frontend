@@ -24,10 +24,10 @@
       ],
       "settings": {
         "overline": "Quick shop",
-        "title": "<p>Gifts that <em>celebrate<\/em> small business<\/p>",
+        "title": "<p>Gifts that celebrate small business<\/p>",
         "heading_style": "h1",
         "body": "Each foodiepages gift basket is designed with premium goods from diverse, independently-owned makers and brands across Canada.",
-        "image": "shopify:\/\/shop_images\/Image.jpg",
+        "image": "shopify:\/\/shop_images\/Image_d4a1883a-3e9c-4409-bdd9-df342810f0bb.png",
         "enable_card_style": false,
         "text_vertical_alignment": "flex-end",
         "layout_style": "rows",
@@ -37,13 +37,62 @@
     },
     "823bd50c-3555-4282-8b34-ab0e8584323d": {
       "type": "module-vertical-tabs",
+      "blocks": {
+        "db40d850-e629-4e9b-b0e8-d2d20e4414ad": {
+          "type": "tab",
+          "settings": {
+            "overline": "Step 1",
+            "title": "Create a Campaign",
+            "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ut lorem qui lectus molestie malesuada vitae vel purus."
+          }
+        },
+        "ab7fff74-0668-4779-9c58-a3781089ca61": {
+          "type": "tab",
+          "settings": {
+            "overline": "Step 2",
+            "title": "Create a Campaign",
+            "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ut lorem qui lectus molestie malesuada vitae vel purus."
+          }
+        },
+        "2d4083b3-581a-4ade-b225-6f2117a93f50": {
+          "type": "tab",
+          "settings": {
+            "overline": "Step 3",
+            "title": "Create a Campaign",
+            "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ut lorem qui lectus molestie malesuada vitae vel purus."
+          }
+        },
+        "47847899-6a08-4443-881a-c2133258173d": {
+          "type": "tab",
+          "settings": {
+            "overline": "Step 4",
+            "title": "Create a Campaign",
+            "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ut lorem qui lectus molestie malesuada vitae vel purus."
+          }
+        },
+        "a25db7f7-6489-43d4-89c5-e1e47404b228": {
+          "type": "tab",
+          "settings": {
+            "overline": "Step 5",
+            "title": "Create a Campaign",
+            "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ut lorem qui lectus molestie malesuada vitae vel purus."
+          }
+        }
+      },
+      "block_order": [
+        "db40d850-e629-4e9b-b0e8-d2d20e4414ad",
+        "ab7fff74-0668-4779-9c58-a3781089ca61",
+        "2d4083b3-581a-4ade-b225-6f2117a93f50",
+        "47847899-6a08-4443-881a-c2133258173d",
+        "a25db7f7-6489-43d4-89c5-e1e47404b228"
+      ],
       "settings": {
         "overline": "How it works",
         "title": "<p>Exceptional times call for <em>exceptional gifts<\/em><\/p>",
         "heading_style": "h2",
         "cta_text": "Get in touch",
         "cta_link": "",
-        "body": "Couldn’t find what you were looking for? write to us at",
+        "body": "",
         "secondary_cta_text": "Get in touch",
         "secondary_cta_link": ""
       }
