@@ -41,10 +41,24 @@
         "background_color": "background-color-azul-verdoso-10",
         "trusted_by_text": "Trusted by"
       }
+    },
+    "823bd50c-3555-4282-8b34-ab0e8584323d": {
+      "type": "module-vertical-tabs",
+      "settings": {
+        "overline": "How it works",
+        "title": "<p>Exceptional times call for <em>exceptional gifts<\/em><\/p>",
+        "heading_style": "h2",
+        "cta_text": "Get in touch",
+        "cta_link": "",
+        "body": "Couldn’t find what you were looking for? write to us at",
+        "secondary_cta_text": "Get in touch",
+        "secondary_cta_link": ""
+      }
     }
   },
   "order": [
     "main",
-    "29ef1cfa-7743-4d6d-b954-8e2bf22514ac"
+    "29ef1cfa-7743-4d6d-b954-8e2bf22514ac",
+    "823bd50c-3555-4282-8b34-ab0e8584323d"
   ]
 }
