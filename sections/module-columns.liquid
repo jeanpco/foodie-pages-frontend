@@ -29,18 +29,27 @@
   <div class="columns display-flex flex-direction-column gap-3">
     {% for block in section.blocks %}
       <div class="card display-flex flex-direction-column align-items-start gap-1">
-        {%- capture sizes -%}
-          (min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 | divided_by: 2 }}px, (min-width: 750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2)
-        {%- endcapture -%}
-    
-        {{ block.settings.image | image_url: width: 1500 | image_tag:
-          loading: 'lazy',
-          sizes: sizes,
-          widths: '165, 360, 535, 750, 1070, 1500'
-        }}
-        <h4 class="text-color-tertiary">{{ block.settings.title }}</h4>
-        <p class="text-color-grey-500">{{ block.settings.body }}</p>
-        <a class="link" href="{{ block.settings.cta_link }}">{{ block.settings.cta_text }}</a>
+
+        {% if block.settings.image != blank %}
+          {%- capture sizes -%}
+            (min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 | divided_by: 2 }}px, (min-width: 750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2)
+          {%- endcapture -%}
+      
+          {{ block.settings.image | image_url: width: 1500 | image_tag:
+            loading: 'lazy',
+            sizes: sizes,
+            widths: '165, 360, 535, 750, 1070, 1500'
+          }}
+        {% endif %}
+        {% if block.settings.title != blank %}
+          <h4 class="text-color-tertiary">{{ block.settings.title }}</h4>
+        {% endif %}
+        {% if block.settings.body != blank %}
+          <p class="text-color-grey-500">{{ block.settings.body }}</p>
+        {% endif %}
+        {% if block.settings.cta_link != blank and block.settings.cta_text != blank %}
+          <a class="link" href="{{ block.settings.cta_link }}">{{ block.settings.cta_text }}</a>
+        {% endif %}
       </div>
     {% endfor %}
   </div>

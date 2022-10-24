@@ -1,26 +1,110 @@
+<script type="module">
+  
+  const initDialog = () => {
+    const dialog = document.querySelector('.dialog-modal');
+    const dialogContainer = dialog.querySelector('.dialog-modal-container');
+
+    const openDialog = (dialogType) => {
+      dialog.setAttribute('aria-expanded', true);
+      dialog.setAttribute('aria-controls', dialogType);
+    };
+
+    const closeDialog = () => {
+      dialog.setAttribute('aria-expanded', false);
+      dialog.setAttribute('aria-controls', 'dialog');
+    };
+
+    const toggleDialog = () => {
+      dialog.setAttribute('aria-expanded', dialog.getAttribute('aria-expanded') === 'true' ? 'false' : 'true');
+    };
+
+    // get links that can open the popup
+    const downloadCatalogueLinks = document.querySelectorAll('a[href*="download-catalogue"]');
+    const contactLinks = document.querySelectorAll('a[href*="contact"]');
+    const giftMessageLinks = document.querySelectorAll('a[href*="gift-message"]');
+
+    // reveal the download-catalogue form
+    downloadCatalogueLinks.forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        openDialog('download-catalogue');
+      });
+    });
+
+    // reveal the contact form
+    contactLinks.forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        openDialog('contact_form');
+      });
+    });
+
+    // reveal the gift-message form
+    giftMessageLinks.forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        openDialog('gift-message');
+      });
+    });
+
+    // close the dialog when clicking on the close button
+    dialog.querySelector('.dialog-modal--close').addEventListener('click', (e) => {
+      e.preventDefault();
+      closeDialog();
+    });
+
+    // close the dialog when clicking outside of dialogContainer
+    dialog.addEventListener('click', (e) => {
+      if (e.target === dialog) {
+        closeDialog();
+      }
+    });
+
+    // close the dialog when pressing escape
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closeDialog();
+      }
+    });
+
+    const initDownloadFromForm = () => {
+      const currentAnchor = window.location.hash;
+      const currentAnchorWithoutHash = currentAnchor.replace('#', '');
+
+      sessionStorage.setItem('form_submitted', currentAnchorWithoutHash);
+      
+      window.readFormSessionStorage && window.readFormSessionStorage();
+    }
+
+    // get if the download was successful, if so, show the success message on a open dialog
+    const readFormSessionStorage = () => {
+      const formSessionStorage = sessionStorage.getItem('form_submitted');
+
+      if (formSessionStorage) {
+        openDialog(formSessionStorage);
+      }
+    }
+
+    window.readFormSessionStorage = readFormSessionStorage;
+    window.initDownloadFromForm = initDownloadFromForm;
+  }
+
+  initDialog()
+</script>
+
 <dialog class="dialog-modal" role="dialog" aria-expanded="false" aria-controls="dialog" aria-label="dialog" aria-description="Handles contact form, download catalog form and add gift message form">
   <div class="dialog-modal-container background-color-secondary padding-medium">
     <button class="dialog-modal--close padding-medium">{% render 'icon-x' %}</button>
 
     <div class="download-catalogue-form">
       
-      {% render 'download-catalogue-form' %}
+      {% render 'download-catalogue-form', id: section.id %}
 
     </div>
 
     <div class="contact-form">
       
-      {{ settings.contact_form_title }}
-      {{ settings.contact_form_body }}
-      {{ settings.contact_form_input_name_label }}
-      {{ settings.contact_form_input_name_placeholder }}
-      {{ settings.contact_form_input_email_label }}
-      {{ settings.contact_form_input_email_placeholder }}
-      {{ settings.contact_form_input_message_label }}
-      {{ settings.contact_form_input_message_placeholder }}
-      {{ settings.contact_form_cta_text }}
-      {{ settings.contact_form_download_file_url }}
-      {{ settings.contact_form_success_message }}
+      {% render 'contact-form', id: section.id %}
 
     </div>
 
@@ -126,7 +210,7 @@
   }
 
   .dialog-modal[aria-controls="download-catalogue"] .download-catalogue-form,
-  .dialog-modal[aria-controls="contact"] .contact-form,
+  .dialog-modal[aria-controls="contact_form"] .contact-form,
   .dialog-modal[aria-controls="gift-message"] .gift-message-form {
     display: block;
   }
@@ -141,91 +225,3 @@
     margin: 0 auto;
   }
 </style>
-
-<script type="module">
-  
-  const initDialog = () => {
-    const dialog = document.querySelector('.dialog-modal');
-    const dialogContainer = dialog.querySelector('.dialog-modal-container');
-
-    const openDialog = (dialogType) => {
-      dialog.setAttribute('aria-expanded', true);
-      dialog.setAttribute('aria-controls', dialogType);
-    };
-
-    const closeDialog = () => {
-      dialog.setAttribute('aria-expanded', false);
-      dialog.setAttribute('aria-controls', 'dialog');
-    };
-
-    const toggleDialog = () => {
-      dialog.setAttribute('aria-expanded', dialog.getAttribute('aria-expanded') === 'true' ? 'false' : 'true');
-    };
-
-    // get links that can open the popup
-    const downloadCatalogueLinks = document.querySelectorAll('a[href*="download-catalogue"]');
-    const contactLinks = document.querySelectorAll('a[href*="contact"]');
-    const giftMessageLinks = document.querySelectorAll('a[href*="gift-message"]');
-
-    // reveal the download-catalogue form
-    downloadCatalogueLinks.forEach(link => {
-      link.addEventListener('click', (e) => {
-        e.preventDefault();
-        openDialog('download-catalogue');
-      });
-    });
-
-    // reveal the contact form
-    contactLinks.forEach(link => {
-      link.addEventListener('click', (e) => {
-        e.preventDefault();
-        openDialog('contact');
-      });
-    });
-
-    // reveal the gift-message form
-    giftMessageLinks.forEach(link => {
-      link.addEventListener('click', (e) => {
-        e.preventDefault();
-        openDialog('gift-message');
-      });
-    });
-
-    // close the dialog when clicking on the close button
-    dialog.querySelector('.dialog-modal--close').addEventListener('click', (e) => {
-      e.preventDefault();
-      closeDialog();
-    });
-
-    // close the dialog when clicking outside of dialogContainer
-    dialog.addEventListener('click', (e) => {
-      if (e.target === dialog) {
-        closeDialog();
-      }
-    });
-
-    // close the dialog when pressing escape
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') {
-        closeDialog();
-      }
-    });
-
-    // get if the download was successful, if so, show the success message on a open dialog
-    const readFormSessionStorage = () => {
-      const formSessionStorage = sessionStorage.getItem('download-catalogue-form');
-      if (formSessionStorage === 'true') {
-        openDialog('download-catalogue');
-
-        // setTimeout(() => {
-        //   sessionStorage.removeItem('download-catalogue-form');
-        //   closeDialog();
-        // }, 3000);
-      }
-    }
-
-    window.readFormSessionStorage = readFormSessionStorage;
-  }
-
-  initDialog()
-</script>

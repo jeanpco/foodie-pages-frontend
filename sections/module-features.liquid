@@ -1,27 +1,105 @@
-<div class="container">
+<div class="features container">
+  <div class="features-container padding-vertical padding-huge">
+    <div class="features-header">
+      {% render 'module-header', 
+        overline: section.settings.overline, 
+        title: section.settings.title,
+        text_horizontal_alignment: 'center',
+        body: section.settings.body,
+        heading_style: section.settings.heading_style,
+        cta_text: section.settings.cta_text,
+        cta_link: section.settings.cta_link,
+      %}
+    </div>
+    {%- capture sizes -%}(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 | divided_by: 2 }}px, (min-width: 750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2){%- endcapture -%}
 
-  <div>{{ section.settings.overline }}</div>
-  <div>{{ section.settings.title }}</div>
-  <div>{{ section.settings.body }}</div>
-  <div>{{ section.settings.cta_text }}</div>
-  <div>{{ section.settings.cta_link }}</div>
+    <div class="features-content margin-top margin-xlarge display-flex justify-content-between align-items-center">
+      <div class="features-content_image">
+        {{ section.settings.image | image_url: width: 1500 | image_tag:
+          loading: 'lazy',
+          sizes: sizes,
+          widths: '165, 360, 535, 750, 1070, 1500'
+        }}
+      </div>
+      <div class="features-content_blocks display-flex flex-wrap padding-vertical padding-large gap-1 tablet-padding-0">
+        {% for block in section.blocks %}
+          <div class="features-block display-flex flex-direction-column gap-1 align-items-start">
+            <img src="{{ block.settings.icon_url }}" alt="{{ block.settings.title }}">
+            <h3 class="heading-style-h4">{{ block.settings.title }}</h3>
+            <div>{{ block.settings.body }}</div>
+            <a class="link" href="{{ block.settings.cta_link }}">{{ block.settings.cta_text }}</a>
+          </div>
+        {% endfor %}
+      </div>
+  </div>
+
+
   
-  {% comment %} {%- capture sizes -%}(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 | divided_by: 2 }}px, (min-width: 750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2){%- endcapture -%}
-
-  {{ section.settings.image | image_url: width: 1500 | image_tag:
-    loading: 'lazy',
-    sizes: sizes,
-    widths: '165, 360, 535, 750, 1070, 1500'
-  }} {% endcomment %}
-
-  {% for block in section.blocks %}
-    <div>{{ block.settings.icon_url }}</div>
-    <div>{{ block.settings.title }}</div>
-    <div>{{ block.settings.body }}</div>
-    <div>{{ block.settings.cta_text }}</div>
-    <div>{{ block.settings.cta_link }}</div>
-  {% endfor %}
 </div>
+
+<style>
+  .features-header {
+    max-width: 53.125rem;
+    margin: 0 auto;
+  }
+
+  .features-content {
+    gap: 4rem;
+  }
+
+  .features-content > * {
+    flex: 1 1 100%;
+  }
+
+  .features-content_blocks {
+    row-gap: 2rem;
+  }
+
+  .features-content_blocks > div {
+    width: calc(50% - 1rem);
+  }
+
+  .features-content_image img {
+    width: 100%;
+    height: auto;
+    border-radius: 16px;
+    object-fit: cover;
+    aspect-ratio: 1/1;
+  }
+
+  @media screen and (max-width: 991px) {
+
+    .features-content_blocks {
+      row-gap: 1rem;
+    }
+
+    .features-content {
+      gap: 2rem;
+    }
+
+    .features-content > * {
+      width: 100%;
+    }
+
+    .features-content {
+      flex-direction: column;
+    }
+
+    .features-content_blocks > div {
+      width: calc(50% - 1rem);
+    }
+  }
+
+  @media screen and (max-width: 479px) {
+    .features-content_blocks > div {
+      width: 100%;
+    }
+
+    .features-content_blocks {
+      gap: 2rem;
+    }
+  }
+</style>
 
 {% schema %}
 {
@@ -40,6 +118,22 @@
       "id": "title",
       "default": "<p>Show your team you care</p>",
       "label": "Title"
+    },
+    {
+      "type": "select",
+      "id": "heading_style",
+      "options": [
+        {
+          "value": "h2",
+          "label": "Heading 2"
+        },
+        {
+          "value": "h1",
+          "label": "Heading 1"
+        }
+      ],
+      "default": "h1",
+      "label": "Heading style"
     },
     {
       "type": "textarea",

@@ -8,7 +8,7 @@
 </div>
 
 <div class="dialog-form-body">
-  {% form 'contact', class: 'form' %}
+  {% form 'contact', class: 'form', id: 'download-catalogue' %}
 
     <div class="input-container">
       <input type="hidden" name="contact[tags]" value="download-catalogue">
@@ -31,9 +31,9 @@
             {% if form.errors %}
               autofocus
               aria-invalid="true"
-              aria-describedby="Contact-error--{{ section.id }}"
+              aria-describedby="Contact-error--{{ id }}"
             {% elsif form.posted_successfully? %}
-              aria-describedby="Contact-success--{{ section.id }}"
+              aria-describedby="Contact-success--{{ id }}"
             {% endif %}
             placeholder="{{ settings.download_catalogue_input_name_placeholder }}"
             required
@@ -56,9 +56,9 @@
             {% if form.errors %}
               autofocus
               aria-invalid="true"
-              aria-describedby="Contact-error--{{ section.id }}"
+              aria-describedby="Contact-error--{{ id }}"
             {% elsif form.posted_successfully? %}
-              aria-describedby="Contact-success--{{ section.id }}"
+              aria-describedby="Contact-success--{{ id }}"
             {% endif %}
             placeholder="{{ settings.download_catalogue_input_email_placeholder }}"
             required
@@ -73,31 +73,23 @@
     </div>
 
     {%- if form.errors -%}
-      <small class="text-size-tiny text-color-grey-500 contact-form__message form__message margin-top margin-small" id="Contact-error--{{ section.id }}">
+      <small class="text-size-tiny text-color-grey-500 contact-form__message form__message margin-top margin-small" id="Contact-error--{{ id }}">
         {% render 'icon-error' %}
         {{ form.errors.translated_fields['email'] | capitalize }} 
         {{ form.errors.messages['email'] }}
       </small>
     {%- endif -%}
 
+    {{ form.id }}
+
     {%- if form.posted_successfully? -%}
 
-      <script type="module">
-        const initDownloadFromForm = () => {
-          sessionStorage.setItem('download-catalogue-form', 'true');
-
-          setTimeout(() => {
-            if (window.readFormSessionStorage) {
-              window.readFormSessionStorage();
-            }
-          }, 1000)
-        }
-
-        initDownloadFromForm()
+      <script type="module">      
+        window.initDownloadFromForm()
       </script>
 
       <div style="display: flex; flex-direction: column; align-items: center; justify-content: center;" class="text-align-center">
-        <h3 class="text-size-tiny text-color-grey-500 form__message" id="Contact-success--{{ section.id }}" tabindex="-1" autofocus>
+        <h3 class="text-size-tiny text-color-grey-500 form__message" id="Contact-success--{{ id }}" tabindex="-1" autofocus>
           {% render 'icon-success' %}
           {{ settings.download_catalogue_success_message }}
         </h3>

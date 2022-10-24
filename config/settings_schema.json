@@ -1376,6 +1376,10 @@
     "name": "Popup - Download Catalogue",
     "settings": [
       {
+        "type": "header",
+        "content": "To use this form on one of your CTA (Link/Button). Have the URL of your CTA point to: 'download-catalogue'"
+      },
+      {
         "type": "url",
         "id": "download_catalogue_icon_url",
         "label": "Icon",
@@ -1435,6 +1439,10 @@
   {
     "name": "Popup - Contact Form",
     "settings": [
+      {
+        "type": "header",
+        "content": "To use this form on one of your CTA (Link/Button). Have the URL of your CTA point to: 'contact_form'"
+      },
       {
         "type": "text",
         "id": "contact_form_title",

@@ -1321,9 +1321,7 @@ details[open] > .share-button__fallback {
 
 .text-area {
   font-family: var(--font-body-family);
-  font-style: var(--font-body-style);
-  font-weight: var(--font-body-weight);
-  min-height: 10rem;
+  min-height: 6rem;
   resize: none;
 }
 
