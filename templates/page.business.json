@@ -319,7 +319,7 @@
         "enable_card_style": true,
         "text_vertical_alignment": "flex-end",
         "layout_style": "two-columns",
-        "background_color": "background-color-azul-verdoso-10",
+        "background_color": "background-color-mar-10",
         "trusted_by_text": "Trusted by"
       }
     },
