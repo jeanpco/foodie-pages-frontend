@@ -12,7 +12,7 @@
 }
 
 @media (max-width: 1680px) {
-  .product-recommendations-slider-module-swiper {
+  .product-swiper {
     overflow: visible !important;
   }
 

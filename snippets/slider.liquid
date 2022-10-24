@@ -1,0 +1,84 @@
+<div class="swiper product-swiper" data-js-element="product-swiper-{{ id }}">
+
+  <div class="swiper-wrapper padding-bottom padding-xlarge">            
+
+    {% for item in items %}
+      <li class="product-card-container swiper-slide">
+        {% render 'card-pdp',
+          card_product: item,
+          show_quick_add: false,
+          section_id: id,
+        %}
+      </li>
+
+      {% if forloop.index == 2 and settings.promo_title != blank %}
+        <li class="product-card-container swiper-slide">
+          {% render 'promo-card',
+            icon_url: settings.icon_url,
+            title: settings.promo_title,
+            body: settings.promo_body,
+            cta_text: settings.promo_cta_text,
+            cta_link: settings.promo_cta_link,
+            spacing_class: 'padding-vertical padding-medium',
+          %}
+        </li>
+      {% endif %}
+    {% endfor %}
+
+  </div>
+
+  {% render 'icon-prev-arrow' %}
+  {% render 'icon-next-arrow' %}
+
+  <div class="swiper-scrollbar"></div>
+
+</div>
+
+<script type="module">
+
+  const initProductRecommendationsSlider = () => {
+    const swiperProductRecommendationsliderContainer = document.querySelector("[data-js-element='product-swiper-{{ id }}']")
+
+    console.log(swiperProductRecommendationsliderContainer)
+
+    const swiper = new Swiper(swiperProductRecommendationsliderContainer, {
+      spaceBetween: 24,
+      freeMode: true,
+      slidesPerView: "auto",
+      slidesPerView: 1.2,
+      mousewheel: {
+          forceToAxis: true,
+        },
+      scrollbar: {
+        el: ".product-swiper .swiper-scrollbar",
+        draggable: true,
+      },
+      navigation: {
+        nextEl: '.product-swiper .icon-next-arrow',
+        prevEl: '.product-swiper .icon-prev-arrow',
+      },
+      breakpoints: {
+      // when window width is >= 320px
+      1681: {
+        slidesPerView: 3,
+      },
+      1100: {
+        slidesPerView: 2.7,
+      },
+      800: {
+        slidesPerView: 2.4,
+      },
+      600: {
+        slidesPerView: 1.5,
+      },
+    }
+    });
+  }
+
+  initProductRecommendationsSlider()
+
+  document.addEventListener('product-recommendations-loaded', () => {
+    initProductRecommendationsSlider()
+  })
+
+</script>
