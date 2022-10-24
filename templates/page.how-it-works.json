@@ -155,11 +155,39 @@
         "cta_link": "#contact",
         "heading_style": "h2"
       }
+    },
+    "582103a2-47d5-46e9-9ba6-ede2b4f3963b": {
+      "type": "module-hero",
+      "blocks": {
+        "a0cdd988-b288-4542-9434-6c35f9543944": {
+          "type": "cta",
+          "settings": {
+            "cta_text": "Learn more",
+            "cta_link": "shopify:\/\/pages\/contact-us"
+          }
+        }
+      },
+      "block_order": [
+        "a0cdd988-b288-4542-9434-6c35f9543944"
+      ],
+      "settings": {
+        "overline": "",
+        "title": "<p>Get in touch!<\/p>",
+        "heading_style": "h2",
+        "body": "Each foodiepages gift basket is designed with premium goods from diverse, independently-owned makers and brands across Canada.",
+        "image": "shopify:\/\/shop_images\/Frame_43428_2.png",
+        "enable_card_style": true,
+        "text_vertical_alignment": "center",
+        "layout_style": "two-columns",
+        "background_color": "background-color-mar-10",
+        "trusted_by_text": "Trusted by"
+      }
     }
   },
   "order": [
     "main",
     "823bd50c-3555-4282-8b34-ab0e8584323d",
-    "05ea480d-037b-4297-9c3d-d6160866116b"
+    "05ea480d-037b-4297-9c3d-d6160866116b",
+    "582103a2-47d5-46e9-9ba6-ede2b4f3963b"
   ]
 }
