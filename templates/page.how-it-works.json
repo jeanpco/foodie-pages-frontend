@@ -185,6 +185,21 @@
     },
     "b5797203-b142-444b-be2c-d6e9d37312fe": {
       "type": "module-features",
+      "blocks": {
+        "2c55f2d5-0c58-4b13-af11-302a514fa449": {
+          "type": "features",
+          "settings": {
+            "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/placeholder-svg-square.svg?v=1666645913",
+            "title": "Whats in the box",
+            "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.",
+            "cta_text": "Learn More",
+            "cta_link": "shopify:\/\/pages\/about-us"
+          }
+        }
+      },
+      "block_order": [
+        "2c55f2d5-0c58-4b13-af11-302a514fa449"
+      ],
       "settings": {
         "overline": "Quick shop",
         "title": "<p>Show your team you care<\/p>",
