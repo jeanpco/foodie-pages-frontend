@@ -1,9 +1,15 @@
+{% assign body = section.settings.body %}
+
+{% if template == 'collection' %}
+  {% assign body = collection.description %}
+{% endif %}
+
 <div class="plain-content container">
   <div>
     {% render 'module-header', 
       overline: section.settings.overline, 
       title: section.settings.title,
-      body: section.settings.body,
+      body: body,
       text_horizontal_alignment: 'left',
       heading_style: section.settings.heading_style,
     %}
@@ -31,8 +37,7 @@
     {
       "type": "text",
       "id": "body",
-      "label": "Body",
-      "default": "{{ collection.description }}"
+      "label": "Body"
     },
     {
       "type": "text",
