@@ -2,7 +2,14 @@
   "sections": {
     "banner": {
       "type": "plain-content",
-      "settings": {}
+      "settings": {
+        "overline": "Corporate solutions",
+        "title": "{{ collection.title }}",
+        "body": "",
+        "cta_text": "Get a quote",
+        "cta_link": "",
+        "heading_style": "h1"
+      }
     },
     "product-grid": {
       "type": "main-collection-product-grid",
@@ -13,7 +20,9 @@
         "show_secondary_image": false,
         "show_vendor": false,
         "show_rating": false,
+        "enable_quick_add": false,
         "enable_filtering": true,
+        "filter_type": "horizontal",
         "enable_sorting": true,
         "columns_mobile": "2",
         "padding_top": 36,
