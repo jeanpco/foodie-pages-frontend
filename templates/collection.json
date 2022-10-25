@@ -5,7 +5,7 @@
       "settings": {
         "overline": "Corporate solutions",
         "title": "{{ collection.title }}",
-        "body": "",
+        "body": "{{ collection.description }}",
         "cta_text": "Get a quote",
         "cta_link": "",
         "heading_style": "h1"
