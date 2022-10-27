@@ -1,0 +1,20 @@
+<div class="alert-banner margin-vertical margin-medium background-color-mar-10 padding-horizontal padding-medium text-align-center">
+  <div class="padding-vertical padding-small text-color-mar-darker">{{ section.settings.alert_text }}</div>
+</div>
+
+<style>
+  .alert-banner {
+    border-radius: 76px;
+  }
+
+  .alert-banner a {
+    color: var(--color-mar-darker);
+    text-decoration: underline;
+  }
+
+  @media only screen and (max-width: 500px) {
+    .alert-banner {
+      border-radius: 8px;
+    }
+  }
+</style>
