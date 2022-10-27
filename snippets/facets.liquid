@@ -58,7 +58,7 @@
                     {% render 'icon-caret' %}
                   </div>
                 </summary>
-                <div id="Facet-{{ forloop.index }}-{{ section.id }}" class="parent-display facets__display background-color-secondary padding-small">
+                <div id="Facet-{{ forloop.index }}-{{ section.id }}" class="parent-display facets__display padding-small">
                   <div class="facets__header padding-bottom padding-xsmall">
                     <span class="facets__selected text-size-small no-js-hidden">{{ 'products.facets.filters_selected' | t: count: filter.active_values.size }}</span>
                     <facet-remove>
@@ -130,7 +130,7 @@
                     {% render 'icon-caret' %}
                   </div>
                 </summary>
-                <div id="Facet-{{ forloop.index }}-{{ section.id }}" class="facets__display">
+                <div id="Facet-{{ forloop.index }}-{{ section.id }}" class="facets__display padding-small">
                   <div class="facets__header">
                     {%- assign max_price_amount = filter.range_max | money | strip_html | escape -%}
                     <span class="facets__selected">{{ "products.facets.max_price" | t: price: max_price_amount }}</span>

@@ -185,7 +185,7 @@
 }
 
 .facets__disclosure {
-  margin-right: 3.5rem;
+  margin-right: 1rem;
 }
 
 .facets__summary {
@@ -242,6 +242,7 @@
   width: 35rem;
   max-height: 55rem;
   overflow-y: auto;
+  background-color: var(--color-secondary);
 }
 
 .facets__header {
