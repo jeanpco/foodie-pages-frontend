@@ -6,6 +6,10 @@
   position: relative;
   border-radius: 1.5rem;
   overflow: hidden;
+  border: 1px solid var(--color-grey-200);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .product-card_image-container img {
