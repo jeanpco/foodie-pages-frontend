@@ -262,7 +262,7 @@ details > * {
 
 .underlined-link:hover,
 .customer a:hover {
-  color: rgb(var(--color-primary));
+  color: var(--color-primary);
   text-decoration-thickness: 0.2rem;
 }
 
@@ -294,7 +294,7 @@ summary {
 
 summary .icon-caret {
   position: absolute;
-  height: 0.6rem;
+  height: 0.8rem;
   right: 0rem;
   top: 42%;
 }
@@ -502,7 +502,7 @@ summary::-webkit-details-marker {
 }
 
 .title-wrapper-with-link a {
-  color: rgb(var(--color-primary));
+  color: var(--color-primary);
   margin-top: 0;
   flex-shrink: 0;
 }
@@ -1018,7 +1018,7 @@ details[open] > .share-button__fallback {
 .share-button__close,
 .share-button__copy {
   background-color: transparent;
-  color: rgb(var(--color-primary));
+  color: var(--color-primary);
 }
 
 .share-button__copy:focus-visible,
@@ -1098,13 +1098,11 @@ details[open] > .share-button__fallback {
   -webkit-appearance: none;
   appearance: none;
   background-color: rgb(var(--color-background));
-  color: rgb(var(--color-primary));
-  font-size: 1.6rem;
+  color: var(--color-primary);
   width: 100%;
   box-sizing: border-box;
   transition: box-shadow var(--duration-short) ease;
   border-radius: var(--inputs-radius);
-  height: 4.5rem;
   min-height: calc(var(--inputs-border-width) * 2);
   min-width: calc(7rem + (var(--inputs-border-width) * 2));
   position: relative;
@@ -1151,8 +1149,6 @@ details[open] > .share-button__fallback {
   font-family: var(--font-body-family);
   font-style: var(--font-body-style);
   font-weight: var(--font-body-weight);
-  font-size: 1.2rem;
-  color: rgba(var(--color-primary), 0.75);
 }
 
 .field:hover.field:after,
@@ -1468,7 +1464,7 @@ input[type='checkbox'] {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: rgb(var(--color-primary));
+  color: var(--color-primary);
   padding: 0.95rem 0.5rem;
   transform: scale(0.8);
 }
@@ -1618,7 +1614,7 @@ input[type='checkbox'] {
 
 .announcement-bar {
   border-bottom: 0.1rem solid rgba(var(--color-primary), 0.08);
-  color: rgb(var(--color-primary));
+  color: var(--color-primary);
 }
 
 .announcement-bar__link {
@@ -1629,7 +1625,7 @@ input[type='checkbox'] {
 }
 
 .announcement-bar__link:hover {
-  color: rgb(var(--color-primary));
+  color: var(--color-primary);
   background-color: rgba(var(--color-card-hover), 0.06);
 }
 
@@ -1750,7 +1746,7 @@ input[type='checkbox'] {
 }
 
 .header__heading-link:hover .h2 {
-  color: rgb(var(--color-primary));
+  color: var(--color-primary);
 }
 
 .header__heading-link .h2 {
@@ -1812,7 +1808,7 @@ input[type='checkbox'] {
 }
 
 .header__icon {
-  color: rgb(var(--color-primary));
+  color: var(--color-primary);
 }
 
 .header__icon span {
@@ -2072,7 +2068,7 @@ details[open] > .header__submenu {
 }
 
 .header__menu-item:hover {
-  color: rgb(var(--color-primary));
+  color: var(--color-primary);
 }
 
 .header__menu-item span {
@@ -2098,7 +2094,7 @@ details[open] > .header__menu-item .icon-caret {
 
 .header__active-menu-item {
   transition: text-decoration-thickness var(--duration-short) ease;
-  color: rgb(var(--color-primary));
+  color: var(--color-primary);
   text-decoration: underline;
   text-underline-offset: 0.3rem;
 }
@@ -2198,7 +2194,7 @@ details-disclosure > details {
   text-align: center;
   background-color: rgb(var(--color-badge-background));
   border-color: rgba(var(--color-badge-border), var(--alpha-badge-border));
-  color: rgb(var(--color-primary));
+  color: var(--color-primary);
   word-break: break-word;
 }
 

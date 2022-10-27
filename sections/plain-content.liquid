@@ -1,11 +1,11 @@
 {% assign body = section.settings.body %}
 
 {% if template == 'collection' %}
-  {% assign body = collection.description %}
+  {% assign body = collection.description | strip_html %}
 {% endif %}
 
 <div class="plain-content container">
-  <div>
+  <div class="plain-content_header padding-bottom padding-large">
     {% render 'module-header', 
       overline: section.settings.overline, 
       title: section.settings.title,
@@ -16,11 +16,19 @@
   </div>
 </div>
 
+<style>
+  .plain-content_header {
+    max-width: 50rem;
+    width: 100%;
+    margin-right: auto;
+  }
+</style>
+
 {% schema %}
 {
   "name": "Plain Content",
   "tag": "section",
-  "class": "section section-plain-content padding-vertical padding-huge",
+  "class": "section section-plain-content padding-top padding-huge",
   "settings": [
     {
       "type": "text",

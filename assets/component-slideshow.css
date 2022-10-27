@@ -184,7 +184,7 @@ slideshow-component:not(.page-width) .slider-buttons {
 }
 
 .slideshow__autoplay:hover path {
-  fill: rgb(var(--color-primary));
+  fill: var(--color-primary);
 }
 
 @media screen and (forced-colors: active) {

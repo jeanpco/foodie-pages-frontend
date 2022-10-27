@@ -68,7 +68,7 @@
 }
 
 .cart-notification__heading .icon-checkmark {
-  color: rgb(var(--color-primary));
+  color: var(--color-primary);
   margin-right: 1rem;
   width: 1.3rem;
 }

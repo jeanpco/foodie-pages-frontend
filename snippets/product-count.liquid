@@ -1,0 +1,16 @@
+<div class="product-count {{ class }}" role="status">
+  <p class="product-count__text text-size-small">
+    <span id="ProductCount">
+      {%- if results.results_count -%}
+        {{ 'templates.search.results_with_count' | t: terms: results.terms, count: results.results_count }}
+      {%- elsif results.products_count == results.all_products_count -%}
+        {{ 'products.facets.product_count_simple' | t: count: results.products_count }}
+      {%- else -%}
+        {{ 'products.facets.product_count' | t: product_count: results.products_count, count: results.all_products_count }}
+      {%- endif -%}
+    </span>
+  </p>
+  <div class="loading-overlay__spinner">
+    <div class="loading-icon perpetuum-mobile"></div>
+  </div>
+</div>

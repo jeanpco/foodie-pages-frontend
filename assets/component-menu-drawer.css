@@ -154,7 +154,7 @@ details[open].menu-opening > .menu-drawer__submenu {
 .menu-drawer__close-button:focus,
 .menu-drawer__menu-item:hover,
 .menu-drawer__close-button:hover {
-  color: rgb(var(--color-primary));
+  color: var(--color-primary);
   background-color: rgba(var(--color-primary), 0.04);
 }
 
@@ -226,7 +226,7 @@ details[open].menu-opening > .menu-drawer__submenu {
   padding: 1.2rem;
   margin-left: -1.2rem;
   font-size: 1.4rem;
-  color: rgb(var(--color-primary));
+  color: var(--color-primary);
 }
 
 .menu-drawer__account .icon-account {

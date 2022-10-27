@@ -38,7 +38,7 @@
 
 .accordion .icon-accordion {
   align-self: center;
-  fill: rgb(var(--color-primary));
+  fill: var(--color-primary);
   height: 1rem;
   width: 1rem;
 }

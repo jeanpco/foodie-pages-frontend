@@ -194,7 +194,7 @@ quick-add-modal .product__title > a {
 }
 
 quick-add-modal .product__title > a:hover {
-  color: rgb(var(--color-primary));
+  color: var(--color-primary);
   text-decoration: underline;
   text-underline-offset: 0.2rem;
   text-decoration-thickness: 0.3rem;

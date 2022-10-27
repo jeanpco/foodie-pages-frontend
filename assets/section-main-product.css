@@ -194,7 +194,7 @@ variant-selects {
   background-color: rgb(var(--color-background));
   color: rgba(var(--color-primary));
   border-radius: 84px;
-  color: rgb(var(--color-primary));
+  color: var(--color-primary);
   display: inline-block;
   padding: 0.875rem 1rem;
   line-height: 1;
@@ -217,7 +217,7 @@ variant-selects {
 }
 
 .product-form__input input[type='radio'] + label:hover {
-  border-color: rgb(var(--color-primary));
+  border-color: var(--color-primary);
 }
 
 .product-form__input input[type='radio']:checked + label {
@@ -292,7 +292,7 @@ variant-selects {
 
 /* Overrides */
 .shopify-payment-button__more-options {
-  color: rgb(var(--color-primary));
+  color: var(--color-primary);
 }
 
 .shopify-payment-button__button {
@@ -466,7 +466,7 @@ a.product__text {
   }
 
   .product__media-list::-webkit-scrollbar-thumb {
-    background-color: rgb(var(--color-primary));
+    background-color: var(--color-primary);
   }
 
   .product__media-list::-webkit-scrollbar-track {
@@ -538,7 +538,7 @@ a.product__text {
   background-color: rgb(var(--color-background));
   border-radius: 50%;
   border: 0.1rem solid rgba(var(--color-primary), 0.1);
-  color: rgb(var(--color-primary));
+  color: var(--color-primary);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1155,8 +1155,8 @@ a.product__text {
 }
 
 .thumbnail[aria-current] {
-  box-shadow: 0 0 0rem 0.1rem rgb(var(--color-primary));
-  border-color: rgb(var(--color-primary));
+  box-shadow: 0 0 0rem 0.1rem var(--color-primary);
+  border-color: var(--color-primary);
 }
 
 .thumbnail[aria-current]:focus-visible {
@@ -1178,7 +1178,7 @@ a.product__text {
 }
 .thumbnail[aria-current]:focus:not(:focus-visible) {
   outline: 0;
-  box-shadow: 0 0 0 0.1rem rgb(var(--color-primary));
+  box-shadow: 0 0 0 0.1rem var(--color-primary);
 }
 
 .thumbnail img {

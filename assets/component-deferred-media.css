@@ -60,7 +60,7 @@
   background-color: rgb(var(--color-background));
   border: 0.1rem solid rgba(var(--color-primary), 0.1);
   border-radius: 50%;
-  color: rgb(var(--color-primary));
+  color: var(--color-primary);
   display: flex;
   align-items: center;
   justify-content: center;
