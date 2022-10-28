@@ -82,6 +82,9 @@ body,
 .page-margin,
 .shopify-challenge__container {
   margin: 7rem auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }
 
 .rte-width {
@@ -250,14 +253,6 @@ details > * {
     transition: none !important;
     animation: none !important;
   }
-}
-
-.underlined-link,
-.customer a {
-  color: rgba(var(--color-primary), var(--alpha-link));
-  text-underline-offset: 0.3rem;
-  text-decoration-thickness: 0.1rem;
-  transition: text-decoration-thickness ease 100ms;
 }
 
 .underlined-link:hover,
@@ -919,7 +914,7 @@ input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
-  -webkit-box-shadow: 0 0 0px 1000px var(--color-primary) inset;
+  -webkit-box-shadow: 0 0 0px 1000px var(--color-secondary) inset;
 }
 
 input:-webkit-autofill {

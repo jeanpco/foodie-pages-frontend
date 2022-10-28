@@ -315,18 +315,6 @@
   background-color: currentColor;
 }
 
-/* Login */
-.login a {
-  display: block;
-  margin: 0 auto;
-  width: fit-content;
-}
-
-.login a[href='#recover'] {
-  margin-left: 0;
-  margin-right: 0;
-}
-
 .login .field + a {
   margin-top: 1rem;
 }
