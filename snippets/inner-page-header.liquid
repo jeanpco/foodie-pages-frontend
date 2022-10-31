@@ -1,0 +1,19 @@
+<div class="inner-page-header background-color-tertiary">
+  <div class="inner-page-header_container container">
+    <div class="padding-top padding-huge">
+      <div class="padding-bottom padding-large">
+        {% if title %}
+          {% render 'breadcrumb' %}
+          <h1 class="inner-page-header_title text-color-secondary">{{ title }}</h1>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .inner-page-header {
+    border-bottom-left-radius: 32px;
+    border-bottom-right-radius: 32px;
+  }
+</style>

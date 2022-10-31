@@ -146,14 +146,6 @@ body,
   color: var(--color-secondary);
 }
 
-.text-body {
-  font-size: 1.5rem;
-  line-height: calc(1 + 0.8 / var(--font-body-scale));
-  font-family: var(--font-body-family);
-  font-style: var(--font-body-style);
-  font-weight: var(--font-body-weight);
-}
-
 h1,
 h2,
 h3,
@@ -169,16 +161,12 @@ h6 {
 table:not([class]) {
   table-layout: fixed;
   border-collapse: collapse;
-  font-size: 1.4rem;
   border-style: hidden;
-  box-shadow: 0 0 0 0.1rem rgba(var(--color-primary), 0.2);
-  /* draws the table border  */
 }
 
 table:not([class]) td,
 table:not([class]) th {
   padding: 1em;
-  border: 0.1rem solid rgba(var(--color-primary), 0.2);
 }
 
 .light {
