@@ -233,7 +233,7 @@
           "type": "cta",
           "settings": {
             "cta_text": "Download Catalogue",
-            "cta_link": "\/"
+            "cta_link": "#download-catalogue"
           }
         },
         "5b00fc58-27f1-4648-8ba7-a6ce319c83a3": {
