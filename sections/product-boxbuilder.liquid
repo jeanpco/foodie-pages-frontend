@@ -2,12 +2,6 @@
 The Box Builder requires this template to redirect customers from your builder products to the builder itself. DO NOT MODIFY OR DELETE.
 {% endcomment %}
 
-<style>
-  body {
-    background: red !important;
-  }
-</style>
-
 {% assign id = product.metafields.box_builder.builderId %}
 {% assign url = '/apps/builder?b=' | append: id %}
 <div style="text-align: center;width:100%;height:640px;padding-top:200px;">

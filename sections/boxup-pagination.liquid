@@ -123,11 +123,11 @@
                             {%- if showQty == 'true' -%}
                             <div class="bldr-dark-btn">
                                 <span class="bxp-bldr-qty-down">-</span>
-                                <span class="bxp-bldr-item_price"><span class="bxp-bldr-add-text"></span> {{product.price | money}}</span>
+                                {% render 'product-bundle-atc', price: product.price | money %}
                                 <span class="bxp-bldr-qty-up">+</span>
                             </div>
                             {%- else -%}
-                                <span class="bxp-bldr-item_price"><span class="bxp-bldr-add-text"></span> {{product.price | money}}</span>
+                            {% render 'product-bundle-atc', price: product.price | money %}
                             {%- endif -%}
                             <strong>{{product.title}}</strong>
                             <select class="bxp-bldr-form-control bxp-mt-10" img="{{product.featured_image.src | img_url: '300x'}}" name="bxp-select_{{product.id}}" id="bxp-select_{{product.id}}">
@@ -258,11 +258,19 @@
                                 {%- if showQty == 'true' -%}
                                 <div class="bldr-dark-btn">
                                     <span class="bxp-bldr-qty-down">-</span>
-                                    <span class="bxp-bldr-item_price"><span class="bxp-bldr-add-text"></span> {{variant.price | money}}</span>
+                                    <span class="bxp-bldr-item_price button">
+                                        <span>
+                                            <span class="bxp-bldr-add-text"></span> {{variant.price | money}}
+                                        </span>
+                                    </span>
                                     <span class="bxp-bldr-qty-up">+</span>
                                 </div>
                                 {%- else -%}
-                                <span class="bxp-bldr-item_price"><span class="bxp-bldr-add-text"></span> {{variant.price | money}}</span>
+                                <span class="bxp-bldr-item_price button">
+                                    <span>
+                                        <span class="bxp-bldr-add-text"></span> {{variant.price | money}}
+                                    </span>
+                                </span>
                                 {%- endif -%}
                             {%- else -%}
                                 <span class="bxp-bldr-sold_out">{{translate_soldOut}}</span>
@@ -372,11 +380,19 @@
                         {% if showQty == 'true' %}
                         <div class="bldr-dark-btn">
                           <span class="bxp-bldr-qty-down">-</span>
-                          <span class="bxp-bldr-item_price"><span class="bxp-bldr-add-text"></span> {{variant.price | money}}</span>
+                          <span class="bxp-bldr-item_price button">
+                            <span>
+                                <span class="bxp-bldr-add-text"></span> {{variant.price | money}}
+                            </span>
+                          </span>
                           <span class="bxp-bldr-qty-up">+</span>
                         </div>
                         {% else %}
-                        <span class="bxp-bldr-item_price"><span class="bxp-bldr-add-text"></span> {{variant.price | money}}</span>
+                        <span class="bxp-bldr-item_price button">
+                            <span>
+                                <span class="bxp-bldr-add-text"></span> {{variant.price | money}}
+                            </span>
+                        </span>
                         {% endif %}
                         {% else %}
                         <span class="bxp-bldr-sold_out">{{translate_soldOut}}</span>
@@ -458,11 +474,11 @@
                             {% if showQty == 'true' %}
                             <div class="bldr-dark-btn">
                                 <span class="bxp-bldr-qty-down">-</span>
-                                <span class="bxp-bldr-item_price"><span class="bxp-bldr-add-text"></span> {{product.price | money}}</span>
+                                {% render 'product-bundle-atc', price: product.price | money %}
                                 <span class="bxp-bldr-qty-up">+</span>
                             </div>
                             {% else %}
-                                <span class="bxp-bldr-item_price"><span class="bxp-bldr-add-text"></span> {{product.price | money}}</span>
+                                {% render 'product-bundle-atc', price: product.price | money %}
                             {% endif %}
                             <strong>{{product.title}}</strong>
                             {% assign pDesc = product.description | strip_html | truncatewords: 28 %}
@@ -573,11 +589,19 @@
                                 {% if showQty == 'true' %}
                                 <div class="bldr-dark-btn">
                                     <span class="bxp-bldr-qty-down">-</span>
-                                    <span class="bxp-bldr-item_price"><span class="bxp-bldr-add-text"></span> {{variant.price | money}}</span>
+                                    <span class="bxp-bldr-item_price button">
+                                        <span>
+                                            <span class="bxp-bldr-add-text"></span> {{variant.price | money}}
+                                        </span>
+                                    </span>
                                     <span class="bxp-bldr-qty-up">+</span>
                                 </div>
                                 {% else %}
-                                <span class="bxp-bldr-item_price"><span class="bxp-bldr-add-text"></span> {{variant.price | money}}</span>
+                                <span class="bxp-bldr-item_price button">
+                                    <span>
+                                        <span class="bxp-bldr-add-text"></span> {{variant.price | money}}
+                                    </span>
+                                </span>
                                 {% endif %}
                             {% else %}
                                 <span class="bxp-bldr-sold_out">{{translate_soldOut}}</span>
@@ -670,11 +694,19 @@
                                 {% if showQty == 'true' %}
                                 <div class="bldr-dark-btn">
                                     <span class="bxp-bldr-qty-down">-</span>
-                                    <span class="bxp-bldr-item_price"><span class="bxp-bldr-add-text"></span> {{variant.price | money}}</span>
+                                    <span class="bxp-bldr-item_price button">
+                                        <span>
+                                            <span class="bxp-bldr-add-text"></span> {{variant.price | money}}
+                                        </span>
+                                    </span>
                                     <span class="bxp-bldr-qty-up">+</span>
                                 </div>
                                 {% else %}
-                                <span class="bxp-bldr-item_price"><span class="bxp-bldr-add-text"></span> {{variant.price | money}}</span>
+                                <span class="bxp-bldr-item_price button">
+                                    <span>
+                                        <span class="bxp-bldr-add-text"></span> {{variant.price | money}}
+                                    </span>
+                                </span>
                                 {% endif %}
                             {% else %}
                             <span class="bxp-bldr-sold_out">{{translate_soldOut}}</span>
@@ -694,3 +726,56 @@
 {%- endpaginate -%}
 
 {{productLayout}}
+
+<style>
+    .bxp-bldr-item_price.button {
+        background-color: var(--color-tertiary) !important;
+        width: 100%;
+        box-sizing: border-box;
+        max-width: 9.375rem;
+    }
+
+    .bxp-bldr-item_price.button > span {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0.38rem;
+    }
+
+    .bxp-bldr-add-text {
+        margin-right: 0.25rem;
+    }
+
+    .bxp-bldr-col-md-3 .bxp-bldr-item label {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+        padding: 0;
+        border: unset !important;
+        box-shadow: none !important;
+    }
+
+    .bxp-bldr-col-md-3 .bxp-bldr-item label .bxp-owl-carousel {
+        order: 1;
+        border-radius: 24px;
+        {% comment %} background-color: var(--color-grey-75);    {% endcomment %}
+        border: 1px solid var(--color-grey-200);
+    }
+
+    .bxp-bldr-col-md-3 .bxp-bldr-item label strong {
+        order: 2;
+        margin-top: 0.5rem;
+        text-align: left;
+    }
+
+    .bxp-bldr-col-md-3 .bxp-bldr-item label .bldr-dark-btn {
+        order: 3;
+        text-align: left;
+    }
+
+    .bxp-bldr-item label .bxp-bldr-item_price {
+        margin-bottom: 0;
+        margin-top: 0.5rem;
+    }
+  </style>
