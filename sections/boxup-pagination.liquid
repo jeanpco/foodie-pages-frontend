@@ -728,6 +728,29 @@
 {{productLayout}}
 
 <style>
+
+    .bxp-bldr-form-control.bxp-mt-10 {
+        margin-top: 1rem;
+        padding: 1rem;
+        border: 1px solid var(--color-grey-200);
+        border-radius: 6px;
+        height: 48px;
+    }
+
+    .bxp-bldr-wizard-header {
+        font-size: var(--font-h1-size-desktop) !important;
+        line-height: 1 !important;
+        font-weight: 500 !important;
+        margin-top: 6rem !important;
+        margin-bottom: 2rem !important;
+    }
+
+    @media screen and (max-width: 990px) {
+        .bxp-bldr-wizard-header {
+            font-size: var(--font-h1-size-tablet) !important;
+        }
+    }
+
     .bxp-bldr-item_price.button {
         background-color: var(--color-tertiary) !important;
         width: 100%;
@@ -746,6 +769,152 @@
         margin-right: 0.25rem;
     }
 
+    .bxp-bldr-question_title {
+        margin-bottom: 5.5rem;
+        text-align: left;
+        max-width: 48.4375rem;
+    }
+
+    .bxp-styled-select,
+    .bxp-bldr-form-control {
+        border: 0;
+        margin: 0;
+        padding: 0;
+        position: relative;
+    }
+    
+    input.bxp-bldr-form-control, select.bxp-bldr-form-control, textarea.bxp-bldr-form-control {
+        color: var(--color-grey-500);
+    }
+
+    .bxp-bldr-form-control.bxp-filter-title {
+        border-radius: 6px;
+        color: var(--color-grey-500);
+        border: 1px solid var(--color-grey-200);
+    }
+
+    .bxp-styled-select:before,
+    .bxp-styled-select:after {
+        content: '';
+        height: 6px;
+        width: 1.5px;
+        position: absolute;
+        z-index: 1;
+        background-color: var(--color-grey-500);
+        top: 19px;
+    }
+
+    .bxp-styled-select:before {
+        transform: rotate(45deg);
+        right: 32px;
+    }
+    
+    .bxp-styled-select:after {
+        transform: rotate(-45deg);
+        right: 35px;
+      }
+
+    .bxp-bldr-form-control.bxp-filter-title {
+        box-sizing: border-box;
+    }
+
+    .bxp-bldr-col-md-3 {
+        flex: 0 0 calc(33.333333% - 0.6666666667rem);
+        max-width: calc(33.333333% - 0.6666666667rem);
+        padding: 0;
+    }
+
+
+    .bxp-bldr-row.bxp-bldr-justify-content-center {
+        margin-bottom: 2rem;
+    }
+
+    .bxp-bldr-col-md-4.bxp-bldr-col-lg-3.bxp-mt-15 {
+        flex: 0 0 calc(25% - 0.75rem);
+        max-width: calc(25% - 0.75rem);
+        padding: 0;
+        margin: 0;
+    }
+
+    @media screen and (max-width: 990px) { 
+
+        .bxp-bldr-wizard-header {
+            font-size: var(--font-h1-size-mobile) !important;
+            line-height: 1 !important;
+            font-weight: 500 !important;
+            margin-top: 3rem !important;
+            margin-bottom: 1rem !important;
+        }
+
+        .bxp-bldr-form-control {
+            padding: 0;
+        }
+        
+        .bxp-bldr-question_title {
+            margin-bottom: 2.5rem;
+        }
+
+        .bxp-bldr-col-md-4.bxp-bldr-col-lg-3.bxp-mt-15 {
+            flex: 100%;
+            max-width: 100%;
+        }
+
+        .bxp-bldr-row.bxp-bldr-justify-content-center:not(.bxp-step-content) {
+            flex-direction: column;
+            gap: 0;
+        }
+
+        .bxp-bldr-col-md-3 {
+            flex: 0 0 calc(50% - 1rem);
+            max-width: calc(50% - 1rem);
+            padding: 0;
+        }    
+      }
+
+    .bxp-bldr-container {
+        width: 100% !important;
+        max-width: var(--width-large-desktop) !important;
+        margin-right: auto !important;
+        margin-left: auto !important;
+        padding: 0 var(--padding-large-desktop);
+        box-sizing: border-box;
+    }
+
+    @media screen and (max-width: 1680px) {   
+        .bxp-bldr-containerr {
+          max-width: var(--width-desktop) !important;
+          padding: 0 var(--padding-desktop);
+        }
+      }
+      
+      @media screen and (max-width: 990px) {   
+        .bxp-bldr-container {
+          max-width: var(--width-tablet) !important;
+          padding: 0 var(--padding-tablet);
+        }
+      }
+      
+      @media screen and (max-width: 767px) {   
+        .bxp-bldr-container {
+          max-width: var(--width-tablet) !important;
+          padding: 0 var(--padding-tablet);
+        }
+      }  
+
+      @media screen and (max-width: 600px) {   
+        .bxp-bldr-col-md-3 {
+            flex: 0 0 100%;
+            max-width: 100%;
+            padding: 0;
+        } 
+      } 
+
+    .bxp-bldr-row {
+        margin: 0;
+        width: 100%;
+        gap: 1rem;
+    }
+
     .bxp-bldr-col-md-3 .bxp-bldr-item label {
         display: flex;
         flex-direction: column;
@@ -754,6 +923,7 @@
         padding: 0;
         border: unset !important;
         box-shadow: none !important;
+        margin-bottom: 1rem;
     }
 
     .bxp-bldr-col-md-3 .bxp-bldr-item label .bxp-owl-carousel {
@@ -763,9 +933,33 @@
         border: 1px solid var(--color-grey-200);
     }
 
+    .bxp-bldr-item label img {
+        min-height: 300px;
+        max-height: 450px;
+        height: 30vw;
+        margin: 0;
+        padding: 2rem;
+        box-sizing: border-box;
+    }
+
+    .bxp-bldr-item {
+        margin-top: 0;
+    }
+
+    .bxp-bldr-form-control {
+        font-size: 0.875rem !important;
+    }
+
+    .bxp-owl-dots {
+        position: absolute;
+        bottom: 1rem;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
     .bxp-bldr-col-md-3 .bxp-bldr-item label strong {
         order: 2;
-        margin-top: 0.5rem;
+        margin-top: 1rem;
         text-align: left;
     }
 
@@ -777,5 +971,28 @@
     .bxp-bldr-item label .bxp-bldr-item_price {
         margin-bottom: 0;
         margin-top: 0.5rem;
+    }
+
+    {% comment %} Sticky Banner {% endcomment %}
+
+    #bxp-bldr-price_total h3,
+    #bxp-bldr-price_total span {
+        font-size: 1.5rem;
+        font-weight: 400;
+        margin-bottom: 0;
+        text-transform: capitalize;
+        color: var(--color-black);
+    }
+
+    button.bxp-bldr-forward {
+        background: var(--color-tertiary);
+        color: var(--color-white);
+        border-radius: 30px;
+        padding: 5px 15px 5px 15px;
+        height: 40px;
+    }
+
+    button.bxp-bldr-forward:before {
+        display: none;
     }
   </style>
