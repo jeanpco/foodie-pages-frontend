@@ -17,12 +17,10 @@
 
 .drawer__inner {
   height: 100%;
-  width: 40rem;
+  width: 31rem;
   max-width: calc(100vw - 3rem);
   padding: 0 1.5rem;
-  border: 0.1rem solid rgba(var(--color-primary), 0.2);
-  border-right: 0;
-  background-color: rgb(var(--color-background));
+  background-color: var(--color-white);
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -80,7 +78,7 @@ cart-drawer:not(.is-empty) .cart-drawer__collection {
 }
 
 .drawer__heading {
-  margin: 0 0 1rem;
+  margin: 0;
 }
 
 .drawer__close {
@@ -102,9 +100,21 @@ cart-drawer:not(.is-empty) .cart-drawer__collection {
   right: 5px;
 }
 
+.button-remove-cart-item {
+  border: 0;
+  background-color: transparent;
+  cursor: pointer;
+}
+
 .drawer__close svg {
   height: 2.4rem;
   width: 2.4rem;
+  color: var(--color-grey-500);
+  transition: color var(--duration-default) ease;
+}
+
+.drawer__close svg:hover {
+  color: var(--color-red);
 }
 
 .drawer__contents {
@@ -209,8 +219,10 @@ cart-drawer-items {
 .cart-drawer .cart-item {
   display: grid;
   grid-template: repeat(2,auto) / repeat(4,1fr);
-  gap: 1.5rem;
+  gap: 1rem;
   margin-bottom: 0;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--color-grey-200);
 }
 
 .cart-drawer .cart-item:last-child {
@@ -223,10 +235,14 @@ cart-drawer-items {
 
 .cart-drawer .cart-item__image {
   max-width: 100%;
+  border-radius: 6px;
+  border: 1px solid var(--color-grey-100);
+  padding: 0.5rem;
+  box-sizing: border-box;
 }
 
 .cart-drawer .cart-items thead {
-  margin-bottom: 0.5rem;
+  display: none;
 }
 
 .cart-drawer .cart-items thead th:first-child,
@@ -259,11 +275,11 @@ cart-drawer-items {
 }
 
 .cart-drawer .cart-items td {
-  padding-top: 2rem;
+  padding-top: 1rem;
 }
 
 .cart-drawer .cart-item > td + td {
-  padding-left: 1rem;
+  padding-left: 0rem;
 }
 
 .cart-drawer .cart-item__details {
