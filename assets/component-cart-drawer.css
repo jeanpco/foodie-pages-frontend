@@ -18,7 +18,7 @@
 .drawer__inner {
   height: 100%;
   width: 31rem;
-  max-width: calc(100vw - 3rem);
+  max-width: 100vw;
   padding: 0 1.5rem;
   background-color: var(--color-white);
   overflow: hidden;
@@ -70,8 +70,8 @@ cart-drawer:not(.is-empty) .cart-drawer__collection {
 
 .drawer__header {
   position: relative;
-  background-color: rgb(var(--color-background));
-  padding: 1.5rem 0;
+  background-color: var(--color-white);
+  padding: 1.5rem 0 1.5rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -86,7 +86,6 @@ cart-drawer:not(.is-empty) .cart-drawer__collection {
   padding: 0;
   min-width: 4.4rem;
   min-height: 4.4rem;
-  box-shadow: 0 0 0 0.2rem rgba(var(--color-button), 0);
   position: absolute;
   top: 10px;
   right: -10px;
@@ -104,6 +103,11 @@ cart-drawer:not(.is-empty) .cart-drawer__collection {
   border: 0;
   background-color: transparent;
   cursor: pointer;
+  transition: color var(--duration-default) ease;
+}
+
+.button-remove-cart-item:hover {
+  color: var(--color-red);
 }
 
 .drawer__close svg {
@@ -125,7 +129,7 @@ cart-drawer:not(.is-empty) .cart-drawer__collection {
 
 .drawer__footer {
   background-color: rgb(var(--color-background));
-  border-top: 0.1rem solid rgba(var(--color-primary), 0.2);
+  border-top: 1px solid var(--color-grey-200);
   padding: 1.5rem 0;
 }
 
@@ -135,7 +139,7 @@ cart-drawer-items.is-empty + .drawer__footer {
 
 .drawer__footer > details {
   margin-top: -1.5rem;
-  border-bottom: 0.1rem solid rgba(var(--color-primary), 0.2);
+  border-bottom: 1px solid var(--color-grey-200);
 }
 
 .drawer__footer > details[open] {
@@ -167,6 +171,7 @@ cart-drawer {
   right: 0;
   bottom: 0;
   left: 0;
+  background: rgba(0,0,0,0.25);
 }
 
 .cart-drawer__overlay:empty {
@@ -213,6 +218,11 @@ cart-drawer-items {
 
   .drawer__inner {
     overflow: scroll;
+    padding: 0 1rem;
+  }
+
+  .drawer__close {
+    top: 5px;
   }
 }
 
@@ -227,6 +237,7 @@ cart-drawer-items {
 
 .cart-drawer .cart-item:last-child {
   margin-bottom: 1rem;
+  border-bottom: 0px;
 }
 
 .cart-drawer .cart-item__media {
@@ -311,6 +322,8 @@ cart-drawer-items {
 .cart-drawer .cart-items .cart-item__quantity {
   padding-top: 0;
   grid-column: 2 / 5;
+  display: flex;
+  align-items: flex-end;
 }
 
 @media screen and (max-width: 749px) {
@@ -332,7 +345,7 @@ cart-drawer-items {
 }
 
 .cart-drawer .tax-note {
-  margin: 1.2rem 0 1rem auto;
+  margin: 1rem 0 1rem auto;
   text-align: left;
 }
 

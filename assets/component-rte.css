@@ -70,7 +70,8 @@
   margin: -0.5rem 0 -0.5rem 0;
 }
 
-.rte > * {
+.rte > *,
+.rte .column > * {
   margin-bottom: 1rem;
 }
 
