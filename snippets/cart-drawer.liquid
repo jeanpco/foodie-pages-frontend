@@ -308,12 +308,16 @@
         <div class="cart__ctas" {{ block.shopify_attributes }}>
           <noscript>
             <button type="submit" class="cart__update-button button button--secondary" form="CartDrawer-Form">
-              {{ 'sections.cart.update' | t }}
+              <span>
+                {{ 'sections.cart.update' | t }}
+              </span>
             </button>
           </noscript>
 
           <button type="submit" id="CartDrawer-Checkout" class="cart__checkout-button button" name="checkout" form="CartDrawer-Form"{% if cart == empty %} disabled{% endif %}>
-            {{ 'sections.cart.checkout' | t }}
+            <span>
+              {{ 'sections.cart.checkout' | t }}
+            </span>
           </button>
         </div>
       </div>

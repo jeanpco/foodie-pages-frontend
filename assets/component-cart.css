@@ -3,6 +3,17 @@
   display: block;
 }
 
+#ms__toggle-box {
+  margin-bottom: 2rem;
+}
+
+.cart-title_container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+}
+
 .cart__empty-text,
 .is-empty .cart__contents,
 cart-items.is-empty .title-wrapper-with-link,
