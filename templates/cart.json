@@ -12,10 +12,16 @@
           "type": "subtotal",
           "settings": {
           }
+        },
+        "5b9e4fd5-2d18-49ed-9f08-39e7f38437ce": {
+          "type": "buttons",
+          "settings": {
+          }
         }
       },
       "block_order": [
-        "subtotal"
+        "subtotal",
+        "5b9e4fd5-2d18-49ed-9f08-39e7f38437ce"
       ],
       "settings": {
       }
