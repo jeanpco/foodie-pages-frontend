@@ -14,6 +14,9 @@
       dialog.setAttribute('aria-controls', 'dialog');
     };
 
+
+    window.customFunctions.closeDialog = closeDialog;
+
     const toggleDialog = () => {
       dialog.setAttribute('aria-expanded', dialog.getAttribute('aria-expanded') === 'true' ? 'false' : 'true');
     };
@@ -21,7 +24,6 @@
     // get links that can open the popup
     const downloadCatalogueLinks = document.querySelectorAll('a[href*="download-catalogue"]');
     const contactLinks = document.querySelectorAll('a[href*="contact"]');
-    const giftMessageLinks = document.querySelectorAll('a[href*="gift-message"]');
 
     // reveal the download-catalogue form
     downloadCatalogueLinks.forEach(link => {
@@ -40,12 +42,19 @@
     });
 
     // reveal the gift-message form
-    giftMessageLinks.forEach(link => {
-      link.addEventListener('click', (e) => {
-        e.preventDefault();
-        openDialog('gift-message');
+
+    window.customFunctions.attachGiftMessageModalEvent = () => {
+      const giftMessageLinks = document.querySelectorAll('a[href*="gift-message"]');
+      
+      giftMessageLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+          e.preventDefault();
+          openDialog('gift-message');
+        });
       });
-    });
+    };
+
+    window.customFunctions.attachGiftMessageModalEvent();
 
     // close the dialog when clicking on the close button
     dialog.querySelector('.dialog-modal--close').addEventListener('click', (e) => {
@@ -97,28 +106,17 @@
     <button class="dialog-modal--close padding-medium">{% render 'icon-x' %}</button>
 
     <div class="download-catalogue-form">
-      
       {% render 'download-catalogue-form', id: section.id %}
-
     </div>
 
     <div class="contact-form">
-      
       {% render 'contact-form', id: section.id %}
-
     </div>
 
     <div class="gift-message-form">
-      
-      {{ settings.gift_message_title }}
-      {{ settings.gift_message_body }}
-      {{ settings.gift_message_input_message_label }}
-      {{ settings.gift_message_input_message_placeholder }}
-      {{ settings.gift_message_cta_text }}
-      {{ settings.gift_message_download_file_url }}
-      {{ settings.gift_message_success_message }}
-
+      {% render 'gift-message-form', id: section.id %}
     </div>
+
   </div>
 </dialog>
 

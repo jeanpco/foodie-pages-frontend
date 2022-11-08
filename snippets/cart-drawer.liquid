@@ -314,6 +314,12 @@
             </button>
           </noscript>
 
+          <a href="/cart" class="button reversed">
+            <span>
+              {{ 'sections.cart.cart' | t }}
+            </span>
+          </a>
+
           <button type="submit" id="CartDrawer-Checkout" class="cart__checkout-button button" name="checkout" form="CartDrawer-Form"{% if cart == empty %} disabled{% endif %}>
             <span>
               {{ 'sections.cart.checkout' | t }}

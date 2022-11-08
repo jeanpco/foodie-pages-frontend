@@ -1,0 +1,47 @@
+<div class="padding-bottom padding-large">
+  {% render 'module-header', 
+    title: settings.gift_message_title, 
+    body: settings.gift_message_body, 
+    text_horizontal_alignment: 'left' 
+  %}
+</div>
+
+<div class="contact-form-body">
+
+  <form class="form" data-js-element="gift-message-form">
+    <div class="input-container">
+
+      <div class="field-wrapper margin-bottom margin-medium">
+
+        <div class="field-group">
+          <label class="text-size-tiny uppercase" for="GiftMessageForm-body">{{ settings.gift_message_input_message_label }}</label>
+          
+          <textarea
+            required
+            rows="3"
+            data-js-element="gift-message-input"
+            id="GiftMessageForm-body"
+            class="text-area field_input"
+            name="gift-message"
+            placeholder="{{ settings.gift_message_input_message_placeholder }}"
+          >
+            {{- form.body -}}
+          </textarea>
+        </div>
+
+      </div>
+
+      <button type="submit" class="button contact-submit-button" name="commit" id="Subscribe" aria-label="{{ 'contact.button_label' | t }}">
+        <span>{{ settings.gift_message_cta_text }}</span>
+      </button>
+    </div>
+
+    <div data-js-element="gift-message-form-success" style="display: none; flex-direction: column; align-items: center; justify-content: center;" class="text-align-center">
+      <h3 class="text-size-tiny text-color-grey-500 form__message" id="Contact-success--{{ id }}" tabindex="-1" autofocus>
+        {% render 'icon-success' %}
+        {{ settings.gift_message_success_message }}
+      </h3>
+    </div>
+  </form>
+
+</div>

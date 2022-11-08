@@ -443,11 +443,6 @@ a.product__text {
   text-align: center;
 }
 
-/* Product media */
-.product__media-list video {
-  border-radius: calc(var(--media-radius) - var(--media-border-width));
-}
-
 @media screen and (max-width: 749px) {
   .product__media-list {
     margin-left: -2.5rem;

@@ -2275,13 +2275,6 @@ details-disclosure > details {
   content: none;
 }
 
-.global-media-settings img,
-.global-media-settings iframe,
-.global-media-settings model-viewer,
-.global-media-settings video {
-  border-radius: calc(var(--media-radius) - var(--media-border-width));
-}
-
 .content-container--full-width,
 .global-media-settings--full-width,
 .global-media-settings--full-width img {

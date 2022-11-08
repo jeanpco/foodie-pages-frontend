@@ -16,6 +16,11 @@ class CartItems extends HTMLElement {
     super();
 
     this.lineItemStatusElement = document.getElementById('shopping-cart-line-item-status') || document.getElementById('CartDrawer-LineItemStatus');
+    this.giftMessageElements = Array.from(document.querySelectorAll('[data-js-element="gift-message"]'));
+    this.giftMessageInputElement = document.querySelector('[data-js-element="gift-message-input"]');
+    this.giftMessageFormElement = document.querySelector('[data-js-element="gift-message-form"]');
+    this.line = null; // used in updateGiftMessage
+    this.quantity = 1; // used in updateGiftMessage
 
     this.currentItemCount = Array.from(this.querySelectorAll('[name="updates[]"]'))
       .reduce((total, quantityInput) => total + parseInt(quantityInput.value), 0);
@@ -25,10 +30,53 @@ class CartItems extends HTMLElement {
     }, 300);
 
     this.addEventListener('change', this.debouncedOnChange.bind(this));
+    this.giftMessageFormElement.addEventListener('submit', this.onGiftMessageFormSubmit.bind(this));
+
+    this.initGiftMessage()
+  }
+
+  initGiftMessage () {
+    this.giftMessageElements = Array.from(document.querySelectorAll('[data-js-element="gift-message"]'));
+    this.giftMessageElements.forEach((element) => element.addEventListener('click', this.onGiftMessageClick.bind(this)));
   }
 
   onChange(event) {
     this.updateQuantity(event.target.dataset.index, event.target.value, document.activeElement.getAttribute('name'));
+  }
+
+  onGiftMessageClick(event) {
+    event.preventDefault();
+    const giftMessageElement = event.target.closest('[data-js-element="gift-message"]');
+
+    if (!giftMessageElement) return;
+
+    const message = giftMessageElement.dataset.giftMessage;
+
+    this.giftMessageInputElement.value = message;
+    this.line = giftMessageElement.dataset.index;
+    this.quantity = giftMessageElement.dataset.quantity;
+  }
+
+  // @TODO: There may be a bug when you play with item quantities with error messages that says you can only add 2 and depending on how you play with item in cart will by-pass the warning tested with "The Cause"
+
+  onGiftMessageFormSubmit(event) {
+    event.preventDefault();
+
+    const formData = new FormData(event.target);
+    const message = formData.get('gift-message');
+
+    if (this.line && this.quantity && message) {
+      this.updateGiftMessage(this.line, this.quantity, message);
+
+      const successElement = event.target.querySelector('[data-js-element="gift-message-form-success"]');
+      successElement.style.display = 'flex'
+
+      setTimeout(() => {
+        successElement.style.display = 'none';
+        this.initGiftMessage()
+        window.customFunctions.closeDialog()
+      }, 1000);
+    } 
   }
 
   getSectionsToRender() {
@@ -95,6 +143,14 @@ class CartItems extends HTMLElement {
         } else if (document.querySelector('.cart-item') && cartDrawerWrapper) {
           trapFocus(cartDrawerWrapper, document.querySelector('.cart-item__name'))
         }
+
+
+        this.quantity = quantity;
+        // reattach gift message modal event after remount of new HTML from cart change
+        window.customFunctions.attachGiftMessageModalEvent();
+        // refresh gift message elements
+        this.initGiftMessage()
+
         this.disableLoading();
       }).catch(() => {
         this.querySelectorAll('.loading-overlay').forEach((overlay) => overlay.classList.add('hidden'));
@@ -102,6 +158,47 @@ class CartItems extends HTMLElement {
         errors.textContent = window.cartStrings.error;
         this.disableLoading();
       });
+  }
+
+  updateGiftMessage(line, quantity, message) {
+    this.enableLoading(line);
+
+    console.log(line, quantity, message)
+
+    const body = JSON.stringify({
+      line,
+      properties: { "Gift Message/Instructions": message },
+      quantity,
+      sections: this.getSectionsToRender().map((section) => section.section),
+      sections_url: window.location.pathname
+    });
+
+    fetch(`${routes.cart_change_url}`, { ...fetchConfig(), ...{ body } })
+      .then((response) => {
+        return response.text();
+      }
+    )
+      .then((state) => {
+        const parsedState = JSON.parse(state);
+
+        this.getSectionsToRender().forEach((section => {
+          const elementToReplace =
+            document.getElementById(section.id).querySelector(section.selector) || document.getElementById(section.id);
+          elementToReplace.innerHTML =
+            this.getSectionInnerHTML(parsedState.sections[section.section], section.selector);
+        }));
+        // reattach gift message modal event after remount of new HTML from cart change
+        window.customFunctions.attachGiftMessageModalEvent();
+        // refresh gift message elements
+        this.initGiftMessage()
+        this.disableLoading();
+      }
+    ).catch(() => {
+      this.querySelectorAll('.loading-overlay').forEach((overlay) => overlay.classList.add('hidden'));
+      const errors = document.getElementById('cart-errors') || document.getElementById('CartDrawer-CartErrors');
+      errors.textContent = window.cartStrings.error;
+      this.disableLoading();
+    });
   }
 
   updateLiveRegions(line, itemCount) {
