@@ -5,9 +5,9 @@
 {{ 'component-discounts.css' | asset_url | stylesheet_tag }}
 {{ 'component-loading-overlay.css' | asset_url | stylesheet_tag }}
 
-{%- unless settings.cart_type == 'drawer' -%}
+{% comment %} {%- unless settings.cart_type == 'drawer' -%}
   <script src="{{ 'cart.js' | asset_url }}" defer="defer"></script>
-{%- endunless -%}
+{%- endunless -%} {% endcomment %}
 
 <cart-items class="container {% if cart == empty %} is-empty{% endif %}">
   <div class="padding-top padding-xlarge">
