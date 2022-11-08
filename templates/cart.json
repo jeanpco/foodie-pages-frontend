@@ -26,16 +26,25 @@
       "settings": {
       }
     },
-    "f56d249f-e181-48f5-bbbb-828378825c3e": {
-      "type": "module-recommended-products",
+    "b4ccb7c2-7782-4ed3-89f2-ef5575628392": {
+      "type": "product-recommendations",
       "settings": {
-        "richtext": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.<\/p>"
+        "overline": "Product recommendations",
+        "title": "<p>You may also like<\/p>",
+        "body": "Discover more products that may be of interest to you.",
+        "products_to_show": 4,
+        "collection": "gift-baskets",
+        "icon_url": "",
+        "promo_title": "",
+        "promo_body": "",
+        "promo_cta_text": "Shop all",
+        "promo_cta_link": ""
       }
     }
   },
   "order": [
     "cart-items",
     "cart-footer",
-    "f56d249f-e181-48f5-bbbb-828378825c3e"
+    "b4ccb7c2-7782-4ed3-89f2-ef5575628392"
   ]
 }
