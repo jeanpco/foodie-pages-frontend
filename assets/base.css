@@ -1655,10 +1655,6 @@ input[type='checkbox'] {
   z-index: 1;
 }
 
-.header-wrapper--border-bottom {
-  border-bottom: 0.1rem solid rgba(var(--color-primary), 0.08);
-}
-
 .header {
   display: grid;
   grid-template-areas: 'left-icon heading icons';
@@ -2038,43 +2034,28 @@ details[open] > .header__submenu {
 .header__menu-item {
   padding: 1.2rem;
   text-decoration: none;
-  color: rgba(var(--color-primary), 0.75);
+  color: var(--color-secondary);
 }
 
 .header__menu-item:hover {
-  color: var(--color-primary);
+  color: var(--color-secondary);
 }
 
-.header__menu-item span {
+/* .header__menu-item span {
   transition: text-decoration var(--duration-short) ease;
-}
+} */
 
-.header__menu-item:hover span {
+/* details[open] > .header__menu-item {
   text-decoration: underline;
-  text-underline-offset: 0.3rem;
-}
-
-details[open] > .header__menu-item {
-  text-decoration: underline;
-}
-
-details[open]:hover > .header__menu-item {
-  text-decoration-thickness: 0.2rem;
-}
+} */
 
 details[open] > .header__menu-item .icon-caret {
   transform: rotate(180deg);
 }
 
 .header__active-menu-item {
-  transition: text-decoration-thickness var(--duration-short) ease;
-  color: var(--color-primary);
-  text-decoration: underline;
-  text-underline-offset: 0.3rem;
-}
-
-.header__menu-item:hover .header__active-menu-item {
-  text-decoration-thickness: 0.2rem;
+  color: var(--color-secondary);
+  /* text-decoration: underline; */
 }
 
 .header__submenu {
@@ -2085,7 +2066,7 @@ details[open] > .header__menu-item .icon-caret {
 .global-settings-popup,
 .header__submenu.global-settings-popup {
   border-radius: var(--popup-corner-radius);
-  border-color: rgba(var(--color-primary), var(--popup-border-opacity));
+  border-color: rgba(var(--color-secondary), var(--popup-border-opacity));
   border-style: solid;
   border-width: var(--popup-border-width);
   box-shadow: var(--popup-shadow-horizontal-offset) var(--popup-shadow-vertical-offset) var(--popup-shadow-blur-radius) rgba(var(--color-shadow), var(--popup-shadow-opacity));
@@ -2096,7 +2077,7 @@ details[open] > .header__menu-item .icon-caret {
 }
 
 .header__submenu .header__submenu {
-  background-color: rgba(var(--color-primary), 0.03);
+  background-color: rgba(var(--color-secondary), 0.03);
   padding: 0.5rem 0;
   margin: 0.5rem 0;
 }

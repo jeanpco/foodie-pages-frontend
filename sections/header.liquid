@@ -38,7 +38,7 @@
   </symbol>
 </svg>
 
-<sticky-header class="header-wrapper text-color-secondary background-color-tertiary header-wrapper--border-bottom">
+<sticky-header class="header-wrapper text-color-secondary background-color-tertiary">
   <header class="header header--middle-left header--mobile-center container{% if section.settings.menu != blank %} header--has-menu{% endif %}">
     {%- if section.settings.menu != blank -%}
       <header-drawer data-breakpoint="tablet">
@@ -159,10 +159,10 @@
                 <header-menu>
                   <details id="Details-HeaderMenu-{{ forloop.index }}" class="mega-menu">
                     <summary class="header__menu-item list-menu__item">
-                      <span {%- if link.child_active %} class="header__active-menu-item"{% endif %}>{{ link.title | escape }}</span>
+                      <a href="{{ link.url }}" class="{%- if link.child_active %}header__active-menu-item is-active{% endif %} link secondary text-color-white">{{ link.title | escape }}</a>
                       {% render 'icon-caret' %}
                     </summary>
-                    <div id="MegaMenu-Content-{{ forloop.index }}" class="background-color-tertiary mega-menu__content motion-reduce global-settings-popup" tabindex="-1">
+                    <div id="MegaMenu-Content-{{ forloop.index }}" class="background-color-tertiary mega-menu__content motion-reduce global-settings-popup padding-vertical padding-medium" tabindex="-1">
                       <ul class="mega-menu__list container{% if link.levels == 1 %} mega-menu__list--condensed{% endif %}" role="list">
                         {%- for childlink in link.links -%}
                           <li>
@@ -183,12 +183,13 @@
                           </li>
                         {%- endfor -%}
                       </ul>
+                      {% render 'mega-menu-highlight-block' %}
                     </div>
                   </details>
                 </header-menu>
               {%- else -%}
                 <a href="{{ link.url }}" class="header__menu-item list-menu__item"{% if link.current %} aria-current="page"{% endif %}>
-                  <span {%- if link.current %} class="header__active-menu-item"{% endif %}>{{ link.title | escape }}</span>
+                  <span {%- if link.current %} class="header__active-menu-item link text-color-white is-active"{% endif %}>{{ link.title | escape }}</span>
                 </a>
               {%- endif -%}
             </li>
@@ -421,6 +422,41 @@
       "id": "menu",
       "default": "main-menu",
       "label": "Main Menu"
+    },
+    {
+      "type": "header",
+      "content": "Highlighted Item"
+    },
+    {
+      "type": "url",
+      "id": "associated_parent_menu_url",
+      "label": "Associated Parent Menu URL",
+      "info": "Select the page to which this highlighted item is related to. This is currently underlined navigation link."
+    },
+    {
+      "type": "product",
+      "id": "highlighted_product",
+      "label": "Highlighted Product"
+    },
+    {
+      "type": "image_picker",
+      "id": "highlighted_image",
+      "label": "Logo"
+    },
+    {
+      "type": "text",
+      "id": "highlighted_title",
+      "label": "Highlighted Title"
+    },
+    {
+      "type": "textarea",
+      "id": "highlighted_body",
+      "label": "Highlighted Body"
+    },
+    {
+      "type": "url",
+      "id": "highlighted_url",
+      "label": "Highlighted URL"
     }
   ]
 }
