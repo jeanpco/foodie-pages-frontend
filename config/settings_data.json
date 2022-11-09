@@ -151,7 +151,7 @@
             "type": "highlighted_item",
             "settings": {
               "associated_parent_menu_url": "shopify:\/\/collections\/gift-baskets",
-              "highlighted_product": "",
+              "highlighted_product": "alicja-confections-milk-chocolate-chip-cookie-85g",
               "highlighted_title": "",
               "highlighted_body": "",
               "highlighted_url": ""
@@ -162,9 +162,10 @@
             "settings": {
               "associated_parent_menu_url": "shopify:\/\/pages\/team-care-packages",
               "highlighted_product": "",
-              "highlighted_title": "",
-              "highlighted_body": "",
-              "highlighted_url": ""
+              "highlighted_image": "shopify:\/\/shop_images\/Image_3468c917-9e51-49ab-9d3c-fa357152af3b.png",
+              "highlighted_title": "Join our corporate program",
+              "highlighted_body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+              "highlighted_url": "#contact"
             }
           }
         },
