@@ -1,3 +1,41 @@
-<div>
-  <h1>Ok</h1>
+
+<div class="highlighted-item background-color-azul-verdoso-50 padding-medium">
+  {% if blockSettings.highlighted_product != blank %}
+
+    <div class="highlighted-item_product">
+      {% render 'card-pdp',
+        card_product: blockSettings.highlighted_product,
+        show_quick_add: false,
+        section_id: sectionId
+      %}
+    </div>
+
+  {% else %}
+
+    <a class="highlighted-item_default" href="{{ blockSettings.highlighted_url }}">
+      <img class="highlighted-image" src="{{ blockSettings.highlighted_image | image_url: width: 400 }}" alt="{{ blockSettings.highlighted_image.alt }}" class="motion-reduce" />
+      <h4 class="highlighted-title text-size-regular text-color-white text-weight-semibold">
+        {{ blockSettings.highlighted_title }}
+      </h4>
+      <p class="highlighted-body text-size-regular text-color-white text-color-azul-verdoso-25">
+        {{ blockSettings.highlighted_body }}
+      </p>
+    </a>
+    
+  {% endif %}
 </div>
+
+<style>
+  .highlighted-item .product-card_image-container img,
+  .highlighted-image {
+    aspect-ratio: 335/272;
+    object-fit: cover;
+    max-height: 272px;
+    width: auto;
+  }
+
+  .highlighted-item {
+    max-width: 25rem;
+    width: 100%;
+  }
+</style>
