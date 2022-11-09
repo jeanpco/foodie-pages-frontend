@@ -16,6 +16,11 @@
     opacity: 0;
     transform: translateY(40px);
   }
+
+  .animation-stagger {
+    opacity: 0;
+    transform: translateY(20px);
+  }
 </style>
 
 <script type="module">
@@ -65,6 +70,48 @@
         },
       })
     })
+
+
+    const staggerMenuElements = () => {
+      const staggerParentElements = Array.from(document.querySelectorAll('[data-js-element="animation-stagger-parent"]'))
+
+
+
+      document.addEventListener('menuOpen', (event) => {
+        console.log('menuOpen')
+        staggerParentElements.forEach(parent => {
+          const staggerElements = Array.from(parent.querySelectorAll('[data-js-element="animation-stagger-child"]'))
+  
+          gsap.to(staggerElements, {
+            y: '0%',
+            opacity: 1,
+            duration: 1,
+            ease: 'power4.out',
+            stagger: {
+              each: 0.2,
+              from: 'start',
+            },
+          })
+        })
+        
+      })
+      document.addEventListener('menuClose', (event) => {
+        console.log('menuClose')
+
+        staggerParentElements.forEach(parent => {
+          const staggerElements = Array.from(parent.querySelectorAll('[data-js-element="animation-stagger-child"]'))
+  
+          gsap.to(staggerElements, {
+            y: '20px',
+            opacity: 0,
+            duration: 0,
+            ease: 'power4.out',
+          })
+        })
+      })
+    }
+
+    staggerMenuElements();
   }
 
   initAnimation()

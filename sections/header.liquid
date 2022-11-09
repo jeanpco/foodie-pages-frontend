@@ -165,9 +165,9 @@
                     <div id="MegaMenu-Content-{{ forloop.index }}" class="background-color-tertiary mega-menu__content motion-reduce global-settings-popup" tabindex="-1">
 
                       <div class="padding-vertical padding-medium">
-                        <ul class="mega-menu__list container{% if link.levels == 1 %} mega-menu__list--condensed{% endif %}" role="list">
+                        <ul data-js-element="animation-stagger-parent" class="mega-menu__list container{% if link.levels == 1 %} mega-menu__list--condensed{% endif %}" role="list">
                           {%- for childlink in link.links -%}
-                            <li>
+                            <li data-js-element="animation-stagger-child">
                               <a href="{{ childlink.url }}" class="mega-menu__link mega-menu__link--level-2 text-size-regular text-color-azul-verdoso-25 {% if childlink.current %} mega-menu__link--active{% endif %}"{% if childlink.current %} aria-current="page"{% endif %}>
                                 {{ childlink.title | escape }}
                               </a>
