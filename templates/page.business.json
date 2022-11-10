@@ -26,7 +26,7 @@
         "overline": "Foodiepages for business",
         "title": "<p>Unique Gifts for <em>Modern Companies<\/em><\/p>",
         "heading_style": "h1",
-        "body": "Engage employees, stand out to clients and elevate events.",
+        "body": "Engage employees, stand out to clients and elevate events with gifts that are the best reflection of your brand. We source unique products from small and underrepresented businesses, bringing your vision to life with a single tastefully designed gift.",
         "image": "shopify:\/\/shop_images\/Frame_43428_2.png",
         "enable_card_style": false,
         "text_vertical_alignment": "flex-end",
@@ -149,7 +149,7 @@
         "overline": "Corporate Gifting",
         "title": "<p>Send a Choice of Gifts with <em>Branded Gift<\/em> Portals<\/p>",
         "heading_style": "h2",
-        "body": "Let employees & clients pick their preferred gift and enter their shipping address, or donate the value to a cause of their choice. Portals are perfect for special events or coordinated gift sends of  100+ gifts.",
+        "body": "Sending gifts to hundreds of people? With our branded Gift Portals, you can send your recipients a link to a branded page, allowing them to choose their preferred gift and add their address. We’ll take care of the rest.",
         "layout_style": "content-right"
       }
     },
@@ -236,7 +236,7 @@
       ],
       "settings": {
         "overline": "Corporate solutions",
-        "title": "Team Solutions",
+        "title": "Corporate Solutions",
         "body": "We help businesses connect with people and make lasting impressions.",
         "cta_text": "Get a quote",
         "cta_link": "#contact",
