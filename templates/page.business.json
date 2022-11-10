@@ -327,8 +327,8 @@
       "type": "product-recommendations",
       "settings": {
         "overline": "Ready-to-ship",
-        "title": "<p>You may also like<\/p>",
-        "body": "Shop from Women Owned and lead businesses",
+        "title": "<p>Ready-To-Ship Gifts<\/p>",
+        "body": "Discover unique gifts they’ll truly remember.",
         "products_to_show": 4,
         "collection": "gift-baskets",
         "icon_url": "",
