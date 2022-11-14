@@ -9,12 +9,12 @@
   overflow: hidden;
 }
 
-.customer {
+.customer.account {
   display: flex;
   min-height: 52.5rem;
 }
 
-.customer .main-content {
+.customer.account .main-content {
   width: 100%;
 }
 
@@ -99,25 +99,19 @@
 .customer table {
   table-layout: auto;
   border-collapse: collapse;
-  border-bottom: 0.01rem solid rgba(var(--color-primary), 0.08);
+  border: 1px solid var(--color-grey-200);
   box-shadow: none;
   width: 100%;
-  font-size: 1.6rem;
   position: relative;
 }
 
-@media screen and (min-width: 750px) {
-  .customer table {
-    border: none;
-    box-shadow: 0 0 0 0.1rem rgba(var(--color-primary), 0.08);
-  }
+.customer table .thead-tr-th {
+  padding-left: 0;
+  text-align: left;
 }
 
-@media screen and (forced-colors: active) {
-  .customer table {
-    border-top: 0.1rem solid transparent;
-    border-bottom: 0.1rem solid transparent;
-  }
+.customer table .thead-tr-th:first-child {
+  padding: 1.5rem;
 }
 
 .customer tbody {
@@ -132,12 +126,6 @@
   padding: 0;
 }
 
-@media screen and (min-width: 750px) {
-  .customer td {
-    padding-right: 2.2rem;
-  }
-}
-
 .customer tbody td {
   padding-top: 1rem;
   padding-bottom: 1rem;
@@ -147,61 +135,8 @@
   display: initial;
 }
 
-.customer thead th {
-  font-size: 1.2rem;
-  text-transform: uppercase;
-}
-
-.customer tbody td:first-of-type {
-  padding-top: 4rem;
-}
-
-@media screen and (min-width: 750px) {
-  .customer th,
-  .customer td:first-of-type {
-    text-align: left;
-    padding-left: 0;
-    padding-right: 2.2rem;
-  }
-
-  .customer thead th,
-  .customer tbody td {
-    padding-top: 2.4rem;
-    padding-bottom: 2.4rem;
-  }
-
-  .customer th:first-of-type,
-  .customer td:first-of-type {
-    padding-left: 2.2rem;
-  }
-
-  .customer tbody td {
-    vertical-align: top;
-  }
-
-  .customer tbody td:first-of-type {
-    padding-top: 2.4rem;
-  }
-}
-
-.customer tbody td:last-of-type {
-  padding-bottom: 4rem;
-}
-
-@media screen and (min-width: 750px) {
-  .customer tbody td:last-of-type {
-    padding-bottom: 0;
-  }
-}
-
 .customer tbody tr {
-  border-top: 0.01rem solid rgba(var(--color-primary), 0.08);
-}
-
-@media screen and (min-width: 750px) {
-  .customer tbody tr:first-of-type {
-    border-top: none;
-  }
+  border-top: 1px solid var(--color-grey-200);
 }
 
 @media screen and (forced-colors: active) {
@@ -457,24 +392,18 @@
   .account thead th:last-child,
   .account td:last-child {
     text-align: right;
+    padding-right: 1.5rem;
   }
 
   .account table td:first-of-type {
-    padding-top: 1.2rem;
-    padding-bottom: 1.2rem;
+    padding: 1.5rem;
   }
 }
 
 .account table td:first-of-type a {
-  padding: 1.1rem 1.5rem;
+  padding: 0.5rem 1rem;
   text-decoration: none;
-  box-shadow: 0 0 0 0.1rem rgba(var(--color-primary), 0.2);
-  border: 0.1rem solid transparent;
-  font-size: 1.2rem;
-}
-
-.account table td:first-of-type a:hover {
-  box-shadow: 0 0 0 0.2rem rgba(var(--color-primary), 0.2);
+  border: 2px solid var(--color-grey-200);
 }
 
 .order td:first-of-type {

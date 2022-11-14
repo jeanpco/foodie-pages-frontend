@@ -1,18 +1,3 @@
-@media (max-width: 479px) {
-}
-
-@media (max-width: 990px) {
- 
-}
-
-.module-tab_container {
-
-}
-
-.module-tab_header {
-  
-}
-
 .tab-header {
   flex: 1;
   cursor: pointer;
