@@ -51,12 +51,10 @@
   </div>
 </div>
 
-<style>
-  
-</style>
-
 <script type="module">
   const initTestimonialsSlider = () => {
+    const nextArrow = document.querySelector('.icon-next-arrow');
+    const prevArrow = document.querySelector('.icon-prev-arrow');
     const swiperTestimonialSliderContainer = document.querySelector("[data-js-element='testimonial-slider-module-swiper-{{ section.id }}']")
 
     const swiper = new Swiper(swiperTestimonialSliderContainer, {

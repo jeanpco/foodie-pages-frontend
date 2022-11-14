@@ -55,6 +55,13 @@
   order: 2;
 }
 
+.hero-content_primary h1,
+.hero-content_primary h1 *,
+.hero-content_primary h2,
+.hero-content_primary h2 * {
+  line-height: 1;
+}
+
 @media (min-width: 991px) {
   .hero-content.rows {
     display: flex;

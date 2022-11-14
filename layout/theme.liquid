@@ -319,6 +319,13 @@
     {{ 'general-utilities.css' | asset_url | stylesheet_tag }}
     {{ 'icons.css' | asset_url | stylesheet_tag }}
 
+    <style>
+      .icon-next-arrow,
+      .icon-prev-arrow {
+        visibility: hidden;
+      }
+    </style>
+
     {%- if settings.predictive_search_enabled -%}
       <link rel="stylesheet" href="{{ 'component-predictive-search.css' | asset_url }}" media="print" onload="this.media='all'">
     {%- endif -%}
@@ -389,5 +396,18 @@
 
     {% render 'modal' %}
     {% render 'animations' %}
+
+    <script type="module">
+      const revealSwiperArrows = () => {
+        const nextArrows = [...document.querySelectorAll('.icon-next-arrow')];
+        const prevArrows = [...document.querySelectorAll('.icon-prev-arrow')];
+
+        nextArrows.forEach((arrow) => {
+          arrow.style.visibility = 'visible';
+        });
+      }
+
+      revealSwiperArrows()
+    </script>
   </body>
 </html>

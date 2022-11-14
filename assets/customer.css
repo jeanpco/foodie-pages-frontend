@@ -4,6 +4,67 @@
   text-align: center;
 }
 
+.account-background {
+  background: linear-gradient(90deg, var(--color-grey-100) 50%, var(--color-white) 50%);
+  overflow: hidden;
+}
+
+.customer {
+  display: flex;
+  min-height: 52.5rem;
+}
+
+.customer .main-content {
+  width: 100%;
+}
+
+.customer aside {
+  width: 100%;
+  max-width: 23.4375rem;
+}
+
+@media screen and (max-width: 990px) {
+  .customer {
+    flex-direction: column;
+    min-height: unset;
+  }
+
+  .customer > *:first-child {
+    order: 2;
+  }
+
+  .customer > *:last-child {
+    order: 1;
+  }
+
+  .customer aside {
+    max-width: 100%;
+  }
+
+  .account-background {
+    background: var(--color-white);
+  }
+
+  .customer aside .aside-navigation {
+    margin-bottom: 1rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .customer aside {
+    width: 100vw;
+    margin-left: -2rem;
+    max-width: unset;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .customer aside {
+    margin-left: -1rem;
+  }
+}
+
+
 .customer > h1,
 .customer__title {
   margin-top: 0;
@@ -15,7 +76,6 @@
 
 .customer ul {
   text-align: left;
-  margin-bottom: 4rem;
 }
 
 .customer ul a {
@@ -362,32 +422,15 @@
   }
 }
 
-/* Account/Order */
-:is(.account, .order) {
-  margin: 0 auto;
-  max-width: var(--page-width);
-  padding-left: 2rem;
-  padding-right: 2rem;
-}
-
-@media screen and (min-width: 750px) {
-  :is(.account, .order) {
-    padding-left: 5rem;
-    padding-right: 5rem;
-  }
-}
-
 @media screen and (min-width: 990px) {
   :is(.account, .order) > div:nth-of-type(2) {
     display: flex;
-    margin-top: 5rem;
   }
 }
 
 @media screen and (min-width: 990px) {
   :is(.account, .order) > div:nth-of-type(2) > div:first-of-type {
     flex-grow: 1;
-    padding-right: 3.2rem;
   }
 }
 
@@ -401,26 +444,6 @@
   }
 }
 
-:is(.account, .order) p {
-  margin: 0 0 2rem;
-  font-size: 1.6rem;
-}
-
-:is(.account, .order) h1 {
-  margin-bottom: 1rem;
-}
-
-:is(.account, .order) h2 {
-  margin-top: 4rem;
-  margin-bottom: 1rem;
-}
-
-@media screen and (min-width: 990px) {
-  :is(.account, .order) h2 {
-    margin-top: 0;
-  }
-}
-
 .account h1 + a {
   display: inline-flex;
   align-items: center;
@@ -428,8 +451,6 @@
 
 .account a svg {
   width: 1.5rem;
-  margin-bottom: -0.03rem;
-  margin-right: 1rem;
 }
 
 @media screen and (min-width: 750px) {

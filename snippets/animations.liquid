@@ -3,6 +3,12 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js" integrity="sha512-VEBjfxWUOyzl0bAwh4gdLEaQyDYPvLrZql3pw1ifgb6fhEvZl9iDDehwHZ+dsMzA0Jfww8Xt7COSZuJ/slxc4Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 <style>
+
+  h1,
+  h2 {
+    opacity: 0;
+  }
+
   .line {
     transform: translateY(107%) skewY(2deg);
     opacity: 0;
@@ -21,6 +27,65 @@
     opacity: 0;
     transform: translateY(20px);
   }
+
+  .mega-menu[open] [data-js-element="animation-stagger-parent"] [data-js-element] {
+    opacity: 1;
+    transform: translateY(0);
+    transition-property: transform, opacity;
+    transition-duration: 1s;
+    transition-timing-function: ease;
+  }
+
+  .mega-menu[open] [data-js-element="animation-stagger-parent"] [data-js-element]:nth-child(1),
+  [data-stagger-delay="100"] {
+    transition-delay: 0.1s;
+  }
+
+  .mega-menu[open] [data-js-element="animation-stagger-parent"] [data-js-element]:nth-child(2),
+  [data-stagger-delay="200"] {
+    transition-delay: 0.2s;
+  }
+
+  .mega-menu[open] [data-js-element="animation-stagger-parent"] [data-js-element]:nth-child(3),
+  [data-stagger-delay="300"] {
+    transition-delay: 0.3s;
+  }
+
+  .mega-menu[open] [data-js-element="animation-stagger-parent"] [data-js-element]:nth-child(4),
+  [data-stagger-delay="400"] {
+    transition-delay: 0.4s;
+  }
+
+  .mega-menu[open] [data-js-element="animation-stagger-parent"] [data-js-element]:nth-child(5),
+  [data-stagger-delay="500"] {
+    transition-delay: 0.5s;
+  }
+
+  .mega-menu[open] [data-js-element="animation-stagger-parent"] [data-js-element]:nth-child(6),
+  [data-stagger-delay="600"] {
+    transition-delay: 0.6s;
+  }
+
+  .mega-menu:not([open]) [data-js-element="animation-stagger-parent"] [data-js-element] {
+    opacity: 0 !important;
+    transform: translateY(20px) !important;
+  }
+
+  {% comment %} Image zoom image {% endcomment %}
+
+  .image-overflow-hidden {
+    overflow: hidden;
+    border-radius: 1rem;
+    display: flex;
+  }
+
+  .image-overflow-hidden:hover img {
+    transform: scale(1.075);
+  }
+
+  .image-overflow-hidden img {
+    transition: transform 0.5s var(--custom-easing);
+  }
 </style>
 
 <script type="module">
@@ -29,12 +94,20 @@
   const initAnimation = () => {
     const staggerGroups = Array.from(document.querySelectorAll('.shopify-section'))
     const richTextHeadings = Array.from(document.querySelectorAll('h1 > *, h2 > *'))
-    // @TODO: Get all h1 and h2 headings element with no children in it
-    // const regularHeadings = Array.from(document.querySelectorAll('h1:not(:has(*)), h2:not(:has(*))'))
+    const regularHeadings = Array.from(document.querySelectorAll('h1'));
+    const h1h2Headings = Array.from(document.querySelectorAll('h1, h2'));
+
+    const filteredRegularHeadings = regularHeadings.filter(heading => {
+      return !heading.querySelector('span, a, p')
+    })
+
+    // @TODO: Get all h1 and h2 HTML elements on the page with no children in it
+    
+
 
     const headings = [
       ...richTextHeadings, 
-      // ...regularHeadings
+      ...filteredRegularHeadings
     ]
 
     if (!staggerGroups.length) return
@@ -43,6 +116,8 @@
       types: 'words, lines',
       linesClass: 'gsap-stagger-line',
     })
+
+    h1h2Headings.forEach(h => h.style.opacity = 1);
 
     Array.from(document.querySelectorAll('.line')).forEach(line => {
       const wrapper = document.createElement('div')
@@ -73,45 +148,15 @@
 
 
     const staggerMenuElements = () => {
-      const staggerParentElements = Array.from(document.querySelectorAll('[data-js-element="animation-stagger-parent"]'))
+      const menuParents = Array.from(document.querySelectorAll('[data-js-element="animation-stagger-parent"]'))
 
-
-
-      document.addEventListener('menuOpen', (event) => {
-        console.log('menuOpen')
-        staggerParentElements.forEach(parent => {
-          const staggerElements = Array.from(parent.querySelectorAll('[data-js-element="animation-stagger-child"]'))
-  
-          gsap.to(staggerElements, {
-            y: '0%',
-            opacity: 1,
-            duration: 1,
-            ease: 'power4.out',
-            stagger: {
-              each: 0.2,
-              from: 'start',
-            },
-          })
-        })
-        
-      })
-      document.addEventListener('menuClose', (event) => {
-        console.log('menuClose')
-
-        staggerParentElements.forEach(parent => {
-          const staggerElements = Array.from(parent.querySelectorAll('[data-js-element="animation-stagger-child"]'))
-  
-          gsap.to(staggerElements, {
-            y: '20px',
-            opacity: 0,
-            duration: 0,
-            ease: 'power4.out',
-          })
-        })
+      menuParents.forEach(parent => {
+        const menuChilds = Array.from(parent.querySelectorAll('[data-js-element="animation-stagger-child"]'))
+        menuChilds.forEach((child, index) => child.style.transitionDelay = `${index * 0.1}s`)
       })
     }
 
-    staggerMenuElements();
+    {% comment %} staggerMenuElements(); {% endcomment %}
   }
 
   initAnimation()

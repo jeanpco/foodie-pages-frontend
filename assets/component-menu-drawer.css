@@ -35,19 +35,9 @@ menu-drawer > details[open] > summary::before {
   z-index: 3;
   left: 0;
   top: 100%;
-  width: calc(100vw - 4rem);
+  width: 100vw;
   padding: 0;
-  border-width: 0 var(--drawer-border-width) 0 0;
-  background-color: rgb(var(--color-background));
   overflow-x: hidden;
-  border-style: solid;
-  border-color: rgba(var(--color-primary), var(--drawer-border-opacity));
-  filter: drop-shadow(
-    var(--drawer-shadow-horizontal-offset)
-    var(--drawer-shadow-vertical-offset)
-    var(--drawer-shadow-blur-radius)
-    rgba(var(--color-shadow), var(--drawer-shadow-opacity))
-  );
 }
 
 .js .menu-drawer {
@@ -98,7 +88,7 @@ details[open].menu-opening > .menu-drawer__submenu {
 }
 
 .menu-drawer__navigation {
-  padding: 5.6rem 0;
+  padding: 1.25rem 0;
 }
 
 .menu-drawer__inner-submenu {
@@ -124,9 +114,8 @@ details[open].menu-opening > .menu-drawer__submenu {
 }
 
 .menu-drawer__menu-item {
-  padding: 1.1rem 3.2rem;
+  padding: 0.8rem 1.5rem;
   text-decoration: none;
-  font-size: 1.8rem;
 }
 
 .no-js .menu-drawer__menu-item {
@@ -192,17 +181,21 @@ details[open].menu-opening > .menu-drawer__submenu {
 }
 
 .menu-drawer__close-button {
-  margin-top: 1.5rem;
-  padding: 1.2rem 2.6rem;
+  margin-top: 0.8rem;
+  cursor: pointer;
+  padding: 0.8rem 1.5rem;
+  border-radius: 0;
+  border: 0;
   text-decoration: none;
   display: flex;
   align-items: center;
-  font-size: 1.4rem;
   width: 100%;
   background-color: transparent;
-  font-family: var(--font-body-family);
-  font-style: var(--font-body-style);
+  font-style: 600;
   text-align: left;
+  font-size: 1rem;
+  font-family: var(--font-body-family);
+  color: var(--color-secondary);
 }
 
 .no-js .menu-drawer__close-button {
@@ -215,24 +208,26 @@ details[open].menu-opening > .menu-drawer__submenu {
 }
 
 .menu-drawer__utility-links {
-  padding: 2rem;
-  background-color: rgba(var(--color-primary), 0.03);
+  padding: 1.5rem;
+  background: var(--color-accent);
 }
 
 .menu-drawer__account {
   display: inline-flex;
   align-items: center;
   text-decoration: none;
-  padding: 1.2rem;
-  margin-left: -1.2rem;
-  font-size: 1.4rem;
+  padding: 0;
   color: var(--color-primary);
 }
 
 .menu-drawer__account .icon-account {
   height: 2rem;
   width: 2rem;
-  margin-right: 1rem;
+  margin-right: 0.5rem;
+}
+
+.menu-drawer__account .icon-account path {
+  stroke: var(--color-black);
 }
 
 .menu-drawer__account:hover .icon-account {

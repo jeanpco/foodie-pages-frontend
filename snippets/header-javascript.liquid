@@ -1,17 +1,6 @@
 <script type="module">
-  {% comment %} create custom event of menuOpen {% endcomment %}
-  let menuOpenState = false;
-
-  const menuOpen = new CustomEvent('menuOpen', {
-    bubbles: true,
-    composed: true,
-  });
-  
   {% comment %} create custom event of menuClose {% endcomment %}
-  const menuClose = new CustomEvent('menuClose', {
-    bubbles: true,
-    composed: true,
-  });
+  const menuClose = new CustomEvent('menuClose');
   
   {% comment %} create custom event of menuToggle {% endcomment %}
 
@@ -20,8 +9,14 @@
 
     items.forEach(item => {
       item.addEventListener("mouseover", () => {
+        const menuOpen = new CustomEvent('menuOpen', {
+          detail: {
+            item
+          },
+        });
         {% comment %} dispatch menuOpen event {% endcomment %}
         document.dispatchEvent(menuOpen);
+        console.log('OPEN')
 
         item.setAttribute("open", true);
         item.querySelector("ul").addEventListener("mouseleave", () => {
@@ -31,6 +26,7 @@
           item.removeAttribute("open");
           {% comment %} dispatch menuClose event {% endcomment %}
           document.dispatchEvent(menuClose);
+          console.log('CLOSE')
         });
       });
     });

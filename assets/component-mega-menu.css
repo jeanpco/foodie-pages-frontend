@@ -41,7 +41,7 @@
 
 .mega-menu__link {
   display: block;
-  padding-bottom: 0.5rem;
+  padding-bottom: 0.75rem;
   text-decoration: none;
   transition: text-decoration var(--duration-short) ease;
   word-wrap: break-word;
@@ -70,8 +70,4 @@
 
 .mega-menu .mega-menu__list--condensed {
   display: block;
-}
-
-.mega-menu__list--condensed .mega-menu__link {
-  font-weight: normal;
 }

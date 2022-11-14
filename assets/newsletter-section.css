@@ -54,3 +54,10 @@
   box-sizing: border-box;
   margin: 0 auto;
 }
+
+.newsletter-header h1,
+.newsletter-header h1 *,
+.newsletter-header h2,
+.newsletter-header h2 * {
+  line-height: 1;
+}

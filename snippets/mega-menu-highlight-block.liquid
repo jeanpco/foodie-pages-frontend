@@ -8,18 +8,28 @@
         show_quick_add: false,
         section_id: sectionId
       %}
+      <svg class="highlighted-item_arrow" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M15.6829 11.4592C15.9026 11.6789 15.9026 12.035 15.6829 12.2547L9.94806 17.9895C9.72839 18.2092 9.37229 18.2092 9.15261 17.9895L8.88741 17.7244C8.66774 17.5047 8.66774 17.1486 8.88741 16.9289L13.9594 11.857L8.88741 6.78501C8.66774 6.56534 8.66774 6.20924 8.88741 5.98956L9.15261 5.72436C9.37229 5.50469 9.72839 5.50469 9.94806 5.72436L15.6829 11.4592Z" fill="white"/>
+      </svg>  
     </div>
 
   {% else %}
 
     <a class="highlighted-item_default" href="{{ blockSettings.highlighted_url }}">
-      <img class="highlighted-image" src="{{ blockSettings.highlighted_image | image_url: width: 400 }}" alt="{{ blockSettings.highlighted_image.alt }}" class="motion-reduce" />
-      <h4 class="highlighted-title text-size-regular text-color-white text-weight-semibold">
-        {{ blockSettings.highlighted_title }}
-      </h4>
-      <p class="highlighted-body text-size-regular text-color-white text-color-azul-verdoso-25">
-        {{ blockSettings.highlighted_body }}
-      </p>
+      <div class="image-overflow-hidden">
+        <img class="highlighted-image" src="{{ blockSettings.highlighted_image | image_url: width: 400 }}" alt="{{ blockSettings.highlighted_image.alt }}" class="motion-reduce" />
+      </div>
+      <div class="highlighted-item_default--content">
+        <h4 class="highlighted-title text-size-regular text-color-white text-weight-semibold">
+          {{ blockSettings.highlighted_title }}
+        </h4>
+        <p class="highlighted-body text-size-regular text-color-white text-color-azul-verdoso-25">
+          {{ blockSettings.highlighted_body }}
+        </p>
+        <svg class="highlighted-item_arrow" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M15.6829 11.4592C15.9026 11.6789 15.9026 12.035 15.6829 12.2547L9.94806 17.9895C9.72839 18.2092 9.37229 18.2092 9.15261 17.9895L8.88741 17.7244C8.66774 17.5047 8.66774 17.1486 8.88741 16.9289L13.9594 11.857L8.88741 6.78501C8.66774 6.56534 8.66774 6.20924 8.88741 5.98956L9.15261 5.72436C9.37229 5.50469 9.72839 5.50469 9.94806 5.72436L15.6829 11.4592Z" fill="white"/>
+        </svg>  
+      </div>
     </a>
     
   {% endif %}
@@ -37,5 +47,50 @@
   .highlighted-item {
     max-width: 25rem;
     width: 100%;
+    position: relative;
+  }
+
+  {% comment %} .highlighted-item_product {% endcomment %}
+  .highlighted-item_product .product-card-content *,
+  .highlighted-item_default h4,
+  .highlighted-item_default p {
+    color: var(--color-white);
+    padding-right: 2rem;
+  }
+
+  .highlighted-item_default,
+  .highlighted-item_default--content {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .highlighted-item_default--content {
+    position: relative;
+  }
+
+  .highlighted-item_arrow {
+    transition: transform 500ms ease;
+  }
+
+  .highlighted-item_default--content .highlighted-item_arrow {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translate(0, -50%);
+  }
+
+  .highlighted-item:hover .highlighted-item_default--content .highlighted-item_arrow {
+    transform: translate(10px, -50%);
+  }
+
+  .highlighted-item_product .highlighted-item_arrow {
+    position: absolute;
+    right: 2rem;
+    bottom: 3rem;
+  }
+
+  .highlighted-item:hover .highlighted-item_product .highlighted-item_arrow {
+    transform: translateX(10px);
   }
 </style>
