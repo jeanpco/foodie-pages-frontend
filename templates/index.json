@@ -6,7 +6,7 @@
         "fb0b7578-d3a7-47df-9c96-0f6374f1d2dd": {
           "type": "cta",
           "settings": {
-            "cta_text": "Shop all",
+            "cta_text": "Shop Now",
             "cta_link": "\/"
           }
         },
@@ -75,7 +75,7 @@
           "settings": {
             "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0601\/1709\/0544\/files\/Path.svg?v=1664989934",
             "tab_text": "Values-based gifting",
-            "title": "Reach anyone, anywhere.",
+            "title": "Gifts that tell a story.",
             "body": "We source exclusively from small and underrepresented businesses across the country. Sharing their stories and values with you is one of our greatest joys.",
             "cta_text": "Shop now",
             "cta_link": "\/",
@@ -86,22 +86,22 @@
           "type": "tab",
           "settings": {
             "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0601\/1709\/0544\/files\/Path.svg?v=1664989934",
-            "tab_text": "Planet-friendly packaging",
-            "title": "Reach anyone, anywhere.",
-            "body": "We source exclusively from small and underrepresented businesses across the country. Sharing their stories and values with you is one of our greatest joys.",
+            "tab_text": "Sustainability",
+            "title": "Less is more.",
+            "body": "We always prioritize quality over quantity. When it comes to selecting products for our gifts, beautiful design and impeccable quality are non-negotiable. We also try to keep our footprint small by working with local businesses.",
             "cta_text": "Shop now",
             "cta_link": "\/",
-            "image": "shopify:\/\/shop_images\/Screen_Shot_2022-08-30_at_3.03_2.jpg"
+            "image": "shopify:\/\/shop_images\/Screen_Shot_2022-11-15_at_4.14.28_PM.png"
           }
         },
         "881fd230-0ff5-475a-80ab-394c30599557": {
           "type": "tab",
           "settings": {
             "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0601\/1709\/0544\/files\/Path.svg?v=1664989934",
-            "tab_text": "Worldwide shipping",
-            "title": "Some title",
-            "body": "We source exclusively from small and underrepresented businesses across the country. Sharing their stories and values with you is one of our greatest joys.",
-            "cta_text": "Learn more",
+            "tab_text": "Fast shipping",
+            "title": "Easy and speedy shipping.",
+            "body": "We can bulk ship to one location or 100s of individual addresses, worldwide. We make the entire process seamless.",
+            "cta_text": "",
             "cta_link": "shopify:\/\/pages\/about-us",
             "image": "shopify:\/\/shop_images\/Frame_43428_2.png"
           }
@@ -111,9 +111,9 @@
           "settings": {
             "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0601\/1709\/0544\/files\/Path.svg?v=1664989934",
             "tab_text": "100% custom gift design",
-            "title": "Reach anyone, anywhere.",
-            "body": "We source exclusively from small and underrepresented businesses across the country. Sharing their stories and values with you is one of our greatest joys.",
-            "cta_text": "Shop now",
+            "title": "Unique gifts for modern companies.",
+            "body": "From the products to the packaging, we'll create something memorable that reflects your brand, goals, and values.",
+            "cta_text": "",
             "cta_link": "\/",
             "image": "shopify:\/\/shop_images\/Screen_Shot_2022-08-30_at_3.03_2.jpg"
           }
@@ -123,9 +123,9 @@
           "settings": {
             "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0601\/1709\/0544\/files\/Path.svg?v=1664989934",
             "tab_text": "10+ years of gifting",
-            "title": "Reach anyone, anywhere.",
-            "body": "We source exclusively from small and underrepresented businesses across the country. Sharing their stories and values with you is one of our greatest joys.",
-            "cta_text": "Learn more",
+            "title": "Expert gifters.",
+            "body": "For 10 years, we've been your go-to for gifting. That also means we've been your go-to to discover all of the best small brands in one place. Trust us to help you select a gift that aligns with your values, fits in your budget, and gets there on time.",
+            "cta_text": "",
             "cta_link": "\/",
             "image": "shopify:\/\/shop_images\/HeroImage.png"
           }
