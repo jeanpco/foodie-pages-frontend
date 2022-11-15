@@ -155,16 +155,17 @@
         },
         "f2d9af43-61a5-4c7b-8cdf-81d774905352": {
           "type": "collection",
+          "disabled": true,
           "settings": {
-            "title": "",
-            "collection": "one-of-a-kind"
+            "title": "Holiday Gifts",
+            "collection": "holiday-gift-baskets"
           }
         },
         "c0b96aab-ebea-45f5-883d-582f92cab111": {
           "type": "collection",
           "settings": {
-            "title": "",
-            "collection": "mothers-day"
+            "title": "Build-A-Box",
+            "collection": "box-builder-collection-main-website"
           }
         },
         "f00d0e50-db70-498b-9cbe-dac1ab8c7341": {
