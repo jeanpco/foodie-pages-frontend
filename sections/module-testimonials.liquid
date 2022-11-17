@@ -17,37 +17,77 @@
       %}
     </div>
 
-    <div class="swiper testimonial-slider-module-swiper" data-js-element="testimonial-slider-module-swiper-{{ section.id }}">
+    {% assign numberOfTestimonials = section.blocks | size %}
 
-      <!-- Additional required wrapper -->
-      <div class="swiper-wrapper padding-bottom padding-xlarge">
+    {% if numberOfTestimonials > 2 %}
+
+      <div class="swiper testimonial-slider-module-swiper" data-js-element="testimonial-slider-module-swiper-{{ section.id }}">
+
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper padding-bottom padding-xlarge">
+  
+          {% comment %} get the number of section.blocks {% endcomment %}
+  
+  
+  
+          {% for block in section.blocks %}
+  
+            <!-- Slides -->
+            <div class="testimonial-slide swiper-slide background-color-mar-10 center padding-horizontal padding-large">
+              <div class="testimonial-slide-content padding-vertical padding-large left">
+                <img class="testimonial-icon margin-bottom margin-medium" src="https://cdn.shopify.com/s/files/1/0264/5000/2013/files/bxs_quote-alt-right.png?v=1665429847" alt="Quote Icon" />
+                <p>{{ block.settings.text }}</p>
+                {% if block.settings.image != blank %}
+                  <img src="{{ block.settings.image | image_url: width: 300 }}"
+                    class="testimonial-client-logo margin-top margin-medium"
+                    alt="Quote Icon"
+                    loading="lazy"
+                  >
+                {% endif %}
+              </div>
+            </div>
+    
+            {% endfor %}
+  
+        </div>
+  
+        {% render 'icon-prev-arrow' %}
+        {% render 'icon-next-arrow' %}
+  
+        <div class="swiper-scrollbar"></div>
+      </div>
+
+    {% else %}
+
+    <div class="testimonial-slider-module-swiper">
+
+      <div class="swiper-wrapper">
 
         {% for block in section.blocks %}
 
-        <!-- Slides -->
-        <div class="testimonial-slide swiper-slide background-color-mar-10 center padding-horizontal padding-large">
-          <div class="testimonial-slide-content padding-vertical padding-large left">
-            <img class="testimonial-icon margin-bottom margin-medium" src="https://cdn.shopify.com/s/files/1/0264/5000/2013/files/bxs_quote-alt-right.png?v=1665429847" alt="Quote Icon" />
-            <p>{{ block.settings.text }}</p>
-            {% if block.settings.image != blank %}
-              <img src="{{ block.settings.image | image_url: width: 300 }}"
-                class="testimonial-client-logo margin-top margin-medium"
-                alt="Quote Icon"
-                loading="lazy"
-              >
-            {% endif %}
+          <!-- Slides -->
+          <div class="testimonial-slide swiper-slide background-color-mar-10 center padding-horizontal padding-large">
+            <div class="testimonial-slide-content padding-vertical padding-large left">
+              <img class="testimonial-icon margin-bottom margin-medium" src="https://cdn.shopify.com/s/files/1/0264/5000/2013/files/bxs_quote-alt-right.png?v=1665429847" alt="Quote Icon" />
+              <p>{{ block.settings.text }}</p>
+              {% if block.settings.image != blank %}
+                <img src="{{ block.settings.image | image_url: width: 300 }}"
+                  class="testimonial-client-logo margin-top margin-medium"
+                  alt="Quote Icon"
+                  loading="lazy"
+                >
+              {% endif %}
+            </div>
           </div>
-        </div>
-
+  
         {% endfor %}
 
       </div>
 
-      {% render 'icon-prev-arrow' %}
-      {% render 'icon-next-arrow' %}
-
-      <div class="swiper-scrollbar"></div>
     </div>
+
+    {% endif %}
+
   </div>
 </div>
 

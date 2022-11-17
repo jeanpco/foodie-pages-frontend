@@ -12,6 +12,16 @@
   width: auto;
 }
 
+/* if has testimonial-slider-module-swiper class but not swiper */
+
+.testimonial-slider-module-swiper:not(.swiper) .swiper-wrapper {
+  gap: 2rem;
+}
+
+.testimonial-slider-module-swiper:not(.swiper) .swiper-wrapper > * {
+  flex: 1;
+}
+
 @media (max-width: 1680px) {
   .testimonial-slider-module-swiper {
     overflow: visible !important;
