@@ -155,49 +155,35 @@
         "765a0837-b3a6-417e-a20d-8c4151c40912": {
           "type": "card",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Image_ece8a130-10d5-442c-8531-af02ad89d323.jpg",
-            "title": "New Hire Onboarding Kits",
-            "body": "Say a big first hello to new employees and interns with an information pack and gift box.",
-            "cta_text": "Get a quote",
-            "cta_link": "#contact"
+            "title": "Step 1: Pick Your Gifts",
+            "body": "Browse our 2022 Ready to Ship Holiday Gift Box Catalog. Find the perfect holiday gift for everyone on your list.",
+            "cta_text": "Download & View Catalog",
+            "cta_link": "#download-catalogue"
           }
         },
         "2799395e-848f-4345-9be1-4844c0f3b341": {
           "type": "card",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Image_4156cd82-50c2-40f5-ab2f-94ea44745172.jpg",
-            "title": "Milestone Gifts",
-            "body": "Whether a birthday, anniversary or retirement – it’s worth celebrating.",
-            "cta_text": "",
-            "cta_link": ""
+            "title": "Step 2: Complete the Order Form",
+            "body": "Fill out our handy order form with all of the recipients’ info (and don’t forget to add a gift message).",
+            "cta_text": "Download Order Form",
+            "cta_link": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/Foodiepages-Gift-Concierge-Order-Form-Holiday_2022.xlsx?v=1663681310"
           }
         },
         "1a1d97cc-0c9f-4023-b4cf-a2188c76fa3e": {
           "type": "card",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Image.png",
-            "title": "Event Gifts",
-            "body": "No event is complete without a gift or keepsake to take home.",
-            "cta_text": "Get a quote",
-            "cta_link": "#contact"
-          }
-        },
-        "81289acb-6a37-4c70-84ec-d781a6d0b072": {
-          "type": "card",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/Image.jpg",
-            "title": "Client Appreciation Gifts",
-            "body": "Show your appreciation with a branded and personalized gift.",
-            "cta_text": "Get a quote",
-            "cta_link": "#contact"
+            "title": "Step 3: Submit Your Order",
+            "body": "Email your order form to orders@foodiepages.ca. Our gift concierge team will be in touch within two business days.",
+            "cta_text": "Send Order Form",
+            "cta_link": "mailto:orders@foodiepages.ca"
           }
         }
       },
       "block_order": [
         "765a0837-b3a6-417e-a20d-8c4151c40912",
         "2799395e-848f-4345-9be1-4844c0f3b341",
-        "1a1d97cc-0c9f-4023-b4cf-a2188c76fa3e",
-        "81289acb-6a37-4c70-84ec-d781a6d0b072"
+        "1a1d97cc-0c9f-4023-b4cf-a2188c76fa3e"
       ],
       "settings": {
         "overline": "Corporate solutions",
