@@ -23,8 +23,8 @@
 
 <style>
   dialog[aria-controls="view-order"] .dialog-modal-container {
-    width: 62.5rem;
-    margin-bottom: 6rem;
+    max-width: 80.5rem;
+    width: calc(100% - 2rem);
     top: 9rem;
   }
 
@@ -49,5 +49,26 @@
 
   #single-order-table {
     width: 100%;
+  }
+
+  @media screen and (max-width: 990px) {
+    #single-order-table tr {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    #single-order-table tr > * {
+      flex: 1 1 100%;
+    }
+
+    #single-order-table td {
+      padding: 0.5rem 0 !important;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .address-line {
+      text-align: right;
+    }
   }
 </style>

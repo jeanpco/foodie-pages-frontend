@@ -18,7 +18,7 @@
       <div style="height: 100%;" class="padding-right padding-large tablet-padding-0 display-flex flex-direction-column justify-content-between">
 
         <div class="aside-top-container">
-          {% if customer.metafields.custom.company_logo %}
+          {% if customer.metafields.custom.company_logo and is_corporate_client %}
             <img class="aside-top_logo margin-bottom margin-medium padding-horizontal tablet-padding-large mobile-padding-small" src="{{ customer.metafields.custom.company_logo | file_url }}" alt="Company Logo">
           {% endif %}          
   

@@ -98,3 +98,32 @@
     padding: 0.5rem 0 1rem !important;
   }
 }
+
+.back-to-top {
+  margin: 2rem auto;
+  display: block;
+  cursor: pointer;
+}
+
+.address-validation-failed {
+  position: relative;
+}
+
+.address-validation-failed .alert {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: calc(100% - 2rem);
+  height: calc(100% - 1rem);
+  border: 1px solid var(--color-grey-200);
+  border-radius: 1rem;
+  background: var(--color-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.address-validation-failed .alert .alert__icon {
+  display: flex;
+}

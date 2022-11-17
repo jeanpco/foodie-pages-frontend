@@ -29,17 +29,34 @@
 
   }
 
-  const getShipStationShipments = (orderId) => {
-    if (!orderId) return;
+  {% comment %} 
+    BACKEND
 
-    return fetch(`${backendURL}/api/get-shipstation-shipments?orderId=${orderId}`)
+    Returns Shipments - Shipstation 
+  {% endcomment %}
+
+  const getShipStationShipments = (storeId) => {
+    if (!storeId) return;
+    return fetch(`${backendURL}/api/get-shipstation-shipments?storeId=${storeId}`)
       .then(response => response.json())
   }
+
+  {% comment %} 
+    BACKEND
+
+    Returns Stores - Shipstation 
+  {% endcomment %}
 
   const getShipStationStores = () => {
     return fetch(`${backendURL}/api/get-shipstation-stores`)
       .then(response => response.json())
   }
+
+  {% comment %} 
+    BACKEND
+
+    Returns Orders - Shipstation 
+  {% endcomment %}
 
   const ShipStationOrders = (storeId) => {
     if (!storeId) return;
@@ -47,6 +64,12 @@
     return fetch(`${backendURL}/api/get-shipstation-orders?storeId=${storeId}`)
       .then(response => response.json())
   }
+
+  {% comment %}
+    BACKEND
+    
+    Returns SO - SOS
+  {% endcomment %}
 
   const getSOSSaleOrdersFromCustomerId = () => {
 
@@ -62,24 +85,32 @@
           fetch(`${backendURL}/api/get-sale-orders`)
             .then(response => response.json())
             .then(data => {
-              const saleOrders = data.data.filter(saleOrder => +saleOrder.customer.id === +{{ id }})
+              const saleOrders = data.data.filter(saleOrder => {
+                return +saleOrder.customer.id === +{{ id }}
+              })
     
               window.localStorage.setItem('saleOrders', JSON.stringify(saleOrders))
     
               buildTableFromSaleOrders(saleOrders);
             })
         } catch (error) {
-          console.log(error)
+          console.error(error)
         }
       }).catch(error => {
         console.error(error)
       })  
     } catch (error) {
-      console.log(error)
+      console.error(error)
     }
   }
 
-  const viewOrder = (order) => {
+  {% comment %}
+    FRONTEND
+  
+    Generates the table when clicking "View Order" link
+  {% endcomment %}
+
+  const viewOrder = async (order) => {
     let storeId = null;
 
     if (!window.shipStationStores && !window.shipStationStores.length) return;
@@ -97,109 +128,165 @@
     const table = document.querySelector('#single-order-table');
     const loading = document.querySelector('.view-order_container .loading');
     const tableHeader = document.createElement('tr');
+
+    loading.style.display = 'block';
+
+    tableHeader.style.position = 'sticky';
+    tableHeader.style.top = '-17px';
+    tableHeader.style.backgroundColor = 'var(--color-white)';
+    {% comment %} add box-shadow at the bottom of 1px for tableHeader {% endcomment %}
+    tableHeader.style.boxShadow = '0px 1px 0px 0px var(--color-grey-200)';
+    tableHeader.style.zIndex = '1';
+    tableHeader.classList.add('hide-tablet')
     
     table.innerHTML = ''
+    tableHeader.innerHTML = `
+      <th class="text-size-tiny uppercase text-color-grey-600">Name</th>
+      <th class="text-size-tiny uppercase text-color-grey-600">Address</th>
+      <th class="text-size-tiny uppercase text-color-grey-600">Shipping status</th>
+      <th class="text-size-tiny uppercase text-color-grey-600">Tracking Number</th>
+      <th class="text-size-tiny uppercase text-color-grey-600">Shipment Date</th>
+    `
 
     modalTitle.innerHTML = `Viewing Order: ${order.number}`
     modalBody.innerHTML = `Order created on: ${order.formattedDate}`
     {% comment %} find %%order_name%% in loading text and replace with order.number {% endcomment %}
     loading.querySelector('p').innerHTML = loading.querySelector('p').innerHTML.replace(/%%order_name%%/g, order.number)
 
+    {% comment %} get closest dialog element to modalHeader {% endcomment %}
+    const dialog = modalHeader.closest('dialog');
+
+    {% comment %} add a back to top p element as the last element of the view-order element scrolls back up when clicked {% endcomment %}
+    const backToTop = document.createElement('p');
+    const backToTopSpan = document.createElement('span');
+
+    {% comment %} if backToTop is already present, dont add {% endcomment %}
+
+    if (!document.querySelector('p.back-to-top')) {
+      backToTop.appendChild(backToTopSpan)
+      backToTopSpan.innerHTML = 'Back to top';
+      backToTop.classList.add('back-to-top');
+      backToTop.classList.add('button')
+      backToTop.style.maxWidth = '200px';
+      backToTop.addEventListener('click', () => {
+        dialog.scrollTop = 0;
+      })
+      dialog.querySelector('.view-order').appendChild(backToTop) 
+    }
+
     if (!storeId) {
       loading.style.display = 'none'
       table.innerHTML = `
         <div class="text-align-center padding-medium display-flex justify-content-center">
           {% render 'icon-error' %}
-          <p class="text-size-small">No shipments found for this order.</p>
+          <p class="text-size-small">No shipments found for this order. It may be that your order has not yet been created within our fulfillment system.</p>
         </div>
       `
       return;
     }
 
     try {
-      ShipStationOrders(storeId).then(data => {
-  
-        if (!data.orders && !data.orders.length) {
-          modalBody.innerHTML = `No orders found for ${order.number}`
-          return;
+
+      const shipmentsArray = await getShipStationShipments(storeId)
+      const allShipments = shipmentsArray[0]
+
+      const ordersArray = await ShipStationOrders(storeId)
+      const orders = ordersArray[0]
+
+      console.log('all orders', orders)
+      console.log('allShipments', allShipments)
+
+      if (!orders && !orders.length) {
+        modalBody.innerHTML = `No orders found for ${order.number}`
+        return;
+      }
+      
+      table.appendChild(tableHeader)
+
+      {% comment %} sort orders by most recent using order.shipDate {% endcomment %}
+      orders.sort((a, b) => {
+        return new Date(b.shipDate) - new Date(a.shipDate);
+      }).forEach((order, index) => {
+        const addressValidationFailed = order.shipTo.addressVerified === "Address validation failed";
+        const items = order.items;
+        const address = order.shipTo;
+        const shipDate = new Date(order.shipDate);
+        const formattedShipDate = `${shipDate.toLocaleString('default', { month: 'short' })} ${shipDate.getDate()}, ${shipDate.getFullYear()}`
+        let shippingStatus = 'Awaiting Shipment'
+        {% comment %} As long as the shipment date is in the future it's "Awaiting shipment"  {% endcomment %}
+        if (shipDate < new Date() && order.shipDate) {
+          shippingStatus = 'Shipped'
         }
+
+        const orderShipments = allShipments.filter(shipment => shipment.orderId === order.orderId);
+
+        const tableRow = document.createElement('tr');
+
+        if (!!addressValidationFailed) {
+          tableRow.classList.add('address-validation-failed')
+        }
+
+        tableRow.innerHTML = `
+          <td class="text-size-small">
+            <p class="text-size-tiny uppercase text-color-grey-600 hide-tablet-and-up">Address</p>
+            <span>${address.name ? address.name : ''}</span>
+          </td>
+          <td>
+            <p class="text-size-tiny uppercase text-color-grey-600 hide-tablet-and-up">Name</p>
+            <div class="text-size-small address-line">
+              ${address.street1 ? address.street1 + '<br>' : ''}
+              ${address.street2 ? address.street2 + '<br>' : ''}
+              ${address.street3 ? address.street3 + '<br>' : ''}
+              ${address.city ? address.city + ',' : ''} ${address.postalCode ? address.postalCode + ',' : ''} ${address.state ? address.state + ',' : ''} ${address.country ? address.country + '<br>' : ''}
+            </div>
+          </td>
+          <td class="text-size-small">
+            <p class="text-size-tiny uppercase text-color-grey-600 hide-tablet-and-up">Shipping status</p>
+            <span>${shippingStatus}</span>
+          </td>
+          <td class="text-size-small">
+            <p class="text-size-tiny uppercase text-color-grey-600 hide-tablet-and-up">Tracking Number</p>
+            <span>
+              ${
+                orderShipments.map(shipment => {  
+                  const trackingUrl = getTrackingUrl(shipment.trackingNumber, shipment.carrierCode)
   
-        data.orders.forEach((order, index) => {
-
-          try {
-            getShipStationShipments(order.orderId).then(shipmentsData => {
-
-              tableHeader.innerHTML = `
-                <th class="text-size-tiny uppercase text-color-grey-600">Name</th>
-                <th class="text-size-tiny uppercase text-color-grey-600">Address</th>
-                <th class="text-size-tiny uppercase text-color-grey-600">Shipping status</th>
-                <th class="text-size-tiny uppercase text-color-grey-600">Tracking Number</th>
-                <th class="text-size-tiny uppercase text-color-grey-600">Shipment Date</th>
-              `
-
-              table.appendChild(tableHeader)
-
-              const items = order.items;
-              const address = order.shipTo;
-              const shipDate = new Date(order.shipDate);
-              const formattedShipDate = `${shipDate.toLocaleString('default', { month: 'short' })} ${shipDate.getDate()}, ${shipDate.getFullYear()}`
-              let shippingStatus = 'Awaiting Shipment'
-              {% comment %} As long as the shipment date is in the future it's "Awaiting shipment"  {% endcomment %}
-              if (shipDate < new Date()) {
-                shippingStatus = 'Shipped'
+                  return `<a class="link" target="_blank" href="${trackingUrl}">${shipment.trackingNumber}</a>`
+                }).join('<br>')
               }
-      
-              const tableRow = document.createElement('tr');
-      
-              tableRow.innerHTML = `
-                <td class="text-size-small">${address.name ? address.name : ''}</td>
-                <td>
-                  <div class="text-size-small">
-                    ${address.street1 ? address.street1 + '<br>' : ''}
-                    ${address.street2 ? address.street2 + '<br>' : ''}
-                    ${address.street3 ? address.street3 + '<br>' : ''}
-                    ${address.city ? address.city + ',' : ''} ${address.postalCode ? address.postalCode + ',' : ''} ${address.state ? address.state + ',' : ''} ${address.country ? address.country + '<br>' : ''}
-                  </div>
-                </td>
-                <td class="text-size-small">${shippingStatus}</td>
-                <td class="text-size-small">
-                  ${
-                    shipmentsData.shipments.map(shipment => {
+            </span>
+          </td>
+          <td class="text-size-small">
+            <p class="text-size-tiny uppercase text-color-grey-600 hide-tablet-and-up">Shipment Date</p>
+            <span>${order.shipDate ? formattedShipDate : 'No Ship Date'}</span>
+          </td>
+          ${addressValidationFailed ? `
+            <div class="alert display-flex align-items-center">
+              <div class="alert__icon">
+                {% render 'icon-error' %}
+              </div>
+              <div class="alert__content">
+                <p class="text-size-small">Address validation failed for this order (Order ID: ${order.orderId}).</p>
+              </div>
+            </div>
+          ` : ''}
+        `
 
-                      const trackingUrl = getTrackingUrl(shipment.trackingNumber, shipment.carrierCode)
-
-                      return `<a class="link" target="_blank" href="${trackingUrl}">${shipment.trackingNumber}</a>`
-                    }).join('<br>')
-                  }
-                </td>
-                <td class="text-size-small">${formattedShipDate}</td>
-              `
-            
-              {% comment %} if last remove loading{% endcomment %}
-              if (index === data.orders.length - 1) {
-                loading.style.display = 'none'
-              }
-            
-
-              table.appendChild(tableRow)
-
-            }).catch(error => {
-              console.log(error)
-            })
-
-          } catch (error) {
-            console.log(error)
-          }
-  
-        })
-  
-      }).catch(error => {
-        console.log(error)
+        table.appendChild(tableRow)
       })
+
+      loading.style.display = 'none'
+
     } catch (error) {
-      console.log(error)
+      console.error(error)
     }
   }
+
+  {% comment %} 
+    FRONTEND
+
+    Build initial table from the Sale Orders of SOS
+  {% endcomment %}
 
   const buildTableFromSaleOrders = (saleOrders) => {
 
@@ -209,18 +296,20 @@
     loading.style.display = 'none'
     table.innerHTML = ''
 
+    console.log(saleOrders)
+
     if (saleOrders && saleOrders.length) {
       const tableHeader = document.createElement('tr')
-
+      
       table.appendChild(tableHeader)
-
+      
       tableHeader.innerHTML = `
-        <th class="text-size-tiny uppercase text-color-grey-600">Campaign Name</th>
-        <th class="text-size-tiny uppercase text-color-grey-600">Order #</th>
-        <th class="text-size-tiny uppercase text-color-grey-600">Order Date</th>
-        <th class="text-size-tiny uppercase text-color-grey-600"># of boxes left</th>
-        <th class="text-size-tiny uppercase text-color-grey-600">Delivery Status</th>
-        <th class="text-size-tiny uppercase text-color-grey-600">Details</th>
+      <th class="text-size-tiny uppercase text-color-grey-600">Campaign Name</th>
+      <th class="text-size-tiny uppercase text-color-grey-600">Order #</th>
+      <th class="text-size-tiny uppercase text-color-grey-600">Order Date</th>
+      <th class="text-size-tiny uppercase text-color-grey-600"># of boxes left</th>
+      <th class="text-size-tiny uppercase text-color-grey-600">Delivery Status</th>
+      <th class="text-size-tiny uppercase text-color-grey-600">Details</th>
       `
 
       saleOrders.forEach(saleOrder => {
@@ -246,6 +335,9 @@
         if (totalShipped === totalQuantity) {
           deliveryStatus = 'Shipped'
         }
+
+
+
 
         {% comment %} Format date {% endcomment %}
         const date = new Date(saleOrder.date)
@@ -296,6 +388,6 @@
         window.sosCustomer = data.data;
       })
   } catch (error) {
-    console.log(error)
+    console.error(error)
   }
 } {% endcomment %}
