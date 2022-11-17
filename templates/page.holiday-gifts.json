@@ -6,15 +6,15 @@
         "02d55e23-f307-4138-a9bd-10d797daa746": {
           "type": "cta",
           "settings": {
-            "cta_text": "Shop all",
-            "cta_link": ""
+            "cta_text": "Ready to ship",
+            "cta_link": "shopify:\/\/collections\/gift-baskets"
           }
         },
         "c048c51b-1b9b-4987-9088-f581437cc840": {
           "type": "cta",
           "settings": {
-            "cta_text": "Shop all",
-            "cta_link": ""
+            "cta_text": "Corporate gifting",
+            "cta_link": "shopify:\/\/pages\/how-it-works"
           }
         }
       },
@@ -27,10 +27,10 @@
         "title": "<p>Gifts that celebrate small business<\/p>",
         "heading_style": "h1",
         "body": "We source exclusively from small and underrepresented businesses across the country. Sharing their stories and values with you is one of our greatest joys.",
-        "image": "shopify:\/\/shop_images\/Screen_Shot_2022-11-15_at_5.04.39_PM.png",
+        "image": "shopify:\/\/shop_images\/Frame_43428_2.png",
         "enable_card_style": false,
         "text_vertical_alignment": "flex-end",
-        "layout_style": "rows",
+        "layout_style": "two-columns",
         "background_color": "background-color-azul-verdoso-10",
         "trusted_by_text": "Trusted by"
       }
