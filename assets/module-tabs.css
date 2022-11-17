@@ -7,6 +7,7 @@
 .tab-header img {
   opacity: 0.7;
   transition: opacity 0.3s;
+  max-height: 2.5rem;
 }
 
 .tab-header p {
