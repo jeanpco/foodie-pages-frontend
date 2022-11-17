@@ -402,7 +402,7 @@
         const nextArrows = [...document.querySelectorAll('.icon-next-arrow')];
         const prevArrows = [...document.querySelectorAll('.icon-prev-arrow')];
 
-        nextArrows.forEach((arrow) => {
+        [...nextArrows, ...prevArrows].forEach((arrow) => {
           arrow.style.visibility = 'visible';
         });
       }

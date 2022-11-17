@@ -73,6 +73,82 @@
         "image": "shopify:\/\/shop_images\/Image_d4a1883a-3e9c-4409-bdd9-df342810f0bb.png"
       }
     },
+    "module-tabs": {
+      "type": "module-tabs",
+      "blocks": {
+        "2fe0704d-6ca9-4bdf-8869-4644f4802edb": {
+          "type": "tab",
+          "settings": {
+            "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0601\/1709\/0544\/files\/Path.svg?v=1664989934",
+            "tab_text": "Values-based gifting",
+            "title": "Gifts that tell a story.",
+            "body": "We source exclusively from small and underrepresented businesses across the country. Sharing their stories and values with you is one of our greatest joys.",
+            "cta_text": "Shop now",
+            "cta_link": "\/",
+            "image": "shopify:\/\/shop_images\/Screen_Shot_2022-08-30_at_3.03_2.jpg"
+          }
+        },
+        "cb796b97-5135-4a60-b2fa-c710855e013a": {
+          "type": "tab",
+          "settings": {
+            "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0601\/1709\/0544\/files\/Path.svg?v=1664989934",
+            "tab_text": "Sustainability",
+            "title": "Less is more.",
+            "body": "We always prioritize quality over quantity. When it comes to selecting products for our gifts, beautiful design and impeccable quality are non-negotiable. We also try to keep our footprint small by working with local businesses.",
+            "cta_text": "Shop now",
+            "cta_link": "\/",
+            "image": "shopify:\/\/shop_images\/Screen_Shot_2022-11-15_at_4.14.28_PM.png"
+          }
+        },
+        "881fd230-0ff5-475a-80ab-394c30599557": {
+          "type": "tab",
+          "settings": {
+            "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0601\/1709\/0544\/files\/Path.svg?v=1664989934",
+            "tab_text": "Fast shipping",
+            "title": "Easy and speedy shipping.",
+            "body": "We can bulk ship to one location or 100s of individual addresses, worldwide. We make the entire process seamless.",
+            "cta_text": "",
+            "cta_link": "shopify:\/\/pages\/about-us",
+            "image": "shopify:\/\/shop_images\/Frame_43428_2.png"
+          }
+        },
+        "82370e0b-29ef-4ff4-9ed1-ff7fd169f7ff": {
+          "type": "tab",
+          "settings": {
+            "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0601\/1709\/0544\/files\/Path.svg?v=1664989934",
+            "tab_text": "100% custom gift design",
+            "title": "A fresh take on corporate gifting.",
+            "body": "For larger orders, leverage our design services for a fully custom gift. From the products to the packaging, we'll create something memorable that reflects your brand, goals, and values.",
+            "cta_text": "",
+            "cta_link": "\/",
+            "image": "shopify:\/\/shop_images\/Screen_Shot_2022-08-30_at_3.03_2.jpg"
+          }
+        },
+        "3732abc5-67af-4c3c-85d8-758c6aea36c1": {
+          "type": "tab",
+          "settings": {
+            "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0601\/1709\/0544\/files\/Path.svg?v=1664989934",
+            "tab_text": "10+ years of gifting",
+            "title": "Expert gifters.",
+            "body": "For 10 years, we've been your go-to for gifting. That also means we've been your go-to to discover all of the best small brands in one place. Trust us to help you select a gift that aligns with your values, fits in your budget, and gets there on time.",
+            "cta_text": "",
+            "cta_link": "\/",
+            "image": "shopify:\/\/shop_images\/HeroImage.png"
+          }
+        }
+      },
+      "block_order": [
+        "2fe0704d-6ca9-4bdf-8869-4644f4802edb",
+        "cb796b97-5135-4a60-b2fa-c710855e013a",
+        "881fd230-0ff5-475a-80ab-394c30599557",
+        "82370e0b-29ef-4ff4-9ed1-ff7fd169f7ff",
+        "3732abc5-67af-4c3c-85d8-758c6aea36c1"
+      ],
+      "settings": {
+        "overline": "How we do it",
+        "title": "<p>The <em>best<\/em> gifting service in Canada<\/p>"
+      }
+    },
     "823bd50c-3555-4282-8b34-ab0e8584323d": {
       "type": "module-vertical-tabs",
       "disabled": true,
@@ -284,14 +360,85 @@
         "background_color": "background-color-mar-10",
         "trusted_by_text": "Trusted by"
       }
+    },
+    "module-testimonials": {
+      "type": "module-testimonials",
+      "blocks": {
+        "413596fd-9194-4b45-a548-2a8f4a2b02e7": {
+          "type": "testimonial",
+          "settings": {
+            "text": "Foodiepages has been a trusted partner of Dynacare for several years, providing quality, trusted and reliable services for important gifts for staff, clients, and executives. Not only are they thorough and dependable – but Foodiepages also makes strategic and impactful recommendations for us to bring our gifting to the next level. The costs are affordable and they go the extra mile to ensure the recipient(s) feel important and valued. I would recommend Foodiepages to anyone looking for a quality gifting partner.",
+            "image": "shopify:\/\/shop_images\/Dynacare_master_logo_EN_RGB_copy.png"
+          }
+        },
+        "5a9625b0-d533-4873-9e69-ed01dccf2d33": {
+          "type": "testimonial",
+          "settings": {
+            "text": "Before Foodiepages, we didn't have a formal New Hire gifting program. Now that we've moved to a hybrid workforce model, partnering with Foodiepages has allowed us to streamline the process, ensure a consistent, memorable and welcoming onboarding experience for all new employees, whether they are in the office or working remotely.",
+            "image": "shopify:\/\/shop_images\/Symcor_Symcor_Releases_Real_time_API_Helping_Financial_Instituti_copy.png"
+          }
+        },
+        "90ef79c2-d540-4cf3-aa0c-ff6af8769aef": {
+          "type": "testimonial",
+          "settings": {
+            "text": "We've had the pleasure of working with the Foodiepages team on gifts for our company of 500+ on numerous occasions over the past couple of years. The Foodiepages team offers the highest level of customer service and curates gifts that perfectly fit the occasion you are celebrating. No detail is ever forgotten, and even the shipping process has always been top-notch. I would highly recommend working with Foodiepages for individual gift boxes, or large-scale corporate gifting projects.",
+            "image": "shopify:\/\/shop_images\/Jobber-NavyFull_copy.png"
+          }
+        },
+        "20ab2288-3c55-4bac-9b41-9d5e76f2153d": {
+          "type": "testimonial",
+          "settings": {
+            "text": "Foodiepages has been a trusted partner of Dynacare for several years, providing quality, trusted and reliable services for important gifts for staff, clients, and executives. Not only are they thorough and dependable.",
+            "image": "shopify:\/\/shop_images\/Jobber-NavyFull_copy.png"
+          }
+        },
+        "08490811-f40b-41f0-9609-d353019e95fd": {
+          "type": "testimonial",
+          "settings": {
+            "text": "Foodiepages has been a trusted partner of Dynacare for several years, providing quality, trusted and reliable services for important gifts for staff, clients, and executives. Not only are they thorough and dependable – but Foodiepages also makes strategic and impactful recommendations for us to bring our gifting to the next level. The costs are affordable and they go the extra mile to ensure the recipient(s) feel important and valued. I would recommend Foodiepages to anyone looking for a quality gifting partner.",
+            "image": "shopify:\/\/shop_images\/Symcor_Symcor_Releases_Real_time_API_Helping_Financial_Instituti_copy.png"
+          }
+        }
+      },
+      "block_order": [
+        "413596fd-9194-4b45-a548-2a8f4a2b02e7",
+        "5a9625b0-d533-4873-9e69-ed01dccf2d33",
+        "90ef79c2-d540-4cf3-aa0c-ff6af8769aef",
+        "20ab2288-3c55-4bac-9b41-9d5e76f2153d",
+        "08490811-f40b-41f0-9609-d353019e95fd"
+      ],
+      "settings": {
+        "overline": "Our happy customers",
+        "title": "<p>Don’t just take it from us<\/p>",
+        "cta_text": "Get in touch",
+        "cta_link": "shopify:\/\/pages\/contact-us"
+      }
+    },
+    "product-recommendations": {
+      "type": "product-recommendations",
+      "settings": {
+        "overline": "Product recommendations",
+        "title": "<p>You may also like<\/p>",
+        "body": "Discover more products that may be of interest to you.",
+        "products_to_show": 4,
+        "collection": "gift-baskets",
+        "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/Frame_43418.png?v=1665521287",
+        "promo_title": "Looking for gifts for your company?",
+        "promo_body": "Whether it's 25 or 2,500 custom gifts, we've done it. Get in touch with our team today.",
+        "promo_cta_text": "Shop now",
+        "promo_cta_link": "shopify:\/\/collections\/gift-baskets"
+      }
     }
   },
   "order": [
     "main",
     "540551bc-af60-4262-9fa5-9c86a6e53957",
+    "module-tabs",
     "823bd50c-3555-4282-8b34-ab0e8584323d",
     "05ea480d-037b-4297-9c3d-d6160866116b",
     "b5797203-b142-444b-be2c-d6e9d37312fe",
-    "582103a2-47d5-46e9-9ba6-ede2b4f3963b"
+    "582103a2-47d5-46e9-9ba6-ede2b4f3963b",
+    "module-testimonials",
+    "product-recommendations"
   ]
 }
