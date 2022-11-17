@@ -1,0 +1,100 @@
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  position: absolute;
+  height: 20rem;
+}
+
+.loading-spinner {
+  display: inline-block !important;
+  width: 20px;
+  height: 20px;
+  border: 3px solid var(--color-grey-200);
+  border-top: 3px solid var(--color-tertiary);
+  border-radius: 50%;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+#sos-inventory-table {
+  min-height: 11.25rem;
+}
+
+#sos-inventory-table tr,
+#single-order-table tr {
+  border-top: 1px solid var(--color-grey-200);
+}
+
+#single-order-table .icon-error {
+  width: 1.5rem;
+  margin-right: 1rem;
+}
+
+#sos-inventory-table th:first-child,
+#sos-inventory-table td:first-child,
+#single-order-table th:first-child,
+#single-order-table td:first-child {
+  padding: 1.5rem;
+}
+
+#sos-inventory-table td:last-child,
+#sos-inventory-table th:last-child,
+#single-order-table td:last-child,
+#single-order-table th:last-child {
+  padding-right: 1.5rem;
+}
+
+#sos-inventory-table th,
+#sos-inventory-table td,
+#single-order-table th,
+#single-order-table td {
+  padding: 1rem 0;
+  text-align: left;
+}
+
+@media screen and (max-width: 1100px) {
+  #sos-inventory-table tr,
+  #single-order-table tr {
+    border-top: unset;
+    border-bottom: 1px solid var(--color-grey-200);
+  }
+
+  #sos-inventory-table,
+  #single-order-table {
+    padding-bottom: 2rem;
+  }
+}
+
+@media screen and (max-width: 749px) {
+
+  #sos-inventory-table,
+  #single-order-table {
+    display: flex;
+  }
+
+  #sos-inventory-table > *,
+  #single-order-table > * {
+    flex: 1;
+  }
+
+  #sos-inventory-table th,
+  #sos-inventory-table td,
+  #single-order-table th,
+  #single-order-table td {
+    display: block;
+    font-size: 0.875rem;
+  }
+
+  #sos-inventory-table th,
+  #sos-inventory-table td,
+  #single-order-table th,
+  #single-order-table td {
+    padding: 0.5rem 0 1rem !important;
+  }
+}

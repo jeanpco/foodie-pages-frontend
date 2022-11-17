@@ -23,7 +23,7 @@
   max-width: 23.4375rem;
 }
 
-@media screen and (max-width: 990px) {
+@media screen and (max-width: 1100px) {
   .customer {
     flex-direction: column;
     min-height: unset;
@@ -39,6 +39,8 @@
 
   .customer aside {
     max-width: 100%;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
   }
 
   .account-background {
@@ -96,7 +98,8 @@
 }
 
 /* Customer Table */
-.customer table {
+.customer table,
+#single-order-table {
   table-layout: auto;
   border-collapse: collapse;
   border: 1px solid var(--color-grey-200);
@@ -105,12 +108,14 @@
   position: relative;
 }
 
-.customer table .thead-tr-th {
+.customer table .thead-tr-th,
+#single-order-table .thead-tr-th {
   padding-left: 0;
   text-align: left;
 }
 
-.customer table .thead-tr-th:first-child {
+.customer table .thead-tr-th:first-child,
+#single-order-table .thead-tr-th:first-child {
   padding: 1.5rem;
 }
 
@@ -137,6 +142,35 @@
 
 .customer tbody tr {
   border-top: 1px solid var(--color-grey-200);
+}
+
+@media screen and (max-width: 1100px) {
+
+  .customer tbody td {
+    padding: 0.75rem 0;
+  }
+
+  .customer tbody td:last-child {
+    padding-bottom: 1.5rem;
+  }
+
+  .customer tbody tr {
+    border-top: unset;
+    border-bottom: 1px solid var(--color-grey-200);
+  }
+
+  .customer tbody tr td {
+    color: var(--color-grey-600);
+  }
+
+  .customer tbody tr td > * {
+    color: var(--color-primary);
+  }
+
+  .customer table,
+  #single-order-table {
+    border: unset;
+  }
 }
 
 @media screen and (forced-colors: active) {
@@ -210,9 +244,7 @@
   }
 
   .customer td::before {
-    color: rgba(var(--color-primary), 0.75);
     content: attr(data-label);
-    font-size: 1.4rem;
     padding-right: 2rem;
     text-transform: uppercase;
     flex-grow: 1;

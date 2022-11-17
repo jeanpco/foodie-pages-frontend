@@ -1,10 +1,13 @@
 {{ 'customer.css' | asset_url | stylesheet_tag }}
 
 {% assign is_corporate_client = false %}
+{% assign sos_customer_id = nil %}
 
 {% for tag in customer.tags %}
-  {% if tag contains 'sos_customer_id' %}
+  {% if tag contains 'sos_customer_id' and tag contains ':' %}
     {% assign is_corporate_client = true %}
+    {% assign sos_customer_id = tag | split: ':' %}
+    {% assign sos_customer_id = sos_customer_id[1] %}
   {% endif %}
 {% endfor %}
 
@@ -13,14 +16,21 @@
 
     <aside class="padding-vertical padding-xlarge background-color-grey-100">
       <div style="height: 100%;" class="padding-right padding-large tablet-padding-0 display-flex flex-direction-column justify-content-between">
-        <ul class="aside-navigation padding-horizontal tablet-padding-large mobile-padding-small">
-          <li data-js-element="dashboard" class="aside-navigation_item margin-bottom margin-small">
-            <a class="heading-style-h5 aside-navigation_link text-weight-semibold {% if request.path contains 'account' %}is-active text-color-primary{% else %}text-color-grey-300{% endif %}" href="">Dashboard</a>
-          </li>
-          {% comment %} <li data-js-element="orders" class="aside-navigation_item">
-            <a class="heading-style-h5 aside-navigation_link text-weight-semibold" href="">Order History</a>
-          </li> {% endcomment %}
-        </ul>
+
+        <div class="aside-top-container">
+          {% if customer.metafields.custom.company_logo %}
+            <img class="aside-top_logo margin-bottom margin-medium padding-horizontal tablet-padding-large mobile-padding-small" src="{{ customer.metafields.custom.company_logo | file_url }}" alt="Company Logo">
+          {% endif %}          
+  
+          <ul class="aside-navigation padding-horizontal tablet-padding-large mobile-padding-small">
+            <li data-js-element="dashboard" class="aside-navigation_item margin-bottom margin-small">
+              <a class="heading-style-h5 aside-navigation_link text-weight-semibold {% if request.path contains 'account' %}is-active text-color-primary{% else %}text-color-grey-300{% endif %}" href="">Dashboard</a>
+            </li>
+            {% comment %} <li data-js-element="orders" class="aside-navigation_item">
+              <a class="heading-style-h5 aside-navigation_link text-weight-semibold" href="">Order History</a>
+            </li> {% endcomment %}
+          </ul>
+        </div>
     
         <div class="aside-bottom-container padding-horizontal tablet-padding-large mobile-padding-small">
           <div class="account-details margin-bottom margin-large">
@@ -89,7 +99,7 @@
 
             {% if is_corporate_client %}
               <div class="tabs-body_corporate" data-js-element="tab-body" data-index="2">
-                {% render 'corporate-orders' %}
+                {% render 'corporate-orders', id: sos_customer_id %}
               </div>
             {% endif %}
 

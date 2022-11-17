@@ -1,0 +1,47 @@
+{{ 'module-hero.css' | asset_url | stylesheet_tag }}
+
+<div class="">
+  <div class="">
+    <div class="hero-background">
+      <div class="padding-vertical padding-xlarge">
+        <div class="hero-container padding-horizontal padding-xxlarge mobile-padding-medium rows">
+          {% if section.settings.image %}
+            <div class="hero-image rows">
+              {{ section.settings.image | image_url: width: 800 | image_tag:
+                loading: 'lazy',
+                widths: '550, 720, 990, 1100, 1500, 2200, 3000'
+              }}
+            </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  {% comment %} .hero-container {
+    display: flex;
+  } {% endcomment %}
+</style>
+
+{% schema %}
+{
+  "name": "Image",
+  "tag": "section",
+  "class": "section section-image",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image",
+      "info": "This image will take the full width of the section in which it resides."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Image"
+    }
+  ]
+}
+{% endschema %}

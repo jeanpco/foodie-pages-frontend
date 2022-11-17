@@ -1,0 +1,53 @@
+<div class="view-order_container">
+  <div class="loading">
+    <div class="loading-container text-align-center">
+      <div class="loading-spinner"></div>
+      <p class="text-size-tiny margin-top margin-small">Retrieving line items for %%order_name%%. <br>Thank you for your patience.</p>
+    </div>
+  </div>
+  
+  {% render 'module-header', 
+    class: 'js-element-order'
+    overline: overline, 
+    title: '%%Campaign Name%%',
+    body: 'Order created on %%Aug 15, 2022%%',
+    text_horizontal_alignment: 'left',
+    heading_style: 'h3'
+  %}
+
+  <div class="single-order_container">
+    <table id="single-order-table" class="margin-top margin-large"></table>
+  </div>
+
+</div>
+
+<style>
+  dialog[aria-controls="view-order"] .dialog-modal-container {
+    width: 62.5rem;
+    margin-bottom: 6rem;
+    top: 9rem;
+  }
+
+  .view-order_container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 17rem;
+  }
+
+  .view-order_container .loading {
+    top: unset;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    height: 9rem;
+  }
+
+  .single-order_container {
+  }
+
+  #single-order-table {
+    width: 100%;
+  }
+</style>

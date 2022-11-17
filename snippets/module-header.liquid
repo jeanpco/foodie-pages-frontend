@@ -3,13 +3,17 @@
 {% endunless %}
 
 
-<div class="{{ text_horizontal_alignment }}">
+<div class="{{ text_horizontal_alignment }} {{ class }}">
   {% if overline != blank %}
     <small class="overline module-header_overline text-size-tiny uppercase text-color-tertiary margin-bottom margin-xxsmall mobile-margin-xsmall text-weight-semibold">{{ overline }}</small>
   {% endif %}
   {% if title != blank %}
     {% if heading_style == 'h1' %}
       <h1 class="module-header_title dual-font-title">{{ title }}</h2>
+    {% elsif heading_style == 'h2' %}
+      <h2 class="module-header_title dual-font-title">{{ title }}</h2>
+      {% elsif heading_style == 'h3' %}
+      <h3 class="module-header_title dual-font-title">{{ title }}</h3>
     {% else %}
       <h2 class="module-header_title dual-font-title">{{ title }}</h2>
     {% endif %}

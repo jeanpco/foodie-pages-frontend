@@ -1,1 +1,301 @@
-Corporate Orders
+{{ 'corporate-orders.css' | asset_url | stylesheet_tag }}
+
+<div class="loading">
+  <div class="loading-container text-align-center">
+    <div class="loading-spinner"></div>
+    <p class="text-size-tiny margin-top margin-small">Retrieving orders for {{ customer.name }}. <br>Thank you for your patience.</p>
+  </div>
+</div>
+
+<table id="sos-inventory-table"></table>
+
+<script type="module">
+  const backendURL = 'https://f122-24-225-185-7.ngrok.io'
+
+  const getTrackingUrl = (trackingNumber, carrier) => {
+
+    const trackingUrls = {
+      'ups': `https://wwwapps.ups.com/WebTracking/track?track=yes&trackNums=${trackingNumber}`,
+      'fedex': `https://www.fedex.com/apps/fedextrack/?action=track&trackingnumber=${trackingNumber}`,
+      'usps': `https://tools.usps.com/go/TrackConfirmAction_input?qtc_tLabels1=${trackingNumber}`,
+      'dhl': `https://www.dhl.com/en/express/tracking.html?AWB=${trackingNumber}&brand=DHL`,
+      'canada-post': `https://www.canadapost.ca/cpotools/apps/track/personal/findByTrackNumber?trackingNumber=${trackingNumber}`,
+      'purolator': `https://www.purolator.com/en/track-your-shipping/items.aspx?pin=${trackingNumber}`,
+      'ontrac': `https://www.ontrac.com/trackingres.asp?tracking_number=${trackingNumber}`,
+      'lasership': `https://www.lasership.com/track?tracking_number=${trackingNumber}`
+    }
+
+    return trackingUrls[carrier]
+
+  }
+
+  const getShipStationShipments = (orderId) => {
+    if (!orderId) return;
+
+    return fetch(`${backendURL}/api/get-shipstation-shipments?orderId=${orderId}`)
+      .then(response => response.json())
+  }
+
+  const getShipStationStores = () => {
+    return fetch(`${backendURL}/api/get-shipstation-stores`)
+      .then(response => response.json())
+  }
+
+  const ShipStationOrders = (storeId) => {
+    if (!storeId) return;
+
+    return fetch(`${backendURL}/api/get-shipstation-orders?storeId=${storeId}`)
+      .then(response => response.json())
+  }
+
+  const getSOSSaleOrdersFromCustomerId = () => {
+
+    try {
+      getShipStationStores().then(payload => {
+        window.shipStationStores = payload;
+
+        if (localStorage.getItem('saleOrders')) {
+          buildTableFromSaleOrders(JSON.parse(localStorage.getItem('saleOrders')))
+        }
+    
+        try {
+          fetch(`${backendURL}/api/get-sale-orders`)
+            .then(response => response.json())
+            .then(data => {
+              const saleOrders = data.data.filter(saleOrder => +saleOrder.customer.id === +{{ id }})
+    
+              window.localStorage.setItem('saleOrders', JSON.stringify(saleOrders))
+    
+              buildTableFromSaleOrders(saleOrders);
+            })
+        } catch (error) {
+          console.log(error)
+        }
+      }).catch(error => {
+        console.error(error)
+      })  
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
+  const viewOrder = (order) => {
+    let storeId = null;
+
+    if (!window.shipStationStores && !window.shipStationStores.length) return;
+
+    const orders = window.shipStationStores.filter(store => {      
+      if (store.storeName && store.storeName.toLowerCase().includes(order.number.toLowerCase())) {
+        storeId = store.storeId;
+      }
+      return store.storeName && store.storeName.toLowerCase().includes(order.number.toLowerCase())
+    })
+
+    const modalHeader = document.querySelector('.js-element-order');
+    const modalTitle = modalHeader.querySelector('.module-header_title');
+    const modalBody = modalHeader.querySelector('p');
+    const table = document.querySelector('#single-order-table');
+    const loading = document.querySelector('.view-order_container .loading');
+    const tableHeader = document.createElement('tr');
+    
+    table.innerHTML = ''
+
+    modalTitle.innerHTML = `Viewing Order: ${order.number}`
+    modalBody.innerHTML = `Order created on: ${order.formattedDate}`
+    {% comment %} find %%order_name%% in loading text and replace with order.number {% endcomment %}
+    loading.querySelector('p').innerHTML = loading.querySelector('p').innerHTML.replace(/%%order_name%%/g, order.number)
+
+    if (!storeId) {
+      loading.style.display = 'none'
+      table.innerHTML = `
+        <div class="text-align-center padding-medium display-flex justify-content-center">
+          {% render 'icon-error' %}
+          <p class="text-size-small">No shipments found for this order.</p>
+        </div>
+      `
+      return;
+    }
+
+    try {
+      ShipStationOrders(storeId).then(data => {
+  
+        if (!data.orders && !data.orders.length) {
+          modalBody.innerHTML = `No orders found for ${order.number}`
+          return;
+        }
+  
+        data.orders.forEach((order, index) => {
+
+          try {
+            getShipStationShipments(order.orderId).then(shipmentsData => {
+
+              tableHeader.innerHTML = `
+                <th class="text-size-tiny uppercase text-color-grey-600">Name</th>
+                <th class="text-size-tiny uppercase text-color-grey-600">Address</th>
+                <th class="text-size-tiny uppercase text-color-grey-600">Shipping status</th>
+                <th class="text-size-tiny uppercase text-color-grey-600">Tracking Number</th>
+                <th class="text-size-tiny uppercase text-color-grey-600">Shipment Date</th>
+              `
+
+              table.appendChild(tableHeader)
+
+              const items = order.items;
+              const address = order.shipTo;
+              const shipDate = new Date(order.shipDate);
+              const formattedShipDate = `${shipDate.toLocaleString('default', { month: 'short' })} ${shipDate.getDate()}, ${shipDate.getFullYear()}`
+              let shippingStatus = 'Awaiting Shipment'
+              {% comment %} As long as the shipment date is in the future it's "Awaiting shipment"  {% endcomment %}
+              if (shipDate < new Date()) {
+                shippingStatus = 'Shipped'
+              }
+      
+              const tableRow = document.createElement('tr');
+      
+              tableRow.innerHTML = `
+                <td class="text-size-small">${address.name ? address.name : ''}</td>
+                <td>
+                  <div class="text-size-small">
+                    ${address.street1 ? address.street1 + '<br>' : ''}
+                    ${address.street2 ? address.street2 + '<br>' : ''}
+                    ${address.street3 ? address.street3 + '<br>' : ''}
+                    ${address.city ? address.city + ',' : ''} ${address.postalCode ? address.postalCode + ',' : ''} ${address.state ? address.state + ',' : ''} ${address.country ? address.country + '<br>' : ''}
+                  </div>
+                </td>
+                <td class="text-size-small">${shippingStatus}</td>
+                <td class="text-size-small">
+                  ${
+                    shipmentsData.shipments.map(shipment => {
+
+                      const trackingUrl = getTrackingUrl(shipment.trackingNumber, shipment.carrierCode)
+
+                      return `<a class="link" target="_blank" href="${trackingUrl}">${shipment.trackingNumber}</a>`
+                    }).join('<br>')
+                  }
+                </td>
+                <td class="text-size-small">${formattedShipDate}</td>
+              `
+            
+              {% comment %} if last remove loading{% endcomment %}
+              if (index === data.orders.length - 1) {
+                loading.style.display = 'none'
+              }
+            
+
+              table.appendChild(tableRow)
+
+            }).catch(error => {
+              console.log(error)
+            })
+
+          } catch (error) {
+            console.log(error)
+          }
+  
+        })
+  
+      }).catch(error => {
+        console.log(error)
+      })
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
+  const buildTableFromSaleOrders = (saleOrders) => {
+
+    const table = document.getElementById('sos-inventory-table')
+    const loading = document.querySelector('.loading')
+
+    loading.style.display = 'none'
+    table.innerHTML = ''
+
+    if (saleOrders && saleOrders.length) {
+      const tableHeader = document.createElement('tr')
+
+      table.appendChild(tableHeader)
+
+      tableHeader.innerHTML = `
+        <th class="text-size-tiny uppercase text-color-grey-600">Campaign Name</th>
+        <th class="text-size-tiny uppercase text-color-grey-600">Order #</th>
+        <th class="text-size-tiny uppercase text-color-grey-600">Order Date</th>
+        <th class="text-size-tiny uppercase text-color-grey-600"># of boxes left</th>
+        <th class="text-size-tiny uppercase text-color-grey-600">Delivery Status</th>
+        <th class="text-size-tiny uppercase text-color-grey-600">Details</th>
+      `
+
+      saleOrders.forEach(saleOrder => {
+
+        {% comment %} reduce the quantity from saleOrder.lines {% endcomment %}
+        const totalQuantity = saleOrder.lines.reduce((acc, line) => {
+          return acc + line.quantity
+        }, 0)
+
+        let deliveryStatus = 'Not Delivered'
+
+        {% comment %} If any shipment linked shipments, shipment is partially completed {% endcomment %}
+        if (saleOrder && saleOrder.linkedShipments && saleOrder.linkedShipments.length > 0) {
+          deliveryStatus = 'Partially Shipped'
+        }
+
+        {% comment %} Get total of shipped items {% endcomment %}
+        const totalShipped = saleOrder.lines.reduce((acc, line) => {
+          return acc + line.shipped
+        }, 0)
+
+
+        if (totalShipped === totalQuantity) {
+          deliveryStatus = 'Shipped'
+        }
+
+        {% comment %} Format date {% endcomment %}
+        const date = new Date(saleOrder.date)
+        const formattedDate = date.toLocaleDateString('en-CA', { month: 'long', day: 'numeric', year: 'numeric' })   
+
+        const tableRow = document.createElement('tr')
+
+        tableRow.innerHTML = `
+          <td class="text-size-small">${saleOrder.order_number}</td>
+          <td class="text-size-small">${saleOrder.number}</td>
+          <td class="text-size-small">${formattedDate}</td>
+          <td class="text-size-small">${totalQuantity - totalShipped}</td>
+          <td class="text-size-small">${deliveryStatus}</td>
+          <td>
+            <a class="link text-size-small" href="#view-order" data-order-number=${saleOrder.number}>View Order</a>
+          </td>
+        `
+
+        table.appendChild(tableRow)
+        const link = table.querySelector(`[data-order-number='${saleOrder.number}']`)
+        link.addEventListener('click', () => viewOrder({...saleOrder, formattedDate}))
+      })
+
+      {% comment %} Reattach view order modal {% endcomment %}
+      if (window.customFunctions.viewOrder) {
+        window.customFunctions.viewOrder()
+      }
+
+    } else {
+      const tableRow = document.createElement('tr')
+      tableRow.innerHTML = `
+        <td colspan="5">No orders found</td>
+      `
+
+      table.appendChild(tableRow)
+    }
+  }
+
+  getSOSSaleOrdersFromCustomerId()
+</script>
+
+
+{% comment %} const getSOSInventoryCustomer = () => {
+  try {
+    fetch(`${backendURL}/api/sos_customer?id={{ id }}`)
+      .then(response => response.json())
+      .then(data => {
+        window.sosCustomer = data.data;
+      })
+  } catch (error) {
+    console.log(error)
+  }
+} {% endcomment %}

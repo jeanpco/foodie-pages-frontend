@@ -22,8 +22,8 @@
     };
 
     // get links that can open the popup
-    const downloadCatalogueLinks = document.querySelectorAll('a[href*="download-catalogue"]');
-    const contactLinks = document.querySelectorAll('a[href*="contact"]');
+    const downloadCatalogueLinks = [...document.querySelectorAll('a[href*="download-catalogue"]')];
+    const contactLinks = [...document.querySelectorAll('a[href*="contact"]')];
 
     // reveal the download-catalogue form
     downloadCatalogueLinks.forEach(link => {
@@ -41,6 +41,19 @@
       });
     });
 
+    // reveal the view-order form
+
+    window.customFunctions.viewOrder = () => {
+      const viewOrderLinks = [...document.querySelectorAll('a[href*="view-order"]')];
+
+      viewOrderLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+          e.preventDefault();
+          openDialog('view-order');
+        });
+      });
+    };
+
     // reveal the gift-message form
 
     window.customFunctions.attachGiftMessageModalEvent = () => {
@@ -55,6 +68,7 @@
     };
 
     window.customFunctions.attachGiftMessageModalEvent();
+    window.customFunctions.viewOrder();
 
     // close the dialog when clicking on the close button
     dialog.querySelector('.dialog-modal--close').addEventListener('click', (e) => {
@@ -117,6 +131,10 @@
       {% render 'gift-message-form', id: section.id %}
     </div>
 
+    <div class="view-order">
+      {% render 'view-order', id: section.id %}
+    </div>
+
   </div>
 </dialog>
 
@@ -143,6 +161,7 @@
     background: transparent;
     border: none;
     cursor: pointer;
+    z-index: 1;
   }
 
   .dialog-modal-container {
@@ -203,12 +222,14 @@
 
   .download-catalogue-form,
   .contact-form,
+  .view-order,
   .gift-message-form {
     display: none;
   }
 
   .dialog-modal[aria-controls="download-catalogue"] .download-catalogue-form,
   .dialog-modal[aria-controls="contact_form"] .contact-form,
+  .dialog-modal[aria-controls="view-order"] .view-order,
   .dialog-modal[aria-controls="gift-message"] .gift-message-form {
     display: block;
   }
