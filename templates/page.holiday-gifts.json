@@ -67,6 +67,12 @@
         "trusted_by_text": "Trusted by"
       }
     },
+    "540551bc-af60-4262-9fa5-9c86a6e53957": {
+      "type": "image",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/Image_d4a1883a-3e9c-4409-bdd9-df342810f0bb.png"
+      }
+    },
     "823bd50c-3555-4282-8b34-ab0e8584323d": {
       "type": "module-vertical-tabs",
       "disabled": true,
@@ -282,6 +288,7 @@
   },
   "order": [
     "main",
+    "540551bc-af60-4262-9fa5-9c86a6e53957",
     "823bd50c-3555-4282-8b34-ab0e8584323d",
     "05ea480d-037b-4297-9c3d-d6160866116b",
     "b5797203-b142-444b-be2c-d6e9d37312fe",
