@@ -418,8 +418,8 @@
       "type": "product-recommendations",
       "settings": {
         "overline": "Product recommendations",
-        "title": "<p>You may also like<\/p>",
-        "body": "Discover more products that may be of interest to you.",
+        "title": "<p>Favorite Picks<\/p>",
+        "body": "A curated selection from our items",
         "products_to_show": 4,
         "collection": "gift-baskets",
         "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/Frame_43418.png?v=1665521287",
