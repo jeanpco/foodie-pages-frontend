@@ -1,12 +1,12 @@
-{{ 'module-hero.css' | asset_url | stylesheet_tag }}
+{{ 'module-image.css' | asset_url | stylesheet_tag }}
 
 <div class="">
   <div class="">
-    <div class="hero-background">
+    <div class="image-section-background">
       <div class="padding-vertical padding-xlarge">
-        <div class="hero-container padding-horizontal padding-xxlarge mobile-padding-medium rows">
+        <div class="image-section-container padding-horizontal padding-xxlarge mobile-padding-medium">
           {% if section.settings.image %}
-            <div class="hero-image rows">
+            <div class="image-section-image">
               {{ section.settings.image | image_url: width: 800 | image_tag:
                 loading: 'lazy',
                 widths: '550, 720, 990, 1100, 1500, 2200, 3000'
