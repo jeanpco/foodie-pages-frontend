@@ -423,10 +423,10 @@
         "products_to_show": 4,
         "collection": "gift-baskets",
         "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/Frame_43418.png?v=1665521287",
-        "promo_title": "Looking for gifts for your company?",
-        "promo_body": "Whether it's 25 or 2,500 custom gifts, we've done it. Get in touch with our team today.",
-        "promo_cta_text": "Shop now",
-        "promo_cta_link": "shopify:\/\/collections\/gift-baskets"
+        "promo_title": "Let’s create something special together.",
+        "promo_body": "Do you have a complex order in mind, or just want some tips on finding the right gift? Tell us about your gifting needs and a member of our team will get in touch soon.",
+        "promo_cta_text": "Start Order",
+        "promo_cta_link": "#contact"
       }
     }
   },
