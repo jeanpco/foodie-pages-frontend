@@ -16,11 +16,43 @@
             "cta_text": "Corporate gifting",
             "cta_link": "shopify:\/\/pages\/how-it-works"
           }
+        },
+        "04e2f251-3669-4ff7-b4fd-9ef6405238b0": {
+          "type": "trusted_by",
+          "settings": {
+            "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/placeholder-logo.svg?v=1668523184",
+            "icon_alt_text": "Airbnb"
+          }
+        },
+        "a7cc7bf9-c2e3-4ccf-92a0-dcf75e886f7d": {
+          "type": "trusted_by",
+          "settings": {
+            "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/placeholder-logo.svg?v=1668523184",
+            "icon_alt_text": "Airbnb"
+          }
+        },
+        "5421abb9-245e-4488-9677-0c07fd6aeac6": {
+          "type": "trusted_by",
+          "settings": {
+            "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/placeholder-logo.svg?v=1668523184",
+            "icon_alt_text": ""
+          }
+        },
+        "2bc1de12-9a6b-447e-a2ab-89ff92683902": {
+          "type": "trusted_by",
+          "settings": {
+            "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/placeholder-logo.svg?v=1668523184",
+            "icon_alt_text": ""
+          }
         }
       },
       "block_order": [
         "02d55e23-f307-4138-a9bd-10d797daa746",
-        "c048c51b-1b9b-4987-9088-f581437cc840"
+        "c048c51b-1b9b-4987-9088-f581437cc840",
+        "04e2f251-3669-4ff7-b4fd-9ef6405238b0",
+        "a7cc7bf9-c2e3-4ccf-92a0-dcf75e886f7d",
+        "5421abb9-245e-4488-9677-0c07fd6aeac6",
+        "2bc1de12-9a6b-447e-a2ab-89ff92683902"
       ],
       "settings": {
         "overline": "Quick shop",
