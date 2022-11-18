@@ -22,7 +22,7 @@
           "type": "features",
           "settings": {
             "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/placeholder-svg-square.svg?v=1666645913",
-            "title": "Support your values",
+            "title": "Value 1",
             "body": "A commitment to sourcing from small and underrepresented brands and makers.",
             "cta_text": "Learn More",
             "cta_link": "shopify:\/\/pages\/about-us"
@@ -32,7 +32,7 @@
           "type": "features",
           "settings": {
             "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/placeholder-svg-square.svg?v=1666645913",
-            "title": "Let them choose",
+            "title": "Value 2",
             "body": "Free branded landing pages to collect recipient gift preferences and mailing addresses.",
             "cta_text": "Learn More",
             "cta_link": ""
@@ -42,7 +42,7 @@
           "type": "features",
           "settings": {
             "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/placeholder-svg-square.svg?v=1666645913",
-            "title": "Delivered your way",
+            "title": "Value 3",
             "body": "Worldwide fulfillment to one location or 100s of addresses.",
             "cta_text": "Learn More",
             "cta_link": "shopify:\/\/pages\/contact-us"
@@ -52,7 +52,7 @@
           "type": "features",
           "settings": {
             "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/placeholder-svg-square.svg?v=1666645913",
-            "title": "Gift guidance",
+            "title": "Value 4",
             "body": "Expert advice based on data and our 10+ years of experience.",
             "cta_text": "Learn More",
             "cta_link": "shopify:\/\/pages\/experiences"
@@ -71,7 +71,8 @@
         "heading_style": "h2",
         "body": "Choose from a selection of pre-built team care packages, or build your own custom care package. All of our care packages are filled with high quality locally-sourced goods and designed to delight your team.",
         "cta_text": "Learn More",
-        "cta_link": "shopify:\/\/pages\/how-it-works"
+        "cta_link": "shopify:\/\/pages\/how-it-works",
+        "image": "shopify:\/\/shop_images\/Image_5655e50a-9fb2-4b42-bf65-e82938753d53.png"
       }
     },
     "823bd50c-3555-4282-8b34-ab0e8584323d": {
