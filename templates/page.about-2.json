@@ -101,30 +101,12 @@
             "title": "Packaging + Sustainability",
             "body": "We offer a wide range of planet-friendly packaging. From fast turn around stock options to custom-printed mailer boxes and keepsake bags."
           }
-        },
-        "47847899-6a08-4443-881a-c2133258173d": {
-          "type": "tab",
-          "settings": {
-            "overline": "",
-            "title": "Fulfillment + Warehousing",
-            "body": "We're capable of a lot more than just curating! We're a full scale fulfillment and logistics partner too. From shipping, receiving and warehousing to ghost fulfillment and 3PL services, we've got you covered."
-          }
-        },
-        "a25db7f7-6489-43d4-89c5-e1e47404b228": {
-          "type": "tab",
-          "settings": {
-            "overline": "",
-            "title": "Software + Stores",
-            "body": "Ship, track and manage gifts all from your couch (or office chair). No more dusty supply closets or shipping boxes under your desk."
-          }
         }
       },
       "block_order": [
         "db40d850-e629-4e9b-b0e8-d2d20e4414ad",
         "ab7fff74-0668-4779-9c58-a3781089ca61",
-        "2d4083b3-581a-4ade-b225-6f2117a93f50",
-        "47847899-6a08-4443-881a-c2133258173d",
-        "a25db7f7-6489-43d4-89c5-e1e47404b228"
+        "2d4083b3-581a-4ade-b225-6f2117a93f50"
       ],
       "settings": {
         "overline": "How it works",
