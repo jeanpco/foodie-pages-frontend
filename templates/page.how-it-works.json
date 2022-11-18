@@ -163,8 +163,8 @@
           "type": "features",
           "settings": {
             "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/placeholder-svg-square.svg?v=1666645913",
-            "title": "Whats in the box",
-            "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.",
+            "title": "Support your values",
+            "body": "A commitment to sourcing from small and underrepresented brands and makers.",
             "cta_text": "Learn More",
             "cta_link": "shopify:\/\/pages\/about-us"
           }
@@ -173,8 +173,8 @@
           "type": "features",
           "settings": {
             "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/placeholder-svg-square.svg?v=1666645913",
-            "title": "Whats in the box",
-            "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.",
+            "title": "Let them choose",
+            "body": "Free branded landing pages to collect recipient gift preferences and mailing addresses.",
             "cta_text": "Learn More",
             "cta_link": ""
           }
@@ -183,8 +183,8 @@
           "type": "features",
           "settings": {
             "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/placeholder-svg-square.svg?v=1666645913",
-            "title": "Whats in the box",
-            "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.",
+            "title": "Delivered your way",
+            "body": "Worldwide fulfillment to one location or 100s of addresses.",
             "cta_text": "Learn More",
             "cta_link": "shopify:\/\/pages\/contact-us"
           }
@@ -193,8 +193,8 @@
           "type": "features",
           "settings": {
             "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/placeholder-svg-square.svg?v=1666645913",
-            "title": "Whats in the box",
-            "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.",
+            "title": "Gift guidance",
+            "body": "Expert advice based on data and our 10+ years of experience.",
             "cta_text": "Learn More",
             "cta_link": "shopify:\/\/pages\/experiences"
           }
@@ -210,7 +210,7 @@
         "overline": "Quick shop",
         "title": "<p>Values-based sourcing<\/p>",
         "heading_style": "h1",
-        "body": "We're a woman-owned business that partners with other small businesses to curate gifts for all occasions. We prioritize brands that are woman-owned, BIPOC-owned and environmentally sustainable.",
+        "body": "We're a woman-owned business that partners with other incredible businesses to curate gifts for all occasions. We prioritize brands that are woman-owned, BIPOC-owned and environmentally sustainable.",
         "cta_text": "Shop all",
         "cta_link": "shopify:\/\/collections\/all",
         "image": "shopify:\/\/shop_images\/Image_3468c917-9e51-49ab-9d3c-fa357152af3b.png"
