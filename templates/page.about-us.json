@@ -70,9 +70,8 @@
         "title": "<p>Show your team you care<\/p>",
         "heading_style": "h1",
         "body": "Choose from a selection of pre-built team care packages, or build your own custom care package. All of our care packages are filled with high quality locally-sourced goods and designed to delight your team.",
-        "cta_text": "Shop all",
-        "cta_link": "shopify:\/\/collections\/all",
-        "image": "shopify:\/\/shop_images\/Image_3468c917-9e51-49ab-9d3c-fa357152af3b.png"
+        "cta_text": "Learn More",
+        "cta_link": "shopify:\/\/pages\/how-it-works"
       }
     },
     "823bd50c-3555-4282-8b34-ab0e8584323d": {
