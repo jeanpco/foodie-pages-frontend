@@ -88,7 +88,7 @@
       ],
       "settings": {
         "overline": "How it works",
-        "title": "<p>Tired of searching for the <em>perfect gift<\/em>? We’ll make it easy for you.<\/p>",
+        "title": "<p>Tired of searching for the <em>perfect <\/em>gift? We’ll make it easy for you.<\/p>",
         "heading_style": "h2",
         "cta_text": "Get in touch",
         "cta_link": "",
