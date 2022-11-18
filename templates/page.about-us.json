@@ -2,37 +2,17 @@
   "sections": {
     "main": {
       "type": "module-hero",
-      "blocks": {
-        "02d55e23-f307-4138-a9bd-10d797daa746": {
-          "type": "cta",
-          "settings": {
-            "cta_text": "Shop all",
-            "cta_link": ""
-          }
-        },
-        "c048c51b-1b9b-4987-9088-f581437cc840": {
-          "type": "cta",
-          "settings": {
-            "cta_text": "Shop all",
-            "cta_link": ""
-          }
-        }
-      },
-      "block_order": [
-        "02d55e23-f307-4138-a9bd-10d797daa746",
-        "c048c51b-1b9b-4987-9088-f581437cc840"
-      ],
       "settings": {
-        "overline": "Quick shop",
-        "title": "<p>Gifts that celebrate small business<\/p>",
+        "overline": "About us",
+        "title": "<p>Hi, we’re Foodiepages<\/p>",
         "heading_style": "h1",
-        "body": "We source exclusively from small and underrepresented businesses across the country. Sharing their stories and values with you is one of our greatest joys.",
+        "body": "We work directly with emerging Canadian food makers, bakers and chefs to create delicious gift boxes.",
         "image": "shopify:\/\/shop_images\/Screen_Shot_2022-11-15_at_5.04.39_PM.png",
         "enable_card_style": false,
-        "text_vertical_alignment": "flex-end",
-        "layout_style": "rows",
+        "text_vertical_alignment": "center",
+        "layout_style": "two-columns",
         "background_color": "background-color-azul-verdoso-10",
-        "trusted_by_text": "Trusted by"
+        "trusted_by_text": ""
       }
     },
     "823bd50c-3555-4282-8b34-ab0e8584323d": {
