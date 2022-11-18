@@ -77,7 +77,6 @@
     },
     "823bd50c-3555-4282-8b34-ab0e8584323d": {
       "type": "module-vertical-tabs",
-      "disabled": true,
       "blocks": {
         "db40d850-e629-4e9b-b0e8-d2d20e4414ad": {
           "type": "tab",
@@ -129,7 +128,7 @@
       ],
       "settings": {
         "overline": "How it works",
-        "title": "<p>Tired of searching for the <em>perfect <\/em>gift? We’ll make it easy for you.<\/p>",
+        "title": "<p>Exceptional times call for exceptional gifts<\/p>",
         "heading_style": "h2",
         "cta_text": "Get in touch",
         "cta_link": "",
