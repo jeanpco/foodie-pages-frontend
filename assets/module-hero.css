@@ -143,6 +143,8 @@
     width: 100%;
     height: auto;
     aspect-ratio: 550/550;
+    max-height: calc(100vw - 2rem);
+    object-fit: cover;
   }
 }
 

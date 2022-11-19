@@ -40,7 +40,7 @@
             </div>
     
             <div class="field-group">
-              <label class="text-size-tiny uppercase" for="ContactForm-name">{{ settings.contact_form_input_email_label }}</label>
+              <label class="text-size-tiny uppercase" for="ContactForm-name">{{ settings.contact_form_input_message_label }}</label>
     
               <input
                 id="ContactForm-email"
@@ -65,18 +65,18 @@
             </div>
 
             <div class="field-group">
-                  <label class="text-size-tiny uppercase" for="ContactForm-body">{{ settings.contact_form_input_message_label }}</label>
-                  
-                  <textarea
-                        required
-                        rows="3"
-                        id="ContactForm-body"
-                        class="text-area field_input"
-                        name="contact[body]"
-                        placeholder="{{ settings.contact_form_input_message_placeholder }}"
-                  >
-                        {{- form.body -}}
-                  </textarea>
+              <label class="text-size-tiny uppercase" for="ContactForm-body">{{ settings.contact_form_input_name_label }}</label>
+              
+              <textarea
+                required
+                rows="3"
+                id="ContactForm-body"
+                class="text-area field_input"
+                name="contact[body]"
+                placeholder="{{ settings.contact_form_input_name_placeholder }}"
+              >
+                {{- form.body -}}
+              </textarea>
             </div>
     
           </div>

@@ -1377,7 +1377,7 @@
     "settings": [
       {
         "type": "header",
-        "content": "To use this form on one of your CTA (Link\/Button). Have the URL of your CTA point to: 'download-catalogue'"
+        "content": "To use this form on one of your CTA (Link\/Button). Have the URL of your CTA point to: '#download-catalogue'"
       },
       {
         "type": "url",
@@ -1441,7 +1441,7 @@
     "settings": [
       {
         "type": "header",
-        "content": "To use this form on one of your CTA (Link\/Button). Have the URL of your CTA point to: 'contact_form'"
+        "content": "To use this form on one of your CTA (Link\/Button). Have the URL of your CTA point to: '#contact-form'"
       },
       {
         "type": "text",
@@ -1534,6 +1534,101 @@
       {
         "type": "text",
         "id": "gift_message_success_message",
+        "label": "Success Message"
+      }
+    ]
+  },
+  {
+    "name": "Popup - Corporate Contact Form",
+    "settings": [
+      {
+        "type": "header",
+        "content": "To use this form on one of your CTA (Link\/Button). Have the URL of your CTA point to: '#corporate-contact-form'"
+      },
+      {
+        "type": "text",
+        "id": "corporate_contact_form_title",
+        "label": "Title",
+        "default": "Request a quote"
+      },
+      {
+        "type": "textarea",
+        "id": "corporate_contact_form_body",
+        "label": "Body",
+        "default": "Looking for a company-wide event or a one-off gift? We have you covered."
+      },
+      {
+        "type": "header",
+        "content": "Form Settings"
+      },
+      {
+        "type": "text",
+        "id": "corporate_contact_form_input_name_label",
+        "label": "Input Name Label"
+      },
+      {
+        "type": "text",
+        "id": "corporate_contact_form_input_name_placeholder",
+        "label": "Input Name Placeholder"
+      },
+      {
+        "type": "text",
+        "id": "corporate_contact_form_input_email_label",
+        "label": "Input Email Label"
+      },
+      {
+        "type": "text",
+        "id": "corporate_contact_form_input_email_placeholder",
+        "label": "Input Email Placeholder"
+      },
+      {
+        "type": "text",
+        "id": "corporate_contact_form_input_phone_label",
+        "label": "Input Phone Label"
+      },
+      {
+        "type": "text",
+        "id": "corporate_contact_form_input_phone_placeholder",
+        "label": "Input Phone Placeholder"
+      },
+      {
+        "type": "text",
+        "id": "corporate_contact_form_input_company_label",
+        "label": "Input Company Label"
+      },
+      {
+        "type": "text",
+        "id": "corporate_contact_form_input_company_placeholder",
+        "label": "Input Company Placeholder"
+      },
+      {
+        "type": "text",
+        "id": "corporate_contact_form_input_boxes_label",
+        "label": "Input No of Boxes Label"
+      },
+      {
+        "type": "text",
+        "id": "corporate_contact_form_input_budget_label",
+        "label": "Input Budget Label"
+      },
+      {
+        "type": "text",
+        "id": "corporate_contact_form_input_message_label",
+        "label": "Input Message Label"
+      },
+      {
+        "type": "text",
+        "id": "corporate_contact_form_input_message_placeholder",
+        "label": "Input Message Placeholder"
+      },
+      {
+        "type": "text",
+        "id": "corporate_contact_form_cta_text",
+        "label": "Submit CTA Text"
+      },
+      {
+        "type": "text",
+        "id": "corporate_contact_form_success_message",
         "label": "Success Message"
       }
     ]

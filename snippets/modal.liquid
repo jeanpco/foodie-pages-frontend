@@ -24,6 +24,7 @@
     // get links that can open the popup
     const downloadCatalogueLinks = [...document.querySelectorAll('a[href*="download-catalogue"]')];
     const contactLinks = [...document.querySelectorAll('a[href*="contact"]')];
+    const corporateContactLinks = [...document.querySelectorAll('a[href*="corporate-contact"]')];
 
     // reveal the download-catalogue form
     downloadCatalogueLinks.forEach(link => {
@@ -38,6 +39,14 @@
       link.addEventListener('click', (e) => {
         e.preventDefault();
         openDialog('contact_form');
+      });
+    });
+
+    // reveal the corporate contact form
+    corporateContactLinks.forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        openDialog('corporate_contact_form');
       });
     });
 
@@ -124,6 +133,10 @@
     </div>
 
     <div class="contact-form">
+      {% render 'contact-form', id: section.id %}
+    </div>
+
+    <div class="corporate-contact-form">
       {% render 'contact-form', id: section.id %}
     </div>
 
@@ -221,6 +234,7 @@
   }
 
   .download-catalogue-form,
+  .corporate-contact-form,
   .contact-form,
   .view-order,
   .gift-message-form {
@@ -229,6 +243,7 @@
 
   .dialog-modal[aria-controls="download-catalogue"] .download-catalogue-form,
   .dialog-modal[aria-controls="contact_form"] .contact-form,
+  .dialog-modal[aria-controls="corporate_contact_form"] .corporate-contact-form,
   .dialog-modal[aria-controls="view-order"] .view-order,
   .dialog-modal[aria-controls="gift-message"] .gift-message-form {
     display: block;
