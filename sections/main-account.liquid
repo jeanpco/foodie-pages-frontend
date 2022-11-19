@@ -14,57 +14,7 @@
 <div class="account-background">
   <div class="customer account container">
 
-    <aside class="padding-vertical padding-xlarge background-color-grey-100">
-      <div style="height: 100%;" class="padding-right padding-large tablet-padding-0 display-flex flex-direction-column justify-content-between">
-
-        <div class="aside-top-container">
-          {% if customer.metafields.custom.company_logo and is_corporate_client %}
-            <img class="aside-top_logo margin-bottom margin-medium padding-horizontal tablet-padding-large mobile-padding-small" src="{{ customer.metafields.custom.company_logo | file_url }}" alt="Company Logo">
-          {% endif %}          
-  
-          <ul class="aside-navigation padding-horizontal tablet-padding-large mobile-padding-small">
-            <li data-js-element="dashboard" class="aside-navigation_item margin-bottom margin-small">
-              <a class="heading-style-h5 aside-navigation_link text-weight-semibold {% if request.path contains 'account' %}is-active text-color-primary{% else %}text-color-grey-300{% endif %}" href="">Dashboard</a>
-            </li>
-            {% comment %} <li data-js-element="orders" class="aside-navigation_item">
-              <a class="heading-style-h5 aside-navigation_link text-weight-semibold" href="">Order History</a>
-            </li> {% endcomment %}
-          </ul>
-        </div>
-    
-        <div class="aside-bottom-container padding-horizontal tablet-padding-large mobile-padding-small">
-          <div class="account-details margin-bottom margin-large">
-            <h4 class="account-details_title margin-bottom margin-small">{{ 'customer.account.details' | t }}</h4>
-            
-            <div class="account-details_address margin-bottom margin-small">
-              {{ customer.default_address | format_address }}
-            </div>
-      
-            <a class="account-details_view-address link text-size-small" href="{{ routes.account_addresses_url }}">
-              {{ 'customer.account.view_addresses' | t }} ({{ customer.addresses_count }})
-            </a>
-          </div>
-  
-          <div class="account-support margin-bottom margin-large">
-            <h6 class="text-weight-semibold">Need help?</h6>
-            <p class="text-color-grey-700 margin-vertical margin-xsmall">Get in touch with your account manager</p>
-            <a class="link text-size-small" href="#contact">Contact us</a>
-          </div>
-      
-          <div class="logout margin-top mobile-margin-huge">
-            <a class="display-flex align-items-end" href="{{ routes.account_logout_url }}">  
-              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M9.80589 1.82617C5.2919 1.82617 1.63281 5.48526 1.63281 9.99925C1.63281 14.5132 5.2919 18.1723 9.80589 18.1723C14.3199 18.1723 17.979 14.5132 17.979 9.99925C17.979 5.48526 14.3199 1.82617 9.80589 1.82617Z" stroke="#424242" stroke-width="1.22596" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M3.48828 15.1862C3.48828 15.1862 5.31006 12.8601 9.80525 12.8601C14.3004 12.8601 16.123 15.1862 16.123 15.1862M9.80525 9.99955C10.4555 9.99955 11.0792 9.74122 11.539 9.2814C11.9988 8.82157 12.2572 8.19792 12.2572 7.54763C12.2572 6.89734 11.9988 6.27368 11.539 5.81385C11.0792 5.35403 10.4555 5.0957 9.80525 5.0957C9.15496 5.0957 8.53131 5.35403 8.07148 5.81385C7.61166 6.27368 7.35333 6.89734 7.35333 7.54763C7.35333 8.19792 7.61166 8.82157 8.07148 9.2814C8.53131 9.74122 9.15496 9.99955 9.80525 9.99955V9.99955Z" stroke="#424242" stroke-width="1.22596" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>  
-              <span class="margin-left margin-xsmall link">
-                {{ 'customer.log_out' | t }}
-              </span>
-            </a>
-          </div>
-        </div>
-      </div>
-    </aside>
+    {% render 'account-sidebar', customer: customer %}
   
     <div class="main-content padding-vertical padding-xlarge background-color-white">
       <div class="padding-left padding-large tablet-padding-0">

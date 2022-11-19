@@ -1,8 +1,8 @@
-.customer:not(.account):not(.order) {
+/* .customer:not(.account):not(.order) {
   margin: 0 auto;
   max-width: 28.125rem;
   text-align: center;
-}
+} */
 
 .account-background {
   background: linear-gradient(90deg, var(--color-grey-100) 50%, var(--color-white) 50%);
@@ -60,6 +60,18 @@
   }
 }
 
+@media screen and (max-width: 767px) {
+  .fulfillment {
+    align-items: flex-end;
+  }
+
+  [headers="ColumnProduct"] a:not(.track-shipment-link) {
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+  }
+}
+
 @media screen and (max-width: 479px) {
   .customer aside {
     margin-left: -1rem;
@@ -70,10 +82,6 @@
 .customer > h1,
 .customer__title {
   margin-top: 0;
-}
-
-.customer button {
-  margin: 2rem auto;
 }
 
 .customer ul {
@@ -99,7 +107,8 @@
 
 /* Customer Table */
 .customer table,
-#single-order-table {
+#single-order-table,
+.order-details {
   table-layout: auto;
   border-collapse: collapse;
   border: 1px solid var(--color-grey-200);
@@ -109,13 +118,15 @@
 }
 
 .customer table .thead-tr-th,
-#single-order-table .thead-tr-th {
+#single-order-table .thead-tr-th,
+.order-details .thead-tr-th {
   padding-left: 0;
   text-align: left;
 }
 
 .customer table .thead-tr-th:first-child,
-#single-order-table .thead-tr-th:first-child {
+#single-order-table .thead-tr-th:first-child,
+.order-details .thead-tr-th:first-child {
   padding: 1.5rem;
 }
 
@@ -168,7 +179,8 @@
   }
 
   .customer table,
-  #single-order-table {
+  #single-order-table,
+  .order-details {
     border: unset;
   }
 }
@@ -378,8 +390,8 @@
 .activate button[name='decline'],
 .addresses li > button,
 .addresses form button[type] {
-  background-color: rgba(var(--color-background), var(--alpha-button-background));
-  color: var(--color-primary);
+  /* background-color: rgba(var(--co/lor-background), var(--alpha-button-background)); */
+  /* color: var(--color-primary); */
 }
 
 @media only screen and (min-width: 750px) {
@@ -436,6 +448,11 @@
   padding: 0.5rem 1rem;
   text-decoration: none;
   border: 2px solid var(--color-grey-200);
+}
+
+.account table td:first-of-type .track-shipment-link {
+  padding: 0;
+  border: unset;
 }
 
 .order td:first-of-type {
@@ -596,42 +613,10 @@
   font-size: 1.3rem;
 }
 
-/* Addresses */
-.addresses li > button {
-  margin-left: 0.5rem;
-  margin-right: 0.5rem;
-}
-
-.addresses li > button + button,
-.addresses form button + button {
-  margin-top: 0rem;
-}
-
 @media screen and (min-width: 750px) {
   .addresses li > button:first-of-type {
     margin-top: 3rem;
   }
-}
-
-.addresses form button:first-of-type {
-  margin-right: 1rem;
-}
-
-label[for='AddressCountryNew'],
-label[for='AddressProvinceNew'] {
-  display: block;
-  font-size: 1.4rem;
-  margin-bottom: 0.6rem;
-}
-
-.addresses form {
-  display: flex;
-  flex-flow: row wrap;
-}
-
-.addresses form > div {
-  width: 100%;
-  text-align: left;
 }
 
 .addresses ul {
@@ -640,9 +625,7 @@ label[for='AddressProvinceNew'] {
   text-align: center;
 }
 
-li[data-address] {
-  margin-top: 5rem;
-}
+
 
 .addresses [aria-expanded='false'] ~ div[id] {
   display: none;
@@ -656,6 +639,10 @@ li[data-address] {
   text-align: left;
 }
 
+li[data-address] {
+  border-top: 1px solid var(--color-grey-200);
+}
+
 li[data-address] > h2 {
   text-align: center;
   font-size: calc(var(--font-heading-scale) * 1.8rem);
@@ -666,34 +653,4 @@ li[data-address] > h2 {
   li[data-address] > h2 {
     font-size: calc(var(--font-heading-scale) * 2.2rem);
   }
-}
-
-.addresses ul p {
-  margin-bottom: 0;
-}
-
-.addresses input[type='checkbox'] {
-  margin-top: 2rem;
-  margin-left: 0;
-}
-
-@media only screen and (min-width: 750px) {
-  .addresses form > div:nth-of-type(1) {
-    margin-right: 2rem;
-  }
-
-  .addresses form > div:nth-of-type(2) {
-    margin-top: 0;
-  }
-
-  .addresses form > div:nth-of-type(1),
-  .addresses form > div:nth-of-type(2) {
-    box-sizing: border-box;
-    flex-basis: calc(50% - 1rem);
-  }
-}
-
-.addresses form > div:nth-of-type(7),
-.addresses form > div:nth-of-type(7) + div[id] {
-  margin-top: 1.5rem;
 }

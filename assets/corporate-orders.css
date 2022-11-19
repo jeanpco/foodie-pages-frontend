@@ -27,11 +27,13 @@
 }
 
 #sos-inventory-table tr,
-#single-order-table tr {
+#single-order-table tr,
+.order-details tr {
   border-top: 1px solid var(--color-grey-200);
 }
 
-#single-order-table .icon-error {
+#single-order-table .icon-error,
+.order-details .icon-error {
   width: 1.5rem;
   margin-right: 1rem;
 }
@@ -39,34 +41,42 @@
 #sos-inventory-table th:first-child,
 #sos-inventory-table td:first-child,
 #single-order-table th:first-child,
-#single-order-table td:first-child {
+#single-order-table td:first-child,
+.order-details th:first-child,
+.order-details td:first-child {
   padding: 1.5rem;
 }
 
 #sos-inventory-table td:last-child,
 #sos-inventory-table th:last-child,
 #single-order-table td:last-child,
-#single-order-table th:last-child {
+#single-order-table th:last-child,
+.order-details td:last-child,
+.order-details th:last-child {
   padding-right: 1.5rem;
 }
 
 #sos-inventory-table th,
 #sos-inventory-table td,
 #single-order-table th,
-#single-order-table td {
+#single-order-table td,
+.order-details th,
+.order-details td {
   padding: 1rem 0;
   text-align: left;
 }
 
 @media screen and (max-width: 1100px) {
   #sos-inventory-table tr,
-  #single-order-table tr {
+  #single-order-table tr,
+  .order-details tr {
     border-top: unset;
     border-bottom: 1px solid var(--color-grey-200);
   }
 
   #sos-inventory-table,
-  #single-order-table {
+  #single-order-table,
+  .order-details {
     padding-bottom: 2rem;
   }
 }
@@ -74,13 +84,23 @@
 @media screen and (max-width: 749px) {
 
   #sos-inventory-table,
-  #single-order-table {
+  .order-details {
     display: flex;
   }
 
+  .order-details {
+    flex-wrap: wrap;
+  }
+
   #sos-inventory-table > *,
-  #single-order-table > * {
+  #single-order-table > *,
+  .order-details > * {
     flex: 1;
+  }
+
+  .order-details > * {
+    width: 100%;
+    flex: unset;
   }
 
   #sos-inventory-table th,
@@ -94,7 +114,9 @@
   #sos-inventory-table th,
   #sos-inventory-table td,
   #single-order-table th,
-  #single-order-table td {
+  #single-order-table td,
+  .order-details th,
+  .order-details td {
     padding: 0.5rem 0 1rem !important;
   }
 }
@@ -118,7 +140,7 @@
   height: calc(100% - 1rem);
   border: 1px solid var(--color-grey-200);
   border-radius: 1rem;
-  background: var(--color-white);
+  background: rgba(255,255,255,0.8);
   display: flex;
   align-items: center;
   justify-content: center;

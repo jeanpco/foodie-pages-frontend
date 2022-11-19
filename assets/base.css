@@ -1080,16 +1080,13 @@ details[open] > .share-button__fallback {
 .customer select {
   -webkit-appearance: none;
   appearance: none;
-  background-color: rgb(var(--color-background));
   color: var(--color-primary);
   width: 100%;
   box-sizing: border-box;
-  transition: box-shadow var(--duration-short) ease;
-  border-radius: var(--inputs-radius);
-  min-height: calc(var(--inputs-border-width) * 2);
-  min-width: calc(7rem + (var(--inputs-border-width) * 2));
+  border-radius: 4px;
+  min-height: 2.5rem;
   position: relative;
-  border: 0;
+  border: 1px solid var(--color-grey-200);
 }
 
 .field:before,
@@ -1185,16 +1182,15 @@ details[open] > .share-button__fallback {
   pointer-events: none;
   position: absolute;
   top: calc(50% - 0.2rem);
-  right: calc(var(--inputs-border-width) + 1.5rem);
+  right: 1rem;
 }
 
 .select__select,
 .customer select {
   cursor: pointer;
   line-height: calc(1 + 0.6 / var(--font-body-scale));
-  padding: 0 2rem;
-  margin: var(--inputs-border-width);
-  min-height: calc(var(--inputs-border-width) * 2);
+  padding: 0.5rem 1rem;
+  min-height: 2.5rem;
 }
 
 /* Field */
@@ -1641,11 +1637,6 @@ input[type='checkbox'] {
   align-items: center;
 }
 
-.header--mobile {
-  padding-top: 1rem !important;
-  padding-bottom: 1rem !important;
-}
-
 @media screen and (min-width: 990px) {
   .header--top-left,
   .header--middle-left:not(.header--has-menu) {
@@ -1732,6 +1723,11 @@ input[type='checkbox'] {
 
   .header--mobile-left {
     grid-template-columns: auto 2fr 1fr;
+  }
+
+  .header--mobile {
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
   }
 }
 
@@ -2047,9 +2043,15 @@ details[open] > .header__submenu {
 }
 
 .header__menu-item {
-  padding: 1.2rem;
+  padding: 1.2rem 0.5rem;
   text-decoration: none;
   color: var(--color-secondary);
+}
+
+@media screen and (min-width: 1100px) {
+  .header__menu-item {
+    padding: 1.2rem;
+  }
 }
 
 .header__menu-item:hover {

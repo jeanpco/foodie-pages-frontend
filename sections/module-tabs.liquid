@@ -29,21 +29,29 @@
       <div class="module-tab_tabs-content margin-top margin-large padding-large background-color-grey-50">
         {% for block in section.blocks %}
           <div data-index="{{ forloop.index0 }}" data-js-element="tab-content" class="module-tab_tabs-block {% if forloop.first %}is-active{% endif %}">
-            <div class="tab-block_img margin-bottom mobile-margin-small">
-              {{ block.settings.image | image_url: width: 800 | image_tag:
-                loading: 'lazy',
-                widths: '550, 720, 990, 1100, 1500, 2200, 3000'
-              }}
-            </div>
+            {% if block.settings.image != blank %}
+              <div class="tab-block_img margin-bottom mobile-margin-small">
+                {{ block.settings.image | image_url: width: 800 | image_tag:
+                  loading: 'lazy',
+                  widths: '550, 720, 990, 1100, 1500, 2200, 3000'
+                }}
+              </div>
+            {% endif %}
             <div class="tab-block_content">
-              <h3 class="heading-style-h2 margin-bottom margin-small">{{ block.settings.title }}</h3>
-              <p class="text-color-grey-500 margin-bottom margin-medium">{{ block.settings.body }}</p>
-              <a 
-                class="button secondary margin-top mobile-margin-xsmall" 
-                href="{{ block.settings.cta_link }}"
-              >
-                <span>{{ block.settings.cta_text }}</span>
-              </a>
+              {% if block.settings.title != blank %}
+                <h3 class="heading-style-h2 margin-bottom margin-small">{{ block.settings.title }}</h3>
+              {% endif %}
+              {% if block.settings.body != blank %}
+                <p class="text-color-grey-500 margin-bottom margin-medium">{{ block.settings.body }}</p>
+              {% endif %}
+              {% if block.settings.cta_link != blank and block.settings.cta_text != blank %}
+                <a 
+                  class="button secondary margin-top mobile-margin-xsmall" 
+                  href="{{ block.settings.cta_link }}"
+                >
+                  <span>{{ block.settings.cta_text }}</span>
+                </a>
+              {% endif %}
             </div>
           </div>
         {% endfor %}    

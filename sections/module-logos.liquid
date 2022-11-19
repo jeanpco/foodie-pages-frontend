@@ -1,7 +1,7 @@
 {% assign overline = section.settings.overline %}
 
 <div style="overflow: hidden;">
-  <div class="module-logos container" data-js-element="logos-module-{{ section.id }}">
+  <div class="module-logos" data-js-element="logos-module-{{ section.id }}">
     <div class="margin-vertical margin-huge">
       <div class="padding-bottom padding-xlarge">
         {% render 'module-header', 
@@ -12,25 +12,66 @@
         %}
       </div>
 
-      <div>
-        <div class="marquee3k" data-speed="0.5" data-reverse="">
-
-            <div class="module-logos">
-              {% for block in section.blocks %}
-                <img src="{{ block.settings.icon_url }}" class="logos-client-logo margin-right margin-large" alt="Quote Icon" />
-              {% endfor %}
-            </div>
+      <div class="module-logos marquee">
+        <div>
+          {% for block in section.blocks %}
+            <img src="{{ block.settings.icon_url }}" class="logos-client-logo margin-right margin-large" alt="Quote Icon" />
+          {% endfor %}
         </div>
       </div>
     </div>
   </div>
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/marquee3000@1.1.1/marquee3k.min.js"></script>
+<style>
+
+  .marquee {
+    overflow: hidden;
+    display: flex;
+  }
+
+  .marquee > div {
+    display: flex;
+    min-width: max-content;
+  }
+
+  .logos-client-logo {
+    height: 2.5rem;
+    width: auto;
+    display: block;
+    white-space: nowrap;
+  }
+</style>
 
 <script type="module">
-  // @jeanpco TODO: on mobile, the spacing is off between logos
-  Marquee3k.init();
+  
+  function Marquee(selector, speed) {
+    const parentSelector = document.querySelector(selector);
+    const clone = parentSelector.innerHTML;
+    const firstElement = parentSelector.children[0];
+    let i = 0;
+
+    parentSelector.insertAdjacentHTML('beforeend', clone);
+    parentSelector.insertAdjacentHTML('beforeend', clone);
+  
+    setInterval(function () {
+      firstElement.style.marginLeft = `-${i}px`;
+
+      if (i > firstElement.clientWidth) {
+        i = 0;
+      }
+      i = i + speed;
+    }, 0);
+  }
+  
+  //after window is completed load
+  //1 class selector for marquee
+  //2 marquee speed 0.2
+  window.addEventListener('load', () => {
+    Marquee('.marquee', 0.2)
+  })  
+
+
 </script> 
 
 {% schema %}
