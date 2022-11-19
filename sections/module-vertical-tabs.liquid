@@ -1,9 +1,9 @@
 <div class="vertical-tabs container">
   <div class="vertical-tabs-container padding-vertical padding-huge display-flex justify-content-between">
-    <div class="vertical-tabs_header display-flex flex-direction-column justify-content-between padding-right padding-huge tablet-padding-0">
+    <div class="vertical-tabs_header display-flex flex-direction-column justify-content-between padding-right {% if section.settings.image != blank %}padding-large{% else %}padding-huge{% endif %} tablet-padding-0">
       <div class="vertical-tabs_header--top">
 
-        {% if section.settings.title != blank %}
+        {% if section.settings.title != blank and section.settings.image == blank %}
           {% render 'module-header', 
             overline: section.settings.overline, 
             title: section.settings.title,
@@ -14,9 +14,18 @@
           %}
         {% endif %}
 
+        {% if section.settings.image != blank %}
+          <div class="vertical-tabs_image">
+            {{ section.settings.image | image_url: width: 800 | image_tag:
+              loading: 'lazy',
+              widths: '550, 720, 990, 1100, 1500, 2200, 3000'
+            }}
+          </div>
+        {% endif %}
+
       </div>
 
-      {% if section.settings.body != blank or section.settings.secondary_cta_text != blank %}
+      {% if section.settings.body != blank or section.settings.secondary_cta_text != blank and section.settings.image == blank %}
         <div class="vertical-tabs_header--bottom is-desktop margin-top margin-xlarge">
           {% if section.settings.body != blank %}
             <p class="text-size-medium text-color-grey-500 margin-bottom margin-small">{{ section.settings.body }}</p>
@@ -26,36 +35,50 @@
           {% endif %}
         </div>
       {% endif %}
-
     </div>
 
     {% assign numberOfAccordionItems = section.blocks | size %}
 
-    {% if numberOfAccordionItems > 0 %}
-      <div class="vertical-tabs_content" data-js-element="accordion--{{ section.id }}">
-        {% for block in section.blocks %}
-          <div class="accordion-block padding-small {% if forloop.first %}is-active{% endif %}" data-js-element="accordion-item">
-            <div class="accordion-block_container padding-xsmall">
-              {% render 'icon-accordion-arrow' %}
-              <p class="accordion-block_overline uppercase text-size-tiny text-color-tertiary margin-bottom margin-xsmall">{{ block.settings.overline }}</p>
-              <h4 class="accordion-block_title">{{ block.settings.title }}</h4>
-              <div class="accordion-block_body margin-top margin-small">{{ block.settings.body }}</div>
+    <div class="vertical-tabs_wrapper">
+      {% if section.settings.image and section.settings.title != blank %}
+        <div class="margin-bottom margin-medium">
+          {% render 'module-header', 
+            overline: section.settings.overline, 
+            title: section.settings.title,
+            text_horizontal_alignment: 'left',
+            heading_style: section.settings.heading_style,
+            cta_text: section.settings.cta_text,
+            cta_link: section.settings.cta_link
+          %}
+        </div>
+      {% endif %}
+    
+      {% if numberOfAccordionItems > 0 %}
+        <div class="vertical-tabs_content" data-js-element="accordion--{{ section.id }}">
+          {% for block in section.blocks %}
+            <div class="accordion-block padding-small {% if forloop.first %}is-active{% endif %}" data-js-element="accordion-item">
+              <div class="accordion-block_container padding-xsmall">
+                {% render 'icon-accordion-arrow' %}
+                <p class="accordion-block_overline uppercase text-size-tiny text-color-tertiary margin-bottom margin-xsmall">{{ block.settings.overline }}</p>
+                <h4 class="accordion-block_title">{{ block.settings.title }}</h4>
+                <div class="accordion-block_body margin-top margin-small">{{ block.settings.body }}</div>
+              </div>
             </div>
-          </div>
-        {% endfor %}
-      </div>
-    {% endif %}
-
-    {% if section.settings.body != blank or section.settings.secondary_cta_text != blank %}
-      <div class="vertical-tabs_header--bottom is-mobile margin-top margin-xlarge">
-        {% if section.settings.body != blank %}
-          <p class="text-size-medium text-color-grey-500 margin-bottom margin-small">{{ section.settings.body }}</p>
-        {% endif %}
-        {% if section.settings.secondary_cta_text != blank and section.settings.secondary_cta_link != blank %}
-          <a href="{{ section.settings.secondary_cta_link }}">{{ section.settings.secondary_cta_text }}</a>
-        {% endif %}
-      </div>
-    {% endif %}
+          {% endfor %}
+        </div>
+      {% endif %}
+  
+      {% if section.settings.body != blank or section.settings.secondary_cta_text != blank %}
+        <div class="vertical-tabs_header--bottom is-mobile margin-top margin-xlarge">
+          {% if section.settings.body != blank %}
+            <p class="text-size-medium text-color-grey-500 margin-bottom margin-small">{{ section.settings.body }}</p>
+          {% endif %}
+          {% if section.settings.secondary_cta_text != blank and section.settings.secondary_cta_link != blank %}
+            <a href="{{ section.settings.secondary_cta_link }}">{{ section.settings.secondary_cta_text }}</a>
+          {% endif %}
+        </div>
+      {% endif %}
+    </div>
   </div>
 </div>
 
@@ -108,15 +131,35 @@
     width: 47%;
   }
 
-  .vertical-tabs_content {
+  .vertical-tabs_wrapper {
     width: 53%;
   }
 
-  @media screen and (max-width: 769px) {
+  .vertical-tabs_content {
+    width: 100%;
+  }
+
+  .vertical-tabs_image img {
+    border-radius: 1rem;
+    aspect-ratio: 1/1;
+    object-fit: contain;
+    max-height: 40rem;
+    margin-top: 2.5rem;
+  }
+
+  @media screen and (max-width: 990px) {
 
     .vertical-tabs_header,
-    .vertical-tabs_content {
+    .vertical-tabs_wrapper {
       width: 100%;
+    }
+
+    .vertical-tabs_image img {
+      border-radius: 1rem;
+      aspect-ratio: 1/1;
+      object-fit: contain;
+      max-height: calc(100vw - 2rem);
+      margin-top: 0rem;
     }
 
     .vertical-tabs-container {

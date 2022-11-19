@@ -14,14 +14,16 @@
     {%- capture sizes -%}(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 | divided_by: 2 }}px, (min-width: 750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2){%- endcapture -%}
 
     <div class="features-content margin-top margin-xlarge display-flex justify-content-between align-items-center">
-      <div class="features-content_image">
-        {{ section.settings.image | image_url: width: 1500 | image_tag:
-          loading: 'lazy',
-          sizes: sizes,
-          widths: '165, 360, 535, 750, 1070, 1500'
-        }}
-      </div>
-      <div class="features-content_blocks display-flex flex-wrap padding-vertical padding-large gap-1 tablet-padding-0">
+      {% if section.settings.image != blank %}
+        <div class="features-content_image">
+          {{ section.settings.image | image_url: width: 1500 | image_tag:
+            loading: 'lazy',
+            sizes: sizes,
+            widths: '165, 360, 535, 750, 1070, 1500'
+          }}
+        </div>
+      {% endif %}
+      <div class="features-content_blocks {% if section.settings.image == blank %}no-image{% endif %} display-flex flex-wrap {% if section.settings.image != blank %}padding-vertical padding-large{% endif %} gap-1 tablet-padding-0">
         {% for block in section.blocks %}
           <div class="features-block display-flex flex-direction-column gap-1 align-items-start">
             <img src="{{ block.settings.icon_url }}" alt="{{ block.settings.title }}">
@@ -59,6 +61,10 @@
     width: calc(50% - 1rem);
   }
 
+  .features-content_blocks.no-image > div {
+    width: calc(25% - 0.75rem);
+  }
+
   .features-content_image img {
     width: 100%;
     height: auto;
@@ -68,6 +74,10 @@
   }
 
   @media screen and (max-width: 991px) {
+
+    .features-content_blocks.no-image > div {
+      width: calc(50% - 1rem);
+    }
 
     .features-content_blocks {
       row-gap: 1rem;
@@ -91,7 +101,8 @@
   }
 
   @media screen and (max-width: 479px) {
-    .features-content_blocks > div {
+    .features-content_blocks > div,
+    .features-content_blocks.no-image > div {
       width: 100%;
     }
 
