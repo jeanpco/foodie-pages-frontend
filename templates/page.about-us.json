@@ -80,15 +80,15 @@
         "db40d850-e629-4e9b-b0e8-d2d20e4414ad": {
           "type": "tab",
           "settings": {
-            "overline": "Step 1",
-            "title": "Design + Development",
-            "body": "Our experienced team of curators will ask about your objectives and budget before creating a custom gifting proposal that is tailored to your needs. From the products to the packaging, we’ll create something that reflects your brand, goals and values."
+            "overline": "",
+            "title": "Celebrating Makers",
+            "body": "We are committed to sourcing small. We work with 100s of small, independently-owned businesses, most of them woman-owned. We care about the stories behind each product and the passion that drives entrepreneurs from idea to launch."
           }
         },
         "ab7fff74-0668-4779-9c58-a3781089ca61": {
           "type": "tab",
           "settings": {
-            "overline": "Step 2",
+            "overline": "",
             "title": "Sourcing + Production",
             "body": "Our in-house procurement and design team sources premium products from small and underrepresented brands across the country, and can put your logo on trendy, high quality items that recipients will appreciate and remember."
           }
@@ -126,7 +126,7 @@
         "a25db7f7-6489-43d4-89c5-e1e47404b228"
       ],
       "settings": {
-        "overline": "How it works",
+        "overline": "How we see it",
         "title": "<p>We're all in on <em>small<\/em> brands.<\/p>",
         "heading_style": "h2",
         "image": "shopify:\/\/shop_images\/Image_3468c917-9e51-49ab-9d3c-fa357152af3b.png",
