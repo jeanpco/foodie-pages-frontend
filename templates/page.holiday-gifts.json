@@ -218,10 +218,10 @@
     "product-recommendations": {
       "type": "product-recommendations",
       "settings": {
-        "overline": "Product recommendations",
-        "title": "<p>Favorite Picks<\/p>",
+        "overline": "Corporate gifting",
+        "title": "<p>Top Holiday Picks<\/p>",
         "body": "A curated selection from our items",
-        "collection": "gift-baskets",
+        "collection": "holiday-gift-baskets",
         "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/Frame_43418.png?v=1665521287",
         "promo_title": "Let’s create something special together.",
         "promo_body": "Do you have a complex order in mind, or just want some tips on finding the right gift? Tell us about your gifting needs and a member of our team will get in touch soon.",
