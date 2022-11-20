@@ -324,6 +324,10 @@
     {{ 'general-utilities.css' | asset_url | stylesheet_tag }}
     {{ 'icons.css' | asset_url | stylesheet_tag }}
 
+    {% if request.path == '/a/ms/cart/' %}
+      {{ 'multi-ship.css' | asset_url | stylesheet_tag }}
+    {% endif %}
+
     <style>
       .icon-next-arrow,
       .icon-prev-arrow {
@@ -351,9 +355,6 @@
 
     {% comment %} {% section 'announcement-bar' %} {% endcomment %}
     {% section 'header' %}
-
-    <h2>{{ request.path }}</h2>
-    <h2>{{ request.host }}</h2>
     
     <main id="MainContent" class="content-for-layout focus-none" role="main" tabindex="-1">
       {{ content_for_layout }}
