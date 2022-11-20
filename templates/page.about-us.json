@@ -104,13 +104,14 @@
         "47847899-6a08-4443-881a-c2133258173d": {
           "type": "tab",
           "settings": {
-            "overline": "Step 4",
-            "title": "Fulfillment + Warehousing",
-            "body": "We're capable of a lot more than just curating! We're a full scale fulfillment and logistics partner too. From shipping, receiving and warehousing to ghost fulfillment and 3PL services, we've got you covered."
+            "overline": "",
+            "title": "Consciously Crafted",
+            "body": ""
           }
         },
         "a25db7f7-6489-43d4-89c5-e1e47404b228": {
           "type": "tab",
+          "disabled": true,
           "settings": {
             "overline": "Step 5",
             "title": "Software + Stores",
@@ -189,11 +190,11 @@
         "81289acb-6a37-4c70-84ec-d781a6d0b072"
       ],
       "settings": {
-        "overline": "About us",
+        "overline": "meet the makers",
         "title": "Partner Spotlight",
         "body": "We get excited about brands that resonate deeply with our customers.",
-        "cta_text": "Get a quote",
-        "cta_link": "#contact",
+        "cta_text": "Shop Gift Boxes",
+        "cta_link": "shopify:\/\/collections\/gift-baskets",
         "heading_style": "h2"
       }
     },
