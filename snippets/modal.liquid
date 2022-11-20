@@ -22,9 +22,9 @@
     };
 
     // get links that can open the popup
-    const downloadCatalogueLinks = [...document.querySelectorAll('a[href*="download-catalogue"]')];
-    const contactLinks = [...document.querySelectorAll('a[href*="contact"]')];
-    const corporateContactLinks = [...document.querySelectorAll('a[href*="corporate-contact"]')];
+    const downloadCatalogueLinks = [...document.querySelectorAll('a[href*="#download-catalogue"]')];
+    const contactLinks = [...document.querySelectorAll('a[href*="#contact"]')];
+    const corporateContactLinks = [...document.querySelectorAll('a[href*="#corporate-contact"]')];
 
     // reveal the download-catalogue form
     downloadCatalogueLinks.forEach(link => {

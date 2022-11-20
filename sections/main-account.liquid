@@ -18,7 +18,9 @@
   
     <div class="main-content padding-vertical padding-xlarge background-color-white">
 
-      {% render 'alert-banner', title: section.settings.alert_text %}
+      <div class="alert-container margin-left margin-large tablet-margin-0">
+        {% render 'alert-banner', title: section.settings.alert_text %}
+      </div>
 
       <div class="padding-left padding-large tablet-padding-0">
         <p class="text-size-medium margin-bottom margin-medium">Hi {{ customer.name }}, welcome to your account!</p>
@@ -127,6 +129,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+
+  .alert-container {
+    max-width: 34rem;
   }
 
 </style>
