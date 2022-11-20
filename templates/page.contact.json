@@ -8,11 +8,12 @@
     "form": {
       "type": "contact-form",
       "settings": {
-        "heading": "Contact form",
+        "image": "shopify:\/\/shop_images\/Screen_Shot_2022-11-15_at_4.14.28_PM.png",
         "contact_form_input_name_label": "Name",
         "contact_form_input_name_placeholder": "Enter your name",
         "contact_form_input_email_label": "Email",
         "contact_form_input_email_placeholder": "Enter your email",
+        "contact_form_reason_label": "Reason of inquiry",
         "contact_form_input_message_label": "Message",
         "contact_form_input_message_placeholder": "How can we help?",
         "contact_form_cta_text": "Send your inquiry",
