@@ -4,9 +4,9 @@
       "type": "module-hero",
       "settings": {
         "overline": "About us",
-        "title": "<p>Hi, we’re Foodiepages<\/p>",
+        "title": "<p>Hi, we’re foodiepages<\/p>",
         "heading_style": "h2",
-        "body": "We work directly with emerging Canadian food makers, bakers and chefs to create delicious gift boxes.",
+        "body": "Since day one, our goal has been to help people discover and connect with awesome, under-the radar brands. A few sleepless nights, 10 years, and a growing team, we’re still at it. We look forward to being your destination for gifts with intention.",
         "image": "shopify:\/\/shop_images\/Image_5655e50a-9fb2-4b42-bf65-e82938753d53.png",
         "enable_card_style": false,
         "text_vertical_alignment": "center",
@@ -67,9 +67,9 @@
       ],
       "settings": {
         "overline": "Corporate Gifting",
-        "title": "<p>Show your team you care<\/p>",
+        "title": "<p>The <em>best<\/em> gifting service in Canada<\/p>",
         "heading_style": "h2",
-        "body": "Choose from a selection of pre-built team care packages, or build your own custom care package. All of our care packages are filled with high quality locally-sourced goods and designed to delight your team.",
+        "body": "We cut through the noise so you don't have to, seeking out products with heart and soul, and bringing small and underrepresented makers to the forefront. Here are a few things we've always believed to be important.",
         "cta_text": "Learn More",
         "cta_link": "shopify:\/\/pages\/how-it-works"
       }
