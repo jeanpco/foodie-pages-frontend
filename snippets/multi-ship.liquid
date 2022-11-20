@@ -3,6 +3,7 @@
     {% comment %} for each element with a class of "button", take the innerText, and place it into a newly created span element that lives inside of the button element {% endcomment %}
     document.querySelectorAll('.button').forEach((button) => {
       const buttonText = button.innerText;
+      button.innerText = '';
       const span = document.createElement('span');
       span.innerText = buttonText;
       button.appendChild(span);
