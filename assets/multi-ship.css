@@ -54,9 +54,22 @@
 }
 
 /* max-width 600 media query */
-@media (max-width: 600px) {
+@media (max-width: 670px) {
   .ms__cart-image-wrapper {
     width: 25% !important;
     padding-right: 1rem !important;
+  }
+
+  #gsModalContainer .ms__qty-wrapper, #gsMultishippingPage .ms__qty-wrapper {
+    width: calc(25% - 0.75rem) !important;
+  }
+
+  #gsModalContainer .ms__address-wrapper, #gsMultishippingPage .ms__address-wrapper {
+    width: calc(75% - 0.75rem) !important;
+    margin-left: 1.5rem;
+  }
+
+  .ms__remove-wrapper {
+    padding-left: 0;
   }
 }
