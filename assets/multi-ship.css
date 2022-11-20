@@ -61,12 +61,12 @@
   }
 
   #gsModalContainer .ms__qty-wrapper, #gsMultishippingPage .ms__qty-wrapper {
-    width: calc(25% - 0.75rem) !important;
+    width: calc(25% - 0.5rem) !important;
   }
 
   #gsModalContainer .ms__address-wrapper, #gsMultishippingPage .ms__address-wrapper {
-    width: calc(75% - 0.75rem) !important;
-    margin-left: 1.5rem;
+    width: calc(75% - 0.5rem) !important;
+    margin-left: 1rem !important;
   }
 
   .ms__remove-wrapper {
