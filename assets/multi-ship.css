@@ -7,12 +7,12 @@
 }
 
 .ms__cart-qty:focus {
-  outline: none;
+  outline: none !important;
 }
 
 #gsModalContainer .ms__set-shipping-address:hover,
 #gsMultishippingPage .ms__set-shipping-address:hover {
-  background: var(--color-tertiary);
+  background: var(--color-tertiary) !important;
 }
 
 #gsModalContainer .ms__field-input,
@@ -21,7 +21,7 @@
 #gsMultishippingPage .ms__field-input,
 #gsMultishippingPage input[type='text'].ms__field-input,
 #gsMultishippingPage select.ms__field-input {
-  border-color: var(--color-grey-200);
+  border-color: var(--color-grey-200) !important;
 }
 
 .ms__line-error {
@@ -30,4 +30,13 @@
 
 .ms__shadow-box {
   box-shadow: unset !important;
+  border-color: var(--color-grey-100) !important;
+}
+
+.ms__item-title {
+  margin-bottom: 1rem;
+}
+
+#gsModalContainer .ms__validate-line, #gsMultishippingPage .ms__validate-line {
+  padding-left: 0;
 }
