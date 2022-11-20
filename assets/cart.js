@@ -30,7 +30,10 @@ class CartItems extends HTMLElement {
     }, 300);
 
     this.addEventListener('change', this.debouncedOnChange.bind(this));
-    this.giftMessageFormElement.addEventListener('submit', this.onGiftMessageFormSubmit.bind(this));
+
+    if (this.giftMessageFormElement) {
+      this.giftMessageFormElement.addEventListener('submit', this.onGiftMessageFormSubmit.bind(this));
+    }
 
     this.initGiftMessage()
   }
