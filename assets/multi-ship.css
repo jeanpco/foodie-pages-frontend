@@ -46,4 +46,9 @@
   text-transform: uppercase !important;
   text-align: left !important;
   color: var(--color-grey-600) !important;
+  font-weight: 400 !important;
+}
+
+.h5 .cart__subtotal {
+  margin-left: 1rem;
 }
