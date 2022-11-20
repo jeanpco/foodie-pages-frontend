@@ -23,3 +23,7 @@
 #gsMultishippingPage select.ms__field-input {
   border-color: var(--color-grey-200);
 }
+
+.ms__line-error {
+  border-radius: 6px;
+}

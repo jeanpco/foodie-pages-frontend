@@ -1,12 +1,16 @@
 <script type="module">
   const initMultiship = () => {
     {% comment %} for each element with a class of "button", take the innerText, and place it into a newly created span element that lives inside of the button element {% endcomment %}
-    document.querySelectorAll('.button').forEach((button) => {
+    [...document.querySelectorAll('.button')].forEach((button) => {
       const buttonText = button.innerText;
       button.innerHTML = '';
       const span = document.createElement('span');
       span.innerText = buttonText;
       button.appendChild(span);
+    });
+    {% comment %} for each a tag, add the "link" class {% endcomment %}
+    [...document.querySelectorAll('a')].forEach((a) => {
+      a.classList.add('link');
     });
   }
 
