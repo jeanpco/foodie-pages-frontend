@@ -4,7 +4,7 @@
 <div class="contact-form-body">
   {% form 'contact', class: 'form' %}
 
-    <div class="contact-form input-container width-control">
+    <div class="form input-container width-control">
       <input type="hidden" name="contact[tags]" value="corporate-account-inquiry">
     
       <div class="field-wrapper margin-bottom margin-medium">
@@ -99,11 +99,24 @@
     {%- endif -%}
     
   {% endform %}
+
+  {% if section.settings.image != blank %}
+    <div class="contact_image">
+      {{ section.settings.image | image_url: width: 800 | image_tag:
+        loading: 'lazy',
+        widths: '550, 720, 990, 1100, 1500, 2200, 3000'
+      }}
+    </div>
+  {% endif %}
 </div>
 
 <style>
-  .contact-form {
+  .form .field-wrapper {
     flex-wrap: wrap;
+  }
+
+  .form .field-wrapper > * {
+    width: 100%;
   }
 </style>
 
@@ -114,10 +127,9 @@
   "class": "section",
   "settings": [
     {
-      "type": "text",
-      "id": "heading",
-      "default": "Contact form",
-      "label": "Heading"
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
     },
     {
       "type": "header",
