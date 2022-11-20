@@ -40,3 +40,10 @@
 #gsModalContainer .ms__validate-line, #gsMultishippingPage .ms__validate-line {
   padding-left: 0;
 }
+
+.ms__cart-header * {
+  font-size: 0.875rem !important;
+  text-transform: uppercase !important;
+  text-align: left !important;
+  color: var(--color-grey-600) !important;
+}
