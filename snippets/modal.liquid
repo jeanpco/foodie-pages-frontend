@@ -103,6 +103,8 @@
       const currentAnchor = window.location.hash;
       const currentAnchorWithoutHash = currentAnchor.replace('#', '');
 
+      if (!sessionStorage) return;
+
       sessionStorage.setItem('form_submitted', currentAnchorWithoutHash);
       
       window.readFormSessionStorage && window.readFormSessionStorage();
@@ -117,8 +119,15 @@
       }
     }
 
+    {% comment %} re-open corporate form success after succesfully submitted {% endcomment %}
+
+    const corporateFormSuccess = () => {
+      openDialog('corporate_contact_form');
+    }
+
     window.readFormSessionStorage = readFormSessionStorage;
     window.initDownloadFromForm = initDownloadFromForm;
+    window.corporateFormSuccess = corporateFormSuccess;
   }
 
   initDialog()

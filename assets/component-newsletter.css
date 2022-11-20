@@ -102,3 +102,44 @@
     max-width: unset;
   }
 }
+
+.dialog-modal .width-control .field-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+.dialog-modal .width-control .field-wrapper > * {
+  width: 100%;
+}
+
+.dialog-modal .width-control .half-width {
+  width: calc(50% - 0.75rem);
+}
+
+.select select {
+  appearance: none;
+  border: unset;
+  width: 100%;
+  min-height: 2.5rem;
+  padding-left: 0.75rem;
+  color: var(--color-grey-600);
+}
+
+.select select:focus {
+  outline: none;
+}
+
+.select {
+  border: 1px solid var(--color-grey-200);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.select select::-ms-expand {
+  display: none;
+}
+
+.select::before {
+  display: none;
+}

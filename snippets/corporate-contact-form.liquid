@@ -1,3 +1,5 @@
+{{ 'component-newsletter.css' | asset_url | stylesheet_tag }}
+
 <div class="padding-bottom padding-large">
       {% render 'module-header', 
         title: settings.corporate_contact_form_title, 
@@ -9,7 +11,7 @@
 <div class="contact-form-body">
       {% form 'contact', class: 'form' %}
     
-        <div class="input-container">
+        <div class="input-container width-control">
           <input type="hidden" name="contact[tags]" value="corporate-account-inquiry">
         
           <div class="field-wrapper margin-bottom margin-medium">
@@ -34,61 +36,66 @@
               value: form.email,
             %}
 
-            {% 
-              render 'input', 
-              label: settings.corporate_contact_form_input_phone_label,
-              placeholder: settings.corporate_contact_form_input_phone_placeholder,
-              name: 'phone',
-              type: 'tel',
-              required: true,
-              value: form.phone,
-            %}
+            <div class="half-width">
+              {% 
+                render 'input', 
+                label: settings.corporate_contact_form_input_phone_label,
+                placeholder: settings.corporate_contact_form_input_phone_placeholder,
+                name: 'phone',
+                type: 'tel',
+                required: true,
+                value: form.phone,
+              %}
+            </div>
 
-            {% 
-              render 'input', 
-              label: settings.corporate_contact_form_input_company_label,
-              placeholder: settings.corporate_contact_form_input_company_placeholder,
-              name: 'company',
-              type: 'text',
-              required: true,
-              value: form.company,
-            %}
+            <div class="half-width">
+              {% 
+                render 'input', 
+                label: settings.corporate_contact_form_input_company_label,
+                placeholder: settings.corporate_contact_form_input_company_placeholder,
+                name: 'company',
+                type: 'text',
+                required: true,
+                value: form.company,
+              %}
+            </div>
 
-            <div>
-              <label class="text-size-tiny uppercase" for="ContactForm-number-of-boxes">{{ settings.corporate_contact_form_input_boxes_label }}</label>
-              <div class="select">
-                <select
-                  id="ContactForm-number-of-boxes"
-                  name="contact[number_of_boxes]"
-                >
-                  <option>0-25</option>
-                  <option>25-50</option>
-                  <option>50-75</option>
-                  <option>100-500</option>
-                  <option>500-1000</option>
-                  <option>1000+</option>
-                </select>
-                <svg aria-hidden="true" focusable="false" viewBox="0 0 10 6">
-                  <use href="#icon-caret" />
-                </svg>
+            <div class="half-width">
+              <div class="field-group">
+                <label class="text-size-tiny uppercase" for="ContactForm-number-of-boxes">{{ settings.corporate_contact_form_input_boxes_label }}</label>
+                <div class="select">
+                  <select
+                    id="ContactForm-number-of-boxes"
+                    name="contact[number_of_boxes]"
+                  >
+                    <option>0-25</option>
+                    <option>25-50</option>
+                    <option>50-75</option>
+                    <option>100-500</option>
+                    <option>500-1000</option>
+                    <option>1000+</option>
+                  </select>
+                  {% render 'icon-caret' %}
+                </div>
               </div>
             </div>
 
-            <div>
-              <label class="text-size-tiny uppercase" for="ContactForm-budget">{{ settings.corporate_contact_form_input_budget_label }}</label>
-              <div class="select">
-                <select
-                  id="ContactForm-budget"
-                  name="contact[budget]"
-                >
-                  <option>$35-$50</option>
-                  <option>$50-$70</option>
-                  <option>$70-$100</option>
-                  <option>$100+</option>
-                </select>
-                <svg aria-hidden="true" focusable="false" viewBox="0 0 10 6">
-                  <use href="#icon-caret" />
-                </svg>
+
+            <div class="half-width">
+              <div class="field-group">
+                <label class="text-size-tiny uppercase" for="ContactForm-budget">{{ settings.corporate_contact_form_input_budget_label }}</label>
+                <div class="select">
+                  <select
+                    id="ContactForm-budget"
+                    name="contact[budget]"
+                  >
+                    <option>$35-$50</option>
+                    <option>$50-$70</option>
+                    <option>$70-$100</option>
+                    <option>$100+</option>
+                  </select>
+                  {% render 'icon-caret' %}
+                </div>
               </div>
             </div>
 
@@ -125,7 +132,7 @@
         {%- if form.posted_successfully? -%}
 
             <script type="module">      
-                  window.initDownloadFromForm()
+                  window.corporateFormSuccess()
             </script>
     
           <div style="display: flex; flex-direction: column; align-items: center; justify-content: center;" class="text-align-center">
@@ -138,3 +145,11 @@
         
       {% endform %}
     </div>
+
+    <style>
+
+      .dialog-modal[aria-controls="corporate_contact_form"] .dialog-modal-container {
+        top: 3.5rem;
+      }
+
+    </style>
