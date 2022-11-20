@@ -66,10 +66,10 @@
         "29189724-18f8-43ad-ad45-9aea0d08c6f0"
       ],
       "settings": {
-        "overline": "",
-        "title": "<p>The <em>best<\/em> gifting service in Canada<\/p>",
+        "overline": "The best gifting service in Canada",
+        "title": "<p>How we see it<\/p>",
         "heading_style": "h2",
-        "body": "We cut through the noise so you don't have to, seeking out products with heart and soul, and bringing small and underrepresented makers to the forefront. Here are a few things we've always believed to be important.",
+        "body": "Here are a few things we've always believed to be important.",
         "cta_text": "",
         "cta_link": "shopify:\/\/pages\/how-it-works"
       }
@@ -98,7 +98,7 @@
           "settings": {
             "overline": "",
             "title": "Combine Joy & Utility",
-            "body": "We offer a wide range of planet-friendly packaging. From fast turn around stock options to custom-printed mailer boxes and keepsake bags."
+            "body": "We cut through the noise so you don't have to, seeking out products with heart and soul."
           }
         },
         "47847899-6a08-4443-881a-c2133258173d": {
