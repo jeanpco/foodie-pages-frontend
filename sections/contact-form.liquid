@@ -40,7 +40,7 @@
         %}
 
         <div class="field-group">
-          <label class="text-size-tiny uppercase" for="ContactForm-reason">{{ settings.corporate_contact_form_input_boxes_label }}</label>
+          <label class="text-size-tiny uppercase" for="ContactForm-reason">{{ section.settings.contact_form_reason_label }}</label>
           <div class="select">
             <select
               id="ContactForm-reason"
@@ -154,6 +154,12 @@
       "type": "text",
       "id": "contact_form_input_email_placeholder",
       "label": "Input Email Placeholder"
+    },
+    {
+      "type": "text",
+      "id": "contact_form_reason_label",
+      "label": "Input Reason Label",
+      "default": "Reason of inquiry"
     },
     {
       "type": "text",
