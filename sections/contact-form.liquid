@@ -5,7 +5,7 @@
   {% form 'contact', class: 'form' %}
 
     <div class="form input-container width-control">
-      <input type="hidden" name="contact[tags]" value="corporate-account-inquiry">
+      <input type="hidden" name="contact[tags]" value="contact-page-form">
     
       <div class="field-wrapper margin-bottom margin-medium">
 
@@ -99,24 +99,71 @@
     {%- endif -%}
     
   {% endform %}
-
-  {% if section.settings.image != blank %}
-    <div class="contact_image">
-      {{ section.settings.image | image_url: width: 800 | image_tag:
-        loading: 'lazy',
-        widths: '550, 720, 990, 1100, 1500, 2200, 3000'
-      }}
-    </div>
-  {% endif %}
 </div>
+
+{% if section.settings.image != blank %}
+  <div class="contact_image">
+    {{ section.settings.image | image_url: width: 800 | image_tag:
+      loading: 'lazy',
+      widths: '550, 720, 990, 1100, 1500, 2200, 3000'
+    }}
+  </div>
+{% endif %}
 
 <style>
   .form .field-wrapper {
     flex-wrap: wrap;
+    gap: 1rem;
   }
 
   .form .field-wrapper > * {
     width: 100%;
+  }
+
+  .contact-form-section {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+
+  .contact-form-section > * {
+    flex: 1;
+    width: 50%;
+  }
+
+  .contact_image img {
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    max-height: 38.4375rem;
+    width: calc(40vw);
+    border-radius: 1rem;
+  }
+
+  .contact-form-body form {
+    max-width: 36.25rem;
+    margin-right: auto;
+  }
+
+  @media screen and (max-width: 767px) {
+    .contact-form-section {
+      flex-direction: column;
+    }
+
+    .contact-form-section > * {
+      width: 100%;
+    }
+
+    .contact-form-body form {
+      max-width: 100%;
+    }
+
+    .contact_image img {
+      aspect-ratio: 1/1;
+      object-fit: cover;
+      max-height: calc(100vw - 2rem);
+      width: 100%;
+    }
   }
 </style>
 
@@ -124,7 +171,7 @@
 {
   "name": "Contact Form",
   "tag": "section",
-  "class": "section",
+  "class": "section contact-form-section container",
   "settings": [
     {
       "type": "image_picker",

@@ -74,6 +74,15 @@ body,
   text-rendering: optimizeLegibility;
 }
 
+input,
+select {
+  font-family: var(--font-body-family);
+}
+
+select {
+  font-size: 1rem;
+}
+
 .grid-auto-flow {
   display: grid;
   grid-auto-flow: column;
