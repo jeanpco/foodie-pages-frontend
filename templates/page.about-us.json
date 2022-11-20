@@ -127,7 +127,7 @@
       ],
       "settings": {
         "overline": "How it works",
-        "title": "<p>We're all in on <em>small<\/em> brands<\/p>",
+        "title": "<p>We're all in on <em>small<\/em> brands,<\/p>",
         "heading_style": "h2",
         "image": "shopify:\/\/shop_images\/Image_3468c917-9e51-49ab-9d3c-fa357152af3b.png",
         "cta_text": "Get in touch",
@@ -144,9 +144,9 @@
           "type": "card",
           "settings": {
             "image": "shopify:\/\/shop_images\/Image_ece8a130-10d5-442c-8531-af02ad89d323.jpg",
-            "title": "New Hire Onboarding Kits",
-            "body": "Say a big first hello to new employees and interns with an information pack and gift box.",
-            "cta_text": "Get a quote",
+            "title": "Barbet",
+            "body": "xxx",
+            "cta_text": "",
             "cta_link": "#contact"
           }
         },
@@ -154,8 +154,8 @@
           "type": "card",
           "settings": {
             "image": "shopify:\/\/shop_images\/Image_4156cd82-50c2-40f5-ab2f-94ea44745172.jpg",
-            "title": "Milestone Gifts",
-            "body": "Whether a birthday, anniversary or retirement – it’s worth celebrating.",
+            "title": "Sade Baron",
+            "body": "xxx",
             "cta_text": "",
             "cta_link": ""
           }
@@ -164,14 +164,15 @@
           "type": "card",
           "settings": {
             "image": "shopify:\/\/shop_images\/Image.png",
-            "title": "Event Gifts",
-            "body": "No event is complete without a gift or keepsake to take home.",
-            "cta_text": "Get a quote",
+            "title": "Eatable",
+            "body": "xxx",
+            "cta_text": "",
             "cta_link": "#contact"
           }
         },
         "81289acb-6a37-4c70-84ec-d781a6d0b072": {
           "type": "card",
+          "disabled": true,
           "settings": {
             "image": "shopify:\/\/shop_images\/Image.jpg",
             "title": "Client Appreciation Gifts",
@@ -188,9 +189,9 @@
         "81289acb-6a37-4c70-84ec-d781a6d0b072"
       ],
       "settings": {
-        "overline": "Corporate solutions",
-        "title": "Gifting For All Occasions",
-        "body": "Looking for a company-wide event or a one-off gift? We have you covered.",
+        "overline": "About us",
+        "title": "Small Brand Spotlight",
+        "body": "We get excited about brands that resonate deeply with our customers.",
         "cta_text": "Get a quote",
         "cta_link": "#contact",
         "heading_style": "h2"
