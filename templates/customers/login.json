@@ -3,8 +3,7 @@
     "main": {
       "type": "main-login",
       "settings": {
-        "padding_top": 36,
-        "padding_bottom": 36
+        "alert_text": "<p>Placing a large order? <a href=\"#corporate-contact\" title=\"#corporate-contact\">Sign up for a corporate account today!<\/a><\/p>"
       }
     }
   },
