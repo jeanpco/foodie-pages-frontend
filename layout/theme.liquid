@@ -326,6 +326,7 @@
 
     {% if request.path == '/a/ms/cart/' %}
       {{ 'multi-ship.css' | asset_url | stylesheet_tag }}
+      {% render 'multi-ship' %}
     {% endif %}
 
     <style>

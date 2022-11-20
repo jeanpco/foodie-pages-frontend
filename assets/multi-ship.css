@@ -5,3 +5,21 @@
 #gsMultiContinueForm {
   margin-top: 2rem;
 }
+
+.ms__cart-qty:focus {
+  outline: none;
+}
+
+#gsModalContainer .ms__set-shipping-address:hover,
+#gsMultishippingPage .ms__set-shipping-address:hover {
+  background: var(--color-tertiary);
+}
+
+#gsModalContainer .ms__field-input,
+#gsModalContainer input[type='text'].ms__field-input,
+#gsModalContainer select.ms__field-input,
+#gsMultishippingPage .ms__field-input,
+#gsMultishippingPage input[type='text'].ms__field-input,
+#gsMultishippingPage select.ms__field-input {
+  border-color: var(--color-grey-200);
+}
