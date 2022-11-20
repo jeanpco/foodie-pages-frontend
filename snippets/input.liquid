@@ -1,0 +1,16 @@
+<div class="field-group {{ class }}">
+  <label class="text-size-tiny uppercase" for="ContactForm-name">{{ label }}</label>
+
+  <input
+    id="ContactForm-{{ name }}"
+    type="{{ type }}"
+    name="contact[{{ name }}]"
+    class="field_input"
+    value="{{ value }}"
+    aria-required="true"
+    autocorrect="off"
+    autocapitalize="off"
+    placeholder="{{ placeholder }}"
+    {% if required %}required{% endif %}
+  >
+</div>

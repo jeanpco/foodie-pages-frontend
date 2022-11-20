@@ -1,0 +1,16 @@
+<div>
+  <label class="text-size-tiny uppercase" for="AddressCountryNew">{{ 'customer.addresses.country' | t }}</label>
+  <div class="select">
+    <select
+      id="AddressCountryNew"
+      name="address[country]"
+      data-default="{{ form.country }}"
+      autocomplete="country"
+    >
+      {{ all_country_option_tags }}
+    </select>
+    <svg aria-hidden="true" focusable="false" viewBox="0 0 10 6">
+      <use href="#icon-caret" />
+    </svg>
+  </div>
+</div>

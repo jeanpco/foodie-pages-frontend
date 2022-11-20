@@ -1,7 +1,7 @@
 <div class="padding-bottom padding-large">
       {% render 'module-header', 
-        title: settings.contact_form_title, 
-        body: settings.contact_form_body, 
+        title: settings.corporate_contact_form_title, 
+        body: settings.corporate_contact_form_body, 
         text_horizontal_alignment: 'left' 
       %}
 </div>
@@ -14,58 +14,86 @@
         
           <div class="field-wrapper margin-bottom margin-medium">
     
-            <div class="field-group">
-              <label class="text-size-tiny uppercase" for="ContactForm-name">{{ settings.contact_form_input_name_label }}</label>
-            
-              <input
-                id="ContactForm-name"
-                type="name"
-                name="contact[name]"
-                class="field_input"
-                value="{{ form.name }}"
-                aria-required="true"
-                autocorrect="off"
-                autocapitalize="off"
-                autocomplete="email"
-                {% if form.errors %}
-                  autofocus
-                  aria-invalid="true"
-                  aria-describedby="Contact-error--{{ id }}"
-                {% elsif form.posted_successfully? %}
-                  aria-describedby="Contact-success--{{ id }}"
-                {% endif %}
-                placeholder="{{ settings.contact_form_input_name_placeholder }}"
-                required
-              >
+            {% 
+              render 'input', 
+              label: settings.corporate_contact_form_input_name_label,
+              placeholder: settings.corporate_contact_form_input_name_placeholder,
+              name: 'name',
+              type: 'text',
+              required: true,
+              value: form.name,
+            %}
+
+            {% 
+              render 'input', 
+              label: settings.corporate_contact_form_input_email_label,
+              placeholder: settings.corporate_contact_form_input_email_placeholder,
+              name: 'email',
+              type: 'email',
+              required: true,
+              value: form.email,
+            %}
+
+            {% 
+              render 'input', 
+              label: settings.corporate_contact_form_input_phone_label,
+              placeholder: settings.corporate_contact_form_input_phone_placeholder,
+              name: 'phone',
+              type: 'tel',
+              required: true,
+              value: form.phone,
+            %}
+
+            {% 
+              render 'input', 
+              label: settings.corporate_contact_form_input_company_label,
+              placeholder: settings.corporate_contact_form_input_company_placeholder,
+              name: 'company',
+              type: 'text',
+              required: true,
+              value: form.company,
+            %}
+
+            <div>
+              <label class="text-size-tiny uppercase" for="ContactForm-number-of-boxes">{{ settings.corporate_contact_form_input_boxes_label }}</label>
+              <div class="select">
+                <select
+                  id="ContactForm-number-of-boxes"
+                  name="contact[number_of_boxes]"
+                >
+                  <option>0-25</option>
+                  <option>25-50</option>
+                  <option>50-75</option>
+                  <option>100-500</option>
+                  <option>500-1000</option>
+                  <option>1000+</option>
+                </select>
+                <svg aria-hidden="true" focusable="false" viewBox="0 0 10 6">
+                  <use href="#icon-caret" />
+                </svg>
+              </div>
             </div>
-    
-            <div class="field-group">
-              <label class="text-size-tiny uppercase" for="ContactForm-name">{{ settings.contact_form_input_message_label }}</label>
-    
-              <input
-                id="ContactForm-email"
-                type="email"
-                name="contact[email]"
-                class="field_input"
-                value="{{ form.email }}"
-                aria-required="true"
-                autocorrect="off"
-                autocapitalize="off"
-                autocomplete="email"
-                {% if form.errors %}
-                  autofocus
-                  aria-invalid="true"
-                  aria-describedby="Contact-error--{{ id }}"
-                {% elsif form.posted_successfully? %}
-                  aria-describedby="Contact-success--{{ id }}"
-                {% endif %}
-                placeholder="{{ settings.contact_form_input_email_placeholder }}"
-                required
-              >
+
+            <div>
+              <label class="text-size-tiny uppercase" for="ContactForm-budget">{{ settings.corporate_contact_form_input_budget_label }}</label>
+              <div class="select">
+                <select
+                  id="ContactForm-budget"
+                  name="contact[budget]"
+                >
+                  <option>$35-$50</option>
+                  <option>$50-$70</option>
+                  <option>$70-$100</option>
+                  <option>$100+</option>
+                </select>
+                <svg aria-hidden="true" focusable="false" viewBox="0 0 10 6">
+                  <use href="#icon-caret" />
+                </svg>
+              </div>
             </div>
 
             <div class="field-group">
-              <label class="text-size-tiny uppercase" for="ContactForm-body">{{ settings.contact_form_input_name_label }}</label>
+              <label class="text-size-tiny uppercase" for="ContactForm-body">{{ settings.corporate_contact_form_input_message_label }}</label>
               
               <textarea
                 required
@@ -73,7 +101,7 @@
                 id="ContactForm-body"
                 class="text-area field_input"
                 name="contact[body]"
-                placeholder="{{ settings.contact_form_input_name_placeholder }}"
+                placeholder="{{ settings.corporate_contact_form_input_message_placeholder }}"
               >
                 {{- form.body -}}
               </textarea>

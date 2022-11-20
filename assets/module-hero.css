@@ -7,12 +7,12 @@
 }
 
 .hero-content_grid {
-  display: grid;
-  align-items: center;
-  /* first row is full, rest of rows are by 4 */
-  grid-template-columns: repeat(4, 1fr);
+  display: flex;
+  align-items: center;  
   grid-gap: 1rem;
   column-gap: 2rem;
+  flex-wrap: wrap;
+  opacity: 0.7;
 }
 
 .hero-content_trusted_by {
@@ -25,7 +25,7 @@
 }
 
 .hero-content_trusted_by__logo {
-  max-height: 1rem;
+  max-height: 1.5rem;
 }
 .hero-container.rows {
   flex-direction: column;
