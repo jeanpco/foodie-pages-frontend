@@ -21,7 +21,7 @@
         <div class="drawer__inner-empty">
           <div class="cart-drawer__warnings center{% if settings.cart_drawer_collection != blank %} cart-drawer__warnings--has-collection{% endif %}">
             <div class="cart-drawer__empty-content">
-              <h2 class="cart__empty-text heading-style-h3">{{ 'sections.cart.empty' | t }}</h2>
+              <h2 class="cart__empty-text heading-style-h3 margin-bottom margin-small">{{ 'sections.cart.empty' | t }}</h2>
               <button class="drawer__close" type="button" onclick="this.closest('cart-drawer').close()" aria-label="{{ 'accessibility.close' | t }}">{% render 'icon-close' %}</button>
               <a href="{{ routes.all_products_collection_url }}" class="button">
                 <span>
