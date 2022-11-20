@@ -22,19 +22,19 @@
           "type": "features",
           "settings": {
             "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/placeholder-svg-square.svg?v=1666645913",
-            "title": "Value 1",
-            "body": "A commitment to sourcing from small and underrepresented brands and makers.",
-            "cta_text": "Learn More",
-            "cta_link": "shopify:\/\/pages\/about-us"
+            "title": "Storytelling",
+            "body": "Behind every great gift is a great story. We believe in creating thoughtful gifts that tell a story and deepen relationships.",
+            "cta_text": "",
+            "cta_link": ""
           }
         },
         "fae23ace-5ca1-43a0-a58b-9c5d1bef7e5b": {
           "type": "features",
           "settings": {
             "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/placeholder-svg-square.svg?v=1666645913",
-            "title": "Value 2",
-            "body": "Free branded landing pages to collect recipient gift preferences and mailing addresses.",
-            "cta_text": "Learn More",
+            "title": "Connection",
+            "body": "Connection is a crucial part of the human experience. We create lasting connections through shared stories, values, and, most importantly, thoughtful and personalized gifts.",
+            "cta_text": "",
             "cta_link": ""
           }
         },
@@ -42,20 +42,20 @@
           "type": "features",
           "settings": {
             "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/placeholder-svg-square.svg?v=1666645913",
-            "title": "Value 3",
-            "body": "Worldwide fulfillment to one location or 100s of addresses.",
-            "cta_text": "Learn More",
-            "cta_link": "shopify:\/\/pages\/contact-us"
+            "title": "Love It, or Leave It",
+            "body": "Every product has been tested and tasted – and then some. If it doesn't make the cut, it doesn't make it on our site.",
+            "cta_text": "",
+            "cta_link": ""
           }
         },
         "29189724-18f8-43ad-ad45-9aea0d08c6f0": {
           "type": "features",
           "settings": {
             "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/placeholder-svg-square.svg?v=1666645913",
-            "title": "Value 4",
-            "body": "Expert advice based on data and our 10+ years of experience.",
-            "cta_text": "Learn More",
-            "cta_link": "shopify:\/\/pages\/experiences"
+            "title": "Never Settle",
+            "body": "You expect a lot from us, and that's not taken for granted. We're always hustling to earn your business, and we work extra hard for that moment of wow.",
+            "cta_text": "",
+            "cta_link": ""
           }
         }
       },
@@ -70,7 +70,7 @@
         "title": "<p>The <em>best<\/em> gifting service in Canada<\/p>",
         "heading_style": "h2",
         "body": "We cut through the noise so you don't have to, seeking out products with heart and soul, and bringing small and underrepresented makers to the forefront. Here are a few things we've always believed to be important.",
-        "cta_text": "Learn More",
+        "cta_text": "",
         "cta_link": "shopify:\/\/pages\/how-it-works"
       }
     },
