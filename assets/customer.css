@@ -1,8 +1,9 @@
-/* .customer:not(.account):not(.order) {
+.customer.register,
+.customer.login {
   margin: 0 auto;
   max-width: 28.125rem;
   text-align: center;
-} */
+}
 
 .account-background {
   background: linear-gradient(90deg, var(--color-grey-100) 50%, var(--color-white) 50%);

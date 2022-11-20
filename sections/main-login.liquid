@@ -152,13 +152,13 @@
             </a>
           {%- endif -%}
     
-          <button class="button button--full-width">
+          <button class="button button--full-width margin-top margin-medium">
             <span>
               {{ 'customer.login_page.sign_in' | t }}
             </span>
           </button>
     
-          <p class="margin-0">
+          <p class="margin-top margin-small">
             Don't have an account yet? 
             <a class="link" href="{{ routes.account_register_url }}">
               {{ 'customer.login_page.create_account' | t }}
@@ -205,7 +205,7 @@
       "type": "richtext",
       "label": "Alert Text",
       "id": "alert_text",
-      "default": "<p>Placing a large order? <a href='#contact'>Sign up for a corporate account today!</a></p>"
+      "default": "<p>Placing a large order? <a href='#corporate-contact'>Sign up for a corporate account today!</a></p>"
     }
   ]
 }

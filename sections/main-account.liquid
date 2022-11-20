@@ -17,6 +17,9 @@
     {% render 'account-sidebar', customer: customer %}
   
     <div class="main-content padding-vertical padding-xlarge background-color-white">
+
+      {% render 'alert-banner', title: section.settings.alert_text %}
+
       <div class="padding-left padding-large tablet-padding-0">
         <p class="text-size-medium margin-bottom margin-medium">Hi {{ customer.name }}, welcome to your account!</p>
         <h1 class="margin-bottom margin-medium">{{ 'customer.orders.title' | t }}</h1>
@@ -169,6 +172,12 @@
     {
       "type": "header",
       "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "richtext",
+      "label": "Alert Text",
+      "id": "alert_text",
+      "default": "<p>Placing a large order? <a href='#corporate-contact'>Sign up for a corporate account today!</a></p>"
     }
   ]
 }
