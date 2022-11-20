@@ -219,7 +219,7 @@
     "product-recommendations": {
       "type": "product-recommendations",
       "settings": {
-        "overline": "Corporate gifting",
+        "overline": "Holiday gifts",
         "title": "<p>Top Holiday Picks<\/p>",
         "body": "Check off everyone on your gift list with our wide variety of ready-to-ship holiday gifts.",
         "collection": "holiday-gift-baskets",
