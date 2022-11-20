@@ -52,3 +52,11 @@
 .h5 .cart__subtotal {
   margin-left: 1rem;
 }
+
+/* max-width 600 media query */
+@media (max-width: 600px) {
+  .ms__cart-image-wrapper {
+    width: 25% !important;
+    padding-right: 1rem !important;
+  }
+}
