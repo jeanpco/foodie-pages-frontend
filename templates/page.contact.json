@@ -3,13 +3,20 @@
     "main": {
       "type": "main-page",
       "settings": {
-        "padding_top": 36,
-        "padding_bottom": 36
       }
     },
     "form": {
       "type": "contact-form",
       "settings": {
+        "heading": "Contact form",
+        "contact_form_input_name_label": "Name",
+        "contact_form_input_name_placeholder": "Enter your name",
+        "contact_form_input_email_label": "Email",
+        "contact_form_input_email_placeholder": "Enter your email",
+        "contact_form_input_message_label": "Message",
+        "contact_form_input_message_placeholder": "How can we help?",
+        "contact_form_cta_text": "Send your inquiry",
+        "contact_form_success_message": "Thank you for reaching out! We'll get back to you shortly"
       }
     }
   },
