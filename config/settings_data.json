@@ -1,5 +1,6 @@
 {
   "current": {
+    "search_enabled": false,
     "page_width": 1200,
     "spacing_sections": 0,
     "spacing_grid_horizontal": 8,
