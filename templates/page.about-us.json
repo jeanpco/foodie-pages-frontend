@@ -127,7 +127,7 @@
       ],
       "settings": {
         "overline": "How it works",
-        "title": "<p>We're all in on <em>small<\/em> brands,<\/p>",
+        "title": "<p>We're all in on <em>small<\/em> brands.<\/p>",
         "heading_style": "h2",
         "image": "shopify:\/\/shop_images\/Image_3468c917-9e51-49ab-9d3c-fa357152af3b.png",
         "cta_text": "Get in touch",
@@ -199,6 +199,7 @@
     },
     "582103a2-47d5-46e9-9ba6-ede2b4f3963b": {
       "type": "module-hero",
+      "disabled": true,
       "blocks": {
         "a0cdd988-b288-4542-9434-6c35f9543944": {
           "type": "cta",
