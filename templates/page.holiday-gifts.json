@@ -2,6 +2,7 @@
   "sections": {
     "main": {
       "type": "module-hero",
+      "disabled": true,
       "blocks": {
         "02d55e23-f307-4138-a9bd-10d797daa746": {
           "type": "cta",
@@ -186,7 +187,7 @@
         "1a1d97cc-0c9f-4023-b4cf-a2188c76fa3e"
       ],
       "settings": {
-        "overline": "Holiday gfits",
+        "overline": "Corporate gifting",
         "title": "The Yummiest Way to Corporate Gift!",
         "body": "Our corporate gifting program is a quick and unforgettable way to send 25 or more shipments to clients, customers, co-workers, and anyone else you know.",
         "cta_text": "Get a quote",
