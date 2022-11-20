@@ -89,15 +89,15 @@
           "type": "tab",
           "settings": {
             "overline": "",
-            "title": "Sourcing + Production",
-            "body": "Our in-house procurement and design team sources premium products from small and underrepresented brands across the country, and can put your logo on trendy, high quality items that recipients will appreciate and remember."
+            "title": "Quality Ingredients",
+            "body": "xxx"
           }
         },
         "2d4083b3-581a-4ade-b225-6f2117a93f50": {
           "type": "tab",
           "settings": {
-            "overline": "Step 3",
-            "title": "Packaging + Sustainability",
+            "overline": "",
+            "title": "Combine Joy & Utility",
             "body": "We offer a wide range of planet-friendly packaging. From fast turn around stock options to custom-printed mailer boxes and keepsake bags."
           }
         },
@@ -126,8 +126,8 @@
         "a25db7f7-6489-43d4-89c5-e1e47404b228"
       ],
       "settings": {
-        "overline": "How we see it",
-        "title": "<p>We're all in on <em>small<\/em> brands.<\/p>",
+        "overline": "What's inside counts",
+        "title": "<p>We're all in on <em>small<\/em> brands<\/p>",
         "heading_style": "h2",
         "image": "shopify:\/\/shop_images\/Image_3468c917-9e51-49ab-9d3c-fa357152af3b.png",
         "cta_text": "Get in touch",
@@ -190,7 +190,7 @@
       ],
       "settings": {
         "overline": "About us",
-        "title": "Small Brand Spotlight",
+        "title": "Partner Spotlight",
         "body": "We get excited about brands that resonate deeply with our customers.",
         "cta_text": "Get a quote",
         "cta_link": "#contact",
