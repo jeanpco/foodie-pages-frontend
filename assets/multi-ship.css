@@ -53,6 +53,12 @@
   margin-left: 1rem;
 }
 
+@media (max-width: 990px) {
+  .ms__multishipping-cart {
+    padding-top: 3rem;
+  }
+}
+
 /* max-width 600 media query */
 @media (max-width: 670px) {
   .ms__cart-image-wrapper {
