@@ -1,3 +1,7 @@
-body {
-  background: red;
+.ms__multishipping-cart {
+  padding-top: 6rem;
+}
+
+#gsMultiContinueForm {
+  margin-top: 2rem;
 }
