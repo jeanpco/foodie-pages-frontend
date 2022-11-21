@@ -115,8 +115,10 @@
 
     if (!window.shipStationStores && !window.shipStationStores.length) return;
 
-    const orders = window.shipStationStores.filter(store => {      
-      if (store.storeName && store.storeName.toLowerCase().includes(order.number.toLowerCase())) {
+    const orders = window.shipStationStores.filter(store => {   
+      const soNumber = order.number.match(/\d+/g).join('')
+
+      if (store.storeName && store.storeName.toLowerCase().includes(order.number.toLowerCase()) || store.storeName.toLowerCase().includes(soNumber) && store.storeName.toLowerCase().includes('so')) {
         storeId = store.storeId;
       }
       return store.storeName && store.storeName.toLowerCase().includes(order.number.toLowerCase())
@@ -151,7 +153,7 @@
     modalTitle.innerHTML = `Viewing Order: ${order.number}`
     modalBody.innerHTML = `Order created on: ${order.formattedDate}`
     {% comment %} find %%order_name%% in loading text and replace with order.number {% endcomment %}
-    loading.querySelector('p').innerHTML = loading.querySelector('p').innerHTML.replace(/%%order_name%%/g, order.number)
+    loading.querySelector('p').innerHTML = `Retrieving line items for ${order.number}. <br>Thank you for your patience.`
 
     {% comment %} get closest dialog element to modalHeader {% endcomment %}
     const dialog = modalHeader.closest('dialog');
@@ -161,7 +163,6 @@
     const backToTopSpan = document.createElement('span');
 
     {% comment %} if backToTop is already present, dont add {% endcomment %}
-
     if (!document.querySelector('p.back-to-top')) {
       backToTop.appendChild(backToTopSpan)
       backToTopSpan.innerHTML = 'Back to top';
@@ -179,7 +180,7 @@
       table.innerHTML = `
         <div class="text-align-center padding-medium display-flex justify-content-center">
           {% render 'icon-error' %}
-          <p class="text-size-small">No shipments found for this order. It may be that your order has not yet been created within our fulfillment system.</p>
+          <p class="text-size-small">No shipments found for this order. It may be that your order has not yet been created within our fulfillment system, or that this shipment has been closed.</p>
         </div>
       `
       return;
@@ -192,9 +193,6 @@
 
       const ordersArray = await ShipStationOrders(storeId)
       const orders = ordersArray[0]
-
-      console.log('all orders', orders)
-      console.log('allShipments', allShipments)
 
       if (!orders && !orders.length) {
         modalBody.innerHTML = `No orders found for ${order.number}`
@@ -296,8 +294,6 @@
     loading.style.display = 'none'
     table.innerHTML = ''
 
-    console.log(saleOrders)
-
     if (saleOrders && saleOrders.length) {
       const tableHeader = document.createElement('tr')
       
@@ -331,7 +327,6 @@
           return acc + line.shipped
         }, 0)
 
-
         if (totalShipped === totalQuantity) {
           deliveryStatus = 'Shipped'
         }
@@ -346,7 +341,7 @@
         const tableRow = document.createElement('tr')
 
         tableRow.innerHTML = `
-          <td class="text-size-small">${saleOrder.order_number}</td>
+          <td class="text-size-small">Unnamed</td>
           <td class="text-size-small">${saleOrder.number}</td>
           <td class="text-size-small">${formattedDate}</td>
           <td class="text-size-small">${totalQuantity - totalShipped}</td>
