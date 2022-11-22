@@ -35,10 +35,43 @@
             "cta_text": "hello@foodiepages.io",
             "cta_link": ""
           }
+        },
+        "989fd80d-8316-4b66-a137-c4b87252073e": {
+          "type": "features",
+          "settings": {
+            "icon_url": "",
+            "title": "Phone",
+            "body": "",
+            "cta_text": "Learn More",
+            "cta_link": ""
+          }
+        },
+        "59fca983-b269-4691-9c74-c3313dd94c28": {
+          "type": "features",
+          "settings": {
+            "icon_url": "",
+            "title": "Office",
+            "body": "",
+            "cta_text": "Learn More",
+            "cta_link": ""
+          }
+        },
+        "e8df3f11-02ec-48ac-93dc-48f7603c286e": {
+          "type": "features",
+          "settings": {
+            "icon_url": "",
+            "title": "FAQs",
+            "body": "",
+            "cta_text": "Learn More",
+            "cta_link": ""
+          }
         }
       },
       "block_order": [
-        "f17f8bf0-0206-40c2-b48c-8b4507f0c067"
+        "f17f8bf0-0206-40c2-b48c-8b4507f0c067",
+        "989fd80d-8316-4b66-a137-c4b87252073e",
+        "59fca983-b269-4691-9c74-c3313dd94c28",
+        "e8df3f11-02ec-48ac-93dc-48f7603c286e"
       ],
       "settings": {
         "overline": "",
