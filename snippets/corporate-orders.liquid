@@ -206,7 +206,7 @@
         return new Date(b.shipDate) - new Date(a.shipDate);
       }).forEach((order, index) => {
 
-        console.log(order.shipTo)
+        console.log(order)
 
         const addressValidationFailed = order.shipTo.addressVerified === "Address validation failed";
         const items = order.items;
@@ -267,7 +267,7 @@
                 {% render 'icon-error' %}
               </div>
               <div class="alert__content">
-                <p class="text-size-small">Address validation failed for this order (Order ID: ${order.orderId}).</p>
+                <p class="text-size-small">This address has been partially verified and more address details may be required. (Order ID: ${order.orderId}).</p>
               </div>
             </div>
           ` : ''}
