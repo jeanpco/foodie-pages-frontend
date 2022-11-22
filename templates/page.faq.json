@@ -21,8 +21,8 @@
         "c5661330-ac07-43fa-a20b-73bbe4b7b70a"
       ],
       "settings": {
-        "overline": "Frequently Asked Questions",
-        "title": "",
+        "overline": "",
+        "title": "<p>Frequently Asked Questions<\/p>",
         "heading_style": "h2",
         "cta_text": "Get in touch",
         "cta_link": "shopify:\/\/pages\/contact-us",
