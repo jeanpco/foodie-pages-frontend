@@ -122,7 +122,11 @@
     {% comment %} re-open corporate form success after succesfully submitted {% endcomment %}
 
     const corporateFormSuccess = () => {
-      openDialog('corporate_contact_form');
+      const formSessionStorage = sessionStorage.getItem('form_submitted');
+      
+      if (formSessionStorage !== 'download-catalogue') {
+        openDialog('corporate_contact_form');
+      }
     }
 
     window.readFormSessionStorage = readFormSessionStorage;

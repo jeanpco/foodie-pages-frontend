@@ -15,7 +15,7 @@
       <div class="module-logos marquee">
         <div>
           {% for block in section.blocks %}
-            <img src="{{ block.settings.icon_url }}" class="logos-client-logo margin-right margin-large" alt="Quote Icon" />
+            <img src="{{ block.settings.icon_url }}" class="logos-client-logo margin-right margin-large" alt="{{ block.settings.title }}" />
           {% endfor %}
         </div>
       </div>
@@ -93,6 +93,12 @@
       "type": "logo",
       "name": "Logo",
       "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "info": "Also used for Alt Text"
+        },
         {
           "type": "url",
           "id": "icon_url",
