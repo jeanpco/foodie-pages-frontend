@@ -228,6 +228,10 @@ cart-remove-button .icon-remove {
     grid-row: 1 / 3;
   }
 
+  .cart-item__media img {
+    max-width: 80px;
+  }
+
   .cart-item__details {
     grid-column: 2 / 4;
   }
@@ -253,7 +257,7 @@ cart-remove-button .icon-remove {
 .cart-item .quantity {
   border-radius: 6px;
   border-color: var(--color-grey-100);
-  max-width: 8.75rem;
+  max-width: 8rem;
   min-height: 2.8125rem;
 }
 
