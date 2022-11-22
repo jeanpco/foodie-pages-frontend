@@ -1571,45 +1571,6 @@ input[type='checkbox'] {
   cursor: initial;
 }
 
-/* section-announcement-bar */
-#shopify-section-announcement-bar {
-  z-index: 4;
-}
-
-.announcement-bar {
-  border-bottom: 0.1rem solid rgba(var(--color-primary), 0.08);
-  color: var(--color-primary);
-}
-
-.announcement-bar__link {
-  display: block;
-  width: 100%;
-  padding: 1rem 0;
-  text-decoration: none;
-}
-
-.announcement-bar__link:hover {
-  color: var(--color-primary);
-  background-color: rgba(var(--color-card-hover), 0.06);
-}
-
-.announcement-bar__link .icon-arrow {
-  display: inline-block;
-  pointer-events: none;
-  margin-left: 0.8rem;
-  vertical-align: middle;
-  margin-bottom: 0.2rem;
-}
-
-.announcement-bar__link .announcement-bar__message {
-  padding: 0;
-}
-
-.announcement-bar__message {
-  padding: 1rem 0;
-  margin: 0;
-}
-
 /* section-header */
 #shopify-section-header {
   z-index: 3;

@@ -289,15 +289,6 @@
     "video": {
       "load_video": "Charger la vidéo : {{ description }}"
     },
-    "slideshow": {
-      "load_slide": "Charger la diapositive",
-      "previous_slideshow": "Diapositive précédente",
-      "next_slideshow": "Diapositive suivante",
-      "pause_slideshow": "Interrompre le diaporama",
-      "play_slideshow": "Lire le diaporama",
-      "carousel": "Carrousel",
-      "slide": "Diapositive"
-    },
     "page": {
       "title": "Titre de la page"
     }

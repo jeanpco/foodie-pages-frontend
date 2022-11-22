@@ -283,15 +283,6 @@
     "video": {
       "load_video": "Load video: {{ description }}"
     },
-    "slideshow": {
-      "load_slide": "Load slide",
-      "previous_slideshow": "Previous slide",
-      "next_slideshow": "Next slide",
-      "pause_slideshow": "Pause slideshow",
-      "play_slideshow": "Play slideshow",
-      "carousel": "Carousel",
-      "slide": "Slide"
-    },
     "page": {
       "title": "Page title"
     }
