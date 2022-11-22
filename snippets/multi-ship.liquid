@@ -16,7 +16,7 @@
     const msField = document.querySelector('.sixteen.wide.ms__field');
 
     const returnToCart = document.createElement('a');
-    returnToCart.classList.add('button', 'reversed', 'return-to-cart');
+    returnToCart.classList.add('link', 'return-to-cart');
     returnToCart.href = 'https://www.foodiepages.ca/cart';
     returnToCart.innerText = 'Return to cart';
     msField.appendChild(returnToCart);
@@ -29,5 +29,13 @@
 
 <style>
   .return-to-cart {
+    margin-bottom: 2.1rem;
+    margin-left: 1rem;
+  }
+
+  @media screen and (max-width: 420px) {
+    .return-to-cart {
+      margin-left: 0;
+    }
   }
 </style>
