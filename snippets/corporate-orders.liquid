@@ -11,6 +11,7 @@
 
 <script type="module">
   const backendURL = 'https://foodie-pages-backend.herokuapp.com'
+  {% comment %} const backendURL = 'http://localhost:8080' {% endcomment %}
 
   const getTrackingUrl = (trackingNumber, carrier) => {
 
@@ -188,11 +189,8 @@
 
     try {
 
-      const shipmentsArray = await getShipStationShipments(storeId)
-      const allShipments = shipmentsArray[0]
-
-      const ordersArray = await ShipStationOrders(storeId)
-      const orders = ordersArray[0]
+      const shipments = await getShipStationShipments(storeId)
+      const orders = await ShipStationOrders(storeId)
 
       if (!orders && !orders.length) {
         modalBody.innerHTML = `No orders found for ${order.number}`
@@ -201,10 +199,15 @@
       
       table.appendChild(tableHeader)
 
+      console.log(orders)
+
       {% comment %} sort orders by most recent using order.shipDate {% endcomment %}
       orders.sort((a, b) => {
         return new Date(b.shipDate) - new Date(a.shipDate);
       }).forEach((order, index) => {
+
+        console.log(order.shipTo)
+
         const addressValidationFailed = order.shipTo.addressVerified === "Address validation failed";
         const items = order.items;
         const address = order.shipTo;
@@ -216,7 +219,7 @@
           shippingStatus = 'Shipped'
         }
 
-        const orderShipments = allShipments.filter(shipment => shipment.orderId === order.orderId);
+        const orderShipments = shipments.filter(shipment => shipment.orderId === order.orderId);
 
         const tableRow = document.createElement('tr');
 
