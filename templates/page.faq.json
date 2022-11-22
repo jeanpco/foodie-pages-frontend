@@ -4,9 +4,36 @@
       "type": "main-page",
       "settings": {
       }
+    },
+    "6b3bc592-58d2-4226-90ad-36e1fd36e353": {
+      "type": "module-vertical-tabs",
+      "blocks": {
+        "c5661330-ac07-43fa-a20b-73bbe4b7b70a": {
+          "type": "tab",
+          "settings": {
+            "overline": "",
+            "title": "Example Question",
+            "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ut lorem qui lectus molestie malesuada vitae vel purus."
+          }
+        }
+      },
+      "block_order": [
+        "c5661330-ac07-43fa-a20b-73bbe4b7b70a"
+      ],
+      "settings": {
+        "overline": "Frequently Asked Questions",
+        "title": "",
+        "heading_style": "h2",
+        "cta_text": "Get in touch",
+        "cta_link": "shopify:\/\/pages\/contact-us",
+        "body": "Couldn’t find what you were looking for? write to us at",
+        "secondary_cta_text": "hello@foodiepages.ca",
+        "secondary_cta_link": "mailto:hello@foodiepages.ca"
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "6b3bc592-58d2-4226-90ad-36e1fd36e353"
   ]
 }
