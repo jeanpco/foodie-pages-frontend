@@ -117,12 +117,15 @@ class CartItems extends HTMLElement {
       sections_url: window.location.pathname
     });
 
+    console.log(`${routes.cart_change_url}`, { ...fetchConfig(), ...{ body } })
+
     fetch(`${routes.cart_change_url}`, { ...fetchConfig(), ...{ body } })
       .then((response) => {
         return response.text();
       })
       .then((state) => {
         const parsedState = JSON.parse(state);
+
         this.classList.toggle('is-empty', parsedState.item_count === 0);
         const cartDrawerWrapper = document.querySelector('cart-drawer');
         const cartFooter = document.getElementById('main-cart-footer');
@@ -155,7 +158,10 @@ class CartItems extends HTMLElement {
         this.initGiftMessage()
 
         this.disableLoading();
-      }).catch(() => {
+      }).catch((err) => {
+
+        console.log(err)
+
         this.querySelectorAll('.loading-overlay').forEach((overlay) => overlay.classList.add('hidden'));
         const errors = document.getElementById('cart-errors') || document.getElementById('CartDrawer-CartErrors');
         errors.textContent = window.cartStrings.error;
@@ -185,8 +191,12 @@ class CartItems extends HTMLElement {
         const parsedState = JSON.parse(state);
 
         this.getSectionsToRender().forEach((section => {
-          const elementToReplace =
-            document.getElementById(section.id).querySelector(section.selector) || document.getElementById(section.id);
+
+          const sectionElement = document.getElementById(section.id);
+
+          if (!sectionElement) return;
+
+          const elementToReplace = sectionElement.querySelector(section.selector) || sectionElement;
           elementToReplace.innerHTML =
             this.getSectionInnerHTML(parsedState.sections[section.section], section.selector);
         }));
