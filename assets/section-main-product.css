@@ -693,13 +693,13 @@ a.product__text {
   display: flex;
   align-items: center;
   height: 100vh;
+  background: var(--color-grey-200);
 }
 
 .product-media-modal__content {
   max-height: 100vh;
   width: 100%;
   overflow: auto;
-  background: var(--color-grey-200);
 }
 
 .product-media-modal__content > *:not(.active),
