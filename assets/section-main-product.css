@@ -761,11 +761,11 @@ a.product__text {
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  right: 2rem;
   padding: 1.2rem;
   position: fixed;
   z-index: 2;
-  top: 2rem;
+  top: 1rem;
+  right: 1rem;
   width: 4rem;
   transform: scale(0.8);
 }
