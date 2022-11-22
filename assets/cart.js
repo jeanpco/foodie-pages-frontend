@@ -117,8 +117,6 @@ class CartItems extends HTMLElement {
       sections_url: window.location.pathname
     });
 
-    console.log(`${routes.cart_change_url}`, { ...fetchConfig(), ...{ body } })
-
     fetch(`${routes.cart_change_url}`, { ...fetchConfig(), ...{ body } })
       .then((response) => {
         return response.text();
@@ -134,8 +132,15 @@ class CartItems extends HTMLElement {
         if (cartDrawerWrapper) cartDrawerWrapper.classList.toggle('is-empty', parsedState.item_count === 0);
 
         this.getSectionsToRender().forEach((section => {
+
+          console.log(section)
+
+          const sectionElement = document.getElementById(section.id);
+
+          if (!sectionElement) return;
+
           const elementToReplace =
-            document.getElementById(section.id).querySelector(section.selector) || document.getElementById(section.id);
+            sectionElement.querySelector(section.selector) || sectionElement;
           elementToReplace.innerHTML =
             this.getSectionInnerHTML(parsedState.sections[section.section], section.selector);
         }));
@@ -159,9 +164,6 @@ class CartItems extends HTMLElement {
 
         this.disableLoading();
       }).catch((err) => {
-
-        console.log(err)
-
         this.querySelectorAll('.loading-overlay').forEach((overlay) => overlay.classList.add('hidden'));
         const errors = document.getElementById('cart-errors') || document.getElementById('CartDrawer-CartErrors');
         errors.textContent = window.cartStrings.error;
@@ -171,8 +173,6 @@ class CartItems extends HTMLElement {
 
   updateGiftMessage(line, quantity, message) {
     this.enableLoading(line);
-
-    console.log(line, quantity, message)
 
     const body = JSON.stringify({
       line,
