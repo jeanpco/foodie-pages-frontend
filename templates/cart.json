@@ -3,6 +3,7 @@
     "cart-items": {
       "type": "main-cart-items",
       "settings": {
+        "alert_text": "<p>Placing a large order? <a href='#corporate-contact'>Sign up for a corporate account today!<\/a><\/p>"
       }
     },
     "cart-footer": {
@@ -15,6 +16,7 @@
         },
         "5b9e4fd5-2d18-49ed-9f08-39e7f38437ce": {
           "type": "buttons",
+          "disabled": true,
           "settings": {
           }
         }
@@ -32,7 +34,6 @@
         "overline": "Product recommendations",
         "title": "<p>You may also like<\/p>",
         "body": "Discover more products that may be of interest to you.",
-        "products_to_show": 4,
         "collection": "gift-baskets",
         "icon_url": "",
         "promo_title": "",
