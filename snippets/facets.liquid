@@ -26,7 +26,7 @@
 
 <div class="facets-container padding-top padding-huge">
   <facet-filters-form class="facets hide-tablet">
-    <form id="FacetFiltersForm" class="facets__form">
+    <form id="FacetFiltersForm" class="facets__form margin-bottom margin-small">
 
       {%- if results.terms -%}
         <input type="hidden" name="q" value="{{ results.terms | escape }}">
@@ -196,7 +196,7 @@
           {%- endfor -%}
         </div>
 
-        {% render 'active-facets', class: 'hide-tablet', results: results %}
+        {% render 'active-facets', class: 'hide-tablet active-facets-desktop', results: results %}
 
       {% endif %}
 
@@ -479,6 +479,6 @@
     </details>
   </menu-drawer>
 
-  {% render 'active-facets', class: 'hide-tablet-and-up padding-vertical padding-small', results: results %}
+  {% render 'active-facets', class: 'hide-tablet-and-up padding-vertical padding-small active-facets-mobile', results: results %}
   {% render 'product-count', class: 'hide-tablet-and-up', results: results %}
 </div>

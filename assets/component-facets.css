@@ -267,6 +267,7 @@
 .facets__item label,
 .facets__item input[type='checkbox'] {
   cursor: pointer;
+  color: var(--color-grey-700);
 }
 
 .facet-checkbox {
@@ -773,6 +774,7 @@ input.mobile-facets__checkbox {
   word-break: break-word;
   display: flex;
   box-sizing: border-box;
+  color: var(--color-grey-700);
 }
 
 .mobile-facets__label > svg {
