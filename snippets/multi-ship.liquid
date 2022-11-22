@@ -12,14 +12,20 @@
     [...document.querySelectorAll('.ms__multishipping-cart a')].forEach((a) => {
       a.classList.add('link');
     });
+
+    const msField = document.querySelector('.sixteen.wide.ms__field');
+
+    const returnToCart = document.createElement('a');
+    returnToCart.classList.add('button', 'reversed', 'return-to-cart');
+    returnToCart.href = 'https://www.foodiepages.ca/cart';
+    returnToCart.innerText = 'Return to cart';
+    msField.appendChild(returnToCart);
   }
 
   initMultiship()
-</script>
 
-<a class="button reversed return-to-cart" href="https://www.foodiepages.ca/cart">
-  Return to cart
-</a>
+
+</script>
 
 <style>
   .return-to-cart {
