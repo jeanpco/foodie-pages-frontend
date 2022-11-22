@@ -40,7 +40,7 @@
   .hero-container {
     display: flex;
     flex-direction: column;
-  } 
+  }
 }
 
 .hero-content {
@@ -59,10 +59,18 @@
 .hero-content_primary h1 *,
 .hero-content_primary h2,
 .hero-content_primary h2 * {
-  line-height: 1;
+  line-height: 1.1;
 }
 
 @media (min-width: 991px) {
+
+  .hero-content_primary h1,
+  .hero-content_primary h1 *,
+  .hero-content_primary h2,
+  .hero-content_primary h2 * {
+    line-height: 1;
+  }
+
   .hero-content.rows {
     display: flex;
     width: 100%;
