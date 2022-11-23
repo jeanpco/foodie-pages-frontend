@@ -21,8 +21,8 @@
   </div>
 `
 
-  {% comment %} const backendURL = 'https://foodie-pages-backend.herokuapp.com' {% endcomment %}
-  const backendURL = 'http://localhost:8080'
+  const backendURL = 'https://foodie-pages-backend.herokuapp.com'
+  {% comment %} const backendURL = 'http://localhost:8080' {% endcomment %}
 
   {% comment %} 
     UTILS
@@ -299,16 +299,6 @@
             <p class="text-size-tiny uppercase text-color-grey-600 hide-tablet-and-up">Shipment Date</p>
             <span class="ship-date">${order.shipDate ? formattedShipDate : 'No Ship Date'}</span>
           </td>
-          {% comment %} ${addressValidationFailed ? `
-            <div class="alert display-flex align-items-center padding-horizontal padding-medium">
-              <div class="alert__icon">
-                {% render 'icon-error' %}
-              </div>
-              <div class="alert__content">
-                <p class="text-size-small">This address has been partially verified and more address details may be required. (Order ID: ${order.orderId}).</p>
-              </div>
-            </div>
-          ` : ''} {% endcomment %}
         `
 
         table.appendChild(tableRow)
@@ -332,9 +322,7 @@
   {% endcomment %}
 
   const getUPSTrackingDetails = async (shipments) => {
-    shipments.sort((a, b) => {
-      return new Date(b.shipDate) - new Date(a.shipDate);
-    }).forEach(async ship => {
+    shipments.sort((a, b) => new Date(b.shipDate) - new Date(a.shipDate)).forEach(async ship => {
 
       if (!ship.trackingNumber) return;
 
@@ -468,9 +456,6 @@
           deliveryStatus = 'Shipped'
         }
 
-
-
-
         {% comment %} Format date {% endcomment %}
         const date = new Date(saleOrder.date)
         const formattedDate = date.toLocaleDateString('en-CA', { month: 'long', day: 'numeric', year: 'numeric' })   
@@ -509,19 +494,4 @@
   }
 
   getSOSSaleOrdersFromCustomerId()
-
-  {% comment %} getUPSTrackingStatus('1ZX2382F2096110457') {% endcomment %}
 </script>
-
-
-{% comment %} const getSOSInventoryCustomer = () => {
-  try {
-    fetch(`${backendURL}/api/sos_customer?id={{ id }}`)
-      .then(response => response.json())
-      .then(data => {
-        window.sosCustomer = data.data;
-      })
-  } catch (error) {
-    console.error(error)
-  }
-} {% endcomment %}
