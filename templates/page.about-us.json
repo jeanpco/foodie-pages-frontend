@@ -82,31 +82,31 @@
           "settings": {
             "overline": "",
             "title": "Celebrating Makers",
-            "body": "We are committed to sourcing small. We work with 100s of small, independently-owned businesses, most of them woman-owned. We care about the stories behind each product and the passion that drives entrepreneurs from idea to launch."
+            "body": "We are committed to sourcing small. We work with 100s of small, independently-owned businesses across Canada. We care about the stories behind each product and the passion that drives entrepreneurs from idea to launch."
           }
         },
         "ab7fff74-0668-4779-9c58-a3781089ca61": {
           "type": "tab",
           "settings": {
             "overline": "",
-            "title": "Quality Ingredients",
-            "body": "xxx"
-          }
-        },
-        "2d4083b3-581a-4ade-b225-6f2117a93f50": {
-          "type": "tab",
-          "settings": {
-            "overline": "",
-            "title": "Combine Joy & Utility",
-            "body": "We cut through the noise so you don't have to, seeking out products with heart and soul."
+            "title": "Expert Curation",
+            "body": "Our team is committed to helping you discover the most unique and exciting small batch goods from across Canada. We take chances on new brands you may not yet see elsewhere. With a wide selection of 100s of brands, you’ll have a blast discovering new trends."
           }
         },
         "47847899-6a08-4443-881a-c2133258173d": {
           "type": "tab",
           "settings": {
             "overline": "",
-            "title": "Consciously Crafted",
-            "body": ""
+            "title": "Diversity & Inclusion",
+            "body": "Our business is built on the idea that it is time to increase diversity and inclusion in corporate gifting. We source from underrepresented small businesses and independent makers, and work to share diverse perspectives."
+          }
+        },
+        "2d4083b3-581a-4ade-b225-6f2117a93f50": {
+          "type": "tab",
+          "settings": {
+            "overline": "",
+            "title": "Commitment to Quality",
+            "body": "We cut through the noise so you don't have to, seeking out high quality goods with heart and soul. Each brand goes through a rigorous selection process to make sure we have a collection of products that are truly the best of the best."
           }
         },
         "a25db7f7-6489-43d4-89c5-e1e47404b228": {
@@ -122,13 +122,13 @@
       "block_order": [
         "db40d850-e629-4e9b-b0e8-d2d20e4414ad",
         "ab7fff74-0668-4779-9c58-a3781089ca61",
-        "2d4083b3-581a-4ade-b225-6f2117a93f50",
         "47847899-6a08-4443-881a-c2133258173d",
+        "2d4083b3-581a-4ade-b225-6f2117a93f50",
         "a25db7f7-6489-43d4-89c5-e1e47404b228"
       ],
       "settings": {
         "overline": "What's inside counts",
-        "title": "<p>We're all in on <em>small<\/em> brands<\/p>",
+        "title": "<p>We're all in on <em>small<\/em> brands.<\/p>",
         "heading_style": "h2",
         "image": "shopify:\/\/shop_images\/Image_3468c917-9e51-49ab-9d3c-fa357152af3b.png",
         "cta_text": "Get in touch",
@@ -146,7 +146,7 @@
           "settings": {
             "image": "shopify:\/\/shop_images\/My_project_1.jpg",
             "title": "Barbet",
-            "body": "In an attempt to manage a health condition, Katie decided to go alcohol-free. While she didn’t miss drinking, she did miss the comfort and connection that alcohol provided in social settings. This led the sister duo, Katie and Andrea, to create full-bodied blends of elevated sparkling water that you can drink straight out of the can – or even mix with spirits if you consume alcohol.",
+            "body": "In an attempt to manage a health condition, Katie decided to go alcohol-free. While she didn’t miss drinking, she did miss the comfort and connection that alcohol provided in social settings. This led Katie and her sister Andrea to create a line of full-bodied, elevated sparkling waters that you can drink straight out of the can – or even mix with spirits.",
             "cta_text": "",
             "cta_link": "#contact"
           }

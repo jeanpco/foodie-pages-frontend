@@ -71,7 +71,52 @@
     "540551bc-af60-4262-9fa5-9c86a6e53957": {
       "type": "image",
       "settings": {
-        "image": "shopify:\/\/shop_images\/Image_d4a1883a-3e9c-4409-bdd9-df342810f0bb.png"
+        "image": "shopify:\/\/shop_images\/0001_2.jpg"
+      }
+    },
+    "05ea480d-037b-4297-9c3d-d6160866116b": {
+      "type": "module-columns",
+      "blocks": {
+        "765a0837-b3a6-417e-a20d-8c4151c40912": {
+          "type": "card",
+          "settings": {
+            "title": "Step 1: Pick Your Gifts",
+            "body": "Browse our 2022 Ready-to-Ship Holiday Gift Box Catalog. Find the perfect holiday gift for everyone on your list.",
+            "cta_text": "Download & View Catalog",
+            "cta_link": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/foodiepages_Holiday_2022_Catalog_NOV1.pdf?v=1667394129"
+          }
+        },
+        "2799395e-848f-4345-9be1-4844c0f3b341": {
+          "type": "card",
+          "settings": {
+            "title": "Step 2: Complete the Order Form",
+            "body": "Fill out our handy order form with all of the recipients’ info (and don’t forget to add a gift message).",
+            "cta_text": "Download Order Form",
+            "cta_link": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/Foodiepages-Gift-Concierge-Order-Form-Holiday_2022.xlsx?v=1663681310"
+          }
+        },
+        "1a1d97cc-0c9f-4023-b4cf-a2188c76fa3e": {
+          "type": "card",
+          "settings": {
+            "title": "Step 3: Submit Your Order",
+            "body": "Email your order form to orders@foodiepages.ca. Our gift concierge team will be in touch within two business days.",
+            "cta_text": "Send Order Form",
+            "cta_link": "mailto:orders@foodiepages.ca"
+          }
+        }
+      },
+      "block_order": [
+        "765a0837-b3a6-417e-a20d-8c4151c40912",
+        "2799395e-848f-4345-9be1-4844c0f3b341",
+        "1a1d97cc-0c9f-4023-b4cf-a2188c76fa3e"
+      ],
+      "settings": {
+        "overline": "Corporate gifting",
+        "title": "The Yummiest Way to Corporate Gift!",
+        "body": "Who says business gifts need to feel corporate?",
+        "cta_text": "Browse holiday catalog",
+        "cta_link": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/foodiepages_Holiday_2022_Catalog_NOV1.pdf?v=1667394129",
+        "heading_style": "h2"
       }
     },
     "module-tabs": {
@@ -150,51 +195,6 @@
         "title": "<p>Why <em>foodiepages<\/em>?<\/p>"
       }
     },
-    "05ea480d-037b-4297-9c3d-d6160866116b": {
-      "type": "module-columns",
-      "blocks": {
-        "765a0837-b3a6-417e-a20d-8c4151c40912": {
-          "type": "card",
-          "settings": {
-            "title": "Step 1: Pick Your Gifts",
-            "body": "Browse our 2022 Ready to Ship Holiday Gift Box Catalog. Find the perfect holiday gift for everyone on your list.",
-            "cta_text": "Download & View Catalog",
-            "cta_link": "#download-catalogue"
-          }
-        },
-        "2799395e-848f-4345-9be1-4844c0f3b341": {
-          "type": "card",
-          "settings": {
-            "title": "Step 2: Complete the Order Form",
-            "body": "Fill out our handy order form with all of the recipients’ info (and don’t forget to add a gift message).",
-            "cta_text": "Download Order Form",
-            "cta_link": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/Foodiepages-Gift-Concierge-Order-Form-Holiday_2022.xlsx?v=1663681310"
-          }
-        },
-        "1a1d97cc-0c9f-4023-b4cf-a2188c76fa3e": {
-          "type": "card",
-          "settings": {
-            "title": "Step 3: Submit Your Order",
-            "body": "Email your order form to orders@foodiepages.ca. Our gift concierge team will be in touch within two business days.",
-            "cta_text": "Send Order Form",
-            "cta_link": "mailto:orders@foodiepages.ca"
-          }
-        }
-      },
-      "block_order": [
-        "765a0837-b3a6-417e-a20d-8c4151c40912",
-        "2799395e-848f-4345-9be1-4844c0f3b341",
-        "1a1d97cc-0c9f-4023-b4cf-a2188c76fa3e"
-      ],
-      "settings": {
-        "overline": "Corporate gifting",
-        "title": "The Yummiest Way to Corporate Gift!",
-        "body": "Who says business gifts need to feel corporate? Who says business gifts need to feel corporate?",
-        "cta_text": "Browse Holiday Catalog",
-        "cta_link": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/foodiepages_Holiday_2022_Catalog_NOV1.pdf?v=1667394129",
-        "heading_style": "h2"
-      }
-    },
     "module-testimonials": {
       "type": "module-testimonials",
       "blocks": {
@@ -219,7 +219,7 @@
     "product-recommendations": {
       "type": "product-recommendations",
       "settings": {
-        "overline": "Holiday gifts",
+        "overline": "ready-to-ship holiday gifts",
         "title": "<p>Top Holiday Picks<\/p>",
         "body": "Check off everyone on your gift list with our wide variety of ready-to-ship holiday gifts.",
         "collection": "holiday-gift-baskets",
@@ -234,8 +234,8 @@
   "order": [
     "main",
     "540551bc-af60-4262-9fa5-9c86a6e53957",
-    "module-tabs",
     "05ea480d-037b-4297-9c3d-d6160866116b",
+    "module-tabs",
     "module-testimonials",
     "product-recommendations"
   ]
