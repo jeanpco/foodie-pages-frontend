@@ -150,7 +150,7 @@
           "type": "collection",
           "settings": {
             "title": "New Arrivals",
-            "collection": "fathers-day"
+            "collection": "new-arrivals"
           }
         },
         "f2d9af43-61a5-4c7b-8cdf-81d774905352": {
@@ -170,15 +170,15 @@
         "f00d0e50-db70-498b-9cbe-dac1ab8c7341": {
           "type": "collection",
           "settings": {
-            "title": "Baby",
-            "collection": "holiday-gift-baskets"
+            "title": "Under $75",
+            "collection": "under-75"
           }
         },
         "1ed4348a-d03e-4198-a7e5-c2ac4b470fb3": {
           "type": "collection",
           "settings": {
-            "title": "Care Packages",
-            "collection": "desk-essentials"
+            "title": "Foodie",
+            "collection": "foodie"
           }
         },
         "000af700-bcb5-4e04-852c-35a79a7eca43": {
