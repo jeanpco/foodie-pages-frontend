@@ -232,7 +232,7 @@
         "54c84020-796f-46f9-a861-eecbf0f12ebf": {
           "type": "cta",
           "settings": {
-            "cta_text": "Download Catalogue",
+            "cta_text": "Download Catalog",
             "cta_link": "#download-catalogue"
           }
         },
@@ -381,162 +381,189 @@
         "166cc9e1-af24-425f-acf6-5a0408f6dc50": {
           "type": "logo",
           "settings": {
+            "title": "",
             "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/TD.png?v=1668884605"
           }
         },
         "3993bf26-69d7-4e36-bdc9-7943f80af918": {
           "type": "logo",
           "settings": {
+            "title": "",
             "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/LaurentianBank.png?v=1668884605"
           }
         },
         "51e01ac0-7371-49e5-9b1a-5c71c9d1d877": {
           "type": "logo",
           "settings": {
+            "title": "",
             "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/Osler.png?v=1668884605"
           }
         },
         "987869e5-251a-4a90-9d3e-d3b0e0bcdff3": {
           "type": "logo",
           "settings": {
+            "title": "",
             "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/RaymondJames.png?v=1668884605"
           }
         },
         "52cfa906-476a-4ac7-a036-49df49e507eb": {
           "type": "logo",
           "settings": {
+            "title": "",
             "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/Cassels.png?v=1668884605"
           }
         },
         "2e138995-cd2e-4029-acf4-13107af012ff": {
           "type": "logo",
           "settings": {
+            "title": "",
             "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/Desjardins.png?v=1668884605"
           }
         },
         "998aafff-c634-4329-bed7-d5e78b3b9e08": {
           "type": "logo",
           "settings": {
+            "title": "",
             "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/Symcor.png?v=1668884605"
           }
         },
         "9099b32d-1b91-45c2-bf56-a4adbbad61d2": {
           "type": "logo",
           "settings": {
+            "title": "",
             "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/CF.png?v=1668884605"
           }
         },
         "c9adf358-a037-4f9e-be1a-8435b7e81830": {
           "type": "logo",
           "settings": {
+            "title": "",
             "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/EconomicalInsurance.png?v=1668884605"
           }
         },
         "c33044cd-51ff-498a-92a2-6319d9f4af54": {
           "type": "logo",
           "settings": {
+            "title": "",
             "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/Blakes.png?v=1668884605"
           }
         },
         "c48ea20a-ea11-4407-aa69-225b7a817bf9": {
           "type": "logo",
           "settings": {
+            "title": "",
             "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/LibertyMutual.png?v=1668884605"
           }
         },
         "3bf093fa-375a-421d-a83a-ebeb83319f2f": {
           "type": "logo",
           "settings": {
+            "title": "",
             "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/Properly.png?v=1668884605"
           }
         },
         "3d470323-895b-48d4-832e-2102339e31b1": {
           "type": "logo",
           "settings": {
+            "title": "",
             "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/BLG.png?v=1668884605"
           }
         },
         "b4c98cc1-4ef0-409a-8a3f-5762a597bf82": {
           "type": "logo",
           "settings": {
+            "title": "",
             "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/Sickkids.png?v=1668884605"
           }
         },
         "879ef686-5a8e-4c77-8d2e-4f7d958ba2c9": {
           "type": "logo",
           "settings": {
+            "title": "",
             "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/RBC-Royal-Bank.png?v=1669131687"
           }
         },
         "09d791dc-5466-42f9-b4a7-4b78889cec9f": {
           "type": "logo",
           "settings": {
+            "title": "",
             "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/CanadaLife.png?v=1668884605"
           }
         },
         "27b0dc1b-3850-45f1-8be2-2d90656bfedc": {
           "type": "logo",
           "settings": {
+            "title": "",
             "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/Irving.png?v=1668884605"
           }
         },
         "5389a844-a062-427e-b9c8-ba6b324d99df": {
           "type": "logo",
           "settings": {
+            "title": "",
             "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/Oxford.png?v=1668884605"
           }
         },
         "f9c91461-468b-4913-82b6-a80283a9e150": {
           "type": "logo",
           "settings": {
+            "title": "",
             "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/RSM.png?v=1668884605"
           }
         },
         "00cfc52c-fbdd-40f8-a453-a539f0a635a9": {
           "type": "logo",
           "settings": {
+            "title": "",
             "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/BMO.png?v=1668884605"
           }
         },
         "42aa2780-0ea2-4637-b3ae-fb249f5c9fc1": {
           "type": "logo",
           "settings": {
+            "title": "",
             "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/Shopify.png?v=1668884605"
           }
         },
         "54222195-0efb-44e8-a9b5-823e5687ee7b": {
           "type": "logo",
           "settings": {
+            "title": "",
             "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/Deloitte.png?v=1668884605"
           }
         },
         "8f5df928-6398-4a12-afcc-e79dc23d7041": {
           "type": "logo",
           "settings": {
+            "title": "",
             "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/McMillan.png?v=1668884605"
           }
         },
         "45b787ce-9687-4fe3-b6da-9c83ef5a5b68": {
           "type": "logo",
           "settings": {
+            "title": "",
             "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/Bayer.png?v=1668884605"
           }
         },
         "a355d3c0-427d-40bf-9db2-39c1886c57da": {
           "type": "logo",
           "settings": {
+            "title": "",
             "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/Xero.png?v=1668884605"
           }
         },
         "37fd23bf-890b-445a-818e-ab77043f23c0": {
           "type": "logo",
           "settings": {
+            "title": "",
             "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/Accenture.png?v=1668884605"
           }
         },
         "7ba2049f-3fd5-44f5-85da-5e07d9bb4ad8": {
           "type": "logo",
           "settings": {
+            "title": "",
             "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/Bell.png?v=1668884605"
           }
         }
