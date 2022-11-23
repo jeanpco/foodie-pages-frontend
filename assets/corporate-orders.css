@@ -17,6 +17,11 @@
   animation: spin 2s linear infinite;
 }
 
+.inline-loading {
+  bottom: unset !important;
+  height: 8px !important;
+}
+
 @keyframes spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }

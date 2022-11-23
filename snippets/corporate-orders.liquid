@@ -3,7 +3,9 @@
 <div class="loading">
   <div class="loading-container text-align-center">
     <div class="loading-spinner"></div>
-    <p class="text-size-tiny margin-top margin-small"></p>
+    <p class="text-size-tiny margin-top margin-small">
+      Retrieving line items for {{ order.number }}.<br>Shipment size will impact load time.<br>Avg: 2-6 seconds.<br>Thank you for your patience.
+    </p>
   </div>
 </div>
 
@@ -27,11 +29,11 @@
   {% endcomment %}
 
   const UPSTrackingStatuses = {
-    'I': 'In Transit',
+    'I': 'On The Way',
     'D': 'Delivered',
     'X': 'Exception',
     'P': 'Pickup',
-    'M': 'Billing Information Received',
+    'M': 'Label Created',
     'O': 'Out for Delivery',
     'DO': 'Delivered Origin',
     'DD': 'Delivered Destination',
@@ -199,7 +201,7 @@
     modalTitle.innerHTML = `Viewing Order: ${order.number}`
     modalBody.innerHTML = `Order created on: ${order.formattedDate}`
     {% comment %} find %%order_name%% in loading text and replace with order.number {% endcomment %}
-    loading.querySelector('p').innerHTML = `Retrieving line items for ${order.number}. Depending on the size of your shipment, the load time varies. Avg: 2-6 seconds.<br>Thank you for your patience.`
+    loading.querySelector('p').innerHTML = `Retrieving line items for ${order.number}.<br>Shipment size will impact load time.<br>Avg: 2-6 seconds.<br>Thank you for your patience.`
 
     {% comment %} get closest dialog element to modalHeader {% endcomment %}
     const dialog = modalHeader.closest('dialog');
@@ -278,7 +280,7 @@
           </td>
           <td class="text-size-small">
             <p class="text-size-tiny uppercase text-color-grey-600 hide-tablet-and-up">Shipping status</p>
-            <span style="position: relative; width: 100%; display: block;" data-tracking-detail>
+            <span class="address-line" style="position: relative; width: 100%; display: block;" data-tracking-detail>
               ${loadingElement("margin-left: -15px;")}
             </span>
           </td>
@@ -295,7 +297,7 @@
           </td>
           <td class="text-size-small">
             <p class="text-size-tiny uppercase text-color-grey-600 hide-tablet-and-up">Shipment Date</p>
-            <span>${order.shipDate ? formattedShipDate : 'No Ship Date'}</span>
+            <span class="ship-date">${order.shipDate ? formattedShipDate : 'No Ship Date'}</span>
           </td>
           {% comment %} ${addressValidationFailed ? `
             <div class="alert display-flex align-items-center padding-horizontal padding-medium">
@@ -316,49 +318,67 @@
 
       if (!shipments.length) return
 
-      shipments.sort((a, b) => {
-        return new Date(b.shipDate) - new Date(a.shipDate);
-      }).forEach(async ship => {
-
-        if (!ship.trackingNumber) return;
-
-        let statusType = null;
-        let statusDescription = null;
-
-        {% comment %} if the shipment has been saved, get the data from it otherwise call it from the ups api {% endcomment %}
-        if (sessionStorage.getItem(ship.trackingNumber)) {
-          const upsShipment = JSON.parse(sessionStorage.getItem(ship.trackingNumber));
-
-          statusType = upsShipment.statusType;
-          statusDescription = upsShipment.statusDescription;
-        } else {
-          const upsShipment = await getUPSTrackingStatus(ship.trackingNumber);
-
-          if (upsShipment.trackResponse.shipment[0].warnings && upsShipment.trackResponse.shipment[0].warnings[0].message) {
-            statusType = upsShipment.trackResponse.shipment[0].warnings[0].message;
-            statusDescription = upsShipment.trackResponse.shipment[0].warnings[0].message
-          } else {
-            statusType = upsShipment.trackResponse.shipment[0].package[0].activity[0].status.type;
-            statusDescription = upsShipment.trackResponse.shipment[0].package[0].activity[0].status.description;
-          }
-
-          {% comment %} save the data for next time around {% endcomment %}
-          sessionStorage.setItem(ship.trackingNumber, JSON.stringify({
-            statusType,
-            statusDescription
-          })) 
-        }
-
-        if (!statusType || !statusDescription) {
-          return;
-        }
-
-        updateTrackingDetails(ship.trackingNumber, statusType, statusDescription)
-      })
+      getUPSTrackingDetails(shipments)
 
     } catch (error) {
       console.error(error)
     }
+  }
+
+  {% comment %} 
+    BACKEND
+
+    Get UPS tracking details from API
+  {% endcomment %}
+
+  const getUPSTrackingDetails = async (shipments) => {
+    shipments.sort((a, b) => {
+      return new Date(b.shipDate) - new Date(a.shipDate);
+    }).forEach(async ship => {
+
+      if (!ship.trackingNumber) return;
+
+      let statusType = null;
+      let statusDescription = null;
+
+      {% comment %} if the shipment has been saved, get the data from it otherwise call it from the ups api {% endcomment %}
+      if (sessionStorage.getItem(ship.trackingNumber)) {
+        const upsShipment = JSON.parse(sessionStorage.getItem(ship.trackingNumber));
+
+        statusType = upsShipment.statusType;
+        statusDescription = upsShipment.statusDescription;
+      } else {
+        const upsShipment = await getUPSTrackingStatus(ship.trackingNumber);
+
+        if (upsShipment.trackResponse.shipment[0].warnings && upsShipment.trackResponse.shipment[0].warnings[0].message) {
+          statusType = upsShipment.trackResponse.shipment[0].warnings[0].message;
+          statusDescription = upsShipment.trackResponse.shipment[0].warnings[0].message
+        } else {
+          statusType = upsShipment.trackResponse.shipment[0].package[0].activity[0].status.type;
+          statusDescription = upsShipment.trackResponse.shipment[0].package[0].activity[0].status.description;
+        }
+
+        {% comment %} save the data for next time around {% endcomment %}
+        sessionStorage.setItem(ship.trackingNumber, JSON.stringify({
+          statusType,
+          statusDescription
+        })) 
+      }
+
+      updateTrackingDetails(ship.trackingNumber, statusType, statusDescription)
+    })
+
+    {% comment %} if no tracking is found, hide loading {% endcomment %}
+    const trackingShipDates = [...document.querySelectorAll('.ship-date')];
+
+    trackingShipDates.forEach(track => {
+      const row = track.closest('tr')
+      const loading = row.querySelector('.inline-loading')
+
+      if (loading) {
+        loading.style.display = 'none'
+      }
+    })
   }
 
   {% comment %} 
@@ -370,16 +390,17 @@
   const updateTrackingDetails = (trackingNumber, statusType, statusDescription) => {
 
     const trackingNumberElement = document.querySelector(`[data-tracking-number="${trackingNumber}"]`);
-
-    if (!trackingNumberElement) {
-      return;
-    }
-
     const trackingLoading = trackingNumberElement.closest('tr').querySelector('.inline-loading');
-
+    
     if (trackingLoading) {
       trackingLoading.style.display = 'none';
     }
+
+    if (!trackingNumberElement || !statusType || !statusDescription) {
+      return;
+    }
+
+
 
     const trackingDetail = trackingNumberElement.closest('tr').querySelector('[data-tracking-detail]');
 
