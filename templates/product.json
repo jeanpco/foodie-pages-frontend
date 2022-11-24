@@ -51,7 +51,7 @@
           "type": "collapsible_tab",
           "settings": {
             "heading": "Shipping and processing",
-            "content": "<p>This is a test<\/p>",
+            "content": "",
             "page": ""
           }
         }
