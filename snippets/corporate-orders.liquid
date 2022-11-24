@@ -4,7 +4,7 @@
   <div class="loading-container text-align-center">
     <div class="loading-spinner"></div>
     <p class="text-size-tiny margin-top margin-small">
-      Retrieving line items for {{ order.number }}.<br>Shipment size will impact load time.<br>Avg: 2-6 seconds.<br>Thank you for your patience.
+      Retrieving Sale Orders {{ customer.name }}.<br>Thank you for your patience.
     </p>
   </div>
 </div>
@@ -363,7 +363,8 @@
       const row = track.closest('tr')
       const loading = row.querySelector('.inline-loading')
 
-      if (loading) {
+      {% comment %} if track text says "No Ship Date" {% endcomment %}
+      if (track.innerText === 'No Ship Date' && loading) {
         loading.style.display = 'none'
       }
     })
