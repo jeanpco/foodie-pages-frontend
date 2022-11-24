@@ -6,7 +6,7 @@
   border-width: var(--popup-border-width);
   border-style: solid;
   border-color: rgba(var(--color-primary), var(--popup-border-opacity));
-  background-color: rgb(var(--color-background));
+  background-color: var(--color-secondary);
   z-index: 3;
   border-bottom-right-radius: var(--popup-corner-radius);
   border-bottom-left-radius: var(--popup-corner-radius);
@@ -57,8 +57,8 @@ predictive-search[loading] .predictive-search {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: calc(100% - 4rem);
-  color: rgba(var(--color-primary), 0.7);
+  width: calc(100% - 1.5rem);
+  opacity: 1;
 }
 
 predictive-search .spinner {
