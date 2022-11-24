@@ -329,6 +329,10 @@
       {% render 'multi-ship' %}
     {% endif %}
 
+    {% if request.path == '/apps/builder' %}
+      {{ 'box-builder.css' | asset_url | stylesheet_tag }}
+    {% endif %}
+
     <style>
       .icon-next-arrow,
       .icon-prev-arrow {
