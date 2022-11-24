@@ -102,8 +102,8 @@
             "title": "Easy and speedy shipping.",
             "body": "We can bulk ship to one location or 100s of individual addresses, worldwide. We make the entire process seamless.",
             "cta_text": "",
-            "cta_link": "shopify:\/\/pages\/about-us",
-            "image": "shopify:\/\/shop_images\/Frame_43428_2.png"
+            "cta_link": "",
+            "image": "shopify:\/\/shop_images\/4x3_28_20191211_FoodiePages_AvenuePhoto.png"
           }
         },
         "82370e0b-29ef-4ff4-9ed1-ff7fd169f7ff": {
@@ -183,6 +183,7 @@
         },
         "000af700-bcb5-4e04-852c-35a79a7eca43": {
           "type": "collection",
+          "disabled": true,
           "settings": {
             "title": "",
             "collection": "books"
