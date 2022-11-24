@@ -226,7 +226,7 @@
     if (!storeId) {
       loading.style.display = 'none'
       table.innerHTML = `
-        <div class="error-alert text-align-center padding-medium display-flex justify-content-center">
+        <div class="text-align-center padding-medium display-flex justify-content-center">
           {% render 'icon-error' %}
           <p class="text-size-small">No shipments found for this order. It may be that your order has not yet been created within our fulfillment system, or that this shipment has been closed.</p>
         </div>
@@ -280,7 +280,7 @@
           </td>
           <td class="text-size-small">
             <p class="text-size-tiny uppercase text-color-grey-600 hide-tablet-and-up">Shipping status</p>
-            <span class="address-line text-color-tertiary" style="position: relative; width: 100%; display: block;" data-tracking-detail>
+            <span class="address-line" style="position: relative; width: 100%; display: block;" data-tracking-detail>
               ${loadingElement("margin-left: -15px;")}
             </span>
           </td>
