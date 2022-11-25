@@ -178,13 +178,6 @@ predictive-search[loading] .predictive-search__results-list:first-child {
   cursor: pointer;
 }
 
-@media screen and (min-width: 750px) {
-  .predictive-search__item--term {
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-  }
-}
-
 .predictive-search__item--term .icon-arrow {
   width: calc(var(--font-heading-scale) * 1.4rem);
   height: calc(var(--font-heading-scale) * 1.4rem);
