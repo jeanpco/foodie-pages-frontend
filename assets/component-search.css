@@ -5,6 +5,10 @@
   caret-color: var(--color-secondary);
   color: var(--color-secondary);
 }
+.template-search__search .search__input.field__input {
+  color: var(--color-primary);
+  caret-color: var(--color-primary);
+}
 
 .search__button {
   right: 1.125rem;
