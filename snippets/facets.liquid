@@ -259,7 +259,7 @@
           <div class="mobile-facets__inner gradient">
             <div class="mobile-facets__header">
               <div class="mobile-facets__header-inner text-align-left">
-                <p class="mobile-facets__heading medium-hide large-up-hide text-size-tiny text-color-tertiary uppercase text-weight-semibold">
+                <p class="mobile-facets__heading medium-hide large-up-hide text-size-tiny text-color-tertiary uppercase text-weight-medium">
                   {%- if enable_filtering and enable_sorting -%}
                     {{ 'products.facets.filter_and_sort' | t }}
                   {%- elsif enable_filtering -%}
@@ -296,13 +296,13 @@
                     <details id="Details-Mobile-{{ forloop.index }}-{{ section.id }}" class="mobile-facets__details js-filter" data-index="mobile-{{ forloop.index }}">
                       <summary class="mobile-facets__summary">
                         <div>
-                          <span class="text-size-medium text-weight-semibold">{{ filter.label | escape }}</span>
+                          <span class="text-size-medium text-weight-medium">{{ filter.label | escape }}</span>
                           <span class="mobile-facets__arrow no-js-hidden">{% render 'icon-arrow' %}</span>
                         </div>
                       </summary>
-                      <div id="FacetMobile-{{ forloop.index }}-{{ section.id }}" class="mobile-facets__submenu gradient">
+                      <div id="FacetMobile-{{ forloop.index }}-{{ section.id }}" class="mobile-facets__submenu background-color-white">
 
-                        <button class="mobile-facets__close-button text-size-medium text-weight-semibold text-color-grey-500" aria-expanded="true" type="button">
+                        <button class="mobile-facets__close-button text-size-medium text-weight-medium text-color-grey-500" aria-expanded="true" type="button">
                           {% render 'icon-arrow' %}
                           {{ filter.label | escape }}
                         </button>
@@ -362,12 +362,12 @@
                     <details id="Details-Mobile-{{ forloop.index }}-{{ section.id }}" class="mobile-facets__details js-filter" data-index="mobile-{{ forloop.index }}">
                       <summary class="mobile-facets__summary">
                         <div>
-                          <span class="text-size-medium text-weight-semibold">{{ filter.label | escape }}</span>
+                          <span class="text-size-medium text-weight-medium">{{ filter.label | escape }}</span>
                           <span class="mobile-facets__arrow no-js-hidden">{% render 'icon-arrow' %}</span>
                         </div>
                       </summary>
-                      <div id="FacetMobile-{{ forloop.index }}-{{ section.id }}" class="mobile-facets__submenu gradient">
-                        <button class="mobile-facets__close-button text-size-medium text-color-grey-500 margin-bottom margin-small text-weight-semibold" aria-expanded="true" type="button">
+                      <div id="FacetMobile-{{ forloop.index }}-{{ section.id }}" class="mobile-facets__submenu background-color-white">
+                        <button class="mobile-facets__close-button text-size-medium text-color-grey-500 margin-bottom margin-small text-weight-medium" aria-expanded="true" type="button">
                           {% render 'icon-arrow' %}
                           {{ filter.label | escape }}
                         </button>

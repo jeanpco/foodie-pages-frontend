@@ -1,14 +1,18 @@
 {% assign body = section.settings.body %}
+{% assign overline = section.settings.overline %}
+{% assign title = section.settings.title %}
 
 {% if template == 'collection' %}
   {% assign body = collection.description | strip_html %}
+  {% assign overline = collection.metafields.custom.overline %}
+  {% assign title = collection.title %}
 {% endif %}
 
 <div class="plain-content container">
   <div class="plain-content_header padding-bottom padding-large">
     {% render 'module-header', 
-      overline: section.settings.overline, 
-      title: section.settings.title,
+      overline: overline, 
+      title: title,
       body: body,
       text_horizontal_alignment: 'left',
       heading_style: section.settings.heading_style,

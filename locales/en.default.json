@@ -311,7 +311,7 @@
     },
     "addresses": {
       "title": "Addresses",
-      "default": "Default",
+      "default": "Primary Address",
       "add_new": "Add a new address",
       "edit_address": "Edit address",
       "first_name": "First name",
@@ -324,7 +324,7 @@
       "province": "Province",
       "zip": "Postal\/ZIP code",
       "phone": "Phone",
-      "set_default": "Set as default address",
+      "set_default": "Set as primary address",
       "add": "Add address",
       "update": "Update address",
       "cancel": "Cancel",

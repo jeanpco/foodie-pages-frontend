@@ -47,8 +47,9 @@
         {% if block.settings.body != blank %}
           <p class="text-color-grey-500">{{ block.settings.body }}</p>
         {% endif %}
+        
         {% if block.settings.cta_link != blank and block.settings.cta_text != blank %}
-          <a class="link" href="{{ block.settings.cta_link }}">{{ block.settings.cta_text }}</a>
+          <a class="link" {% if block.settings.cta_link contains "cdn." %}target="_blank"{% endif %} href="{{ block.settings.cta_link }}">{{ block.settings.cta_text }}</a>
         {% endif %}
       </div>
     {% endfor %}

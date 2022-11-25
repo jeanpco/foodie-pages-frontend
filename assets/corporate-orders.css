@@ -108,6 +108,10 @@
     flex: unset;
   }
 
+  .order-details tfoot td {
+    padding: 1rem !important;
+  }
+
   #sos-inventory-table th,
   #sos-inventory-table td,
   #single-order-table th,
