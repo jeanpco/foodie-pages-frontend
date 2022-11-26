@@ -226,7 +226,7 @@
     if (!storeId) {
       loading.style.display = 'none'
       table.innerHTML = `
-        <div class="text-align-center padding-medium display-flex justify-content-center">
+        <div class="text-align-center padding-medium display-flex justify-content-center flex-direction-column gap-1 align-items-center">
           {% render 'icon-error' %}
           <p class="text-size-small">No shipments found for this order. It may be that your order has not yet been created within our fulfillment system, or that this shipment has been closed.</p>
         </div>
@@ -426,12 +426,12 @@
       table.appendChild(tableHeader)
       
       tableHeader.innerHTML = `
-      <th class="text-size-tiny uppercase text-color-grey-600">Campaign Name</th>
-      <th class="text-size-tiny uppercase text-color-grey-600">Order #</th>
-      <th class="text-size-tiny uppercase text-color-grey-600">Order Date</th>
-      <th class="text-size-tiny uppercase text-color-grey-600"># of boxes left</th>
-      <th class="text-size-tiny uppercase text-color-grey-600">Delivery Status</th>
-      <th class="text-size-tiny uppercase text-color-grey-600">Details</th>
+        <th class="text-size-tiny uppercase text-color-grey-600">Campaign Name</th>
+        <th class="text-size-tiny uppercase text-color-grey-600">Order #</th>
+        <th class="text-size-tiny uppercase text-color-grey-600">Order Date</th>
+        <th class="text-size-tiny uppercase text-color-grey-600"># of boxes left</th>
+        <th class="text-size-tiny uppercase text-color-grey-600">Delivery Status</th>
+        <th class="text-size-tiny uppercase text-color-grey-600">Details</th>
       `
 
       saleOrders.forEach(saleOrder => {
@@ -464,12 +464,28 @@
         const tableRow = document.createElement('tr')
 
         tableRow.innerHTML = `
-          <td class="text-size-small">Unnamed</td>
-          <td class="text-size-small">${saleOrder.number}</td>
-          <td class="text-size-small">${formattedDate}</td>
-          <td class="text-size-small">${totalQuantity - totalShipped}</td>
-          <td class="text-size-small">${deliveryStatus}</td>
+          <td class="text-size-small">
+            <p class="text-size-tiny uppercase text-color-grey-600 hide-mobile-landscape-and-up">Campaign Name</p>
+            <span>Unnamed</span>
+          </td>
+          <td class="text-size-small">
+            <p class="text-size-tiny uppercase text-color-grey-600 hide-mobile-landscape-and-up">Order #</p>
+            <span>${saleOrder.number}</span>
+          </td>
+          <td class="text-size-small">
+            <p class="text-size-tiny uppercase text-color-grey-600 hide-mobile-landscape-and-up">Order Date</p>
+            <span>${formattedDate}</span>
+          </td>
+          <td class="text-size-small">
+            <p class="text-size-tiny uppercase text-color-grey-600 hide-mobile-landscape-and-up"># of boxes left</p>
+            <span>${totalQuantity - totalShipped}</span>
+          </td>
+          <td class="text-size-small">
+            <p class="text-size-tiny uppercase text-color-grey-600 hide-mobile-landscape-and-up">Delivery Status</p>
+            <span>${deliveryStatus}</span>
+          </td>
           <td>
+            <p class="text-size-tiny uppercase text-color-grey-600 hide-mobile-landscape-and-up">Details</p>
             <a class="link text-size-small" href="#view-order" data-order-number=${saleOrder.number}>View Order</a>
           </td>
         `

@@ -26,6 +26,12 @@
   }
 }
 
+@media screen and (min-width: 768px) {
+  .hide-mobile-landscape-and-up {
+    display: none !important;
+  }
+}
+
 @media screen and (max-width: 991px) {
   .hide, .hide-tablet{
     display: none !important;

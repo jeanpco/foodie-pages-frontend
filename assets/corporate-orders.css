@@ -37,10 +37,13 @@
   border-top: 1px solid var(--color-grey-200);
 }
 
-#single-order-table .icon-error,
 .order-details .icon-error {
   width: 1.5rem;
   margin-right: 1rem;
+}
+
+#single-order-table .icon-error {
+  width: 1.5rem;
 }
 
 #sos-inventory-table th:first-child,
@@ -127,6 +130,32 @@
   .order-details th,
   .order-details td {
     padding: 0.5rem 0 1rem !important;
+  }
+}
+
+@media screen and (max-width: 767px) {
+
+  #sos-inventory-table {
+    flex-wrap: wrap;
+  }
+
+  #sos-inventory-table tr:first-child {
+    display: none;
+  }
+
+  #sos-inventory-table tr {
+    width: 100%;
+    flex: unset;
+  }
+
+  #sos-inventory-table td::before {
+    display: none;
+  }
+
+  #sos-inventory-table td {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
   }
 }
 

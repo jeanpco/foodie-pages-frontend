@@ -1,5 +1,11 @@
+{% if section.settings.alert_text != blank %}
+  {% assign title = section.settings.alert_text %}
+{% else %}
+  {% assign title = title %}
+{% endif %}
+
 <div class="alert-banner margin-bottom margin-medium background-color-mar-10 padding-horizontal padding-medium text-align-center">
-  <div class="padding-vertical padding-small text-color-mar-darker">{{ section.settings.alert_text }}</div>
+  <div class="padding-vertical padding-small text-color-mar-darker">{{ title }}</div>
 </div>
 
 <style>

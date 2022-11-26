@@ -1,5 +1,5 @@
 <div class="view-order_container">
-  <div class="loading">
+  <div class="loading background-color-white">
     <div class="loading-container text-align-center">
       <div class="loading-spinner"></div>
       <p class="text-size-tiny margin-top margin-small">Retrieving line items for %%order_name%%. <br>Thank you for your patience.</p>
@@ -15,6 +15,10 @@
     heading_style: 'h3'
   %}
 
+  <div class="view-order-alert-container margin-top margin-small">
+    {% render 'alert-banner', title: 'Use Ctrl + F (Windows) or Cmd + F (Mac) for searching something specific in your table.' %}
+  </div>
+
   <div class="single-order_container">
     <table id="single-order-table" class="margin-top margin-large"></table>
   </div>
@@ -22,6 +26,11 @@
 </div>
 
 <style>
+
+  .view-order-alert-container {
+
+  }
+
   dialog[aria-controls="view-order"] .dialog-modal-container {
     max-width: 80.5rem;
     width: calc(100% - 2rem);
