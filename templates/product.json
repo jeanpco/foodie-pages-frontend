@@ -44,14 +44,14 @@
         "30d0b0b9-e8a9-49a3-8455-abac982ffadc": {
           "type": "variant_collapsible_tab",
           "settings": {
-            "heading": "Product Details"
+            "heading": "Selected Product Details"
           }
         },
         "collapsible-row-1": {
           "type": "collapsible_tab",
           "settings": {
             "heading": "Shipping and processing",
-            "content": "",
+            "content": "<p>This is a shipment policy description<\/p>",
             "page": ""
           }
         }
