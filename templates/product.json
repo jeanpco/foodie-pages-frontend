@@ -51,7 +51,7 @@
           "type": "collapsible_tab",
           "settings": {
             "heading": "Shipping and processing",
-            "content": "",
+            "content": "<p>This is a shipment policy description<\/p>",
             "page": ""
           }
         }
