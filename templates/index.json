@@ -7,14 +7,14 @@
           "type": "cta",
           "settings": {
             "cta_text": "Shop Now",
-            "cta_link": "\/"
+            "cta_link": "shopify:\/\/collections\/gift-baskets"
           }
         },
         "0a79a883-faf9-4609-8190-ce1392d3723b": {
           "type": "cta",
           "settings": {
             "cta_text": "Corporate Gifting",
-            "cta_link": "\/"
+            "cta_link": "shopify:\/\/pages\/corporate-gifting"
           }
         },
         "7e63476c-2c94-4994-b3dd-640813bcc65b": {
@@ -78,7 +78,7 @@
             "title": "Gifts that tell a story.",
             "body": "We source exclusively from small and underrepresented businesses across the country. Sharing their stories and values with you is one of our greatest joys.",
             "cta_text": "Shop now",
-            "cta_link": "\/",
+            "cta_link": "shopify:\/\/collections\/gift-baskets",
             "image": "shopify:\/\/shop_images\/4to3-Cropped3.jpg"
           }
         },
@@ -90,7 +90,7 @@
             "title": "Less is more.",
             "body": "We always prioritize quality over quantity. When it comes to selecting products for our gifts, beautiful design and impeccable quality are non-negotiable. We also try to keep our footprint small by working with local businesses.",
             "cta_text": "Shop now",
-            "cta_link": "\/",
+            "cta_link": "shopify:\/\/collections\/gift-baskets",
             "image": "shopify:\/\/shop_images\/4to3-Cropped2.jpg"
           }
         },
@@ -101,9 +101,9 @@
             "tab_text": "Fast shipping",
             "title": "Easy and speedy shipping.",
             "body": "We can bulk ship to one location or 100s of individual addresses, worldwide. We make the entire process seamless.",
-            "cta_text": "",
-            "cta_link": "shopify:\/\/pages\/about-us",
-            "image": "shopify:\/\/shop_images\/Frame_43428_2.png"
+            "cta_text": "Shop now",
+            "cta_link": "shopify:\/\/collections\/gift-baskets",
+            "image": "shopify:\/\/shop_images\/4x3_28_20191211_FoodiePages_AvenuePhoto.png"
           }
         },
         "82370e0b-29ef-4ff4-9ed1-ff7fd169f7ff": {
@@ -113,8 +113,8 @@
             "tab_text": "100% custom gift design",
             "title": "A fresh take on corporate gifting.",
             "body": "For larger orders, leverage our design services for a fully custom gift. From the products to the packaging, we'll create something memorable that reflects your brand, goals, and values.",
-            "cta_text": "",
-            "cta_link": "\/",
+            "cta_text": "Learn more",
+            "cta_link": "shopify:\/\/pages\/corporate-gifting",
             "image": "shopify:\/\/shop_images\/4to3-Cropped5.jpg"
           }
         },
@@ -125,8 +125,8 @@
             "tab_text": "10+ years of gifting",
             "title": "Expert gifters.",
             "body": "For 10 years, we've been your go-to for gifting. That also means we've been your go-to to discover all of the best small brands in one place. Trust us to help you select a gift that aligns with your values, fits in your budget, and gets there on time.",
-            "cta_text": "",
-            "cta_link": "\/",
+            "cta_text": "Shop now",
+            "cta_link": "shopify:\/\/collections\/gift-baskets",
             "image": "shopify:\/\/shop_images\/4to3-Cropped1.jpg"
           }
         }
@@ -150,7 +150,7 @@
           "type": "collection",
           "settings": {
             "title": "New Arrivals",
-            "collection": "fathers-day"
+            "collection": "new-arrivals"
           }
         },
         "f2d9af43-61a5-4c7b-8cdf-81d774905352": {
@@ -170,19 +170,20 @@
         "f00d0e50-db70-498b-9cbe-dac1ab8c7341": {
           "type": "collection",
           "settings": {
-            "title": "Baby",
-            "collection": "holiday-gift-baskets"
+            "title": "Under $75",
+            "collection": "under-75"
           }
         },
         "1ed4348a-d03e-4198-a7e5-c2ac4b470fb3": {
           "type": "collection",
           "settings": {
-            "title": "Care Packages",
-            "collection": "desk-essentials"
+            "title": "Foodie",
+            "collection": "foodie"
           }
         },
         "000af700-bcb5-4e04-852c-35a79a7eca43": {
           "type": "collection",
+          "disabled": true,
           "settings": {
             "title": "",
             "collection": "books"

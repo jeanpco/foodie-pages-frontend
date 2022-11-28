@@ -643,15 +643,3 @@
 li[data-address] {
   border-top: 1px solid var(--color-grey-200);
 }
-
-li[data-address] > h2 {
-  text-align: center;
-  font-size: calc(var(--font-heading-scale) * 1.8rem);
-  margin-bottom: 0;
-}
-
-@media only screen and (min-width: 750px) {
-  li[data-address] > h2 {
-    font-size: calc(var(--font-heading-scale) * 2.2rem);
-  }
-}

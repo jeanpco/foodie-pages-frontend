@@ -17,13 +17,18 @@
   animation: spin 2s linear infinite;
 }
 
+.inline-loading {
+  bottom: unset !important;
+  height: 8px !important;
+}
+
 @keyframes spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
 
 #sos-inventory-table {
-  min-height: 11.25rem;
+  min-height: 20.25rem;
 }
 
 #sos-inventory-table tr,
@@ -101,6 +106,10 @@
   .order-details > * {
     width: 100%;
     flex: unset;
+  }
+
+  .order-details tfoot td {
+    padding: 1rem !important;
   }
 
   #sos-inventory-table th,

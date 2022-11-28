@@ -119,6 +119,8 @@
 
 .select select {
   appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
   border: unset;
   width: 100%;
   min-height: 2.5rem;

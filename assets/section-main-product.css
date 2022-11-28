@@ -354,6 +354,12 @@ a.product__text {
   .product__info-container > *:first-child {
     margin-top: 0;
   }
+
+  .product__description {
+    padding: 1.5rem;
+    background: var(--color-mar-10);
+    border-radius: 0.5rem;
+  }
 }
 
 .product__description-title {

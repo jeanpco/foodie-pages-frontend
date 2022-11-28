@@ -9,7 +9,7 @@
 .hero-content_grid {
   display: flex;
   align-items: center;  
-  grid-gap: 1rem;
+  grid-gap: 1.5rem;
   column-gap: 2rem;
   flex-wrap: wrap;
   opacity: 0.7;

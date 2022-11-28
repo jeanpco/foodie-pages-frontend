@@ -1865,11 +1865,12 @@ details[open] .modal-overlay {
 details[open] .modal-overlay::after {
   position: absolute;
   content: '';
-  background-color: rgb(var(--color-primary), 0.5);
+  background-color: var(--color-primary);
   top: 100%;
   left: 0;
   right: 0;
   height: 100vh;
+  opacity: 0.25;
 }
 
 .no-js details[open] > .header__icon--search {
