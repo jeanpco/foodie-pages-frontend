@@ -227,7 +227,7 @@
                 {%- endif -%}
                   <form action="{{ routes.search_url }}" method="get" role="search" class="search search-modal__form">
                     <div class="field">
-                      <input class="search__input field__input"
+                      <input class="search__input field__input text-size-regular"
                         id="Search-In-Modal"
                         type="search"
                         name="q"
@@ -271,10 +271,11 @@
                   </predictive-search>
                 {%- endif -%}
                 <button type="button" class="search-modal__close-button modal__close-button" aria-label="{{ 'accessibility.close' | t }}">
-                  <svg class="icon icon-close" aria-hidden="true" focusable="false" role="presentation">
+                  {% comment %} <svg class="icon icon-close" aria-hidden="true" focusable="false" role="presentation">
                     <use href="#icon-close">
-                  </svg>
-                </button>
+                  </svg> {% endcomment %}
+                {% render 'icon-close-small' %}
+                </button> 
               </div>
             </div>
           </details>

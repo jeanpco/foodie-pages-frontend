@@ -1821,7 +1821,6 @@ menu-drawer + .header__search {
 }
 
 .header__search {
-  display: none;
   line-height: 0;
 }
 
@@ -1866,11 +1865,12 @@ details[open] .modal-overlay {
 details[open] .modal-overlay::after {
   position: absolute;
   content: '';
-  background-color: rgb(var(--color-primary), 0.5);
+  background-color: var(--color-primary);
   top: 100%;
   left: 0;
   right: 0;
   height: 100vh;
+  opacity: 0.25;
 }
 
 .no-js details[open] > .header__icon--search {
@@ -1891,9 +1891,10 @@ details[open] .modal-overlay::after {
   justify-content: center;
   width: 100%;
   height: 100%;
-  padding: 0 5rem 0 1rem;
+  padding: 0 1.25rem 0 1.25rem;
   line-height: calc(1 + 0.8 / var(--font-body-scale));
   position: relative;
+  background-color: var(--color-tertiary);
 }
 
 .search-modal__content-bottom {
@@ -1906,11 +1907,17 @@ details[open] .modal-overlay::after {
 
 .search-modal__form {
   width: 100%;
+  max-width: 28rem;
 }
 
 .search-modal__close-button {
-  position: absolute;
+  position: initial;
   right: 0.3rem;
+  color: var(--color-secondary);
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding-right: 0;
 }
 
 @media screen and (min-width: 750px) {
@@ -1924,9 +1931,7 @@ details[open] .modal-overlay::after {
 }
 
 @media screen and (min-width: 990px) {
-  .search-modal__form {
-    max-width: 47.8rem;
-  }
+ 
 
   .search-modal__close-button {
     position: initial;

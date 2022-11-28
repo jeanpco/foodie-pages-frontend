@@ -1,16 +1,20 @@
 .predictive-search {
   display: none;
   position: absolute;
-  top: calc(100% + 0.1rem);
+  top: calc(100% + 0.5rem);
   left: -0.1rem;
-  border-width: var(--popup-border-width);
-  border-style: solid;
-  border-color: rgba(var(--color-primary), var(--popup-border-opacity));
-  background-color: rgb(var(--color-background));
+  border-width: 0;
+  border-radius: 0.375rem !important;
+  background-color: var(--color-secondary);
+  padding: 1rem 0rem 0rem;
   z-index: 3;
   border-bottom-right-radius: var(--popup-corner-radius);
   border-bottom-left-radius: var(--popup-corner-radius);
   box-shadow: var(--popup-shadow-horizontal-offset) var(--popup-shadow-vertical-offset) var(--popup-shadow-blur-radius) rgba(var(--color-shadow), var(--popup-shadow-opacity));
+}
+
+.predictive-search li {
+  margin-bottom: 0;
 }
 
 .predictive-search--search-template {
@@ -18,7 +22,7 @@
   width: calc(100% + 0.2rem);
 }
 
-@media screen and (max-width: 749px) {
+@media screen and (max-width: 550px) {
   .predictive-search--header {
     right: 0;
     left: 0;
@@ -34,7 +38,7 @@
   }
 }
 
-@media screen and (min-width: 750px) {
+@media screen and (min-width: 551px) {
   .predictive-search {
     border-top: none;
     width: calc(100% + 0.2rem);
@@ -51,14 +55,28 @@ predictive-search[loading] .predictive-search {
 }
 
 .predictive-search__heading {
-  border-bottom: 0.1rem solid rgba(var(--color-primary), 0.08);
-  margin: 0 auto;
-  padding: 1.5rem 0 0.75rem;
+  padding: 0 1.5rem;
+  margin-bottom: 0.5rem;
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: calc(100% - 4rem);
-  color: rgba(var(--color-primary), 0.7);
+  width: 100%;
+  opacity: 1;
+}
+.predictive-search__heading__border {
+  position: absolute;
+  bottom: -0.5rem;
+  width: 100%;
+  height: 1px;
+  background-color: var(--color-grey-200);
+  display: block !important;
+  max-width: 86vw;
+}
+@media screen and (min-width: 550px) {
+  .predictive-search__heading__border {
+    max-width: 25rem;
+  }
 }
 
 predictive-search .spinner {
@@ -89,7 +107,7 @@ predictive-search[loading] .predictive-search__results-list:first-child {
 }
 
 .predictive-search__list-item:nth-last-child(2) {
-  border-bottom: 0.1rem solid rgba(var(--color-primary), 0.08);
+  border-bottom: none;
 }
 
 .predictive-search__list-item[aria-selected="true"] > *,
@@ -99,23 +117,31 @@ predictive-search[loading] .predictive-search__results-list:first-child {
 }
 
 .predictive-search__list-item[aria-selected="true"] .predictive-search__item-heading,
-.predictive-search__list-item:hover .predictive-search__item-heading {
-  text-decoration: underline;
-  text-underline-offset: 0.3rem;
+.predictive-search__list-item:hover {
+ background-color: var(--color-grey-100);
+ 
 }
 
 .predictive-search__item {
   display: flex;
-  padding: 1rem 2rem;
+  padding: 0.75rem 1.5rem;
   text-align: left;
   text-decoration: none;
-  width: 100%;
+}
+#predictive-search-option-search-keywords .predictive-search__item--term{
+  border-bottom-right-radius: 0.375rem;
+  border-bottom-left-radius: 0.375rem;
+}
+
+.predictive-search li:last-child:hover {
+  border-bottom-right-radius: 0.375rem;
+  border-bottom-left-radius: 0.375rem;
 }
 
 .predictive-search__item--link {
   display: grid;
-  grid-template-columns: 5rem 1fr;
-  grid-column-gap: 2rem;
+  grid-template-columns: 4rem 1fr;
+  grid-column-gap: 1rem;
   grid-template-areas: 'product-image product-content';
 }
 
@@ -150,16 +176,19 @@ predictive-search[loading] .predictive-search__results-list:first-child {
 .predictive-search__item--term {
   justify-content: space-between;
   align-items: center;
-  padding: 1.3rem 2rem;
+  padding: 0.75rem 1.5rem;
   word-break: break-all;
   line-height: calc(1 + 0.4 / var(--font-body-scale));
+  width: 100%;
+  background-color: var(--color-secondary);
+  border: none;
+  border-top: 1px solid var(--color-grey-100);
+  
+  cursor: pointer;
 }
-
-@media screen and (min-width: 750px) {
-  .predictive-search__item--term {
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-  }
+.predictive-search__item--term:hover {
+  border-bottom-right-radius: 0.375rem;
+  border-bottom-left-radius: 0.375rem;
 }
 
 .predictive-search__item--term .icon-arrow {
@@ -174,4 +203,7 @@ predictive-search[loading] .predictive-search__results-list:first-child {
   grid-area: product-image;
   object-fit: contain;
   font-family: 'object-fit: contain';
+  width: 100%;
+  height: 100%;
+  border-radius: 0.25rem;
 }
