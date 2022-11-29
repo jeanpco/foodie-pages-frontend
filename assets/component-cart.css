@@ -5,7 +5,8 @@
 
 #ms__toggle-box {
   margin-bottom: 2rem;
-  background: var(--color-grey-50);
+  background: var(--color-sandia-10);
+  color: var(--color-sandia-100);
 }
 
 #ms__toggle-box label {
