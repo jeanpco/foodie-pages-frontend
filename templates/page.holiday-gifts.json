@@ -2,74 +2,34 @@
   "sections": {
     "main": {
       "type": "module-hero",
-      "disabled": true,
       "blocks": {
         "02d55e23-f307-4138-a9bd-10d797daa746": {
           "type": "cta",
           "settings": {
-            "cta_text": "Ready to ship",
-            "cta_link": "shopify:\/\/collections\/gift-baskets"
-          }
-        },
-        "c048c51b-1b9b-4987-9088-f581437cc840": {
-          "type": "cta",
-          "settings": {
-            "cta_text": "Corporate gifting",
-            "cta_link": "shopify:\/\/pages\/how-it-works"
-          }
-        },
-        "04e2f251-3669-4ff7-b4fd-9ef6405238b0": {
-          "type": "trusted_by",
-          "settings": {
-            "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/placeholder-logo.svg?v=1668523184",
-            "icon_alt_text": "Airbnb"
-          }
-        },
-        "a7cc7bf9-c2e3-4ccf-92a0-dcf75e886f7d": {
-          "type": "trusted_by",
-          "settings": {
-            "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/placeholder-logo.svg?v=1668523184",
-            "icon_alt_text": "Airbnb"
-          }
-        },
-        "5421abb9-245e-4488-9677-0c07fd6aeac6": {
-          "type": "trusted_by",
-          "settings": {
-            "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/placeholder-logo.svg?v=1668523184",
-            "icon_alt_text": ""
-          }
-        },
-        "2bc1de12-9a6b-447e-a2ab-89ff92683902": {
-          "type": "trusted_by",
-          "settings": {
-            "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/placeholder-logo.svg?v=1668523184",
-            "icon_alt_text": ""
+            "cta_text": "Browse Holiday Catalogue",
+            "cta_link": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/foodiepages_Holiday_2022_Catalog_NOV1.pdf?v=1667394129"
           }
         }
       },
       "block_order": [
-        "02d55e23-f307-4138-a9bd-10d797daa746",
-        "c048c51b-1b9b-4987-9088-f581437cc840",
-        "04e2f251-3669-4ff7-b4fd-9ef6405238b0",
-        "a7cc7bf9-c2e3-4ccf-92a0-dcf75e886f7d",
-        "5421abb9-245e-4488-9677-0c07fd6aeac6",
-        "2bc1de12-9a6b-447e-a2ab-89ff92683902"
+        "02d55e23-f307-4138-a9bd-10d797daa746"
       ],
       "settings": {
-        "overline": "Quick shop",
-        "title": "<p>Gifts that celebrate small business<\/p>",
+        "overline": "2022 HOLIDAY GIFT GUIDE",
+        "title": "<p>The Yummiest Way to Corporate Gift!<\/p>",
         "heading_style": "h1",
-        "body": "We source exclusively from small and underrepresented businesses across the country. Sharing their stories and values with you is one of our greatest joys.",
-        "image": "shopify:\/\/shop_images\/Frame_43428_2.png",
+        "body": "Who says business gifts need to feel corporate?",
+        "image": "shopify:\/\/shop_images\/09A1760.jpg",
         "enable_card_style": false,
         "text_vertical_alignment": "flex-end",
         "layout_style": "two-columns",
         "background_color": "background-color-azul-verdoso-10",
-        "trusted_by_text": "Trusted by"
+        "trusted_by_text": ""
       }
     },
     "540551bc-af60-4262-9fa5-9c86a6e53957": {
       "type": "image",
+      "disabled": true,
       "settings": {
         "image": "shopify:\/\/shop_images\/0001_2.jpg"
       }
@@ -111,10 +71,10 @@
         "1a1d97cc-0c9f-4023-b4cf-a2188c76fa3e"
       ],
       "settings": {
-        "overline": "2022 holiday gift guide",
-        "title": "The Yummiest Way to Corporate Gift!",
-        "body": "Who says business gifts need to feel corporate?",
-        "cta_text": "Browse holiday catalog",
+        "overline": "",
+        "title": "",
+        "body": "",
+        "cta_text": "",
         "cta_link": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/foodiepages_Holiday_2022_Catalog_NOV1.pdf?v=1667394129",
         "heading_style": "h2"
       }
@@ -202,7 +162,7 @@
           "type": "testimonial",
           "settings": {
             "text": "Our company has used foodiepages for multiple employee appreciation and end-of-year celebration boxes.\n<br>\n<br>\nOur experience with foodiepages has been incredible and the feedback from our employees has been fantastic. We love the local & diverse vendors they have partnered with, we have sent over 400 boxes to our employees in Canada and the US.\n<br>\n<br>\nIt has been a wonderful experience working with the foodipages team, and we are excited to continue working with them in the future.",
-            "image": "shopify:\/\/shop_images\/Prodigy_Education.png"
+            "image": "shopify:\/\/shop_images\/Prodigy.png"
           }
         }
       },
