@@ -150,35 +150,40 @@
           "type": "collection",
           "settings": {
             "title": "New Arrivals",
-            "collection": "new-arrivals"
+            "collection": "new-arrivals",
+            "cta_link": "shopify:\/\/collections\/new-arrivals"
           }
         },
         "f2d9af43-61a5-4c7b-8cdf-81d774905352": {
           "type": "collection",
           "settings": {
             "title": "Holiday Gifts",
-            "collection": "holiday-gift-baskets"
+            "collection": "holiday-gift-baskets",
+            "cta_link": "shopify:\/\/collections\/holiday-gift-baskets"
           }
         },
         "c0b96aab-ebea-45f5-883d-582f92cab111": {
           "type": "collection",
           "settings": {
             "title": "Build-A-Box",
-            "collection": "box-builder-collection-main-website"
+            "collection": "box-builder-collection-main-website",
+            "cta_link": "shopify:\/\/products\/custom-gift-box"
           }
         },
         "f00d0e50-db70-498b-9cbe-dac1ab8c7341": {
           "type": "collection",
           "settings": {
             "title": "Under $75",
-            "collection": "under-75"
+            "collection": "under-75",
+            "cta_link": "shopify:\/\/collections\/under-75"
           }
         },
         "1ed4348a-d03e-4198-a7e5-c2ac4b470fb3": {
           "type": "collection",
           "settings": {
             "title": "Foodie",
-            "collection": "foodie"
+            "collection": "foodie",
+            "cta_link": "shopify:\/\/collections\/foodie"
           }
         },
         "000af700-bcb5-4e04-852c-35a79a7eca43": {
@@ -186,7 +191,8 @@
           "disabled": true,
           "settings": {
             "title": "",
-            "collection": "books"
+            "collection": "books",
+            "cta_link": ""
           }
         }
       },
