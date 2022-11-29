@@ -257,6 +257,7 @@
     },
     "67c66074-dbe7-48ca-909f-8416d2e86d32": {
       "type": "module-vertical-tabs",
+      "disabled": true,
       "blocks": {
         "0bc0438d-4de4-406b-9b99-82223592e434": {
           "type": "tab",
@@ -323,7 +324,7 @@
         "dff9231c-7adf-4ad2-853d-f2b72d77f49b"
       ],
       "settings": {
-        "overline": "Quick shop",
+        "overline": "No addresses, no problem",
         "title": "<p>Don’t have an address to send to?<\/p>",
         "heading_style": "h2",
         "body": "Each foodiepages gift basket is designed with premium goods from diverse, independently-owned makers and brands across Canada.",
