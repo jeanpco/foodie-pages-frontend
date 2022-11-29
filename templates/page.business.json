@@ -139,15 +139,15 @@
         "0f6671cc-6927-451b-b37c-da38925cd5b4": {
           "type": "cta",
           "settings": {
-            "cta_text": "Learn More",
-            "cta_link": "shopify:\/\/pages\/team-care-packages"
+            "cta_text": "Contact Us for Details",
+            "cta_link": "#contact"
           }
         },
         "a3d4eb6b-e000-4180-bb22-2f3c38f6af79": {
           "type": "cta",
           "settings": {
-            "cta_text": "Download Catalogue",
-            "cta_link": "#download-catalogue"
+            "cta_text": "Request a Quote",
+            "cta_link": "#corporate-contact"
           }
         }
       },
