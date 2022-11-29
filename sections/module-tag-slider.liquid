@@ -26,7 +26,7 @@
 
         <!-- Slides -->
         <div class="tag-slide swiper-slide background-color-azul-verdoso-10 center padding-horizontal padding-small">
-          <a href="{{ block_collection.url }}" class="tag-slider_inner">
+          <a href="{{ block_collection.cta_link }}" class="tag-slider_inner">
             <h3 class="heading-style-h4">{{ block_title }}</h3>
             {% 
               render 'button', 
@@ -116,11 +116,6 @@
           "type": "text",
           "id": "title",
           "label": "Title"
-        },
-        {
-          "type": "collection",
-          "id": "collection",
-          "label": "Collection"
         },
         {
           "type": "url",
