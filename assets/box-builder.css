@@ -92,7 +92,7 @@
         padding: 1rem;
         border: 1px solid var(--color-grey-200);
         border-radius: 6px;
-        height: 48px;
+        height: 55px;
     }
     .bxp-bldr-wizard-header {
         font-size: var(--font-h1-size-desktop) !important;
