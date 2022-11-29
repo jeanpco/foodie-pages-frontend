@@ -311,6 +311,7 @@
     },
     "d5778432-2fd8-4a16-8893-9bb2eaa2e555": {
       "type": "module-hero",
+      "disabled": true,
       "blocks": {
         "dff9231c-7adf-4ad2-853d-f2b72d77f49b": {
           "type": "cta",
@@ -339,7 +340,7 @@
     "fda3c8e7-0321-460c-b8b8-b9edd8abe0e7": {
       "type": "product-recommendations",
       "settings": {
-        "overline": "Ready-to-ship",
+        "overline": "Small batch standouts",
         "title": "<p>Ready-To-Ship Gifts<\/p>",
         "body": "Discover unique gifts they’ll truly remember.",
         "collection": "gift-baskets",
