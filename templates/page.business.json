@@ -398,6 +398,7 @@
     },
     "3d380ef2-30ad-4948-8fdf-6906d4063a49": {
       "type": "module-cta-banner",
+      "disabled": true,
       "settings": {
         "overline": "Quick shop",
         "heading_style": "h2",
