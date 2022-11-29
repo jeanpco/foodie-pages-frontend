@@ -10,6 +10,7 @@
 .testimonial-client-logo {
   height: 1.5rem;
   width: auto;
+  opacity: 0.7;
 }
 
 /* if has testimonial-slider-module-swiper class but not swiper */
