@@ -694,3 +694,371 @@
 {%- endpaginate -%}
 
 {{productLayout}}
+
+<style>
+
+
+    .bxp-overlay-icon {
+        display: none;
+    }
+    .bxp-deselect {
+        width: 30px;
+        height: 30px;
+        margin-top: 23px;
+        border-radius: 30px;
+    }
+    .bxp-qty-num {
+        box-shadow: unset;
+        font-size: 18px;
+        padding: 5px 10px 2px;
+        margin: 1rem;
+        height: 40px;
+        width: 40px;
+        border-radius: 100px;
+        background: var(--color-tertiary);
+    }
+    .bxp-bldr-item input[type=checkbox]:not(old):checked+label:before, .bxp-bldr-item input[type=radio]:not(old):checked+label:before, .bxp-bldr-item input[type=checkbox]:not(old):checked+span+label:before, .bxp-bldr-item input[type=radio]:not(old):checked+span+label:before {
+        color: var(--color-accent);
+    }
+    a#bxp-bldr-details_bt:before {
+        color: var(--color-accent);
+    }
+    .bxp-thumbnail-remove {
+        top: 0px;
+        right: 0px;
+        position: absolute;
+        background: var(--color-red);
+        font-size: 12px;
+        padding: 0;
+        color: white;
+        cursor: pointer;
+        border-radius: 30px;
+        height: 20px;
+        width: 20px;
+    }
+    .bxp-bldr-row.bxp-step-box.bxp-flex {
+        margin-bottom: 2rem;
+        border-radius: 24px;
+    }
+    .bxp-reset {
+        right: 20px;
+        margin-top: 0px;
+        border-radius: 10px;
+        background: var(--color-tertiary);
+        z-index: 1;
+    }
+    
+    @media only screen and (max-width: 500px) {
+        .bxp-bldr-col-lg-8 {
+            padding: 0;
+        }
+    }
+    .bxp-step-box-list {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .bxp-thumbnail-qty {
+        top: 0px;
+        left: 0px;
+        position: absolute;
+        background: var(--color-tertiary);
+        font-size: 10px;
+        padding: 0;
+        color: white;
+        width: 20px;
+        height: 20px;
+        border-radius: 50px;
+        padding: 4px 2px 0px;
+    }
+    .bxp-bldr-qty-down,
+    .bxp-bldr-qty-up {
+        background: transparent;
+        margin: 0;
+        border-radius: 0;
+        width: auto;
+        height: auto;
+        box-sizing: border-box;
+        padding: 0;
+        justify-content: center;
+        align-items: center;
+        color: black;
+        font-size: 24px;
+        box-shadow: unset;
+    }
+    .bxp-bldr-form-control.bxp-mt-10 {
+        margin-top: 1rem;
+        padding: 1rem;
+        border: 1px solid var(--color-grey-200);
+        border-radius: 6px;
+        height: 48px;
+    }
+    .bxp-bldr-wizard-header {
+        font-size: var(--font-h1-size-desktop) !important;
+        line-height: 1 !important;
+        font-weight: 500 !important;
+        margin-top: 6rem !important;
+        margin-bottom: 2rem !important;
+    }
+    @media screen and (max-width: 990px) {
+        .bxp-bldr-wizard-header {
+            font-size: var(--font-h1-size-tablet) !important;
+        }
+    }
+    .bxp-bldr-item_price.button {
+        background-color: var(--color-tertiary) !important;
+        width: 100%;
+        box-sizing: border-box;
+        max-width: 10rem;
+    }
+    .bxp-bldr-item_price.button > span {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0.38rem;
+    }
+    .bxp-bldr-add-text {
+        margin-right: 0.25rem;
+    }
+    .bxp-bldr-question_title {
+        margin-bottom: 5.5rem;
+        text-align: left;
+        max-width: 48.4375rem;
+    }
+    .bxp-styled-select,
+    .bxp-bldr-form-control {
+        border: 0;
+        margin: 0;
+        padding: 0;
+        position: relative;
+    }
+    
+    input.bxp-bldr-form-control, select.bxp-bldr-form-control, textarea.bxp-bldr-form-control {
+        color: var(--color-grey-500);
+    }
+    .bxp-bldr-form-control.bxp-filter-title {
+        border-radius: 6px;
+        color: var(--color-grey-500);
+        border: 1px solid var(--color-grey-200);
+    }
+    .bxp-styled-select:before,
+    .bxp-styled-select:after {
+        content: '';
+        height: 6px;
+        width: 1.5px;
+        position: absolute;
+        z-index: 1;
+        background-color: var(--color-grey-500);
+        top: 19px;
+    }
+    .bxp-styled-select:before {
+        transform: rotate(45deg);
+        right: 32px;
+    }
+    
+    .bxp-styled-select:after {
+        transform: rotate(-45deg);
+        right: 35px;
+      }
+    .bxp-bldr-form-control.bxp-filter-title {
+        box-sizing: border-box;
+    }
+    .bxp-bldr-col-md-3,
+    .bxp-bldr-col-md-4 {
+        flex: 0 0 calc(33.333333% - 0.6666666667rem);
+        max-width: calc(33.333333% - 0.6666666667rem);
+        padding: 0;
+    }
+    .bxp-bldr-col-md-6 {
+        flex: 0 0 calc(50% - 1rem);
+        max-width: calc(50% - 1rem);
+        padding: 0;
+    }
+    .bxp-bldr-row.bxp-bldr-justify-content-center {
+        margin-bottom: 2rem;
+    }
+    .bxp-bldr-col-md-4.bxp-bldr-col-lg-3.bxp-mt-15 {
+        flex: 0 0 calc(25% - 0.75rem);
+        max-width: calc(25% - 0.75rem);
+        padding: 0;
+        margin: 0;
+    }
+    @media screen and (max-width: 990px) { 
+        .bxp-bldr-wizard-header {
+            font-size: var(--font-h1-size-mobile) !important;
+            line-height: 1 !important;
+            font-weight: 500 !important;
+            margin-top: 3rem !important;
+            margin-bottom: 1rem !important;
+        }
+        .bxp-bldr-form-control {
+            padding: 0;
+        }
+        
+        .bxp-bldr-question_title {
+            margin-bottom: 2.5rem;
+        }
+        .bxp-bldr-col-md-4.bxp-bldr-col-lg-3.bxp-mt-15 {
+            flex: 100%;
+            max-width: 100%;
+        }
+        .bxp-bldr-row.bxp-bldr-justify-content-center:not(.bxp-step-content) {
+            flex-direction: column;
+            gap: 0;
+        }
+        .bxp-bldr-col-md-3,
+        .bxp-bldr-col-md-4 {
+            flex: 0 0 calc(50% - 1rem);
+            max-width: calc(50% - 1rem);
+            padding: 0;
+        }    
+      }
+    .bxp-bldr-container {
+        width: 100% !important;
+        max-width: var(--width-large-desktop) !important;
+        margin-right: auto !important;
+        margin-left: auto !important;
+        padding: 0 var(--padding-large-desktop);
+        box-sizing: border-box;
+    }
+    @media screen and (max-width: 1680px) {   
+        .bxp-bldr-containerr {
+          max-width: var(--width-desktop) !important;
+          padding: 0 var(--padding-desktop);
+        }
+      }
+      
+      @media screen and (max-width: 990px) {   
+        .bxp-bldr-container {
+          max-width: var(--width-tablet) !important;
+          padding: 0 var(--padding-tablet);
+        }
+      }
+      
+      @media screen and (max-width: 767px) {   
+        .bxp-bldr-container {
+          max-width: var(--width-tablet) !important;
+          padding: 0 var(--padding-tablet);
+        }
+      }  
+      @media screen and (max-width: 600px) {   
+        .bxp-bldr-col-md-3,
+        .bxp-bldr-col-md-4,
+        .bxp-bldr-col-md-6 {
+            flex: 0 0 100%;
+            max-width: 100%;
+            padding: 0;
+        } 
+      } 
+    .bxp-bldr-row {
+        margin: 0;
+        width: 100%;
+        gap: 1rem;
+    }
+    .bxp-bldr-item label {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+        padding: 0;
+        border: unset !important;
+        box-shadow: none !important;
+        margin-bottom: 1rem;
+    }
+    .bxp-bldr-item label .bxp-owl-carousel {
+        order: 1;
+        border-radius: 24px;
+        {% comment %} background-color: var(--color-grey-75);    {% endcomment %}
+        border: 1px solid var(--color-grey-200);
+    }
+    .bxp-bldr-item label img {
+        min-height: 300px;
+        max-height: 450px;
+        height: 30vw;
+        margin: 0;
+        padding: 2rem;
+        box-sizing: border-box;
+    }
+    .bxp-bldr-item {
+        margin-top: 0;
+    }
+    .bxp-bldr-item > label .bxp-bldr-item_price {
+        order: 3;
+        margin-top: 1rem;
+    }
+    .bxp-bldr-form-control {
+        font-size: 0.875rem !important;
+    }
+    .bxp-owl-dots {
+        position: absolute;
+        bottom: 1rem;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .bxp-bldr-item label strong {
+        order: 2;
+        margin-top: 1rem;
+        text-align: left;
+    }
+    .bxp-bldr-item label .bldr-dark-btn {
+        order: 3;
+        text-align: left;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-top: 0.5rem;
+    }
+    .bxp-bldr-item label .bxp-bldr-item_price {
+        margin-bottom: 0;
+    }
+    .bxp-bldr-col-md-3 .bxp-bldr-item_price {
+        margin-top: 0 !important;
+    }
+    {% comment %} Sticky Banner {% endcomment %}
+    #bxp-bldr-price_total h3,
+    #bxp-bldr-price_total span {
+        font-size: 1.5rem;
+        font-weight: 400;
+        margin-bottom: 0;
+        text-transform: capitalize;
+        color: var(--color-black);
+    }
+    button.bxp-bldr-forward,
+    #bxp-cart-toast,
+    .bxp-bldr-add,
+    #bxp-complete {
+        background: var(--color-tertiary) !important;
+        color: var(--color-white) !important;
+        border-radius: 30px;
+        padding: 5px 15px 5px 15px;
+        height: 40px;
+    }
+    .bxp-bldr-backward {
+        margin-right: 1rem;
+        border-radius: 30px;
+        padding: 5px 15px 5px 15px;
+        height: 40px;
+    }
+    #bxp-cart-toast {
+        background: var(--color-mar-10);
+        color: var(--color-mar-100);
+    }
+    button.bxp-bldr-forward:before {
+        display: none;
+    }
+    .bxp-modal__container {
+        background: var(--color-white);
+        border-radius: 24px;
+        padding: 2rem;
+        border: 1px solid var(--color-grey-100);
+    }
+    #bxp-prod-info-content {
+        margin-bottom: 2rem;
+        color: var(--color-grey-500);
+    }
+    .bxp-modal__title {
+        margin-bottom: 1rem;
+        color: var(--color-grey-800);
+    }
+
+</style>
