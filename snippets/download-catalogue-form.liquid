@@ -41,7 +41,7 @@
         </div>
 
         <div class="field-group">
-          <label class="text-size-tiny uppercase" for="ContactForm-name">{{ settings.download_catalogue_input_email_label }}</label>
+          <label class="text-size-tiny uppercase" for="ContactForm-email">{{ settings.download_catalogue_input_email_label }}</label>
 
           <input
             id="ContactForm-email"
@@ -61,6 +61,30 @@
               aria-describedby="Contact-success--{{ id }}"
             {% endif %}
             placeholder="{{ settings.download_catalogue_input_email_placeholder }}"
+            required
+          >
+        </div>
+
+        <div class="field-group">
+          <label class="text-size-tiny uppercase" for="ContactForm-company">{{ settings.download_catalogue_input_company_label }}</label>
+
+          <input
+            id="ContactForm-company"
+            type="email"
+            name="contact[company]"
+            class="field_input"
+            value="{{ form.company }}"
+            aria-required="true"
+            autocorrect="off"
+            autocapitalize="off"
+            {% if form.errors %}
+              autofocus
+              aria-invalid="true"
+              aria-describedby="Contact-error--{{ id }}"
+            {% elsif form.posted_successfully? %}
+              aria-describedby="Contact-success--{{ id }}"
+            {% endif %}
+            placeholder="{{ settings.download_catalogue_input_company_placeholder }}"
             required
           >
         </div>

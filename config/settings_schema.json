@@ -1432,6 +1432,16 @@
       },
       {
         "type": "text",
+        "id": "download_catalogue_input_company_label",
+        "label": "Input Company Label"
+      },
+      {
+        "type": "text",
+        "id": "download_catalogue_input_company_placeholder",
+        "label": "Input Company Placeholder"
+      },
+      {
+        "type": "text",
         "id": "download_catalogue_cta_text",
         "label": "Submit CTA Text"
       },
