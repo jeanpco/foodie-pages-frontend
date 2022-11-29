@@ -145,6 +145,7 @@
         },
         "a3d4eb6b-e000-4180-bb22-2f3c38f6af79": {
           "type": "cta",
+          "disabled": true,
           "settings": {
             "cta_text": "Request a Quote",
             "cta_link": "#corporate-contact"
@@ -170,14 +171,14 @@
         "bb7441af-23eb-413e-9e53-583d86d17048": {
           "type": "cta",
           "settings": {
-            "cta_text": "Contact us",
-            "cta_link": "shopify:\/\/pages\/contact-us"
+            "cta_text": "Get a Quote",
+            "cta_link": "#corporate-contact"
           }
         },
         "276a7a27-7127-4129-8ca0-d68003063232": {
           "type": "cta",
           "settings": {
-            "cta_text": "Download Catalogue",
+            "cta_text": "Download Catalog",
             "cta_link": "#download-catalogue"
           }
         }
@@ -204,7 +205,7 @@
             "image": "shopify:\/\/shop_images\/Image_ece8a130-10d5-442c-8531-af02ad89d323.jpg",
             "title": "Events",
             "body": "Planning your company event or conference? You’re juggling a lot. We’ll take care of the perfect custom gift, or food & drink box.",
-            "cta_text": "Learn More",
+            "cta_text": "",
             "cta_link": "\/"
           }
         },
@@ -214,7 +215,7 @@
             "image": "shopify:\/\/shop_images\/Image.png",
             "title": "Employee Engagement",
             "body": "Happy employees stay and grow with you. We take care of the gifting, you sit back and watch your company culture grow by recognizing personal and professional milestones.",
-            "cta_text": "Learn More",
+            "cta_text": "",
             "cta_link": "\/"
           }
         },
@@ -224,7 +225,7 @@
             "image": "shopify:\/\/shop_images\/Image_e71e0bfb-6ffd-4c94-a19c-a5b4c763f880.jpg",
             "title": "Sales & Marketing",
             "body": "Create buzz throughout the customer’s journey by using strategic gifts to connect and show appreciation.",
-            "cta_text": "Learn More",
+            "cta_text": "",
             "cta_link": "\/"
           }
         },
@@ -234,7 +235,7 @@
             "image": "shopify:\/\/shop_images\/Image_4156cd82-50c2-40f5-ab2f-94ea44745172.jpg",
             "title": "Design",
             "body": "Great design makes all the difference. We'll make your brand shine with creative, bold packaging and high-quality branded swag.",
-            "cta_text": "Learn More",
+            "cta_text": "",
             "cta_link": "\/"
           }
         }
@@ -256,6 +257,7 @@
     },
     "67c66074-dbe7-48ca-909f-8416d2e86d32": {
       "type": "module-vertical-tabs",
+      "disabled": true,
       "blocks": {
         "0bc0438d-4de4-406b-9b99-82223592e434": {
           "type": "tab",
@@ -309,6 +311,7 @@
     },
     "d5778432-2fd8-4a16-8893-9bb2eaa2e555": {
       "type": "module-hero",
+      "disabled": true,
       "blocks": {
         "dff9231c-7adf-4ad2-853d-f2b72d77f49b": {
           "type": "cta",
@@ -322,7 +325,7 @@
         "dff9231c-7adf-4ad2-853d-f2b72d77f49b"
       ],
       "settings": {
-        "overline": "Quick shop",
+        "overline": "No addresses, no problem",
         "title": "<p>Don’t have an address to send to?<\/p>",
         "heading_style": "h2",
         "body": "Each foodiepages gift basket is designed with premium goods from diverse, independently-owned makers and brands across Canada.",
@@ -337,7 +340,7 @@
     "fda3c8e7-0321-460c-b8b8-b9edd8abe0e7": {
       "type": "product-recommendations",
       "settings": {
-        "overline": "Ready-to-ship",
+        "overline": "Small batch standouts",
         "title": "<p>Ready-To-Ship Gifts<\/p>",
         "body": "Discover unique gifts they’ll truly remember.",
         "collection": "gift-baskets",
@@ -390,11 +393,12 @@
         "overline": "Our happy customers",
         "title": "<p>Don’t just take it from us<\/p>",
         "cta_text": "Get in touch",
-        "cta_link": "shopify:\/\/pages\/contact-us"
+        "cta_link": "#contact"
       }
     },
     "3d380ef2-30ad-4948-8fdf-6906d4063a49": {
       "type": "module-cta-banner",
+      "disabled": true,
       "settings": {
         "overline": "Quick shop",
         "heading_style": "h2",
