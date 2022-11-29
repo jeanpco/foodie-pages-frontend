@@ -145,6 +145,7 @@
         },
         "a3d4eb6b-e000-4180-bb22-2f3c38f6af79": {
           "type": "cta",
+          "disabled": true,
           "settings": {
             "cta_text": "Request a Quote",
             "cta_link": "#corporate-contact"
@@ -170,8 +171,8 @@
         "bb7441af-23eb-413e-9e53-583d86d17048": {
           "type": "cta",
           "settings": {
-            "cta_text": "Contact us",
-            "cta_link": "shopify:\/\/pages\/contact-us"
+            "cta_text": "Contact Us",
+            "cta_link": "#corporate-contact"
           }
         },
         "276a7a27-7127-4129-8ca0-d68003063232": {
