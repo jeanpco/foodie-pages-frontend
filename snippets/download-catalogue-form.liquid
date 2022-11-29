@@ -16,14 +16,14 @@
       <div class="field-wrapper margin-bottom margin-medium">
 
         <div class="field-group">
-          <label class="text-size-tiny uppercase" for="ContactForm-name">{{ settings.download_catalogue_input_name_label }}</label>
+          <label class="text-size-tiny uppercase" for="ContactForm-firstname">{{ settings.download_catalogue_input_firstname_label }}</label>
         
           <input
-            id="ContactForm-name"
+            id="ContactForm-firstname"
             type="name"
-            name="contact[name]"
+            name="contact[firstname]"
             class="field_input"
-            value="{{ form.name }}"
+            value="{{ form.firstname }}"
             aria-required="true"
             autocorrect="off"
             autocapitalize="off"
@@ -35,7 +35,32 @@
             {% elsif form.posted_successfully? %}
               aria-describedby="Contact-success--{{ id }}"
             {% endif %}
-            placeholder="{{ settings.download_catalogue_input_name_placeholder }}"
+            placeholder="{{ settings.download_catalogue_input_firstname_placeholder }}"
+            required
+          >
+        </div>
+
+        <div class="field-group">
+          <label class="text-size-tiny uppercase" for="ContactForm-lastname">{{ settings.download_catalogue_input_lastname_label }}</label>
+        
+          <input
+            id="ContactForm-lastname"
+            type="name"
+            name="contact[lastname]"
+            class="field_input"
+            value="{{ form.lastname }}"
+            aria-required="true"
+            autocorrect="off"
+            autocapitalize="off"
+            autocomplete="email"
+            {% if form.errors %}
+              autofocus
+              aria-invalid="true"
+              aria-describedby="Contact-error--{{ id }}"
+            {% elsif form.posted_successfully? %}
+              aria-describedby="Contact-success--{{ id }}"
+            {% endif %}
+            placeholder="{{ settings.download_catalogue_input_lastname_placeholder }}"
             required
           >
         </div>
