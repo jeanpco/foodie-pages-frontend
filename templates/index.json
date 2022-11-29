@@ -175,7 +175,7 @@
           "settings": {
             "title": "Under $75",
             "collection": "under-75",
-            "cta_link": ""
+            "cta_link": "shopify:\/\/collections\/under-75"
           }
         },
         "1ed4348a-d03e-4198-a7e5-c2ac4b470fb3": {
@@ -183,7 +183,7 @@
           "settings": {
             "title": "Foodie",
             "collection": "foodie",
-            "cta_link": ""
+            "cta_link": "shopify:\/\/collections\/foodie"
           }
         },
         "000af700-bcb5-4e04-852c-35a79a7eca43": {
