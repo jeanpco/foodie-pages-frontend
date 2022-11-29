@@ -51,7 +51,7 @@
           "type": "collapsible_tab",
           "settings": {
             "heading": "Shipping Info",
-            "content": "<p>Please allow 1-2 business days for processing before your order ships. If you have any questions, reach out to orders@foodiepages.ca before placing your order.<\/p>",
+            "content": "<p>Please allow up to <strong>1-3 business days processing time<\/strong> (prior to the shipping method selected at checkout). If you have any questions, please contact orders@foodiepages.ca before placing your order.<\/p><p>Each collection is delivered in a locally designed, recyclable gift box. <\/p>",
             "page": ""
           }
         }
