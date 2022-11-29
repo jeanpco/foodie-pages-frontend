@@ -226,6 +226,20 @@
             "title": "",
             "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/Bell.png?v=1668884605"
           }
+        },
+        "25797c02-e995-40f0-95b1-50aceeb86f96": {
+          "type": "logo",
+          "settings": {
+            "title": "",
+            "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/Jobber.png?v=1669747385"
+          }
+        },
+        "97e69252-643f-4193-a90c-2a3decef1783": {
+          "type": "logo",
+          "settings": {
+            "title": "",
+            "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/Prodigy.png?v=1669747385"
+          }
         }
       },
       "block_order": [
@@ -255,7 +269,9 @@
         "45b787ce-9687-4fe3-b6da-9c83ef5a5b68",
         "a355d3c0-427d-40bf-9db2-39c1886c57da",
         "37fd23bf-890b-445a-818e-ab77043f23c0",
-        "7ba2049f-3fd5-44f5-85da-5e07d9bb4ad8"
+        "7ba2049f-3fd5-44f5-85da-5e07d9bb4ad8",
+        "25797c02-e995-40f0-95b1-50aceeb86f96",
+        "97e69252-643f-4193-a90c-2a3decef1783"
       ],
       "settings": {
         "overline": "Trusted by the world's best companies"
