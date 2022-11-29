@@ -8,6 +8,8 @@
   background: var(--color-sandia-10);
   max-width: 500px;
   width: 100%;
+  padding: 1.25rem 1.5rem;
+  border-radius: 6px;
 }
 
 #ms__toggle-box label {
