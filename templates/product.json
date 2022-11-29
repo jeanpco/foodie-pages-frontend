@@ -52,7 +52,7 @@
           "type": "collapsible_tab",
           "settings": {
             "heading": "Shipping Info",
-            "content": "<p>Please allow 1-2 business days for processing before your order will ship. If you have any questions, reach out to orders@foodiepages.ca before placing your order.<\/p>",
+            "content": "<p>Please allow 1-2 business days for processing before your order ships. If you have any questions, reach out to orders@foodiepages.ca before placing your order.<\/p>",
             "page": ""
           }
         }
