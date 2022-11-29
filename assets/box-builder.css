@@ -269,7 +269,6 @@
     .bxp-bldr-item label .bxp-owl-carousel {
         order: 1;
         border-radius: 24px;
-        {% comment %} background-color: var(--color-grey-75);    {% endcomment %}
         border: 1px solid var(--color-grey-200);
     }
     .bxp-bldr-item label img {
@@ -315,7 +314,7 @@
     .bxp-bldr-col-md-3 .bxp-bldr-item_price {
         margin-top: 0 !important;
     }
-    {% comment %} Sticky Banner {% endcomment %}
+
     #bxp-bldr-price_total h3,
     #bxp-bldr-price_total span {
         font-size: 1.5rem;
