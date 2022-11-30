@@ -105,7 +105,7 @@
           "type": "cta",
           "settings": {
             "cta_text": "Download Catalog",
-            "cta_link": ""
+            "cta_link": "#download-catalogue"
           }
         }
       },
