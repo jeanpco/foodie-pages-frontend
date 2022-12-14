@@ -69,6 +69,11 @@
     line-height: 1;
   }
 
+  h1 .word {
+    line-height: 1.26;
+    margin-top: -10px;
+  }
+
   .hero-content_primary h2,
   .hero-content_primary h2 * {
     line-height: 1.26;
