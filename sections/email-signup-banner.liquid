@@ -100,6 +100,11 @@
                   {%- endif -%}
                 </div>
                 {%- if form.posted_successfully? -%}
+
+                  <script>
+                    gtag_report_conversion(window.location);
+                  </script>
+
                   <h3 class="newsletter-form__message newsletter-form__message--success form__message" id="Newsletter-success--{{ section.id }}" tabindex="-1" autofocus>{% render 'icon-success' %}{{ 'newsletter.success' | t }}</h3>
                 {%- endif -%}
               {% endform %}

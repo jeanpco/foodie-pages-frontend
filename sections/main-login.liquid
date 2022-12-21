@@ -99,6 +99,13 @@
           </h3>
         {%- endif -%}
         {%- form 'customer_login', novalidate: 'novalidate', class: 'margin-top margin-large' -%}
+
+          {%- if form.posted_successfully? -%}
+            <script>
+              gtag_report_sign_in(window.location);
+            </script>
+          {%- endif -%}
+
           {%- if form.errors -%}
             <h3 class="form__message" tabindex="-1" autofocus>
               <span class="visually-hidden">{{ 'accessibility.error' | t }} </span>

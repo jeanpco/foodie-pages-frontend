@@ -1,0 +1,32 @@
+<!--
+  Event snippet for Add to cart conversion page
+  In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen
+  link or button.
+-->
+<script>
+  function gtag_report_add_to_cart(url) {
+    var callback = function () {
+      if (typeof url != 'undefined') {
+        window.location = url;
+      }
+    };
+    gtag('event', 'conversion', {
+      send_to: 'AW-10939394994/xZS5COfl1twDELLXp-Ao',
+      event_callback: callback,
+    });
+    return false;
+  }
+
+  const initAddToCartGTagReport = () => {
+    {% comment %} get all forms that have an action of /cart/add {% endcomment %}
+    const addToCartForms = Array.from(document.querySelectorAll('[data-type="add-to-cart-form"]'));
+
+    console.log(addToCartForms)
+
+    {% comment %} loop through each form {% endcomment %}
+    
+    
+  }
+
+  initAddToCartGTagReport();
+</script>

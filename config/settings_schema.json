@@ -1594,13 +1594,23 @@
       },
       {
         "type": "text",
-        "id": "corporate_contact_form_input_name_label",
-        "label": "Input Name Label"
+        "id": "corporate_contact_form_input_firstname_label",
+        "label": "Input First Name Label"
       },
       {
         "type": "text",
-        "id": "corporate_contact_form_input_name_placeholder",
-        "label": "Input Name Placeholder"
+        "id": "corporate_contact_form_input_firstname_placeholder",
+        "label": "Input First Name Placeholder"
+      },
+      {
+        "type": "text",
+        "id": "corporate_contact_form_input_lastname_label",
+        "label": "Input Last Name Label"
+      },
+      {
+        "type": "text",
+        "id": "corporate_contact_form_input_lastname_placeholder",
+        "label": "Input Last Name Placeholder"
       },
       {
         "type": "text",

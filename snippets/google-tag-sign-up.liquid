@@ -1,0 +1,17 @@
+<!-- Event snippet for New Customer Registration conversion page
+In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen
+link or button. -->
+<script>
+  function gtag_report_sign_up(url) {
+  var callback = function () {
+  if (typeof(url) != 'undefined') {
+  window.location = url;
+  }
+  };
+  gtag('event', 'conversion', {
+  'send_to': 'AW-10939394994/KXgWCOHl1twDELLXp-Ao',
+  'event_callback': callback
+  });
+  return false;
+  }
+  </script>

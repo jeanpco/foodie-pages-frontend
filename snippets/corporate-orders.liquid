@@ -4,7 +4,8 @@
   <div class="loading-container text-align-center">
     <div class="loading-spinner"></div>
     <p class="text-size-tiny margin-top margin-small">
-      Retrieving Sale Orders {{ customer.name }}.<br>Thank you for your patience.
+      Retrieving Sale Orders {{ customer.name }}.<br>
+      Thank you for your patience.
     </p>
   </div>
 </div>
@@ -12,6 +13,7 @@
 <table id="sos-inventory-table"></table>
 
 <script type="module">
+  
 
   const loadingElement = (style) => `
   <div style="${style}" class="loading inline-loading">
@@ -72,8 +74,13 @@
 
   const getUPSTrackingStatus = (trackingNumber) => {
     if (!trackingNumber) return;
-    return fetch(`${backendURL}/api/ups?trackingNumber=${trackingNumber}`)
-      .then(response => response.json())
+    
+    try {
+      return fetch(`${backendURL}/api/ups?trackingNumber=${trackingNumber}`)
+        .then(response => response.json())
+    } catch (error) {
+      console.error(error)
+    }
   }
 
 
@@ -336,21 +343,27 @@
         statusType = upsShipment.statusType;
         statusDescription = upsShipment.statusDescription;
       } else {
-        const upsShipment = await getUPSTrackingStatus(ship.trackingNumber);
 
-        if (upsShipment.trackResponse.shipment[0].warnings && upsShipment.trackResponse.shipment[0].warnings[0].message) {
-          statusType = upsShipment.trackResponse.shipment[0].warnings[0].message;
-          statusDescription = upsShipment.trackResponse.shipment[0].warnings[0].message
-        } else {
-          statusType = upsShipment.trackResponse.shipment[0].package[0].activity[0].status.type;
-          statusDescription = upsShipment.trackResponse.shipment[0].package[0].activity[0].status.description;
+        try {
+          const upsShipment = await getUPSTrackingStatus(ship.trackingNumber);
+
+          if (upsShipment.trackResponse.shipment[0].warnings && upsShipment.trackResponse.shipment[0].warnings[0].message) {
+            statusType = upsShipment.trackResponse.shipment[0].warnings[0].message;
+            statusDescription = upsShipment.trackResponse.shipment[0].warnings[0].message
+          } else {
+            statusType = upsShipment.trackResponse.shipment[0].package[0].activity[0].status.type;
+            statusDescription = upsShipment.trackResponse.shipment[0].package[0].activity[0].status.description;
+          }
+  
+          {% comment %} save the data for next time around {% endcomment %}
+          sessionStorage.setItem(ship.trackingNumber, JSON.stringify({
+            statusType,
+            statusDescription
+          })) 
+
+        } catch (error) {
+          console.error(error)
         }
-
-        {% comment %} save the data for next time around {% endcomment %}
-        sessionStorage.setItem(ship.trackingNumber, JSON.stringify({
-          statusType,
-          statusDescription
-        })) 
       }
 
       updateTrackingDetails(ship.trackingNumber, statusType, statusDescription)
@@ -360,6 +373,7 @@
     const trackingShipDates = [...document.querySelectorAll('.ship-date')];
 
     trackingShipDates.forEach(track => {
+      if (!track) return
       const row = track.closest('tr')
       const loading = row.querySelector('.inline-loading')
 
@@ -511,4 +525,5 @@
   }
 
   getSOSSaleOrdersFromCustomerId()
+
 </script>

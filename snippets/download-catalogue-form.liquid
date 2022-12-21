@@ -1,6 +1,11 @@
 <div class="dialog-form-header padding-bottom padding-large">
-  <img class="dialog-form-header_icon padding-bottom padding-xsmall" src="{{ settings.download_catalogue_icon_url }}" alt="foodie page download catalog form icon">
-  {% render 'module-header', 
+  <img
+    class="dialog-form-header_icon padding-bottom padding-xsmall"
+    src="{{ settings.download_catalogue_icon_url }}"
+    alt="foodie page download catalog form icon"
+  >
+  {%
+    render 'module-header',
     title: settings.download_catalogue_title,
     body: settings.download_catalogue_body,
     text_horizontal_alignment: 'left',
@@ -9,15 +14,15 @@
 
 <div class="dialog-form-body">
   {% form 'contact', class: 'form', id: 'download-catalogue' %}
-
     <div class="input-container">
       <input type="hidden" name="contact[tags]" value="download-catalogue">
-    
-      <div class="field-wrapper margin-bottom margin-medium">
 
+      <div class="field-wrapper margin-bottom margin-medium">
         <div class="field-group">
-          <label class="text-size-tiny uppercase" for="ContactForm-firstname">{{ settings.download_catalogue_input_firstname_label }}</label>
-        
+          <label class="text-size-tiny uppercase" for="ContactForm-firstname">
+            {{- settings.download_catalogue_input_firstname_label -}}
+          </label>
+
           <input
             id="ContactForm-firstname"
             type="name"
@@ -41,8 +46,10 @@
         </div>
 
         <div class="field-group">
-          <label class="text-size-tiny uppercase" for="ContactForm-lastname">{{ settings.download_catalogue_input_lastname_label }}</label>
-        
+          <label class="text-size-tiny uppercase" for="ContactForm-lastname">
+            {{- settings.download_catalogue_input_lastname_label -}}
+          </label>
+
           <input
             id="ContactForm-lastname"
             type="name"
@@ -66,7 +73,9 @@
         </div>
 
         <div class="field-group">
-          <label class="text-size-tiny uppercase" for="ContactForm-email">{{ settings.download_catalogue_input_email_label }}</label>
+          <label class="text-size-tiny uppercase" for="ContactForm-email">
+            {{- settings.download_catalogue_input_email_label -}}
+          </label>
 
           <input
             id="ContactForm-email"
@@ -91,7 +100,9 @@
         </div>
 
         <div class="field-group">
-          <label class="text-size-tiny uppercase" for="ContactForm-company">{{ settings.download_catalogue_input_company_label }}</label>
+          <label class="text-size-tiny uppercase" for="ContactForm-company">
+            {{- settings.download_catalogue_input_company_label -}}
+          </label>
 
           <input
             id="ContactForm-company"
@@ -113,19 +124,27 @@
             required
           >
         </div>
-
       </div>
 
-      <button type="submit" class="button contact-submit-button" name="commit" id="Subscribe" aria-label="{{ 'contact.button_label' | t }}">
+      <button
+        type="submit"
+        class="button contact-submit-button"
+        name="commit"
+        id="Subscribe"
+        aria-label="{{ 'contact.button_label' | t }}"
+      >
         <span>{{ settings.download_catalogue_cta_text }}</span>
       </button>
     </div>
 
     {%- if form.errors -%}
-      <small class="text-size-tiny text-color-grey-500 contact-form__message form__message margin-top margin-small" id="Contact-error--{{ id }}">
+      <small
+        class="text-size-tiny text-color-grey-500 contact-form__message form__message margin-top margin-small"
+        id="Contact-error--{{ id }}"
+      >
         {% render 'icon-error' %}
-        {{ form.errors.translated_fields['email'] | capitalize }} 
-        {{ form.errors.messages['email'] }}
+        {{ form.errors.translated_fields.email | capitalize }}
+        {{ form.errors.messages.email }}
       </small>
     {%- endif -%}
 
@@ -133,18 +152,70 @@
 
     {%- if form.posted_successfully? -%}
 
-      <script type="module">      
+      <script>
+        gtag_report_conversion(window.location);
+        gtag_report_view_catalogue(window.location);
+      </script>
+
+      <script type="module">
         window.initDownloadFromForm()
       </script>
 
-      <div style="display: flex; flex-direction: column; align-items: center; justify-content: center;" class="text-align-center">
-        <h3 class="text-size-tiny text-color-grey-500 form__message" id="Contact-success--{{ id }}" tabindex="-1" autofocus>
+      <div
+        style="display: flex; flex-direction: column; align-items: center; justify-content: center;"
+        class="text-align-center"
+      >
+        <h3
+          class="text-size-tiny text-color-grey-500 form__message"
+          id="Contact-success--{{ id }}"
+          tabindex="-1"
+          autofocus
+        >
           {% render 'icon-success' %}
           {{ settings.download_catalogue_success_message }}
         </h3>
-        <a class="link text-size-tiny margin-top margin-xsmall" target="_blank" href="{{ settings.download_catalogue_download_file_url }}" download>Click here to download our Corporate Gifting Catalogue PDF</a>
+        <a
+          class="link text-size-tiny margin-top margin-xsmall"
+          target="_blank"
+          href="{{ settings.download_catalogue_download_file_url }}"
+          download
+          >Click here to download our Corporate Gifting Catalogue PDF</a
+        >
       </div>
     {%- endif -%}
-    
   {% endform %}
 </div>
+
+<script type="module">
+
+  document.getElementById('download-catalogue').addEventListener('submit', async (event) => {
+
+    event.preventDefault();
+    
+    const formData = new FormData(event.target);
+    
+    const data = {};
+    for (const [key, value] of formData.entries()) {
+      data[key] = value;
+    }
+
+    const firstnameValue = Object.keys(data).filter(key => key.includes("firstname"));
+    const lastnameValue = Object.keys(data).filter(key => key.includes("lastname"));
+    const emailValue = Object.keys(data).filter(key => key.includes("email"));
+    const companyValue = Object.keys(data).filter(key => key.includes("company"));
+
+    // Call Salesforce function with data as the argument
+    if (window.customFunctions.salesforceFormSubmission) {
+      await window.customFunctions.salesforceFormSubmission({
+        firstName: data[firstnameValue],
+        lastName: data[lastnameValue],
+        email: data[emailValue],
+        company: data[companyValue],
+        leadSource: 'Foodie Pages Frontend - Download Catalogue',
+      })
+    }
+
+    // Manually submit the form
+    event.target.submit();
+  });
+</script>

@@ -9,22 +9,36 @@
 </div>
 
 <div class="contact-form-body">
-      {% form 'contact', class: 'form' %}
+      {% form 'contact', class: 'form corporate-contact-form' %}
     
         <div class="input-container width-control">
           <input type="hidden" name="contact[tags]" value="corporate-account-inquiry">
         
           <div class="field-wrapper margin-bottom margin-medium">
-    
-            {% 
-              render 'input', 
-              label: settings.corporate_contact_form_input_name_label,
-              placeholder: settings.corporate_contact_form_input_name_placeholder,
-              name: 'name',
-              type: 'text',
-              required: true,
-              value: form.name,
-            %}
+
+            <div class="half-width">
+              {% 
+                render 'input', 
+                label: settings.corporate_contact_form_input_firstname_label,
+                placeholder: settings.corporate_contact_form_input_firstname_placeholder,
+                name: 'firstname',
+                type: 'text',
+                required: true,
+                value: form.firstname,
+              %}
+            </div>
+
+            <div class="half-width">
+              {% 
+                render 'input', 
+                label: settings.corporate_contact_form_input_lastname_label,
+                placeholder: settings.corporate_contact_form_input_lastname_placeholder,
+                name: 'lastname',
+                type: 'text',
+                required: true,
+                value: form.lastname,
+              %}
+            </div>
 
             {% 
               render 'input', 
@@ -134,6 +148,7 @@
             {% unless template == 'page.contact' %}
               <script type="module">   
                   window.corporateFormSuccess()
+                  gtag_report_get_a_quote(window.location)
               </script>
             {% endunless %}
     
@@ -155,3 +170,39 @@
       }
 
     </style>
+
+    <script type="module">
+
+      document.querySelector('.corporate-contact-form').addEventListener('submit', async (event) => {
+    
+        event.preventDefault();
+        
+        const formData = new FormData(event.target);
+        
+        const data = {};
+        for (const [key, value] of formData.entries()) {
+          data[key] = value;
+        }
+    
+        const firstnameValue = Object.keys(data).filter(key => key.includes("firstname"));
+        const lastnameValue = Object.keys(data).filter(key => key.includes("lastname"));
+        const emailValue = Object.keys(data).filter(key => key.includes("email"));
+        const phoneValue = Object.keys(data).filter(key => key.includes("phone"));
+        const companyValue = Object.keys(data).filter(key => key.includes("company"));
+    
+        // Call Salesforce function with data as the argument
+        if (window.customFunctions.salesforceFormSubmission) {
+          await window.customFunctions.salesforceFormSubmission({
+            firstName: data[firstnameValue],
+            lastName: data[lastnameValue],
+            email: data[emailValue],
+            phone: data[phoneValue],
+            company: data[companyValue],
+            leadSource: 'Foodie Pages Frontend - Corporate Contact Form',
+          })
+        }
+    
+        // Manually submit the form
+        event.target.submit();
+      });
+    </script>
