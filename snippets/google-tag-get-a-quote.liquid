@@ -5,14 +5,14 @@
 -->
 <script>
   function gtag_report_get_a_quote(url) {
-    var callback = function () {
+    {% comment %} var callback = function () {
       if (typeof url != 'undefined') {
         window.location = url;
       }
-    };
+    }; {% endcomment %}
     gtag('event', 'conversion', {
       send_to: 'AW-10939394994/0ZzcCNvl1twDELLXp-Ao',
-      event_callback: callback,
+      event_callback: () => {},
     });
     return false;
   }

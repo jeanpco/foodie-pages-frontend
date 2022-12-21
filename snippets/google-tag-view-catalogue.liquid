@@ -1,13 +1,13 @@
 <script>
   function gtag_report_view_catalogue(url) {
-    var callback = function () {
+    {% comment %} var callback = function () {
       if (typeof url != 'undefined') {
         window.location = url;
       }
-    };
+    }; {% endcomment %}
     gtag('event', 'conversion', {
       send_to: 'AW-10939394994/rKgYCNXl1twDELLXp-Ao',
-      event_callback: callback,
+      event_callback: () => {},
     });
     return false;
   }
