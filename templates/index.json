@@ -156,6 +156,7 @@
         },
         "f2d9af43-61a5-4c7b-8cdf-81d774905352": {
           "type": "collection",
+          "disabled": true,
           "settings": {
             "title": "Holiday Gifts",
             "collection": "holiday-gift-baskets",
@@ -386,13 +387,6 @@
           }
         },
         "199d783c-9d51-4392-8181-33d0daac9ee0": {
-          "type": "logo",
-          "settings": {
-            "title": "",
-            "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/economical-insurance.png?v=1669828929"
-          }
-        },
-        "eb0c10dd-e01c-4b14-aec0-ea4ce715ae31": {
           "type": "logo",
           "settings": {
             "title": "",
