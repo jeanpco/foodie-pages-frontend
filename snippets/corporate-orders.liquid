@@ -24,7 +24,7 @@
 `
 
   const backendURL = 'https://foodie-pages-backend.herokuapp.com'
-  {% comment %} const backendURL = 'http://localhost:8080' {% endcomment %}
+  {% comment %} const backendURL = 'https://17b1-24-225-185-7.ngrok.io' {% endcomment %}
 
   {% comment %} 
     UTILS
@@ -393,7 +393,7 @@
   const updateTrackingDetails = (trackingNumber, statusType, statusDescription) => {
 
     const trackingNumberElement = document.querySelector(`[data-tracking-number="${trackingNumber}"]`);
-    const trackingLoading = trackingNumberElement.closest('tr').querySelector('.inline-loading');
+    const trackingLoading = trackingNumberElement && trackingNumberElement.closest('tr').querySelector('.inline-loading');
     
     if (trackingLoading) {
       trackingLoading.style.display = 'none';
