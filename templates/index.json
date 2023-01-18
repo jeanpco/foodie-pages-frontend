@@ -61,7 +61,7 @@
         "body": "Each foodiepages gift basket is designed with premium goods from diverse, independently-owned makers and brands across Canada. <br><br>We are here to make your gifting experience easy and elevated. Send pre-built or custom care packages, locally-curated gift boxes, and event packs worldwide.",
         "image": "shopify:\/\/shop_images\/Option_4.4.png",
         "enable_card_style": false,
-        "text_vertical_alignment": "flex-end",
+        "text_vertical_alignment": "center",
         "layout_style": "two-columns",
         "background_color": "background-color-azul-verdoso-10",
         "trusted_by_text": "Trusted by"
