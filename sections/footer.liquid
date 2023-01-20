@@ -19,6 +19,14 @@
             </a>
           </li>
         {%- endif -%}
+        {%- if settings.social_linkedin_link != blank -%}
+          <li class="footer-socials_item">
+            <a target="_blank" href="{{ settings.social_linkedin_link }}" class="footer-socials_item--link" >
+              {%- render 'icon-linkedin' -%}
+              <span class="visually-hidden">Linkedin</span>
+            </a>
+          </li>
+        {%- endif -%}
         {%- if settings.social_facebook_link != blank -%}
           <li class="footer-socials_item">
             <a target="_blank" href="{{ settings.social_facebook_link }}" class="footer-socials_item--link" >
