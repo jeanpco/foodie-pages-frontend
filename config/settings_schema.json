@@ -1226,7 +1226,7 @@
         "type": "text",
         "id": "social_linkedin_link",
         "label": "Linkedin",
-        "info": "https://www.linkedin.com/company/your-company-name"
+        "info": "https:\/\/www.linkedin.com\/company\/your-company-name"
       },
       {
         "type": "text",
