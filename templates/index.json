@@ -328,7 +328,7 @@
         "body": "We're not about boring or generic corporate gifts. We'll bring your vision to life with unique gift ideas that live up to your brand and its values.",
         "image": "shopify:\/\/shop_images\/CarePackage_Home_Screen_1.png",
         "enable_card_style": true,
-        "text_vertical_alignment": "flex-end",
+        "text_vertical_alignment": "center",
         "layout_style": "two-columns",
         "background_color": "background-color-azul-verdoso-10",
         "trusted_by_text": "Trusted by"
