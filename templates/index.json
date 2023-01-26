@@ -214,7 +214,7 @@
     "module-featured-products": {
       "type": "module-featured-products",
       "settings": {
-        "overline": "Quick shop",
+        "overline": "gift boxes",
         "title": "<p>Meet our <em>best sellers<\/em><\/p>",
         "body": "Discover beautifully packaged products from small companies doing big things.",
         "cta_text": "Shop all",
