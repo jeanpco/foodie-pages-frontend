@@ -1,0 +1,11 @@
+{
+  "sections": {
+    "main": {
+      "type": "campaign-form",
+      "settings": {}
+    }
+  },
+  "order": [
+    "main"
+  ]
+}
