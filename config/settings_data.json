@@ -234,6 +234,14 @@
           "image": "shopify:\/\/shop_images\/foodie-logo.png",
           "legal_menu": "legal-menu"
         }
+      },
+      "announcement-banner": {
+        "type": "announcement-banner",
+        "settings": {
+          "show_banner": false,
+          "text": "Welcome to our store",
+          "link": ""
+        }
       }
     },
     "content_for_index": [
