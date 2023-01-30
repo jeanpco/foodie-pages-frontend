@@ -93,6 +93,14 @@
   margin-left: auto;
 }
 
+.pos-rel {
+  position: relative;
+}
+
+.pos-abs {
+  position: absolute;
+}
+
 .hide {
   display: none;
 }

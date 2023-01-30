@@ -1,15 +1,70 @@
-<div class="announcement-bar" role="region" aria-label="Announcement Banner">
-  <div class="container">
-    <p class="text-size-tiny">
-      {{ section.settings.text | escape }}
-    </p>
+{% if section.settings.show_banner %}
+
+  {% assign banner_classes = 'text-size-small padding-small' %}
+  {% capture close_icon %}
+    <svg class="close-icon pos-abs" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M12.0015 10.5858L18.3655 4.22183L19.7797 5.63604L13.4157 12L19.7797 18.364L18.3655 19.7782L12.0015 13.4142L5.63755 19.7782L4.22334 18.364L10.5873 12L4.22334 5.63604L5.63755 4.22183L12.0015 10.5858Z" fill="black"/></svg>
+  {% endcapture %}
+
+  <div class="announcement-bar background-color-azul-verdoso-10" role="region" aria-label="Announcement Banner">
+    <div class="container">
+      <div class="pos-rel text-align-center">
+        {% if section.settings.link %}
+          <a href="{{ section.settings.link }}" class="{{ banner_classes }}">
+            {{ section.settings.text | escape }}
+          </a>
+        {% else %}
+          <p class="{{ banner_classes }}">
+            {{ section.settings.text | escape }}
+          </p>
+        {% endif %}
+        {{ close_icon }}
+      </div>
+    </div>
   </div>
-</div>
+
+  <style>
+    .close-icon {
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%);
+      cursor: pointer;
+    }
+  </style>
+
+  <script type="module">
+    const initAnnouncementBanner = () => {
+      const announcementBanner = document.getElementById('shopify-section-announcement-banner');
+
+      if (!announcementBanner) {
+        return;
+      }
+
+      const closeIcon = announcementBanner.querySelector('.close-icon');
+
+      closeIcon.addEventListener('click', () => {
+        announcementBanner.style.display = 'none';
+      });
+    }
+
+    window.addEventListener('load', initAnnouncementBanner);
+  </script>
+
+{% endif %}
 
 {% schema %}
 {
   "name": "Announcement Banner",
   "settings": [
+    {
+      "type": "header",
+      "content": "Announcement Banner"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_banner",
+      "label": "Show banner",
+      "default": true
+    },
     {
       "type": "text",
       "id": "text",
