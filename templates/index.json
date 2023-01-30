@@ -214,7 +214,7 @@
     "module-featured-products": {
       "type": "module-featured-products",
       "settings": {
-        "overline": "gift boxes",
+        "overline": "ready-to-ship gift boxes",
         "title": "<p>Most <em>wanted<\/em> gifts<\/p>",
         "body": "Discover beautifully packaged products from small companies doing big things.",
         "cta_text": "Shop all",
