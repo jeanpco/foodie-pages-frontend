@@ -1,8 +1,44 @@
 <style>
+  sticky-header,
+  #shopify-section-footer {
+    display: none !important;
+  }
 </style>
 
-<div>
-  CAMPAIGN FORM PAGE
-</div>
+<div>CAMPAIGN FORM PAGE</div>
 
-<script type="module"></script>
+<script type="module">
+  
+  import wretch from 'https://cdn.skypack.dev/wretch/dist/bundle/wretch.all.min.mjs'
+  const backendURL = 'https://6730-96-20-108-244.ngrok.io/api/'
+
+  // get all url params
+  {% comment %} client=364&campaign=field-office-test {% endcomment %}
+  const urlParams = new URLSearchParams(window.location.search);
+  const campaignName = urlParams.get('campaign');
+  const clientId = urlParams.get('client');
+
+
+  const loadAirtableData = await wretch(
+    `${backendURL}/airtable-admin-base?campaignName=${campaignName}&customerId=${clientId}`
+  ) // Base url
+    // Authorization header
+    .get() // GET request
+    .badRequest((err) => {
+      throw err;
+    }) // Handle 400 errors
+    .unauthorized((err) => {
+      throw err;
+    }) // Handle 401 errors
+    .notFound((err) => {
+      throw err;
+    }) // Handle 404 errors
+    .internalError((err) => {
+      throw err;
+    }) // Handle 500 errors
+    .res((res) => res.json()); // Parse response as JSON
+
+
+  console.log(loadAirtableData)
+
+</script>
