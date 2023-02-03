@@ -1,0 +1,65 @@
+<div class="cf-header background-color-azul-verdoso-10 w-full">
+  <div class="cf-header_spacing padding-vertical padding-large">
+    <div class="cf-header_content container display-flex gap-2">
+      <div class="cf-header_text w-50 display-flex padding-vertical padding-medium flex-direction-column">
+        <small data-js-el="header-title" class="cf-header_overline padding-bottom padding-small uppercase text-color-azul-verdoso-100 text-weight-medium"></small>
+        <h1 class="cf-header_title padding-bottom padding-medium">Gift Selection</h1>
+        <p data-js-el="header-body" class="cf-header_paragraph w-50"></p>
+      </div>
+      <div class="cf-header_image-container w-50 display-flex justify-content-center align-items-center">
+        <img 
+          class="cf-header_image"
+          data-js-el="header-img" 
+          src="" 
+          alt="Company Logo" 
+        />
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+
+  {% comment %} media max-width 990 {% endcomment %}
+
+  @media screen and (max-width: 990px) {
+    .cf-header_content {
+      gap: 1rem;
+      flex-direction: column;
+    }
+
+    .cf-header_content > *:first-child {
+      order: 2;
+    }
+
+    .cf-header_content > *:last-child {
+      order: 1;
+    }
+
+    .cf-header_content .w-50 {
+      width: 100%;
+    }
+
+    .cf-header_image-container {
+      justify-content: flex-start;
+    }
+
+    .cf-header_image {
+      padding: 0 1rem;
+      box-sizing: border-box;
+    }
+  }
+
+</style>
+
+<script type="module">
+  window.campaignForm.buildHeader = ({ title, body, imageUrl }) => {
+    const headerTitleEl = document.querySelector('[data-js-el="header-title"]')
+    const headerBodyEl = document.querySelector('[data-js-el="header-body"]')
+    const headerImgEl = document.querySelector('[data-js-el="header-img"]')
+
+    headerTitleEl.innerHTML = title
+    headerBodyEl.innerHTML = body
+    headerImgEl.src = imageUrl
+  }
+</script>

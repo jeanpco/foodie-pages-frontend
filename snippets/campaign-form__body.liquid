@@ -1,0 +1,150 @@
+{{ 'swiper.css' | asset_url | stylesheet_tag }}
+
+{% render 'campaign-form__product-card' %}
+{% render 'campaign-form__product-card-functions' %}
+{% render 'campaign-form__product-modal' %}
+
+<style>
+  .swiper .icon-next-arrow {
+    right: 1rem;
+  }
+
+  .swiper .icon-prev-arrow {
+    left: 1rem;
+  }
+
+  {% comment %} max-width 600 {% endcomment %}
+
+  @media (max-width: 600px) {
+    .cf-body_products-slider {
+      overflow: visible !important;
+    }
+  }
+
+  .cf-product-card .button {
+    height: 2.5rem;
+  }
+</style>
+
+{% comment %} Main Products {% endcomment %}
+
+<div class="cf-body w-full">
+  <div class="cf-body_spacing padding-vertical padding-large">
+    <div class="cf-body_container container display-flex">
+      <div class="cf-body_text display-flex padding-vertical padding-medium flex-direction-column">
+        <h2 class="padding-bottom padding-medium">Select your gift</h2>
+        <p>Pick <span data-js-element="number-of-selectable-gifts"></span> of the 4 following options</p>
+      </div>
+    </div>
+    <div class="container">
+      <div
+        class="cf-body_products-slider main display-flex gap-1 swiper"
+        data-js-element="products-slider-main"
+      >
+        <div class="swiper-wrapper"></div>
+
+        {% render 'icon-prev-arrow' %}
+        {% render 'icon-next-arrow' %}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% comment %} Custom Products {% endcomment %}
+
+<div class="cf-body w-full">
+  <div class="cf-body_spacing padding-vertical padding-large">
+    <div class="cf-body_container container display-flex">
+      <div class="cf-body_text display-flex padding-vertical padding-medium flex-direction-column">
+        <h2 class="padding-bottom padding-medium">Select your custom swag</h2>
+        <p>Pick 1 of the 2 following options</p>
+      </div>
+    </div>
+    <div class="container">
+      <div
+        class="cf-body_products-slider main display-flex gap-1 swiper"
+        data-js-element="products-slider-custom"
+      >
+        <div class="swiper-wrapper"></div>
+
+        {% render 'icon-prev-arrow' %}
+        {% render 'icon-next-arrow' %}
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type="module">
+  window.campaignForm.submitMainGiftToAirtable = (state) => {
+   console.log('MAIN', state) 
+  }
+
+  window.campaignForm.submitCustomSwagToAirtable = (state) => {
+    console.log('CUSTOM', state)
+  }
+
+  window.campaignForm.buildBody = (props) => {
+    const { products, numberOfSelectableGifts } = props
+
+    {% comment %} console.log(metafields) {% endcomment %}
+
+    const numberOfSelectableGiftsElement = document.querySelector('[data-js-element="number-of-selectable-gifts"]');
+    numberOfSelectableGiftsElement.innerHTML = numberOfSelectableGifts;
+
+    {% comment %} add products to slider {% endcomment %}
+    const mainProductsSlider = document.querySelector('[data-js-element="products-slider-main"]');
+    const customProductsSlider = document.querySelector('[data-js-element="products-slider-custom"]');
+
+    if (!mainProductsSlider) return
+
+    products.forEach((item) => {
+      const productCard = window.cfProductCard(item)
+      const tags = item.product.tags
+
+      if (tags && tags.toLowerCase().includes('custom')) {
+        customProductsSlider.querySelector('.swiper-wrapper').insertAdjacentHTML('beforeend', productCard);
+      } else {
+        mainProductsSlider.querySelector('.swiper-wrapper').insertAdjacentHTML('beforeend', productCard);
+      }
+
+      const productElement = mainProductsSlider.querySelector(`[data-product-id="${item.product.id}"]`) || customProductsSlider.querySelector(`[data-product-id="${item.product.id}"]`);
+      const event = new CustomEvent('product-card-added', { detail: { productElement, data: item } });
+
+      document.dispatchEvent(event);
+    });
+
+    {% comment %} init slider {% endcomment %}
+
+    const swiperConfig = {
+      spaceBetween: 24,
+      freeMode: true,
+      slidesPerView: "auto",
+      slidesPerView: 1.2,
+      mousewheel: {
+          forceToAxis: true,
+        },
+      navigation: {
+        nextEl: '.icon-next-arrow',
+        prevEl: '.icon-prev-arrow',
+      },
+      breakpoints: {
+        // when window width is >= 320px
+        1100: {
+          slidesPerView: 3,
+        },
+        800: {
+          slidesPerView: 2,
+        },
+        600: {
+          slidesPerView: 2,
+        },
+      }
+    }
+
+    const mainSlider = new window.Swiper(mainProductsSlider, swiperConfig);    
+    const customSlider = new window.Swiper(customProductsSlider, swiperConfig);
+  };
+
+
+
+</script>

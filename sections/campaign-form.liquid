@@ -1,44 +1,95 @@
+<script>
+  window.campaignForm = {}; // global variable
+  window.campaignForm.state = {} // state that will be submitted to the backend (airtable)
+</script>
+
+{% render 'campaign-form__loading-icon' %}
+{% render 'campaign-form__header' %}
+{% render 'campaign-form__body' %}
+
+<script type="module">
+  
+  import wretch from 'https://cdn.skypack.dev/wretch/dist/bundle/wretch.all.min.mjs'
+
+  function removeSpacesAndBackslashes(str) {
+    return str.replace(/\s/g, '').replace(/\\/g, '');
+  }
+
+  const initCampaignForm = async () => {
+
+    const backendURL = 'https://23ee-96-20-108-244.ngrok.io/api'
+
+    // get all url params
+    {% comment %} client=364&campaign=field-office-test {% endcomment %}
+    const urlParams = new URLSearchParams(window.location.search);
+    const campaignNameParam = urlParams.get('campaign');
+    const clientIdParam = urlParams.get('client');
+
+    const pageData = await wretch(
+      `${backendURL}/airtable-admin-base?campaignName=${campaignNameParam}&customerId=${clientIdParam}`
+    ) // Base url
+      // Authorization header
+      .get() // GET request
+      .badRequest((err) => {
+        throw err;
+      }) // Handle 400 errors
+      .unauthorized((err) => {
+        throw err;
+      }) // Handle 401 errors
+      .notFound((err) => {
+        throw err;
+      }) // Handle 404 errors
+      .internalError((err) => {
+        throw err;
+      }) // Handle 500 errors
+      .res((res) => res.json()); // Parse response as JSON
+
+    const rawData = pageData.data.campaignRow.fields
+
+    const data = {
+      {% comment %} header {% endcomment %}
+      campaignName: rawData['Campaign Name'],
+      giftMessage: rawData['Gift Message'],
+      companyLogo: rawData['Company Logo'][0].url,
+      pageURL: rawData['Page URL'],
+      {% comment %} body {% endcomment %}
+      products: JSON.parse(removeSpacesAndBackslashes(rawData.products)),
+      numberOfSelectableGifts: rawData['Number of selectable gifts'],
+      {% comment %} footer {% endcomment %}
+      formStructure: JSON.parse(removeSpacesAndBackslashes(rawData['Form Structure'])),
+      formButtonText: rawData['Form Button Text'],
+    }
+
+    window.campaignForm.buildHeader && window.campaignForm.buildHeader({
+      imageUrl: data.companyLogo,
+      title: data.campaignName, 
+      body: data.giftMessage,
+    })
+
+    window.campaignForm.buildBody && window.campaignForm.buildBody({
+      products: pageData.data.shopifyProducts,
+      numberOfSelectableGifts: data.numberOfSelectableGifts,
+    })
+
+    window.campaignForm.initLoading(false)
+  }
+
+  window.addEventListener('load', async () => await initCampaignForm())
+</script>
+
 <style>
   sticky-header,
   #shopify-section-footer {
     display: none !important;
   }
+
+  .loading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: var(--color-white);
+    z-index: 2;
+  }
 </style>
-
-<div>CAMPAIGN FORM PAGE</div>
-
-<script type="module">
-  
-  import wretch from 'https://cdn.skypack.dev/wretch/dist/bundle/wretch.all.min.mjs'
-  const backendURL = 'https://6730-96-20-108-244.ngrok.io/api/'
-
-  // get all url params
-  {% comment %} client=364&campaign=field-office-test {% endcomment %}
-  const urlParams = new URLSearchParams(window.location.search);
-  const campaignName = urlParams.get('campaign');
-  const clientId = urlParams.get('client');
-
-
-  const loadAirtableData = await wretch(
-    `${backendURL}/airtable-admin-base?campaignName=${campaignName}&customerId=${clientId}`
-  ) // Base url
-    // Authorization header
-    .get() // GET request
-    .badRequest((err) => {
-      throw err;
-    }) // Handle 400 errors
-    .unauthorized((err) => {
-      throw err;
-    }) // Handle 401 errors
-    .notFound((err) => {
-      throw err;
-    }) // Handle 404 errors
-    .internalError((err) => {
-      throw err;
-    }) // Handle 500 errors
-    .res((res) => res.json()); // Parse response as JSON
-
-
-  console.log(loadAirtableData)
-
-</script>

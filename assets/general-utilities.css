@@ -101,6 +101,13 @@
   position: absolute;
 }
 
+.pos-dead-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 .hide {
   display: none;
 }
@@ -140,6 +147,14 @@
 
 .display-flex {
   display: flex;
+}
+
+.w-full {
+  width: 100%;
+}
+
+.w-50 {
+  width: 50%;
 }
 
 .justify-content-center {
