@@ -183,8 +183,8 @@
           "type": "collection",
           "settings": {
             "title": "Foodie",
-            "collection": "foodie",
-            "cta_link": "shopify:\/\/collections\/foodie"
+            "collection": "gifts-for-foodies",
+            "cta_link": "shopify:\/\/collections\/gifts-for-foodies"
           }
         },
         "000af700-bcb5-4e04-852c-35a79a7eca43": {
