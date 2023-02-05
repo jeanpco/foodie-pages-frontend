@@ -263,6 +263,7 @@
     },
     "8d1281ee-ecd6-4a95-ba83-f047c9b8007b": {
       "type": "module-split-content",
+      "disabled": true,
       "blocks": {
         "0f6671cc-6927-451b-b37c-da38925cd5b4": {
           "type": "cta",
@@ -305,6 +306,7 @@
         },
         "276a7a27-7127-4129-8ca0-d68003063232": {
           "type": "cta",
+          "disabled": true,
           "settings": {
             "cta_text": "Download Catalog",
             "cta_link": "#download-catalogue"
@@ -378,7 +380,7 @@
         "overline": "Corporate solutions",
         "title": "Corporate Solutions",
         "body": "We help businesses connect with people and make lasting impressions.",
-        "cta_text": "Get a quote",
+        "cta_text": "Get a Quote",
         "cta_link": "#corporate-contact",
         "heading_style": "h2"
       }
