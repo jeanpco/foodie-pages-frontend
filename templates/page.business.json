@@ -25,9 +25,9 @@
       ],
       "settings": {
         "overline": "Foodiepages for business",
-        "title": "<p>Unique Gifts for <em>Modern Companies<\/em><\/p>",
+        "title": "<p>Stand out by supporting <em>small<\/em><\/p>",
         "heading_style": "h1",
-        "body": "Engage employees, stand out to clients and elevate events with gifts that are the best reflection of your brand. We source unique products from small and underrepresented businesses, bringing your vision to life with a single tastefully designed gift.",
+        "body": "Engage employees, stand out to clients and elevate events with custom branded gifts that share your company values. Every gift supports and celebrates small business owners.",
         "image": "shopify:\/\/shop_images\/09A5102copy__6_-removebg-preview.png",
         "enable_card_style": false,
         "text_vertical_alignment": "flex-end",
@@ -89,13 +89,6 @@
           }
         },
         "199d783c-9d51-4392-8181-33d0daac9ee0": {
-          "type": "logo",
-          "settings": {
-            "title": "",
-            "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/economical-insurance.png?v=1669828929"
-          }
-        },
-        "eb0c10dd-e01c-4b14-aec0-ea4ce715ae31": {
           "type": "logo",
           "settings": {
             "title": "",
