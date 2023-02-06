@@ -18,6 +18,7 @@
 </div>
 
 <script type="module">
+  window.modalSelectedVariant = null;
   window.closeModal = modal => modal.style.display = 'none'
   window.openModal = modal => modal.style.display = 'block'
   
@@ -62,6 +63,7 @@
       numberOfVariant,
       isCustomSwag,
     })
+    window.cfProductModalVariantSelector({ variants: data.variants })
   };
 
   window.cfProductModal.build = (props) => {
@@ -87,11 +89,6 @@
       vendor,
       metafields: { metafields },
     } = props
-
-    console.log(props)
-
-    console.log(variants)
-    console.log(options)
 
     const isDonation = tags.includes('donation');
 
@@ -158,26 +155,24 @@
             </div>`
           : ''}
 
-          {% comment %} Variant Selector {% endcomment %}
-          
-          ${options.map((option, index) => `
-            <div class="field-group margin-top margin-medium">
-              <label class="text-size-tiny uppercase" for="ContactForm-name">${option.name}</label>
-              <select
-                id="product-select-${index}"
-                name="product-select-${index}"
-                class="field_input"
-                aria-required="true"
-                autocorrect="off"
-                autocapitalize="off"
-                required
-              >
-                ${option.values.map((value, index) => `
-                  <option value="${value}">${value}</option>
-                `).join('')}
-              </select>
-            </div>
-          `).join('')}
+          ${variants?.length > 1 ? `<div class="cf_modal-variant-selector">
+            {% comment %} Variant Selector {% endcomment %}
+            ${options.map((option, index) => `
+              <legend class="text-size-tiny uppercase margin-top margin-medium">${option.name}</legend>
+              ${option.values.map((value, index) => `
+                <div class="field-group variant-select">
+                  <input
+                    data-js-element="variant-option"
+                    type="radio"
+                    id="${ index }-${ option.position }"
+                    name="${ option.name }"
+                    value="${ value }"
+                  >
+                  <label class="" for="${ option.name }--${value}">${value}</label>
+                </div>
+              `).join('')}
+            `).join('')}
+          </div>` : ''}
 
           {% comment %} Add to cart {% endcomment %}
           <button type="submit" class="button secondary modal-content_atc margin-vertical margin-medium">
@@ -266,15 +261,13 @@
       }
 
       if (numberOfVariant > 1) {
-        console.log('MORE VARIANTS', props)
-      } else {
-       
-        if (isCustomSwag) {
-          window.cfProductCardAdd(selectedProduct, 'Custom Swag', element)
-        } else {
-          window.cfProductCardAdd(selectedProduct, 'Main Gift', element)
-        }
+        selectedProduct = `Product Title: ${title} | Variant Title: ${window.modalSelectedVariant.title} | Variant Sku: ${window.modalSelectedVariant.sku} | Variant Id: ${window.modalSelectedVariant.id}`
+      }
 
+      if (isCustomSwag) {
+        window.cfProductCardAdd(selectedProduct, 'Custom Swag', element)
+      } else {
+        window.cfProductCardAdd(selectedProduct, 'Main Gift', element)
       }
 
       disableSubmitButton()
@@ -282,9 +275,48 @@
     })
   }
 
+  window.cfProductModalVariantSelector = (props) => {
+    {% comment %} @TODO: Test with a product that has 2 option set (size + color e.g) {% endcomment %}
+    const { variants } = props
+    const variantOptions = [...document.querySelectorAll('[data-js-element="variant-option"]')]
 
+    const selectVariant = (e) => {
 
+      {% comment %} if e is undefined get the first available variants {% endcomment %}
+      {% comment %} might need to check agaisnt inventory_quantity {% endcomment %}
+      if (!e) {
 
+        if (!window.modalSelectedVariant) {
+          const firstVariant = variants[0]
+          window.modalSelectedVariant = firstVariant
 
+          {% comment %} variantoptions has variant.title as a value, check it {% endcomment %}
+          variantOptions.forEach((option) => {
+            if (option.value === firstVariant.title) {
+              option.setAttribute('checked', true)
+            }
+          }) 
+        } else {
+          {% comment %} variantoptions has variant.title as a value, check it {% endcomment %}
+          variantOptions.forEach((option) => {
+            if (option.value === window.modalSelectedVariant.title) {
+              option.setAttribute('checked', true)
+            }
+          })
+        }
 
+      } else {
+        const option1 = variants.find((variant) => variant.title === e.target.value).option1
+        const option2 = variants.find((variant) => variant.title === e.target.value).option2
+        const option3 = variants.find((variant) => variant.title === e.target.value).option3
+
+        const selectedVariant = variants.find((variant) => variant.option1 === option1 && variant.option2 === option2 && variant.option3 === option3)
+
+        window.modalSelectedVariant = selectedVariant
+      }
+    }
+
+    selectVariant()
+    variantOptions.forEach((option) => option.addEventListener('change', selectVariant))
+  }
 </script>

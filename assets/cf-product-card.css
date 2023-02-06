@@ -12,6 +12,16 @@
   z-index: 1;
 }
 
+.cf-product-card.is-disabled {
+  opacity: 0.5;
+  pointer-events: none;
+  cursor: not-allowed;
+}
+
+.cf-product-card.is-disabled button {
+  pointer-events: none;
+}
+
 .cf-product-card_image-container {
   overflow: hidden;
   position: relative;

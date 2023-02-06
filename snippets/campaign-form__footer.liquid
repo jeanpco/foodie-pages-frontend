@@ -21,7 +21,7 @@
             <h6 data-js-element="sticky-custom-gifts"></h6>
           </div>
           <button data-js-element="submit-form-button" type="submit" class="button">
-            <span> Submit your selection</span>
+            <span>Submit your selection</span>
           </button>
         </div>
       </form>
@@ -45,29 +45,21 @@
 </style>
 
 <script type="module">
+  import wretch from 'https://cdn.skypack.dev/wretch/dist/bundle/wretch.all.min.mjs'
   
   window.campaignForm.buildFooter = ({ formStructure, formButtonText }) => {
     const cfFormEl = document.querySelector('[data-js-element="cf-form"]');
     const cfFormInputsEl = document.querySelector('[data-js-element="cf-form-inputs"]');
     const submitFormButtonEl = document.querySelector('[data-js-element="submit-form-button"] span');
 
-    console.log(submitFormButtonEl)
-
     submitFormButtonEl.innerText = formButtonText;
-
-    console.log(formStructure);
-
-    {% comment %} {
-      label: 'FirstName';
-      options: [];
-      type: 'text';
-    } {% endcomment %}
 
     cfFormInputsEl.innerHTML = formStructure
       .map((input) => {
         const { label, type, options } = input;
         const inputId = label.toLowerCase().replace(' ', '-');
         const inputName = label.toLowerCase().replace(' ', '_');
+        console.log(label)
         {% comment %} format label with 1 space between each word {% endcomment %}
         const formattedLabel = label.replace(/([A-Z])/g, ' $1').trim();
 
@@ -92,11 +84,46 @@
       })
       .join('');
 
-    cfFormEl.addEventListener('submit', (e) => {
+    cfFormEl.addEventListener('submit', async (e) => {
+      const backendURL = 'https://23ee-96-20-108-244.ngrok.io/api'
+      const urlParams = new URLSearchParams(window.location.search);
+      const campaignNameParam = urlParams.get('campaign');
+      const clientIdParam = urlParams.get('client');
+
       e.preventDefault();
       const formData = new FormData(e.target);
-      const data = Object.fromEntries(formData.entries());
-      console.log(data);
+      const formState = Object.fromEntries(formData.entries());
+      
+      {% comment %} @TODO: Need to prevent submission if no gift is selected {% endcomment %}
+      const giftState = window.campaignForm.state;
+
+      console.log(formState)
+      console.log(giftState)
+
+      const pageData = await wretch(
+        `${backendURL}/airtable-create-campaign-entry?campaignName=${campaignNameParam}&customerId=${clientIdParam}`
+      ) // Base url
+        // Authorization header
+        .post({
+          formState,
+          giftState,
+        }) // Post data
+        .badRequest((err) => {
+          throw err;
+        }) // Handle 400 errors
+        .unauthorized((err) => {
+          throw err;
+        }) // Handle 401 errors
+        .notFound((err) => {
+          throw err;
+        }) // Handle 404 errors
+        .internalError((err) => {
+          throw err;
+        }) // Handle 500 errors
+        .res((res) => res.json()); // Parse response as JSON
+      
+      {% comment %} make a backend call to /airtable-create-campaign-entry {% endcomment %}
+
     });
 
     document.addEventListener('gift-state-changed', (e) => {
@@ -106,19 +133,50 @@
       {% comment %} get data-js-element="sticky-main-gifts" {% endcomment %}
       const stickyMainGiftsEl = document.querySelector('[data-js-element="sticky-main-gifts"]');
       const stickyCustomGiftsEl = document.querySelector('[data-js-element="sticky-custom-gifts"]');
-
+      const mainGiftProductCards = [...document.querySelectorAll('[data-js-element="products-slider-main"] [data-js-element="cf-product-card"]')];
       
       const mainGiftsState = state['Main Gift'] && state['Main Gift'].split(',');
       const customGiftsState = state['Custom Swag'] && state['Custom Swag'].split(',');
 
+      {% comment %} get number of selected main gift product cards {% endcomment %}
+      const numberOfSelectedMainGifts = mainGiftProductCards.filter(card => card.classList.contains('is-selected')).length;
+
+      if (numberOfSelectedMainGifts === window.campaignForm.numberOfSelectableGifts) {
+        {% comment %} for each unselected card add opacity 0.5, pointer-events: none, and cursor: not-allowed (inline styles) {% endcomment %}
+        mainGiftProductCards.forEach(card => {
+          if (!card.classList.contains('is-selected')) {
+            {% comment %} add is-disabled class {% endcomment %}
+            card.classList.add('is-disabled');
+          }
+        })
+      } else {
+        {% comment %} for each unselected card remove opacity 0.5, pointer-events: none, and cursor: not-allowed (inline styles) {% endcomment %}
+        mainGiftProductCards.forEach(card => {
+          if (!card.classList.contains('is-selected')) {
+            {% comment %} remove is-disabled class {% endcomment %}
+            card.classList.remove('is-disabled');
+          }
+        })
+      }
+      
       if (mainGiftsState) {
-        stickyMainGiftsEl.innerText = mainGiftsState.map(gift => gift.split('|')[0].replace('Product Title:', '')).join(', ')
+        stickyMainGiftsEl.innerText = mainGiftsState.map(gift => {
+          const productTitle = gift.split('|')[0].replace('Product Title:', '');
+          const variantTitle = gift.split('|')[1].replace('Variant Title:', '');
+        
+          return !variantTitle.includes('Default Title') ? `${productTitle} | ${variantTitle}` : productTitle
+        }).join(', ')
       } else {
         stickyMainGiftsEl.innerText = ''
       }
 
       if (customGiftsState) {
-        stickyCustomGiftsEl.innerText = customGiftsState.map(gift => gift.split('|')[0].replace('Product Title:', '')).join(', ')
+        stickyCustomGiftsEl.innerText = customGiftsState.map(gift => {
+          const productTitle = gift.split('|')[0].replace('Product Title:', '');
+          const variantTitle = gift.split('|')[1].replace('Variant Title:', '');
+
+          return !variantTitle.includes('Default Title') ? `${productTitle} | ${variantTitle}` : productTitle
+        }).join(', ')
       } else {
         stickyCustomGiftsEl.innerText = ''
       }

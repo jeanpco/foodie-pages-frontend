@@ -1,10 +1,7 @@
 <script type="module">
-
-  
-
   window.cfProductCardRemove = (gift, variants, type, element) => {
     // split Main Gift on "," and remove the one that has the variant id
-    const giftArray = gift.split(',').filter((item) => !item.includes(variants[0].id));
+    const giftArray = gift.split(',').filter((item) => !variants.find(v => item.includes(v.id)));
 
     // join the array back into a string
     const giftString = giftArray.join(',');
@@ -100,15 +97,14 @@
 
       if (productElement.classList.contains('is-selected')) {
         {% comment %} look for the variantId inside of state in either Main Gift or Custom Swag, if found, remove it {% endcomment %}
-
         const mainGift = window.campaignForm.state['Main Gift'];
         const customSwag = window.campaignForm.state['Custom Swag'];
 
-        if (mainGift && mainGift.includes(variants[0].id)) {
+        if (mainGift) {
           window.cfProductCardRemove(mainGift, variants, 'Main Gift', productElement);
         }
 
-        if (customSwag && customSwag.includes(variants[0].id)) {
+        if (customSwag) {
           window.cfProductCardRemove(customSwag, variants, 'Custom Swag', productElement);
         }
       }
