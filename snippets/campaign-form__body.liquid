@@ -13,6 +13,10 @@
     left: 1rem;
   }
 
+  .cf-body {
+    overflow: hidden;
+  }
+
   {% comment %} max-width 600 {% endcomment %}
 
   @media (max-width: 600px) {
@@ -23,6 +27,10 @@
 
   .cf-product-card .button {
     height: 2.5rem;
+  }
+  
+  .cf-product-card .button.secondary {
+    background-color: var(--color-white);
   }
 </style>
 
@@ -85,6 +93,9 @@
 
   window.campaignForm.buildBody = (props) => {
     const { products, numberOfSelectableGifts } = props
+
+    {% comment %} set number of selectable main gifts by user {% endcomment %}
+    window.campaignForm.numberOfSelectableGifts = numberOfSelectableGifts
 
     {% comment %} console.log(metafields) {% endcomment %}
 

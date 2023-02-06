@@ -1,0 +1,128 @@
+{{ 'cf-footer.css' | asset_url | stylesheet_tag }}
+
+<div class="cf-footer">
+  <div class="cf-footer_spacing padding-vertical padding-large">
+    <div class="cf-footer_content container">
+      <div class="cf-footer_text display-flex padding-vertical padding-small flex-direction-column">
+        <small
+          data-js-el="footer-title"
+          class="cf-footer_overline padding-bottom padding-small uppercase text-color-azul-verdoso-100 text-weight-medium"
+        >
+          Shipping details
+        </small>
+        <h2 class="cf-footer_title">Enter your address</h2>
+      </div>
+      <form data-js-element="cf-form" class="cf-footer_form padding-bottom padding-xlarge">
+        <div data-js-element="cf-form-inputs" class="cf-footer_form-inputs"></div>
+
+        <div class="sticky-banner display-flex justify-content-between align-items-center background-color-white">
+          <div class="sticky-banner_header display-flex gap-2">
+            <h6 data-js-element="sticky-main-gifts"></h6>
+            <h6 data-js-element="sticky-custom-gifts"></h6>
+          </div>
+          <button data-js-element="submit-form-button" type="submit" class="button">
+            <span> Submit your selection</span>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<style>
+  {% comment %} media max-width 990 {% endcomment %}
+
+  .cf-footer_content {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  @media screen and (max-width: 990px) {
+    .cf-footer_content {
+      margin-bottom: 5rem;
+    }
+  }
+</style>
+
+<script type="module">
+  
+  window.campaignForm.buildFooter = ({ formStructure, formButtonText }) => {
+    const cfFormEl = document.querySelector('[data-js-element="cf-form"]');
+    const cfFormInputsEl = document.querySelector('[data-js-element="cf-form-inputs"]');
+    const submitFormButtonEl = document.querySelector('[data-js-element="submit-form-button"] span');
+
+    console.log(submitFormButtonEl)
+
+    submitFormButtonEl.innerText = formButtonText;
+
+    console.log(formStructure);
+
+    {% comment %} {
+      label: 'FirstName';
+      options: [];
+      type: 'text';
+    } {% endcomment %}
+
+    cfFormInputsEl.innerHTML = formStructure
+      .map((input) => {
+        const { label, type, options } = input;
+        const inputId = label.toLowerCase().replace(' ', '-');
+        const inputName = label.toLowerCase().replace(' ', '_');
+        {% comment %} format label with 1 space between each word {% endcomment %}
+        const formattedLabel = label.replace(/([A-Z])/g, ' $1').trim();
+
+        return `
+          <div class="field-group margin-top margin-medium">
+              <label class="text-size-tiny uppercase" for="ContactForm-name">${formattedLabel}</label>
+            
+              <input
+                id="${inputId}"
+                type="${type}"
+                name="${inputName}"
+                class="field_input"
+                value=""
+                aria-required="true"
+                autocorrect="off"
+                autocapitalize="off"
+                placeholder="${formattedLabel}"
+                required
+              >
+            </div>
+        `;
+      })
+      .join('');
+
+    cfFormEl.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const formData = new FormData(e.target);
+      const data = Object.fromEntries(formData.entries());
+      console.log(data);
+    });
+
+    document.addEventListener('gift-state-changed', (e) => {
+      const { detail } = e;
+      const { state } = detail;
+
+      {% comment %} get data-js-element="sticky-main-gifts" {% endcomment %}
+      const stickyMainGiftsEl = document.querySelector('[data-js-element="sticky-main-gifts"]');
+      const stickyCustomGiftsEl = document.querySelector('[data-js-element="sticky-custom-gifts"]');
+
+      
+      const mainGiftsState = state['Main Gift'] && state['Main Gift'].split(',');
+      const customGiftsState = state['Custom Swag'] && state['Custom Swag'].split(',');
+
+      if (mainGiftsState) {
+        stickyMainGiftsEl.innerText = mainGiftsState.map(gift => gift.split('|')[0].replace('Product Title:', '')).join(', ')
+      } else {
+        stickyMainGiftsEl.innerText = ''
+      }
+
+      if (customGiftsState) {
+        stickyCustomGiftsEl.innerText = customGiftsState.map(gift => gift.split('|')[0].replace('Product Title:', '')).join(', ')
+      } else {
+        stickyCustomGiftsEl.innerText = ''
+      }
+    })
+  };
+
+</script>

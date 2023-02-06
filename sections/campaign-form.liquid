@@ -1,11 +1,13 @@
 <script>
   window.campaignForm = {}; // global variable
   window.campaignForm.state = {} // state that will be submitted to the backend (airtable)
+  window.campaignForm.numberOfSelectableGifts = 1 // default
 </script>
 
 {% render 'campaign-form__loading-icon' %}
 {% render 'campaign-form__header' %}
 {% render 'campaign-form__body' %}
+{% render 'campaign-form__footer' %}
 
 <script type="module">
   
@@ -50,7 +52,7 @@
       {% comment %} header {% endcomment %}
       campaignName: rawData['Campaign Name'],
       giftMessage: rawData['Gift Message'],
-      companyLogo: rawData['Company Logo'][0].url,
+      companyLogo: rawData['Company Logo'] && rawData['Company Logo'][0].url,
       pageURL: rawData['Page URL'],
       {% comment %} body {% endcomment %}
       products: JSON.parse(removeSpacesAndBackslashes(rawData.products)),
@@ -71,6 +73,11 @@
       numberOfSelectableGifts: data.numberOfSelectableGifts,
     })
 
+    window.campaignForm.buildFooter && window.campaignForm.buildFooter({
+      formStructure: data.formStructure,
+      formButtonText: data.formButtonText,
+    })
+
     window.campaignForm.initLoading(false)
   }
 
@@ -79,7 +86,8 @@
 
 <style>
   sticky-header,
-  #shopify-section-footer {
+  #shopify-section-footer,
+  .announcement-bar {
     display: none !important;
   }
 

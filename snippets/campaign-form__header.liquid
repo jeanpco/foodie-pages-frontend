@@ -58,6 +58,11 @@
     const headerBodyEl = document.querySelector('[data-js-el="header-body"]')
     const headerImgEl = document.querySelector('[data-js-el="header-img"]')
 
+    {% comment %} if no image url hide headerImgEl {% endcomment %}
+    if (!imageUrl) {
+      headerImgEl.style.display = 'none'
+    }
+
     headerTitleEl.innerHTML = title
     headerBodyEl.innerHTML = body
     headerImgEl.src = imageUrl

@@ -17,21 +17,15 @@
   </div>
 </div>
 
-<style></style>
-
 <script type="module">
-  
-  
-  
-
-  const closeModal = modal => modal.style.display = 'none'
-  const openModal = modal => modal.style.display = 'block'
+  window.closeModal = modal => modal.style.display = 'none'
+  window.openModal = modal => modal.style.display = 'block'
   
   window.cfProductModal = (props) => {
-    const {data, isOpen} = props
+    const {data, isOpen, productElement} = props
     {% comment %} extract data {% endcomment %}
     const numberOfVariant = data.variants.length;
-    const isDonation = data.tags.includes('donation');
+    const isCustomSwag = data.tags.includes('custom');
 
     {% comment %} get elements {% endcomment %}
     const elements = {
@@ -42,23 +36,32 @@
 
     {% comment %} Handle modal open {% endcomment %}
 
-    if (isOpen) openModal(elements.modal)
+    if (isOpen) window.openModal(elements.modal)
 
     {% comment %} Handle modal closure {% endcomment %}
 
-    elements.close.addEventListener("click", () => closeModal(elements.modal));
+    elements.close.addEventListener("click", () => window.closeModal(elements.modal));
 
     window.addEventListener("click", (event) => {
-      if (event.target == elements.modal) closeModal(elements.modal)
+      if (event.target == elements.modal) window.closeModal(elements.modal)
     });
 
     document.addEventListener("keydown", (event) => {
-      if (event.key === "Escape") closeModal(elements.modal)
+      if (event.key === "Escape") window.closeModal(elements.modal)
     });
 
     window.cfProductModal.build(data);
     window.cfProductModal.buildSwiper()
     window.cfProductModal.buildAccordion()
+    window.cfProductModal.buildATC({ 
+      tags: data.tags, 
+      element: productElement, 
+      id: data.id, 
+      variants: data.variants, 
+      title: data.title,
+      numberOfVariant,
+      isCustomSwag,
+    })
   };
 
   window.cfProductModal.build = (props) => {
@@ -86,7 +89,11 @@
     } = props
 
     console.log(props)
-    console.log(metafields)
+
+    console.log(variants)
+    console.log(options)
+
+    const isDonation = tags.includes('donation');
 
     {% comment %} find metafields with key of "excerpt" and namespace of "custom" {% endcomment %}
     const excerpt = metafields.find(
@@ -94,19 +101,90 @@
     )
   
     elements.modalContent.innerHTML = `
-      <form class="modal-content w-full display-flex gap-3">
+      <form data-js-element="modal-content-form" class="modal-content w-full display-flex gap-3 justify-content-between">
         <div data-js-element="modal-product-images swiper" class="modal-product_images">
           <div class="swiper-wrapper">
-            <img class="swiper-slide" src="${images[0].src}" alt="${title}">
+            ${images.map((image, index) => `
+              <img class="swiper-slide" src="${image.src}" alt="${title}">
+            `).join('')}
           </div>
+          <div class="swiper-pagination"></div>
         </div>
         <div class="modal-product_details">
+          {% comment %} Vendor {% endcomment %}
           <small class="text-size-tiny uppercase text-weight-semibold text-color-tertiary">${vendor}</small>
+
+          {% comment %} Title {% endcomment %}
           <h2 style="opacity: 1;" class="heading-style-h3 margin-vertical margin-small">${title}</h2>
-          ${excerpt && `<p class="product__excerpt margin-bottom margin-medium text-size-light text-color-grey-700">${excerpt.value}</p>`}
-          <button class="button secondary modal-content_atc">
+
+          {% comment %} Excerpt {% endcomment %}
+          ${excerpt ? `<p class="product__excerpt text-size-light text-color-grey-700">${excerpt.value}</p>` : ''}
+
+          {% comment %} If donation {% endcomment %}
+
+          ${isDonation ? `
+            <div class="field-group margin-top margin-medium">
+              <label class="text-size-tiny uppercase" for="ContactForm-name">Write an organization</label>
+            
+              <input
+                id="donation-write-organization"
+                type="text"
+                name="input-donation-write-organization"
+                class="field_input"
+                value=""
+                aria-required="true"
+                autocorrect="off"
+                autocapitalize="off"
+                placeholder="Organization Name"
+                required
+              >
+            </div>
+
+            <div class="field-group margin-top margin-medium">
+              <label class="text-size-tiny uppercase" for="ContactForm-name">Organization Website</label>
+            
+              <input
+                id="donation-organization-website"
+                type="text"
+                name="input-donation-organization-website"
+                class="field_input"
+                value=""
+                aria-required="true"
+                autocorrect="off"
+                autocapitalize="off"
+                placeholder="Organization Website"
+                required
+              >
+            </div>`
+          : ''}
+
+          {% comment %} Variant Selector {% endcomment %}
+          
+          ${options.map((option, index) => `
+            <div class="field-group margin-top margin-medium">
+              <label class="text-size-tiny uppercase" for="ContactForm-name">${option.name}</label>
+              <select
+                id="product-select-${index}"
+                name="product-select-${index}"
+                class="field_input"
+                aria-required="true"
+                autocorrect="off"
+                autocapitalize="off"
+                required
+              >
+                ${option.values.map((value, index) => `
+                  <option value="${value}">${value}</option>
+                `).join('')}
+              </select>
+            </div>
+          `).join('')}
+
+          {% comment %} Add to cart {% endcomment %}
+          <button type="submit" class="button secondary modal-content_atc margin-vertical margin-medium">
             <span>Select this gift</span>
           </button>
+
+          {% comment %} Description {% endcomment %}
           <div class="modal-accordion">
             <p data-js-element="modal-accordion-header" role="button" class="modal-accordion__header display-flex align-items-center justify-content-between">
               <span class="text-size-regular text-weight-semibold">
@@ -135,7 +213,11 @@
     const swiper = new Swiper(elements.modalProductImages, {
       slidesPerView: 1,
       spaceBetween: 10,
-      loop: true,
+      pagination: {
+        el: '.swiper-pagination',
+        type: 'bullets',
+        clickable: true,
+      },
     });
   }
 
@@ -153,5 +235,56 @@
       elements.modalAccordionHeader.classList.toggle('is-active')
     })
   }
+
+  window.cfProductModal.buildATC = (props) => {
+    const {id, variants, title, element, numberOfVariant, isCustomSwag, tags} = props
+    const isDonation = tags.includes('donation')
+
+    const elements = {
+      form: document.querySelector('[data-js-element="modal-content-form"]'),
+      modal: document.getElementById("modal"),
+    }
+
+    const disableSubmitButton = () => {
+      elements.form.querySelector('button').setAttribute('disabled', true)
+      elements.form.querySelector('button span').innerHTML = 'This gift selected'
+    }
+
+    if (!elements.form) return console.error('No form found.')
+    if (element.classList.contains('is-selected')) disableSubmitButton()
+
+    elements.form.addEventListener('submit', (e) => {
+      e.preventDefault()
+
+      let selectedProduct = `Product Title: ${title} | Variant Title: ${variants[0].title} | Variant Sku: ${variants[0].sku} | Variant Id: ${variants[0].id}`;
+
+      if (isDonation) {
+        const organizationName = document.getElementById('donation-write-organization').value
+        const organizationWebsite = document.getElementById('donation-organization-website').value
+
+        selectedProduct = `Product Title: ${title} | Variant Title: ${variants[0].title} | Variant Sku: ${variants[0].sku} | Variant Id: ${variants[0].id} | Organization Name: ${organizationName} | Organization Website: ${organizationWebsite}`
+      }
+
+      if (numberOfVariant > 1) {
+        console.log('MORE VARIANTS', props)
+      } else {
+       
+        if (isCustomSwag) {
+          window.cfProductCardAdd(selectedProduct, 'Custom Swag', element)
+        } else {
+          window.cfProductCardAdd(selectedProduct, 'Main Gift', element)
+        }
+
+      }
+
+      disableSubmitButton()
+      window.closeModal(elements.modal)
+    })
+  }
+
+
+
+
+
 
 </script>

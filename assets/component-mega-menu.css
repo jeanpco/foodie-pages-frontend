@@ -47,6 +47,11 @@
   word-wrap: break-word;
 }
 
+.mega-menu__link:not(.text-color-azul-verdoso-25) {
+  color: var(--color-white);
+  font-weight: 600;
+}
+
 .mega-menu__link--level-2:not(:only-child) {
   margin-bottom: 0.8rem;
 }
