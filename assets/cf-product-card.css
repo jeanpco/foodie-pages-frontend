@@ -67,6 +67,15 @@
   justify-content: center;
 }
 
+/* max-width 990 */
+
+@media screen and (max-width: 990px) {
+  .cf-product-card_details {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+
 .cf-product-card_title {
 
 }
