@@ -1,11 +1,14 @@
 {
   "sections": {
     "banner": {
-      "type": "main-collection-banner",
+      "type": "plain-content",
       "settings": {
-        "show_collection_description": true,
-        "show_collection_image": false,
-        "color_scheme": "background-1"
+        "overline": "Corporate solutions",
+        "title": "{{ collection.title }}",
+        "body": "",
+        "cta_text": "Get a quote",
+        "cta_link": "",
+        "heading_style": "h1"
       }
     },
     "product-grid": {
