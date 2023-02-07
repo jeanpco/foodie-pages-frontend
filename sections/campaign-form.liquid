@@ -33,15 +33,19 @@
       // Authorization header
       .get() // GET request
       .badRequest((err) => {
+        console.log(err)
         throw err;
       }) // Handle 400 errors
       .unauthorized((err) => {
+        console.log(err)
         throw err;
       }) // Handle 401 errors
       .notFound((err) => {
+        console.log(err)
         throw err;
       }) // Handle 404 errors
       .internalError((err) => {
+        console.log(err)
         throw err;
       }) // Handle 500 errors
       .res((res) => res.json()); // Parse response as JSON
