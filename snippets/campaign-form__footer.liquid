@@ -90,6 +90,8 @@
       const campaignNameParam = urlParams.get('campaign');
       const clientIdParam = urlParams.get('client');
 
+      console.log('test')
+
       e.preventDefault();
       const formData = new FormData(e.target);
       const formState = Object.fromEntries(formData.entries());
