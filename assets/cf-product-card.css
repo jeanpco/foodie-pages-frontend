@@ -73,6 +73,17 @@
   .cf-product-card_details {
     opacity: 1;
     transform: translate(-50%, 0);
+    /* flex-direction: column; */
+    /* align-items: flex-start; */
+    bottom: 1rem;
+  }
+
+  .cf-product-card_details button svg {
+    display: none;
+  }
+
+  .cf-product-card_details button {
+    padding: 0.5rem 1rem !important;
   }
 }
 
