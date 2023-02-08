@@ -19,7 +19,9 @@
 
   const initCampaignForm = async () => {
 
-    const backendURL = 'https://foodiepagesbackend.onrender.com/api'
+
+    const backendURL = 'http://localhost:8080'
+    {% comment %} const backendURL = 'https://foodiepagesbackend.onrender.com/api' {% endcomment %}
 
     // get all url params
     {% comment %} client=364&campaign=field-office-test {% endcomment %}
@@ -28,7 +30,7 @@
     const clientIdParam = urlParams.get('client');
 
     const pageData = await wretch(
-      `${backendURL}/airtable-admin-base?campaignName=${campaignNameParam}&customerId=${clientIdParam}`
+      `${backendURL}/api/airtable-admin-base?campaignName=${campaignNameParam}&customerId=${clientIdParam}`
     ) // Base url
       // Authorization header
       .get() // GET request
