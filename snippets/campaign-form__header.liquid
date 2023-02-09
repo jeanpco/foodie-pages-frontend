@@ -53,6 +53,7 @@
 </style>
 
 <script type="module">
+  // use airtable data to build header
   window.campaignForm.buildHeader = ({ title, body, imageUrl }) => {
     const headerTitleEl = document.querySelector('[data-js-el="header-title"]')
     const headerBodyEl = document.querySelector('[data-js-el="header-body"]')

@@ -85,8 +85,8 @@
       .join('');
 
     cfFormEl.addEventListener('submit', async (e) => {
-      const backendURL = 'http://localhost:8080'
-      {% comment %} const backendURL = 'https://foodiepagesbackend.onrender.com/api' {% endcomment %}
+      {% comment %} const backendURL = 'http://localhost:8080' {% endcomment %}
+      const backendURL = 'https://foodiepages.herokuapp.com'
       const urlParams = new URLSearchParams(window.location.search);
       const campaignNameParam = urlParams.get('campaign');
       const clientIdParam = urlParams.get('client');
