@@ -251,7 +251,7 @@
     elements.form.addEventListener('submit', (e) => {
       e.preventDefault()
 
-      let selectedProduct = `Product Title: ${title} | Variant Title: ${variants[0].title} | Variant Sku: ${variants[0].sku} | Variant Id: ${variants[0].id}`;
+      let selectedProduct = `Product Title: ${title} | Variant Title: ${variants[0].title} | Variant Sku: ${variants[0].sku} | Variant Id: ${variants[0].id} | Product Tags ${tags}`;
 
       if (isDonation) {
         const organizationName = document.getElementById('donation-write-organization').value
@@ -261,7 +261,7 @@
       }
 
       if (numberOfVariant > 1) {
-        selectedProduct = `Product Title: ${title} | Variant Title: ${window.modalSelectedVariant.title} | Variant Sku: ${window.modalSelectedVariant.sku} | Variant Id: ${window.modalSelectedVariant.id}`
+        selectedProduct = `Product Title: ${title} | Variant Title: ${window.modalSelectedVariant.title} | Variant Sku: ${window.modalSelectedVariant.sku} | Variant Id: ${window.modalSelectedVariant.id} | Product Tags ${tags}`
       }
 
       if (isCustomSwag) {

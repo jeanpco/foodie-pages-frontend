@@ -79,7 +79,7 @@
         const isSelected = productElement.classList.contains('is-selected')
         if (isSelected) return;
 
-        const selectedProduct = `Product Title: ${productTitle} | Variant Title: ${variants[0].title} | Variant Sku: ${variants[0].sku} | Variant Id: ${variants[0].id}`;
+        const selectedProduct = `Product Title: ${productTitle} | Variant Title: ${variants[0].title} | Variant Sku: ${variants[0].sku} | Variant Id: ${variants[0].id} | Product Tags ${tags}`;
   
         {% comment %} Check if selected product is a custom swag {% endcomment %}
         if (isCustomSwag) {
