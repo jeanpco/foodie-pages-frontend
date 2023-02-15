@@ -209,8 +209,8 @@
     elements.cfFormEl.addEventListener('submit', async (e) => {
       let loading = true;
 
-      const backendURL = 'http://localhost:8080'
-      {% comment %} const backendURL = 'https://foodiepagesbackend.onrender.com' {% endcomment %}
+      {% comment %} const backendURL = 'http://localhost:8080' {% endcomment %}
+      const backendURL = 'https://foodiepagesbackend.onrender.com'
       const urlParams = new URLSearchParams(window.location.search);
       const campaignNameParam = urlParams.get('campaign');
       const clientIdParam = urlParams.get('client');
