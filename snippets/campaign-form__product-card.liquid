@@ -2,10 +2,10 @@
 
 <script type="module">
   
-  window.cfProductCard = (data) => {
-    const { product } = data;
-    const numberOfVariant = product.variants.length;
-    const isDonation = product.tags.includes('donation');
+  window.cfProductCard = (data = {}) => {
+    const product = data.product || {};
+    const numberOfVariant = product.variants && product.variants.length || 1;
+    const isDonation = product.tags && product.tags.includes('donation');
 
     return `
       <div class="cf-product-card swiper-slide" data-js-element="cf-product-card" data-product-id="${product.id}" data-product-tags="${product.tags}">
@@ -13,7 +13,7 @@
           <div class="cf-product-card_checked">
             {% render 'campaign-form_icon-checked' %}
           </div>
-          <img data-js-element="cf-product-card_image" src="${product.image.src}" class="cf-product-card_image" alt="${product.image.alt}">
+          ${product.image ? `<img data-js-element="cf-product-card_image" src="${product.image.src}" class="cf-product-card_image" alt="${product.image.alt}">` : ''}
           <div class="cf-product-card_details display-flex gap-0-5 align-items-center">
             {% comment %} if has 1 variant {% endcomment %}
             ${numberOfVariant === 1 && !isDonation ? `
@@ -41,7 +41,7 @@
           </div>
         </div>
         <h4 data-js-element="cf-product-card_title font-weight-semibold" class="cf-product-card_title heading-style-h6 padding-horizontal padding-small">
-          ${product.title}
+          ${product.title || 'Product Title Placeholder'}
         </h4>
       </div>
     `;

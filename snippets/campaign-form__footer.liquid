@@ -1,6 +1,6 @@
 {{ 'cf-footer.css' | asset_url | stylesheet_tag }}
 
-<div class="cf-footer">
+<div class="cf-footer" data-js-element="animated-section">
   <div class="cf-footer_spacing padding-vertical padding-large">
     <div class="cf-footer_content container">
       <div class="cf-footer_text display-flex padding-vertical padding-small flex-direction-column">
@@ -28,6 +28,25 @@
     </div>
   </div>
 </div>
+{% comment %} build modal {% endcomment %}
+<div id="modal-thank-you" class="modal pos-rel">
+  <div class="modal-container">
+    {% render 'campaign-form__icon-close' %}
+    <!-- Modal Content -->
+    <div class="product-modal_content">
+      <h2 class="margin-bottom margin-small">Your gifts are on the way</h2>
+      <p data-js-element="shippingDetails" class="shipping-details margin-bottom margin-large">Expected delivery in 2 weeks</p>
+      <div data-js-element="thank-you-modal-products" class="display-flex gap-1 justify-content-between">
+        <div class="modal-loading pos-dead-center">
+          <div class="modal-loading-container text-align-center">
+            <div class="loading-spinner"></div>
+            <p class="text-size-tiny margin-top margin-small">Loading product details...</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 <style>
   {% comment %} media max-width 990 {% endcomment %}
@@ -42,19 +61,122 @@
       margin-bottom: 5rem;
     }
   }
+
+  #modal-thank-you .modal-container {
+    min-height: 300px;
+  }
+
+  #modal-thank-you .cf-product-card {
+    width: calc(33% - 0.7rem);
+  }
+
+  {% comment %} hide add to bag details for already selected gift in modal {% endcomment %}
+  #modal-thank-you .cf-product-card_details {
+    display: none;
+  }
+
+  #modal-thank-you.is-active {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(0);
+    pointer-events: auto;
+    display: flex;
+  }
+
+  #modal-thank-you h2 {
+    opacity: 1;
+    transform: translate(0);
+  }
+
+  #modal-thank-you {
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease-in-out;
+    transform: translateY(50px);
+    pointer-events: none;
+  }
+
 </style>
 
 <script type="module">
   import wretch from 'https://cdn.skypack.dev/wretch/dist/bundle/wretch.all.min.mjs'
+
+  const ifAtleastOneMainGiftIsSelected = (state) => {
+    const submitFormButtonEl = document.querySelector('[data-js-element="submit-form-button"]');
+
+    if (state) {
+      submitFormButtonEl.removeAttribute('disabled');
+    } else {
+      submitFormButtonEl.setAttribute('disabled', true);
+    }
+  }
+
+  window.campaignForm.buildThankYouModal = (props) => {
+    const { products, shippingDetails } = props;
+    const giftState = window.campaignForm.state;
+
+
+    const elements = {
+      shippingDetailsElement: document.querySelector('[data-js-element="shippingDetails"]'),
+      modalThankYouEl: document.querySelector('#modal-thank-you'),
+      thankYouModalProductsEl: document.querySelector('[data-js-element="thank-you-modal-products"]'),
+      modalCloseEl: document.querySelector("[data-js-element='cf-icon-close']"),
+    }
+
+    {% comment %} if you click modalThankYouEl and target is not modal-container or any of its children, close modal {% endcomment %}
+    elements.modalThankYouEl.addEventListener('click', (e) => {
+      if (e.target === elements.modalThankYouEl) {
+        elements.modalThankYouEl.classList.remove('is-active');
+      }
+    });
+
+    {% comment %} close modal when clicking close icon {% endcomment %}
+
+    let mainGifts = [];
+    let customGifts = [];
+
+    if (window.campaignForm.state['Main Gift']) {
+      mainGifts = products.filter(p => window.campaignForm.state['Main Gift'].includes(p.product.title))
+    }
+
+    if (window.campaignForm.state['Custom Swag']) {
+      customGifts = products.filter(p => window.campaignForm.state['Custom Swag'].includes(p.product.title))
+    }
+
+    {% comment %} add selected products to modal {% endcomment %}
+    elements.thankYouModalProductsEl.innerHTML = `
+      ${mainGifts.map(p => window.cfProductCard(p)).join('')}
+      ${customGifts.map(p => window.cfProductCard(p)).join('')}
+    `;
+
+    elements.shippingDetailsElement.innerHTML = shippingDetails;
+
+    const productCards = document.querySelectorAll('#modal-thank-you .cf-product-card');
+    {% comment %} add is-selected to all product cards {% endcomment %}
+    productCards.forEach((productCard) => {
+      productCard.classList.add('is-selected');
+    });
+
+
+    {% comment %} reveal modal {% endcomment %}
+    elements.modalThankYouEl.classList.add('is-active');
+  }
   
-  window.campaignForm.buildFooter = ({ formStructure, formButtonText }) => {
-    const cfFormEl = document.querySelector('[data-js-element="cf-form"]');
-    const cfFormInputsEl = document.querySelector('[data-js-element="cf-form-inputs"]');
-    const submitFormButtonEl = document.querySelector('[data-js-element="submit-form-button"] span');
+  window.campaignForm.buildFooter = (props) => {
+    const { formStructure, formButtonText, products, shippingDetails } = props;
 
-    submitFormButtonEl.innerText = formButtonText;
+    const elements = {
+      cfFormEl: document.querySelector('[data-js-element="cf-form"]'),
+      cfFormInputsEl: document.querySelector('[data-js-element="cf-form-inputs"]'),
+      submitFormButtonEl: document.querySelector('[data-js-element="submit-form-button"] span'),
+    }
 
-    cfFormInputsEl.innerHTML = formStructure
+    // will disable submit button if no main gift is selected
+    ifAtleastOneMainGiftIsSelected();
+
+    elements.submitFormButtonEl.innerText = formButtonText;
+
+    elements.cfFormInputsEl.innerHTML = formStructure
       .map((input) => {
         const { label, type, options } = input;
         const inputId = label.toLowerCase().replace(' ', '-');
@@ -84,24 +206,20 @@
       })
       .join('');
 
-    cfFormEl.addEventListener('submit', async (e) => {
-      {% comment %} const backendURL = 'http://localhost:8080' {% endcomment %}
-      const backendURL = 'https://foodiepagesbackend.onrender.com'
+    elements.cfFormEl.addEventListener('submit', async (e) => {
+      let loading = true;
+
+      const backendURL = 'http://localhost:8080'
+      {% comment %} const backendURL = 'https://foodiepagesbackend.onrender.com' {% endcomment %}
       const urlParams = new URLSearchParams(window.location.search);
       const campaignNameParam = urlParams.get('campaign');
       const clientIdParam = urlParams.get('client');
-
-      console.log('test')
 
       e.preventDefault();
       const formData = new FormData(e.target);
       const formState = Object.fromEntries(formData.entries());
       
-      {% comment %} @TODO: Need to prevent submission if no gift is selected {% endcomment %}
       const giftState = window.campaignForm.state;
-
-      console.log(formState)
-      console.log(giftState)
 
       const pageData = await wretch(
         `${backendURL}/api/airtable-create-campaign-entry?campaignName=${campaignNameParam}&customerId=${clientIdParam}`
@@ -127,6 +245,14 @@
       
       {% comment %} make a backend call to /airtable-create-campaign-entry {% endcomment %}
 
+      if (pageData.message === 'Success') {
+        console.log('gets here')
+        {% comment %} pageData.data.body.fields {% endcomment %}
+        window.campaignForm.buildThankYouModal({ products, shippingDetails });
+        let loading = false;
+      }
+
+
     });
 
     document.addEventListener('gift-state-changed', (e) => {
@@ -138,8 +264,11 @@
       const stickyCustomGiftsEl = document.querySelector('[data-js-element="sticky-custom-gifts"]');
       const mainGiftProductCards = [...document.querySelectorAll('[data-js-element="products-slider-main"] [data-js-element="cf-product-card"]')];
       
-      const mainGiftsState = state['Main Gift'] && state['Main Gift'].split(',');
-      const customGiftsState = state['Custom Swag'] && state['Custom Swag'].split(',');
+      const mainGiftsState = state['Main Gift'] && state['Main Gift'].split(',', 1);
+      {% comment %} refactor line above to only split on the first found comma (,) {% endcomment %}
+
+
+      const customGiftsState = state['Custom Swag'] && state['Custom Swag'].split(',', 1);
 
       {% comment %} get number of selected main gift product cards {% endcomment %}
       const numberOfSelectedMainGifts = mainGiftProductCards.filter(card => card.classList.contains('is-selected')).length;
@@ -183,6 +312,8 @@
       } else {
         stickyCustomGiftsEl.innerText = ''
       }
+
+      ifAtleastOneMainGiftIsSelected(mainGiftsState)
     })
   };
 

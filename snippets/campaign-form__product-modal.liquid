@@ -251,7 +251,7 @@
     elements.form.addEventListener('submit', (e) => {
       e.preventDefault()
 
-      let selectedProduct = `Product Title: ${title} | Variant Title: ${variants[0].title} | Variant Sku: ${variants[0].sku} | Variant Id: ${variants[0].id} | Product Tags ${tags}`;
+      let selectedProduct = `Product Title: ${title} | Variant Title: ${variants[0].title} | Variant Sku: ${variants[0].sku} | Variant Id: ${variants[0].id} | Product Tags: ${tags.replaceAll(',', ' ')}`;
 
       if (isDonation) {
         const organizationName = document.getElementById('donation-write-organization').value
@@ -261,13 +261,13 @@
       }
 
       if (numberOfVariant > 1) {
-        selectedProduct = `Product Title: ${title} | Variant Title: ${window.modalSelectedVariant.title} | Variant Sku: ${window.modalSelectedVariant.sku} | Variant Id: ${window.modalSelectedVariant.id} | Product Tags ${tags}`
+        selectedProduct = `Product Title: ${title} | Variant Title: ${window.modalSelectedVariant.title} | Variant Sku: ${window.modalSelectedVariant.sku} | Variant Id: ${window.modalSelectedVariant.id} | Product Tags: ${tags.replaceAll(',', ' ')}`
       }
 
       if (isCustomSwag) {
         window.cfProductCardAdd(selectedProduct, 'Custom Swag', element)
       } else {
-        window.cfProductCardAdd(selectedProduct, 'Main Gift', element)
+        window.cfProductCardAdd(selectedProduct, 'Maein Gift', element)
       }
 
       disableSubmitButton()

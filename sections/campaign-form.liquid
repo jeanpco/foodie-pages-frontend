@@ -20,8 +20,8 @@
   const initCampaignForm = async () => {
 
 
-    {% comment %} const backendURL = 'http://localhost:8080' {% endcomment %}
-    const backendURL = 'https://foodiepagesbackend.onrender.com'
+    const backendURL = 'http://localhost:8080'
+    {% comment %} const backendURL = 'https://foodiepagesbackend.onrender.com' {% endcomment %}
 
     // get all url params
     {% comment %} client=364&campaign=field-office-test {% endcomment %}
@@ -56,6 +56,7 @@
 
     const data = {
       {% comment %} header {% endcomment %}
+      shippingDetails: rawData['Shipping Details'],
       campaignName: rawData['Campaign Name'],
       giftMessage: rawData['Gift Message'],
       companyLogo: rawData['Company Logo'] && rawData['Company Logo'][0].url,
@@ -82,6 +83,8 @@
     window.campaignForm.buildFooter && window.campaignForm.buildFooter({
       formStructure: data.formStructure,
       formButtonText: data.formButtonText,
+      products: pageData.data.shopifyProducts,
+      shippingDetails: data.shippingDetails,
     })
 
     window.campaignForm.initLoading(false)

@@ -12,6 +12,11 @@
 <script type="module">
   window.campaignForm.initLoading = (loading) => {
     const loadingEl = document.querySelector('.loading')
-    loadingEl.style.display = loading ? 'flex' : 'none'
+    loadingEl.style.display = loading ? 'flex' : 'flex'
+
+    {% comment %} dispatch custom event {% endcomment %}
+    const event = new CustomEvent('campaign-form-loading', { detail: loading })
+
+    document.dispatchEvent(event)
   }
 </script>
