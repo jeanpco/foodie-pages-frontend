@@ -1,3 +1,21 @@
+<style>
+  sticky-header,
+  #shopify-section-footer,
+  .announcement-bar {
+    display: none !important;
+  }
+
+  .loading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: var(--color-white);
+    z-index: 2;
+  }
+</style>
+
 <script>
   window.campaignForm = {}; // global variable
   window.campaignForm.state = {} // state that will be submitted to the backend (airtable)
@@ -109,21 +127,3 @@
     }
   })
 </script>
-
-<style>
-  sticky-header,
-  #shopify-section-footer,
-  .announcement-bar {
-    display: none !important;
-  }
-
-  .loading {
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background: var(--color-white);
-    z-index: 2;
-  }
-</style>
