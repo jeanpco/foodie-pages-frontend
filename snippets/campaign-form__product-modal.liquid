@@ -122,7 +122,9 @@
 
           
           ${tags ? `<div class="product__tags display-flex gap-0-5 flex-wrap margin-vertical margin-small">
-              ${tags.split(',').map(tag => `
+              ${tags.split(',').filter(tag => {
+                return tag.charAt(0) !== '_' && tag !== 'donation' && tag !== 'custom' && tag !== 'Box_builder'
+              }).map(tag => `
                 <div style="border-radius: 30px;" class="product_tag background-color-sandia-18 text-color-sandia-100 padding-horizontal padding-small text-size-tiny">
                   <div class="padding-vertical padding-xsmall text-style-capitalize"><span>${tag}</span></div>
                 </div>
