@@ -371,8 +371,15 @@
       "subtotal": "Subtotal",
       "total_duties": "Duties"
     },
+    "admin_dashboard": {
+      "create_campaign": {
+        "title": "Gift Selection Settings",
+        "notice": "Create a page for corporate client that will allow you to receive form submission with employee gift selection and shipment details."
+      }
+    },
     "orders": {
       "title": "Order history",
+      "super_admin_title": "Create Campaign",
       "order_number": "Order",
       "order_number_link": "Order number {{ number }}",
       "date": "Date",

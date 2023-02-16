@@ -1,0 +1,6 @@
+{{ 'admin-dashboard-form.css' | asset_url | stylesheet_tag }}
+
+<form data-js-element="create-campaign-form" class="admin-dashboard_form padding-bottom padding-large display-flex justify-content-between gap-2 align-items-start">
+  {% render 'admin-input', name: 'Campaign Name', placeholder: "Enter your campaign name*", type: 'text', label: 'Campaign Name', required %}
+  {% render 'admin-input-sos-customer-select', name: 'Customer', placeholder: "", label: 'Select a corporate customer*', required %}
+</form>

@@ -229,6 +229,10 @@
   gap: 1rem;
 }
 
+.gap-1-5 {
+  gap: 1.5rem;
+}
+
 .gap-2 {
   gap: 2rem;
 }

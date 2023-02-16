@@ -1,0 +1,9 @@
+{{ 'admin-dashboard.css' | asset_url | stylesheet_tag }}
+{{ 'loading.css' | asset_url | stylesheet_tag }}
+
+<div class="admin-dashboard padding-top padding-small">
+  <div class="admin-dashboard_container padding-horizontal padding-large">
+    {% render 'admin-dashboard-header' %}
+    {% render 'admin-dashboard-form' %}
+  </div>
+</div>

@@ -1,0 +1,17 @@
+<div class="field-group {{ class }}">
+  <label class="text-size-tiny uppercase" id="Admin-{{ name }}">{{ label }}</label>
+
+  <input
+    data-js-element="input"
+    id="Admin-{{ name }}"
+    type="{{ type }}"
+    name="{{ name }}"
+    class="field_input"
+    value="{{ value }}"
+    aria-required="true"
+    autocorrect="off"
+    autocapitalize="off"
+    placeholder="{{ placeholder }}"
+    {% if required %}required{% endif %}
+  >
+</div>

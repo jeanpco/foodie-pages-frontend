@@ -1,0 +1,106 @@
+<style>
+  #Admin-{{ name }}[data-js-element="select"]:focus {
+    border-radius: 6px;
+  }
+
+  .select-icon {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .field-group_select {
+    position: relative;
+  }
+
+  .field-group_select .loading-spinner {
+    display: none !important;
+  }
+
+  .field-group_select .is-loading .select-arrow-down {
+    display: none;
+  }
+
+  .field-group_select .is-loading .loading-spinner {
+    display: block !important;
+  }
+
+
+  
+
+</style>
+
+<div class="field-group {{ class }}">
+  <label class="text-size-tiny uppercase" for="Admin-{{ name }}">{{ label }}</label>
+
+  <div class="field-group_select">
+    <select
+      data-js-element="select"
+      id="Admin-{{ name }}"
+      name="{{ name }}"
+      class="field_input"
+      aria-required="true"
+      {% if required %}required{% endif %}
+    >
+    </select>
+  
+    <div data-js-element="select-loading" class="select-icon is-loading">
+      {% render 'admin-select-arrow-icon' %}
+      <div class="loading-spinner"></div>
+    </div>
+  </div>
+
+</div>
+
+<script type="module">
+    import wretch from 'https://cdn.skypack.dev/wretch/dist/bundle/wretch.all.min.mjs'
+
+    const backendURL = 'http://localhost:8080'
+    {% comment %} const backendURL = 'https://foodiepagesbackend.onrender.com' {% endcomment %}
+    {% comment %} const backendURL = 'https://foodiepages.herokuapp.com' {% endcomment %}
+
+    const initSelect = async () => {
+
+      const elements = {
+        selectLoading: document.querySelector('[data-js-element="select-loading"]'),
+      }
+      
+      const pageData = await wretch(
+        `${backendURL}/api/sos_customer`
+      ) // Base url
+        // Authorization header
+        .get() // GET request
+        .badRequest((err) => {
+          console.log('400', err)
+          throw err;
+        }) // Handle 400 errors
+        .unauthorized((err) => {
+          console.log('401', err)
+          throw err;
+        }) // Handle 401 errors
+        .notFound((err) => {
+  
+          generateError(`Something went wrong while trying to get your SOS Customers. Please contact your developer.`)
+          throw err;
+        }) // Handle 404 errors
+        .internalError((err) => {
+          console.log('500', err)
+          throw err;
+        }) // Handle 500 errors
+        .res((res) => res.json()); // Parse response as JSON
+  
+      const select = document.querySelector('#Admin-{{ name }}')
+
+      pageData.data.forEach((item) => {
+        const option = document.createElement('option')
+        option.value = item.id
+        option.text = item.name
+        select.appendChild(option)
+      })
+
+      elements.selectLoading.classList.remove('is-loading');
+    }
+
+    window.addEventListener('load', initSelect)
+</script>
