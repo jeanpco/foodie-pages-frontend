@@ -1,4 +1,4 @@
-<div data-js-element="animated-section" class="cf-header background-color-azul-verdoso-10 w-full">
+<div data-js-element="animated-section" class="cf-header w-full">
   <div class="cf-header_spacing padding-vertical padding-large">
     <div class="cf-header_content container display-flex gap-2">
       <div class="cf-header_text w-50 display-flex padding-vertical padding-medium flex-direction-column">
@@ -60,12 +60,10 @@
     const headerImgEl = document.querySelector('[data-js-el="header-img"]')
 
     {% comment %} if no image url hide headerImgEl {% endcomment %}
-    if (!imageUrl) {
-      headerImgEl.style.display = 'none'
-    }
+    if (!imageUrl) headerImgEl.style.display = 'none'
 
-    headerTitleEl.innerHTML = title
-    headerBodyEl.innerHTML = body
+    if (title) headerTitleEl.innerHTML = title
+    if (body) headerBodyEl.innerHTML = body
     headerImgEl.src = imageUrl
   }
 </script>

@@ -86,8 +86,6 @@
   window.campaignForm.buildBody = (props) => {
     const { products, numberOfSelectableGifts } = props
 
-    console.log(products)
-
     {% comment %} set number of selectable main gifts by user {% endcomment %}
     window.campaignForm.numberOfSelectableGifts = numberOfSelectableGifts
 
@@ -101,6 +99,8 @@
     const customProductsSlider = document.querySelector('[data-js-element="products-slider-custom"]');
 
     if (!mainProductsSlider) return
+
+    products.every(p => !p.product.tags.toLowerCase().includes('custom')) && customProductsSlider.closest('.cf_custom-products-slider').remove();
 
     products.forEach((item) => {
       const productCard = window.cfProductCard(item)

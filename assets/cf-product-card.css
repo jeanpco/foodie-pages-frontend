@@ -45,6 +45,7 @@
   object-fit: cover;
   transition: transform 0.3s ease-in-out;
   aspect-ratio: 1;
+  margin-bottom: -0.35rem;
 }
 
 .cf-product-card_checked {

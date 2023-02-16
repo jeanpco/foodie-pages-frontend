@@ -17,11 +17,18 @@
     return str.replace(/\s/g, '').replace(/\\/g, '');
   }
 
+  const generateError = (message) => {
+    const loadingSpinner = document.querySelector('.loading-spinner')
+    const getLoadingMessage = document.querySelector('.loading-container p')
+    loadingSpinner.style.display = 'none'
+    getLoadingMessage.innerHTML = message
+  }
+
   const initCampaignForm = async () => {
 
 
-    {% comment %} const backendURL = 'http://localhost:8080' {% endcomment %}
-    const backendURL = 'https://foodiepagesbackend.onrender.com'
+    const backendURL = 'http://localhost:8080'
+    {% comment %} const backendURL = 'https://foodiepagesbackend.onrender.com' {% endcomment %}
 
     // get all url params
     {% comment %} client=364&campaign=field-office-test {% endcomment %}
@@ -35,22 +42,25 @@
       // Authorization header
       .get() // GET request
       .badRequest((err) => {
-        console.log(err)
+        console.log('400', err)
         throw err;
       }) // Handle 400 errors
       .unauthorized((err) => {
-        console.log(err)
+        console.log('401', err)
         throw err;
       }) // Handle 401 errors
       .notFound((err) => {
-        console.log(err)
+
+        generateError(`Something went wrong while trying to initiate your gift selection (Campaign Name: ${campaignNameParam}). Please contact your administrator.`)
         throw err;
       }) // Handle 404 errors
       .internalError((err) => {
-        console.log(err)
+        console.log('500', err)
         throw err;
       }) // Handle 500 errors
       .res((res) => res.json()); // Parse response as JSON
+
+    console.log(pageData)
 
     const rawData = pageData.data.campaignRow.fields
 
@@ -90,7 +100,13 @@
     window.campaignForm.initLoading(false)
   }
 
-  window.addEventListener('load', async () => await initCampaignForm())
+  window.addEventListener('load', async () => {
+    try {
+      await initCampaignForm()
+    } catch (error) {
+      generateError(`Something went wrong while trying to initiate your gift selection. </br>Please contact your administrator.`)
+    }
+  })
 </script>
 
 <style>
