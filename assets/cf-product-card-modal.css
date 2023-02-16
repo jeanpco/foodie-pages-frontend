@@ -13,8 +13,8 @@
 .modal-container {
   background-color: var(--color-white);
   left: 50%;
-  transform: translate(-50%, -50%);
-  top: 50%;
+  transform: translate(-50%, 0%);
+  top: 20%;
   padding: 2rem;
   width: 80%;
   max-width: 1000px;
