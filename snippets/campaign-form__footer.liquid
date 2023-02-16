@@ -70,6 +70,18 @@
     width: calc(33% - 0.7rem);
   }
 
+  @media screen and (max-width: 990px) {
+    #modal-thank-you .cf-product-card {
+      width: calc(50% - 1.5rem);
+    }
+  }
+
+  @media screen and (max-width: 500px) {
+    #modal-thank-you .cf-product-card {
+      width: calc(100% - 1.45rem);
+    }
+  }
+
   {% comment %} hide add to bag details for already selected gift in modal {% endcomment %}
   #modal-thank-you .cf-product-card_details {
     display: none;
