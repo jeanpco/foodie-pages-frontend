@@ -18,6 +18,7 @@
 </div>
 
 <script type="module">
+  
   window.modalSelectedVariant = null;
   window.closeModal = modal => modal.style.display = 'none'
   window.openModal = modal => modal.style.display = 'block'
@@ -96,6 +97,8 @@
     const excerpt = metafields.find(
       metafield => metafield.key === 'excerpt' && metafield.namespace === 'custom'
     )
+
+    console.log(tags)
   
     elements.modalContent.innerHTML = `
       <form data-js-element="modal-content-form" class="modal-content w-full display-flex gap-3 justify-content-between">
@@ -116,6 +119,15 @@
 
           {% comment %} Excerpt {% endcomment %}
           ${excerpt ? `<p class="product__excerpt text-size-light text-color-grey-700">${excerpt.value}</p>` : ''}
+
+          
+          ${tags ? `<div class="product__tags display-flex gap-0-5 flex-wrap margin-vertical margin-small">
+              ${tags.split(',').map(tag => `
+                <div style="border-radius: 30px;" class="product_tag background-color-sandia-18 text-color-sandia-100 padding-horizontal padding-small text-size-tiny">
+                  <div class="padding-vertical padding-xsmall text-style-capitalize"><span>${tag}</span></div>
+                </div>
+              `).join('')}
+            </div>` : '' }
 
           {% comment %} If donation {% endcomment %}
 
@@ -319,4 +331,5 @@
     selectVariant()
     variantOptions.forEach((option) => option.addEventListener('change', selectVariant))
   }
+
 </script>
