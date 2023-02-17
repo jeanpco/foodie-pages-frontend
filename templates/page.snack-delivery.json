@@ -23,10 +23,10 @@
         "c048c51b-1b9b-4987-9088-f581437cc840"
       ],
       "settings": {
-        "overline": "Quick shop",
-        "title": "<p>Gifts that celebrate small business<\/p>",
+        "overline": "for people teams",
+        "title": "<p>Foodie <em>Snack Perks<\/em> <\/p>",
         "heading_style": "h1",
-        "body": "We source exclusively from small and underrepresented businesses across the country. Sharing their stories and values with you is one of our greatest joys.",
+        "body": "Recognize, reward and give thanks to your team with our 100% personalized snack box delivery program, filled with food and drink from Canadian brands! They choose the snacks they want. Perfect for WFH teams, virtual events and offices.",
         "image": "shopify:\/\/shop_images\/Screen_Shot_2022-11-15_at_5.04.39_PM.png",
         "enable_card_style": false,
         "text_vertical_alignment": "flex-end",
@@ -37,6 +37,7 @@
     },
     "823bd50c-3555-4282-8b34-ab0e8584323d": {
       "type": "module-vertical-tabs",
+      "disabled": true,
       "blocks": {
         "db40d850-e629-4e9b-b0e8-d2d20e4414ad": {
           "type": "tab",
@@ -99,6 +100,7 @@
     },
     "05ea480d-037b-4297-9c3d-d6160866116b": {
       "type": "module-columns",
+      "disabled": true,
       "blocks": {
         "765a0837-b3a6-417e-a20d-8c4151c40912": {
           "type": "card",
@@ -207,8 +209,8 @@
         "29189724-18f8-43ad-ad45-9aea0d08c6f0"
       ],
       "settings": {
-        "overline": "Quick shop",
-        "title": "<p>Values-based sourcing<\/p>",
+        "overline": "",
+        "title": "<p>Explore our features<\/p>",
         "heading_style": "h1",
         "body": "We're a woman-owned business that partners with other incredible businesses to curate gifts for all occasions. We prioritize brands that are woman-owned, BIPOC-owned and environmentally sustainable.",
         "cta_text": "Shop all",
