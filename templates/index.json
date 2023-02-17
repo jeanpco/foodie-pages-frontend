@@ -156,9 +156,8 @@
         },
         "f2d9af43-61a5-4c7b-8cdf-81d774905352": {
           "type": "collection",
-          "disabled": true,
           "settings": {
-            "title": "Gifts That Give Back",
+            "title": "Gives Back",
             "collection": "gifts-that-give-back",
             "cta_link": "shopify:\/\/collections\/gifts-that-give-back"
           }
