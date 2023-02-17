@@ -158,9 +158,9 @@
           "type": "collection",
           "disabled": true,
           "settings": {
-            "title": "Holiday Gifts",
-            "collection": "holiday-gift-baskets",
-            "cta_link": "shopify:\/\/collections\/holiday-gift-baskets"
+            "title": "Gifts That Give Back",
+            "collection": "gifts-that-give-back",
+            "cta_link": "shopify:\/\/collections\/gifts-that-give-back"
           }
         },
         "c0b96aab-ebea-45f5-883d-582f92cab111": {
