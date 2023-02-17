@@ -165,19 +165,19 @@
           "type": "features",
           "settings": {
             "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/placeholder-svg-square.svg?v=1666645913",
-            "title": "Support your values",
-            "body": "A commitment to sourcing from small and underrepresented brands and makers.",
-            "cta_text": "Learn More",
-            "cta_link": "shopify:\/\/pages\/about-us"
+            "title": "No wasted perks",
+            "body": "Recipients are emailed a unique discount code based on your budget. You only pay for treats that get redeemed!",
+            "cta_text": "",
+            "cta_link": ""
           }
         },
         "fae23ace-5ca1-43a0-a58b-9c5d1bef7e5b": {
           "type": "features",
           "settings": {
             "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/placeholder-svg-square.svg?v=1666645913",
-            "title": "Let them choose",
-            "body": "Free branded landing pages to collect recipient gift preferences and mailing addresses.",
-            "cta_text": "Learn More",
+            "title": "Something for everyone",
+            "body": "Filter the snack catalog by Values\n(ex. Women-Owned, Brands That Give Back), Dietary Preferences, and more.",
+            "cta_text": "",
             "cta_link": ""
           }
         },
@@ -185,20 +185,20 @@
           "type": "features",
           "settings": {
             "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/placeholder-svg-square.svg?v=1666645913",
-            "title": "Delivered your way",
-            "body": "Worldwide fulfillment to one location or 100s of addresses.",
-            "cta_text": "Learn More",
-            "cta_link": "shopify:\/\/pages\/contact-us"
+            "title": "One-off or auto-recurring",
+            "body": "Treat the team to a one-off snack stash, or set up monthly or bimonthly shipments.",
+            "cta_text": "",
+            "cta_link": ""
           }
         },
         "29189724-18f8-43ad-ad45-9aea0d08c6f0": {
           "type": "features",
           "settings": {
             "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/placeholder-svg-square.svg?v=1666645913",
-            "title": "Gift guidance",
-            "body": "Expert advice based on data and our 10+ years of experience.",
-            "cta_text": "Learn More",
-            "cta_link": "shopify:\/\/pages\/experiences"
+            "title": "Include company swag",
+            "body": "Include branded swag, from stickers to sweaters, to reinforce and build culture with each shipment.",
+            "cta_text": "",
+            "cta_link": ""
           }
         }
       },
