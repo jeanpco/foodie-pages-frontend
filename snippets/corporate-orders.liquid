@@ -24,9 +24,9 @@ const loadingElement = (style) => `
   </div>
 `
 
-  {% comment %} const backendURL = 'http://localhost:8080' {% endcomment %}
+  const backendURL = 'http://localhost:8080'
   {% comment %} const backendURL = 'https://foodiepagesbackend.onrender.com' {% endcomment %}
-  const backendURL = 'https://foodiepages.herokuapp.com'
+  {% comment %} const backendURL = 'https://foodiepages.herokuapp.com' {% endcomment %}
 
   {% comment %} 
     UTILS
@@ -262,8 +262,12 @@ const loadingElement = (style) => `
         const addressValidationFailed = order.shipTo.addressVerified === "Address validation failed";
         const items = order.items;
         const address = order.shipTo;
+        console.log(order.shipDate)
         const shipDate = new Date(order.shipDate);
+        console.log(shipDate)
         const formattedShipDate = `${shipDate.toLocaleString('default', { month: 'short' })} ${shipDate.getDate()}, ${shipDate.getFullYear()}`
+        {% comment %} remove timezone {% endcomment %}
+
 
         const orderShipments = shipments.filter(shipment => shipment.orderId === order.orderId);
 
