@@ -79,8 +79,9 @@
         {% endunless %}
 
       </div>
-
+ {% if is_super_admin %}
       {% render 'admin-dashboard' %}
+   {% endif %}
     </div>
   </div>
 </div>
