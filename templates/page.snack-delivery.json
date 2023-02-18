@@ -25,9 +25,9 @@
       ],
       "settings": {
         "overline": "for people teams",
-        "title": "<p>Foodie <em>Snack Perks<\/em> <\/p>",
+        "title": "<p><em>Snack Perks <\/em><\/p>",
         "heading_style": "h1",
-        "body": "Recognize, reward and give thanks to your team with our 100% personalized snack box delivery program, filled with food and drink from Canadian brands! They choose the snacks they want. Perfect for WFH teams, virtual events and offices.",
+        "body": "Recognize, reward and give thanks to your team with our 100% personalized snack box delivery program, filled with food and drink from Canadian brands! \n\nTeam members choose their snacks, add their shipping addresses and we do the rest. All you do is add their email. Perfect for WFH teams, virtual events and offices.",
         "enable_card_style": false,
         "text_vertical_alignment": "flex-end",
         "layout_style": "rows",
