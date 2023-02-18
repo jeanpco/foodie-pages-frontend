@@ -100,30 +100,28 @@
     },
     "05ea480d-037b-4297-9c3d-d6160866116b": {
       "type": "module-columns",
-      "disabled": true,
       "blocks": {
         "765a0837-b3a6-417e-a20d-8c4151c40912": {
           "type": "card",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Image_ece8a130-10d5-442c-8531-af02ad89d323.jpg",
-            "title": "New Hire Onboarding Kits",
-            "body": "Say a big first hello to new employees and interns with an information pack and gift box.",
-            "cta_text": "Get a quote",
+            "title": "1. Email a unique code to each recipient based on your budget. You only pay for what is redeemed!",
+            "body": "",
+            "cta_text": "",
             "cta_link": "#corporate-contact"
           }
         },
         "2799395e-848f-4345-9be1-4844c0f3b341": {
           "type": "card",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Image_4156cd82-50c2-40f5-ab2f-94ea44745172.jpg",
-            "title": "Milestone Gifts",
-            "body": "Whether a birthday, anniversary or retirement – it’s worth celebrating.",
+            "title": "2. Recipients order from the Snack Box Builder on foodiepages, and select the snacks and drinks they want delivered to their home.",
+            "body": "",
             "cta_text": "",
             "cta_link": ""
           }
         },
         "1a1d97cc-0c9f-4023-b4cf-a2188c76fa3e": {
           "type": "card",
+          "disabled": true,
           "settings": {
             "image": "shopify:\/\/shop_images\/Image.png",
             "title": "Event Gifts",
@@ -134,6 +132,7 @@
         },
         "81289acb-6a37-4c70-84ec-d781a6d0b072": {
           "type": "card",
+          "disabled": true,
           "settings": {
             "image": "shopify:\/\/shop_images\/Image.jpg",
             "title": "Client Appreciation Gifts",
@@ -150,10 +149,10 @@
         "81289acb-6a37-4c70-84ec-d781a6d0b072"
       ],
       "settings": {
-        "overline": "Corporate solutions",
-        "title": "Gifting For All Occasions",
-        "body": "Looking for a company-wide event or a one-off gift? We have you covered.",
-        "cta_text": "Get a quote",
+        "overline": "",
+        "title": "How it works",
+        "body": "",
+        "cta_text": "",
         "cta_link": "#corporate-contact",
         "heading_style": "h2"
       }
