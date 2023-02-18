@@ -113,7 +113,7 @@
         "2799395e-848f-4345-9be1-4844c0f3b341": {
           "type": "card",
           "settings": {
-            "title": "2. Recipients order from the Snack Box Builder on foodiepages, and select the snacks and drinks they want delivered to their home.",
+            "title": "2. Recipients pick their snacks and drinks, and enter their shipping address.",
             "body": "",
             "cta_text": "",
             "cta_link": ""
@@ -150,7 +150,7 @@
       ],
       "settings": {
         "overline": "how it works",
-        "title": "Snacking made easy",
+        "title": "Personalized snacking made easy",
         "body": "",
         "cta_text": "",
         "cta_link": "#corporate-contact",
