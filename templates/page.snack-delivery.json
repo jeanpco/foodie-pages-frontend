@@ -6,7 +6,7 @@
         "02d55e23-f307-4138-a9bd-10d797daa746": {
           "type": "cta",
           "settings": {
-            "cta_text": "Get Started",
+            "cta_text": "Get started",
             "cta_link": "#corporate-contact"
           }
         },
@@ -224,7 +224,7 @@
         "a0cdd988-b288-4542-9434-6c35f9543944": {
           "type": "cta",
           "settings": {
-            "cta_text": "Learn more",
+            "cta_text": "Contact us",
             "cta_link": "shopify:\/\/pages\/contact-us"
           }
         }
