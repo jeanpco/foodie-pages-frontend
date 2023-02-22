@@ -262,12 +262,10 @@ const loadingElement = (style) => `
         const addressValidationFailed = order.shipTo.addressVerified === "Address validation failed";
         const items = order.items;
         const address = order.shipTo;
-        console.log(order.shipDate)
         const shipDate = new Date(order.shipDate);
-        console.log(shipDate)
-        const formattedShipDate = `${shipDate.toLocaleString('default', { month: 'short' })} ${shipDate.getDate()}, ${shipDate.getFullYear()}`
-        {% comment %} remove timezone {% endcomment %}
+        const localShipDate = new Date(shipDate.getTime() + shipDate.getTimezoneOffset() * 60 * 1000);
 
+        const formattedShipDate = `${localShipDate.toLocaleString('default', { month: 'short' })} ${localShipDate.getDate()}, ${localShipDate.getFullYear()}`;
 
         const orderShipments = shipments.filter(shipment => shipment.orderId === order.orderId);
 
@@ -481,12 +479,14 @@ const loadingElement = (style) => `
         const date = new Date(saleOrder.date)
         const formattedDate = date.toLocaleDateString('en-CA', { month: 'long', day: 'numeric', year: 'numeric' })   
 
+        const campaignName = saleOrder.customFields.find(customField => customField.name === 'Campaign Name')
+
         const tableRow = document.createElement('tr')
 
         tableRow.innerHTML = `
           <td class="text-size-small">
             <p class="text-size-tiny uppercase text-color-grey-600 hide-mobile-landscape-and-up">Campaign Name</p>
-            <span>Unnamed</span>
+            <span>${campaignName && campaignName.value ? campaignName.value : 'Unnamed'}</span>
           </td>
           <td class="text-size-small">
             <p class="text-size-tiny uppercase text-color-grey-600 hide-mobile-landscape-and-up">Order #</p>

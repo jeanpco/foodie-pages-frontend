@@ -1,0 +1,50 @@
+.admin-dashboard_form {
+
+}
+
+.admin-dashboard_form > .field-group  {
+  width: calc(50% - 1rem);
+}
+
+.admin-form-building > * {
+  width: calc(50% - 1rem);
+}
+
+/* Input Draggable */
+.draggable-form-inputs {
+}
+
+.titlebar {
+  display: flex;
+  align-items: center;
+  /* 글씨 선택 안되게 */
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* ie */
+  user-select: none;
+  border-radius: 0.5rem;
+  transition: 300ms ease-in-out;
+}
+
+.titlebar.is-being-removed {
+  opacity: 0;
+  transform: translateY(-30px);
+}
+
+.titlebar > .field-group {
+  flex: 1;
+  min-width: 150px;
+}
+
+.titlebar__handle {
+  cursor: pointer;
+  width: auto;
+}
+
+label {
+  margin-bottom: 0;
+}
+
+[data-js-element="cf-icon-close"] {
+  cursor: pointer;
+}

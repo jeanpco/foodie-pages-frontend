@@ -3,7 +3,58 @@
 
 <div class="admin-dashboard padding-top padding-small">
   <div class="admin-dashboard_container padding-horizontal padding-large">
-    {% render 'admin-dashboard-header' %}
-    {% render 'admin-dashboard-form' %}
+    <div data-js-element="create-campaign" class="hide">
+      {% render 'admin-dashboard-header' %}
+      {% render 'admin-dashboard-form' %}
+    </div>
+    <div data-js-element="view-all-campaigns">
+      <a class="button" href="/account?campaign=create">
+        <span>Create a campaign</span>
+      </a>
+    </div>
   </div>
 </div>
+
+<script type="module">
+  const initAccount = () => {
+    const elements = {
+      createACampaign: document.querySelector('[data-js-element="create-campaign"]'),
+      viewAllCampaigns: document.querySelector('[data-js-element="view-all-campaigns"]'),
+      dashboardTitle: document.querySelector('[data-js-element="dashboard-title"]'),
+      viewAllCampaignsLink: document.querySelector('[data-js-element="view-campaigns-link"] a'),
+      createACampaignLink: document.querySelector('[data-js-element="create-campaign-link"] a'),
+    }
+
+    {% comment %} check if params includes "create-a-campaign" {% endcomment %}
+    const urlParams = new URLSearchParams(window.location.search);
+    const createACampaign = urlParams.get('campaign');
+    {% comment %} get param client and campaignName {% endcomment %}
+    const client = urlParams.get('client');
+    const campaignName = urlParams.get('campaign-name');
+
+    {% comment %} Show right UI depending on params {% endcomment %}
+
+    if (createACampaign === 'create' || createACampaign === 'update') {
+      elements.createACampaign.classList.remove('hide');
+      elements.viewAllCampaigns.classList.add('hide');
+      elements.dashboardTitle.innerHTML = createACampaign === 'update' ? 'Update a campaign' : 'Create a campaign';
+      elements.viewAllCampaignsLink.classList.remove('is-active', 'text-color-primary')
+      elements.viewAllCampaignsLink.classList.add('text-color-grey-300');
+      if (createACampaign === 'create') {
+        elements.createACampaignLink.classList.remove('text-color-grey-300');
+        elements.createACampaignLink.classList.add('is-active', 'text-color-primary');
+      }
+    } else {
+      elements.createACampaign.classList.add('hide');
+      elements.viewAllCampaigns.classList.remove('hide');
+      elements.dashboardTitle.innerHTML = 'View all campaigns';
+      elements.viewAllCampaignsLink.classList.remove('text-color-grey-300');
+      elements.viewAllCampaignsLink.classList.add('is-active', 'text-color-primary');
+      elements.createACampaignLink.classList.remove('is-active', 'text-color-primary');
+      elements.createACampaignLink.classList.add('text-color-grey-300');
+    }
+
+  }
+
+  initAccount();
+</script>

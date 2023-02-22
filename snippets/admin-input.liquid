@@ -1,17 +1,35 @@
 <div class="field-group {{ class }}">
   <label class="text-size-tiny uppercase" id="Admin-{{ name }}">{{ label }}</label>
 
-  <input
-    data-js-element="input"
-    id="Admin-{{ name }}"
-    type="{{ type }}"
-    name="{{ name }}"
-    class="field_input"
-    value="{{ value }}"
-    aria-required="true"
-    autocorrect="off"
-    autocapitalize="off"
-    placeholder="{{ placeholder }}"
-    {% if required %}required{% endif %}
-  >
+  {% if type == 'textarea' %}
+
+    <textarea
+      data-js-element="input"
+      id="Admin-{{ name }}"
+      name="{{ name }}"
+      class="field_input"
+      placeholder="{{ placeholder }}"
+      {% if required %}required{% endif %}
+    ></textarea>
+
+  {% else %}
+
+    <input
+      data-js-element="input"
+      id="Admin-{{ name }}"
+      type="{{ type }}"
+      name="{{ name }}"
+      class="field_input"
+      {% if type == 'number' %}value="1"{% else %}value="{{ value }}"{% endif %}
+      aria-required="true"
+      autocorrect="off"
+      autocapitalize="off"
+      placeholder="{{ placeholder }}"
+      {% if type == 'number' %}min="1"{% endif %}
+      {% if required %}required{% endif %}
+      {% if type == 'file' %}accept="image/png, image/jpeg"{% endif %}
+    >
+
+  {% endif %}
+
 </div>

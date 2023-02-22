@@ -7,12 +7,18 @@
       {% endif %}          
 
       <ul class="aside-navigation padding-horizontal tablet-padding-large mobile-padding-small">
-        <li data-js-element="dashboard" class="aside-navigation_item margin-bottom margin-small">
-          <a class="heading-style-h5 aside-navigation_link text-weight-semibold {% if request.path == '/account' %}is-active text-color-primary{% else %}text-color-grey-300{% endif %}" href="/account">{% if request.path != '/account' %}Back to {% endif %}Dashboard</a>
-        </li>
-        {% comment %} <li data-js-element="orders" class="aside-navigation_item">
-          <a class="heading-style-h5 aside-navigation_link text-weight-semibold" href="">Order History</a>
-        </li> {% endcomment %}
+        {% if is_super_admin %}
+          <li data-js-element="view-campaigns-link" class="aside-navigation_item">
+            <a class="heading-style-h5 aside-navigation_link text-weight-semibold {% if request.path == '/account' %}is-active text-color-primary{% else %}text-color-grey-300{% endif %}" href="/account">View all campaigns</a>
+          </li>
+          <li data-js-element="create-campaign-link" class="aside-navigation_item">
+            <a class="heading-style-h5 aside-navigation_link text-weight-semibold text-color-grey-300" href="/account?campaign=create">Create a campaign</a>
+          </li>
+        {% else %}
+          <li data-js-element="dashboard" class="aside-navigation_item margin-bottom margin-small">
+            <a class="heading-style-h5 aside-navigation_link text-weight-semibold {% if request.path == '/account' %}is-active text-color-primary{% else %}text-color-grey-300{% endif %}" href="/account">{% if request.path != '/account' %}Back to {% endif %}Dashboard</a>
+          </li>
+        {% endif %}
       </ul>
     </div>
 

@@ -374,12 +374,14 @@
     "admin_dashboard": {
       "create_campaign": {
         "title": "Gift Selection Settings",
-        "notice": "Create a page for corporate client that will allow you to receive form submission with employee gift selection and shipment details."
+        "notice": "Create a page for corporate client that will allow you to receive form submission with employee gift selection and shipment details.",
+        "form_building_title": "Form Building",
+        "form_building_body": "In the following section, you’ll be generating the form fields your customer needs in order to collect the right data for the campaign. “Field Options” are only necessary if you select a “dropdown”"
       }
     },
     "orders": {
       "title": "Order history",
-      "super_admin_title": "Create Campaign",
+      "super_admin_title": "All Campaigns",
       "order_number": "Order",
       "order_number_link": "Order number {{ number }}",
       "date": "Date",

@@ -19,7 +19,7 @@
 <div class="account-background">
   <div class="customer account container">
 
-    {% render 'account-sidebar', customer: customer %}
+    {% render 'account-sidebar', customer: customer, is_super_admin: is_super_admin %}
   
     <div class="main-content padding-vertical padding-xlarge background-color-white">
       {% unless is_super_admin %}
@@ -33,7 +33,7 @@
           <p class="text-size-medium margin-bottom margin-medium">Hi {{ customer.name }}, welcome to your account!</p>
         {% endunless %}
         
-        <h1 class="margin-bottom margin-medium line-height-1-3">
+        <h1 class="margin-bottom margin-medium line-height-1-3" data-js-element="dashboard-title">
           {% if is_super_admin %}
             {{ 'customer.orders.super_admin_title' | t }}
           {% else %}
