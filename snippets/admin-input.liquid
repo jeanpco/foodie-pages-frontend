@@ -33,3 +33,24 @@
   {% endif %}
 
 </div>
+
+{% if type == 'file' %}
+
+  <script type="module">
+    {% comment %} get closest input of type file {% endcomment %}
+
+    const fileInput = document.querySelector('input[type="file"]');
+
+    {% comment %} check if the size is larger then 200 kb otherwise clear file and throw an alert {% endcomment %}
+    fileInput.addEventListener('change', function(e) {
+      if (e.target.files.length === 0) return;
+      
+      const file = e.target.files[0];
+      if (file.size > 200000) {
+        alert('File is too big!');
+        fileInput.value = '';
+      }
+    });
+  </script>
+
+{% endif %}

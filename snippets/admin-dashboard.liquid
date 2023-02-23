@@ -2,9 +2,10 @@
 {{ 'loading.css' | asset_url | stylesheet_tag }}
 
 <div class="admin-dashboard padding-top padding-small">
-  <div class="admin-dashboard_container padding-horizontal padding-large">
+  <div class="admin-dashboard_container padding-horizontal padding-large tablet-padding-0">
     <div data-js-element="create-campaign" class="hide">
       {% render 'admin-dashboard-header' %}
+      {% render 'admin-dashboard-form-functions' %}
       {% render 'admin-dashboard-form' %}
     </div>
     <div data-js-element="view-all-campaigns">

@@ -1,4 +1,4 @@
-{% comment %} name, value, text {% endcomment %}
+{% comment %} name, value, text, type {% endcomment %}
 
 <div class="titlebar display-flex gap-1 background-color-grey-50 padding-small" data-js-element="draggable-input">
   {% comment %} draggable handle {% endcomment %}
@@ -20,9 +20,9 @@
         class="field_input"
         aria-required="true"
       >
-        <option selected value="text">Text</option>
-        <option value="email">Email</option>
-        <option value="phone">Phone</option>
+        <option {% if type == 'text' %}selected{% endif %} value="text">Text</option>
+        <option {% if type == 'email' %}selected{% endif %} value="email">Email</option>
+        <option {% if type == 'phone' %}selected{% endif %} value="phone">Phone</option>
         <option disabled value="dropdown">Dropdown</option>
       </select>
       <div class="select-icon pointer-events-off">

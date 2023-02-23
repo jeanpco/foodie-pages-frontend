@@ -5,23 +5,25 @@
   data-js-element="create-campaign-form"
   class="admin-dashboard_form padding-bottom padding-large display-flex flex-wrap justify-content-between gap-2 align-items-start"
 >
-  {% render 'admin-input', name: 'Campaign Name', placeholder: "Enter your campaign name", type: 'text', label: 'Campaign Name*', required: true %}
-  {% render 'admin-input-sos-customer-select', name: 'Customer', placeholder: "", label: 'Select a corporate customer*', required: true %}
-  {% render 'admin-input', name: 'End Date', type: 'date', label: 'When does your campaign end?' %}
-  {% render 'admin-input', name: 'Number of selectable gifts', type: 'number', label: 'Number of selectable gifts' %}
+  {% render 'admin-input', class: "js-campaign-input" name: 'Campaign Name', placeholder: "Enter your campaign name", type: 'text', label: 'Campaign Name*', required: true %}
+  {% render 'admin-input-sos-customer-select', class: "js-campaign-select", name: 'Customer', placeholder: "", label: 'Select a corporate customer*', required: true %}
+  {% render 'admin-input', class: "js-campaign-input", name: 'End Date', type: 'date', label: 'When does your campaign end?' %}
+  {% render 'admin-input', class: "js-campaign-input", name: 'Number of selectable gifts', type: 'number', label: 'Number of selectable gifts' %}
   {% render 'admin-input',
+    class: "js-campaign-input"
     name: 'Gift Message',
     type: 'textarea',
     label: 'Gift Message',
     placeholder: 'Enter the company message'
   %}
   {% render 'admin-input',
+    class: "js-campaign-input"
     name: 'Shipping Details',
     type: 'textarea',
     label: 'Shipping Details',
     placeholder: 'Enter the shipping details'
   %}
-  {% render 'admin-input', name: 'Company Logo', type: 'file', label: 'Company Logo' %}
+  {% render 'admin-input', class: "js-campaign-input-file", name: 'Company Logo', type: 'file', label: 'Company Logo' %}
 
   {% comment %} Form Building {% endcomment %}
 
@@ -29,7 +31,7 @@
     <div class="admin-dashboard_form-header display-flex flex-direction-column gap-1-5">
       <h3>{{ 'customer.admin_dashboard.create_campaign.form_building_title' | t }}</h3>
       {% render 'admin-input',
-        class: 'w-full',
+        class: 'w-full js-campaign-input',
         name: 'Form Button Text',
         type: 'text',
         label: 'Form Button Text',
@@ -42,16 +44,16 @@
   </div>
 
   <div data-js-element="draggable" class="draggable-form-inputs w-full display-flex flex-direction-column gap-1">
-    {% render 'draggable-input', name: 'First Name', value: 'First Name' %}
-    {% render 'draggable-input', name: 'Last Name', value: 'Last Name' %}
-    {% render 'draggable-input', name: 'Address1', value: 'Address Line 1' %}
-    {% render 'draggable-input', name: 'Address2', value: 'Address Line 2 (ex. Unit #)' %}
-    {% render 'draggable-input', name: 'City', value: 'City' %}
-    {% render 'draggable-input', name: 'Province', value: 'Province' %}
-    {% render 'draggable-input', name: 'Country', value: 'Country' %}
-    {% render 'draggable-input', name: 'Postal Code / Zip', value: 'Postal Code / Zip' %}
-    {% render 'draggable-input', name: 'Phone Number', value: 'Phone Number' %}
-    {% render 'draggable-input', name: 'Email', value: 'Email' %}
+    {% render 'draggable-input', name: 'First Name', value: 'First Name', type: 'text' %}
+    {% render 'draggable-input', name: 'Last Name', value: 'Last Name', type: 'text' %}
+    {% render 'draggable-input', name: 'Email', value: 'Email', type: 'email' %}
+    {% render 'draggable-input', name: 'Phone Number', value: 'Phone Number', type: 'phone' %}
+    {% render 'draggable-input', name: 'Address1', value: 'Address Line 1', type: 'text' %}
+    {% render 'draggable-input', name: 'Address2', value: 'Address Line 2 (ex. Unit #)', type: 'text' %}
+    {% render 'draggable-input', name: 'City', value: 'City', type: 'text' %}
+    {% render 'draggable-input', name: 'Province', value: 'Province', type: 'text' %}
+    {% render 'draggable-input', name: 'Country', value: 'Country', type: 'text' %}
+    {% render 'draggable-input', name: 'Postal Code / Zip', value: 'Postal Code / Zip', type: 'text' %}
   </div>
 
   <div role="button" class="button" data-js-element="add-fields">
@@ -67,9 +69,12 @@
   
   {% comment %} get data-js-element="draggable" {% endcomment %}
   const startDraggability = () => {
-    const draggable = document.querySelector('[data-js-element="draggable"]');
+    
+    const elements = {
+      draggable: document.querySelector('[data-js-element="draggable"]')
+    }
 
-    const sortable = new Draggable.Sortable(draggable, {
+    const sortable = new Draggable.Sortable(elements.draggable, {
         draggable: '[data-js-element="draggable-input"]',
         handle: '.titlebar__handle',
         swapAnimation: {
@@ -83,13 +88,17 @@
 
   const enableFieldsRemoval = () => {
     {% comment %} data-js-element="cf-icon-close" {% endcomment %}
-    const closeButtons = document.querySelectorAll('[data-js-element="cf-icon-close"]');
+
+    const elements = {
+      closeButtons: document.querySelectorAll('[data-js-element="cf-icon-close"]')
+    }
 
     {% comment %} for each closeButtons find the closest [data-js-element="draggable-input"] and remove {% endcomment %}
-    closeButtons.forEach((closeButton) => {
+    elements.closeButtons.forEach((closeButton) => {
       closeButton.addEventListener('click', (e) => {
         e.preventDefault();
         const draggableInput = closeButton.closest('[data-js-element="draggable-input"]');
+
         draggableInput.classList.add('is-being-removed');
         setTimeout(() => {
           draggableInput.remove();
@@ -99,24 +108,30 @@
   }
 
   const initForm = () => {
-    const draggable = document.querySelector('[data-js-element="draggable"]');
+    const elements = {
+      draggable: document.querySelector('[data-js-element="draggable"]')
+    }
 
     startDraggability();
     enableFieldsRemoval();
-    {% comment %} check for params, campaign=update, client and campaign-name {% endcomment %}
+    
+    {% comment %} Check if we are create a new form or updating an existing one {% endcomment %}
     const urlParams = new URLSearchParams(window.location.search);
-    const campaign = urlParams.get('campaign');
-    const client = urlParams.get('client');
-    const campaignName = urlParams.get('campaign-name');
 
-    if (campaign === 'update' && client && campaignName) {
-      getExistingCampaign({
-        client,
-        campaignName
+    const params = {
+      campaign: urlParams.get('campaign'),
+      client: urlParams.get('client'),
+      campaignName: urlParams.get('campaign-name')
+    }
+
+    if (params.campaign === 'update' && params.client && params.campaignName) {
+      window.createCampaignFns.getExistingCampaign({
+        client: params.client,
+        campaignName: params.campaignName
       })
     }
 
-    watchForFormSubmit()
+    window.createCampaignFns.watchForFormSubmit()
 
     {% comment %} get data-js-element="add-fields" {% endcomment %}
     const addFields = document.querySelector('[data-js-element="add-fields"]');
@@ -163,63 +178,13 @@
         </div>
       `
 
-      draggable.insertAdjacentHTML('beforeend', input);
+      elements.draggable.insertAdjacentHTML('beforeend', input);
 
       startDraggability()
       enableFieldsRemoval()
     })
   }
 
-  const getExistingCampaign = (props) => {
-    console.log(props)
-  }
-
-  const watchForFormSubmit = () => {
-    const form = document.querySelector('[data-js-element="create-campaign-form"]');
-
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
-
-      {% comment %} 
-      
-        check all draggable input to generate a JSON object like this: 
-    
-        {
-          "label":"First Name",
-          "type":"text",
-	        "required": true,
-          "options":[]
-        },
-
-      {% endcomment %}
-
-      const formArray = generateFormArray()
-
-      console.log(formArray)
-      
-    })
-  }
-
-  const generateFormArray = () => {
-    const inputs = [...document.querySelectorAll('[data-js-element="draggable-input"]')];
-
-    const formArray = inputs.map((input) => {
-      const label = input.querySelector('[data-js-element="input"]').value;
-      const type = input.querySelector('[data-js-element="select"]').value;
-      {% comment %} get input with name="Field options" {% endcomment %}
-      const options = input.querySelector('input[name="Field options"]').value;
-
-
-      return {
-        label,
-        type,
-        options
-      }
-    })
-
-    return formArray
-  }
-
-  initForm()
+  window.addEventListener('DOMContentLoaded', initForm)
 
 </script>

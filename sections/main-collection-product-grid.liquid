@@ -37,17 +37,23 @@
     
             <ul id="product-grid" data-id="{{ section.id }}" class="product-grid">
               {%- for product in collection.products -%}
-                {% assign lazy_load = false %}
-                {%- if forloop.index > 2 -%}
-                  {%- assign lazy_load = true -%}
-                {%- endif -%}
-                <li class="grid__item">
-                  {% render 'card-pdp',
-                    card_product: product,
-                    show_quick_add: false,
-                    section_id: section.id
-                  %}
-                </li>
+
+                {% comment %} if product has a tag that starts with "_" skip the product {% endcomment %}
+                {% if product.metafields.custom.hide_from_search %}
+                  {% continue %}
+                {% else %}
+                  {% assign lazy_load = false %}
+                  {%- if forloop.index > 2 -%}
+                    {%- assign lazy_load = true -%}
+                  {%- endif -%}
+                  <li class="grid__item">
+                    {% render 'card-pdp',
+                      card_product: product,
+                      show_quick_add: false,
+                      section_id: section.id
+                    %}
+                  </li>
+                {% endif %}
               {%- endfor -%}
             </ul>
     

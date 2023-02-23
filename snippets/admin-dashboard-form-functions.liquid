@@ -1,0 +1,131 @@
+<script type="module">
+  
+  import wretch from 'https://cdn.skypack.dev/wretch/dist/bundle/wretch.all.min.mjs'
+  {% comment %} init functions {% endcomment %}
+  window.createCampaignFns = {}
+  const backendURL = 'http://localhost:8080'
+  {% comment %} const backendURL = 'https://foodiepagesbackend.onrender.com' {% endcomment %}
+  {% comment %} const backendURL = 'https://foodiepages.herokuapp.com' {% endcomment %}
+
+  window.createCampaignFns.getExistingCampaign = (props) => {
+    {% comment %} http://127.0.0.1:9292/account?campaign=update&client=371&campaign-name=christmas-campaign {% endcomment %}
+    console.log(props)
+  }
+
+  window.createCampaignFns.watchForFormSubmit = () => {
+    const elements = {
+      form: document.querySelector('[data-js-element="create-campaign-form"]')
+    }
+
+    elements.form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const elements = {
+        inputs: [...document.querySelectorAll('.js-campaign-input input')],
+        selects: [...document.querySelectorAll('.js-campaign-select select')],
+        file: document.querySelector('.js-campaign-input-file input'),
+        textareas: [...document.querySelectorAll('.js-campaign-input textarea')],
+      }
+
+      {% comment %} remap all other inputs for backend {% endcomment %}
+      const asyncedInputs = [...elements.inputs, ...elements.selects, ...elements.textareas, elements.file].map(async (input) => {
+        const inputName = input.getAttribute('name');
+        let inputValue = input.value;
+
+        if (inputName !== 'Company Logo') {
+          return {
+            name: inputName,
+            value: inputValue
+          }
+        } else {
+          const file = input.files[0];
+
+          if (!file) {
+            return {
+              name: inputName,
+              value: null
+            }
+          }
+
+          const base64 = await window.createCampaignFns.convertImageToBase64(file);
+          return {
+            name: inputName,
+            value: base64
+          }
+        }
+      })
+
+      {% comment %} resolve asyncedInputs {% endcomment %}
+      const inputs = await Promise.all(asyncedInputs)
+      const formArray = window.createCampaignFns.generateFormArray()
+      const productsArray = window.createCampaignFns.generateProductsArray()
+
+      const pageData = await wretch(
+        `${backendURL}/api/airtable-create-campaign`
+      )
+        .post({
+          inputs,
+          formArray,
+          productsArray
+        })
+        .badRequest((err) => {
+          console.log('400', err)
+          throw err;
+        }) // Handle 400 errors
+        .unauthorized((err) => {
+          console.log('401', err)
+          throw err;
+        }) // Handle 401 errors
+        .notFound((err) => {
+  
+          generateError(`Something went wrong while trying to get your SOS Customers. Please contact your developer.`)
+          throw err;
+        }) // Handle 404 errors
+        .internalError((err) => {
+          console.log('500', err)
+          throw err;
+        }) // Handle 500 errors
+        .res((res) => res.json()); // Parse response as JSON
+    })
+  }
+
+  window.createCampaignFns.generateFormArray = () => {
+    const elements = {
+      inputs: [...document.querySelectorAll('[data-js-element="draggable-input"]')]
+    }
+
+    const formArray = elements.inputs.map((input) => {
+      const labelValue = input.querySelector('[data-js-element="input"]').value;
+      const typeValue = input.querySelector('[data-js-element="select"]').value;
+      {% comment %} get input with name="Field options" {% endcomment %}
+      const optionsValue = input.querySelector('input[name="Field options"]').value;
+
+      return {
+        label: labelValue,
+        type: typeValue,
+        options: optionsValue && optionsValue.split(',').map((option) => option.trim())
+      }
+    }).filter((input) => input.label)
+
+    return formArray
+  }
+
+  window.createCampaignFns.generateProductsArray = () => {
+    return []
+  }
+
+  window.createCampaignFns.convertImageToBase64 = async (file) => {
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.readAsDataURL(file);
+      reader.onload = () => {
+        const base64 = reader.result;
+        resolve(base64);
+      };
+      reader.onerror = (error) => {
+        reject(error);
+      };
+    });
+  };  
+
+</script>
