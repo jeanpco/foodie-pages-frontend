@@ -6,7 +6,7 @@
         "02d55e23-f307-4138-a9bd-10d797daa746": {
           "type": "cta",
           "settings": {
-            "cta_text": "Get started",
+            "cta_text": "GET STARTED",
             "cta_link": "#corporate-contact"
           }
         },
@@ -114,7 +114,7 @@
         "2799395e-848f-4345-9be1-4844c0f3b341": {
           "type": "card",
           "settings": {
-            "title": "2. Recipients pick from a huge selection of snacks, drinks and wellness items crafted by local brands, and enter their shipping address for easy delivery.",
+            "title": "2. Recipients choose from a huge selection of locally-made snacks, drink and wellness items, and enter their shipping address for easy delivery.",
             "body": "",
             "cta_text": "",
             "cta_link": ""
