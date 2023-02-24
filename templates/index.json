@@ -609,7 +609,7 @@
       "settings": {
         "overline": "Our happy customers",
         "title": "<p>Don’t just take it from us<\/p>",
-        "cta_text": "GET IN TOUCH",
+        "cta_text": "",
         "cta_link": "shopify:\/\/pages\/contact-us"
       }
     },
