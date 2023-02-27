@@ -6,7 +6,7 @@
         "fb0b7578-d3a7-47df-9c96-0f6374f1d2dd": {
           "type": "cta",
           "settings": {
-            "cta_text": "SHOP NOW",
+            "cta_text": "SHOP OUR GIFTS",
             "cta_link": "shopify:\/\/collections\/gift-baskets"
           }
         },
@@ -56,7 +56,7 @@
       ],
       "settings": {
         "overline": "",
-        "title": "<p>A better gift basket, for food people<\/p>",
+        "title": "<p>A better gift basket, for food people.<\/p>",
         "heading_style": "h1",
         "body": "Send smiles across Canada with our collection of snack boxes, care packages and gifts that showcase the most exciting finds from local brands.",
         "image": "shopify:\/\/shop_images\/Option_4.4.png",
