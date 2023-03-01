@@ -24,9 +24,9 @@ const loadingElement = (style) => `
   </div>
 `
 
-  const backendURL = 'http://localhost:8080'
+  {% comment %} const backendURL = 'http://localhost:8080' {% endcomment %}
   {% comment %} const backendURL = 'https://foodiepagesbackend.onrender.com' {% endcomment %}
-  {% comment %} const backendURL = 'https://foodiepages.herokuapp.com' {% endcomment %}
+  const backendURL = 'https://foodiepages.herokuapp.com'
 
   {% comment %} 
     UTILS
@@ -333,8 +333,10 @@ const loadingElement = (style) => `
   {% endcomment %}
 
   const getUPSTrackingDetails = async (shipments) => {
-    shipments.sort((a, b) => new Date(b.shipDate) - new Date(a.shipDate)).forEach(async ship => {
+    {% comment %} get the first 2 items from shipments {% endcomment %}
+    {% comment %} const firstTwoShipments = shipments.slice(0, 2); {% endcomment %}
 
+    shipments.sort((a, b) => new Date(b.shipDate) - new Date(a.shipDate)).forEach(async ship => {
       if (!ship.trackingNumber) return;
 
       let statusType = null;
