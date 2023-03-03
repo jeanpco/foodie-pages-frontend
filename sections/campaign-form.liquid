@@ -16,12 +16,6 @@
   }
 </style>
 
-<script>
-  window.campaignForm = {}; // global variable
-  window.campaignForm.state = {} // state that will be submitted to the backend (airtable)
-  window.campaignForm.numberOfSelectableGifts = 1 // default
-</script>
-
 {% render 'campaign-form__loading-icon' %}
 {% render 'campaign-form__header' %}
 {% render 'campaign-form__body' %}
@@ -44,13 +38,14 @@
 
   const initCampaignForm = async () => {
 
+    {% comment %} !NOTE: Backend URL need to be set back to the production URL once done with testing / local development. {% endcomment %}
 
-    {% comment %} const backendURL = 'http://localhost:8080' {% endcomment %}
+    const backendURL = 'http://localhost:8080'
     {% comment %} const backendURL = 'https://foodiepagesbackend.onrender.com' {% endcomment %}
-    const backendURL = 'https://foodiepages.herokuapp.com'
+    {% comment %} const backendURL = 'https://foodiepages.herokuapp.com' {% endcomment %}
 
     // get all url params
-    {% comment %} client=364&campaign=field-office-test {% endcomment %}
+    {% comment %} client=364&campaign=christmas-campaign {% endcomment %}
     const urlParams = new URLSearchParams(window.location.search);
     const campaignNameParam = urlParams.get('campaign');
     const clientIdParam = urlParams.get('client');

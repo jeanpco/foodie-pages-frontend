@@ -27,6 +27,8 @@
         textareas: [...document.querySelectorAll('.js-campaign-input textarea')],
       }
 
+      {% comment %} @TODO: Add selected products to submission {% endcomment %}
+
       {% comment %} remap all other inputs for backend {% endcomment %}
       const asyncedInputs = [...elements.inputs, ...elements.selects, ...elements.textareas, elements.file].map(async (input) => {
         const inputName = input.getAttribute('name');
@@ -108,10 +110,6 @@
     }).filter((input) => input.label)
 
     return formArray
-  }
-
-  window.createCampaignFns.generateProductsArray = () => {
-    return []
   }
 
   window.createCampaignFns.convertImageToBase64 = async (file) => {

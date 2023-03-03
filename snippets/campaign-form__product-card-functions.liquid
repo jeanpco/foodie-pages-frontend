@@ -1,6 +1,11 @@
 <script type="module">
   
   window.cfProductCardRemove = (gift, variants, type, element) => {
+
+    console.log({
+      gift, variants, type, element
+    })
+
     // split Main Gift on "," and remove the one that has the variant id
     const giftArray = gift.split(',').filter((item) => !variants.find(v => item.includes(v.id)));
 
@@ -26,6 +31,11 @@
   }
 
   window.cfProductCardAdd = (product, type, element) => {
+
+    console.log({
+      product, type, element
+    })
+
     {% comment %} if there is already a custom swag, append the new one {% endcomment %}
     const productState = window.campaignForm.state[type];
     {% comment %} if state already present, append to me, else add the state {% endcomment %}
@@ -47,6 +57,8 @@
   window.cfProductCardEventHandler = (e) => {
     const { detail } = e;
     const { productElement, data: { product: productData, metafields } } = detail;
+
+    console.log(detail)    
 
     if (!productElement || !productData) return;
 
@@ -80,7 +92,7 @@
         const isSelected = productElement.classList.contains('is-selected')
         if (isSelected) return;
 
-        const selectedProduct = `Product Title: ${productTitle} | Variant Title: ${variants[0].title} | Variant Sku: ${variants[0].sku} | Variant Id: ${variants[0].id} | Product Tags: ${tags.replaceAll(',', ' ')}`;
+        const selectedProduct = `Product Title: ${productTitle} | Variant Title: ${variants[0].title} | Variant Sku: ${variants[0].sku} | Variant Id: ${variants[0].id} | Product Id: ${id} | Product Tags: ${tags.replaceAll(',', ' ')}`;
   
         {% comment %} Check if selected product is a custom swag {% endcomment %}
         if (isCustomSwag) {
@@ -93,6 +105,7 @@
 
     {% comment %} Remove Selection {% endcomment %}
     productElement.addEventListener('click', (e) => {
+
       {% comment %} if e.target is not quick add or details {% endcomment %}
       if (e.target === quickAddButton || e.target === detailsButton) return;
 

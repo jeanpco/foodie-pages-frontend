@@ -1,12 +1,23 @@
 {{ 'admin-dashboard.css' | asset_url | stylesheet_tag }}
 {{ 'loading.css' | asset_url | stylesheet_tag }}
 
+{% comment %} get product cards {% endcomment %}
+{% render 'campaign-form__product-card' %}
+{% render 'campaign-form__product-card-functions' %}
+{% render 'campaign-form__product-modal' %}
+
 <div class="admin-dashboard padding-top padding-small">
   <div class="admin-dashboard_container padding-horizontal padding-large tablet-padding-0">
     <div data-js-element="create-campaign" class="hide">
-      {% render 'admin-dashboard-header' %}
+
       {% render 'admin-dashboard-form-functions' %}
+      {% render 'admin-dashboard-products-functions' %}
+
+      {% render 'admin-dashboard-header' %}
       {% render 'admin-dashboard-form' %}
+      {% render 'admin-dashboard-products' %}
+
+      {% render 'admin-dashboard-sticky-banner' %}
     </div>
     <div data-js-element="view-all-campaigns">
       <a class="button" href="/account?campaign=create">

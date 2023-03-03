@@ -1,0 +1,121 @@
+<script type="module">
+  
+  
+  
+  
+  
+  import wretch from 'https://cdn.skypack.dev/wretch/dist/bundle/wretch.all.min.mjs'
+
+  {% comment %} !NOTE: init functions on window.createCampaignFns = {} {% endcomment %}
+  
+  const backendURL = 'http://localhost:8080'
+  {% comment %} const backendURL = 'https://foodiepagesbackend.onrender.com' {% endcomment %}
+  {% comment %} const backendURL = 'https://foodiepages.herokuapp.com' {% endcomment %}
+
+  window.createCampaignFns.getExistingCampaign = (props) => {
+    {% comment %} http://127.0.0.1:9292/account?campaign=update&client=371&campaign-name=christmas-campaign {% endcomment %}
+    console.log(props)
+  }
+
+  window.createCampaignFns.createProductsGrid = (products) => {
+
+    if (!products || !products.length) {
+      return console.err('No products found');
+    }
+
+    const elements = {
+      productsGrid: document.querySelector('[data-js-element="products-grid"]'),
+      productsGridMainGifts: document.querySelector('[data-js-element="products-grid_main-gifts"]'),
+      productsGridCustomGifts: document.querySelector('[data-js-element="products-grid_customs-gifts"]')
+    }
+
+    const gifts = {
+      main: products.filter(p => !p.tags.includes('custom')),
+      custom: products.filter(p => p.tags.includes('custom'))
+    }
+
+    elements.productsGridMainGifts.innerHTML = ''
+    elements.productsGridCustomGifts.innerHTML = ''
+
+
+    if (gifts.main.length > 0) {
+      elements.productsGridMainGifts.parentElement.style.display = 'block'
+      gifts.main.forEach(product => buildGrid({ product, element: elements.productsGridMainGifts, productsGrid: elements.productsGrid }))
+    } else {
+      elements.productsGridMainGifts.parentElement.style.display = 'none'
+    }
+
+    if (gifts.custom.length > 0) {
+      elements.productsGridCustomGifts.parentElement.style.display = 'block'
+      gifts.custom.forEach(product => buildGrid({ product, element: elements.productsGridCustomGifts, productsGrid: elements.productsGrid }))
+    } else {
+      elements.productsGridCustomGifts.parentElement.style.display = 'none'
+    }
+  }
+
+  const buildGrid = ({ product, element, productsGrid }) => {
+    {% comment %} Create the HTML Product card {% endcomment %}
+    const productCard = window.cfProductCard({ product })
+
+    {% comment %} Add the product card to the container {% endcomment %}
+    element.insertAdjacentHTML('beforeend', productCard);
+    
+    {% comment %} select the element (product card) from the DOM {% endcomment %}
+    const productElement = productsGrid.querySelector(`[data-product-id="${product.id}"]`);
+    
+    {% comment %} dispatch the DOM element and product data to make the card interactive {% endcomment %}
+    const event = new CustomEvent('product-card-added', { detail: { productElement, data: { product } } });
+    document.dispatchEvent(event);
+  }
+
+  window.createCampaignFns.getProducts = async (id) => {
+    const collections = window.customerCollections.filter(c => !c.customer_id || +c.customer_id === +id);
+
+    if (!collections.length) {
+      return;
+    }
+
+    const pageData = await wretch(`${backendURL}/api/get-shopify-collections`)
+      .post(collections.map(c => c.collection_id))
+      .badRequest((err) => {
+        console.log('400', err)
+        throw err;
+      }) // Handle 400 errors
+      .unauthorized((err) => {
+        console.log('401', err)
+        throw err;
+      }) // Handle 401 errors
+      .notFound((err) => {
+        console.log('404', err)
+        throw err;
+      }) // Handle 404 errors
+      .internalError((err) => {
+        console.log('500', err)
+        throw err;
+      }) // Handle 500 errors
+      .res((res) => res.json()); // Parse response as JSON
+
+    if (!pageData.data.products) {
+      return;
+    }
+
+    window.createCampaignFns.createProductsGrid(pageData.data.products)
+  }
+
+  window.addEventListener('load', () => {
+    const select = document.querySelector('[data-js-element="select"]')
+    window.createCampaignFns.getProducts()
+
+  
+    select.addEventListener('change', async (e) => {
+      const value = e.target.value
+
+      window.createCampaignFns.getProducts(value)
+    })
+  })
+
+
+
+
+
+</script>

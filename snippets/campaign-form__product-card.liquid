@@ -10,10 +10,14 @@
     return `
       <div class="cf-product-card swiper-slide" data-js-element="cf-product-card" data-product-id="${product.id}" data-product-tags="${product.tags}">
         <div class="cf-product-card_image-container margin-bottom margin-small">
+          {% comment %} Check Mark for when the product is selected {% endcomment %}
           <div class="cf-product-card_checked">
             {% render 'campaign-form_icon-checked' %}
           </div>
-          ${product.image ? `<img data-js-element="cf-product-card_image" src="${product.image.src}" class="cf-product-card_image" alt="${product.image.alt}">` : `<img data-js-element="cf-product-card_image" src="https://cdn.shopify.com/s/files/1/0264/5000/2013/files/no-product-image-placeholder.png?v=1676566417" class="cf-product-card_image" alt="Foodie Pages Image Placeholder">`}
+          ${product.image ? 
+            `<img data-js-element="cf-product-card_image" src="${product.image.src}" class="cf-product-card_image" alt="${product.image.alt}">` :
+            `<img data-js-element="cf-product-card_image" src="https://cdn.shopify.com/s/files/1/0264/5000/2013/files/no-product-image-placeholder.png?v=1676566417" class="cf-product-card_image" alt="Foodie Pages Image Placeholder">`
+          }
           <div class="cf-product-card_details display-flex gap-0-5 align-items-center">
             {% comment %} if has 1 variant {% endcomment %}
             ${numberOfVariant === 1 && !isDonation ? `

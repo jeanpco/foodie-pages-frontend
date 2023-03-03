@@ -16,6 +16,13 @@
       window.customFunctions = window.customFunctions || {};
     </script>
 
+    {% comment %} ! This is being used to manage states for super admin dash and submit your gifts (/pages/form) pages. {% endcomment %}
+    <script>
+      window.campaignForm = {}; // global variable
+      window.campaignForm.state = {} // state that will be submitted to the backend (airtable)
+      window.campaignForm.numberOfSelectableGifts = 1 // default
+    </script>
+
     <title>
       {{ page_title }}
       {%- if current_tags %} &ndash; tagged "{{ current_tags | join: ', ' }}"{% endif -%}

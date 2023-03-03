@@ -88,17 +88,15 @@
       title,
       variants,
       vendor,
-      metafields: { metafields },
+      metafields,
     } = props
 
     const isDonation = tags.includes('donation');
 
     {% comment %} find metafields with key of "excerpt" and namespace of "custom" {% endcomment %}
-    const excerpt = metafields.find(
+    const excerpt = metafields && metafields.metafields.find(
       metafield => metafield.key === 'excerpt' && metafield.namespace === 'custom'
-    )
-
-    console.log(tags)
+    ) || null
   
     elements.modalContent.innerHTML = `
       <form data-js-element="modal-content-form" class="modal-content w-full display-flex gap-3 justify-content-between">
@@ -265,17 +263,17 @@
     elements.form.addEventListener('submit', (e) => {
       e.preventDefault()
 
-      let selectedProduct = `Product Title: ${title} | Variant Title: ${variants[0].title} | Variant Sku: ${variants[0].sku} | Variant Id: ${variants[0].id} | Product Tags: ${tags.replaceAll(',', ' ')}`;
+      let selectedProduct = `Product Title: ${title} | Variant Title: ${variants[0].title} | Variant Sku: ${variants[0].sku} | Variant Id: ${variants[0].id} | Product Id: ${id} | Product Tags: ${tags.replaceAll(',', ' ')}`;
 
       if (isDonation) {
         const organizationName = document.getElementById('donation-write-organization').value
         const organizationWebsite = document.getElementById('donation-organization-website').value
 
-        selectedProduct = `Product Title: ${title} | Variant Title: ${variants[0].title} | Variant Sku: ${variants[0].sku} | Variant Id: ${variants[0].id} | Organization Name: ${organizationName} | Organization Website: ${organizationWebsite}`
+        selectedProduct = `Product Title: ${title} | Variant Title: ${variants[0].title} | Variant Sku: ${variants[0].sku} | Variant Id: ${variants[0].id} | Product Id: ${id} | Organization Name: ${organizationName} | Organization Website: ${organizationWebsite}`
       }
 
       if (numberOfVariant > 1) {
-        selectedProduct = `Product Title: ${title} | Variant Title: ${window.modalSelectedVariant.title} | Variant Sku: ${window.modalSelectedVariant.sku} | Variant Id: ${window.modalSelectedVariant.id} | Product Tags: ${tags.replaceAll(',', ' ')}`
+        selectedProduct = `Product Title: ${title} | Variant Title: ${window.modalSelectedVariant.title} | Variant Sku: ${window.modalSelectedVariant.sku} | Variant Id: ${window.modalSelectedVariant.id} | Product Id: ${id} | Product Tags: ${tags.replaceAll(',', ' ')}`
       }
 
       if (isCustomSwag) {
