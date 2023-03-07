@@ -43,28 +43,29 @@
           "type": "tab",
           "settings": {
             "overline": "Step 1",
-            "title": "Design + Development",
-            "body": "Our experienced team of curators will ask about your objectives and budget before creating a custom gifting proposal that is tailored to your needs. From the products to the packaging, we’ll create something that reflects your brand, goals and values."
+            "title": "Share",
+            "body": "We build a platform in line with your brand identity and program goals, and you share it with your recipients via email."
           }
         },
         "ab7fff74-0668-4779-9c58-a3781089ca61": {
           "type": "tab",
           "settings": {
             "overline": "Step 2",
-            "title": "Sourcing + Production",
-            "body": "Our in-house procurement and design team sources premium products from small and underrepresented brands across the country, and can put your logo on trendy, high quality items that recipients will appreciate and remember."
+            "title": "Select",
+            "body": "Recipients select their preferred gift and enter their shipping address. Redemptions are tracked in real-time."
           }
         },
         "2d4083b3-581a-4ade-b225-6f2117a93f50": {
           "type": "tab",
           "settings": {
             "overline": "Step 3",
-            "title": "Packaging + Sustainability",
-            "body": "We offer a wide range of planet-friendly packaging. From fast turn around stock options to custom-printed mailer boxes and keepsake bags."
+            "title": "Delivered",
+            "body": "Our team of gifting experts hand-packs and delivers."
           }
         },
         "47847899-6a08-4443-881a-c2133258173d": {
           "type": "tab",
+          "disabled": true,
           "settings": {
             "overline": "Step 4",
             "title": "Fulfillment + Warehousing",
@@ -73,6 +74,7 @@
         },
         "a25db7f7-6489-43d4-89c5-e1e47404b228": {
           "type": "tab",
+          "disabled": true,
           "settings": {
             "overline": "Step 5",
             "title": "Software + Stores",
@@ -89,17 +91,18 @@
       ],
       "settings": {
         "overline": "How it works",
-        "title": "<p>Tired of searching for the <em>perfect <\/em>gift? We’ll make it easy for you.<\/p>",
+        "title": "<p>Send useful and thoughtful gifts to anyone, anytime. We’ll make it <em>easy<\/em> for you.<\/p>",
         "heading_style": "h2",
-        "cta_text": "Get in touch",
+        "cta_text": "",
         "cta_link": "",
         "body": "",
-        "secondary_cta_text": "Get in touch",
+        "secondary_cta_text": "",
         "secondary_cta_link": ""
       }
     },
     "05ea480d-037b-4297-9c3d-d6160866116b": {
       "type": "module-columns",
+      "disabled": true,
       "blocks": {
         "765a0837-b3a6-417e-a20d-8c4151c40912": {
           "type": "card",
@@ -164,19 +167,19 @@
           "type": "features",
           "settings": {
             "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/placeholder-svg-square.svg?v=1666645913",
-            "title": "Support your values",
-            "body": "A commitment to sourcing from small and underrepresented brands and makers.",
-            "cta_text": "Learn More",
-            "cta_link": "shopify:\/\/pages\/about-us"
+            "title": "Personalize your Portal with branding, messaging and more",
+            "body": "",
+            "cta_text": "",
+            "cta_link": ""
           }
         },
         "fae23ace-5ca1-43a0-a58b-9c5d1bef7e5b": {
           "type": "features",
           "settings": {
             "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/placeholder-svg-square.svg?v=1666645913",
-            "title": "Let them choose",
-            "body": "Free branded landing pages to collect recipient gift preferences and mailing addresses.",
-            "cta_text": "Learn More",
+            "title": "Send a single gift or as many as you want at one time",
+            "body": "",
+            "cta_text": "",
             "cta_link": ""
           }
         },
@@ -184,20 +187,20 @@
           "type": "features",
           "settings": {
             "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/placeholder-svg-square.svg?v=1666645913",
-            "title": "Delivered your way",
-            "body": "Worldwide fulfillment to one location or 100s of addresses.",
-            "cta_text": "Learn More",
-            "cta_link": "shopify:\/\/pages\/contact-us"
+            "title": "Appreciate anyone and send gifts practically anywhere",
+            "body": "",
+            "cta_text": "",
+            "cta_link": ""
           }
         },
         "29189724-18f8-43ad-ad45-9aea0d08c6f0": {
           "type": "features",
           "settings": {
             "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/placeholder-svg-square.svg?v=1666645913",
-            "title": "Gift guidance",
-            "body": "Expert advice based on data and our 10+ years of experience.",
-            "cta_text": "Learn More",
-            "cta_link": "shopify:\/\/pages\/experiences"
+            "title": "Best of all- our Gifting Platform is 100% free!",
+            "body": "",
+            "cta_text": "",
+            "cta_link": ""
           }
         }
       },
@@ -208,12 +211,12 @@
         "29189724-18f8-43ad-ad45-9aea0d08c6f0"
       ],
       "settings": {
-        "overline": "Quick shop",
+        "overline": "benefits",
         "title": "<p>Values-based sourcing<\/p>",
         "heading_style": "h1",
-        "body": "We're a woman-owned business that partners with other incredible businesses to curate gifts for all occasions. We prioritize brands that are woman-owned, BIPOC-owned and environmentally sustainable.",
-        "cta_text": "Shop all",
-        "cta_link": "shopify:\/\/collections\/all",
+        "body": "xxx",
+        "cta_text": "Schedule a demo",
+        "cta_link": "#contact",
         "image": "shopify:\/\/shop_images\/Image_3468c917-9e51-49ab-9d3c-fa357152af3b.png"
       }
     },
@@ -224,7 +227,7 @@
           "type": "cta",
           "settings": {
             "cta_text": "Learn more",
-            "cta_link": "shopify:\/\/pages\/contact-us"
+            "cta_link": "#contact"
           }
         }
       },
