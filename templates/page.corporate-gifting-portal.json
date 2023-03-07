@@ -24,7 +24,7 @@
         "c048c51b-1b9b-4987-9088-f581437cc840"
       ],
       "settings": {
-        "overline": "Corporate Gifting Portal",
+        "overline": "Corporate Gifting",
         "title": "<p>Give recipients exactly what they want<\/p>",
         "heading_style": "h1",
         "body": "Invite people to select their preferred gift from a custom branded gifting portal, designed to showcase your brand and communicate appreciation to the people that matter most to your business.",
@@ -91,7 +91,7 @@
       ],
       "settings": {
         "overline": "How it works",
-        "title": "<p>Send useful and thoughtful gifts to anyone, anytime. We’ll make it <em>easy<\/em> for you.<\/p>",
+        "title": "<p>Let them choose their <em>preferred<\/em> gift.<\/p>",
         "heading_style": "h2",
         "cta_text": "",
         "cta_link": "",
@@ -212,9 +212,9 @@
       ],
       "settings": {
         "overline": "benefits",
-        "title": "<p>Values-based sourcing<\/p>",
+        "title": "<p>All-in-one Corporate Gifting Platform<\/p>",
         "heading_style": "h1",
-        "body": "xxx",
+        "body": "Send useful and thoughtful gifts to anyone, anytime. We’ll make it easy for you.",
         "cta_text": "Schedule a demo",
         "cta_link": "#contact",
         "image": "shopify:\/\/shop_images\/Image_3468c917-9e51-49ab-9d3c-fa357152af3b.png"
