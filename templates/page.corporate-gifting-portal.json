@@ -6,12 +6,13 @@
         "02d55e23-f307-4138-a9bd-10d797daa746": {
           "type": "cta",
           "settings": {
-            "cta_text": "Shop all",
-            "cta_link": ""
+            "cta_text": "Learn more",
+            "cta_link": "#contact"
           }
         },
         "c048c51b-1b9b-4987-9088-f581437cc840": {
           "type": "cta",
+          "disabled": true,
           "settings": {
             "cta_text": "Shop all",
             "cta_link": ""
@@ -23,10 +24,10 @@
         "c048c51b-1b9b-4987-9088-f581437cc840"
       ],
       "settings": {
-        "overline": "Quick shop",
-        "title": "<p>Gifts that celebrate small business<\/p>",
+        "overline": "Corporate Gifting Portal",
+        "title": "<p>Give recipients exactly what they want<\/p>",
         "heading_style": "h1",
-        "body": "We source exclusively from small and underrepresented businesses across the country. Sharing their stories and values with you is one of our greatest joys.",
+        "body": "Invite people to select their preferred gift from a custom branded gifting portal, designed to showcase your brand and communicate appreciation to the people that matter most to your business.",
         "image": "shopify:\/\/shop_images\/Screen_Shot_2022-11-15_at_5.04.39_PM.png",
         "enable_card_style": false,
         "text_vertical_alignment": "flex-end",
