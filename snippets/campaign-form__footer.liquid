@@ -210,7 +210,6 @@
         const { label, type, options } = input;
         const inputId = label.toLowerCase().replace(' ', '-');
         const inputName = label.toLowerCase().replace(' ', '_');
-        console.log(label)
         {% comment %} format label with 1 space between each word {% endcomment %}
         const formattedLabel = label.replace(/([A-Z])/g, ' $1').trim();
 
@@ -290,8 +289,6 @@
     document.addEventListener('gift-state-changed', (e) => {
       const { detail } = e;
       const { state } = detail;
-
-      console.log(state)
 
       {% comment %} get data-js-element="sticky-main-gifts" {% endcomment %}
       const stickyMainGiftsEl = document.querySelector('[data-js-element="sticky-main-gifts"]');

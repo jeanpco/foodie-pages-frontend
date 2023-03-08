@@ -94,7 +94,7 @@
 
       pageData.data.forEach((item) => {
         const option = document.createElement('option')
-        option.value = item.id
+        option.value = `${item.id}_${item.name}`
         option.text = item.name
         select.appendChild(option)
       })

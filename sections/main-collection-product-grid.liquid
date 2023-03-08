@@ -39,7 +39,7 @@
               {%- for product in collection.products -%}
 
                 {% comment %} if product has a tag that starts with "_" skip the product {% endcomment %}
-                {% if product.metafields.custom.hide_from_search %}
+                {% if product.metafields.custom.hide_from_search and collection.metafields.custom.customer_id == blank %}
                   {% continue %}
                 {% else %}
                   {% assign lazy_load = false %}

@@ -108,8 +108,10 @@
 
   
     select.addEventListener('change', async (e) => {
-      const value = e.target.value
+      {% comment %} reset any currently selected products {% endcomment %}
+      window.createCampaignFns.resetProductsState()
 
+      const value = e.target.value
       window.createCampaignFns.getProducts(value)
     })
   })

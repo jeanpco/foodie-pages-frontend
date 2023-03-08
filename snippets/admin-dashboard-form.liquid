@@ -5,25 +5,59 @@
   data-js-element="create-campaign-form"
   class="admin-dashboard_form padding-bottom padding-large display-flex flex-wrap justify-content-between gap-2 align-items-start"
 >
-  {% render 'admin-input', class: "js-campaign-input" name: 'Campaign Name', placeholder: "Enter your campaign name", type: 'text', label: 'Campaign Name*', required: true %}
-  {% render 'admin-input-sos-customer-select', class: "js-campaign-select", name: 'Customer', placeholder: "", label: 'Select a corporate customer*', required: true %}
-  {% render 'admin-input', class: "js-campaign-input", name: 'End Date', type: 'date', label: 'When does your campaign end?' %}
-  {% render 'admin-input', class: "js-campaign-input", name: 'Number of selectable gifts', type: 'number', label: 'Number of selectable gifts' %}
+  {% render 'admin-input', 
+    class: "js-campaign-input", 
+    name: 'Campaign Name', 
+    placeholder: "Enter your campaign name", 
+    type: 'text', 
+    label: 'Campaign Name*', 
+    required: true 
+    airtable_type: 'singleLineText',
+  %}
+  {% render 'admin-input-sos-customer-select', 
+    class: "js-campaign-select", 
+    name: 'Customer', 
+    placeholder: "", 
+    label: 'Select a corporate customer*', 
+    required: true 
+  %}
+  {% render 'admin-input', 
+    class: "js-campaign-input", 
+    name: 'End Date', 
+    type: 'date', 
+    label: 'When does your campaign end?',
+    airtable_type: 'date',
+  %}
+  {% render 'admin-input', 
+    class: "js-campaign-input", 
+    name: 'Number of selectable gifts', 
+    type: 'number', 
+    label: 'Number of selectable gifts',
+    airtable_type: 'number',
+  %}
   {% render 'admin-input',
     class: "js-campaign-input"
     name: 'Gift Message',
     type: 'textarea',
     label: 'Gift Message',
-    placeholder: 'Enter the company message'
+    placeholder: 'Enter the company message',
+    airtable_type: 'singleLineText',
   %}
   {% render 'admin-input',
     class: "js-campaign-input"
     name: 'Shipping Details',
     type: 'textarea',
     label: 'Shipping Details',
-    placeholder: 'Enter the shipping details'
+    placeholder: 'Enter the shipping details',
+    airtable_type: 'singleLineText',
   %}
-  {% render 'admin-input', class: "js-campaign-input-file", name: 'Company Logo', type: 'file', label: 'Company Logo' %}
+  {% render 'admin-input', 
+    class: "js-campaign-input-file", 
+    name: 'Company Logo', 
+    type: 'file', 
+    label: 'Company Logo',
+    airtable_type: 'multipleAttachments',
+  %}
 
   {% comment %} Form Building {% endcomment %}
 
@@ -35,7 +69,8 @@
         name: 'Form Button Text',
         type: 'text',
         label: 'Form Button Text',
-        placeholder: 'e.g: Submit your gift'
+        placeholder: 'e.g: Submit your gift',
+        airtable_type: 'singleLineText',
       %}
     </div>
     <p>
@@ -59,10 +94,6 @@
   <div role="button" class="button" data-js-element="add-fields">
     <span>Add Fields</span>
   </div>
-
-  <button class="button" type="submit" data-js-element="submit-form">
-    <span>Submit Form</span>
-  </button>
 </form>
 
 <script type="module">

@@ -14,11 +14,16 @@
 
   window.createCampaignFns.watchForFormSubmit = () => {
     const elements = {
-      form: document.querySelector('[data-js-element="create-campaign-form"]')
+      submit_button: document.querySelector('[data-js-element="submit-form-button"]')
     }
 
-    elements.form.addEventListener('submit', async (e) => {
+    elements.submit_button.addEventListener('click', async (e) => {
       e.preventDefault();
+
+      const gifts = {
+        main: window.campaignForm.state['Main Gift'],
+        custom: window.campaignForm.state['Custom Swag']
+      }
 
       const elements = {
         inputs: [...document.querySelectorAll('.js-campaign-input input')],
@@ -27,17 +32,18 @@
         textareas: [...document.querySelectorAll('.js-campaign-input textarea')],
       }
 
-      {% comment %} @TODO: Add selected products to submission {% endcomment %}
-
       {% comment %} remap all other inputs for backend {% endcomment %}
       const asyncedInputs = [...elements.inputs, ...elements.selects, ...elements.textareas, elements.file].map(async (input) => {
         const inputName = input.getAttribute('name');
         let inputValue = input.value;
+        let type = input.dataset.airtableType;
 
         if (inputName !== 'Company Logo') {
           return {
             name: inputName,
-            value: inputValue
+            value: inputValue,
+            type: type,
+            required: true,
           }
         } else {
           const file = input.files[0];
@@ -45,14 +51,16 @@
           if (!file) {
             return {
               name: inputName,
-              value: null
+              value: null,
+              type: type,
             }
           }
 
           const base64 = await window.createCampaignFns.convertImageToBase64(file);
           return {
             name: inputName,
-            value: base64
+            value: base64,
+            type: type
           }
         }
       })
@@ -60,7 +68,6 @@
       {% comment %} resolve asyncedInputs {% endcomment %}
       const inputs = await Promise.all(asyncedInputs)
       const formArray = window.createCampaignFns.generateFormArray()
-      const productsArray = window.createCampaignFns.generateProductsArray()
 
       const pageData = await wretch(
         `${backendURL}/api/airtable-create-campaign`
@@ -68,7 +75,7 @@
         .post({
           inputs,
           formArray,
-          productsArray
+          gifts
         })
         .badRequest((err) => {
           console.log('400', err)
@@ -125,5 +132,44 @@
       };
     });
   };  
+
+  window.createCampaignFns.resetProductsState = () => {
+    
+    const elements = {
+      
+    }
+
+    const productCards = [...document.querySelectorAll('[data-js-element="cf-product-card"]')]
+
+    productCards.forEach(card => {
+      if (card.classList.contains('is-selected')) {
+        {% comment %} look for the variantId inside of state in either Main Gift or Custom Swag, if found, remove it {% endcomment %}
+        const mainGift = window.campaignForm.state['Main Gift'];
+        const customSwag = window.campaignForm.state['Custom Swag'];
+
+
+  
+        if (mainGift) {
+          const variants = mainGift.split(',').map((variant) => {
+            const variantId = variant.match(/Variant Id: (\d+)/)[1];
+            return { id: +variantId }
+          })
+
+          window.cfProductCardRemove(mainGift, variants, 'Main Gift', card);
+        }
+  
+        if (customSwag) {
+          const variants = customSwag.split(',').map((variant) => {
+            const variantId = variant.match(/Variant Id: (\d+)/)[1];
+            return { id: +variantId }
+          })
+
+          window.cfProductCardRemove(customSwag, variants, 'Custom Swag', card);
+        }
+      }
+    })
+
+    productCards.forEach(card => card.classList.remove('is-selected'))
+  }
 
 </script>

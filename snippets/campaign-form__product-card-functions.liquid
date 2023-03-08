@@ -1,11 +1,6 @@
 <script type="module">
   
   window.cfProductCardRemove = (gift, variants, type, element) => {
-
-    console.log({
-      gift, variants, type, element
-    })
-
     // split Main Gift on "," and remove the one that has the variant id
     const giftArray = gift.split(',').filter((item) => !variants.find(v => item.includes(v.id)));
 
@@ -31,11 +26,6 @@
   }
 
   window.cfProductCardAdd = (product, type, element) => {
-
-    console.log({
-      product, type, element
-    })
-
     {% comment %} if there is already a custom swag, append the new one {% endcomment %}
     const productState = window.campaignForm.state[type];
     {% comment %} if state already present, append to me, else add the state {% endcomment %}
@@ -57,8 +47,6 @@
   window.cfProductCardEventHandler = (e) => {
     const { detail } = e;
     const { productElement, data: { product: productData, metafields } } = detail;
-
-    console.log(detail)    
 
     if (!productElement || !productData) return;
 

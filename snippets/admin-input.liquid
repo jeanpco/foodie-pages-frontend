@@ -9,6 +9,7 @@
       name="{{ name }}"
       class="field_input"
       placeholder="{{ placeholder }}"
+      {% if airtable_type %}data-airtable-type="{{ airtable_type }}"{% endif %}
       {% if required %}required{% endif %}
     ></textarea>
 
@@ -25,6 +26,7 @@
       autocorrect="off"
       autocapitalize="off"
       placeholder="{{ placeholder }}"
+      {% if airtable_type %}data-airtable-type="{{ airtable_type }}"{% endif %}
       {% if type == 'number' %}min="1"{% endif %}
       {% if required %}required{% endif %}
       {% if type == 'file' %}accept="image/png, image/jpeg"{% endif %}

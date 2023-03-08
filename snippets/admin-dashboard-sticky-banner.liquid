@@ -11,13 +11,18 @@
     <h6 data-js-element="sticky-main-gifts"></h6>
     <h6 data-js-element="sticky-custom-gifts"></h6>
   </div>
-  <button data-js-element="submit-form-button" type="submit" class="button">
-    <span>Submit your selection</span>
-  </button>
+  <div class="sticky-banner_buttons">
+    <button data-js-element="reset-form-button" class="button secondary">
+      <span>Reset</span>
+    </button>
+    <button data-js-element="submit-form-button" type="submit" class="button margin-left margin-xsmall">
+      <span>Submit your selection</span>
+    </button>
+  </div>
 </div>
 
 <script type="module">
-  import wretch from 'https://cdn.skypack.dev/wretch/dist/bundle/wretch.all.min.mjs'
+  import wretch from 'https://cdn.skypack.dev/wretch/dist/bundle/wretch.all.min.mjs';
 
   const ifAtleastOneMainGiftIsSelected = (state) => {
     const submitFormButtonEl = document.querySelector('[data-js-element="submit-form-button"]');
@@ -27,25 +32,15 @@
     } else {
       submitFormButtonEl.setAttribute('disabled', true);
     }
-  }
+  };
 
-  const generateSelectedProductString = (product) => {
-    const productTitle = product.split('|')[0].replace('Product Title:', '');
-    const variantTitle = product.split('|')[1].replace('Variant Title:', '');
-
-    return !variantTitle.includes('Default Title') ? `${productTitle} | ${variantTitle}` : productTitle
-  }
-  
-  window.campaignForm.buildFooter = (props) => {
-    const { formStructure, formButtonText, products, shippingDetails } = props;
-
+  const stickyBannerInit = (props) => {
     const elements = {
-      cfFormEl: document.querySelector('[data-js-element="cf-form"]'),
-      cfFormInputsEl: document.querySelector('[data-js-element="cf-form-inputs"]'),
-      submitFormButtonEl: document.querySelector('[data-js-element="submit-form-button"] span'),
-    }
+      mainGiftsText: document.querySelector('[data-js-element="sticky-main-gifts"]'),
+      customGiftsText: document.querySelector('[data-js-element="sticky-custom-gifts"]'),
+      resetFormButton: document.querySelector('[data-js-element="reset-form-button"]'),
+    };
 
-    // will disable submit button if no main gift is selected
     ifAtleastOneMainGiftIsSelected();
 
     document.addEventListener('gift-state-changed', (e) => {
@@ -54,51 +49,26 @@
 
       console.log(state)
 
-      {% comment %} get data-js-element="sticky-main-gifts" {% endcomment %}
-      const stickyMainGiftsEl = document.querySelector('[data-js-element="sticky-main-gifts"]');
-      const stickyCustomGiftsEl = document.querySelector('[data-js-element="sticky-custom-gifts"]');
-      const mainGiftProductCards = [...document.querySelectorAll('[data-js-element="products-slider-main"] [data-js-element="cf-product-card"]')];
-    
-      {% comment %} check how many "," is contains inside of state main gift {% endcomment %}
-      const numberOfCommasInMainGiftsState = (state['Main Gift'] && state['Main Gift'].match(/,/g) || []).length;
-      const numberOfCommasInCustomGiftsState = (state['Custom Swag'] && state['Custom Swag'].match(/,/g) || []).length;
-
-      {% comment %} if there is more than 1 comma in the main gift state, split on the first comma {% endcomment %}
-      const mainGiftsState = numberOfCommasInMainGiftsState > 1 ? state['Main Gift'].split(',', 1) : state['Main Gift'] && state['Main Gift'].split(',');
-      const customGiftsState = numberOfCommasInCustomGiftsState > 1 ? state['Custom Swag'].split(',', 1) : state['Custom Swag'] && state['Custom Swag'].split(',');
-
-      {% comment %} get number of selected main gift product cards {% endcomment %}
-      const numberOfSelectedMainGifts = mainGiftProductCards.filter(card => card.classList.contains('is-selected')).length;
-
-      {% comment %} add card selected state {% endcomment %}
-      if (numberOfSelectedMainGifts === window.campaignForm.numberOfSelectableGifts) {
-        mainGiftProductCards.forEach(card => {
-          if (!card.classList.contains('is-selected')) {
-            card.classList.add('is-disabled');
-          }
-        })
+      if (state['Main Gift']) {
+        elements.mainGiftsText.innerHTML = `Main Gifts: (${state['Main Gift'].split(',').length})`;
       } else {
-        mainGiftProductCards.forEach(card => {
-          if (!card.classList.contains('is-selected')) {
-            card.classList.remove('is-disabled');
-          }
-        })
-      }
-      
-      if (mainGiftsState) {
-        stickyMainGiftsEl.innerText = mainGiftsState.map(gift => generateSelectedProductString(gift)).join(', ')
-      } else {
-        stickyMainGiftsEl.innerText = ''
+        elements.mainGiftsText.innerHTML = '';
       }
 
-      if (customGiftsState) {
-        stickyCustomGiftsEl.innerText = customGiftsState.map(gift => generateSelectedProductString(gift)).join(', ')
+      if (state['Custom Swag']) {
+        elements.customGiftsText.innerHTML = `Custom Swags & Inserts: (${state['Custom Swag'].split(',').length})`;
       } else {
-        stickyCustomGiftsEl.innerText = ''
+        elements.customGiftsText.innerHTML = '';
       }
 
-      ifAtleastOneMainGiftIsSelected(mainGiftsState)
-    })
+      ifAtleastOneMainGiftIsSelected(state['Main Gift']);
+    });
+
+    elements.resetFormButton.addEventListener('click', (e) => {
+      e.preventDefault();
+      window.createCampaignFns.resetProductsState();
+    });
   };
 
+  window.addEventListener('DOMContentLoaded', stickyBannerInit);
 </script>
