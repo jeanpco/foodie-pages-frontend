@@ -225,7 +225,7 @@
           "type": "cta",
           "settings": {
             "cta_text": "CONTACT US",
-            "cta_link": "shopify:\/\/pages\/contact-us"
+            "cta_link": "#contact"
           }
         }
       },
