@@ -173,6 +173,7 @@
           },
           "46207620-2739-4e9b-b05b-9042ffa5a46e": {
             "type": "highlighted_item",
+            "disabled": true,
             "settings": {
               "associated_parent_menu_url": "shopify:\/\/pages\/corporate-gifting",
               "highlighted_product": "",
