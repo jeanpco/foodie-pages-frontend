@@ -112,7 +112,9 @@
       return {
         label: labelValue,
         type: typeValue,
-        options: optionsValue && optionsValue.split(',').map((option) => option.trim())
+        options: optionsValue && optionsValue.split(',').map((option) => option.trim()),
+        required: true,
+        airtable_type: 'singleLineText'
       }
     }).filter((input) => input.label)
 
@@ -134,11 +136,6 @@
   };  
 
   window.createCampaignFns.resetProductsState = () => {
-    
-    const elements = {
-      
-    }
-
     const productCards = [...document.querySelectorAll('[data-js-element="cf-product-card"]')]
 
     productCards.forEach(card => {
