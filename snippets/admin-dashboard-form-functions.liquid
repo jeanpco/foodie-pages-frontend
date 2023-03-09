@@ -31,9 +31,15 @@
         file: document.querySelector('.js-campaign-input-file input'),
         textareas: [...document.querySelectorAll('.js-campaign-input textarea')],
         buttonLoading: document.querySelector('[data-js-element="submit-button-loading"]'),
+        buttonText: document.querySelector('[data-js-element="submit-text"]'),
       }
 
+      const initialButtonText = elements.buttonText.innerText;
+
       elements.buttonLoading.classList.remove('hidden')
+
+      {% comment %} change button text to "loading..." {% endcomment %}
+      elements.buttonText.innerText = 'Loading...'
 
       {% comment %} remap all other inputs for backend {% endcomment %}
       const asyncedInputs = [...elements.inputs, ...elements.selects, ...elements.textareas, elements.file].map(async (input) => {
@@ -94,10 +100,16 @@
       elements.buttonLoading.classList.add('hidden')
 
       if (pageData.message === 'Success') {
-      
+        {% comment %} change button text to success {% endcomment %}
+        elements.buttonText.innerText = 'Success!'
       } else {
         
       }
+
+      {% comment %} after 3 seconds set buttonText to initial text {% endcomment %}
+      setTimeout(() => {
+        elements.buttonText.innerText = initialButtonText
+      }, 3000)
     })
   }
 
