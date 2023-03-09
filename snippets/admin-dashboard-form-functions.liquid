@@ -30,7 +30,10 @@
         selects: [...document.querySelectorAll('.js-campaign-select select')],
         file: document.querySelector('.js-campaign-input-file input'),
         textareas: [...document.querySelectorAll('.js-campaign-input textarea')],
+        buttonLoading: document.querySelector('[data-js-element="submit-button-loading"]'),
       }
+
+      elements.buttonLoading.classList.remove('hidden')
 
       {% comment %} remap all other inputs for backend {% endcomment %}
       const asyncedInputs = [...elements.inputs, ...elements.selects, ...elements.textareas, elements.file].map(async (input) => {
@@ -69,32 +72,32 @@
       const inputs = await Promise.all(asyncedInputs)
       const formArray = window.createCampaignFns.generateFormArray()
 
-      const pageData = await wretch(
-        `${backendURL}/api/airtable-create-campaign`
-      )
-        .post({
+      const pageData = await wretch(`${backendURL}/api/airtable-create-campaign`).
+        post({
           inputs,
           formArray,
           gifts
-        })
-        .badRequest((err) => {
+        }).badRequest((err) => {
           console.log('400', err)
           throw err;
-        }) // Handle 400 errors
-        .unauthorized((err) => {
+        }).unauthorized((err) => {
           console.log('401', err)
           throw err;
-        }) // Handle 401 errors
-        .notFound((err) => {
-  
+        }).notFound((err) => {
           generateError(`Something went wrong while trying to get your SOS Customers. Please contact your developer.`)
           throw err;
-        }) // Handle 404 errors
-        .internalError((err) => {
+        }) .internalError((err) => {
           console.log('500', err)
           throw err;
-        }) // Handle 500 errors
-        .res((res) => res.json()); // Parse response as JSON
+        }).res((res) => res.json()); // Parse response as JSON
+
+      elements.buttonLoading.classList.add('hidden')
+
+      if (pageData.message === 'Success') {
+      
+      } else {
+        
+      }
     })
   }
 

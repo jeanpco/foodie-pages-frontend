@@ -11,12 +11,19 @@
     <h6 data-js-element="sticky-main-gifts"></h6>
     <h6 data-js-element="sticky-custom-gifts"></h6>
   </div>
-  <div class="sticky-banner_buttons">
+  <div class="sticky-banner_buttons display-flex">
     <button data-js-element="reset-form-button" class="button secondary">
       <span>Reset</span>
     </button>
     <button data-js-element="submit-form-button" type="submit" class="button margin-left margin-xsmall">
-      <span>Submit your selection</span>
+      <span>
+        <div class="display-flex align-items-center gap-0-5">
+          Submit your selection
+          <div data-js-element="submit-button-loading" class="is-loading hidden">
+            <div class="loading-spinner"></div>
+          </div>
+        </div>
+      </span>
     </button>
   </div>
 </div>
@@ -46,8 +53,6 @@
     document.addEventListener('gift-state-changed', (e) => {
       const { detail } = e;
       const { state } = detail;
-
-      console.log(state)
 
       if (state['Main Gift']) {
         elements.mainGiftsText.innerHTML = `Main Gifts: (${state['Main Gift'].split(',').length})`;
