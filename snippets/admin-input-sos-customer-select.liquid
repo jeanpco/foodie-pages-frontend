@@ -54,45 +54,17 @@
 </div>
 
 <script type="module">
-    import wretch from 'https://cdn.skypack.dev/wretch/dist/bundle/wretch.all.min.mjs'
-
-    {% comment %} const backendURL = 'http://localhost:8080' {% endcomment %}
-    {% comment %} const backendURL = 'https://foodiepagesbackend.onrender.com' {% endcomment %}
-    const backendURL = 'https://foodiepages.herokuapp.com'
-
     const initSelect = async () => {
 
       const elements = {
         selectLoading: document.querySelector('[data-js-element="select-loading"]'),
       }
-      
-      const pageData = await wretch(
-        `${backendURL}/api/sos_customer`
-      ) // Base url
-        // Authorization header
-        .get() // GET request
-        .badRequest((err) => {
-          console.log('400', err)
-          throw err;
-        }) // Handle 400 errors
-        .unauthorized((err) => {
-          console.log('401', err)
-          throw err;
-        }) // Handle 401 errors
-        .notFound((err) => {
-  
-          generateError(`Something went wrong while trying to get your SOS Customers. Please contact your developer.`)
-          throw err;
-        }) // Handle 404 errors
-        .internalError((err) => {
-          console.log('500', err)
-          throw err;
-        }) // Handle 500 errors
-        .res((res) => res.json()); // Parse response as JSON
+
+      const customers = await window.getSosCustomers();
   
       const select = document.querySelector('#Admin-{{ name }}')
 
-      pageData.data.forEach((item) => {
+      customers.data.forEach((item) => {
         const option = document.createElement('option')
         option.value = `${item.id}_${item.name}`
         option.text = item.name

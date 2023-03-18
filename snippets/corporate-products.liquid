@@ -1,0 +1,230 @@
+{% render 'campaign-form__product-card' %}
+{% render 'campaign-form__product-card-functions' %}
+{% render 'campaign-form__product-modal' %}
+
+<div class="corporate-products-container">
+  {% comment %} Empty State {% endcomment %}
+  <div data-js-element="products-empty-state" class="corporate-campaigns-products hide">
+    <div class="divider background-color-azul-verdoso-100"></div>
+    <h4
+      data-js-element="campaign-title"
+      class="corporate-campaigns-products__title text-color-azul-verdoso-100 padding-top padding-small"
+    >
+      No Campaign Found
+    </h4>
+    <div class="corporate-campaigns-products__main margin-top margin-large">
+      <h5 data-js-element="main-gifts-title" class="heading-style-h3 margin-bottom margin-large">Main Gifts</h5>
+      <div data-js-element="main-gifts-grid" class="products-grid main margin-top margin-small">
+        <p class="heading-style-h4 text-color-grey-400">No Products Found</p>
+      </div>
+    </div>
+    <div class="corporate-campaigns-products__custom margin-top margin-large">
+      <h5 data-js-element="custom-gifts-title" class="heading-style-h3 margin-bottom margin-large">Custom Swag and Inserts</h5>
+      <div data-js-element="custom-gifts-grid" class="products-grid custom margin-top margin-small">
+        <p class="heading-style-h4 text-color-grey-400">No Products Found</p>
+      </div>
+    </div>
+  </div>
+  {% comment %} Campaigns {% endcomment %}
+  <div data-js-elements="active-campaigns" class="active-campaigns"></div>
+</div>
+
+<style>
+  .divider {
+    height: 1px;
+    width: 100%;
+  }
+
+  .products-grid {
+    {% comment %} make grid of 3 column with 1 rem gap {% endcomment %}
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1rem;
+  }
+</style>
+
+<script type="">
+  
+  
+  
+  window.customerCollections = [
+    {% for collection in collections %}
+      {% if collection.metafields.custom.customer_id != blank %}
+        {
+          "customer_id": {{ collection.metafields.custom.customer_id }},
+          "collection_id": {{ collection.id }}
+        },
+      {% endif %}
+    {% endfor %}
+    {
+      "customer_id": null,
+      "collection_id": 287050530975
+    }
+  ];
+
+  const emptyState = () => {
+    const elements = {
+      emptyState: document.querySelector('[data-js-element="products-empty-state"]'),
+    };
+
+    elements.emptyState.classList.remove('hide');
+  };
+
+  const getShopifyProducts = async () => {
+    const collections = window.customerCollections.filter(c => c.customer_id === null || +c.customer_id === +{{ sos_customer_id }});
+    const collectionIds = collections.map(c => c.collection_id);
+
+    const products = await window.getShopifyProducts(collectionIds);
+    return products
+  }
+
+  {% comment %} @TODO: Add Reorder that refills form to New Products {% endcomment %}
+  {% comment %} @TODO: Test with a Custom Swag + Inserts {% endcomment %}
+  {% comment %} @TODO: Test with mutliple campaigns {% endcomment %}
+  {% comment %} @TODO: Disable the gift selection from the modal {% endcomment %}
+  {% comment %} @TODO: Add inventory for each item {% endcomment %}
+
+  const generateCampaigns = async ({ campaigns, products }) => {
+    if (!campaigns.length) {
+      return emptyState();
+    }
+
+    const elements = {
+      activeCampaigns: document.querySelector('[data-js-elements="active-campaigns"]'),  
+    }
+
+    campaigns.map(campaign => {
+      const campaignDivContainer = document.createElement('div');
+      const items = campaign.items.data;
+
+      const itemsWithSku = items.filter(item => item.sku)
+
+      const campaignItems = itemsWithSku.map(item => {
+        return products.find(product => {
+          return product.variants.find(v => v.sku && v.sku.toLowerCase() === item.sku.toLowerCase())
+        });
+      })
+
+      console.log(campaignItems)
+
+      const gifts = {
+        main: campaignItems.filter(p => !p.tags.includes('custom')),
+        custom: campaignItems.filter(p => p.tags.includes('custom'))
+      }
+
+      const html = `
+        <div data-js-element="" class="corporate-campaigns-products">
+          <div class="divider background-color-azul-verdoso-100">
+          <h4 data-js-element="campaign-title" class="corporate-campaigns-products__title text-color-azul-verdoso-100 padding-top padding-small">
+            ${campaign.name || 'This campaign is unnamed'}
+          </h4>
+          ${gifts.main.length ? `
+            <div class="corporate-campaigns-products__main margin-top margin-large">
+              <h5 data-js-element="main-gifts-title" class="heading-style-h3 margin-bottom margin-large">Main Gifts</h5>
+              <div data-js-element="main-gifts-grid" class="products-grid main margin-top margin-small">
+                ${gifts.main.map(product => {
+                  {% comment %} const productCard =  {% endcomment %}
+                
+                  return window.cfProductCard({ 
+                    product, 
+                    options: { reOrder: true, hideButtons: true, inventory:  } 
+                  })
+                }).join('')}
+              </div>
+            </div>
+          ` : ''}
+          ${gifts.custom.length ? `
+            <div class="corporate-campaigns-products__custom margin-top margin-large">
+              <h5 data-js-element="custom-gifts-title" class="heading-style-h3 margin-bottom margin-large">Custom Swag and Inserts</h5>
+              <div data-js-element="custom-gifts-grid" class="products-grid custom margin-top margin-small">
+                <p class="heading-style-h4 text-color-grey-400">No Products Found</p>
+              </div>
+            </div>
+          ` : ''}
+        </div>
+      `
+
+      campaignDivContainer.innerHTML = html;
+
+      const productElements = [...campaignDivContainer.querySelectorAll(`.cf-product-card`)];
+
+      productElements.forEach((productElement) => {
+        const product = campaignItems.find(product => product.id === +productElement.dataset.productId)
+        const event = new CustomEvent('product-card-added', { detail: { productElement, data: { product } } });
+        document.dispatchEvent(event);
+      })
+
+      return elements.activeCampaigns.appendChild(campaignDivContainer);
+    })
+  }
+
+  window.addEventListener('load', async () => {
+    const sosCustomerData = window.localStorage.getItem('sos_customer_data');
+    const sosSalesOrder = window.sessionStorage.getItem('sos_sales_order');
+  
+    let customerData;
+    let salesOrder;
+  
+    if (sosCustomerData) {
+      customerData = JSON.parse(sosCustomerData);
+    } else {
+      const sosPayload = await window.getSosCustomers({{ sos_customer_id }});
+      customerData = sosPayload.data;
+  
+      window.localStorage.setItem('sos_customer_data', JSON.stringify(customerData));
+    }
+  
+    const fetchSalesOrder = async () => {
+      if (sosSalesOrder) {
+        return JSON.parse(sosSalesOrder);
+      } else {
+        return new Promise(async (resolve) => {
+
+          setTimeout(async () => {
+            const fetchedSalesOrder = await window.getSosSalesOrder(customerData.name);
+            window.sessionStorage.setItem('sos_sales_order', JSON.stringify(fetchedSalesOrder));
+            resolve(fetchedSalesOrder);
+          }, 1500);
+        });
+      }
+    };
+  
+    salesOrder = await fetchSalesOrder();
+
+    const fetchSosItems = async (itemIds) => {
+      const storageKey = `sos_items_${itemIds.join('_')}`;
+      const storedItems = window.sessionStorage.getItem(storageKey);
+    
+      if (storedItems) {
+        return JSON.parse(storedItems);
+      } else {
+        const fetchedItems = await window.getSosItems(itemIds);
+        window.sessionStorage.setItem(storageKey, JSON.stringify(fetchedItems));
+        return fetchedItems;
+      }
+    };
+  
+    const campaigns = salesOrder.data.map(async (so) => {
+      const itemIds = so.lines.map((line) => line.item.id);
+      const items = await fetchSosItems(itemIds);
+    
+      return {
+        name: so.customFields.find((cf) => cf.name === 'Campaign Name').value,
+        items,
+      };
+    });
+  
+    {% comment %} resolve all campaigns {% endcomment %}
+    const resolvedCampaigns = await Promise.all(campaigns);
+  
+    {% comment %} need to look through each salesOrder.lines[] and get the full items object using the ID {% endcomment %}
+  
+    const products = await getShopifyProducts();
+
+    await generateCampaigns({ campaigns: resolvedCampaigns, products });
+  });
+  
+
+
+
+</script>

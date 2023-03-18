@@ -109,11 +109,11 @@
   flex-direction: row;
 }
 
-.dialog-modal .width-control .field-wrapper > * {
+.width-control .field-wrapper > * {
   width: 100%;
 }
 
-.dialog-modal .width-control .half-width {
+.width-control .half-width {
   width: calc(50% - 0.75rem);
 }
 

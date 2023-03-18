@@ -1,0 +1,61 @@
+{% assign box_icon_url = 'https://cdn.shopify.com/s/files/1/0264/5000/2013/files/box_1fb86ca2-9eb3-408d-99b4-2b6443b5e109.svg?v=1678731115' %}
+{% assign gift_icon_url = 'https://cdn.shopify.com/s/files/1/0264/5000/2013/files/ph_gift.svg?v=1678731063' %}
+{% assign star_icon_url = 'https://cdn.shopify.com/s/files/1/0264/5000/2013/files/ic_round-star-border.svg?v=1678731035' %}
+{% assign order_history_icon_url = 'https://cdn.shopify.com/s/files/1/0264/5000/2013/files/order-history.svg?v=1678731208' %}
+
+<div class="padding-left padding-large tablet-padding-0">
+  {% unless is_super_admin %}
+    <p class="text-size-medium margin-bottom margin-medium">Hi {{ customer.name }}, welcome to your account!</p>
+  {% endunless %}
+
+  <h1 class="margin-bottom margin-medium line-height-1-3">Dashboard</h1>
+
+  <div class="cards-container gap-1">
+    {% render 'account-card',
+      title: 'My Products',
+      body: 'Secondary copy goes here to explain this card',
+      icon: box_icon_url,
+      link: 'my-products'
+    %}
+    {% render 'account-card',
+      title: 'Order History',
+      body: 'Secondary copy goes here to explain this card',
+      icon: order_history_icon_url,
+      link: 'my-orders'
+    %}
+    {% render 'account-card',
+      title: 'Order new products',
+      body: 'Secondary copy goes here to explain this card',
+      icon: star_icon_url,
+      link: 'new-products'
+    %}
+    {% render 'account-card',
+      title: 'Send a Gift',
+      body: 'Secondary copy goes here to explain this card',
+      icon: gift_icon_url,
+      link: 'send-gift'
+    %}
+  </div>
+</div>
+
+<style>
+  .cards-container {
+    {% comment %} make grid of 4 columns {% endcomment %}
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  {% comment %} max-width 1300 make grid of 2 columns {% endcomment %}
+  @media screen and (max-width: 1300px) {
+    .cards-container {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  {% comment %} max-width 800 make grid of 1 column {% endcomment %}
+  @media screen and (max-width: 800px) {
+    .cards-container {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+</style>
