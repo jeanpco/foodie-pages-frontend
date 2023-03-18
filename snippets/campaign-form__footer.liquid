@@ -35,7 +35,9 @@
     <!-- Modal Content -->
     <div class="product-modal_content">
       <h2 class="margin-bottom margin-small">Thank you! We've received your response.</h2>
-      <p data-js-element="shippingDetails" class="shipping-details margin-bottom margin-large">Expected delivery in 2 weeks</p>
+      <p data-js-element="shippingDetails" class="shipping-details margin-bottom margin-large">
+        Expected delivery in 2 weeks
+      </p>
       <div data-js-element="thank-you-modal-products" class="display-flex gap-1">
         <div class="modal-loading pos-dead-center">
           <div class="modal-loading-container text-align-center">
@@ -107,10 +109,10 @@
     transform: translateY(50px);
     pointer-events: none;
   }
-
 </style>
 
 <script type="module">
+  
   import wretch from 'https://cdn.skypack.dev/wretch/dist/bundle/wretch.all.min.mjs'
 
   const ifAtleastOneMainGiftIsSelected = (state) => {
@@ -192,7 +194,7 @@
   }
   
   window.campaignForm.buildFooter = (props) => {
-    const { formStructure, formButtonText, products, shippingDetails } = props;
+    const { formStructure, formButtonText, products, shippingDetails, endDate } = props;
 
     const elements = {
       cfFormEl: document.querySelector('[data-js-element="cf-form"]'),
@@ -233,6 +235,16 @@
         `;
       })
       .join('');
+
+    const today = new Date();
+    const endDateFormatted = new Date(endDate);
+    today.setHours(0, 0, 0, 0);
+    endDateFormatted.setHours(0, 0, 0, 0);
+    
+    if (endDateFormatted <= today) {
+      elements.submitFormButtonEl.innerText = `Gift Selection ended on ${endDate}`;
+      elements.submitFormButtonEl.setAttribute('disabled', true);
+    }
 
     elements.cfFormEl.addEventListener('submit', async (e) => {
       {% comment %} add loading state to button {% endcomment %}
@@ -282,8 +294,6 @@
         {% comment %} remove loading state to button {% endcomment %}
         elements.submitFormButtonEl.innerText = 'Success!';
       }
-
-
     });
 
     document.addEventListener('gift-state-changed', (e) => {
@@ -333,8 +343,13 @@
         stickyCustomGiftsEl.innerText = ''
       }
 
-      ifAtleastOneMainGiftIsSelected(mainGiftsState)
+      if (endDateFormatted > today) {
+        ifAtleastOneMainGiftIsSelected(mainGiftsState)
+      } else {
+        return;
+      }
     })
   };
+
 
 </script>

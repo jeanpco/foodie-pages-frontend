@@ -89,6 +89,7 @@
       {% comment %} footer {% endcomment %}
       formStructure: JSON.parse(removeSpacesAndBackslashes(rawData['Form Structure'])),
       formButtonText: rawData['Form Button Text'],
+      endDate: rawData['End Date'],
     }
 
     window.campaignForm.buildHeader && window.campaignForm.buildHeader({
@@ -107,6 +108,7 @@
       formButtonText: data.formButtonText,
       products: pageData.data.shopifyProducts,
       shippingDetails: data.shippingDetails,
+      endDate: data.endDate,
     })
 
     window.campaignForm.initLoading(false)

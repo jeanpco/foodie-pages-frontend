@@ -8,9 +8,9 @@
 
   {% comment %} !NOTE: init functions on window.createCampaignFns = {} {% endcomment %}
   
-  const backendURL = 'http://localhost:8080'
+  {% comment %} const backendURL = 'http://localhost:8080' {% endcomment %}
   {% comment %} const backendURL = 'https://foodiepagesbackend.onrender.com' {% endcomment %}
-  {% comment %} const backendURL = 'https://foodiepages.herokuapp.com' {% endcomment %}
+  const backendURL = 'https://foodiepages.herokuapp.com'
 
   window.createCampaignFns.getExistingCampaign = (props) => {
     {% comment %} http://127.0.0.1:9292/account?campaign=update&client=371&campaign-name=christmas-campaign {% endcomment %}
