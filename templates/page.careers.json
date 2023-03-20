@@ -3,7 +3,7 @@
     "main": {
       "type": "module-hero",
       "settings": {
-        "overline": "About us",
+        "overline": "Careers",
         "title": "<p>Hi, we’re foodiepages<\/p>",
         "heading_style": "h2",
         "body": "Since day one, our goal has been to help people discover and connect with awesome, under-the radar brands. A few sleepless nights, 10 years, and a growing team later, we’re still at it. We look forward to being your destination for gifts with intention.",
@@ -74,40 +74,6 @@
         "cta_link": ""
       }
     },
-    "a9b4c335-2262-4070-a3a8-a782d4902a31": {
-      "type": "module-testimonials",
-      "blocks": {
-        "92360469-32ab-4260-b955-ea73239b30a3": {
-          "type": "testimonial",
-          "settings": {
-            "text": "Foodiepages has been a trusted partner of Dynacare for several years, providing quality, trusted and reliable services for important gifts for staff, clients, and executives."
-          }
-        },
-        "0ab8a709-ddff-4df1-81b7-43554f55317f": {
-          "type": "testimonial",
-          "settings": {
-            "text": "Foodiepages has been a trusted partner of Dynacare for several years, providing quality, trusted and reliable services for important gifts for staff, clients, and executives."
-          }
-        },
-        "1a0b1840-4cfd-4a2d-8dbc-a6a43b52094e": {
-          "type": "testimonial",
-          "settings": {
-            "text": "Foodiepages has been a trusted partner of Dynacare for several years, providing quality, trusted and reliable services for important gifts for staff, clients, and executives."
-          }
-        }
-      },
-      "block_order": [
-        "92360469-32ab-4260-b955-ea73239b30a3",
-        "0ab8a709-ddff-4df1-81b7-43554f55317f",
-        "1a0b1840-4cfd-4a2d-8dbc-a6a43b52094e"
-      ],
-      "settings": {
-        "overline": "Good Words",
-        "title": "<p>Testimonials<\/p>",
-        "cta_text": "Shop now",
-        "cta_link": ""
-      }
-    },
     "e41c01d2-a096-4fea-afcf-4443c3dfd019": {
       "type": "module-vertical-tabs",
       "blocks": {
@@ -142,12 +108,46 @@
         "secondary_cta_text": "Get in touch",
         "secondary_cta_link": ""
       }
+    },
+    "a9b4c335-2262-4070-a3a8-a782d4902a31": {
+      "type": "module-testimonials",
+      "blocks": {
+        "92360469-32ab-4260-b955-ea73239b30a3": {
+          "type": "testimonial",
+          "settings": {
+            "text": "Foodiepages has been a trusted partner of Dynacare for several years, providing quality, trusted and reliable services for important gifts for staff, clients, and executives."
+          }
+        },
+        "0ab8a709-ddff-4df1-81b7-43554f55317f": {
+          "type": "testimonial",
+          "settings": {
+            "text": "Foodiepages has been a trusted partner of Dynacare for several years, providing quality, trusted and reliable services for important gifts for staff, clients, and executives."
+          }
+        },
+        "1a0b1840-4cfd-4a2d-8dbc-a6a43b52094e": {
+          "type": "testimonial",
+          "settings": {
+            "text": "Foodiepages has been a trusted partner of Dynacare for several years, providing quality, trusted and reliable services for important gifts for staff, clients, and executives."
+          }
+        }
+      },
+      "block_order": [
+        "92360469-32ab-4260-b955-ea73239b30a3",
+        "0ab8a709-ddff-4df1-81b7-43554f55317f",
+        "1a0b1840-4cfd-4a2d-8dbc-a6a43b52094e"
+      ],
+      "settings": {
+        "overline": "Good Words",
+        "title": "<p>Testimonials<\/p>",
+        "cta_text": "Shop now",
+        "cta_link": ""
+      }
     }
   },
   "order": [
     "main",
     "b5797203-b142-444b-be2c-d6e9d37312fe",
-    "a9b4c335-2262-4070-a3a8-a782d4902a31",
-    "e41c01d2-a096-4fea-afcf-4443c3dfd019"
+    "e41c01d2-a096-4fea-afcf-4443c3dfd019",
+    "a9b4c335-2262-4070-a3a8-a782d4902a31"
   ]
 }
