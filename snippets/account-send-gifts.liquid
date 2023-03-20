@@ -1,13 +1,15 @@
 <div class="padding-left padding-large tablet-padding-0">
-  {% unless is_super_admin %}
-    <p class="text-size-medium margin-bottom margin-medium">Hi {{ customer.name }}, welcome to your account!</p>
-  {% endunless %}
+  <h1 class="margin-bottom margin-small line-height-1-3">Send a gift</h1>
+  <p class="text-size-medium margin-bottom margin-small">
+    Select a box to ship now.
+  </p>
 
-  <h1 class="margin-bottom margin-medium line-height-1-3">Send a gift</h1>
-
-  <div class="gift-container gap-1">
-    
-  </div>
+  {% render 'corporate-products',
+    sos_customer_id: sos_customer_id,
+    is_super_admin: is_super_admin,
+    is_corporate_client: is_corporate_client
+    campaign_container: 'send-gifts'
+  %}
 </div>
 
 <style>

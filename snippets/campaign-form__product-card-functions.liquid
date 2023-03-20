@@ -93,6 +93,10 @@
 
     {% comment %} Remove Selection {% endcomment %}
     productElement.addEventListener('click', (e) => {
+      const reorderLink = productElement.querySelector('[data-js-element="reorder"]');
+
+      {% comment %} if e.target is reorder link, do nothing {% endcomment %}
+      if (reorderLink && e.target === reorderLink) return;
 
       {% comment %} if e.target is not quick add or details {% endcomment %}
       if (e.target === quickAddButton || e.target === detailsButton) return;
@@ -113,7 +117,10 @@
         window.cfProductModal({
           productElement,
           data: { ...productData, metafields}, 
-          isOpen: true
+          isOpen: true,
+          options: {
+            preventPurchase: reorderLink ? true : false,
+          }
         });
       }
     })

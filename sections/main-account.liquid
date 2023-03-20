@@ -22,7 +22,6 @@
 
     <div class="main-content padding-vertical padding-xlarge background-color-white">
       {% unless is_super_admin %}
-        
         {% unless is_corporate_client %}
           <div class="alert-container margin-left margin-large tablet-margin-0">
             {% render 'alert-banner', title: section.settings.alert_text %}
@@ -48,6 +47,13 @@
             is_corporate_client: is_corporate_client
           %}
         </div>
+
+        {% comment %} ! ADD FILE TO ENABLE FUNCTIONS FOR CORPORATE PRODUCTS {% endcomment %}
+        {% render 'corporate-products-functions',
+          sos_customer_id: sos_customer_id,
+          is_super_admin: is_super_admin,
+          is_corporate_client: is_corporate_client
+        %}
 
         {% comment %} !NEW PRODUCTS {% endcomment %}
 
@@ -80,9 +86,11 @@
         </div>
       {% endunless %}
 
-      {% if is_super_admin %}          
-
-        <h1 class="margin-bottom margin-medium line-height-1-3 padding-left padding-large tablet-padding-0" data-js-element="dashboard-title">
+      {% if is_super_admin %}
+        <h1
+          class="margin-bottom margin-medium line-height-1-3 padding-left padding-large tablet-padding-0"
+          data-js-element="dashboard-title"
+        >
           {{ 'customer.orders.super_admin_title' | t }}
         </h1>
 

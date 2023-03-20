@@ -5,6 +5,7 @@
   window.cfProductCard = (props = {}) => {
     const product = props.product || {};
     const options = props.options || {};
+    const inventory = options ? options.inventory : null;
     const numberOfVariant = product.variants && product.variants.length || 1;
     const isDonation = product.tags && product.tags.includes('donation');
 
@@ -47,11 +48,14 @@
             </div>  
           ` : ''}
         </div>
-        <h4 data-js-element="cf-product-card_title font-weight-semibold" class="cf-product-card_title heading-style-h6 ${options && options.reOrder ? '' : 'padding-horizontal padding-small'}">
+        <h4 data-js-element="cf-product-card_title" class="font-weight-semibold cf-product-card_title heading-style-h6 ${options && options.reOrder ? '' : 'padding-horizontal padding-small'}">
           ${product.title || 'Product Title Placeholder'}
         </h4>
+        ${inventory !== null && inventory !== undefined ? `
+          <p class="text-size-tiny text-color-grey-400 margin-vertical margin-xxsmall">Inventory: ${inventory} unit${inventory > 1 ? 's' : ''}</p>
+        ` : ''}
         ${options && options.reOrder ? `
-          <a data-js-element="reorder" class="link margin-top margin-xxsmall" href="#">
+          <a data-js-element="reorder" class="link margin-top margin-xxsmall" href="#new-products">
             Reorder
           </a>
         ` : ''}

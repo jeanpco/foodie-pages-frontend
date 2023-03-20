@@ -1,0 +1,123 @@
+<script type="module">
+  
+  window.customerCollections = [
+    {% for collection in collections %}
+      {% if collection.metafields.custom.customer_id != blank %}
+        {
+          "customer_id": {{ collection.metafields.custom.customer_id }},
+          "collection_id": {{ collection.id }}
+        },
+      {% endif %}
+    {% endfor %}
+    {
+      "customer_id": null,
+      "collection_id": 287050530975
+    }
+  ];
+
+  const getShopifyProducts = async () => {
+    const collections = window.customerCollections.filter(c => c.customer_id === null || +c.customer_id === +{{ sos_customer_id }});
+    const collectionIds = collections.map(c => c.collection_id);
+
+    const products = await window.getShopifyProducts(collectionIds);
+    return products
+  }
+
+  const reorderProducts = () => {
+    const allReorderLinks = [...document.querySelectorAll('[data-js-element="reorder"]')];
+
+    if (!allReorderLinks.length) return;
+
+    allReorderLinks.forEach(link => link.addEventListener('click', () => {
+
+      const productElement = link.closest('.cf-product-card');
+      const productName = productElement.querySelector('[data-js-element="cf-product-card_title"]').innerText;
+      const productId = productElement.dataset.productId;
+
+      const productInput = document.querySelector(`[name="contact[product]"]`);
+
+      productInput.value = `${productName} - ID: ${productId}`;
+
+      window.toggleNewProductsLink();
+    }))
+  }
+
+  window.addEventListener('load', async () => {
+    const sosCustomerData = window.localStorage.getItem('sos_customer_data');
+    const sosSalesOrder = window.sessionStorage.getItem('sos_sales_order');
+
+    const fetchCustomer = async () => {
+      if (sosCustomerData) {
+        return JSON.parse(sosCustomerData);
+      } else {
+        return new Promise(async (resolve) => {
+          setTimeout(async () => {
+            const fetchedCustomer = await window.getSosCustomers({{ sos_customer_id }});
+            window.localStorage.setItem('sos_customer_data', JSON.stringify(fetchedCustomer));
+            resolve(fetchedCustomer);
+          }, 1000);
+        });
+      } 
+    }
+  
+    const fetchSalesOrder = async (customer) => {
+      if (sosSalesOrder) {
+        return JSON.parse(sosSalesOrder);
+      } else {
+        return new Promise(async (resolve) => {
+          setTimeout(async () => {
+            const fetchedSalesOrder = await window.getSosSalesOrder(customer.name);
+            window.sessionStorage.setItem('sos_sales_order', JSON.stringify(fetchedSalesOrder));
+            resolve(fetchedSalesOrder);
+          }, 1000);
+        });
+      }
+    };
+  
+    const customerData = await fetchCustomer();
+    const salesOrder = await fetchSalesOrder(customerData.data);
+
+    const fetchSosItems = async (itemIds) => {
+      const storageKey = `sos_items_${itemIds.join('_')}`;
+      const storedItems = window.sessionStorage.getItem(storageKey);
+    
+      if (storedItems) {
+        return JSON.parse(storedItems);
+      } else {
+        const fetchedItems = await window.getSosItems(itemIds);
+        window.sessionStorage.setItem(storageKey, JSON.stringify(fetchedItems));
+        return fetchedItems;
+      }
+    };
+  
+    const campaigns = salesOrder.data.map(async (so) => {
+      const itemIds = so.lines.map((line) => line.item.id);
+      const items = await fetchSosItems(itemIds);
+      const campaignNameObject = so.customFields.find((cf) => cf.name === 'Campaign Name');
+    
+      return {
+        name: campaignNameObject ? campaignNameObject.value : null,
+        items,
+      };
+    });
+  
+    {% comment %} resolve all campaigns {% endcomment %}
+    const resolvedCampaigns = await Promise.all(campaigns);
+  
+    {% comment %} need to look through each salesOrder.lines[] and get the full items object using the ID {% endcomment %}
+  
+    const products = await getShopifyProducts();
+
+    {% comment %} get all elements with data-js-container {% endcomment %}
+    const containers = [...document.querySelectorAll('[data-js-container]')];
+  
+    {% comment %} loop through each container {% endcomment %}
+    
+    containers.forEach(async (container) => {
+      await window.productsGenerateCampaigns({ campaigns: resolvedCampaigns, products, container });
+    })
+
+    reorderProducts();
+  });
+  
+</script>

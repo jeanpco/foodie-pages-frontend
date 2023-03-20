@@ -19,13 +19,17 @@
 
 <script type="module">
   
+  
+  
   window.modalSelectedVariant = null;
   window.closeModal = modal => modal.style.display = 'none'
   window.openModal = modal => modal.style.display = 'block'
   
   window.cfProductModal = (props) => {
-    const {data, isOpen, productElement} = props
+    const {data, isOpen, productElement, options} = props
+    
     {% comment %} extract data {% endcomment %}
+    const preventPurchase = options && options.preventPurchase || false;
     const numberOfVariant = data.variants.length;
     const isCustomSwag = data.tags.includes('custom');
 
@@ -52,7 +56,7 @@
       if (event.key === "Escape") window.closeModal(elements.modal)
     });
 
-    window.cfProductModal.build(data);
+    window.cfProductModal.build({ ...data, preventPurchase});
     window.cfProductModal.buildSwiper()
     window.cfProductModal.buildAccordion()
     window.cfProductModal.buildATC({ 
@@ -64,6 +68,7 @@
       numberOfVariant,
       isCustomSwag,
     })
+
     window.cfProductModalVariantSelector({ variants: data.variants })
   };
 
@@ -89,6 +94,7 @@
       variants,
       vendor,
       metafields,
+      preventPurchase,
     } = props
 
     const isDonation = tags.includes('donation');
@@ -187,9 +193,11 @@
           </div>` : ''}
 
           {% comment %} Add to cart {% endcomment %}
-          <button type="submit" class="button secondary modal-content_atc margin-vertical margin-medium">
-            <span>Select this gift</span>
-          </button>
+          ${!preventPurchase ? `
+            <button type="submit" class="button secondary modal-content_atc margin-vertical margin-medium">
+              <span>Select this gift</span>
+            </button>` : ''
+          }
 
           {% comment %} Description {% endcomment %}
           <div class="modal-accordion">
@@ -244,7 +252,7 @@
   }
 
   window.cfProductModal.buildATC = (props) => {
-    const {id, variants, title, element, numberOfVariant, isCustomSwag, tags} = props
+    const {id, variants, title, element, numberOfVariant, isCustomSwag, tags, preventPurchase } = props
     const isDonation = tags.includes('donation')
 
     const elements = {
@@ -331,5 +339,7 @@
     selectVariant()
     variantOptions.forEach((option) => option.addEventListener('change', selectVariant))
   }
+
+
 
 </script>

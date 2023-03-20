@@ -250,9 +250,9 @@
       {% comment %} add loading state to button {% endcomment %}
       elements.submitFormButtonEl.innerText = 'Submitting...';
 
-      {% comment %} const backendURL = 'http://localhost:8080' {% endcomment %}
+      const backendURL = 'http://localhost:8080'
       {% comment %} const backendURL = 'https://foodiepagesbackend.onrender.com' {% endcomment %}
-      const backendURL = 'https://foodiepages.herokuapp.com'
+      {% comment %} const backendURL = 'https://foodiepages.herokuapp.com' {% endcomment %}
 
       const urlParams = new URLSearchParams(window.location.search);
       const campaignNameParam = urlParams.get('campaign');

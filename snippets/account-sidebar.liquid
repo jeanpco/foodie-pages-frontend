@@ -44,27 +44,35 @@
               >Order History</a
             >
           </li>
-          <li data-js-element="send-gifts-link" class="aside-navigation_item margin-bottom margin-small">
+          <li data-js-element="send-gifts-link" class="aside-navigation_item margin-bottom margin-xxlarge">
             <a
               class="heading-style-h5 aside-navigation_link text-weight-semibold {% if request.path == '/account?send-gifts' %}is-active text-color-primary{% else %}text-color-grey-300{% endif %}"
               href="#send-gifts"
               >Send Gifts</a
             >
           </li>
+
+          <p class="text-size-small text-color-grey-700 margin-xsmall margin-bottom">Need something new?</p>
+
           {% comment %} use data-js-element="new-products-link" {% endcomment %}
-          <li data-js-element="new-products-link" class="aside-navigation_item margin-bottom margin-small">
+          <li data-js-element="new-products-link" class="aside-navigation_item margin-bottom margin-xsmall">
             <a
-              class="heading-style-h5 aside-navigation_link text-weight-semibold {% if request.path == '/account?new-products' %}is-active text-color-primary{% else %}text-color-grey-300{% endif %}"
+              style="display: inline-block;"
+              class="button aside-navigation_link"
               href="#new-products"
-              >New Products</a
             >
+              <span>Order New Products</span>
+            </a>
           </li>
           {% comment %} use data-js-element="my-products-link" {% endcomment %}
-          <li data-js-element="my-products-link" class="aside-navigation_item margin-bottom margin-small">
+          <li data-js-element="my-products-link" class="aside-navigation_item">
             <a
-              class="heading-style-h5 aside-navigation_link text-weight-semibold {% if request.path == '/account?my-products' %}is-active text-color-primary{% else %}text-color-grey-300{% endif %}"
+              style="display: inline-block;"
+              class="button secondary aside-navigation_link"
               href="#my-products"
-              >My Products</a
+              >
+                <span>My Products</span>
+            </a
             >
           </li>
         {% endif %}
@@ -144,24 +152,42 @@
             case 'send-gift':
               allHide();
               toggleActiveClass(elements.navItems.sendGifts);
+              toggleActiveLink(elements.navLinks.sendGifts);
               break;
             case 'new-products':
               allHide();
               toggleActiveClass(elements.navItems.newProducts);
+              toggleActiveLink(elements.navLinks.newProducts);
               break;
             case 'my-orders':
               allHide();
               toggleActiveClass(elements.navItems.orderHistoryContainer);
+              toggleActiveLink(elements.navLinks.orderHistory);
               break;
             case 'my-products':
               allHide();
               toggleActiveClass(elements.navItems.myProducts);
+              toggleActiveLink(elements.navLinks.myProducts);
               break;
             default:
               break;
           }
         });
       });
+    };
+
+    {% comment %} create function to add / remove active link classes {% endcomment %}
+    const toggleActiveLink = (element) => {
+      const activeLink = element.querySelector('a');
+      const sidebarLinks = [...document.querySelectorAll('.aside-navigation_link')];
+
+      sidebarLinks.forEach((link) => {
+        link.classList.remove("is-active", "text-color-primary");
+        link.classList.add("text-color-grey-300");
+      });
+
+      activeLink.classList.remove("text-color-grey-300");
+      activeLink.classList.add("is-active", "text-color-primary");
     };
 
     const toggleActiveClass = (element) => {
@@ -205,28 +231,33 @@
       elements.navItems.myProducts.classList.add('is-hidden');
     };
 
-    const toggleNewProductsLink = () => {
+    window.toggleNewProductsLink = () => {
       toggleActiveClass(elements.navLinks.newProducts);
+      toggleActiveLink(elements.navLinks.newProducts);
       toggleNewProducts();
     };
 
-    const toggleSendGiftsLink = () => {
+    window.toggleSendGiftsLink = () => {
       toggleActiveClass(elements.navLinks.sendGifts);
+      toggleActiveLink(elements.navLinks.sendGifts);
       toggleSendGifts();
     };
 
-    const toggleMyProductsLink = () => {
+    window.toggleMyProductsLink = () => {
       toggleActiveClass(elements.navLinks.myProducts);
+      toggleActiveLink(elements.navLinks.myProducts);
       toggleMyProducts();
     };
 
-    const toggleOrderHistoryLink = () => {
+    window.toggleOrderHistoryLink = () => {
       toggleActiveClass(elements.navLinks.orderHistory);
+      toggleActiveLink(elements.navLinks.orderHistory);
       toggleOrderHistory();
     };
 
-    const toggleDashboardLink = () => {
+    window.toggleDashboardLink = () => {
       toggleActiveClass(elements.navLinks.dashboard);
+      toggleActiveLink(elements.navLinks.dashboard);
       toggleDashboard();
     };
 
@@ -238,23 +269,23 @@
       const myProductsLink = document.querySelector('[data-js-element="my-products-link"]');
 
       if (orderHistoryLink) {
-        orderHistoryLink.addEventListener('click', toggleOrderHistoryLink);
+        orderHistoryLink.addEventListener('click', window.toggleOrderHistoryLink);
       }
 
       if (dashboardLink) {
-        dashboardLink.addEventListener('click', toggleDashboardLink);
+        dashboardLink.addEventListener('click', window.toggleDashboardLink);
       }
 
       if (sendGiftsLink) {
-        sendGiftsLink.addEventListener('click', toggleSendGiftsLink);
+        sendGiftsLink.addEventListener('click', window.toggleSendGiftsLink);
       }
 
       if (newProductsLink) {
-        newProductsLink.addEventListener('click', toggleNewProductsLink);
+        newProductsLink.addEventListener('click', window.toggleNewProductsLink);
       }
 
       if (myProductsLink) {
-        myProductsLink.addEventListener('click', toggleMyProductsLink);
+        myProductsLink.addEventListener('click', window.toggleMyProductsLink);
       }
 
       toggleActiveView();
