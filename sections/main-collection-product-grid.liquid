@@ -17,6 +17,8 @@
       filter_type: 'horizontal' 
     %}
 
+    {{ collection.products | size }}
+
     <div class="product-grid-container" id="ProductGridContainer">
       {%- paginate collection.products by section.settings.products_per_page -%}
 
@@ -38,8 +40,9 @@
             <ul id="product-grid" data-id="{{ section.id }}" class="product-grid">
               {%- for product in collection.products -%}
 
+
                 {% comment %} if product has a tag that starts with "_" skip the product {% endcomment %}
-                {% if product.metafields.custom.hide_from_search and collection.metafields.custom.customer_id == blank %}
+                {% if product.metafields.custom.hide_from_search == true and collection.metafields.custom.customer_id == blank %}
                   {% continue %}
                 {% else %}
                   {% assign lazy_load = false %}
