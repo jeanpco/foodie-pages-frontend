@@ -107,11 +107,25 @@
         "cta_text": "Shop now",
         "cta_link": ""
       }
+    },
+    "e41c01d2-a096-4fea-afcf-4443c3dfd019": {
+      "type": "module-vertical-tabs",
+      "settings": {
+        "overline": "apply today",
+        "title": "<p>Open Positions<\/p>",
+        "heading_style": "h2",
+        "cta_text": "Get in touch",
+        "cta_link": "",
+        "body": "Couldn’t find what you were looking for? write to us at",
+        "secondary_cta_text": "Get in touch",
+        "secondary_cta_link": ""
+      }
     }
   },
   "order": [
     "main",
     "b5797203-b142-444b-be2c-d6e9d37312fe",
-    "a9b4c335-2262-4070-a3a8-a782d4902a31"
+    "a9b4c335-2262-4070-a3a8-a782d4902a31",
+    "e41c01d2-a096-4fea-afcf-4443c3dfd019"
   ]
 }
