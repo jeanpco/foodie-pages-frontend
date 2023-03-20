@@ -110,6 +110,28 @@
     },
     "e41c01d2-a096-4fea-afcf-4443c3dfd019": {
       "type": "module-vertical-tabs",
+      "blocks": {
+        "a659630c-07df-4a2c-91f3-0d4b2a5dc1ab": {
+          "type": "tab",
+          "settings": {
+            "overline": "FULL TIME",
+            "title": "Placeholder job",
+            "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ut lorem qui lectus molestie malesuada vitae vel purus."
+          }
+        },
+        "82e393a4-759c-4669-9b6a-1c2e87062abc": {
+          "type": "tab",
+          "settings": {
+            "overline": "FULL TIME",
+            "title": "Placeholder job",
+            "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ut lorem qui lectus molestie malesuada vitae vel purus."
+          }
+        }
+      },
+      "block_order": [
+        "a659630c-07df-4a2c-91f3-0d4b2a5dc1ab",
+        "82e393a4-759c-4669-9b6a-1c2e87062abc"
+      ],
       "settings": {
         "overline": "get in touch",
         "title": "<p>Open Positions<\/p>",
