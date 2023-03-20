@@ -67,7 +67,7 @@
       ],
       "settings": {
         "overline": "Our values are everything",
-        "title": "<p>A few things we've always believed to be important<\/p>",
+        "title": "<p>A few things we've &lt;\/br&gt; always believed to be important<\/p>",
         "heading_style": "h2",
         "body": "",
         "cta_text": "",
