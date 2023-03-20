@@ -22,7 +22,7 @@
           "type": "features",
           "settings": {
             "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/placeholder-svg-square.svg?v=1666645913",
-            "title": "Storytelling",
+            "title": "Value 1",
             "body": "Behind every great gift is a great story. We believe in creating thoughtful gifts that tell a story and deepen relationships.",
             "cta_text": "",
             "cta_link": ""
@@ -32,7 +32,7 @@
           "type": "features",
           "settings": {
             "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/placeholder-svg-square.svg?v=1666645913",
-            "title": "Connection",
+            "title": "Value 2",
             "body": "Connection is a crucial part of the human experience. We create lasting connections through shared stories, values, and, most importantly, thoughtful and personalized gifts.",
             "cta_text": "",
             "cta_link": ""
@@ -42,7 +42,7 @@
           "type": "features",
           "settings": {
             "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/placeholder-svg-square.svg?v=1666645913",
-            "title": "Love It, or Leave It",
+            "title": "Value 3",
             "body": "Every product has been tested and tasted – and then some. If it doesn't make the cut, it doesn't make it on our site.",
             "cta_text": "",
             "cta_link": ""
@@ -52,7 +52,7 @@
           "type": "features",
           "settings": {
             "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/placeholder-svg-square.svg?v=1666645913",
-            "title": "Never Settle",
+            "title": "Value 4",
             "body": "You expect a lot from us, and that's not taken for granted. We're always hustling to earn your business, and we work extra hard for that moment of wow.",
             "cta_text": "",
             "cta_link": ""
@@ -67,16 +67,26 @@
       ],
       "settings": {
         "overline": "Our values are everything",
-        "title": "<p>What we believe in<\/p>",
+        "title": "<p>A few things we've always believed to be important<\/p>",
         "heading_style": "h2",
-        "body": "Here are a few things we've always believed to be important.",
+        "body": "",
         "cta_text": "",
-        "cta_link": "shopify:\/\/pages\/how-it-works"
+        "cta_link": ""
+      }
+    },
+    "a9b4c335-2262-4070-a3a8-a782d4902a31": {
+      "type": "module-testimonials",
+      "settings": {
+        "overline": "Quick Shop",
+        "title": "<p>Explore gifts by category<\/p>",
+        "cta_text": "Shop now",
+        "cta_link": ""
       }
     }
   },
   "order": [
     "main",
-    "b5797203-b142-444b-be2c-d6e9d37312fe"
+    "b5797203-b142-444b-be2c-d6e9d37312fe",
+    "a9b4c335-2262-4070-a3a8-a782d4902a31"
   ]
 }
