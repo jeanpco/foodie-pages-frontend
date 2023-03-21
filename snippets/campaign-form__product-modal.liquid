@@ -18,9 +18,6 @@
 </div>
 
 <script type="module">
-  
-  
-  
   window.modalSelectedVariant = null;
   window.closeModal = modal => modal.style.display = 'none'
   window.openModal = modal => modal.style.display = 'block'
@@ -40,12 +37,13 @@
       modalContent: document.querySelector('[data-js-element="product-modal-content"]'),
     }
 
-    {% comment %} Handle modal open {% endcomment %}
+    {% comment %} append element.modal to body {% endcomment %}
+    document.body.appendChild(elements.modal)
 
+    {% comment %} Handle modal open {% endcomment %}
     if (isOpen) window.openModal(elements.modal)
 
     {% comment %} Handle modal closure {% endcomment %}
-
     elements.close.addEventListener("click", () => window.closeModal(elements.modal));
 
     window.addEventListener("click", (event) => {

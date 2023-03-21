@@ -114,12 +114,16 @@
           window.cfProductCardRemove(customSwag, variants, 'Custom Swag', productElement);
         }
       } else {
+
+        const isSendGifts = e.target.closest('[data-js-container="send-gifts"]');
+        const isPreventPurchase = reorderLink && !isSendGifts ? true : false;
+
         window.cfProductModal({
           productElement,
           data: { ...productData, metafields}, 
           isOpen: true,
           options: {
-            preventPurchase: reorderLink ? true : false,
+            preventPurchase: isPreventPurchase,
           }
         });
       }

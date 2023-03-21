@@ -1,7 +1,3 @@
-{% render 'campaign-form__product-card' %}
-{% render 'campaign-form__product-card-functions' %}
-{% render 'campaign-form__product-modal' %}
-
 <div data-js-container="{{ campaign_container }}" class="corporate-products-container">
   {% comment %} Empty State {% endcomment %}
   <div data-js-element="products-empty-state" class="corporate-campaigns-products hide">
@@ -73,9 +69,7 @@
   {% comment %} @TODO: Test with mutliple campaigns {% endcomment %}
 
   window.productsGenerateCampaigns = async ({ campaigns, products, container }) => {
-    if (!campaigns.length) {
-      return emptyState(container);
-    }
+    if (!campaigns.length) return emptyState(container);
 
     const elements = {
       activeCampaigns: container.querySelector('[data-js-elements="active-campaigns"]'),  
@@ -84,30 +78,34 @@
     campaigns.map(campaign => {
       const campaignDivContainer = document.createElement('div');
       const items = campaign.items.data;
-
       const itemsWithSku = items.filter(item => item.sku)
 
       const campaignItems = itemsWithSku.map(item => {
+        const line = campaign.lines.find(line => line.item.id === item.id)
+        const product = products.find(product => product.variants.find(v => v.sku && v.sku.toLowerCase() === item.sku.toLowerCase()))
+
+        if (!product) return;
+
         return {
-          sosInventory: item.available > 0 ? item.available : 0,
-          ...products.find(product => {
-            return product.variants.find(v => v.sku && v.sku.toLowerCase() === item.sku.toLowerCase())
-          })
+          sosInventory: line.quantity > 0 ? line.quantity : 0,
+          ...product,
         };
       })
 
       const gifts = {
-        main: campaignItems.filter(p => !p.tags || !p.tags.includes('custom')),
-        custom: campaignItems.filter(p => p.tags && p.tags.includes('custom'))
+        main: campaignItems.filter(p => p).filter(p => !p.tags || !p.tags.includes('custom')),
+        custom: campaignItems.filter(p => p).filter(p => p.tags && p.tags.includes('custom'))
       }
 
-      const html = `
+      const hasGifts = gifts.main.length > 0 || gifts.custom.length > 0;
+
+      const html = hasGifts ? `
         <div data-js-element="" class="corporate-campaigns-products">
           <div class="divider background-color-azul-verdoso-100"></div>
           <h4 data-js-element="campaign-title" class="corporate-campaigns-products__title text-color-azul-verdoso-100 padding-top padding-small">
             ${campaign.name || 'This campaign is unnamed'}
           </h4>
-          ${gifts.main.length ? `
+          ${gifts.main.length > 0 ? `
             <div class="corporate-campaigns-products__main margin-top margin-large">
               <h5 data-js-element="main-gifts-title" class="heading-style-h3 margin-bottom margin-large">Main Gifts</h5>
               <div data-js-element="main-gifts-grid" class="products-grid main margin-top margin-small">
@@ -120,7 +118,7 @@
               </div>
             </div>
           ` : ''}
-          ${gifts.custom.length ? `
+          ${gifts.custom.length > 0 ? `
             <div class="corporate-campaigns-products__custom margin-top margin-large">
               <h5 data-js-element="custom-gifts-title" class="heading-style-h3 margin-bottom margin-large">Custom Swag and Inserts</h5>
               <div data-js-element="custom-gifts-grid" class="products-grid custom margin-top margin-small">
@@ -134,7 +132,7 @@
             </div>
           ` : ''}
         </div>
-      `
+      ` : '';
 
       campaignDivContainer.innerHTML = html;
 

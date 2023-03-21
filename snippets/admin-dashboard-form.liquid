@@ -5,37 +5,41 @@
   data-js-element="create-campaign-form"
   class="admin-dashboard_form padding-bottom padding-large display-flex flex-wrap justify-content-between gap-2 align-items-start"
 >
-  {% render 'admin-input', 
-    class: "js-campaign-input", 
-    name: 'Campaign Name', 
-    placeholder: "Enter your campaign name", 
-    type: 'text', 
-    label: 'Campaign Name*', 
-    required: true 
+  {%
+    render 'admin-input',
+    class: "js-campaign-input",
+    name: 'Campaign Name',
+    placeholder: "Enter your campaign name",
+    type: 'text',
+    label: 'Campaign Name*',
+    required: true
     airtable_type: 'singleLineText',
   %}
-  {% render 'admin-input-sos-customer-select', 
-    class: "js-campaign-select", 
-    name: 'Customer', 
-    placeholder: "", 
-    label: 'Select a corporate customer*', 
-    required: true 
+  {% render 'admin-input-sos-customer-select',
+    class: 'js-campaign-select',
+    name: 'Customer',
+    placeholder: '',
+    label: 'Select a corporate customer*',
+    required: true
   %}
-  {% render 'admin-input', 
-    class: "js-campaign-input", 
-    name: 'End Date', 
-    type: 'date', 
+  {%
+    render 'admin-input',
+    class: "js-campaign-input",
+    name: 'End Date',
+    type: 'date',
     label: 'When does your campaign end?',
     airtable_type: 'date',
   %}
-  {% render 'admin-input', 
-    class: "js-campaign-input", 
-    name: 'Number of selectable gifts', 
-    type: 'number', 
+  {%
+    render 'admin-input',
+    class: "js-campaign-input",
+    name: 'Number of selectable gifts',
+    type: 'number',
     label: 'Number of selectable gifts',
     airtable_type: 'number',
   %}
-  {% render 'admin-input',
+  {%
+    render 'admin-input',
     class: "js-campaign-input"
     name: 'Gift Message',
     type: 'textarea',
@@ -43,7 +47,8 @@
     placeholder: 'Enter the company message',
     airtable_type: 'singleLineText',
   %}
-  {% render 'admin-input',
+  {%
+    render 'admin-input',
     class: "js-campaign-input"
     name: 'Shipping Details',
     type: 'textarea',
@@ -51,10 +56,11 @@
     placeholder: 'Enter the shipping details',
     airtable_type: 'singleLineText',
   %}
-  {% render 'admin-input', 
-    class: "js-campaign-input-file", 
-    name: 'Company Logo', 
-    type: 'file', 
+  {%
+    render 'admin-input',
+    class: "js-campaign-input-file",
+    name: 'Company Logo',
+    type: 'file',
     label: 'Company Logo',
     airtable_type: 'multipleAttachments',
   %}
@@ -64,7 +70,8 @@
   <div class="admin-form-building padding-top padding-small w-full display-flex flex-wrap gap-2">
     <div class="admin-dashboard_form-header display-flex flex-direction-column gap-1-5">
       <h3>{{ 'customer.admin_dashboard.create_campaign.form_building_title' | t }}</h3>
-      {% render 'admin-input',
+      {%
+        render 'admin-input',
         class: 'w-full js-campaign-input',
         name: 'Form Button Text',
         type: 'text',
@@ -79,16 +86,26 @@
   </div>
 
   <div data-js-element="draggable" class="draggable-form-inputs w-full display-flex flex-direction-column gap-1">
-    {% render 'draggable-input', name: 'Recipient First Name', value: 'Recipient First Name', type: 'text' %}
-    {% render 'draggable-input', name: 'Recipient Last Name', value: 'Recipient Last Name', type: 'text' %}
-    {% render 'draggable-input', name: 'To Email', value: 'To Email', type: 'email' %}
-    {% render 'draggable-input', name: 'Recipient Phone', value: 'Recipient Phone', type: 'phone' %}
-    {% render 'draggable-input', name: 'Address Line 1', value: 'Address Line 1', type: 'text' %}
-    {% render 'draggable-input', name: 'Address Line 2', value: 'Address Line 2', type: 'text' %}
-    {% render 'draggable-input', name: 'City', value: 'City', type: 'text' %}
-    {% render 'draggable-input', name: 'Province Code', value: 'Province Code', type: 'text' %}
-    {% render 'draggable-input', name: 'Country Code', value: 'Country Code', type: 'text' %}
-    {% render 'draggable-input', name: 'Zip/Postal', value: 'Zip/Postal', type: 'text' %}
+    {% render 'draggable-input',
+      name: 'Recipient First Name',
+      value: 'Recipient First Name',
+      type: 'text',
+      required: true
+    %}
+    {% render 'draggable-input',
+      name: 'Recipient Last Name',
+      value: 'Recipient Last Name',
+      type: 'text',
+      required: true
+    %}
+    {% render 'draggable-input', name: 'To Email', value: 'To Email', type: 'email', required: true %}
+    {% render 'draggable-input', name: 'Recipient Phone', value: 'Recipient Phone', type: 'phone', required: false %}
+    {% render 'draggable-input', name: 'Address Line 1', value: 'Address Line 1', type: 'text', required: true %}
+    {% render 'draggable-input', name: 'Address Line 2', value: 'Address Line 2', type: 'text', required: false %}
+    {% render 'draggable-input', name: 'City', value: 'City', type: 'text', required: true %}
+    {% render 'draggable-input', name: 'Province Code', value: 'Province Code', type: 'text', required: true %}
+    {% render 'draggable-input', name: 'Country Code', value: 'Country Code', type: 'text', required: true %}
+    {% render 'draggable-input', name: 'Zip/Postal', value: 'Zip/Postal', type: 'text', required: true %}
   </div>
 
   <div role="button" class="button" data-js-element="add-fields">
@@ -97,6 +114,7 @@
 </form>
 
 <script type="module">
+  
   
   {% comment %} get data-js-element="draggable" {% endcomment %}
   const startDraggability = () => {
@@ -217,5 +235,6 @@
   }
 
   window.addEventListener('DOMContentLoaded', initForm)
+
 
 </script>

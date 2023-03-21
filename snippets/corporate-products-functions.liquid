@@ -1,3 +1,7 @@
+{% render 'campaign-form__product-card' %}
+{% render 'campaign-form__product-card-functions' %}
+{% render 'campaign-form__product-modal' %}
+
 <script type="module">
   
   window.customerCollections = [
@@ -98,6 +102,7 @@
       return {
         name: campaignNameObject ? campaignNameObject.value : null,
         items,
+        lines: so.lines,
       };
     });
   
