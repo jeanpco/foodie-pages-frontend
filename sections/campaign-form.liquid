@@ -16,6 +16,11 @@
   }
 </style>
 
+{% comment %} 
+  @TODO: Only show the publish product (active) when fetching product from Shopify
+  @TODO: Do you mean this: https://www.foodiepages.ca/pages/form?client=71&campaign=employee-appreciation-2023? Right now what I could do is to open it inside another tab after creation?
+{% endcomment %}
+
 {% render 'campaign-form__loading-icon' %}
 {% render 'campaign-form__header' %}
 {% render 'campaign-form__body' %}
@@ -40,9 +45,9 @@
 
     {% comment %} !NOTE: Backend URL need to be set back to the production URL once done with testing / local development. {% endcomment %}
 
-    {% comment %} const backendURL = 'http://localhost:8080' {% endcomment %}
-    {% comment %} const backendURL = 'https://foodiepagesbackend.onrender.com' {% endcomment %}
-    const backendURL = 'https://foodiepages.herokuapp.com'
+    const backendURL = 'http://localhost:8080'
+    {% comment %} 'https://foodiepages.herokuapp.com' {% endcomment %}
+    {% comment %} 'http://localhost:8080' {% endcomment %}
 
     // get all url params
     {% comment %} client=364&campaign=christmas-campaign {% endcomment %}

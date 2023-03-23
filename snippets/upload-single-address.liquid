@@ -1,8 +1,121 @@
-<div class="file-upload_container single display-flex justify-content-between padding-medium margin-bottom margin-medium align-items-center">
+<div
+  data-js-element="open-popup"
+  class="file-upload_container single display-flex justify-content-between padding-medium margin-bottom margin-medium align-items-center"
+>
   <p>Single person</p>
   <button class="button secondary"><span>Fill form</span></button>
 </div>
 
+<div id="single-address-popup" style="display: none">
+  <div class="popup-overlay" data-js-element="close-popup"></div>
+  <div class="popup-content">
+    <h1 class="popup-title">{{ section.settings.title }}</h1>
+    <p class="popup-body">{{ section.settings.body }}</p>
+    <a class="button" href="{{ section.settings.cta_link }}" class="popup-link">
+      <span>{{ section.settings.cta_text }}</span>
+    </a>
+    <button class="popup-close-button" data-js-element="close-popup">&times;</button>
+  </div>
+</div>
+
+<style>
+  #single-address-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: auto;
+  }
+
+  .popup-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+
+  .popup-content {
+    position: relative;
+    background-color: var(--color-secondary);
+    border-radius: 5px;
+    padding: 20px;
+    max-width: 600px;
+    text-align: center;
+  }
+
+  .popup-title {
+    margin-top: 0;
+  }
+
+  .popup-body {
+    margin-bottom: 20px;
+  }
+
+  .popup-link {
+    color: blue;
+    text-decoration: underline;
+  }
+
+  .popup-close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 1.5em;
+    color: gray;
+    cursor: pointer;
+  }
+</style>
+
 <script type="module">
+  const initSingleAddressPopup = () => {
+
+    const elements = {
+      open: document.querySelector('[data-js-element="open-popup"]'),
+      close: [...document.querySelectorAll('[data-js-element="close-popup"]')],
+    };
+    
+    const eventHandler = {
+      openPopup: () => {
+        document.querySelector('#single-address-popup').style.display = 'flex';
+      },
+      closePopup: () => {
+        document.querySelector('#single-address-popup').style.display = 'none';
+      },
+    };
+
+    elements.open.addEventListener('click', () => {
+      eventHandler.openPopup();
+    });
+
+    elements.close.forEach((element) => {
+      element.addEventListener('click', () => {
+        eventHandler.closePopup();
+      });
+    });
+
+    // Close popup on ESC press
+    document.addEventListener('keyup', function (e) {
+      if (e.keyCode === 27) {
+        eventHandler.closePopup();
+      }
+    });
+  };
+
+  // Close popup on click
+
+  // Open popup on click
+  openPopupButton.addEventListener('click', function () {
+    openPopup();
+  });
+
   
+
+  initSingleAddressPopup();
 </script>

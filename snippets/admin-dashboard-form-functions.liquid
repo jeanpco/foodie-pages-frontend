@@ -3,9 +3,10 @@
   import wretch from 'https://cdn.skypack.dev/wretch/dist/bundle/wretch.all.min.mjs'
   {% comment %} init functions {% endcomment %}
   window.createCampaignFns = {}
-  {% comment %} const backendURL = 'http://localhost:8080' {% endcomment %}
-  {% comment %} const backendURL = 'https://foodiepagesbackend.onrender.com' {% endcomment %}
-  const backendURL = 'https://foodiepages.herokuapp.com'
+  
+  const backendURL = 'http://localhost:8080'
+  {% comment %} 'https://foodiepages.herokuapp.com' {% endcomment %}
+  {% comment %} 'http://localhost:8080' {% endcomment %}
 
   window.createCampaignFns.getExistingCampaign = (props) => {
     {% comment %} http://127.0.0.1:9292/account?campaign=update&client=371&campaign-name=christmas-campaign {% endcomment %}

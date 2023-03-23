@@ -7,7 +7,7 @@
       
       {% assign prefix = tag | slice: 0 %}
 
-      {% unless prefix == '_' %}
+      {% unless prefix == '_' or tag == 'Custom_swag' or tag == 'custom_swag' %}
         <div class="product_tag background-color-sandia-18 text-color-sandia-100 padding-horizontal padding-small text-size-tiny">
           <div class="padding-vertical padding-xsmall text-style-capitalize"><span>{{ tag }}</span></div>
         </div>
