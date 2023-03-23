@@ -17,8 +17,6 @@
       filter_type: 'horizontal' 
     %}
 
-    {{ collection.products | size }}
-
     <div class="product-grid-container" id="ProductGridContainer">
       {%- paginate collection.products by section.settings.products_per_page -%}
 
