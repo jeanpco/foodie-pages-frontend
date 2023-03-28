@@ -1,9 +1,5 @@
 <script type="module">
-  
-  
   import wretch from 'https://cdn.skypack.dev/wretch/dist/bundle/wretch.all.min.mjs'
-  
-
   const backendURL = 'https://foodiepages.herokuapp.com'
 
   {% comment %} 'http://localhost:8080' {% endcomment %}
@@ -20,26 +16,25 @@
   window.getSosCustomers = async (id) => {
     const url = id ? `${backendURL}/api/sos_customer?id=${id}` : `${backendURL}/api/sos_customer`;
 
-    const pageData = await wretch(url) // Base url
-      // Authorization header
-      .get() // GET request
+    const pageData = await wretch(url)
+      .get()
       .badRequest((err) => {
         console.log('400', err);
         throw err;
-      }) // Handle 400 errors
+      })
       .unauthorized((err) => {
         console.log('401', err);
         throw err;
-      }) // Handle 401 errors
+      })
       .notFound((err) => {
         window.generateError(`Something went wrong while trying to get your SOS Customers. Please contact your developer.`);
         throw err;
-      }) // Handle 404 errors
+      })
       .internalError((err) => {
         console.log('500', err);
         throw err;
-      }) // Handle 500 errors
-      .res((res) => res.json()); // Parse response as JSON
+      })
+      .res((res) => res.json());
 
     return pageData;
   }
@@ -52,26 +47,28 @@
       .badRequest((err) => {
         console.log('400', err)
         throw err;
-      }) // Handle 400 errors
+      })
       .unauthorized((err) => {
         console.log('401', err)
         throw err;
-      }) // Handle 401 errors
+      })
       .notFound((err) => {
         console.log('404', err)
         throw err;
-      }) // Handle 404 errors
+      })
       .internalError((err) => {
         console.log('500', err)
         throw err;
-      }) // Handle 500 errors
-      .res((res) => res.json()); // Parse response as JSON
+      })
+      .res((res) => res.json());
 
     if (!pageData.data.products) {
       return 'No Products';
     }
 
-    return pageData.data.products;
+    const products = pageData.data.products.filter(p => p.status === 'active')
+
+    return products;
   }
 
   window.getSosSalesOrder = async (query) => {
@@ -83,20 +80,20 @@
       .badRequest((err) => {
         console.log('400', err);
         throw err;
-      }) // Handle 400 errors
+      })
       .unauthorized((err) => {
         console.log('401', err);
         throw err;
-      }) // Handle 401 errors
+      })
       .notFound((err) => {
         window.generateError(`Something went wrong while trying to get your SOS Customers. Please contact your developer.`);
         throw err;
-      }) // Handle 404 errors
+      })
       .internalError((err) => {
         console.log('500', err);
         throw err;
-      }) // Handle 500 errors
-      .res((res) => res.json()); // Parse response as JSON
+      })
+      .res((res) => res.json());
 
     return pageData;
   }
@@ -116,22 +113,88 @@
       .badRequest((err) => {
         console.log('400', err);
         throw err;
-      }) // Handle 400 errors
+      })
       .unauthorized((err) => {
         console.log('401', err);
         throw err;
-      }) // Handle 401 errors
+      })
       .notFound((err) => {
         window.generateError(`Something went wrong while trying to get your SOS Customers. Please contact your developer.`);
         throw err;
-      }) // Handle 404 errors
+      })
       .internalError((err) => {
         console.log('500', err);
         throw err;
-      }) // Handle 500 errors
-      .res((res) => res.json()); // Parse response as JSON
+      })
+      .res((res) => res.json());
 
     return pageData;
   }
+
+  window.createAirtableEntry = async ({
+    customerId,
+    campaignName,
+    formState,
+    giftState
+  }) => {
+
+      console.log({
+        customerId,
+        campaignName,
+        formState,
+        giftState
+      })
+      
+      const pageData = await wretch(
+        `${backendURL}/api/airtable-create-campaign-entry?campaignName=${campaignName}&customerId=${customerId}`
+      ) // Base url
+        // Authorization header
+        .post({
+          formState,
+          giftState,
+        }) // Post data
+        .badRequest((err) => {
+          throw err;
+        })
+        .unauthorized((err) => {
+          throw err;
+        })
+        .notFound((err) => {
+          throw err;
+        })
+        .internalError((err) => {
+          throw err;
+        })
+        .res((res) => res.json());
+      
+      return pageData;
+  }
+
+  window.airtableCreateCampaign = async ({ inputs, formArray, gifts }) => {
+
+      const pageData = await wretch(`${backendURL}/api/airtable-create-campaign`).
+        post({
+          inputs,
+          formArray,
+          gifts
+        }).badRequest((err) => {
+          console.log('400', err)
+          throw err;
+        }).unauthorized((err) => {
+          console.log('401', err)
+          throw err;
+        }).notFound((err) => {
+          generateError(`Something went wrong while trying to get your SOS Customers. Please contact your developer.`)
+          throw err;
+        }) .internalError((err) => {
+          console.log('500', err)
+          throw err;
+        }).res((res) => res.json()); // Parse response as JSON
+
+      return pageData;
+  }
+
+
+
 
 </script>

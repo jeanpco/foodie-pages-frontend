@@ -52,7 +52,7 @@
           ${product.title || 'Product Title Placeholder'}
         </h4>
         ${inventory !== null && inventory !== undefined ? `
-          <p class="text-size-tiny text-color-grey-400 margin-vertical margin-xxsmall">Inventory: ${inventory} unit${inventory > 1 ? 's' : ''}</p>
+          <p class="text-size-tiny text-color-grey-400 margin-vertical margin-xxsmall" data-inventory="${inventory}">Inventory: ${inventory} unit${inventory > 1 ? 's' : ''}</p>
         ` : ''}
         ${options && options.reOrder ? `
           <a data-js-element="reorder" class="link margin-top margin-xxsmall" href="#new-products">

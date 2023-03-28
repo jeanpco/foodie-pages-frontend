@@ -1,7 +1,10 @@
+<!-- Send a Gift Page -->
+<!-- Heading and description for the Send a Gift page -->
 <div class="padding-left padding-large tablet-padding-0">
   <h1 class="margin-bottom margin-small line-height-1-3">Send a gift</h1>
   <p class="text-size-medium margin-bottom margin-small">Select a box to ship now.</p>
 
+  <!-- Display corporate products -->
   <div class="margin-bottom margin-large">
     {% render 'corporate-products',
       sos_customer_id: sos_customer_id,
@@ -11,6 +14,7 @@
     %}
   </div>
 
+  <!-- Section for uploading recipient CSV file -->
   <h2 class="heading-style-h3 margin-bottom margin-small">Upload recipient CSV</h2>
   <p class="margin-bottom margin-medium">
     Select "Upload your CSV file now" if you have more then 1 address to upload. To send a single gift, select "Single
@@ -18,25 +22,357 @@
     you are experiencing any difficulties, please communicate with your account manager.
   </p>
 
+  <!-- Render upload multiple addresses and single address components -->
   {% render 'upload-multiple-addresses' %}
-
   {% render 'upload-single-address' %}
 
   <p class="text-size-medium margin-bottom margin-small">Don't have our template?</p>
-  <a href="https://cdn.shopify.com/s/files/1/0264/5000/2013/files/foodie-pages-multiple-addresses-upload-template.csv?v=1679429492" target="_blank" data-js-element="download-csv-template" class="button secondary">
+  <a
+    href="https://cdn.shopify.com/s/files/1/0264/5000/2013/files/foodie-pages-multiple-addresses-upload-template.csv?v=1679429492"
+    target="_blank"
+    data-js-element="download-csv-template"
+    class="button secondary"
+  >
     <span>Download CSV template</span>
   </a>
 </div>
+
+<!-- Popup to handle corporate product submission -->
+{% render 'send-gifts-popup' %}
 
 <style>
   .file-upload_container {
     border: 1px dashed rgba(0, 0, 0, 0.3);
     cursor: pointer;
   }
+
+  [data-js-element="file-upload_container"].is-disabled, 
+  [data-js-element="file-upload_container"].is-disabled > *,
+  [data-js-element="open-popup"].is-disabled,
+  [data-js-element="open-popup"].is-disabled > * {
+    cursor: not-allowed;
+    opacity: 0.5;
+    pointer-events: none;
+  }
 </style>
 
+<!-- Send a Gift Page Script -->
 <script type="module">
-  const initNewGifts = () => {
-    
+  // Initialize global variables for Airtable addresses and campaign name
+  window.airtableAddresses = [];
+  window.airtableCampaignName = '';
+
+  // Function to check product availability and disable the ones with no inventory
+  const checkForAvailability = () => {
+    const elements = {
+      sendGiftsContainer: document.querySelector('[data-js-container="send-gifts"]'),
+    }
+
+    const observer = new MutationObserver((mutations) => {
+      mutations.forEach((mutation) => {
+        const productCards = Array.from(mutation.target.querySelectorAll('[data-js-element="cf-product-card"]'));
+
+        productCards.forEach((card) => {
+          const inventory = card.querySelector('[data-inventory]').dataset.inventory;
+
+          if (inventory === '0') {
+            card.classList.add('is-disabled');
+          }
+        });
+      });
+    });
+
+    observer.observe(elements.sendGiftsContainer, { 
+      childList: true,
+      subtree: true,
+    });
   }
+
+  // Function to submit a single address form and add form data to airtableAddresses
+  const submitSingleAddress = () => {
+    const elements = {
+      singleAddressForm: document.querySelector('[data-js-element="single-address-form"]'),
+      closePopup: document.querySelector('[data-js-element="close-popup"]'),
+    }
+
+    elements.singleAddressForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      {% comment %} Get form data and format it {% endcomment %}
+
+      const formData = new FormData(e.target);
+      const formValues = Object.fromEntries([
+        ...Array.from(formData.entries()),
+        ['singleAddress', true],
+      ]);
+
+      const newFormValues = {};
+
+      Object.keys(formValues).forEach((key) => {
+        const newKey = key.replace('contact[', '').replace(']', '');
+        newFormValues[newKey] = formValues[key];
+      });
+
+      {% comment %} Add the form data to be sent to airtable {% endcomment %}
+
+      window.airtableAddresses.push(newFormValues);
+    });
+  }
+
+  // Function to watch changes to airtableAddresses and handle submission to Airtable
+  const watchAirtableAddresses = () => {
+    const handler = {
+      set(target, property, value) {
+
+        if (value.singleAddress) submitAddressToAirtable(value);
+
+        target[property] = value;
+        return true;
+      },
+    };
+
+    window.airtableAddresses = new Proxy(window.airtableAddresses || [], handler);
+  };
+
+  // Function to submit address data to Airtable
+  const submitAddressToAirtable = async (value) => {
+    const sosCustomerData = window.localStorage.getItem('sos_customer_data');
+    const customer = JSON.parse(sosCustomerData);
+
+    const id = customer.data.id
+    const name = customer.data.fullname
+
+    {% comment %} get todays date formatted as: "2023-03-30" {% endcomment %}
+    const today = new Date();
+    const dd = String(today.getDate()).padStart(2, '0');
+    const mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+    const yyyy = today.getFullYear();
+
+    const inputs = [
+      {
+        name: 'Campaign Name',
+        value: window.airtableCampaignName,
+        type: 'singleLineText',
+        required: true,
+      },
+      {
+        name: "End Date",
+        value: yyyy + '-' + mm + '-' + dd,
+        type: "date",
+        required: true
+      },
+      {
+        name: "Number of selectable gifts",
+        value: 1,
+        type: "number",
+        required: true
+      },
+      {
+        name: "Form Button Text",
+        value: "Send a gift",
+        type: "singleLineText",
+        required: true
+      },
+      {
+        name: "Customer",
+        value: id + '_' + name,
+        required: true
+      },
+      {
+        name: "Gift Message",
+        value: value.gift_message,
+        type: "singleLineText",
+        required: true
+      },
+      {
+        name: "Shipping Details",
+        value: null,
+        type: "singleLineText",
+        required: true
+      },
+      {
+        name: "Company Logo",
+        value: null,
+        type: "multipleAttachments",
+      },
+    ]
+
+    const formArray = [
+      {
+        label: "Recipient First Name",
+        type: "text",
+        options: "",
+        required: true,
+        airtable_type: "singleLineText"
+      },
+      {
+        label: "Recipient Last Name",
+        type: "text",
+        options: "",
+        required: true,
+        airtable_type: "singleLineText"
+      },
+      {
+        label: "To Email",
+        type: "email",
+        options: "",
+        required: true,
+        airtable_type: "singleLineText"
+      },
+      {
+        label: "Recipient Phone",
+        type: "phone",
+        options: "",
+        required: true,
+        airtable_type: "singleLineText"
+      },
+      {
+        label: "Address Line 1",
+        type: "text",
+        options: "",
+        required: true,
+        airtable_type: "singleLineText"
+      },
+      {
+        label: "Address Line 2",
+        type: "text",
+        options: "",
+        required: false,
+        airtable_type: "singleLineText"
+      },
+      {
+        label: "City",
+        type: "text",
+        options: "",
+        required: true,
+        airtable_type: "singleLineText"
+      },
+      {
+        label: "Province Code",
+        type: "text",
+        options: "",
+        required: true,
+        airtable_type: "singleLineText"
+      },
+      {
+        label: "Country Code",
+        type: "text",
+        options: "",
+        required: true,
+        airtable_type: "singleLineText"
+      },
+      {
+        label: "Zip/Postal",
+        type: "text",
+        options: "",
+        required: true,
+        airtable_type: "singleLineText"
+      },
+      {
+        label: "Gift Message",
+        type: "text",
+        options: "",
+        required: false,
+        airtable_type: "singleLineText"
+      },
+    ]
+
+    const gifts = {
+      main: window.campaignForm.state['Main Gift'],
+      custom: window.campaignForm.state['Custom Swag'],
+    }
+
+    try {
+    
+      const pageData = await window.airtableCreateCampaign({
+        inputs,
+        formArray,
+        gifts,
+      })
+    
+    } catch (error) {
+      console.log(error)
+    }
+
+    const handle = window.airtableCampaignName.replace(/\s+/g, '-').toLowerCase();
+
+    try {
+      const airtableRecord = await window.createAirtableEntry({ campaignName: handle, customerId: id, giftState: window.campaignForm.state, formState: value })
+
+      console.log(airtableRecord)
+
+      {% comment %} @TODO: Add a thank you screen. {% endcomment %}
+
+      {% comment %} create a custom event and dispatch {% endcomment %}
+      const event = new CustomEvent('airtable-address-added', { detail: { airtableRecord } });
+
+      document.dispatchEvent(event);
+
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
+  // Event listener for gift-state-changed event, updates airtableCampaignName and calls maxMinOneGiftSelected function
+  document.addEventListener('gift-state-changed', (e) => {
+    const { detail } = e;
+    const { state, element } = detail;
+
+    maxMinOneGiftSelected({ state, element });
+
+    const activeCampaignsElement = element.closest('[data-js-element="active-campaigns"]');
+    const campaignTitleElement = activeCampaignsElement.querySelector('[data-js-element="campaign-title"]');
+    const campaignTitleText = campaignTitleElement && campaignTitleElement.innerText;
+
+    window.airtableCampaignName = campaignTitleText;
+  });
+
+  // Function to enable/disable product cards and file upload based on gift selection
+  const maxMinOneGiftSelected = ({ state, element }) => {
+
+    const elements = {
+      sendGiftsContainer: document.querySelector('[data-js-container="send-gifts"]'),
+      multipleFilUploadContainer: document.querySelector('[data-js-element="file-upload_container"]'),
+      openPopup: document.querySelector('[data-js-element="open-popup"]'),
+    }
+    const productCards = [...elements.sendGiftsContainer.querySelectorAll('[data-js-element="cf-product-card"]')]
+    const currentProductId = element.dataset.productId;
+
+    const mainGifts = state['Main Gift'];
+    const customGifts = state['Custom Swag'];
+
+    const gifts = [mainGifts, customGifts].filter(Boolean).join(', ');
+
+    productCards.forEach((productCard) => {
+      const productId = productCard.dataset.productId;
+
+      if (+productId !== +currentProductId && !gifts.includes(productId)) {
+        productCard.classList.add('is-disabled');
+      } else {
+        productCard.classList.remove('is-disabled');
+      }
+    });
+
+    if (!gifts) {
+      productCards.forEach((productCard) => {
+        productCard.classList.remove('is-disabled');
+      });
+
+      elements.multipleFilUploadContainer.classList.add('is-disabled');
+      elements.openPopup.classList.add('is-disabled');
+    } else {
+      elements.multipleFilUploadContainer.classList.remove('is-disabled');
+      elements.openPopup.classList.remove('is-disabled');
+    }
+  }
+
+  // Function to initialize gift-related functionalities
+  const initNewGifts = () => {
+    checkForAvailability();
+    submitSingleAddress();
+    watchAirtableAddresses();
+  }
+
+  // Call initNewGifts to set up the page
+  initNewGifts();
 </script>

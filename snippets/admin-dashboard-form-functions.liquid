@@ -1,12 +1,5 @@
 <script type="module">
-  
-  import wretch from 'https://cdn.skypack.dev/wretch/dist/bundle/wretch.all.min.mjs'
-  {% comment %} init functions {% endcomment %}
   window.createCampaignFns = {}
-
-  const backendURL = 'https://foodiepages.herokuapp.com'
-  {% comment %} 'https://foodiepages.herokuapp.com' {% endcomment %}
-  {% comment %} 'http://localhost:8080' {% endcomment %}
 
   window.createCampaignFns.getExistingCampaign = (props) => {
     {% comment %} http://127.0.0.1:9292/account?campaign=update&client=371&campaign-name=christmas-campaign {% endcomment %}
@@ -79,32 +72,17 @@
       const inputs = await Promise.all(asyncedInputs)
       const formArray = window.createCampaignFns.generateFormArray()
 
-      const pageData = await wretch(`${backendURL}/api/airtable-create-campaign`).
-        post({
-          inputs,
-          formArray,
-          gifts
-        }).badRequest((err) => {
-          console.log('400', err)
-          throw err;
-        }).unauthorized((err) => {
-          console.log('401', err)
-          throw err;
-        }).notFound((err) => {
-          generateError(`Something went wrong while trying to get your SOS Customers. Please contact your developer.`)
-          throw err;
-        }) .internalError((err) => {
-          console.log('500', err)
-          throw err;
-        }).res((res) => res.json()); // Parse response as JSON
+      const pageData = await window.airtableCreateCampaign({
+        inputs,
+        formArray,
+        gifts
+      })
 
       elements.buttonLoading.classList.add('hidden')
 
       if (pageData.message === 'Success') {
         {% comment %} change button text to success {% endcomment %}
         elements.buttonText.innerText = 'Success!'
-      } else {
-        
       }
 
       {% comment %} after 3 seconds set buttonText to initial text {% endcomment %}
@@ -149,7 +127,7 @@
         reject(error);
       };
     });
-  };  
+  };
 
   window.createCampaignFns.resetProductsState = () => {
     const productCards = [...document.querySelectorAll('[data-js-element="cf-product-card"]')]
@@ -161,7 +139,7 @@
         const customSwag = window.campaignForm.state['Custom Swag'];
 
 
-  
+
         if (mainGift) {
           const variants = mainGift.split(',').map((variant) => {
             const variantId = variant.match(/Variant Id: (\d+)/)[1];
@@ -170,7 +148,7 @@
 
           window.cfProductCardRemove(mainGift, variants, 'Main Gift', card);
         }
-  
+
         if (customSwag) {
           const variants = customSwag.split(',').map((variant) => {
             const variantId = variant.match(/Variant Id: (\d+)/)[1];
@@ -184,5 +162,4 @@
 
     productCards.forEach(card => card.classList.remove('is-selected'))
   }
-
 </script>

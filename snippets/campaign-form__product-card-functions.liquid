@@ -17,6 +17,7 @@
     {% comment %} create custom event {% endcomment %}
     const event = new CustomEvent('gift-state-changed', {
       detail: {
+        element,
         state: window.campaignForm.state,
       }
     });
@@ -36,6 +37,7 @@
     {% comment %} create custom event {% endcomment %}
     const event = new CustomEvent('gift-state-changed', {
       detail: {
+        element,
         state: window.campaignForm.state,
       }
     });
@@ -63,6 +65,7 @@
     const isBoxBuilder = tags.includes('box-builder');
 
     {% comment %} on detailsbutton click, call window.cfProductCardModal(productData) {% endcomment %}
+
     if (detailsButton) {
       detailsButton.addEventListener('click', () => {
         window.cfProductModal({

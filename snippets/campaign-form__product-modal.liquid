@@ -101,6 +101,15 @@
     const excerpt = metafields && metafields.metafields.find(
       metafield => metafield.key === 'excerpt' && metafield.namespace === 'custom'
     ) || null
+
+    const newOptions = options.map(option => {
+      return {
+        ...option,
+        values: option.values.filter(value => {
+          return variants.find(variant => variant.title === value)
+        })
+      }
+    })
   
     elements.modalContent.innerHTML = `
       <form data-js-element="modal-content-form" class="modal-content w-full display-flex gap-3 justify-content-between">
@@ -125,7 +134,7 @@
           
           ${tags ? `<div class="product__tags display-flex gap-0-5 flex-wrap margin-vertical margin-small">
               ${tags.split(',').filter(tag => {
-                return tag.charAt(0) !== '_' && tag !== 'donation' && tag !== 'custom' && tag !== 'Box_builder'
+                return tag.charAt(0) !== '_' && tag !== 'donation' && tag !== 'custom' && tag !== 'Box_builder' && tag !== 'custom_swag'
               }).map(tag => `
                 <div style="border-radius: 30px;" class="product_tag background-color-sandia-18 text-color-sandia-100 padding-horizontal padding-small text-size-tiny">
                   <div class="padding-vertical padding-xsmall text-style-capitalize"><span>${tag}</span></div>
@@ -171,9 +180,9 @@
             </div>`
           : ''}
 
-          ${variants?.length > 1 ? `<div class="cf_modal-variant-selector">
+          ${variants?.length > 1 ? `<div class="cf_modal-variant-selector margin-bottom margin-medium">
             {% comment %} Variant Selector {% endcomment %}
-            ${options.map((option, index) => `
+            ${newOptions.map((option, index) => `
               <legend class="text-size-tiny uppercase margin-top margin-medium">${option.name}</legend>
               ${option.values.map((value, index) => `
                 <div class="field-group variant-select">
@@ -192,7 +201,7 @@
 
           {% comment %} Add to cart {% endcomment %}
           ${!preventPurchase ? `
-            <button type="submit" class="button secondary modal-content_atc margin-vertical margin-medium">
+            <button type="submit" class="button secondary modal-content_atc margin-bottom margin-medium">
               <span>Select this gift</span>
             </button>` : ''
           }
