@@ -61,6 +61,9 @@
   // Initialize global variables for Airtable addresses and campaign name
   window.airtableAddresses = [];
   window.airtableCampaignName = '';
+  const globalElements = {
+    loading: document.querySelector('[data-js-element="submit-single-address-loading"]'),
+  }
 
   // Function to check product availability and disable the ones with no inventory
   const checkForAvailability = () => {
@@ -97,6 +100,7 @@
 
     elements.singleAddressForm.addEventListener('submit', (e) => {
       e.preventDefault();
+      globalElements.loading.classList.remove('is-hidden');
 
       {% comment %} Get form data and format it {% endcomment %}
 
@@ -291,25 +295,24 @@
       })
     
     } catch (error) {
-      console.log(error)
+      alert("An error when submitting your gift. Please get in touch with technical support. (Code: 1)");
     }
 
     const handle = window.airtableCampaignName.replace(/\s+/g, '-').toLowerCase();
 
     try {
       const airtableRecord = await window.createAirtableEntry({ campaignName: handle, customerId: id, giftState: window.campaignForm.state, formState: value })
+      globalElements.loading.classList.add('is-hidden');
 
-      console.log(airtableRecord)
-
-      {% comment %} @TODO: Add a thank you screen. {% endcomment %}
-
-      {% comment %} create a custom event and dispatch {% endcomment %}
-      const event = new CustomEvent('airtable-address-added', { detail: { airtableRecord } });
-
-      document.dispatchEvent(event);
+      if (airtableRecord.message === 'Success') {
+        const event = new CustomEvent('airtable-address-added', { detail: { airtableRecord } });
+        document.dispatchEvent(event);
+      } else {
+        alert("An error when submitting your gift. Please get in touch with technical support. (Code: 2)");
+      }
 
     } catch (error) {
-      console.log(error)
+      alert("An error when submitting your gift. Please get in touch with technical support. (Code: 3)");
     }
   }
 

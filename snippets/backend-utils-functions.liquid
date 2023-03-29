@@ -5,78 +5,17 @@
   {% comment %} 'http://localhost:8080' {% endcomment %}
   {% comment %} 'https://foodiepages.herokuapp.com' {% endcomment %}
 
-  window.generateError = (message) => {
-    {% comment %} generate global popup for error handling {% endcomment %}
-    {% comment %} const loadingSpinner = document.querySelector('.loading-spinner')
-    const getLoadingMessage = document.querySelector('.loading-container p')
-    loadingSpinner.style.display = 'none'
-    getLoadingMessage.innerHTML = message {% endcomment %}
-  }
-  
+  {% comment %}
+
+  ! SOS INVENTORY FUNCTIONS
+
+  {% endcomment %}
+
   window.getSosCustomers = async (id) => {
     const url = id ? `${backendURL}/api/sos_customer?id=${id}` : `${backendURL}/api/sos_customer`;
 
     const pageData = await wretch(url)
       .get()
-      .badRequest((err) => {
-        console.log('400', err);
-        throw err;
-      })
-      .unauthorized((err) => {
-        console.log('401', err);
-        throw err;
-      })
-      .notFound((err) => {
-        window.generateError(`Something went wrong while trying to get your SOS Customers. Please contact your developer.`);
-        throw err;
-      })
-      .internalError((err) => {
-        console.log('500', err);
-        throw err;
-      })
-      .res((res) => res.json());
-
-    return pageData;
-  }
-
-
-  window.getShopifyProducts = async (ids) => {
-
-    const pageData = await wretch(`${backendURL}/api/get-shopify-collections`)
-      .post(ids)
-      .badRequest((err) => {
-        console.log('400', err)
-        throw err;
-      })
-      .unauthorized((err) => {
-        console.log('401', err)
-        throw err;
-      })
-      .notFound((err) => {
-        console.log('404', err)
-        throw err;
-      })
-      .internalError((err) => {
-        console.log('500', err)
-        throw err;
-      })
-      .res((res) => res.json());
-
-    if (!pageData.data.products) {
-      return 'No Products';
-    }
-
-    const products = pageData.data.products.filter(p => p.status === 'active')
-
-    return products;
-  }
-
-  window.getSosSalesOrder = async (query) => {
-    const url = query ? `${backendURL}/api/get-sale-orders?query=${query}` : `${backendURL}/api/get-sale-orders`;
-  
-    const pageData = await wretch(url) // Base url
-      // Authorization header
-      .get() // GET request
       .badRequest((err) => {
         console.log('400', err);
         throw err;
@@ -130,6 +69,76 @@
 
     return pageData;
   }
+
+  window.getSosSalesOrder = async (query) => {
+    const url = query ? `${backendURL}/api/get-sale-orders?query=${query}` : `${backendURL}/api/get-sale-orders`;
+  
+    const pageData = await wretch(url) // Base url
+      // Authorization header
+      .get() // GET request
+      .badRequest((err) => {
+        console.log('400', err);
+        throw err;
+      })
+      .unauthorized((err) => {
+        console.log('401', err);
+        throw err;
+      })
+      .notFound((err) => {
+        window.generateError(`Something went wrong while trying to get your SOS Customers. Please contact your developer.`);
+        throw err;
+      })
+      .internalError((err) => {
+        console.log('500', err);
+        throw err;
+      })
+      .res((res) => res.json());
+
+    return pageData;
+  }
+
+  {% comment %}  
+
+  ! SHOPFIY FUNCTIONS
+
+  {% endcomment %}
+
+  window.getShopifyProducts = async (ids) => {
+
+    const pageData = await wretch(`${backendURL}/api/get-shopify-collections`)
+      .post(ids)
+      .badRequest((err) => {
+        console.log('400', err)
+        throw err;
+      })
+      .unauthorized((err) => {
+        console.log('401', err)
+        throw err;
+      })
+      .notFound((err) => {
+        console.log('404', err)
+        throw err;
+      })
+      .internalError((err) => {
+        console.log('500', err)
+        throw err;
+      })
+      .res((res) => res.json());
+
+    if (!pageData.data.products) {
+      return 'No Products';
+    }
+
+    const products = pageData.data.products.filter(p => p.status === 'active')
+
+    return products;
+  }
+
+  {% comment %}  
+
+  ! AIRTABLE FUNCTIONS
+
+  {% endcomment %}
 
   window.createAirtableEntry = async ({
     customerId,
@@ -193,6 +202,34 @@
 
       return pageData;
   }
+
+  window.getAirtableTableById = async ({ campaignNameParam, clientIdParam }) => {
+    
+    const pageData = await wretch(
+      `${backendURL}/api/airtable-admin-base?campaignName=${campaignNameParam}&customerId=${clientIdParam}`
+    )
+      .get() // GET request
+      .badRequest((err) => {
+        console.log('400', err)
+        throw err;
+      }) // Handle 400 errors
+      .unauthorized((err) => {
+        console.log('401', err)
+        throw err;
+      }) // Handle 401 errors
+      .notFound((err) => {
+
+        generateError(`Something went wrong while trying to initiate your gift selection (Campaign Name: ${campaignNameParam}). Please contact your administrator.`)
+        throw err;
+      }) // Handle 404 errors
+      .internalError((err) => {
+        console.log('500', err)
+        throw err;
+      }) // Handle 500 errors
+      .res((res) => res.json()); // Parse response as JSON
+
+      return pageData
+  } 
 
 
 

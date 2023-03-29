@@ -23,15 +23,13 @@
   </div>
 </div>
 
-{% comment %} @TODO: Make responsive {% endcomment %}
-{% comment %} @TODO: Add loading state to button when submitting a single gift {% endcomment %}
-
 <button id="temp">
   temporary button to trigger popup
 </button>
 
 <style>
-  #corporate-product-submission {
+  #corporate-product-submission,
+  #inventory-insufficient {
     position: fixed;
     top: 0;
     left: 0;
@@ -91,6 +89,13 @@
     font-size: 1.5em;
     color: gray;
     cursor: pointer;
+  }
+
+  {% comment %} max-width 500 make popup-ctas flex direction column {% endcomment %}
+  @media screen and (max-width: 500px) {
+    .popup-ctas {
+      flex-direction: column;
+    }
   }
 </style>
 

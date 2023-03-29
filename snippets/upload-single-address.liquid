@@ -1,3 +1,5 @@
+{{ 'loading.css' | asset_url | stylesheet_tag }}
+
 <div
   data-js-element="open-popup"
   class="file-upload_container single display-flex justify-content-between padding-medium margin-bottom margin-medium align-items-center is-disabled"
@@ -154,6 +156,7 @@
       </div>
 
       <button
+        data-js-element="submit-single-address"
         style="margin-right: auto;"
         type="submit"
         class="button contact-submit-button"
@@ -161,7 +164,14 @@
         id="Subscribe"
         aria-label="{{ 'contact.button_label' | t }}"
       >
-        <span>Submit</span>
+        <span>
+          <div class="display-flex align-items-center gap-0-5">
+            <div>Submit</div>
+            <div data-js-element="submit-single-address-loading" class="is-loading display-flex is-hidden">
+              <div class="loading-spinner"></div>
+            </div>
+          </div>
+        </span>
       </button>
     </form>
     <button class="popup-close-button" data-js-element="close-popup">

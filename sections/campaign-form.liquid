@@ -16,7 +16,7 @@
   }
 </style>
 
-{% comment %} 
+{% comment %}
   @TODO: Only show the publish product (active) when fetching product from Shopify
   @TODO: Do you mean this: https://www.foodiepages.ca/pages/form?client=71&campaign=employee-appreciation-2023? Right now what I could do is to open it inside another tab after creation?
 {% endcomment %}
@@ -27,8 +27,6 @@
 {% render 'campaign-form__footer' %}
 
 <script type="module">
-  
-  import wretch from 'https://cdn.skypack.dev/wretch/dist/bundle/wretch.all.min.mjs'
 
   function removeSpacesAndBackslashes(str) {
     return str.replace(/\s/g, '').replace(/\\/g, '');
@@ -42,43 +40,11 @@
   }
 
   const initCampaignForm = async () => {
-
-    {% comment %} !NOTE: Backend URL need to be set back to the production URL once done with testing / local development. {% endcomment %}
-
-    const backendURL = 'https://foodiepages.herokuapp.com'
-    {% comment %} 'https://foodiepages.herokuapp.com' {% endcomment %}
-    {% comment %} 'http://localhost:8080' {% endcomment %}
-
-    // get all url params
-    {% comment %} client=364&campaign=christmas-campaign {% endcomment %}
     const urlParams = new URLSearchParams(window.location.search);
     const campaignNameParam = urlParams.get('campaign');
     const clientIdParam = urlParams.get('client');
 
-    const pageData = await wretch(
-      `${backendURL}/api/airtable-admin-base?campaignName=${campaignNameParam}&customerId=${clientIdParam}`
-    ) // Base url
-      // Authorization header
-      .get() // GET request
-      .badRequest((err) => {
-        console.log('400', err)
-        throw err;
-      }) // Handle 400 errors
-      .unauthorized((err) => {
-        console.log('401', err)
-        throw err;
-      }) // Handle 401 errors
-      .notFound((err) => {
-
-        generateError(`Something went wrong while trying to initiate your gift selection (Campaign Name: ${campaignNameParam}). Please contact your administrator.`)
-        throw err;
-      }) // Handle 404 errors
-      .internalError((err) => {
-        console.log('500', err)
-        throw err;
-      }) // Handle 500 errors
-      .res((res) => res.json()); // Parse response as JSON
-
+    const pageData = await window.getAirtableTableById({ campaignNameParam, clientIdParam })
     const rawData = pageData.data.campaignRow.fields
 
     const data = {
@@ -127,4 +93,5 @@
       generateError(`Something went wrong while trying to initiate your gift selection. </br>Please contact your administrator.`)
     }
   })
+
 </script>

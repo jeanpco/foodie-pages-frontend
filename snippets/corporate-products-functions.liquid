@@ -107,20 +107,10 @@
       };
     });
   
-    {% comment %} resolve all campaigns {% endcomment %}
     const resolvedCampaigns = await Promise.all(campaigns);
-  
-    {% comment %} need to look through each salesOrder.lines[] and get the full items object using the ID {% endcomment %}
-  
     const products = await getShopifyProducts();
 
-    {% comment %} @TODO: Only allow for the variant of the SKU that is found on the SO to be visible and selectable {% endcomment %}
-
-    {% comment %} get all elements with data-js-container {% endcomment %}
-    const containers = [...document.querySelectorAll('[data-js-container]')];
-  
-    {% comment %} loop through each container {% endcomment %}
-    
+    const containers = [...document.querySelectorAll('[data-js-container]')];  
     containers.forEach(async (container) => {
       await window.productsGenerateCampaigns({ campaigns: resolvedCampaigns, products, container });
     })
