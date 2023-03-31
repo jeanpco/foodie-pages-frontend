@@ -27,10 +27,11 @@
 {% render 'campaign-form__footer' %}
 
 <script type="module">
+  
 
   function removeSpacesAndBackslashes(str) {
-    return str.replace(/\s/g, '').replace(/\\/g, '');
-  }
+    return str.replace(/}\s*{/g, '} {').replace(/\\/g, '');
+  } 
 
   const generateError = (message) => {
     const loadingSpinner = document.querySelector('.loading-spinner')
@@ -46,6 +47,8 @@
 
     const pageData = await window.getAirtableTableById({ campaignNameParam, clientIdParam })
     const rawData = pageData.data.campaignRow.fields
+
+    console.log(rawData['Form Structure'])
 
     const data = {
       {% comment %} header {% endcomment %}
@@ -71,6 +74,7 @@
 
     window.campaignForm.buildBody && window.campaignForm.buildBody({
       products: pageData.data.shopifyProducts,
+      airtableProducts: data.products,
       numberOfSelectableGifts: data.numberOfSelectableGifts,
     })
 
@@ -93,5 +97,6 @@
       generateError(`Something went wrong while trying to initiate your gift selection. </br>Please contact your administrator.`)
     }
   })
+
 
 </script>

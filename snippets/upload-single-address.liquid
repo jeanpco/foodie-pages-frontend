@@ -14,7 +14,7 @@
     <h3 class="popup-title margin-bottom margin-small">Send a single gift</h3>
     <p class="popup-body margin-bottom margin-large">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
     <form data-js-element="single-address-form">
-      <div class="field-wrapper width-control margin-bottom margin-medium flex flex-wrap justify-content-between row-gap-2 text-align-left">
+      <div class="single-address-form_container field-wrapper width-control margin-bottom margin-medium flex flex-wrap justify-content-between row-gap-2 text-align-left">
         <div class="half-width">
           {%
             render 'input',
@@ -245,6 +245,17 @@
     font-size: 1.5em;
     color: gray;
     cursor: pointer;
+  }
+
+  {% comment %} max-width media query 600 {% endcomment %}
+  @media screen and (max-width: 37.5em) {
+    .single-address-form_container {
+      flex-direction: column;
+    }
+
+    .single-address-form_container .half-width {
+      width: 100% !important;
+    }
   }
 </style>
 

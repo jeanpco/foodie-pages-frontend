@@ -113,6 +113,7 @@
 
 <script type="module">
   
+  
   import wretch from 'https://cdn.skypack.dev/wretch/dist/bundle/wretch.all.min.mjs'
 
   const ifAtleastOneMainGiftIsSelected = (state) => {
@@ -210,10 +211,14 @@
     elements.cfFormInputsEl.innerHTML = formStructure
       .map((input) => {
         const { label, type, options } = input;
+        const removeWhiteSpaces = /\s+/g
+        const regexRemoveTo = /^to/i;
+        const regexRemoveRecipient = /^recipient|recipient/gi;
+        const regexRemoveCode = /^code|code/gi;
+
         const inputId = label.toLowerCase().replace(' ', '-');
-        const inputName = label.toLowerCase().replace(' ', '_');
-        {% comment %} format label with 1 space between each word {% endcomment %}
-        const formattedLabel = label.replace(/([A-Z])/g, ' $1').trim();
+        const inputName = label.toLowerCase().replace(removeWhiteSpaces, '');
+        const formattedLabel = label.replace(regexRemoveTo, '').replace(regexRemoveRecipient, '').replace(regexRemoveCode, '');
 
         return `
           <div class="field-group margin-top margin-medium">
@@ -260,7 +265,7 @@
       
       const giftState = window.campaignForm.state;
 
-      const pageData = await window.createAirtableEntry({
+      const pageData = await window.createAirtableEntries({
         customerId: clientIdParam,
         campaignName: campaignNameParam,
         formState,
@@ -329,6 +334,7 @@
       }
     })
   };
+
 
 
 </script>

@@ -1,4 +1,5 @@
 <script type="module">
+  
   import wretch from 'https://cdn.skypack.dev/wretch/dist/bundle/wretch.all.min.mjs'
   const backendURL = 'https://foodiepages.herokuapp.com'
 
@@ -140,44 +141,43 @@
 
   {% endcomment %}
 
-  window.createAirtableEntry = async ({
+  window.createAirtableEntries = async ({
     customerId,
     campaignName,
     formState,
-    giftState
+    giftState,
   }) => {
-
-      console.log({
-        customerId,
-        campaignName,
-        formState,
-        giftState
+    if (!Array.isArray(formState)) {
+      formState = [formState];
+    }
+  
+    console.log({ customerId, campaignName, formState, giftState });
+  
+    const pageData = await wretch(
+      `${backendURL}/api/airtable-create-campaign-entry?campaignName=${campaignName}&customerId=${customerId}`
+    ) // Base url
+      // Authorization header
+      .post({
+        formState, // Pass the whole formState array
+        giftState,
+      }) // Post data
+      .badRequest((err) => {
+        throw err;
       })
-      
-      const pageData = await wretch(
-        `${backendURL}/api/airtable-create-campaign-entry?campaignName=${campaignName}&customerId=${customerId}`
-      ) // Base url
-        // Authorization header
-        .post({
-          formState,
-          giftState,
-        }) // Post data
-        .badRequest((err) => {
-          throw err;
-        })
-        .unauthorized((err) => {
-          throw err;
-        })
-        .notFound((err) => {
-          throw err;
-        })
-        .internalError((err) => {
-          throw err;
-        })
-        .res((res) => res.json());
-      
-      return pageData;
-  }
+      .unauthorized((err) => {
+        throw err;
+      })
+      .notFound((err) => {
+        throw err;
+      })
+      .internalError((err) => {
+        throw err;
+      })
+      .res((res) => res.json());
+  
+    return [pageData]; // Return the result in an array
+  };  
+  
 
   window.airtableCreateCampaign = async ({ inputs, formArray, gifts }) => {
 
@@ -230,6 +230,7 @@
 
       return pageData
   } 
+
 
 
 

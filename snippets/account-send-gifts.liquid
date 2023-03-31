@@ -301,19 +301,32 @@
     const handle = window.airtableCampaignName.replace(/\s+/g, '-').toLowerCase();
 
     try {
-      const airtableRecord = await window.createAirtableEntry({ campaignName: handle, customerId: id, giftState: window.campaignForm.state, formState: value })
-      globalElements.loading.classList.add('is-hidden');
-
-      if (airtableRecord.message === 'Success') {
-        const event = new CustomEvent('airtable-address-added', { detail: { airtableRecord } });
+      const airtableRecord = await window.createAirtableEntries({
+        campaignName: handle,
+        customerId: id,
+        giftState: window.campaignForm.state,
+        formState: value,
+      });
+      globalElements.loading.classList.add("is-hidden");
+    
+      // Check the first element of the array instead of the whole object
+      if (airtableRecord[0].message === "Success") {
+        const event = new CustomEvent("airtable-address-added", {
+          detail: { airtableRecord: airtableRecord[0] },
+        });
         document.dispatchEvent(event);
       } else {
-        alert("An error when submitting your gift. Please get in touch with technical support. (Code: 2)");
+        console.error("Unexpected response:", airtableRecord);
+        alert(
+          "An error when submitting your gift. Please get in touch with technical support. (Code: 2)"
+        );
       }
-
     } catch (error) {
-      alert("An error when submitting your gift. Please get in touch with technical support. (Code: 3)");
-    }
+      console.error("Error in createAirtableEntry:", error);
+      alert(
+        "An error when submitting your gift. Please get in touch with technical support. (Code: 3)"
+      );
+    }    
   }
 
   // Event listener for gift-state-changed event, updates airtableCampaignName and calls maxMinOneGiftSelected function

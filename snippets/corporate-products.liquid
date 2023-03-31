@@ -53,6 +53,20 @@
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 1rem;
   }
+
+  {% comment %} max-width: 767, grid of 2 {% endcomment %}
+  @media screen and (max-width: 767px) {
+    .products-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  {% comment %} max-width: 479, grid of 1 {% endcomment %}
+  @media screen and (max-width: 479px) {
+    .products-grid {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
 </style>
 
 <script type="module">

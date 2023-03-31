@@ -41,7 +41,23 @@
         let inputValue = input.value;
         let type = input.dataset.airtableType;
 
-        if (inputName !== 'Company Logo') {
+        if (inputName === 'End Date' && !inputValue) {
+          {% comment %} get todays date, add 3 years and format it as: yyyy-mm-dd {% endcomment %}
+          const today = new Date();
+          const threeYearsFromToday = new Date(today.setFullYear(today.getFullYear() + 3));
+          const year = threeYearsFromToday.getFullYear();
+          const month = threeYearsFromToday.getMonth() + 1;
+          const day = threeYearsFromToday.getDate();
+          const formattedDate = `${year}-${month}-${day}`;
+          
+          return {
+            name: inputName,
+            value: formattedDate,
+            type: type,
+            required: false,
+          }
+
+         } if (inputName !== 'Company Logo') {
           return {
             name: inputName,
             value: inputValue,

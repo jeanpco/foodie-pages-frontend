@@ -1,8 +1,25 @@
 <form data-js-element="submit-multiple-address">
   <div id="csvForm" class="margin-bottom margin-medium"></div>
-  <button data-js-element="export-csv" class="margin-bottom margin-medium button is-hidden">
-    <span>Export CSV</span>
-  </button>
+  <div data-js-element="csv-buttons" class="is-hidden display-flex justify-content-between margin-bottom margin-medium">
+    <div>
+      <button data-js-element="export-csv" class="button">
+        <span>Export CSV</span>
+      </button>
+      <button data-js-element="clear-csv" class="button secondary">
+        <span>Clear CSV</span>
+      </button>
+    </div>
+    <button class="button">
+      <span>
+        <div class="display-flex align-items-center gap-0-5">
+          <div>Submit</div>
+          <div data-js-element="submit-multiple-addresses-loading" class="is-loading display-flex is-hidden">
+            <div class="loading-spinner"></div>
+          </div>
+        </div>
+      </span>
+    </button>
+  </div>
 </form>
 
 <div
@@ -12,7 +29,6 @@
   <p>Upload your CSV file now</p>
   <button class="button secondary"><span>Upload</span></button>
 </div>
-
 
 <input
   style="display: none;"
@@ -27,7 +43,10 @@
   <div class="popup-overlay" data-js-element="close-popup"></div>
   <div class="popup-content">
     <h3 class="popup-title margin-bottom margin-small">Inventory Insufficient</h3>
-    <p class="popup-body margin-bottom margin-small">You are trying to add too many products. Unfortunately, you do not have enough inventory available. Make sure to order new products, select a product with enough inventory or reduce the amount of rows in your uploaded CSV.</p>
+    <p class="popup-body margin-bottom margin-small">
+      You are trying to add too many products. Unfortunately, you do not have enough inventory available. Make sure to
+      order new products, select a product with enough inventory or reduce the amount of rows in your uploaded CSV.
+    </p>
 
     <div class="popup-ctas display-flex gap-1">
       <button data-js-element="contact" class="button">
@@ -37,7 +56,7 @@
         <span>Order New Product</span>
       </button>
     </div>
-    
+
     <button class="popup-close-button" data-js-element="close-popup">
       <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
         <rect x="0.5" y="0.5" width="47" height="47" rx="23.5" fill="white"/>
@@ -71,6 +90,40 @@
   input.has-error {
     border-color: red;
   }
+
+  {% comment %} max-width media query 767 {% endcomment %}
+  @media screen and (max-width: 767px) {
+    .account #csvForm table tr {
+      display: table-row;
+    }
+
+    .account #csvForm table td {
+      display: table-cell;
+    }
+
+    .account #csvForm table td:first-of-type {
+      padding-left: 0;
+      text-align: left;
+    }
+
+    .account #csvForm table td::before {
+      display: none;
+    }
+
+    #csvForm table th {
+      text-align: left;
+    }
+
+    #csvForm table th {
+      display: table-cell;
+    }
+
+    [data-js-element="csv-buttons"] {
+      flex-direction: column;
+      gap: 1rem;
+      align-items: flex-start;
+    }
+  } 
 </style>
 
 <script type="module">
@@ -81,9 +134,54 @@
       form: document.querySelector('[data-js-element="submit-multiple-address"]'),
       insufficientInventoryModal: document.querySelector('#inventory-insufficient'),
       exportCsvButton: document.querySelector('[data-js-element="export-csv"]'),
+      clearCsvButton: document.querySelector('[data-js-element="clear-csv"]'),
+      csvButtons: document.querySelector('[data-js-element="csv-buttons"]'),
+      csvForm: document.querySelector('#csvForm'),
+      submitMultipleAddressesLoading: document.querySelector('[data-js-element="submit-multiple-addresses-loading"]'),
+    };
+
+    let uploadedCSV = null;
+
+    const tableToJson = (table) => {
+      const headers = Array.from(table.querySelectorAll('th'))
+        .slice(1)
+        .map((th) => th.textContent);
+      const rows = Array.from(table.querySelectorAll('tr:not(:first-child)'));
+      const json = rows.map((row) => {
+        const cells = Array.from(row.querySelectorAll('td')).slice(1);
+        const rowData = cells.reduce((acc, cell, index) => {
+          acc[headers[index]] = cell.querySelector('input') ? cell.querySelector('input').value : cell.textContent;
+          return acc;
+        }, {});
+
+        return {
+          firstname: rowData['Recipient First Name'],
+          lastname: rowData['Recipient Last Name'],
+          email: rowData['To Email'],
+          phonenumber: rowData['Phone Number'],
+          addressline1: rowData['Address Line 1'],
+          addressline2: rowData['Address Line 2'],
+          city: rowData['City'],
+          province: rowData['Province Code'],
+          country: rowData['Country Code'],
+          'postalcode/zip': rowData['Zip/Postal'],
+          gift_message: rowData['Gift Message'],
+        };
+      });
+
+      return json;
     };
 
     const handlers = {
+      onClearCsvClick: (event) => {
+        event.preventDefault();
+        {% comment %} get data-js-element="file-upload_input", if it has a value, clear it {% endcomment %}
+        if (elements.fileInput.value) {
+          elements.fileInput.value = '';
+        }
+
+        clearTableContent();
+      },
       onFormKeyDown: (event) => {
         if (event.key === 'Enter' || event.keyCode === 13) {
           event.preventDefault();
@@ -92,21 +190,22 @@
       },
       onSubmitForm: (event) => {
         event.preventDefault();
-        
+
         const isFormValid = elements.form.reportValidity();
         const errorRows = {};
-    
+
         if (!isFormValid) {
           const rows = elements.form.querySelectorAll('tr');
           rows.forEach((row, rowIndex) => {
-            if (rowIndex > 0) { // Skip the header row
+            if (rowIndex > 0) {
+              // Skip the header row
               const inputs = row.querySelectorAll('input');
               const errorInputs = [];
               inputs.forEach((input, inputIndex) => {
                 if (!input.validity.valid) {
                   errorInputs.push({
                     inputIndex: inputIndex - 1, // -1 to account for the index count cell
-                    errorMessage: input.validationMessage
+                    errorMessage: input.validationMessage,
                   });
                 }
               });
@@ -116,89 +215,72 @@
             }
           });
           console.log('Form not submitted due to validation errors:', errorRows);
-
-          elements.insufficientInventoryModal.style.display = 'flex';
         } else {
-          console.log('Form submitted');
-          // Perform your form submission tasks here, e.g., send the data to a server
+          event.preventDefault();
+          const jsonData = tableToJson(document.querySelector('#csvForm table'));
+          console.log(jsonData);
+
+          submitAddressesToAirtable(jsonData);
         }
       },
       onFileInputTriggerClick: (event) => {
-        console.log(event);
-
         event.preventDefault();
         elements.fileInput.click();
       },
       onFileInputChange: (event) => {
-        elements.exportCsvButton.classList.remove('is-hidden');
+        {% comment %} if (uploadedCSV && uploadedCSV !== event.target.value) {
+          clearTableContent(uploadedCSV);
+        } 
 
+        uploadedCSV = event.target.value; {% endcomment %}
+
+        elements.csvButtons.classList.remove('is-hidden');
+        
         const file = event.target.files[0];
-      
+
+        console.log([event.target, file])
+
         if (file.type === 'text/csv') {
           const reader = new FileReader();
-      
+
           reader.onload = function (e) {
             const csv = e.target.result;
             const form = csvToTable(csv);
             const csvFormContainer = document.getElementById('csvForm');
 
             csvFormContainer.style.display = 'block';
-      
+
             if (csvFormContainer.firstChild) {
               csvFormContainer.removeChild(csvFormContainer.firstChild);
             }
-      
+
             csvFormContainer.appendChild(form);
+
+            const numberOfRows = document.getElementById('csvForm').querySelectorAll('tr').length - 1; // Subtract 1 to exclude the header row
+
+            const totalInventory = getTotalInventory();
+            if (totalInventory < numberOfRows) {
+              elements.insufficientInventoryModal.style.display = 'flex';
+              clearTableContent(event.target.value);
+            }
           };
-      
+
           reader.readAsText(file);
-      
-          const activeCampaignsContainer = document.querySelector('[data-js-element="active-campaigns"]');
-          const state = window.campaignForm.state;
-          const mainGifts = state['Main Gift'];
-          const customGifts = state['Custom Swag'];
-          const productInfoString = [mainGifts, customGifts].filter(Boolean).join(', ');
-      
-          const selectedProducts = productInfoString.match(/Product Id: (\d+)/g).map((match) => {
-            const productId = match.split(':').pop().trim();
-            return productId;
-          });
-      
-          // Filter out items with matching data-product-id
-          const productCards = activeCampaignsContainer.querySelectorAll('[data-js-element="cf-product-card"]');
-          const filteredProductCards = Array.from(productCards).filter(card => {
-            const productId = card.getAttribute('data-product-id');
-            return selectedProducts.includes(productId);
-          });
-      
-          // Sum up the total inventory for each item found
-          let totalInventory = 0;
-          filteredProductCards.forEach(card => {
-            const inventoryElement = card.querySelector('[data-inventory]');
-            const inventoryValue = +inventoryElement.dataset.inventory;
-            totalInventory += inventoryValue;
-          });
-
-          const numberOfRows = document.getElementById('csvForm').querySelectorAll('tr').length - 1; // Subtract 1 to exclude the header row
-          if (totalInventory > numberOfRows) {
-            elements.insufficientInventoryModal.style.display = 'flex';
-          }
-
-          clearTableContent();
-      
         } else {
           alert('Please upload a CSV file.');
         }
-      },   
-      exportTableToCsv: () => {
+      },
+      exportTableToCsv: (event) => {
+        event.preventDefault();
+
         const table = document.querySelector('#csvForm table');
         const rows = table.querySelectorAll('tr');
         const csv = [];
-    
+
         rows.forEach((row) => {
           const rowData = [];
           const cells = row.querySelectorAll('th, td');
-    
+
           cells.forEach((cell, cellIndex) => {
             // Ignore the first cell, which contains the row index
             if (cellIndex > 0) {
@@ -209,10 +291,10 @@
               }
             }
           });
-    
+
           csv.push(rowData.join(','));
         });
-    
+
         const csvContent = csv.join('\n');
         const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
         const url = URL.createObjectURL(blob);
@@ -220,45 +302,36 @@
         link.href = url;
         link.download = 'exported-table.csv';
         link.style.display = 'none';
-    
+
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
       },
-      
     };
 
-    elements.fileInputTrigger.addEventListener('click', handlers.onFileInputTriggerClick);
-    elements.fileInput.addEventListener('change', handlers.onFileInputChange);
-    elements.form.addEventListener('submit', handlers.onSubmitForm);
-    elements.form.addEventListener('keydown', handlers.onFormKeyDown);
-    elements.exportCsvButton.addEventListener('click', handlers.exportTableToCsv);
+    const clearTableContent = (value) => {
+      if (value) {
+        value = null;
+      }
 
-
-    const clearTableContent = () => {
-
-      {% comment %} get csvForm id {% endcomment %}
-      const csvForm = document.getElementById('csvForm');
-
-      {% comment %} remove the direct children of csvForm from the DOM {% endcomment %}
-
-      {% comment %} wait 1000ms {% endcomment %}
-      setTimeout(function() {
-        csvForm.style.display = 'none';
+      setTimeout(function () {
+        elements.csvForm.style.display = 'none';
+        elements.csvButtons.classList.add('is-hidden');
       }, 1000);
-
-      {% comment %} @TODO: Ensure you can clear and re-add csv as many time as necessary {% endcomment %}
-    }
-    
+    };
 
     const csvToTable = (csv) => {
+      if (elements.csvForm) {
+        elements.csvForm.style.display = 'block';
+      }
+
       const createEditableCell = (value, isRequired) => {
         const cell = document.createElement('td');
         const input = document.createElement('input');
         input.type = 'text';
         input.value = value;
         input.classList.add('field_input');
-        input.style.minWidth = '260px';
+        input.style.minWidth = '220px';
         if (isRequired) {
           input.required = true;
           if (value.trim() === '') {
@@ -292,6 +365,7 @@
         'Recipient First Name',
         'Recipient Last Name',
         'To Email',
+        'Phone Number', // Added the Phone Number field
         'Address Line 1',
         'Address Line 2',
         'City',
@@ -306,35 +380,265 @@
         cell.textContent = title;
         header.appendChild(cell);
       });
-      
+
       table.appendChild(header);
 
-      lines.forEach((line, index) => {
+      lines.slice(1).forEach((line, index) => {
         const values = line.split(',');
-        if (values.length >= 9) {
+        if (values.length >= 10) { // Updated the minimum required number of columns
           const row = document.createElement('tr');
-      
+
           // Add index count + 1 at the beginning of the row
           const rowIndexCell = document.createElement('td');
           rowIndexCell.textContent = index + 1;
           row.appendChild(rowIndexCell);
-      
+
           row.appendChild(createEditableCell(values[0], true));
           row.appendChild(createEditableCell(values[1], true));
           row.appendChild(createEditableCell(values[2], true));
           row.appendChild(createEditableCell(values[3], true));
-          row.appendChild(createEditableCell(values[4] || '', false));
-          row.appendChild(createEditableCell(values[5], true));
+          row.appendChild(createEditableCell(values[4], true)); // Updated to include the Phone Number field
+          row.appendChild(createEditableCell(values[5] || '', false));
           row.appendChild(createEditableCell(values[6], true));
           row.appendChild(createEditableCell(values[7], true));
           row.appendChild(createEditableCell(values[8], true));
-          row.appendChild(createEditableCell(values[9] || '', false));
+          row.appendChild(createEditableCell(values[9], true));
+          row.appendChild(createEditableCell(values[10] || '', false));
           table.appendChild(row);
         }
       });
 
       return div;
     };
+
+    const getTotalInventory = () => {
+      const activeCampaignsContainer = document.querySelector('[data-js-element="active-campaigns"]');
+      const state = window.campaignForm.state;
+      const mainGifts = state['Main Gift'];
+      const customGifts = state['Custom Swag'];
+      const productInfoString = [mainGifts, customGifts].filter(Boolean).join(', ');
+
+      const selectedProducts = productInfoString.match(/Product Id: (\d+)/g).map((match) => {
+        const productId = match.split(':').pop().trim();
+        return productId;
+      });
+
+      // Filter out items with matching data-product-id
+      const productCards = activeCampaignsContainer.querySelectorAll('[data-js-element="cf-product-card"]');
+      const filteredProductCards = Array.from(productCards).filter((card) => {
+        const productId = card.getAttribute('data-product-id');
+        return selectedProducts.includes(productId);
+      });
+
+      // Sum up the total inventory for each item found
+      let totalInventory = 0;
+      filteredProductCards.forEach((card) => {
+        const inventoryElement = card.querySelector('[data-inventory]');
+        const inventoryValue = +inventoryElement.dataset.inventory;
+        totalInventory += inventoryValue;
+      });
+
+      return totalInventory;
+    };
+
+    const submitAddressesToAirtable = async (jsonData) => {
+      elements.submitMultipleAddressesLoading.classList.remove('is-hidden');
+      const sosCustomerData = window.localStorage.getItem('sos_customer_data');
+      const customer = JSON.parse(sosCustomerData);
+
+      const id = customer.data.id
+      const name = customer.data.fullname
+
+      {% comment %} get todays date formatted as: "2023-03-30" {% endcomment %}
+      const today = new Date();
+      const dd = String(today.getDate()).padStart(2, '0');
+      const mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+      const yyyy = today.getFullYear();
+
+      const inputs = [
+        {
+          name: 'Campaign Name',
+          value: window.airtableCampaignName,
+          type: 'singleLineText',
+          required: true,
+        },
+        {
+          name: "End Date",
+          value: yyyy + '-' + mm + '-' + dd,
+          type: "date",
+          required: true
+        },
+        {
+          name: "Number of selectable gifts",
+          value: 1,
+          type: "number",
+          required: true
+        },
+        {
+          name: "Form Button Text",
+          value: "Send a gift",
+          type: "singleLineText",
+          required: true
+        },
+        {
+          name: "Customer",
+          value: id + '_' + name,
+          required: true
+        },
+        {
+          name: "Gift Message",
+          value: '',
+          type: "singleLineText",
+          required: true
+        },
+        {
+          name: "Shipping Details",
+          value: null,
+          type: "singleLineText",
+          required: true
+        },
+        {
+          name: "Company Logo",
+          value: null,
+          type: "multipleAttachments",
+        },
+      ]
+
+      const formArray = [
+        {
+          label: "Recipient First Name",
+          type: "text",
+          options: "",
+          required: true,
+          airtable_type: "singleLineText"
+        },
+        {
+          label: "Recipient Last Name",
+          type: "text",
+          options: "",
+          required: true,
+          airtable_type: "singleLineText"
+        },
+        {
+          label: "To Email",
+          type: "email",
+          options: "",
+          required: true,
+          airtable_type: "singleLineText"
+        },
+        {
+          label: "Recipient Phone",
+          type: "phone",
+          options: "",
+          required: true,
+          airtable_type: "singleLineText"
+        },
+        {
+          label: "Address Line 1",
+          type: "text",
+          options: "",
+          required: true,
+          airtable_type: "singleLineText"
+        },
+        {
+          label: "Address Line 2",
+          type: "text",
+          options: "",
+          required: false,
+          airtable_type: "singleLineText"
+        },
+        {
+          label: "City",
+          type: "text",
+          options: "",
+          required: true,
+          airtable_type: "singleLineText"
+        },
+        {
+          label: "Province Code",
+          type: "text",
+          options: "",
+          required: true,
+          airtable_type: "singleLineText"
+        },
+        {
+          label: "Country Code",
+          type: "text",
+          options: "",
+          required: true,
+          airtable_type: "singleLineText"
+        },
+        {
+          label: "Zip/Postal",
+          type: "text",
+          options: "",
+          required: true,
+          airtable_type: "singleLineText"
+        },
+        {
+          label: "Gift Message",
+          type: "text",
+          options: "",
+          required: false,
+          airtable_type: "singleLineText"
+        },
+      ]
+
+      const gifts = {
+        main: window.campaignForm.state['Main Gift'],
+        custom: window.campaignForm.state['Custom Swag'],
+      }
+
+      try {
+
+        const pageData = await window.airtableCreateCampaign({
+          inputs,
+          formArray,
+          gifts,
+        })
+
+      } catch (error) {
+        alert("An error when submitting your gift. Please get in touch with technical support. (Code: 1)");
+      }
+
+      const handle = window.airtableCampaignName.replace(/\s+/g, '-').toLowerCase();
+
+      try {
+        const airtableRecord = await window.createAirtableEntries({
+          campaignName: handle,
+          customerId: id,
+          giftState: window.campaignForm.state,
+          formState: jsonData, // Replace "value" with "jsonData"
+        });
+
+        elements.submitMultipleAddressesLoading.classList.add("is-hidden");
+
+        // Check the first element of the array instead of the whole object
+        if (airtableRecord[0].message === "Success") {
+          const event = new CustomEvent("airtable-address-added", {
+            detail: { airtableRecord: airtableRecord[0] },
+          });
+          document.dispatchEvent(event);
+        } else {
+          console.error("Unexpected response:", airtableRecord);
+          alert(
+            "An error when submitting your gift. Please get in touch with technical support. (Code: 2)"
+          );
+        }
+      } catch (error) {
+        console.error("Error in createAirtableEntry:", error);
+        alert(
+          "An error when submitting your gift. Please get in touch with technical support. (Code: 3)"
+        );
+      }
+    }
+
+    elements.fileInputTrigger.addEventListener('click', handlers.onFileInputTriggerClick);
+    elements.fileInput.addEventListener('change', handlers.onFileInputChange);
+    elements.form.addEventListener('submit', handlers.onSubmitForm);
+    elements.form.addEventListener('keydown', handlers.onFormKeyDown);
+    elements.exportCsvButton.addEventListener('click', handlers.exportTableToCsv);
+    elements.clearCsvButton.addEventListener('click', handlers.onClearCsvClick);
   };
 
   const initErrorPop = () => {
@@ -380,4 +684,3 @@
   initErrorPop();
   initMultipleAddressForm();
 </script>
-
