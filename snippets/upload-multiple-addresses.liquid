@@ -218,7 +218,6 @@
         } else {
           event.preventDefault();
           const jsonData = tableToJson(document.querySelector('#csvForm table'));
-          console.log(jsonData);
 
           submitAddressesToAirtable(jsonData);
         }
@@ -237,8 +236,6 @@
         elements.csvButtons.classList.remove('is-hidden');
         
         const file = event.target.files[0];
-
-        console.log([event.target, file])
 
         if (file.type === 'text/csv') {
           const reader = new FileReader();
@@ -395,8 +392,8 @@
 
           row.appendChild(createEditableCell(values[0], true));
           row.appendChild(createEditableCell(values[1], true));
-          row.appendChild(createEditableCell(values[2], true));
-          row.appendChild(createEditableCell(values[3], true));
+          row.appendChild(createEditableCell(values[2], false));
+          row.appendChild(createEditableCell(values[3], false));
           row.appendChild(createEditableCell(values[4], true)); // Updated to include the Phone Number field
           row.appendChild(createEditableCell(values[5] || '', false));
           row.appendChild(createEditableCell(values[6], true));
