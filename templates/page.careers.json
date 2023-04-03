@@ -106,11 +106,11 @@
         "overline": "get in touch",
         "title": "<p>Open Positions<\/p>",
         "heading_style": "h2",
-        "cta_text": "Get in touch",
-        "cta_link": "shopify:\/\/pages\/about-us",
+        "cta_text": "",
+        "cta_link": "",
         "body": "Couldn’t find a position you were looking for? We're always looking for motivated people to join our team. Get in touch!",
-        "secondary_cta_text": "",
-        "secondary_cta_link": ""
+        "secondary_cta_text": "Get in touch",
+        "secondary_cta_link": "shopify:\/\/pages\/about-us"
       }
     },
     "a9b4c335-2262-4070-a3a8-a782d4902a31": {
