@@ -4,9 +4,9 @@
       "type": "module-hero",
       "settings": {
         "overline": "Careers",
-        "title": "<p>Hi, we’re foodiepages<\/p>",
+        "title": "<p>Interested in joining the team?<\/p>",
         "heading_style": "h2",
-        "body": "Since day one, our goal has been to help people discover and connect with awesome, under-the radar brands. A few sleepless nights, 10 years, and a growing team later, we’re still at it. We look forward to being your destination for gifts with intention.",
+        "body": "For nearly a decade, we've created gift boxes that support small businesses and today we are more focussed than ever on becoming Canada's most loved gifting brand.\nCheck out our job listings below.",
         "image": "shopify:\/\/shop_images\/My_project.jpg",
         "enable_card_style": false,
         "text_vertical_alignment": "center",
@@ -82,9 +82,9 @@
           "settings": {
             "overline": "FULL TIME",
             "title": "Placeholder job",
-            "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ut lorem qui lectus molestie malesuada vitae vel purus. www.linkedin.com",
-            "cta_text": "Get in touch",
-            "cta_link": ""
+            "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ut lorem qui lectus molestie malesuada vitae vel purus.",
+            "cta_text": "Apply now",
+            "cta_link": "https:\/\/www.linkedin.com\/"
           }
         },
         "82e393a4-759c-4669-9b6a-1c2e87062abc": {
@@ -93,7 +93,7 @@
             "overline": "FULL TIME",
             "title": "Placeholder job",
             "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ut lorem qui lectus molestie malesuada vitae vel purus.",
-            "cta_text": "Get in touch",
+            "cta_text": "Apply Now",
             "cta_link": "shopify:\/\/pages\/contact-us"
           }
         }
@@ -106,11 +106,11 @@
         "overline": "get in touch",
         "title": "<p>Open Positions<\/p>",
         "heading_style": "h2",
-        "cta_text": "Get in touch",
-        "cta_link": "shopify:\/\/pages\/about-us",
-        "body": "Couldn’t find a position you were looking for? We're always looking for motivated people to join our team. Get in touch!",
+        "cta_text": "View all",
+        "cta_link": "https:\/\/www.linkedin.com\/company\/foodiepages-ca\/jobs\/",
+        "body": "Don't see a job listed that fits? \nEmail erin@foodiepages.ca with a pitch for why you're interested in working with us. Bonus points for creativity. As a growing company, we're always on the lookout for great talent.",
         "secondary_cta_text": "Get in touch",
-        "secondary_cta_link": "https:\/\/www.google.ca"
+        "secondary_cta_link": "mailto:erin@foodiepages.ca"
       }
     },
     "a9b4c335-2262-4070-a3a8-a782d4902a31": {
