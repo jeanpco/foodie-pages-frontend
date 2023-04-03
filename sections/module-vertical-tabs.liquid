@@ -2,10 +2,9 @@
   <div class="vertical-tabs-container padding-vertical padding-huge display-flex justify-content-between">
     <div class="vertical-tabs_header display-flex flex-direction-column justify-content-between padding-right {% if section.settings.image != blank %}padding-large{% else %}padding-huge{% endif %} tablet-padding-0">
       <div class="vertical-tabs_header--top">
-
         {% if section.settings.title != blank and section.settings.image == blank %}
-          {% render 'module-header', 
-            overline: section.settings.overline, 
+          {% render 'module-header',
+            overline: section.settings.overline,
             title: section.settings.title,
             text_horizontal_alignment: 'left',
             heading_style: section.settings.heading_style,
@@ -16,16 +15,19 @@
 
         {% if section.settings.image != blank %}
           <div class="vertical-tabs_image">
-            {{ section.settings.image | image_url: width: 800 | image_tag:
-              loading: 'lazy',
-              widths: '550, 720, 990, 1100, 1500, 2200, 3000'
+            {{
+              section.settings.image
+              | image_url: width: 800
+              | image_tag: loading: 'lazy', widths: '550, 720, 990, 1100, 1500, 2200, 3000'
             }}
           </div>
         {% endif %}
-
       </div>
 
-      {% if section.settings.body != blank or section.settings.secondary_cta_text != blank and section.settings.image == blank %}
+      {% if section.settings.body != blank
+        or section.settings.secondary_cta_text != blank
+        and section.settings.image == blank
+      %}
         <div class="vertical-tabs_header--bottom is-desktop margin-top margin-xlarge">
           {% if section.settings.body != blank %}
             <p class="text-size-medium text-color-grey-500 margin-bottom margin-small">{{ section.settings.body }}</p>
@@ -42,8 +44,8 @@
     <div class="vertical-tabs_wrapper">
       {% if section.settings.image and section.settings.title != blank %}
         <div class="margin-bottom margin-medium">
-          {% render 'module-header', 
-            overline: section.settings.overline, 
+          {% render 'module-header',
+            overline: section.settings.overline,
             title: section.settings.title,
             text_horizontal_alignment: 'left',
             heading_style: section.settings.heading_style,
@@ -52,22 +54,32 @@
           %}
         </div>
       {% endif %}
-    
+
       {% if numberOfAccordionItems > 0 %}
         <div class="vertical-tabs_content" data-js-element="accordion--{{ section.id }}">
           {% for block in section.blocks %}
-            <div class="accordion-block padding-small {% if forloop.first %}is-active{% endif %}" data-js-element="accordion-item">
+            <div
+              class="accordion-block padding-small {% if forloop.first %}is-active{% endif %}"
+              data-js-element="accordion-item"
+            >
               <div class="accordion-block_container padding-xsmall">
                 {% render 'icon-accordion-arrow' %}
-                <p class="accordion-block_overline uppercase text-size-tiny text-color-tertiary margin-bottom margin-xsmall">{{ block.settings.overline }}</p>
+                <p class="accordion-block_overline uppercase text-size-tiny text-color-tertiary margin-bottom margin-xsmall">
+                  {{ block.settings.overline }}
+                </p>
                 <h4 class="accordion-block_title">{{ block.settings.title }}</h4>
                 <div class="accordion-block_body margin-top margin-small">{{ block.settings.body }}</div>
+                {% if block.settings.cta_text != blank and block.settings.cta_link != blank %}
+                  <a class="button margin-top margin-small" href="{{ block.settings.cta_link }}">
+                    {{- block.settings.cta_text -}}
+                  </a>
+                {% endif %}
               </div>
             </div>
           {% endfor %}
         </div>
       {% endif %}
-  
+
       {% if section.settings.body != blank or section.settings.secondary_cta_text != blank %}
         <div class="vertical-tabs_header--bottom is-mobile margin-top margin-xlarge">
           {% if section.settings.body != blank %}
@@ -83,7 +95,6 @@
 </div>
 
 <style>
-
   .accordion-block {
     border-bottom: 1px solid var(--color-grey-200);
     cursor: pointer;
@@ -148,7 +159,6 @@
   }
 
   @media screen and (max-width: 990px) {
-
     .vertical-tabs_header,
     .vertical-tabs_wrapper {
       width: 100%;
@@ -173,24 +183,23 @@
     .vertical-tabs_header--bottom.is-desktop {
       display: none;
     }
-  
+
     .vertical-tabs_header--bottom.is-mobile {
       display: block;
     }
   }
-
 </style>
 
 <script type="module">
   const accordion = document.querySelector('[data-js-element="accordion--{{ section.id }}"]');
   const accordionItems = [...accordion.querySelectorAll('[data-js-element="accordion-item"]')];
 
-  accordionItems.forEach(item => {
+  accordionItems.forEach((item) => {
     item.addEventListener('click', () => {
-      accordionItems.forEach(item => item.classList.remove('is-active'));
+      accordionItems.forEach((item) => item.classList.remove('is-active'));
       item.classList.add('is-active');
     });
-  })
+  });
 </script>
 
 {% schema %}
@@ -284,6 +293,17 @@
           "id": "body",
           "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ut lorem qui lectus molestie malesuada vitae vel purus.",
           "label": "Body"
+        },
+        {
+          "type": "text",
+          "id": "cta_text",
+          "default": "Get in touch",
+          "label": "CTA Text"
+        },
+        {
+          "type": "url",
+          "id": "cta_link",
+          "label": "CTA Link"
         }
       ]
     }
