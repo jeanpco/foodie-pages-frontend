@@ -94,7 +94,7 @@
             "title": "Placeholder job",
             "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ut lorem qui lectus molestie malesuada vitae vel purus.",
             "cta_text": "Get in touch",
-            "cta_link": ""
+            "cta_link": "shopify:\/\/pages\/contact-us"
           }
         }
       },
