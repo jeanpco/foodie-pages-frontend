@@ -1,6 +1,9 @@
 <script type="module">
   
   
+  
+  
+  
   import wretch from 'https://cdn.skypack.dev/wretch/dist/bundle/wretch.all.min.mjs'
   const backendURL = 'https://foodiepages.herokuapp.com'
 
@@ -152,8 +155,6 @@
       formState = [formState];
     }
   
-    console.log({ customerId, campaignName, formState, giftState });
-  
     const pageData = await wretch(
       `${backendURL}/api/airtable-create-campaign-entry?campaignName=${campaignName}&customerId=${customerId}`
     ) // Base url
@@ -231,10 +232,6 @@
 
       return pageData
   } 
-
-
-
-
 
 
 </script>

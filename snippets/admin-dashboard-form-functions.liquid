@@ -1,4 +1,10 @@
 <script type="module">
+  
+  
+  
+  
+  
+  
   window.createCampaignFns = {}
 
   window.createCampaignFns.getExistingCampaign = (props) => {
@@ -99,6 +105,11 @@
       if (pageData.message === 'Success') {
         {% comment %} change button text to success {% endcomment %}
         elements.buttonText.innerText = 'Success!'
+
+        const campaignUrl = pageData.data.body
+
+        {% comment %} open campaignUrl in a new tab {% endcomment %}
+        window.open(campaignUrl, '_blank')
       }
 
       {% comment %} after 3 seconds set buttonText to initial text {% endcomment %}
@@ -178,4 +189,10 @@
 
     productCards.forEach(card => card.classList.remove('is-selected'))
   }
+
+
+
+
+
+
 </script>
