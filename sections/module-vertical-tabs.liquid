@@ -69,9 +69,11 @@
                 </p>
                 <h4 class="accordion-block_title">{{ block.settings.title }}</h4>
                 <div class="accordion-block_body margin-top margin-small">{{ block.settings.body }}</div>
-                {% if block.settings.cta_text != blank and block.settings.cta_link != blank %}
+                {% if block.settings.cta_link != blank %}
                   <a class="button margin-top margin-small" href="{{ block.settings.cta_link }}">
-                    {{- block.settings.cta_text -}}
+                    <span>
+                      {{- block.settings.cta_text -}}
+                    </span>
                   </a>
                 {% endif %}
               </div>

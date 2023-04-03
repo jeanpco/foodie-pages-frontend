@@ -15,6 +15,8 @@
 
 <script type="module">
   
+  
+  
 
 const loadingElement = (style) => `
   <div style="${style}" class="loading inline-loading">
@@ -449,7 +451,6 @@ const loadingElement = (style) => `
         <th class="text-size-tiny uppercase text-color-grey-600">Campaign Name</th>
         <th class="text-size-tiny uppercase text-color-grey-600">Order #</th>
         <th class="text-size-tiny uppercase text-color-grey-600">Order Date</th>
-        <th class="text-size-tiny uppercase text-color-grey-600"># of boxes left</th>
         <th class="text-size-tiny uppercase text-color-grey-600">Delivery Status</th>
         <th class="text-size-tiny uppercase text-color-grey-600">Details</th>
       `
@@ -499,10 +500,6 @@ const loadingElement = (style) => `
             <span>${formattedDate}</span>
           </td>
           <td class="text-size-small">
-            <p class="text-size-tiny uppercase text-color-grey-600 hide-mobile-landscape-and-up"># of boxes left</p>
-            <span>${totalQuantity - totalShipped}</span>
-          </td>
-          <td class="text-size-small">
             <p class="text-size-tiny uppercase text-color-grey-600 hide-mobile-landscape-and-up">Delivery Status</p>
             <span>${deliveryStatus}</span>
           </td>
@@ -533,5 +530,7 @@ const loadingElement = (style) => `
   }
 
   getSOSSaleOrdersFromCustomerId()
+
+
 
 </script>
