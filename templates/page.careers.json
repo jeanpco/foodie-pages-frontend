@@ -82,7 +82,9 @@
           "settings": {
             "overline": "FULL TIME",
             "title": "Placeholder job",
-            "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ut lorem qui lectus molestie malesuada vitae vel purus. www.linkedin.com"
+            "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ut lorem qui lectus molestie malesuada vitae vel purus. www.linkedin.com",
+            "cta_text": "Get in touch",
+            "cta_link": ""
           }
         },
         "82e393a4-759c-4669-9b6a-1c2e87062abc": {
@@ -90,7 +92,9 @@
           "settings": {
             "overline": "FULL TIME",
             "title": "Placeholder job",
-            "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ut lorem qui lectus molestie malesuada vitae vel purus."
+            "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ut lorem qui lectus molestie malesuada vitae vel purus.",
+            "cta_text": "Get in touch",
+            "cta_link": ""
           }
         }
       },
@@ -106,7 +110,7 @@
         "cta_link": "shopify:\/\/pages\/about-us",
         "body": "Couldn’t find a position you were looking for? We're always looking for motivated people to join our team. Get in touch!",
         "secondary_cta_text": "Get in touch",
-        "secondary_cta_link": ""
+        "secondary_cta_link": "https:\/\/www.google.ca"
       }
     },
     "a9b4c335-2262-4070-a3a8-a782d4902a31": {
