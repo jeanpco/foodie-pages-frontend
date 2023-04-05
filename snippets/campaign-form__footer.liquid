@@ -114,6 +114,8 @@
 <script type="module">
   
   
+  
+  
   import wretch from 'https://cdn.skypack.dev/wretch/dist/bundle/wretch.all.min.mjs'
 
   const ifAtleastOneMainGiftIsSelected = (state) => {
@@ -272,7 +274,7 @@
         giftState,
       });
 
-      if (pageData.message === 'Success') {
+      if (pageData[0].message === 'Success') {
         {% comment %} pageData.data.body.fields {% endcomment %}
         window.campaignForm.buildThankYouModal({ products, shippingDetails });
         {% comment %} remove loading state to button {% endcomment %}
@@ -334,6 +336,8 @@
       }
     })
   };
+
+
 
 
 
