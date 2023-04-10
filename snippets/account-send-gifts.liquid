@@ -28,7 +28,7 @@
 
   <p class="text-size-medium margin-bottom margin-small">Don't have our template?</p>
   <a
-    href="https://cdn.shopify.com/s/files/1/0264/5000/2013/files/foodie-pages-multiple-addresses-upload-template.csv?v=1679429492"
+    href="https://cdn.shopify.com/s/files/1/0264/5000/2013/files/foodie-pages-multiple-addresses-upload-template.csv?v=1681144641"
     target="_blank"
     data-js-element="download-csv-template"
     class="button secondary"
@@ -46,13 +46,19 @@
     cursor: pointer;
   }
 
-  [data-js-element="file-upload_container"].is-disabled, 
-  [data-js-element="file-upload_container"].is-disabled > *,
-  [data-js-element="open-popup"].is-disabled,
-  [data-js-element="open-popup"].is-disabled > * {
+  [data-js-element='file-upload_container'].is-disabled,
+  [data-js-element='file-upload_container'].is-disabled > *,
+  [data-js-element='open-popup'].is-disabled,
+  [data-js-element='open-popup'].is-disabled > * {
     cursor: not-allowed;
     opacity: 0.5;
     pointer-events: none;
+  }
+
+  .corporate-campaigns-products.is-disabled {
+    opacity: 0.5;
+    pointer-events: none;
+    cursor: not-allowed;
   }
 </style>
 
@@ -85,7 +91,7 @@
       });
     });
 
-    observer.observe(elements.sendGiftsContainer, { 
+    observer.observe(elements.sendGiftsContainer, {
       childList: true,
       subtree: true,
     });
@@ -287,13 +293,13 @@
     }
 
     try {
-    
+
       const pageData = await window.airtableCreateCampaign({
         inputs,
         formArray,
         gifts,
       })
-    
+
     } catch (error) {
       alert("An error when submitting your gift. Please get in touch with technical support. (Code: 1)");
     }
@@ -308,7 +314,7 @@
         formState: value,
       });
       globalElements.loading.classList.add("is-hidden");
-    
+
       // Check the first element of the array instead of the whole object
       if (airtableRecord[0].message === "Success") {
         const event = new CustomEvent("airtable-address-added", {
@@ -326,7 +332,7 @@
       alert(
         "An error when submitting your gift. Please get in touch with technical support. (Code: 3)"
       );
-    }    
+    }
   }
 
   // Event listener for gift-state-changed event, updates airtableCampaignName and calls maxMinOneGiftSelected function
@@ -350,6 +356,7 @@
       sendGiftsContainer: document.querySelector('[data-js-container="send-gifts"]'),
       multipleFilUploadContainer: document.querySelector('[data-js-element="file-upload_container"]'),
       openPopup: document.querySelector('[data-js-element="open-popup"]'),
+      campaignContainers: [...document.querySelectorAll('.corporate-campaigns-products')]
     }
     const productCards = [...elements.sendGiftsContainer.querySelectorAll('[data-js-element="cf-product-card"]')]
     const currentProductId = element.dataset.productId;
@@ -361,8 +368,12 @@
 
     productCards.forEach((productCard) => {
       const productId = productCard.dataset.productId;
+      const isCustomGift = productCard.closest('.corporate-campaigns-products__custom');
 
-      if (+productId !== +currentProductId && !gifts.includes(productId)) {
+      elements.campaignContainers.forEach((c) => c.classList.add('is-disabled'));
+      element.closest('.corporate-campaigns-products').classList.remove('is-disabled');
+
+      if (+productId !== +currentProductId && !gifts.includes(productId) && !isCustomGift) {
         productCard.classList.add('is-disabled');
       } else {
         productCard.classList.remove('is-disabled');
@@ -374,6 +385,7 @@
         productCard.classList.remove('is-disabled');
       });
 
+      elements.campaignContainers.forEach((c) => c.classList.remove('is-disabled'));
       elements.multipleFilUploadContainer.classList.add('is-disabled');
       elements.openPopup.classList.add('is-disabled');
     } else {

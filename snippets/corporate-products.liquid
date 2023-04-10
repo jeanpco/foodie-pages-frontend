@@ -71,6 +71,29 @@
 
 <script type="module">
   
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
   window.customerCollections = [
     {% for collection in collections %}
       {% if collection.metafields.custom.customer_id != blank %}
@@ -98,15 +121,29 @@
     const mergedProducts = {};
   
     products.forEach((product) => {
+
+      
       if (!product) return;
       if (!mergedProducts[product.id]) {
         mergedProducts[product.id] = {
           ...product,
-          variants: [product.matchingVariant],
+          variants: [{
+            ...product.matchingVariant,
+            sosInventory: product.sosInventory,
+          }],
           sosInventory: product.sosInventory,
         };
       } else {
-        mergedProducts[product.id].variants.push(product.matchingVariant);
+        console.log('matches a product id', {
+          ...product.matchingVariant,
+          sosInventory: product.sosInventory,
+        })
+
+        mergedProducts[product.id].variants.push({
+          ...product.matchingVariant,
+          sosInventory: product.sosInventory,
+        });
+        
         mergedProducts[product.id].sosInventory += product.sosInventory;
       }
     });
@@ -136,9 +173,10 @@
       
         if (!product) return;
       
-        const matchingVariant = product.variants.find(
-          (v) => v.sku && v.sku.toLowerCase() === item.sku.toLowerCase()
-        );
+        const matchingVariant = product.variants.find((v) => {
+          return v.sku && v.sku.toLowerCase() === item.sku.toLowerCase()
+        });
+
         const sosInventory =
           line.quantity - line.shipped > 0 ? line.quantity - line.shipped : 0;
       
@@ -148,17 +186,18 @@
           sosInventory,
         };
       });
+
       
       // Merge products with the same product_id
       campaignItems = mergeProducts(campaignItems);
-
+      
       {% comment %} refactor "campaignItems" only to return item that have different id {% endcomment %}
       campaignItems = campaignItems.filter((item, index, array) => {
-        return index === array.findIndex((t) => (
-          t.id === item.id
+        return index === array.findIndex((p) => (
+          p.id === item.id
         ))
       })
-
+      
       const gifts = {
         main: campaignItems.filter(p => p).filter(p => !p.tags || !p.tags.includes('custom')),
         custom: campaignItems.filter(p => p).filter(p => p.tags && p.tags.includes('custom'))
@@ -219,5 +258,28 @@
       return elements.activeCampaigns.appendChild(campaignDivContainer);
     })
   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 </script>

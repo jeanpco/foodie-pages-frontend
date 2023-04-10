@@ -2,6 +2,11 @@
   cursor: pointer;
 }
 
+.cf-product-card hr {
+  margin: 0.5rem 0;
+  background: var(--color-grey-100);
+}
+
 .cf-product-card.is-selected .cf-product-card_image-container {
   border: 3px solid var(--color-tertiary);
 }
@@ -89,5 +94,4 @@
 }
 
 .cf-product-card_title {
-
 }

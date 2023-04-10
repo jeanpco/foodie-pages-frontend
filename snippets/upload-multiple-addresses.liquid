@@ -123,7 +123,7 @@
       gap: 1rem;
       align-items: flex-start;
     }
-  } 
+  }
 </style>
 
 <script type="module">
@@ -166,6 +166,7 @@
           country: rowData['Country Code'],
           'postalcode/zip': rowData['Zip/Postal'],
           gift_message: rowData['Gift Message'],
+          companyName: rowData['Company Name'],
         };
       });
 
@@ -229,12 +230,12 @@
       onFileInputChange: (event) => {
         {% comment %} if (uploadedCSV && uploadedCSV !== event.target.value) {
           clearTableContent(uploadedCSV);
-        } 
+        }
 
         uploadedCSV = event.target.value; {% endcomment %}
 
         elements.csvButtons.classList.remove('is-hidden');
-        
+
         const file = event.target.files[0];
 
         if (file.type === 'text/csv') {
@@ -370,6 +371,7 @@
         'Country Code',
         'Zip/Postal',
         'Gift Message',
+        'Company Name',
       ];
 
       columnTitles.forEach((title) => {
@@ -401,6 +403,7 @@
           row.appendChild(createEditableCell(values[8], true));
           row.appendChild(createEditableCell(values[9], true));
           row.appendChild(createEditableCell(values[10] || '', false));
+          row.appendChild(createEditableCell(values[11] || '', false));
           table.appendChild(row);
         }
       });
@@ -527,7 +530,7 @@
           label: "Recipient Phone",
           type: "phone",
           options: "",
-          required: true,
+          required: false,
           airtable_type: "singleLineText"
         },
         {
@@ -578,7 +581,7 @@
           options: "",
           required: false,
           airtable_type: "singleLineText"
-        },
+        }
       ]
 
       const gifts = {

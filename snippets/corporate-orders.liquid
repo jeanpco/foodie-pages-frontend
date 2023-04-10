@@ -17,6 +17,7 @@
   
   
   
+  
 
 const loadingElement = (style) => `
   <div style="${style}" class="loading inline-loading">
@@ -462,7 +463,7 @@ const loadingElement = (style) => `
           return acc + line.quantity
         }, 0)
 
-        let deliveryStatus = 'Not Delivered'
+        let deliveryStatus = 'Not Shipped'
 
         {% comment %} If any shipment linked shipments, shipment is partially completed {% endcomment %}
         if (saleOrder && saleOrder.linkedShipments && saleOrder.linkedShipments.length > 0) {
@@ -530,6 +531,7 @@ const loadingElement = (style) => `
   }
 
   getSOSSaleOrdersFromCustomerId()
+
 
 
 

@@ -2,6 +2,7 @@
 
 <script type="module">
   
+  
   window.cfProductCard = (props = {}) => {
     const product = props.product || {};
     const options = props.options || {};
@@ -52,7 +53,18 @@
           ${product.title || 'Product Title Placeholder'}
         </h4>
         ${inventory !== null && inventory !== undefined ? `
-          <p class="text-size-tiny text-color-grey-400 margin-vertical margin-xxsmall" data-inventory="${inventory}">Inventory: ${inventory} unit${inventory > 1 ? 's' : ''}</p>
+          <p class="text-size-tiny text-color-grey-400 margin-vertical margin-xxsmall" data-inventory="${inventory}">
+            <span class="text-color-grey-600 font-weight-semibold">Total inventory: ${inventory} unit${inventory > 1 ? 's' : ''}</span></br>
+            ${numberOfVariant > 1 ? product.variants.map(v => {
+              return `
+                <span class="padding-vertical padding-xsmall" style="display: block;">
+                  Title: ${v.title}<br>
+                  SKU #: ${v.sku}<br>
+                  Inventory: ${v.sosInventory} unit${v.sosInventory > 1 ? 's' : ''}
+                </span>
+              `
+            }).join('') : '' }
+          </p>
         ` : ''}
         ${options && options.reOrder ? `
           <a data-js-element="reorder" class="link margin-top margin-xxsmall" href="#new-products">

@@ -61,15 +61,17 @@
             %}
           </div>
 
-          {%
-            render 'input',
-            label: 'Campaign',
-            placeholder: 'Campaign name',
-            name: 'campaign',
-            type: 'text',
-            required: true,
-            value: form.campaign,
-          %}
+          <div class="half-width">
+            {%
+              render 'input',
+              label: 'Campaign',
+              placeholder: 'Campaign name',
+              name: 'campaign',
+              type: 'text',
+              required: true,
+              value: form.campaign,
+            %}
+          </div>
 
           <div class="half-width">
             {%
@@ -80,6 +82,18 @@
               type: 'text',
               required: true,
               value: form.product,
+            %}
+          </div>
+
+          <div class="half-width">
+            {%
+              render 'input',
+              label: 'SKU',
+              placeholder: 'Which SKU are you re-ordering?',
+              name: 'sku',
+              type: 'text',
+              required: false,
+              value: form.sku,
             %}
           </div>
 
@@ -135,12 +149,14 @@
       {%- endif -%}
 
       {%- if form.posted_successfully? -%}
-        {% comment %} {% unless template == 'page.contact' %}
-          <script type="module">
-            window.corporateFormSuccess();
-            gtag_report_get_a_quote(window.location);
-          </script>
-        {% endunless %} {% endcomment %}
+        {% comment %}
+          {% unless template == 'page.contact' %}
+            <script type="module">
+              window.corporateFormSuccess();
+              gtag_report_get_a_quote(window.location);
+            </script>
+          {% endunless %}
+        {% endcomment %}
 
         <div
           style="display: flex; flex-direction: column; align-items: center; justify-content: center;"
@@ -169,13 +185,10 @@
 </div>
 
 <style>
-
   .new-products-form .input-container .field-wrapper {
     max-width: unset;
   }
 
   .dialog-modal-container {
-    
   }
-
 </style>
