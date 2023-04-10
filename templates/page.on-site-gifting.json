@@ -25,9 +25,9 @@
       ],
       "settings": {
         "overline": "Corporate Gifting",
-        "title": "<p>Preferred Gifting Platform<\/p>",
+        "title": "<p>On-Site Gifting Pop-Ups<\/p>",
         "heading_style": "h1",
-        "body": "Invite people to select their preferred gift from your custom Gifting Platform, designed to showcase your brand and communicate appreciation to the people that matter most to your business.",
+        "body": "Deliver instant gratification anywhere, on-site. Our impressive Pop-Up Shops invite people to select a gift of their choice sourced from independent brands and makers, enjoy it during your event, and take it home with them.",
         "image": "shopify:\/\/shop_images\/Screen_Shot_2022-11-15_at_5.04.39_PM.png",
         "enable_card_style": false,
         "text_vertical_alignment": "flex-end",
@@ -43,24 +43,30 @@
           "type": "tab",
           "settings": {
             "overline": "Step 1",
-            "title": "Share",
-            "body": "We build a platform in line with your brand identity and program goals, and you share it with your recipients via email."
+            "title": "Plan",
+            "body": "Tell us about your event and goals. No matter the location, we’ll meet you there.",
+            "cta_text": "Get in touch",
+            "cta_link": ""
           }
         },
         "ab7fff74-0668-4779-9c58-a3781089ca61": {
           "type": "tab",
           "settings": {
             "overline": "Step 2",
-            "title": "Select",
-            "body": "Recipients select their preferred gift and enter their shipping address. Redemptions are tracked in real-time."
+            "title": "Discover",
+            "body": "There's a heck of a lot of stuff out there. We've sorted through it and rounded up the most exciting new giftable items from independents. We’ll curate a selection of items that your participants won’t find anywhere else.",
+            "cta_text": "Get in touch",
+            "cta_link": ""
           }
         },
         "2d4083b3-581a-4ade-b225-6f2117a93f50": {
           "type": "tab",
           "settings": {
             "overline": "Step 3",
-            "title": "Delivered",
-            "body": "Our team of gifting experts hand-packs and delivers."
+            "title": "Select",
+            "body": "We reject the notion that corporate gifting has to be blah. Our Pop-Up Shops immerse people in an authentic experience to discover and find a gift that fits them. Once selected, recipients enter their preferred mailing address for easy delivery to their doorstep.",
+            "cta_text": "Get in touch",
+            "cta_link": ""
           }
         },
         "47847899-6a08-4443-881a-c2133258173d": {
@@ -69,7 +75,9 @@
           "settings": {
             "overline": "Step 4",
             "title": "Fulfillment + Warehousing",
-            "body": "We're capable of a lot more than just curating! We're a full scale fulfillment and logistics partner too. From shipping, receiving and warehousing to ghost fulfillment and 3PL services, we've got you covered."
+            "body": "We're capable of a lot more than just curating! We're a full scale fulfillment and logistics partner too. From shipping, receiving and warehousing to ghost fulfillment and 3PL services, we've got you covered.",
+            "cta_text": "Get in touch",
+            "cta_link": ""
           }
         },
         "a25db7f7-6489-43d4-89c5-e1e47404b228": {
@@ -78,7 +86,9 @@
           "settings": {
             "overline": "Step 5",
             "title": "Software + Stores",
-            "body": "Ship, track and manage gifts all from your couch (or office chair). No more dusty supply closets or shipping boxes under your desk."
+            "body": "Ship, track and manage gifts all from your couch (or office chair). No more dusty supply closets or shipping boxes under your desk.",
+            "cta_text": "Get in touch",
+            "cta_link": ""
           }
         }
       },
@@ -177,7 +187,7 @@
           "type": "features",
           "settings": {
             "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/placeholder-svg-square.svg?v=1666645913",
-            "title": "Send a single gift or as many as you want at one time",
+            "title": "Discover new brands that are hard to find elsewhere",
             "body": "",
             "cta_text": "",
             "cta_link": ""
@@ -212,10 +222,10 @@
       ],
       "settings": {
         "overline": "benefits",
-        "title": "<p>All-in-one Gifting Platform<\/p>",
+        "title": "<p>On-Site Pop Up Experiences <\/p>",
         "heading_style": "h1",
-        "body": "Send useful and thoughtful gifts to anyone, anytime. We’ll make it easy for you.",
-        "cta_text": "Schedule a demo",
+        "body": "We'll help you create an authentic, creative and memorable experience.",
+        "cta_text": "Learn more",
         "cta_link": "#contact",
         "image": "shopify:\/\/shop_images\/Image_3468c917-9e51-49ab-9d3c-fa357152af3b.png"
       }
