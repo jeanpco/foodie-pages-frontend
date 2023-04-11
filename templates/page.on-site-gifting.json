@@ -236,7 +236,7 @@
         "a0cdd988-b288-4542-9434-6c35f9543944": {
           "type": "cta",
           "settings": {
-            "cta_text": "Schedule a demo",
+            "cta_text": "Contact us",
             "cta_link": "#contact"
           }
         }
@@ -246,9 +246,9 @@
       ],
       "settings": {
         "overline": "",
-        "title": "<p>Book a demo!<\/p>",
+        "title": "<p>Elevate your next event!<\/p>",
         "heading_style": "h2",
-        "body": "Connect with our Gifting Experts to learn more about our Corporate Gifting Platform.",
+        "body": "Connect with our Gifting Experts to learn more about our On-Site Gifting Pop Ups.",
         "image": "shopify:\/\/shop_images\/FoodiePages_66_20230227_AvenuePhoto-removebg-preview.png",
         "enable_card_style": true,
         "text_vertical_alignment": "center",
