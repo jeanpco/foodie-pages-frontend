@@ -222,7 +222,7 @@
       ],
       "settings": {
         "overline": "",
-        "title": "<p>On-Site Experiences <\/p>",
+        "title": "<p>On-Site <em>Experiences<\/em> <\/p>",
         "heading_style": "h1",
         "body": "We'll help you create create meaningful connections on-site.",
         "cta_text": "Learn more",
