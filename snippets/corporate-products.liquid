@@ -2,7 +2,7 @@
 
 <div data-js-container="{{ campaign_container }}" class="corporate-products-container">
   {% comment %} Empty State {% endcomment %}
-  <div data-js-element="products-empty-state" class="corporate-campaigns-products hide">
+  <div data-js-element="products-empty-state" class="hide">
     <div class="divider background-color-azul-verdoso-100"></div>
     <h4
       data-js-element="campaign-title"
@@ -70,6 +70,7 @@
 </style>
 
 <script type="module">
+  
   
   
   
@@ -258,6 +259,7 @@
       return elements.activeCampaigns.appendChild(campaignDivContainer);
     })
   }
+
 
 
 

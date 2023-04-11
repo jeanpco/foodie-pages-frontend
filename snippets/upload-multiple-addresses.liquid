@@ -228,12 +228,6 @@
         elements.fileInput.click();
       },
       onFileInputChange: (event) => {
-        {% comment %} if (uploadedCSV && uploadedCSV !== event.target.value) {
-          clearTableContent(uploadedCSV);
-        }
-
-        uploadedCSV = event.target.value; {% endcomment %}
-
         elements.csvButtons.classList.remove('is-hidden');
 
         const file = event.target.files[0];
@@ -256,8 +250,9 @@
 
             const numberOfRows = document.getElementById('csvForm').querySelectorAll('tr').length - 1; // Subtract 1 to exclude the header row
 
-            const totalInventory = getTotalInventory();
-            if (totalInventory < numberOfRows) {
+            const lowestInventory = getLowestInventory();
+
+            if (lowestInventory < numberOfRows) {
               elements.insufficientInventoryModal.style.display = 'flex';
               clearTableContent(event.target.value);
             }
@@ -411,35 +406,87 @@
       return div;
     };
 
-    const getTotalInventory = () => {
-      const activeCampaignsContainer = document.querySelector('[data-js-element="active-campaigns"]');
+    const getLowestInventory = () => {
+      const activeCampaigns = [...document.querySelectorAll('.corporate-campaigns-products')];
+      const activeCampaignsContainer = activeCampaigns.find((campaign) => !campaign.classList.contains('is-disabled'));
+
+      console.log(activeCampaigns)
+
       const state = window.campaignForm.state;
       const mainGifts = state['Main Gift'];
       const customGifts = state['Custom Swag'];
       const productInfoString = [mainGifts, customGifts].filter(Boolean).join(', ');
 
-      const selectedProducts = productInfoString.match(/Product Id: (\d+)/g).map((match) => {
+      const productIdMatches = productInfoString.match(/Product Id: (\d+)/g);
+      const variantSkuMatches = productInfoString.match(/Variant Sku: ([\w-]+)/g);
+
+      const selectedProducts = productIdMatches.map((match, index) => {
         const productId = match.split(':').pop().trim();
-        return productId;
+
+        const variantSkuMatch = variantSkuMatches && variantSkuMatches[index];
+        const variantSku = variantSkuMatch ? variantSkuMatch.split(':').pop().trim() : null;
+
+        return {
+          productId,
+          variantSku,
+        };
       });
+
+      console.log(activeCampaignsContainer)
+
 
       // Filter out items with matching data-product-id
       const productCards = activeCampaignsContainer.querySelectorAll('[data-js-element="cf-product-card"]');
+
+      {% comment %} console.log(productCards); {% endcomment %}
+
       const filteredProductCards = Array.from(productCards).filter((card) => {
         const productId = card.getAttribute('data-product-id');
-        return selectedProducts.includes(productId);
+        return selectedProducts.find(p => p.productId.includes(productId));
       });
 
-      // Sum up the total inventory for each item found
-      let totalInventory = 0;
+      // Find the lowest inventory value for each item found
+      let lowestInventory = Infinity;
+
       filteredProductCards.forEach((card) => {
+        const productId = card.getAttribute('data-product-id');
         const inventoryElement = card.querySelector('[data-inventory]');
-        const inventoryValue = +inventoryElement.dataset.inventory;
-        totalInventory += inventoryValue;
+
+        // find the selected product with productId
+        const selectedProduct = selectedProducts.find((product) => product.productId === productId);
+
+        let inventoryValue = +inventoryElement.dataset.inventory;
+
+        // find all the span elements inside the inventoryElement
+        const inventorySpans = Array.from(inventoryElement.querySelectorAll('span'));
+        const inventorySpan = inventorySpans.find((span) => span.textContent.includes(selectedProduct.variantSku));
+
+        if (inventorySpan) {
+          const inventoryText = inventorySpan.textContent;
+
+          const text = inventoryText && inventoryText.split('Inventory:').pop().trim();
+          const inventoryValue = parseInt(text, 10);
+
+          if (inventoryValue < lowestInventory) {
+            lowestInventory = inventoryValue;
+          }
+        } else {
+          if (inventoryValue < lowestInventory) {
+            lowestInventory = inventoryValue;
+          }
+        }
       });
 
-      return totalInventory;
+
+      return lowestInventory;
     };
+
+      {% comment %} document.addEventListener('gift-state-changed', (e) => {
+        setTimeout(() => {
+          const inventory = getLowestInventory();
+          console.log(inventory)
+        }, 1000)
+      }); {% endcomment %}
 
     const submitAddressesToAirtable = async (jsonData) => {
       elements.submitMultipleAddressesLoading.classList.remove('is-hidden');
