@@ -16,8 +16,8 @@
           <div class="half-width">
             {%
               render 'input',
-              label: 'Firstname',
-              placeholder: 'Your firstname',
+              label: 'First name',
+              placeholder: 'Firstname',
               name: 'firstname',
               type: 'text',
               required: true,
@@ -28,8 +28,8 @@
           <div class="half-width">
             {%
               render 'input',
-              label: 'Lastname',
-              placeholder: 'Your lastname',
+              label: 'Last name',
+              placeholder: 'Lastname',
               name: 'lastname',
               type: 'text',
               required: true,
@@ -41,7 +41,7 @@
             {%
               render 'input',
               label: 'Email',
-              placeholder: 'Your email',
+              placeholder: 'Email',
               name: 'email',
               type: 'email',
               required: true,
@@ -53,7 +53,7 @@
             {%
               render 'input',
               label: 'Phone number',
-              placeholder: 'Your phone number',
+              placeholder: 'Phone number',
               name: 'phone',
               type: 'tel',
               required: false,
@@ -88,20 +88,8 @@
           <div class="half-width">
             {%
               render 'input',
-              label: 'SKU',
-              placeholder: 'Which SKU are you re-ordering?',
-              name: 'sku',
-              type: 'text',
-              required: false,
-              value: form.sku,
-            %}
-          </div>
-
-          <div class="half-width">
-            {%
-              render 'input',
               label: 'Quantity',
-              placeholder: 'Quantity name',
+              placeholder: 'Total quantity',
               name: 'quantity',
               type: 'text',
               required: true,
@@ -118,7 +106,7 @@
               id="ContactForm-body"
               class="text-area field_input"
               name="contact[body]"
-              placeholder="Any additional information? Ex: Budget, Timeline"
+              placeholder="Any additional information? Ex: Budget, Timeline and quantities per size if applicable."
             >
               {{- form.body -}}
             </textarea>
