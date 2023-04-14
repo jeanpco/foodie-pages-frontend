@@ -6,6 +6,17 @@
   
   
   
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
   window.createCampaignFns = {}
 
   window.createCampaignFns.getExistingCampaign = (props) => {
@@ -64,7 +75,7 @@
             required: false,
           }
 
-         } if (inputName !== 'Company Logo') {
+        } else if (inputName !== 'Company Logo') {
           return {
             name: inputName,
             value: inputValue,
@@ -126,16 +137,17 @@
     }
 
     const formArray = elements.inputs.map((input) => {
+      
       const labelValue = input.querySelector('[data-js-element="input"]').value;
       const typeValue = input.querySelector('[data-js-element="select"]').value;
       {% comment %} get input with name="Field options" {% endcomment %}
       const optionsValue = input.querySelector('input[name="Field options"]').value;
-
+      
       return {
         label: labelValue,
         type: typeValue,
         options: optionsValue && optionsValue.split(',').map((option) => option.trim()),
-        required: true,
+        required: labelValue === 'Address Line 2' || labelValue === 'Recipient Phone' || labelValue === 'To Email' ? false : true,
         airtable_type: 'singleLineText'
       }
     }).filter((input) => input.label)
@@ -190,6 +202,17 @@
 
     productCards.forEach(card => card.classList.remove('is-selected'))
   }
+
+
+
+
+
+
+
+
+
+
+
 
 
 
