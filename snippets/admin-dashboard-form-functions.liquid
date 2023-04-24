@@ -17,6 +17,25 @@
   
   
   
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
   window.createCampaignFns = {}
 
   window.createCampaignFns.getExistingCampaign = (props) => {
@@ -85,6 +104,8 @@
         } else {
           const file = input.files[0];
 
+          console.log(file)
+
           if (!file) {
             return {
               name: inputName,
@@ -93,10 +114,15 @@
             }
           }
 
-          const base64 = await window.createCampaignFns.convertImageToBase64(file);
+          const base64 = await window.createCampaignFns.convertImageToBase64(file);          
+
           return {
             name: inputName,
-            value: base64,
+            value: { 
+              name: file.name,
+              type: file.type, 
+              base64 
+            },
             type: type
           }
         }
@@ -202,10 +228,6 @@
 
     productCards.forEach(card => card.classList.remove('is-selected'))
   }
-
-
-
-
 
 
 

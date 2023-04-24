@@ -1,13 +1,14 @@
 <script type="module">
   
   
-  
-  
+    
   import wretch from 'https://cdn.skypack.dev/wretch/dist/bundle/wretch.all.min.mjs'
   const backendURL = 'https://foodiepages.herokuapp.com'
 
-  {% comment %} 'http://localhost:8080' {% endcomment %}
-  {% comment %} 'https://foodiepages.herokuapp.com' {% endcomment %}
+  {% comment %} 
+  'http://localhost:8080' 
+  'https://foodiepages.herokuapp.com'
+  {% endcomment %}
 
   {% comment %}
 
@@ -182,6 +183,8 @@
 
   window.airtableCreateCampaign = async ({ inputs, formArray, gifts }) => {
 
+      console.log(inputs)
+
       const pageData = await wretch(`${backendURL}/api/airtable-create-campaign`).
         post({
           inputs,
@@ -231,7 +234,6 @@
 
       return pageData
   } 
-
 
 
 
