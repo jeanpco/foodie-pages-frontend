@@ -198,6 +198,11 @@ details[open].menu-opening > .menu-drawer__submenu {
   color: var(--color-secondary);
 }
 
+.menu-drawer__submenu.has-submenu.background-color-tertiary
+  .menu-drawer__close-button {
+  background-color: var(--color-tertiary);
+}
+
 .no-js .menu-drawer__close-button {
   display: none;
 }
