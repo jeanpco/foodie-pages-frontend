@@ -1,0 +1,102 @@
+<style>
+  sticky-header,
+  #shopify-section-footer,
+  .announcement-bar {
+    display: none !important;
+  }
+
+  .loading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: var(--color-white);
+    z-index: 2;
+  }
+</style>
+
+{% comment %}
+  @TODO: Only show the publish product (active) when fetching product from Shopify
+  @TODO: Do you mean this: https://www.foodiepages.ca/pages/form?client=71&campaign=employee-appreciation-2023? Right now what I could do is to open it inside another tab after creation?
+{% endcomment %}
+
+{% render 'campaign-form__loading-icon' %}
+{% render 'campaign-form__header' %}
+{% render 'campaign-form__body' %}
+{% render 'campaign-form__footer' %}
+
+<script type="module">
+  
+  
+
+  function removeSpacesAndBackslashes(str) {
+    return str.replace(/}\s*{/g, '} {').replace(/\\/g, '');
+  } 
+
+  const generateError = (message) => {
+    const loadingSpinner = document.querySelector('.loading-spinner')
+    const getLoadingMessage = document.querySelector('.loading-container p')
+    loadingSpinner.style.display = 'none'
+    getLoadingMessage.innerHTML = message
+  }
+
+  const initCampaignForm = async () => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const campaignNameParam = urlParams.get('campaign');
+    const clientIdParam = urlParams.get('client');
+
+    const pageData = await window.getAirtableTableById({ campaignNameParam, clientIdParam })
+    const rawData = pageData.data.campaignRow.fields
+
+    const data = {
+      {% comment %} header {% endcomment %}
+      shippingDetails: rawData['Shipping Details'],
+      campaignName: rawData['Campaign Name'],
+      giftMessage: rawData['Gift Message'],
+      companyLogo: rawData['Company Logo'] && rawData['Company Logo'][0].url,
+      pageURL: rawData['Page URL'],
+      {% comment %} body {% endcomment %}
+      products: JSON.parse(removeSpacesAndBackslashes(rawData.products)),
+      numberOfSelectableGifts: rawData['Number of selectable gifts'],
+      {% comment %} footer {% endcomment %}
+      formStructure: JSON.parse(removeSpacesAndBackslashes(rawData['Form Structure'])),
+      formButtonText: rawData['Form Button Text'],
+      endDate: rawData['End Date'],
+    }
+
+    window.campaignForm.buildHeader && window.campaignForm.buildHeader({
+      imageUrl: data.companyLogo,
+      title: data.campaignName, 
+      body: data.giftMessage,
+    })
+
+    window.campaignForm.buildBody && window.campaignForm.buildBody({
+      products: pageData.data.shopifyProducts,
+      airtableProducts: data.products,
+      numberOfSelectableGifts: data.numberOfSelectableGifts,
+    })
+
+    window.campaignForm.buildFooter && window.campaignForm.buildFooter({
+      formStructure: data.formStructure,
+      formButtonText: data.formButtonText,
+      products: pageData.data.shopifyProducts,
+      shippingDetails: data.shippingDetails,
+      endDate: data.endDate,
+    })
+
+    window.campaignForm.initLoading(false)
+  }
+
+  window.addEventListener('load', async () => {
+    try {
+      await initCampaignForm()
+    } catch (error) {
+      console.log(error)
+      generateError(`Something went wrong while trying to initiate your gift selection. </br>Please contact your administrator.`)
+    }
+  })
+
+
+
+</script>

@@ -1,0 +1,245 @@
+<script type="module">
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  window.createCampaignFns = {}
+
+  window.createCampaignFns.getExistingCampaign = (props) => {
+    {% comment %} http://127.0.0.1:9292/account?campaign=update&client=371&campaign-name=christmas-campaign {% endcomment %}
+    console.log(props)
+  }
+
+  window.createCampaignFns.watchForFormSubmit = () => {
+    const elements = {
+      submit_button: document.querySelector('[data-js-element="submit-form-button"]')
+    }
+
+    elements.submit_button.addEventListener('click', async (e) => {
+      e.preventDefault();
+
+      const gifts = {
+        main: window.campaignForm.state['Main Gift'],
+        custom: window.campaignForm.state['Custom Swag']
+      }
+
+      const elements = {
+        inputs: [...document.querySelectorAll('.js-campaign-input input')],
+        selects: [...document.querySelectorAll('.js-campaign-select select')],
+        file: document.querySelector('.js-campaign-input-file input'),
+        textareas: [...document.querySelectorAll('.js-campaign-input textarea')],
+        buttonLoading: document.querySelector('[data-js-element="submit-button-loading"]'),
+        buttonText: document.querySelector('[data-js-element="submit-text"]'),
+      }
+
+      const initialButtonText = elements.buttonText.innerText;
+
+      elements.buttonLoading.classList.remove('hidden')
+
+      {% comment %} change button text to "loading..." {% endcomment %}
+      elements.buttonText.innerText = 'Loading...'
+
+      {% comment %} remap all other inputs for backend {% endcomment %}
+      const asyncedInputs = [...elements.inputs, ...elements.selects, ...elements.textareas, elements.file].map(async (input) => {
+        const inputName = input.getAttribute('name');
+        let inputValue = input.value;
+        let type = input.dataset.airtableType;
+
+        if (inputName === 'End Date' && !inputValue) {
+          {% comment %} get todays date, add 3 years and format it as: yyyy-mm-dd {% endcomment %}
+          const today = new Date();
+          const threeYearsFromToday = new Date(today.setFullYear(today.getFullYear() + 3));
+          const year = threeYearsFromToday.getFullYear();
+          const month = threeYearsFromToday.getMonth() + 1;
+          const day = threeYearsFromToday.getDate();
+          const formattedDate = `${year}-${month}-${day}`;
+          
+          return {
+            name: inputName,
+            value: formattedDate,
+            type: type,
+            required: false,
+          }
+
+        } else if (inputName !== 'Company Logo') {
+          return {
+            name: inputName,
+            value: inputValue,
+            type: type,
+            required: true,
+          }
+        } else {
+          const file = input.files[0];
+
+          console.log(file)
+
+          if (!file) {
+            return {
+              name: inputName,
+              value: null,
+              type: type,
+            }
+          }
+
+          const base64 = await window.createCampaignFns.convertImageToBase64(file);          
+
+          return {
+            name: inputName,
+            value: { 
+              name: file.name,
+              type: file.type, 
+              base64 
+            },
+            type: type
+          }
+        }
+      })
+
+      {% comment %} resolve asyncedInputs {% endcomment %}
+      const inputs = await Promise.all(asyncedInputs)
+      const formArray = window.createCampaignFns.generateFormArray()
+
+      const pageData = await window.airtableCreateCampaign({
+        inputs,
+        formArray,
+        gifts
+      })
+
+      elements.buttonLoading.classList.add('hidden')
+
+      if (pageData.message === 'Success') {
+        {% comment %} change button text to success {% endcomment %}
+        elements.buttonText.innerText = 'Success!'
+
+        const campaignUrl = pageData.data.body
+
+        {% comment %} open campaignUrl in a new tab {% endcomment %}
+        window.open(campaignUrl, '_blank')
+      }
+
+      {% comment %} after 3 seconds set buttonText to initial text {% endcomment %}
+      setTimeout(() => {
+        elements.buttonText.innerText = initialButtonText
+      }, 3000)
+    })
+  }
+
+  window.createCampaignFns.generateFormArray = () => {
+    const elements = {
+      inputs: [...document.querySelectorAll('[data-js-element="draggable-input"]')]
+    }
+
+    const formArray = elements.inputs.map((input) => {
+      
+      const labelValue = input.querySelector('[data-js-element="input"]').value;
+      const typeValue = input.querySelector('[data-js-element="select"]').value;
+      {% comment %} get input with name="Field options" {% endcomment %}
+      const optionsValue = input.querySelector('input[name="Field options"]').value;
+      
+      return {
+        label: labelValue,
+        type: typeValue,
+        options: optionsValue && optionsValue.split(',').map((option) => option.trim()),
+        required: labelValue === 'Address Line 2' || labelValue === 'Recipient Phone' || labelValue === 'To Email' ? false : true,
+        airtable_type: 'singleLineText'
+      }
+    }).filter((input) => input.label)
+
+    return formArray
+  }
+
+  window.createCampaignFns.convertImageToBase64 = async (file) => {
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.readAsDataURL(file);
+      reader.onload = () => {
+        const base64 = reader.result;
+        resolve(base64);
+      };
+      reader.onerror = (error) => {
+        reject(error);
+      };
+    });
+  };
+
+  window.createCampaignFns.resetProductsState = () => {
+    const productCards = [...document.querySelectorAll('[data-js-element="cf-product-card"]')]
+
+    productCards.forEach(card => {
+      if (card.classList.contains('is-selected')) {
+        {% comment %} look for the variantId inside of state in either Main Gift or Custom Swag, if found, remove it {% endcomment %}
+        const mainGift = window.campaignForm.state['Main Gift'];
+        const customSwag = window.campaignForm.state['Custom Swag'];
+
+
+
+        if (mainGift) {
+          const variants = mainGift.split(',').map((variant) => {
+            const variantId = variant.match(/Variant Id: (\d+)/)[1];
+            return { id: +variantId }
+          })
+
+          window.cfProductCardRemove(mainGift, variants, 'Main Gift', card);
+        }
+
+        if (customSwag) {
+          const variants = customSwag.split(',').map((variant) => {
+            const variantId = variant.match(/Variant Id: (\d+)/)[1];
+            return { id: +variantId }
+          })
+
+          window.cfProductCardRemove(customSwag, variants, 'Custom Swag', card);
+        }
+      }
+    })
+
+    productCards.forEach(card => card.classList.remove('is-selected'))
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>

@@ -1,7 +1,8 @@
 {{ 'customer.css' | asset_url | stylesheet_tag }}
 
 {% assign is_corporate_client = false %}
-{% assign sos_customer_id = nil %}
+{% assign is_super_admin = false %}
+{% assign sos_customer_id = null %}
 
 {% for tag in customer.tags %}
   {% if tag contains 'sos_customer_id' and tag contains ':' %}
@@ -9,67 +10,98 @@
     {% assign sos_customer_id = tag | split: ':' %}
     {% assign sos_customer_id = sos_customer_id[1] %}
   {% endif %}
+
+  {% if tag contains 'super_admin' %}
+    {% assign is_super_admin = true %}
+  {% endif %}
 {% endfor %}
 
 <div class="account-background">
   <div class="customer account container">
+    {% render 'account-sidebar', customer: customer, is_super_admin: is_super_admin %}
 
-    {% render 'account-sidebar', customer: customer %}
-  
     <div class="main-content padding-vertical padding-xlarge background-color-white">
-
-      <div class="alert-container margin-left margin-large tablet-margin-0">
-        {% render 'alert-banner', title: section.settings.alert_text %}
-      </div>
-
-      <div class="padding-left padding-large tablet-padding-0">
-        <p class="text-size-medium margin-bottom margin-medium">Hi {{ customer.name }}, welcome to your account!</p>
-        <h1 class="margin-bottom margin-medium">{{ 'customer.orders.title' | t }}</h1>
-
-        <div class="tabs">
-          <div class="tabs-header padding-vertical padding-large">
-
-              <a href="#" class="tabs-header_item is-active" data-js-element="tab-header" data-index="1">
-                <span class="heading-style-h4 padding-bottom padding-medium">
-                  My Orders
-                </span>
-                <div class="tab-header_progress-bar"></div>
-              </a>
-              {% if is_corporate_client %}
-                <a href="#" class="tabs-header_item" data-js-element="tab-header" data-index="2">
-                  <span class="heading-style-h4 padding-bottom padding-medium">
-                    Team Orders
-                  </span>
-                  <div class="tab-header_progress-bar"></div>
-                </a>
-              {% endif %}
-
+      {% unless is_super_admin %}
+        {% unless is_corporate_client %}
+          <div class="alert-container margin-left margin-large tablet-margin-0">
+            {% render 'alert-banner', title: section.settings.alert_text %}
           </div>
+        {% endunless %}
 
-          <div class="tabs-body">
+        {% comment %} !DASHBOARD {% endcomment %}
 
-            <div class="tabs-body_regular is-active" data-js-element="tab-body" data-index="1">
-              {% render 'regular-orders' %}
-            </div>
-
-            {% if is_corporate_client %}
-              <div class="tabs-body_corporate" data-js-element="tab-body" data-index="2">
-                {% render 'corporate-orders', id: sos_customer_id %}
-              </div>
-            {% endif %}
-
-          </div>
-
+        <div data-js-element="dashboard-container" class="dashboard is-visible">
+          {% render 'account-dashboard',
+            sos_customer_id: sos_customer_id,
+            is_super_admin: is_super_admin,
+            is_corporate_client: is_corporate_client
+          %}
         </div>
 
-      </div>
+        {% comment %} !ORDERS {% endcomment %}
+
+        <div data-js-element="order-history-container" class="order-history is-hidden">
+          {% render 'account-order-history',
+            sos_customer_id: sos_customer_id,
+            is_super_admin: is_super_admin,
+            is_corporate_client: is_corporate_client
+          %}
+        </div>
+
+        {% comment %} ! ADD FILE TO ENABLE FUNCTIONS FOR CORPORATE PRODUCTS {% endcomment %}
+        {% render 'corporate-products-functions',
+          sos_customer_id: sos_customer_id,
+          is_super_admin: is_super_admin,
+          is_corporate_client: is_corporate_client
+        %}
+
+        {% comment %} !NEW PRODUCTS {% endcomment %}
+
+        <div data-js-element="new-products-container" class="new-products-container is-hidden">
+          {% render 'account-new-products',
+            sos_customer_id: sos_customer_id,
+            is_super_admin: is_super_admin,
+            is_corporate_client: is_corporate_client
+          %}
+        </div>
+
+        {% comment %} !SEND GIFTS {% endcomment %}
+
+        <div data-js-element="send-gifts-container" class="send-gifts-container is-hidden">
+          {% render 'account-send-gifts',
+            sos_customer_id: sos_customer_id,
+            is_super_admin: is_super_admin,
+            is_corporate_client: is_corporate_client
+          %}
+        </div>
+
+        {% comment %} !MY PRODUCTS {% endcomment %}
+
+        <div data-js-element="my-products-container" class="my-products-container is-hidden">
+          {% render 'account-my-products',
+            sos_customer_id: sos_customer_id,
+            is_super_admin: is_super_admin,
+            is_corporate_client: is_corporate_client
+          %}
+        </div>
+      {% endunless %}
+
+      {% if is_super_admin %}
+        <h1
+          class="margin-bottom margin-medium line-height-1-3 padding-left padding-large tablet-padding-0"
+          data-js-element="dashboard-title"
+        >
+          {{ 'customer.orders.super_admin_title' | t }}
+        </h1>
+
+        {% render 'admin-dashboard' %}
+      {% endif %}
     </div>
   </div>
 </div>
 
 <style>
-
-  [data-js-element="tab-body"] {
+  [data-js-element='tab-body'] {
     justify-content: space-between;
     transform: translateX(30px);
     opacity: 0;
@@ -79,7 +111,7 @@
     width: 0;
   }
 
-  [data-js-element="tab-body"].is-active {
+  [data-js-element='tab-body'].is-active {
     opacity: 1;
     transition: transform 0.3s, opacity 0.3s;
     visibility: visible;
@@ -134,42 +166,7 @@
   .alert-container {
     max-width: 34rem;
   }
-
 </style>
-
-<script type="module">
-
-  const initOrderTabs = () => {
-    const tabHeaders = [...document.querySelectorAll('[data-js-element="tab-header"]')];
-    const tabBodies = [...document.querySelectorAll('[data-js-element="tab-body"]')];
-
-    tabHeaders.forEach((tabHeader) => {
-      tabHeader.addEventListener('click', (e) => {
-        e.preventDefault()
-        const index = tabHeader.dataset.index;
-
-        tabHeaders.forEach((tabHeader) => {
-          tabHeader.classList.remove('is-active');
-        });
-
-        tabBodies.forEach((tabBody) => {
-          tabBody.classList.remove('is-active');
-        });
-
-        tabHeader.classList.add('is-active');
-
-        tabBodies.forEach((tabBody) => {
-          if (+tabBody.dataset.index === +index) {
-            tabBody.classList.add('is-active');
-          }
-        });
-      });
-    });
-  }
-
-  initOrderTabs()
-
-</script>
 
 {% schema %}
 {

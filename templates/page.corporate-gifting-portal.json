@@ -1,0 +1,258 @@
+{
+  "sections": {
+    "main": {
+      "type": "module-hero",
+      "blocks": {
+        "02d55e23-f307-4138-a9bd-10d797daa746": {
+          "type": "cta",
+          "settings": {
+            "cta_text": "Learn more",
+            "cta_link": "#contact"
+          }
+        },
+        "c048c51b-1b9b-4987-9088-f581437cc840": {
+          "type": "cta",
+          "disabled": true,
+          "settings": {
+            "cta_text": "Shop all",
+            "cta_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "02d55e23-f307-4138-a9bd-10d797daa746",
+        "c048c51b-1b9b-4987-9088-f581437cc840"
+      ],
+      "settings": {
+        "overline": "Corporate Gifting",
+        "title": "<p>Preferred Gifting Platform<\/p>",
+        "heading_style": "h1",
+        "body": "Invite people to select their preferred gift from your custom Gifting Platform, designed to showcase your brand and communicate appreciation to the people that matter most to your business.",
+        "image": "shopify:\/\/shop_images\/Screen_Shot_2022-11-15_at_5.04.39_PM.png",
+        "enable_card_style": false,
+        "text_vertical_alignment": "flex-end",
+        "layout_style": "rows",
+        "background_color": "background-color-azul-verdoso-10",
+        "trusted_by_text": "Trusted by"
+      }
+    },
+    "823bd50c-3555-4282-8b34-ab0e8584323d": {
+      "type": "module-vertical-tabs",
+      "blocks": {
+        "db40d850-e629-4e9b-b0e8-d2d20e4414ad": {
+          "type": "tab",
+          "settings": {
+            "overline": "Step 1",
+            "title": "Share",
+            "body": "We build a platform in line with your brand identity and program goals, and you share it with your recipients via email."
+          }
+        },
+        "ab7fff74-0668-4779-9c58-a3781089ca61": {
+          "type": "tab",
+          "settings": {
+            "overline": "Step 2",
+            "title": "Select",
+            "body": "Recipients select their preferred gift and enter their shipping address. Redemptions are tracked in real-time."
+          }
+        },
+        "2d4083b3-581a-4ade-b225-6f2117a93f50": {
+          "type": "tab",
+          "settings": {
+            "overline": "Step 3",
+            "title": "Delivered",
+            "body": "Our team of gifting experts hand-packs and delivers."
+          }
+        },
+        "47847899-6a08-4443-881a-c2133258173d": {
+          "type": "tab",
+          "disabled": true,
+          "settings": {
+            "overline": "Step 4",
+            "title": "Fulfillment + Warehousing",
+            "body": "We're capable of a lot more than just curating! We're a full scale fulfillment and logistics partner too. From shipping, receiving and warehousing to ghost fulfillment and 3PL services, we've got you covered."
+          }
+        },
+        "a25db7f7-6489-43d4-89c5-e1e47404b228": {
+          "type": "tab",
+          "disabled": true,
+          "settings": {
+            "overline": "Step 5",
+            "title": "Software + Stores",
+            "body": "Ship, track and manage gifts all from your couch (or office chair). No more dusty supply closets or shipping boxes under your desk."
+          }
+        }
+      },
+      "block_order": [
+        "db40d850-e629-4e9b-b0e8-d2d20e4414ad",
+        "ab7fff74-0668-4779-9c58-a3781089ca61",
+        "2d4083b3-581a-4ade-b225-6f2117a93f50",
+        "47847899-6a08-4443-881a-c2133258173d",
+        "a25db7f7-6489-43d4-89c5-e1e47404b228"
+      ],
+      "settings": {
+        "overline": "How it works",
+        "title": "<p>Let them choose their <em>preferred<\/em> gift.<\/p>",
+        "heading_style": "h2",
+        "cta_text": "",
+        "cta_link": "",
+        "body": "",
+        "secondary_cta_text": "",
+        "secondary_cta_link": ""
+      }
+    },
+    "05ea480d-037b-4297-9c3d-d6160866116b": {
+      "type": "module-columns",
+      "disabled": true,
+      "blocks": {
+        "765a0837-b3a6-417e-a20d-8c4151c40912": {
+          "type": "card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Image_ece8a130-10d5-442c-8531-af02ad89d323.jpg",
+            "title": "New Hire Onboarding Kits",
+            "body": "Say a big first hello to new employees and interns with an information pack and gift box.",
+            "cta_text": "Get a quote",
+            "cta_link": "#corporate-contact"
+          }
+        },
+        "2799395e-848f-4345-9be1-4844c0f3b341": {
+          "type": "card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Image_4156cd82-50c2-40f5-ab2f-94ea44745172.jpg",
+            "title": "Milestone Gifts",
+            "body": "Whether a birthday, anniversary or retirement – it’s worth celebrating.",
+            "cta_text": "",
+            "cta_link": ""
+          }
+        },
+        "1a1d97cc-0c9f-4023-b4cf-a2188c76fa3e": {
+          "type": "card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Image.png",
+            "title": "Event Gifts",
+            "body": "No event is complete without a gift or keepsake to take home.",
+            "cta_text": "Get a quote",
+            "cta_link": "#corporate-contact"
+          }
+        },
+        "81289acb-6a37-4c70-84ec-d781a6d0b072": {
+          "type": "card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Image.jpg",
+            "title": "Client Appreciation Gifts",
+            "body": "Show your appreciation with a branded and personalized gift.",
+            "cta_text": "Get a quote",
+            "cta_link": "#corporate-contact"
+          }
+        }
+      },
+      "block_order": [
+        "765a0837-b3a6-417e-a20d-8c4151c40912",
+        "2799395e-848f-4345-9be1-4844c0f3b341",
+        "1a1d97cc-0c9f-4023-b4cf-a2188c76fa3e",
+        "81289acb-6a37-4c70-84ec-d781a6d0b072"
+      ],
+      "settings": {
+        "overline": "Corporate solutions",
+        "title": "Gifting For All Occasions",
+        "body": "Looking for a company-wide event or a one-off gift? We have you covered.",
+        "cta_text": "Get a quote",
+        "cta_link": "#corporate-contact",
+        "heading_style": "h2"
+      }
+    },
+    "b5797203-b142-444b-be2c-d6e9d37312fe": {
+      "type": "module-features",
+      "blocks": {
+        "2c55f2d5-0c58-4b13-af11-302a514fa449": {
+          "type": "features",
+          "settings": {
+            "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/placeholder-svg-square.svg?v=1666645913",
+            "title": "Personalize your Portal with branding, messaging and more",
+            "body": "",
+            "cta_text": "",
+            "cta_link": ""
+          }
+        },
+        "fae23ace-5ca1-43a0-a58b-9c5d1bef7e5b": {
+          "type": "features",
+          "settings": {
+            "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/placeholder-svg-square.svg?v=1666645913",
+            "title": "Send a single gift or as many as you want at one time",
+            "body": "",
+            "cta_text": "",
+            "cta_link": ""
+          }
+        },
+        "94353301-183f-4ec1-9b25-4d500681640f": {
+          "type": "features",
+          "settings": {
+            "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/placeholder-svg-square.svg?v=1666645913",
+            "title": "Appreciate anyone and send gifts practically anywhere",
+            "body": "",
+            "cta_text": "",
+            "cta_link": ""
+          }
+        },
+        "29189724-18f8-43ad-ad45-9aea0d08c6f0": {
+          "type": "features",
+          "settings": {
+            "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/placeholder-svg-square.svg?v=1666645913",
+            "title": "Best of all - our Gifting Platform is 100% free!",
+            "body": "",
+            "cta_text": "",
+            "cta_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "2c55f2d5-0c58-4b13-af11-302a514fa449",
+        "fae23ace-5ca1-43a0-a58b-9c5d1bef7e5b",
+        "94353301-183f-4ec1-9b25-4d500681640f",
+        "29189724-18f8-43ad-ad45-9aea0d08c6f0"
+      ],
+      "settings": {
+        "overline": "benefits",
+        "title": "<p>All-in-one Gifting Platform<\/p>",
+        "heading_style": "h1",
+        "body": "Send useful and thoughtful gifts to anyone, anytime. We’ll make it easy for you.",
+        "cta_text": "Schedule a demo",
+        "cta_link": "#contact",
+        "image": "shopify:\/\/shop_images\/Image_3468c917-9e51-49ab-9d3c-fa357152af3b.png"
+      }
+    },
+    "582103a2-47d5-46e9-9ba6-ede2b4f3963b": {
+      "type": "module-hero",
+      "blocks": {
+        "a0cdd988-b288-4542-9434-6c35f9543944": {
+          "type": "cta",
+          "settings": {
+            "cta_text": "Schedule a demo",
+            "cta_link": "#contact"
+          }
+        }
+      },
+      "block_order": [
+        "a0cdd988-b288-4542-9434-6c35f9543944"
+      ],
+      "settings": {
+        "overline": "",
+        "title": "<p>Book a demo!<\/p>",
+        "heading_style": "h2",
+        "body": "Connect with our Gifting Experts to learn more about our Corporate Gifting Platform.",
+        "image": "shopify:\/\/shop_images\/FoodiePages_66_20230227_AvenuePhoto-removebg-preview.png",
+        "enable_card_style": true,
+        "text_vertical_alignment": "center",
+        "layout_style": "two-columns",
+        "background_color": "background-color-mar-10",
+        "trusted_by_text": "Trusted by"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "823bd50c-3555-4282-8b34-ab0e8584323d",
+    "05ea480d-037b-4297-9c3d-d6160866116b",
+    "b5797203-b142-444b-be2c-d6e9d37312fe",
+    "582103a2-47d5-46e9-9ba6-ede2b4f3963b"
+  ]
+}

@@ -1,0 +1,44 @@
+<div class="account-card" data-link="{{ link }}" data-js-element="dashboard-card">
+  <img src="{{ icon }}"></>
+  <h4 class="margin-bottom margin-xsmall">{{ title }}</h4>
+  <p class="margin-bottom margin-large text-color-grey-500">{{ body }}</p>
+  <button class="button account-card_button">
+    <span>View</span>
+  </button>  
+</div>
+
+<style>
+  .account-card {
+    background-color: var(--color-azul-verdoso-10);
+    transition: background-color 0.3s;
+    cursor: pointer;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    position: relative;
+  }
+
+  @media (max-width: 1000px) {
+    .account-card {
+      min-height: 200px;
+    }
+  }
+
+
+
+  .account-card:hover {
+    background-color: var(--color-azul-verdoso-18);
+  }
+
+  .account-card:hover .account-card_button {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  .account-card_button {
+    position: absolute;
+    bottom: 1rem;
+    transform: translateY(1rem);
+    transition: transform 0.3s, opacity 0.3s;
+    opacity: 0;
+  }
+</style>

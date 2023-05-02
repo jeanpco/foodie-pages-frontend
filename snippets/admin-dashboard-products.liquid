@@ -1,0 +1,90 @@
+{% comment %} get all shopify collection id {% endcomment %}
+{% assign collections = collections | where: 'published', true %}
+
+<script>
+  window.customerCollections = [
+    {% for collection in collections %}
+      {% if collection.metafields.custom.customer_id != blank %}
+        {
+          "customer_id": {{ collection.metafields.custom.customer_id }},
+          "collection_id": {{ collection.id }}
+        },
+      {% endif %}
+    {% endfor %}
+    {
+      "customer_id": null,
+      "collection_id": 287050530975
+    }
+  ];
+</script>
+
+<section data-js-element="products-grid" class="products-grid">
+  <div class="products-grid_container margin-top margin-xlarge">
+    <header class="products-grid_header display-flex justify-content-between margin-bottom margin-xsmall">
+      <h2 class="products-grid_title text-size-tiny uppercase">SELECT THE CAMPAIGN MAIN GIFTS</h2>
+      <p data-js-element="number-main-gifts-selected" class="products-grid_amount-selected text-size-tiny uppercase"></p>
+    </header>
+    <div data-js-element="products-grid_main-gifts" class="products-grid_main-gifts">
+    </div>
+  </div>
+  <div class="products-grid_container margin-top margin-huge">
+    <header class="products-grid_header display-flex justify-content-between margin-bottom margin-xsmall">
+      <h2 class="products-grid_title text-size-tiny uppercase">SELECT CUSTOM SWAG (OPTIONAL)</h2>
+      <p data-js-element="number-custom-gifts-selected" class="products-grid_amount-selected text-size-tiny uppercase"></p>
+    </header>
+    <div data-js-element="products-grid_customs-gifts" class="products-grid_custom-gifts">
+    </div>
+  </div>
+</section>
+
+<style>
+  .products-grid_main-gifts, .products-grid_custom-gifts {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 1rem;
+    grid-row-gap: 2rem;
+  }
+
+  {% comment %} below 1300px make grid of 2 column {% endcomment %}
+  @media screen and (max-width: 1300px) {
+    .products-grid_main-gifts, .products-grid_custom-gifts {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  {% comment %} below 500px make grid of 1 column {% endcomment %}
+  @media screen and (max-width: 500px) {
+    .products-grid_main-gifts, .products-grid_custom-gifts {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+</style>
+
+<script tye="module">
+  document.addEventListener('gift-state-changed', (e) => {
+
+    const elements = {
+      numberOfSelectedMainGifts: document.querySelector('[data-js-element="number-main-gifts-selected"]'),
+      numberOfSelectedCustomGifts: document.querySelector('[data-js-element="number-custom-gifts-selected"]'),
+    }
+
+    const gifts = {
+      main: e.detail.state["Main Gift"],
+      custom: e.detail.state["Custom Swag"]
+    }
+
+    selectedGifts(gifts.main, elements.numberOfSelectedMainGifts)
+    selectedGifts(gifts.custom, elements.numberOfSelectedCustomGifts)
+  });
+
+  const selectedGifts = (gifts, element) => {
+    const selectedProducts = gifts && gifts.includes(',') ? gifts.split(',') : gifts ? [gifts] : [];
+    const numberOfSelectedGifts = selectedProducts.length;
+
+    if (numberOfSelectedGifts > 0) {
+      element.innerHTML = `(${numberOfSelectedGifts}) SELECTED`;
+    } else {
+      element.innerHTML = '';
+    }
+  }
+</script>

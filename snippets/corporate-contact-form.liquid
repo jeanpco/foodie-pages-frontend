@@ -1,157 +1,222 @@
+{{ 'modal.css' | asset_url | stylesheet_tag }}
 {{ 'form.css' | asset_url | stylesheet_tag }}
 
 <div class="padding-bottom padding-large">
-      {% render 'module-header', 
-        title: settings.corporate_contact_form_title, 
-        body: settings.corporate_contact_form_body, 
-        text_horizontal_alignment: 'left' 
-      %}
+  {% render 'module-header',
+    title: settings.corporate_contact_form_title,
+    body: settings.corporate_contact_form_body,
+    text_horizontal_alignment: 'left'
+  %}
 </div>
 
 <div class="contact-form-body">
-      {% form 'contact', class: 'form' %}
-    
-        <div class="input-container width-control">
-          <input type="hidden" name="contact[tags]" value="corporate-account-inquiry">
-        
-          <div class="field-wrapper margin-bottom margin-medium">
-    
-            {% 
-              render 'input', 
-              label: settings.corporate_contact_form_input_name_label,
-              placeholder: settings.corporate_contact_form_input_name_placeholder,
-              name: 'name',
-              type: 'text',
-              required: true,
-              value: form.name,
-            %}
+  {% form 'contact', class: 'form corporate-contact-form' %}
+    <div class="input-container width-control">
+      <input type="hidden" name="contact[tags]" value="corporate-account-inquiry">
 
-            {% 
-              render 'input', 
-              label: settings.corporate_contact_form_input_email_label,
-              placeholder: settings.corporate_contact_form_input_email_placeholder,
-              name: 'email',
-              type: 'email',
-              required: true,
-              value: form.email,
-            %}
+      <div class="field-wrapper margin-bottom margin-medium">
+        <div class="half-width">
+          {%
+            render 'input',
+            label: settings.corporate_contact_form_input_firstname_label,
+            placeholder: settings.corporate_contact_form_input_firstname_placeholder,
+            name: 'firstname',
+            type: 'text',
+            required: true,
+            value: form.firstname,
+          %}
+        </div>
 
-            <div class="half-width">
-              {% 
-                render 'input', 
-                label: settings.corporate_contact_form_input_phone_label,
-                placeholder: settings.corporate_contact_form_input_phone_placeholder,
-                name: 'phone',
-                type: 'tel',
-                required: false,
-                value: form.phone,
-              %}
-            </div>
+        <div class="half-width">
+          {%
+            render 'input',
+            label: settings.corporate_contact_form_input_lastname_label,
+            placeholder: settings.corporate_contact_form_input_lastname_placeholder,
+            name: 'lastname',
+            type: 'text',
+            required: true,
+            value: form.lastname,
+          %}
+        </div>
 
-            <div class="half-width">
-              {% 
-                render 'input', 
-                label: settings.corporate_contact_form_input_company_label,
-                placeholder: settings.corporate_contact_form_input_company_placeholder,
-                name: 'company',
-                type: 'text',
-                required: true,
-                value: form.company,
-              %}
-            </div>
+        {%
+          render 'input',
+          label: settings.corporate_contact_form_input_email_label,
+          placeholder: settings.corporate_contact_form_input_email_placeholder,
+          name: 'email',
+          type: 'email',
+          required: true,
+          value: form.email,
+        %}
 
-            <div class="half-width">
-              <div class="field-group">
-                <label class="text-size-tiny uppercase" for="ContactForm-number-of-boxes">{{ settings.corporate_contact_form_input_boxes_label }}</label>
-                <div class="select">
-                  <select
-                    id="ContactForm-number-of-boxes"
-                    name="contact[number_of_boxes]"
-                  >
-                    <option>0-25</option>
-                    <option>25-50</option>
-                    <option>50-75</option>
-                    <option>100-500</option>
-                    <option>500-1000</option>
-                    <option>1000+</option>
-                  </select>
-                  {% render 'icon-caret' %}
-                </div>
-              </div>
-            </div>
+        <div class="half-width">
+          {%
+            render 'input',
+            label: settings.corporate_contact_form_input_phone_label,
+            placeholder: settings.corporate_contact_form_input_phone_placeholder,
+            name: 'phone',
+            type: 'tel',
+            required: false,
+            value: form.phone,
+          %}
+        </div>
 
+        <div class="half-width">
+          {%
+            render 'input',
+            label: settings.corporate_contact_form_input_company_label,
+            placeholder: settings.corporate_contact_form_input_company_placeholder,
+            name: 'company',
+            type: 'text',
+            required: true,
+            value: form.company,
+          %}
+        </div>
 
-            <div class="half-width">
-              <div class="field-group">
-                <label class="text-size-tiny uppercase" for="ContactForm-budget">{{ settings.corporate_contact_form_input_budget_label }}</label>
-                <div class="select">
-                  <select
-                    id="ContactForm-budget"
-                    name="contact[budget]"
-                  >
-                    <option>$35-$50</option>
-                    <option>$50-$70</option>
-                    <option>$70-$100</option>
-                    <option>$100+</option>
-                  </select>
-                  {% render 'icon-caret' %}
-                </div>
-              </div>
-            </div>
-
-            <div class="field-group">
-              <label class="text-size-tiny uppercase" for="ContactForm-body">{{ settings.corporate_contact_form_input_message_label }}</label>
-              
-              <textarea
-                required
-                rows="3"
-                id="ContactForm-body"
-                class="text-area field_input"
-                name="contact[body]"
-                placeholder="{{ settings.corporate_contact_form_input_message_placeholder }}"
+        <div class="half-width">
+          <div class="field-group">
+            <label class="text-size-tiny uppercase" for="ContactForm-number-of-boxes">
+              {{- settings.corporate_contact_form_input_boxes_label -}}
+            </label>
+            <div class="select">
+              <select
+                id="ContactForm-number-of-boxes"
+                name="contact[number_of_boxes]"
               >
+                <option>0-25</option>
+                <option>25-50</option>
+                <option>50-75</option>
+                <option>100-500</option>
+                <option>500-1000</option>
+                <option>1000+</option>
+              </select>
+              {% render 'icon-caret' %}
+            </div>
+          </div>
+        </div>
+
+        <div class="half-width">
+          <div class="field-group">
+            <label class="text-size-tiny uppercase" for="ContactForm-budget">
+              {{- settings.corporate_contact_form_input_budget_label -}}
+            </label>
+            <div class="select">
+              <select
+                id="ContactForm-budget"
+                name="contact[budget]"
+              >
+                <option>$35-$50</option>
+                <option>$50-$70</option>
+                <option>$70-$100</option>
+                <option>$100+</option>
+              </select>
+              {% render 'icon-caret' %}
+            </div>
+          </div>
+        </div>
+
+        <div class="field-group">
+          <label class="text-size-tiny uppercase" for="ContactForm-body">
+            {{- settings.corporate_contact_form_input_message_label -}}
+          </label>
+
+          <textarea
+            required
+            rows="3"
+            id="ContactForm-body"
+            class="text-area field_input"
+            name="contact[body]"
+            placeholder="{{ settings.corporate_contact_form_input_message_placeholder }}"
+          >
                 {{- form.body -}}
               </textarea>
-            </div>
-    
-          </div>
-    
-          <button type="submit" class="button contact-submit-button" name="commit" id="Subscribe" aria-label="{{ 'contact.button_label' | t }}">
-            <span>{{ settings.contact_form_cta_text }}</span>
-          </button>
         </div>
-    
-        {%- if form.errors -%}
-          <small class="text-size-tiny text-color-grey-500 contact-form__message form__message margin-top margin-small" id="Contact-error--{{ id }}">
-            {% render 'icon-error' %}
-            {{ form.errors.translated_fields['email'] | capitalize }} 
-            {{ form.errors.messages['email'] }}
-          </small>
-        {%- endif -%}
-    
-        {%- if form.posted_successfully? -%}
+      </div>
 
-            {% unless template == 'page.contact' %}
-              <script type="module">   
-                  window.corporateFormSuccess()
-              </script>
-            {% endunless %}
-    
-          <div style="display: flex; flex-direction: column; align-items: center; justify-content: center;" class="text-align-center">
-            <h3 class="text-size-tiny text-color-grey-500 form__message" id="Contact-success--{{ id }}" tabindex="-1" autofocus>
-              {% render 'icon-success' %}
-              {{ settings.contact_form_success_message }}
-            </h3>
-          </div>
-        {%- endif -%}
-        
-      {% endform %}
+      <button
+        type="submit"
+        class="button contact-submit-button"
+        name="commit"
+        id="Subscribe"
+        aria-label="{{ 'contact.button_label' | t }}"
+      >
+        <span>{{ settings.contact_form_cta_text }}</span>
+      </button>
     </div>
 
-    <style>
+    {%- if form.errors -%}
+      <small
+        class="text-size-tiny text-color-grey-500 contact-form__message form__message margin-top margin-small"
+        id="Contact-error--{{ id }}"
+      >
+        {% render 'icon-error' %}
+        {{ form.errors.translated_fields.email | capitalize }}
+        {{ form.errors.messages.email }}
+      </small>
+    {%- endif -%}
 
-      .dialog-modal[aria-controls="corporate_contact_form"] .dialog-modal-container {
-        top: 3.5rem;
-      }
+    {%- if form.posted_successfully? -%}
+      {% unless template == 'page.contact' %}
+        <script type="module">
+          window.corporateFormSuccess();
+          gtag_report_get_a_quote(window.location);
+        </script>
+      {% endunless %}
 
-    </style>
+      <div
+        style="display: flex; flex-direction: column; align-items: center; justify-content: center;"
+        class="text-align-center modal-thank-you-message"
+      >
+        <h3
+          class="text-size-tiny text-color-grey-500 form__message"
+          id="Contact-success--{{ id }}"
+          tabindex="-1"
+          autofocus
+        >
+          {% render 'icon-success' %}
+          {{ settings.contact_form_success_message }}
+        </h3>
+      </div>
+    {%- endif -%}
+  {% endform %}
+</div>
+
+<style>
+  .dialog-modal[aria-controls='corporate_contact_form'] .dialog-modal-container {
+    top: 3.5rem;
+  }
+</style>
+
+<script type="module">
+  document.querySelector('.corporate-contact-form').addEventListener('submit', async (event) => {
+    event.preventDefault();
+
+    const formData = new FormData(event.target);
+
+    const data = {};
+    for (const [key, value] of formData.entries()) {
+      data[key] = value;
+    }
+
+    const firstnameValue = Object.keys(data).filter((key) => key.includes('firstname'));
+    const lastnameValue = Object.keys(data).filter((key) => key.includes('lastname'));
+    const emailValue = Object.keys(data).filter((key) => key.includes('email'));
+    const phoneValue = Object.keys(data).filter((key) => key.includes('phone'));
+    const companyValue = Object.keys(data).filter((key) => key.includes('company'));
+
+    // Call Salesforce function with data as the argument
+    if (window.customFunctions.salesforceFormSubmission) {
+      await window.customFunctions.salesforceFormSubmission({
+        firstName: data[firstnameValue],
+        lastName: data[lastnameValue],
+        email: data[emailValue],
+        phone: data[phoneValue],
+        company: data[companyValue],
+        leadSource: 'Foodie Pages Frontend - Corporate Contact Form',
+      });
+    }
+
+    // Manually submit the form
+    event.target.submit();
+  });
+</script>

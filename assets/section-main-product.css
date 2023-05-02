@@ -487,7 +487,6 @@ a.product__text {
   box-sizing: border-box;
   background: var(--color-grey-75);
   overflow: hidden;
-  /* @TODO: remove border */
   border: 1px solid var(--color-grey-100);
 }
 
@@ -1235,7 +1234,6 @@ a.product__text {
 .thumbnail-list__item {
   position: relative;
   background: var(--color-grey-75);
-  /* @TODO: remove border */
   border: 1px solid var(--color-grey-100);
   border-radius: 8px;
   overflow: hidden;

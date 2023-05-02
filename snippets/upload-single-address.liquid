@@ -1,0 +1,297 @@
+{{ 'loading.css' | asset_url | stylesheet_tag }}
+
+<div
+  data-js-element="open-popup"
+  class="file-upload_container single display-flex justify-content-between padding-medium margin-bottom margin-medium align-items-center is-disabled"
+>
+  <p>Single person</p>
+  <button class="button secondary"><span>Fill form</span></button>
+</div>
+
+<div id="single-address-popup" style="display: none">
+  <div class="popup-overlay" data-js-element="close-popup"></div>
+  <div class="popup-content">
+    <h3 class="popup-title margin-bottom margin-small">Send a single gift</h3>
+    <p class="popup-body margin-bottom margin-large">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    <form data-js-element="single-address-form">
+      <div class="single-address-form_container field-wrapper width-control margin-bottom margin-medium flex flex-wrap justify-content-between row-gap-2 text-align-left">
+        <div class="half-width">
+          {%
+            render 'input',
+            label: 'Firstname',
+            placeholder: 'Your firstname',
+            name: 'firstname',
+            type: 'text',
+            required: true,
+            value: form.firstname,
+          %}
+        </div>
+
+        <div class="half-width">
+          {%
+            render 'input',
+            label: 'Lastname',
+            placeholder: 'Your lastname',
+            name: 'lastname',
+            type: 'text',
+            required: true,
+            value: form.lastname,
+          %}
+        </div>
+
+        <div class="half-width">
+          {%
+            render 'input',
+            label: 'Email',
+            placeholder: 'Your email',
+            name: 'email',
+            type: 'email',
+            required: true,
+            value: form.email,
+          %}
+        </div>
+
+        <div class="half-width">
+          {%
+            render 'input',
+            label: 'Phone number',
+            placeholder: 'Your phone number',
+            name: 'phonenumber',
+            type: 'tel',
+            required: false,
+            value: form.phonenumber,
+          %}
+        </div>
+
+        <div class="half-width">
+          {%
+            render 'input',
+            label: 'Address 1',
+            placeholder: 'Enter your address',
+            name: 'addressline1',
+            type: 'text',
+            required: true,
+            value: form.addressline1,
+          %}
+        </div>
+
+        <div class="half-width">
+          {%
+            render 'input',
+            label: 'Address 2',
+            placeholder: 'Enter suite, floor, etc.',
+            name: 'addressline2',
+            type: 'text',
+            required: false,
+            value: form.addressline2,
+          %}
+        </div>
+
+        <div class="half-width">
+          {%
+            render 'input',
+            label: 'City',
+            placeholder: 'Enter your city',
+            name: 'city',
+            type: 'text',
+            required: true,
+            value: form.city,
+          %}
+        </div>
+
+        <div class="half-width">
+          {%
+            render 'input',
+            label: 'Postal Code / Zip',
+            placeholder: 'Enter your postal code / zip',
+            name: 'postalcode/zip',
+            type: 'text',
+            required: true,
+            value: form['postalcode/zip'],
+          %}
+        </div>
+
+        <div class="half-width">
+          {%
+            render 'input',
+            label: 'Province',
+            placeholder: 'Enter your province / state',
+            name: 'province',
+            type: 'text',
+            required: true,
+            value: form.province,
+          %}
+        </div>
+
+        <div class="half-width">
+          {%
+            render 'input',
+            label: 'Country',
+            placeholder: 'Enter your country',
+            name: 'country',
+            type: 'text',
+            required: true,
+            value: form.country,
+          %}
+        </div>
+
+        <div>
+          <h3 class="popup-title margin-bottom margin-small">Add a gift message</h3>
+          <p class="popup-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+
+        <div class="field-group">
+          <label class="text-size-tiny uppercase" for="ContactForm-body"> Gift Message </label>
+
+          <textarea
+            rows="3"
+            id="ContactForm-body"
+            class="text-area field_input"
+            name="contact[gift_message]"
+            placeholder="Add your gift message"
+          >
+            {{- form.body -}}
+          </textarea>
+        </div>
+      </div>
+
+      <button
+        data-js-element="submit-single-address"
+        style="margin-right: auto;"
+        type="submit"
+        class="button contact-submit-button"
+        name="commit"
+        id="Subscribe"
+        aria-label="{{ 'contact.button_label' | t }}"
+      >
+        <span>
+          <div class="display-flex align-items-center gap-0-5">
+            <div>Submit</div>
+            <div data-js-element="submit-single-address-loading" class="is-loading display-flex is-hidden">
+              <div class="loading-spinner"></div>
+            </div>
+          </div>
+        </span>
+      </button>
+    </form>
+    <button class="popup-close-button" data-js-element="close-popup">
+      <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="0.5" y="0.5" width="47" height="47" rx="23.5" fill="white"/>
+        <path d="M30.8348 30.3634L30.3633 30.8348C30.103 31.0951 29.6809 31.0951 29.4205 30.8348L23.9994 25.4136L18.5782 30.8347C18.3179 31.0951 17.8958 31.0951 17.6354 30.8347L17.164 30.3633C16.9037 30.103 16.9037 29.6809 17.164 29.4205L22.5852 23.9994L17.164 18.5782C16.9037 18.3179 16.9037 17.8958 17.164 17.6354L17.6354 17.164C17.8958 16.9037 18.3179 16.9037 18.5782 17.164L23.9994 22.5852L29.4205 17.164C29.6809 16.9037 30.103 16.9037 30.3633 17.164L30.8348 17.6354C31.0951 17.8958 31.0951 18.3179 30.8348 18.5782L25.4136 23.9994L30.8348 29.4205C31.0951 29.6809 31.0951 30.103 30.8348 30.3634Z" fill="black"/>
+        <rect x="0.5" y="0.5" width="47" height="47" rx="23.5" stroke="#E0E0E0"/>
+      </svg>
+    </button>
+  </div>
+</div>
+
+<style>
+  #single-address-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: auto;
+  }
+
+  .popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: block !important;
+  }
+
+  .popup-close-button {
+    border: unset;
+    background: transparent;
+  }
+
+  .popup-content {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 5rem;
+    background-color: var(--color-secondary);
+    border-radius: 1.5rem;
+    padding: 2rem;
+    max-width: 768px;
+    width: 100%;
+  }
+
+  .popup-title {
+    margin-top: 0;
+  }
+
+  .popup-body {
+    {% comment %} margin-bottom: 20px; {% endcomment %}
+  }
+
+  .popup-link {
+    color: blue;
+    text-decoration: underline;
+  }
+
+  .popup-close-button {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    font-size: 1.5em;
+    color: gray;
+    cursor: pointer;
+  }
+
+  {% comment %} max-width media query 600 {% endcomment %}
+  @media screen and (max-width: 37.5em) {
+    .single-address-form_container {
+      flex-direction: column;
+    }
+
+    .single-address-form_container .half-width {
+      width: 100% !important;
+    }
+  }
+</style>
+
+<script type="module">
+  const initSingleAddressPopup = () => {
+    const elements = {
+      open: document.querySelector('[data-js-element="open-popup"]'),
+      close: [...document.querySelectorAll('[data-js-element="close-popup"]')],
+    };
+
+    const eventHandler = {
+      openPopup: () => {
+        document.querySelector('#single-address-popup').style.display = 'flex';
+      },
+      closePopup: () => {
+        document.querySelector('#single-address-popup').style.display = 'none';
+      },
+    };
+
+    elements.open.addEventListener('click', () => {
+      eventHandler.openPopup();
+    });
+
+    elements.close.forEach((element) => {
+      element.addEventListener('click', () => {
+        eventHandler.closePopup();
+      });
+    });
+
+    // Close popup on ESC press
+    document.addEventListener('keyup', function (e) {
+      if (e.keyCode === 27) {
+        eventHandler.closePopup();
+      }
+    });
+  };
+
+  initSingleAddressPopup();
+</script>

@@ -4,9 +4,15 @@
 
   <div class="product__tags margin-vertical margin-small">
     {% for tag in product.tags %}
-      <div class="product_tag background-color-sandia-18 text-color-sandia-100 padding-horizontal padding-small text-size-tiny">
-        <div class="padding-vertical padding-xsmall text-style-capitalize"><span>{{ tag }}</span></div>
-      </div>
+      
+      {% assign prefix = tag | slice: 0 %}
+
+      {% unless prefix == '_' or tag == 'Custom_swag' or tag == 'custom_swag' %}
+        <div class="product_tag background-color-sandia-18 text-color-sandia-100 padding-horizontal padding-small text-size-tiny">
+          <div class="padding-vertical padding-xsmall text-style-capitalize"><span>{{ tag }}</span></div>
+        </div>
+      {% endunless %}
+
     {% endfor %}
   </div>
 
@@ -16,6 +22,7 @@
   .product__tags {
     display: flex;
     gap: 0.5rem;
+    flex-wrap: wrap;
   }
 
   .product_tag span {

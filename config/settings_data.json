@@ -70,6 +70,7 @@
     "sold_out_badge_color_scheme": "inverse",
     "accent_icons": "text",
     "social_twitter_link": "",
+    "social_linkedin_link": "https:\/\/www.linkedin.com\/company\/foodiepages-ca",
     "social_facebook_link": "https:\/\/www.facebook.com\/FoodiePages.ca\/",
     "social_pinterest_link": "",
     "social_instagram_link": "https:\/\/www.instagram.com\/foodiepages\/?hl=en",
@@ -111,13 +112,15 @@
     "contact_form_cta_text": "Submit",
     "contact_form_success_message": "Thanks for contacting us. We'll get back to you as soon as possible.",
     "gift_message_title": "Add a gift message",
-    "gift_message_body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    "gift_message_body": "",
     "gift_message_input_message_label": "Message",
     "gift_message_input_message_placeholder": "How can we help?",
     "gift_message_cta_text": "Submit",
     "gift_message_success_message": "Thanks for contacting us. We'll get back to you as soon as possible.",
-    "corporate_contact_form_input_name_label": "Name",
-    "corporate_contact_form_input_name_placeholder": "Enter your name",
+    "corporate_contact_form_input_firstname_label": "First Name",
+    "corporate_contact_form_input_firstname_placeholder": "Enter your first name",
+    "corporate_contact_form_input_lastname_label": "Last Name",
+    "corporate_contact_form_input_lastname_placeholder": "Enter your last name",
     "corporate_contact_form_input_email_label": "Email",
     "corporate_contact_form_input_email_placeholder": "Enter your email",
     "corporate_contact_form_input_phone_label": "Phone",
@@ -162,7 +165,7 @@
             "type": "highlighted_item",
             "settings": {
               "associated_parent_menu_url": "shopify:\/\/collections\/gift-baskets",
-              "highlighted_product": "smile",
+              "highlighted_product": "women-owned-snack-box",
               "highlighted_title": "",
               "highlighted_body": "",
               "highlighted_url": ""
@@ -170,6 +173,7 @@
           },
           "46207620-2739-4e9b-b05b-9042ffa5a46e": {
             "type": "highlighted_item",
+            "disabled": true,
             "settings": {
               "associated_parent_menu_url": "shopify:\/\/pages\/corporate-gifting",
               "highlighted_product": "",
@@ -230,6 +234,14 @@
         "settings": {
           "image": "shopify:\/\/shop_images\/foodie-logo.png",
           "legal_menu": "legal-menu"
+        }
+      },
+      "announcement-banner": {
+        "type": "announcement-banner",
+        "settings": {
+          "show_banner": true,
+          "text": "foodiepages is woman-owned! Shop your values with the best BIPOC-owned, woman-owned and eco-friendly Canadian brands!",
+          "link": ""
         }
       }
     },

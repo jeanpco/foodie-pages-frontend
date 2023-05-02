@@ -90,6 +90,11 @@
 
     {%- if form.posted_successfully? -%}
 
+      <script>
+        gtag_report_conversion(window.location);
+        gtag_report_contact(window.location)
+      </script>
+
       <div style="display: flex; flex-direction: column; align-items: center; justify-content: center;" class="text-align-center">
         <h3 class="text-size-tiny text-color-grey-500 form__message" id="Contact-success--{{ id }}" tabindex="-1" autofocus>
           {% render 'icon-success' %}

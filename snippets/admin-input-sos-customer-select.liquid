@@ -1,0 +1,78 @@
+<style>
+  #Admin-{{ name }}[data-js-element="select"]:focus {
+    border-radius: 6px;
+  }
+
+  .select-icon {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .field-group_select {
+    position: relative;
+  }
+
+  .field-group_select .loading-spinner {
+    display: none !important;
+  }
+
+  .field-group_select .is-loading .select-arrow-down {
+    display: none;
+  }
+
+  .field-group_select .is-loading .loading-spinner {
+    display: block !important;
+  }
+
+
+  
+
+</style>
+
+<div class="field-group {{ class }}">
+  <label class="text-size-tiny uppercase" for="Admin-{{ name }}">{{ label }}</label>
+
+  <div class="field-group_select">
+    <select
+      data-js-element="select"
+      id="Admin-{{ name }}"
+      name="{{ name }}"
+      class="field_input"
+      aria-required="true"
+      {% if required %}required{% endif %}
+    >
+    </select>
+  
+    <div data-js-element="select-loading" class="select-icon is-loading">
+      {% render 'admin-select-arrow-icon' %}
+      <div class="loading-spinner"></div>
+    </div>
+  </div>
+
+</div>
+
+<script type="module">
+    const initSelect = async () => {
+
+      const elements = {
+        selectLoading: document.querySelector('[data-js-element="select-loading"]'),
+      }
+
+      const customers = await window.getSosCustomers();
+  
+      const select = document.querySelector('#Admin-{{ name }}')
+
+      customers.data.forEach((item) => {
+        const option = document.createElement('option')
+        option.value = `${item.id}_${item.name}`
+        option.text = item.name
+        select.appendChild(option)
+      })
+
+      elements.selectLoading.classList.remove('is-loading');
+    }
+
+    window.addEventListener('load', initSelect)
+</script>

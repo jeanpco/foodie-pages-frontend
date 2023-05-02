@@ -5,16 +5,15 @@
       "blocks": {
         "19806096-63a2-4a47-8ace-62ad44b1c836": {
           "type": "cta",
-          "disabled": true,
           "settings": {
-            "cta_text": "Shop Now",
-            "cta_link": "shopify:\/\/collections\/gift-baskets"
+            "cta_text": "Custom Gifts Inquiry",
+            "cta_link": "#corporate-contact"
           }
         },
         "b851d519-4870-4981-9906-52b4404d2953": {
           "type": "cta",
           "settings": {
-            "cta_text": "Download Corporate Catalog",
+            "cta_text": "Download Catalog",
             "cta_link": "#download-catalogue"
           }
         }
@@ -24,11 +23,11 @@
         "b851d519-4870-4981-9906-52b4404d2953"
       ],
       "settings": {
-        "overline": "Foodiepages for business",
-        "title": "<p>Unique Gifts for <em>Modern Companies<\/em><\/p>",
+        "overline": "Custom Corporate Gifts",
+        "title": "<p>Stand out by supporting <em>small<\/em><\/p>",
         "heading_style": "h1",
-        "body": "Engage employees, stand out to clients and elevate events with gifts that are the best reflection of your brand. We source unique products from small and underrepresented businesses, bringing your vision to life with a single tastefully designed gift.",
-        "image": "shopify:\/\/shop_images\/09A5102copy__6_-removebg-preview.png",
+        "body": "Engage employees, stand out to clients and elevate events with custom branded gifts that share your company values. Every gift supports and celebrates small business owners.",
+        "image": "shopify:\/\/shop_images\/Corporate_Gift_Image.png",
         "enable_card_style": false,
         "text_vertical_alignment": "flex-end",
         "layout_style": "two-columns",
@@ -89,13 +88,6 @@
           }
         },
         "199d783c-9d51-4392-8181-33d0daac9ee0": {
-          "type": "logo",
-          "settings": {
-            "title": "",
-            "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/economical-insurance.png?v=1669828929"
-          }
-        },
-        "eb0c10dd-e01c-4b14-aec0-ea4ce715ae31": {
           "type": "logo",
           "settings": {
             "title": "",
@@ -271,6 +263,7 @@
     },
     "8d1281ee-ecd6-4a95-ba83-f047c9b8007b": {
       "type": "module-split-content",
+      "disabled": true,
       "blocks": {
         "0f6671cc-6927-451b-b37c-da38925cd5b4": {
           "type": "cta",
@@ -307,12 +300,13 @@
         "bb7441af-23eb-413e-9e53-583d86d17048": {
           "type": "cta",
           "settings": {
-            "cta_text": "Get a Quote",
+            "cta_text": "Make an Inquiry",
             "cta_link": "#corporate-contact"
           }
         },
         "276a7a27-7127-4129-8ca0-d68003063232": {
           "type": "cta",
+          "disabled": true,
           "settings": {
             "cta_text": "Download Catalog",
             "cta_link": "#download-catalogue"
@@ -328,7 +322,7 @@
         "overline": "Corporate Gifting",
         "title": "<p>Curate and send hundreds of gifts at a time<\/p>",
         "heading_style": "h2",
-        "body": "Choose from a selection of pre-built team care packages, or build your own custom care package. All of our care packages are filled with high quality locally-sourced goods and designed to delight your team.",
+        "body": "Choose from a selection of pre-curated gifts, or build your own custom gift box. All of our custom gifts are filled with high quality locally-sourced goods and designed to delight your team.",
         "layout_style": "content-left"
       }
     },
@@ -339,7 +333,7 @@
           "type": "card",
           "settings": {
             "image": "shopify:\/\/shop_images\/Image_ece8a130-10d5-442c-8531-af02ad89d323.jpg",
-            "title": "Events",
+            "title": "In-Person & Virtual Events",
             "body": "Planning your company event or conference? You’re juggling a lot. We’ll take care of the perfect custom gift, or food & drink box.",
             "cta_text": "",
             "cta_link": "\/"
@@ -368,9 +362,9 @@
         "99e17bc6-8c7d-4127-9269-5ed3314e7bc8": {
           "type": "card",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Image_4156cd82-50c2-40f5-ab2f-94ea44745172.jpg",
-            "title": "Design",
-            "body": "Great design makes all the difference. We'll make your brand shine with creative, bold packaging and high-quality branded swag.",
+            "image": "shopify:\/\/shop_images\/Screen_Shot_2023-03-08_at_11.13.00_AM.jpg",
+            "title": "Kitting & Fulfillment",
+            "body": "When it comes to assembly, storage, and fulfillment — there’s really nothing we can’t do! We’ll come up with a solution for your project’s specific needs.  ",
             "cta_text": "",
             "cta_link": "\/"
           }
@@ -386,7 +380,7 @@
         "overline": "Corporate solutions",
         "title": "Corporate Solutions",
         "body": "We help businesses connect with people and make lasting impressions.",
-        "cta_text": "Get a quote",
+        "cta_text": "Get a Quote",
         "cta_link": "#corporate-contact",
         "heading_style": "h2"
       }
@@ -477,7 +471,7 @@
       "type": "product-recommendations",
       "settings": {
         "overline": "Small batch standouts",
-        "title": "<p>Ready-To-Ship Gifts<\/p>",
+        "title": "<p>Curated Gift Boxes<\/p>",
         "body": "Discover unique gifts they’ll truly remember.",
         "collection": "gift-baskets",
         "icon_url": "",

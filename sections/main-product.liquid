@@ -183,6 +183,9 @@
                     assign media_index = media_index | plus: 1
                   -%}
                   <li
+                    style="{% unless media.id == product.selected_or_first_available_variant.featured_media.id %}display: none;{% endunless %}"
+                    data-media-id="{{ media.id }}"
+                    data-featured-media-id="{{ product.selected_or_first_available_variant.featured_media.id }}"
                     id="Slide-Thumbnails-{{ section.id }}-0"
                     class="thumbnail-list__item slider__slide{% if section.settings.hide_variants and variant_images contains featured_media.src %} thumbnail-list_item--variant{% endif %}"
                     data-target="{{ section.id }}-{{ featured_media.id }}"

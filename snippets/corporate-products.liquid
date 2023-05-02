@@ -1,0 +1,287 @@
+{{ 'loading.css' | asset_url | stylesheet_tag }}
+
+<div data-js-container="{{ campaign_container }}" class="corporate-products-container">
+  {% comment %} Empty State {% endcomment %}
+  <div data-js-element="products-empty-state" class="hide">
+    <div class="divider background-color-azul-verdoso-100"></div>
+    <h4
+      data-js-element="campaign-title"
+      class="corporate-campaigns-products__title text-color-azul-verdoso-100 padding-top padding-small"
+    >
+      No Campaign Found
+    </h4>
+    <div class="corporate-campaigns-products__main margin-top margin-large">
+      <h5 data-js-element="main-gifts-title" class="heading-style-h3 margin-bottom margin-large">Main Gifts</h5>
+      <div data-js-element="main-gifts-grid" class="products-grid main margin-top margin-small">
+        <p class="heading-style-h4 text-color-grey-400">No Products Found</p>
+      </div>
+    </div>
+    <div class="corporate-campaigns-products__custom margin-top margin-large">
+      <h5 data-js-element="custom-gifts-title" class="heading-style-h3 margin-bottom margin-large">
+        Custom Swag and Inserts
+      </h5>
+      <div data-js-element="custom-gifts-grid" class="products-grid custom margin-top margin-small">
+        <p class="heading-style-h4 text-color-grey-400">No Products Found</p>
+      </div>
+    </div>
+  </div>
+  {% comment %} Campaigns {% endcomment %}
+  <div data-js-element="active-campaigns" class="active-campaigns display-flex flex-direction-column gap-2">
+    <div data-js-element="loading-products" class="pos-rel" style="min-height: 400px; width: 100%;">
+      <div class="display-flex gap-1">
+        <div class="modal-loading pos-dead-center">
+          <div class="modal-loading-container text-align-center">
+            <div class="loading-spinner"></div>
+            <p class="text-size-tiny margin-top margin-small">Loading your products..</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .divider {
+    height: 1px;
+    width: 100%;
+    display: block !important;
+  }
+
+  .products-grid {
+    {% comment %} make grid of 3 column with 1 rem gap {% endcomment %}
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1rem;
+  }
+
+  {% comment %} max-width: 767, grid of 2 {% endcomment %}
+  @media screen and (max-width: 767px) {
+    .products-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  {% comment %} max-width: 479, grid of 1 {% endcomment %}
+  @media screen and (max-width: 479px) {
+    .products-grid {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+</style>
+
+<script type="module">
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  window.customerCollections = [
+    {% for collection in collections %}
+      {% if collection.metafields.custom.customer_id != blank %}
+        {
+          "customer_id": {{ collection.metafields.custom.customer_id }},
+          "collection_id": {{ collection.id }}
+        },
+      {% endif %}
+    {% endfor %}
+    {
+      "customer_id": null,
+      "collection_id": 287050530975
+    }
+  ];
+
+  const emptyState = (container) => {
+    const elements = {
+      emptyState: container.querySelector('[data-js-element="products-empty-state"]'),
+    };
+
+    elements.emptyState.classList.remove('hide');
+  };
+
+  function mergeProducts(products) {
+    const mergedProducts = {};
+  
+    products.forEach((product) => {
+
+      
+      if (!product) return;
+      if (!mergedProducts[product.id]) {
+        mergedProducts[product.id] = {
+          ...product,
+          variants: [{
+            ...product.matchingVariant,
+            sosInventory: product.sosInventory,
+          }],
+          sosInventory: product.sosInventory,
+        };
+      } else {
+        console.log('matches a product id', {
+          ...product.matchingVariant,
+          sosInventory: product.sosInventory,
+        })
+
+        mergedProducts[product.id].variants.push({
+          ...product.matchingVariant,
+          sosInventory: product.sosInventory,
+        });
+        
+        mergedProducts[product.id].sosInventory += product.sosInventory;
+      }
+    });
+  
+    return Object.values(mergedProducts);
+  }
+
+  window.productsGenerateCampaigns = async ({ campaigns, products, container }) => {
+    if (!campaigns.length) return emptyState(container);
+
+    const elements = {
+      activeCampaigns: container.querySelector('[data-js-element="active-campaigns"]'),  
+    }
+
+    campaigns.map(campaign => {
+      const campaignDivContainer = document.createElement('div');
+      const items = campaign.items.data;
+      const itemsWithSku = items.filter(item => item.sku)
+
+      let campaignItems = itemsWithSku.map((item) => {
+        const line = campaign.lines.find((line) => line.item.id === item.id);
+        const product = products.find((product) =>
+          product.variants.find(
+            (v) => v.sku && v.sku.toLowerCase() === item.sku.toLowerCase()
+          )
+        );
+      
+        if (!product) return;
+      
+        const matchingVariant = product.variants.find((v) => {
+          return v.sku && v.sku.toLowerCase() === item.sku.toLowerCase()
+        });
+
+        const sosInventory =
+          line.quantity - line.shipped > 0 ? line.quantity - line.shipped : 0;
+      
+        return {
+          ...product,
+          matchingVariant,
+          sosInventory,
+        };
+      });
+
+      
+      // Merge products with the same product_id
+      campaignItems = mergeProducts(campaignItems);
+      
+      {% comment %} refactor "campaignItems" only to return item that have different id {% endcomment %}
+      campaignItems = campaignItems.filter((item, index, array) => {
+        return index === array.findIndex((p) => (
+          p.id === item.id
+        ))
+      })
+      
+      const gifts = {
+        main: campaignItems.filter(p => p).filter(p => !p.tags || !p.tags.includes('custom')),
+        custom: campaignItems.filter(p => p).filter(p => p.tags && p.tags.includes('custom'))
+      }
+
+      const hasGifts = gifts.main.length > 0 || gifts.custom.length > 0;
+      const hideButtons = container.dataset.jsContainer !== 'send-gifts'
+
+      const html = hasGifts ? `
+        <div data-js-element="" class="corporate-campaigns-products">
+          <div class="divider background-color-azul-verdoso-100"></div>
+          <h4 data-js-element="campaign-title" class="corporate-campaigns-products__title text-color-azul-verdoso-100 padding-top padding-small">
+            ${campaign.name || 'This campaign is unnamed'}
+          </h4>
+          ${gifts.main.length > 0 ? `
+            <div class="corporate-campaigns-products__main margin-top margin-large">
+              <h5 data-js-element="main-gifts-title" class="heading-style-h3 margin-bottom margin-large">Main Gifts</h5>
+              <div data-js-element="main-gifts-grid" class="products-grid main margin-top margin-small">
+                ${gifts.main.map(product => {
+                  return window.cfProductCard({ 
+                    product, 
+                    options: { reOrder: true, hideButtons, inventory: product.sosInventory } 
+                  })
+                }).join('')}
+              </div>
+            </div>
+          ` : ''}
+          ${gifts.custom.length > 0 ? `
+            <div class="corporate-campaigns-products__custom margin-top margin-large">
+              <h5 data-js-element="custom-gifts-title" class="heading-style-h3 margin-bottom margin-large">Custom Swag and Inserts</h5>
+              <div data-js-element="custom-gifts-grid" class="products-grid custom margin-top margin-small">
+                ${gifts.custom.map(product => {
+                  return window.cfProductCard({ 
+                    product, 
+                    options: { reOrder: true, hideButtons, inventory: product.sosInventory } 
+                  })
+                }).join('')}
+              </div>
+            </div>
+          ` : ''}
+        </div>
+      ` : '';
+
+      campaignDivContainer.innerHTML = html;
+
+      const productElements = [...campaignDivContainer.querySelectorAll(`.cf-product-card`)];
+
+      productElements.forEach((productElement) => {
+        const product = campaignItems.find(product => product.id === +productElement.dataset.productId)
+
+        const event = new CustomEvent('product-card-added', { detail: { productElement, data: { product } } });
+        document.dispatchEvent(event);
+      })
+
+      const loadingProducts = container.querySelector('[data-js-element="loading-products"]');
+      loadingProducts.classList.add('is-hidden');
+
+      return elements.activeCampaigns.appendChild(campaignDivContainer);
+    })
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>

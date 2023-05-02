@@ -1,0 +1,182 @@
+{{ 'modal.css' | asset_url | stylesheet_tag }}
+{{ 'form.css' | asset_url | stylesheet_tag }}
+
+<div class="padding-left padding-large tablet-padding-0">
+  <div class="margin-bottom margin-large">
+    <h1 class="margin-bottom margin-small line-height-1-3">Order New Products</h1>
+    <p class="text-size-medium">Fill out the form below to request a new PO.</p>
+  </div>
+
+  <div class="contact-form-body">
+    {% form 'contact', class: 'form new-products-form' %}
+      <div class="input-container width-control">
+        <input type="hidden" name="contact[tags]" value="new-products-form">
+
+        <div class="field-wrapper margin-bottom margin-medium flex flex-wrap justify-content-between row-gap-2">
+          <div class="half-width">
+            {%
+              render 'input',
+              label: 'First name',
+              placeholder: 'First name',
+              name: 'firstname',
+              type: 'text',
+              required: true,
+              value: form.firstname,
+            %}
+          </div>
+
+          <div class="half-width">
+            {%
+              render 'input',
+              label: 'Last name',
+              placeholder: 'Last name',
+              name: 'lastname',
+              type: 'text',
+              required: true,
+              value: form.lastname,
+            %}
+          </div>
+
+          <div class="half-width">
+            {%
+              render 'input',
+              label: 'Email',
+              placeholder: 'Email',
+              name: 'email',
+              type: 'email',
+              required: true,
+              value: form.email,
+            %}
+          </div>
+
+          <div class="half-width">
+            {%
+              render 'input',
+              label: 'Phone number',
+              placeholder: 'Phone number',
+              name: 'phone',
+              type: 'tel',
+              required: false,
+              value: form.phone,
+            %}
+          </div>
+
+          <div class="half-width">
+            {%
+              render 'input',
+              label: 'Campaign',
+              placeholder: 'Campaign name',
+              name: 'campaign',
+              type: 'text',
+              required: true,
+              value: form.campaign,
+            %}
+          </div>
+
+          <div class="half-width">
+            {%
+              render 'input',
+              label: 'Product',
+              placeholder: 'Product name',
+              name: 'product',
+              type: 'text',
+              required: true,
+              value: form.product,
+            %}
+          </div>
+
+          <div class="half-width">
+            {%
+              render 'input',
+              label: 'Quantity',
+              placeholder: 'Total quantity',
+              name: 'quantity',
+              type: 'text',
+              required: true,
+              value: form.quantity,
+            %}
+          </div>
+
+          <div class="field-group">
+            <label class="text-size-tiny uppercase" for="ContactForm-body"> Message </label>
+
+            <textarea
+              required
+              rows="3"
+              id="ContactForm-body"
+              class="text-area field_input"
+              name="contact[body]"
+              placeholder="Any additional information? Ex: Budget, Timeline and quantities per size if applicable."
+            >
+              {{- form.body -}}
+            </textarea>
+          </div>
+        </div>
+
+        <button
+          style="margin-right: auto;"
+          type="submit"
+          class="button contact-submit-button"
+          name="commit"
+          id="Subscribe"
+          aria-label="{{ 'contact.button_label' | t }}"
+        >
+          <span>Submit</span>
+        </button>
+      </div>
+
+      {%- if form.errors -%}
+        <small
+          class="text-size-tiny text-color-grey-500 contact-form__message form__message margin-top margin-small"
+          id="Contact-error--{{ id }}"
+        >
+          {% render 'icon-error' %}
+          {{ form.errors.translated_fields.email | capitalize }}
+          {{ form.errors.messages.email }}
+        </small>
+      {%- endif -%}
+
+      {%- if form.posted_successfully? -%}
+        {% comment %}
+          {% unless template == 'page.contact' %}
+            <script type="module">
+              window.corporateFormSuccess();
+              gtag_report_get_a_quote(window.location);
+            </script>
+          {% endunless %}
+        {% endcomment %}
+
+        <div
+          style="display: flex; flex-direction: column; align-items: center; justify-content: center;"
+          class="text-align-center modal-thank-you-message"
+        >
+          <h3
+            class="text-size-tiny text-color-grey-500 form__message"
+            id="Contact-success--{{ id }}"
+            tabindex="-1"
+            autofocus
+          >
+            {% render 'icon-success' %}
+            Thank you for submitting! We will be in touch shortly.
+          </h3>
+        </div>
+
+        <script>
+          {% comment %} wait 3 seconds and go back to /account {% endcomment %}
+          setTimeout(function() {
+            window.location.href = '/account';
+          }, 3000);
+        </script>
+      {%- endif -%}
+    {% endform %}
+  </div>
+</div>
+
+<style>
+  .new-products-form .input-container .field-wrapper {
+    max-width: unset;
+  }
+
+  .dialog-modal-container {
+  }
+</style>

@@ -24,17 +24,31 @@ if (!customElements.get('media-gallery')) {
 
     setActiveMedia(mediaId, prepend) {
       const activeMedia = this.elements.viewer.querySelector(`[data-media-id="${ mediaId }"]`);
+
       this.elements.viewer.querySelectorAll('[data-media-id]').forEach((element) => {
         element.classList.remove('is-active');
       });
+
       activeMedia.classList.add('is-active');
 
       if (prepend) {
         activeMedia.parentElement.prepend(activeMedia);
-        if (this.elements.thumbnails) {
-          const activeThumbnail = this.elements.thumbnails.querySelector(`[data-target="${ mediaId }"]`);
-          activeThumbnail.parentElement.prepend(activeThumbnail);
-        }
+
+        // get all slider-components html element and find the one with an id that contains GalleryThumbnails
+        const sliderComponents = document.querySelectorAll('slider-component');
+        const sliderComponent = Array.from(sliderComponents).find(sliderComponent => sliderComponent.id.includes('GalleryThumbnails'));
+
+        // loop through all the li elements in the sliderComponent
+        const liElements = sliderComponent.querySelectorAll('li');
+        liElements.forEach(liElement => {
+          // if the li element contains the mediaId, then prepend it to the sliderComponent
+          if (liElement.dataset.target === mediaId) {
+            liElement.style.display = 'none';
+          } else {
+            liElement.removeAttribute('style');
+          }
+        });
+
         if (this.elements.viewer.slider) this.elements.viewer.resetPages();
       }
 

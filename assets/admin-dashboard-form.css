@@ -1,0 +1,81 @@
+.admin-dashboard_form {
+
+}
+
+.admin-dashboard_form > .field-group  {
+  width: calc(50% - 1rem);
+}
+
+@media screen and (max-width: 550px) {
+  .admin-dashboard_form > .field-group  {
+    width: 100%;
+  }
+}
+
+.admin-form-building > * {
+  width: calc(50% - 1rem);
+}
+
+@media screen and (max-width: 550px) {
+  .admin-form-building > * {
+    width: 100%;
+  }
+}
+
+/* under 550px make .admin-dashboard_header flex column direction */
+@media screen and (max-width: 550px) {
+  .admin-dashboard_header {
+    flex-direction: column;
+  }
+  .admin-dashboard_header > * {
+    width: 100%;
+  }
+}
+
+/* Input Draggable */
+.draggable-form-inputs {
+}
+
+.titlebar {
+  display: flex;
+  align-items: center;
+  /* 글씨 선택 안되게 */
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* ie */
+  user-select: none;
+  border-radius: 0.5rem;
+}
+
+/* below 700px make titlebar scrollable*/
+@media screen and (max-width: 700px) {
+  .titlebar {
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+  }
+}
+
+.titlebar.is-being-removed {
+  opacity: 0;
+  transform: translateY(-30px);
+  transition: 300ms ease-in-out;
+}
+
+.titlebar > .field-group {
+  flex: 1;
+  min-width: 150px;
+}
+
+.titlebar__handle {
+  cursor: pointer;
+  width: auto;
+}
+
+label {
+  margin-bottom: 0;
+}
+
+[data-js-element="cf-icon-close"] {
+  cursor: pointer;
+}

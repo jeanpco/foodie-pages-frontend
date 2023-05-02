@@ -1,0 +1,22 @@
+{{ 'loading.css' | asset_url | stylesheet_tag }}
+
+<div style="height: 100vh;" class="loading">
+  <div class="loading-container text-align-center">
+    <div class="loading-spinner"></div>
+    <p class="text-size-tiny margin-top margin-small">
+      Loading gift selection...
+    </p>
+  </div>
+</div>
+
+<script type="module">
+  window.campaignForm.initLoading = (loading) => {
+    const loadingEl = document.querySelector('.loading')
+    loadingEl.style.display = loading ? 'flex' : 'flex'
+
+    {% comment %} dispatch custom event {% endcomment %}
+    const event = new CustomEvent('campaign-form-loading', { detail: loading })
+
+    document.dispatchEvent(event)
+  }
+</script>

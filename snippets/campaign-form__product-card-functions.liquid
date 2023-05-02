@@ -1,0 +1,139 @@
+<script type="module">
+  
+  window.cfProductCardRemove = (gift, variants, type, element) => {
+    // split Main Gift on "," and remove the one that has the variant id
+    const giftArray = gift.split(',').filter((item) => !variants.find(v => item.includes(v.id)));
+
+    // join the array back into a string
+    const giftString = giftArray.join(',');
+
+    window.campaignForm.state = {
+      ...window.campaignForm.state,
+      [type]: giftString,
+    }
+
+    element.classList.remove('is-selected');
+
+    {% comment %} create custom event {% endcomment %}
+    const event = new CustomEvent('gift-state-changed', {
+      detail: {
+        element,
+        state: window.campaignForm.state,
+      }
+    });
+
+    {% comment %} dispatch custom event {% endcomment %}
+    document.dispatchEvent(event);
+  }
+
+  window.cfProductCardAdd = (product, type, element) => {
+    {% comment %} if there is already a custom swag, append the new one {% endcomment %}
+    const productState = window.campaignForm.state[type];
+    {% comment %} if state already present, append to me, else add the state {% endcomment %}
+    window.campaignForm.state[type] = productState ? `${productState},${product}` : product;
+
+    element.classList.add('is-selected');
+
+    {% comment %} create custom event {% endcomment %}
+    const event = new CustomEvent('gift-state-changed', {
+      detail: {
+        element,
+        state: window.campaignForm.state,
+      }
+    });
+
+    {% comment %} dispatch custom event {% endcomment %}
+    document.dispatchEvent(event);
+  }
+
+  window.cfProductCardEventHandler = (e) => {
+    const { detail } = e;
+    const { productElement, data: { product: productData, metafields } } = detail;
+
+    if (!productElement || !productData) return;
+
+    {% comment %} get elements {% endcomment %}
+    const detailsButton = productElement.querySelector('[data-js-element="details"]');
+    const quickAddButton = productElement.querySelector('[data-js-element="quick-add"]');
+    {% comment %} extract data {% endcomment %}
+    const id = productData.id;
+    const productTitle = productData.title;
+    const variants = productData.variants;
+    const tags = productData.tags;
+    const isCustomSwag = tags.includes('custom');
+    const isDonation = tags.includes('donation');
+    const isBoxBuilder = tags.includes('box-builder');
+
+    {% comment %} on detailsbutton click, call window.cfProductCardModal(productData) {% endcomment %}
+
+    if (detailsButton) {
+      detailsButton.addEventListener('click', () => {
+        window.cfProductModal({
+          productElement,
+          data: { ...productData, metafields}, 
+          isOpen: true
+        });
+      });
+    }
+
+    {% comment %} Add Selection if variant === 1 {% endcomment %}
+    if (quickAddButton && !isDonation) {
+      quickAddButton.addEventListener('click', () => {
+        {% comment %} if product select, do nothing {% endcomment %}
+        const isSelected = productElement.classList.contains('is-selected')
+        if (isSelected) return;
+
+        const selectedProduct = `Product Title: ${productTitle} | Variant Title: ${variants[0].title} | Variant Sku: ${variants[0].sku} | Variant Id: ${variants[0].id} | Product Id: ${id} | Product Tags: ${tags.replaceAll(',', ' ')}`;
+  
+        {% comment %} Check if selected product is a custom swag {% endcomment %}
+        if (isCustomSwag) {
+          window.cfProductCardAdd(selectedProduct, 'Custom Swag', productElement)
+        } else {
+          window.cfProductCardAdd(selectedProduct, 'Main Gift', productElement)
+        }
+      }); 
+    }
+
+    {% comment %} Remove Selection {% endcomment %}
+    productElement.addEventListener('click', (e) => {
+      const reorderLink = productElement.querySelector('[data-js-element="reorder"]');
+
+      {% comment %} if e.target is reorder link, do nothing {% endcomment %}
+      if (reorderLink && e.target === reorderLink) return;
+
+      {% comment %} if e.target is not quick add or details {% endcomment %}
+      if (e.target === quickAddButton || e.target === detailsButton) return;
+
+      if (productElement.classList.contains('is-selected')) {
+        {% comment %} look for the variantId inside of state in either Main Gift or Custom Swag, if found, remove it {% endcomment %}
+        const mainGift = window.campaignForm.state['Main Gift'];
+        const customSwag = window.campaignForm.state['Custom Swag'];
+
+        if (mainGift) {
+          window.cfProductCardRemove(mainGift, variants, 'Main Gift', productElement);
+        }
+
+        if (customSwag) {
+          window.cfProductCardRemove(customSwag, variants, 'Custom Swag', productElement);
+        }
+      } else {
+
+        const isSendGifts = e.target.closest('[data-js-container="send-gifts"]');
+        const isPreventPurchase = reorderLink && !isSendGifts ? true : false;
+
+        window.cfProductModal({
+          productElement,
+          data: { ...productData, metafields}, 
+          isOpen: true,
+          options: {
+            preventPurchase: isPreventPurchase,
+          }
+        });
+      }
+    })
+  }
+
+  {% comment %} read dispatched event product-card-added {% endcomment %}
+  document.addEventListener('product-card-added', window.cfProductCardEventHandler);
+
+</script>

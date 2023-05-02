@@ -2,8 +2,8 @@
 
 <div class="featured-product_container container">
   <div class="featured-product_header margin-bottom margin-xxlarge">
-    {% render 'module-header', 
-      overline: section.settings.overline, 
+    {% render 'module-header',
+      overline: section.settings.overline,
       title: section.settings.title,
       body: section.settings.body,
       text_horizontal_alignment: 'center',
@@ -13,13 +13,13 @@
   </div>
   <div class="featured-product_content">
     {%- for product in section.settings.collection.products limit: 5 -%}
-      <li class="product-card-container">
-        {% render 'card-pdp',
-          card_product: product,
-          show_quick_add: false,
-          section_id: section.id
-        %}
-      </li>
+      {% if product.metafields.custom.hide_from_search %}
+        {% continue %}
+      {% else %}
+        <li class="product-card-container">
+          {% render 'card-pdp', card_product: product, show_quick_add: false, section_id: section.id %}
+        </li>
+      {% endif %}
     {%- endfor -%}
     <li class="product-card-container">
       {% render 'promo-card',
@@ -42,15 +42,15 @@
   }
 
   @media screen and (max-width: 1100px) {
-   .featured-product_content {
+    .featured-product_content {
       grid-template-columns: repeat(2, 1fr);
-    } 
+    }
   }
 
   @media screen and (max-width: 550px) {
-   .featured-product_content {
+    .featured-product_content {
       grid-template-columns: repeat(1, 1fr);
-    } 
+    }
   }
 
   .product-card-container {

@@ -133,8 +133,6 @@ class CartItems extends HTMLElement {
 
         this.getSectionsToRender().forEach((section => {
 
-          console.log(section)
-
           const sectionElement = document.getElementById(section.id);
 
           if (!sectionElement) return;

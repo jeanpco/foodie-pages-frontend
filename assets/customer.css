@@ -17,6 +17,7 @@
 
 .customer.account .main-content {
   width: 100%;
+  max-width: calc(100% - 23.4375rem);
 }
 
 .customer aside {
@@ -36,6 +37,10 @@
 
   .customer > *:last-child {
     order: 1;
+  }
+
+  .customer.account .main-content {
+    max-width: 100%;
   }
 
   .customer aside {

@@ -1,0 +1,66 @@
+<div class="padding-left padding-large tablet-padding-0">
+  <p class="text-size-medium margin-bottom margin-medium">Hi {{ customer.name }}, welcome to your account!</p>
+
+  <h1 class="margin-bottom margin-medium line-height-1-3">
+    {{ 'customer.orders.title' | t }}
+  </h1>
+
+  <div class="tabs">
+    <div class="tabs-header padding-vertical padding-large">
+      <a href="#" class="tabs-header_item is-active" data-js-element="tab-header" data-index="1">
+        <span class="heading-style-h4 padding-bottom padding-medium"> My Orders </span>
+        <div class="tab-header_progress-bar"></div>
+      </a>
+      {% if is_corporate_client %}
+        <a href="#" class="tabs-header_item" data-js-element="tab-header" data-index="2">
+          <span class="heading-style-h4 padding-bottom padding-medium"> Team Orders </span>
+          <div class="tab-header_progress-bar"></div>
+        </a>
+      {% endif %}
+    </div>
+
+    <div class="tabs-body">
+      <div class="tabs-body_regular is-active" data-js-element="tab-body" data-index="1">
+        {% render 'regular-orders' %}
+      </div>
+
+      {% if is_corporate_client %}
+        <div class="tabs-body_corporate" data-js-element="tab-body" data-index="2">
+          {% render 'corporate-orders', id: sos_customer_id %}
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+<script type="module">
+  const initOrderTabs = () => {
+    const tabHeaders = [...document.querySelectorAll('[data-js-element="tab-header"]')];
+    const tabBodies = [...document.querySelectorAll('[data-js-element="tab-body"]')];
+
+    tabHeaders.forEach((tabHeader) => {
+      tabHeader.addEventListener('click', (e) => {
+        e.preventDefault();
+        const index = tabHeader.dataset.index;
+
+        tabHeaders.forEach((tabHeader) => {
+          tabHeader.classList.remove('is-active');
+        });
+
+        tabBodies.forEach((tabBody) => {
+          tabBody.classList.remove('is-active');
+        });
+
+        tabHeader.classList.add('is-active');
+
+        tabBodies.forEach((tabBody) => {
+          if (+tabBody.dataset.index === +index) {
+            tabBody.classList.add('is-active');
+          }
+        });
+      });
+    });
+  };
+
+  initOrderTabs();
+</script>

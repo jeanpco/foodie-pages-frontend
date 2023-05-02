@@ -1,0 +1,240 @@
+<script src="https://cdn.jsdelivr.net/npm/@shopify/draggable@1.0.0-beta.8/lib/draggable.bundle.js"></script>
+{{ 'admin-dashboard-form.css' | asset_url | stylesheet_tag }}
+
+<form
+  data-js-element="create-campaign-form"
+  class="admin-dashboard_form padding-bottom padding-large display-flex flex-wrap justify-content-between gap-2 align-items-start"
+>
+  {%
+    render 'admin-input',
+    class: "js-campaign-input",
+    name: 'Campaign Name',
+    placeholder: "Enter your campaign name",
+    type: 'text',
+    label: 'Campaign Name*',
+    required: true
+    airtable_type: 'singleLineText',
+  %}
+  {% render 'admin-input-sos-customer-select',
+    class: 'js-campaign-select',
+    name: 'Customer',
+    placeholder: '',
+    label: 'Select a corporate customer*',
+    required: true
+  %}
+  {%
+    render 'admin-input',
+    class: "js-campaign-input",
+    name: 'End Date',
+    type: 'date',
+    label: 'When does your campaign end?',
+    airtable_type: 'date',
+  %}
+  {%
+    render 'admin-input',
+    class: "js-campaign-input",
+    name: 'Number of selectable gifts',
+    type: 'number',
+    label: 'Number of selectable gifts',
+    airtable_type: 'number',
+  %}
+  {%
+    render 'admin-input',
+    class: "js-campaign-input"
+    name: 'Gift Message',
+    type: 'textarea',
+    label: 'Gift Message',
+    placeholder: 'Enter the company message',
+    airtable_type: 'singleLineText',
+  %}
+  {%
+    render 'admin-input',
+    class: "js-campaign-input"
+    name: 'Shipping Details',
+    type: 'textarea',
+    label: 'Shipping Details',
+    placeholder: 'Enter the shipping details',
+    airtable_type: 'singleLineText',
+  %}
+  {%
+    render 'admin-input',
+    class: "js-campaign-input-file",
+    name: 'Company Logo',
+    type: 'file',
+    label: 'Company Logo',
+    airtable_type: 'multipleAttachments',
+  %}
+
+  {% comment %} Form Building {% endcomment %}
+
+  <div class="admin-form-building padding-top padding-small w-full display-flex flex-wrap gap-2">
+    <div class="admin-dashboard_form-header display-flex flex-direction-column gap-1-5">
+      <h3>{{ 'customer.admin_dashboard.create_campaign.form_building_title' | t }}</h3>
+      {%
+        render 'admin-input',
+        class: 'w-full js-campaign-input',
+        name: 'Form Button Text',
+        type: 'text',
+        label: 'Form Button Text',
+        placeholder: 'e.g: Submit your gift',
+        airtable_type: 'singleLineText',
+      %}
+    </div>
+    <p>
+      {{ 'customer.admin_dashboard.create_campaign.form_building_body' | t }}
+    </p>
+  </div>
+
+  <div data-js-element="draggable" class="draggable-form-inputs w-full display-flex flex-direction-column gap-1">
+    {% render 'draggable-input',
+      name: 'Recipient First Name',
+      value: 'Recipient First Name',
+      type: 'text',
+      required: true
+    %}
+    {% render 'draggable-input',
+      name: 'Recipient Last Name',
+      value: 'Recipient Last Name',
+      type: 'text',
+      required: true
+    %}
+    {% render 'draggable-input', name: 'To Email', value: 'To Email', type: 'email', required: true %}
+    {% render 'draggable-input', name: 'Recipient Phone', value: 'Recipient Phone', type: 'phone', required: false %}
+    {% render 'draggable-input', name: 'Address Line 1', value: 'Address Line 1', type: 'text', required: true %}
+    {% render 'draggable-input', name: 'Address Line 2', value: 'Address Line 2', type: 'text', required: false %}
+    {% render 'draggable-input', name: 'City', value: 'City', type: 'text', required: true %}
+    {% render 'draggable-input', name: 'Province Code', value: 'Province Code', type: 'text', required: true %}
+    {% render 'draggable-input', name: 'Country Code', value: 'Country Code', type: 'text', required: true %}
+    {% render 'draggable-input', name: 'Zip/Postal', value: 'Zip/Postal', type: 'text', required: true %}
+  </div>
+
+  <div role="button" class="button" data-js-element="add-fields">
+    <span>Add Fields</span>
+  </div>
+</form>
+
+<script type="module">
+  
+  
+  {% comment %} get data-js-element="draggable" {% endcomment %}
+  const startDraggability = () => {
+    
+    const elements = {
+      draggable: document.querySelector('[data-js-element="draggable"]')
+    }
+
+    const sortable = new Draggable.Sortable(elements.draggable, {
+        draggable: '[data-js-element="draggable-input"]',
+        handle: '.titlebar__handle',
+        swapAnimation: {
+            duration: 300,
+            easingFunction: 'ease-in-out',
+            vertical: true
+        },
+        plugins: [Draggable.Plugins.SwapAnimation]
+    });
+  }
+
+  const enableFieldsRemoval = () => {
+    const elements = {
+      closeButtons: document.querySelectorAll('.draggable-form-inputs [data-js-element="cf-icon-close"]')
+    }
+
+    {% comment %} for each closeButtons find the closest [data-js-element="draggable-input"] and remove {% endcomment %}
+    elements.closeButtons.forEach((closeButton) => {
+      closeButton.addEventListener('click', (e) => {
+        e.preventDefault();
+        const draggableInput = closeButton.closest('[data-js-element="draggable-input"]');
+
+        console.log(draggableInput)
+
+        draggableInput.classList.add('is-being-removed');
+        setTimeout(() => {
+          draggableInput.remove();
+        }, 300);
+      })
+    })
+  }
+
+  const initForm = () => {
+    const elements = {
+      draggable: document.querySelector('[data-js-element="draggable"]')
+    }
+
+    startDraggability();
+    enableFieldsRemoval();
+    
+    {% comment %} Check if we are create a new form or updating an existing one {% endcomment %}
+    const urlParams = new URLSearchParams(window.location.search);
+
+    const params = {
+      campaign: urlParams.get('campaign'),
+      client: urlParams.get('client'),
+      campaignName: urlParams.get('campaign-name')
+    }
+
+    if (params.campaign === 'update' && params.client && params.campaignName) {
+      window.createCampaignFns.getExistingCampaign({
+        client: params.client,
+        campaignName: params.campaignName
+      })
+    }
+
+    window.createCampaignFns.watchForFormSubmit()
+
+    {% comment %} get data-js-element="add-fields" {% endcomment %}
+    const addFields = document.querySelector('[data-js-element="add-fields"]');
+
+    {% comment %} add new input on click {% endcomment %}
+    addFields.addEventListener('click', (e) => {
+      e.preventDefault();
+      
+      const input = `
+        <div class="titlebar display-flex gap-1 background-color-grey-50 padding-small" data-js-element="draggable-input" tabindex="0">
+
+          <div class="titlebar__handle">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M2 6C2 7.10457 2.89543 8 4 8C5.10457 8 6 7.10457 6 6C6 4.89543 5.10457 4 4 4C2.89543 4 2 4.89543 2 6ZM8 5H22V7H8V5ZM22 11H8V13H22V11ZM8 19H22V17H8V19ZM2 18C2 19.1046 2.89543 20 4 20C5.10457 20 6 19.1046 6 18C6 16.8954 5.10457 16 4 16C2.89543 16 2 16.8954 2 18ZM4 14C2.89543 14 2 13.1046 2 12C2 10.8954 2.89543 10 4 10C5.10457 10 6 10.8954 6 12C6 13.1046 5.10457 14 4 14Z" fill="black"></path>
+            </svg>
+          </div>
+        
+          <div class="field-group ">
+            <label class="text-size-tiny uppercase" id="Admin-Email">Field Label*</label>
+            <input data-js-element="input" id="Admin-Email" type="text" name="Email" class="field_input" aria-required="true" autocorrect="off" autocapitalize="off" placeholder="Enter the input name">
+          </div>
+
+          <div class="field-group">
+            <label class="text-size-tiny uppercase" id="admin-field-types">Field types</label>
+            <select data-js-element="select" id="admin-field-types" name="Field Types" class="field_input" aria-required="true">
+              <option selected value="text">Text</option>
+              <option value="email">Email</option>
+              <option value="phone">Phone</option>
+              <option disabled value="dropdown">Dropdown</option>
+            </select>
+          </div>
+        
+          <div style="opacity: 0.5; cursor: not-allowed;" class="pointer-events-off">
+            <div class="field-group">
+              <label class="text-size-tiny uppercase" id="Admin-Field options">Field options*</label>
+              <input data-js-element="input" id="Admin-Field options" type="text" name="Field options" class="field_input" value="" aria-required="true" autocorrect="off" autocapitalize="off" placeholder="e.g: Option1, Option2, Option2">
+            </div>
+          </div>
+          
+          <svg data-js-element="cf-icon-close" class="cf-icon__close" width="33" height="32" viewBox="0 0 33 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M23.786 22.3634L23.3145 22.8348C23.0542 23.0951 22.6321 23.0951 22.3717 22.8348L16.9506 17.4136L11.5294 22.8347C11.2691 23.0951 10.8469 23.0951 10.5866 22.8347L10.1152 22.3633C9.85483 22.103 9.85483 21.6809 10.1152 21.4205L15.5364 15.9994L10.1152 10.5782C9.85483 10.3179 9.85483 9.89577 10.1152 9.63542L10.5866 9.16402C10.8469 8.90367 11.2691 8.90367 11.5294 9.16402L16.9506 14.5852L22.3717 9.16401C22.6321 8.90366 23.0542 8.90366 23.3145 9.16401L23.786 9.63541C24.0463 9.89576 24.0463 10.3179 23.786 10.5782L18.3648 15.9994L23.786 21.4205C24.0463 21.6809 24.0463 22.103 23.786 22.3634Z" fill="black"></path>
+          </svg>
+          
+        </div>
+      `
+
+      elements.draggable.insertAdjacentHTML('beforeend', input);
+
+      startDraggability()
+      enableFieldsRemoval()
+    })
+  }
+
+  window.addEventListener('DOMContentLoaded', initForm)
+
+
+</script>

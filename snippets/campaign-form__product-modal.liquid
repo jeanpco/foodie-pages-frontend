@@ -1,0 +1,355 @@
+{{ 'cf-product-card-modal.css' | asset_url | stylesheet_tag }}
+
+{% comment %} Modal {% endcomment %}
+
+<div id="modal" class="modal pos-rel">
+  <div class="modal-container">
+    {% render 'campaign-form__icon-close' %}
+    <!-- Modal Content -->
+    <div data-js-element="product-modal-content" class="product-modal_content">
+      <div class="modal-loading pos-dead-center">
+        <div class="modal-loading-container text-align-center">
+          <div class="loading-spinner"></div>
+          <p class="text-size-tiny margin-top margin-small">Loading product details...</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type="module">
+  
+  
+  window.modalSelectedVariant = null;
+  window.closeModal = modal => modal.style.display = 'none'
+  window.openModal = modal => modal.style.display = 'block'
+  
+  window.cfProductModal = (props) => {
+    const {data, isOpen, productElement, options} = props
+    
+    {% comment %} extract data {% endcomment %}
+    const preventPurchase = options && options.preventPurchase || false;
+    const numberOfVariant = data.variants.length;
+    const isCustomSwag = data.tags.includes('custom');
+
+    {% comment %} get elements {% endcomment %}
+    const elements = {
+      modal: document.getElementById("modal"),
+      close: document.querySelector('[data-js-element="cf-icon-close"]'),
+      modalContent: document.querySelector('[data-js-element="product-modal-content"]'),
+    }
+
+    {% comment %} append element.modal to body {% endcomment %}
+    document.body.appendChild(elements.modal)
+
+    {% comment %} Handle modal open {% endcomment %}
+    if (isOpen) window.openModal(elements.modal)
+
+    {% comment %} Handle modal closure {% endcomment %}
+    elements.close.addEventListener("click", () => window.closeModal(elements.modal));
+
+    window.addEventListener("click", (event) => {
+      if (event.target == elements.modal) window.closeModal(elements.modal)
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") window.closeModal(elements.modal)
+    });
+
+    window.cfProductModal.build({ ...data, preventPurchase});
+    window.cfProductModal.buildSwiper()
+    window.cfProductModal.buildAccordion()
+    window.cfProductModal.buildATC({ 
+      tags: data.tags, 
+      element: productElement, 
+      id: data.id, 
+      variants: data.variants, 
+      title: data.title,
+      numberOfVariant,
+      isCustomSwag,
+    })
+
+    window.cfProductModalVariantSelector({ variants: data.variants })
+  };
+
+  window.cfProductModal.build = (props) => {
+    {% comment %} get elements {% endcomment %}
+    const elements = {
+      modalContent: document.querySelector('[data-js-element="product-modal-content"]'),
+    }
+
+    if (!elements.modalContent) return console.error('No modal content found.')
+
+    {% comment %} extract data {% endcomment %}
+
+    const {
+      body_html,
+      handle,
+      id,
+      images,
+      options,
+      product_type,
+      tags,
+      title,
+      variants,
+      vendor,
+      metafields,
+      preventPurchase,
+    } = props
+
+    const isDonation = tags.includes('donation');
+
+    {% comment %} find metafields with key of "excerpt" and namespace of "custom" {% endcomment %}
+    const excerpt = metafields && metafields.metafields.find(
+      metafield => metafield.key === 'excerpt' && metafield.namespace === 'custom'
+    ) || null
+
+    const newOptions = options.map(option => {
+      return {
+        ...option,
+        values: option.values.filter(value => {
+          return variants.find(variant => variant.title === value)
+        })
+      }
+    })
+  
+    elements.modalContent.innerHTML = `
+      <form data-js-element="modal-content-form" class="modal-content w-full display-flex gap-3 justify-content-between">
+        <div data-js-element="modal-product-images swiper" class="modal-product_images">
+          <div class="swiper-wrapper">
+            ${images.map((image, index) => `
+              <img class="swiper-slide" src="${image.src}" alt="${title}">
+            `).join('')}
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+        <div class="modal-product_details">
+          {% comment %} Vendor {% endcomment %}
+          <small class="text-size-tiny uppercase text-weight-semibold text-color-tertiary">${vendor}</small>
+
+          {% comment %} Title {% endcomment %}
+          <h2 style="opacity: 1;" class="heading-style-h3 margin-vertical margin-small">${title}</h2>
+
+          {% comment %} Excerpt {% endcomment %}
+          ${excerpt ? `<p class="product__excerpt text-size-light text-color-grey-700">${excerpt.value}</p>` : ''}
+
+          
+          ${tags ? `<div class="product__tags display-flex gap-0-5 flex-wrap margin-vertical margin-small">
+              ${tags.split(',').filter(tag => {
+                return tag.charAt(0) !== '_' && tag !== 'donation' && tag !== 'custom' && tag !== 'Box_builder' && tag !== 'custom_swag'
+              }).map(tag => `
+                <div style="border-radius: 30px;" class="product_tag background-color-sandia-18 text-color-sandia-100 padding-horizontal padding-small text-size-tiny">
+                  <div class="padding-vertical padding-xsmall text-style-capitalize"><span>${tag}</span></div>
+                </div>
+              `).join('')}
+            </div>` : '' }
+
+          {% comment %} If donation {% endcomment %}
+
+          ${isDonation ? `
+            <div class="field-group margin-top margin-medium">
+              <label class="text-size-tiny uppercase" for="ContactForm-name">Write an organization</label>
+            
+              <input
+                id="donation-write-organization"
+                type="text"
+                name="input-donation-write-organization"
+                class="field_input"
+                value=""
+                aria-required="true"
+                autocorrect="off"
+                autocapitalize="off"
+                placeholder="Organization Name"
+                required
+              >
+            </div>
+
+            <div class="field-group margin-vertical margin-medium">
+              <label class="text-size-tiny uppercase" for="ContactForm-name">Organization Website</label>
+            
+              <input
+                id="donation-organization-website"
+                type="text"
+                name="input-donation-organization-website"
+                class="field_input"
+                value=""
+                aria-required="true"
+                autocorrect="off"
+                autocapitalize="off"
+                placeholder="Organization Website"
+                required
+              >
+            </div>`
+          : ''}
+
+          ${variants?.length > 1 ? `<div class="cf_modal-variant-selector margin-bottom margin-medium">
+            {% comment %} Variant Selector {% endcomment %}
+            ${newOptions.map((option, index) => `
+              <legend class="text-size-tiny uppercase margin-top margin-medium">${option.name}</legend>
+              ${option.values.map((value, index) => `
+                <div class="field-group variant-select">
+                  <input
+                    data-js-element="variant-option"
+                    type="radio"
+                    id="${ option.name }--${value}"
+                    name="${ option.name }"
+                    value="${ value }"
+                  >
+                  <label class="" for="${ option.name }--${value}">${value}</label>
+                </div>
+              `).join('')}
+            `).join('')}
+          </div>` : ''}
+
+          {% comment %} Add to cart {% endcomment %}
+          ${!preventPurchase ? `
+            <button type="submit" class="button secondary modal-content_atc margin-bottom margin-medium">
+              <span>Select this gift</span>
+            </button>` : ''
+          }
+
+          {% comment %} Description {% endcomment %}
+          <div class="modal-accordion">
+            <p data-js-element="modal-accordion-header" role="button" class="modal-accordion__header display-flex align-items-center justify-content-between">
+              <span class="text-size-regular text-weight-semibold">
+                Product Details
+              </span>
+              {% render 'campaign-form_icon-arrow-down' %}
+            </p>
+            <div data-js-element="modal-accordion-body" class="modal-accordion__body text-rich-text">
+              <div class="padding-top padding-small">
+                ${body_html}
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    `;
+  }
+
+  window.cfProductModal.buildSwiper = () => {
+    const elements = {
+      modalProductImages: document.querySelector('[data-js-element="modal-product-images swiper"]'),
+    }
+
+    if (!elements.modalProductImages) return console.error('No modal product images found.')
+
+    const swiper = new Swiper(elements.modalProductImages, {
+      slidesPerView: 1,
+      spaceBetween: 10,
+      pagination: {
+        el: '.swiper-pagination',
+        type: 'bullets',
+        clickable: true,
+      },
+    });
+  }
+
+  window.cfProductModal.buildAccordion = () => {
+    const elements = {
+      modalAccordionHeader: document.querySelector('[data-js-element="modal-accordion-header"]'),
+      modalAccordionBody: document.querySelector('[data-js-element="modal-accordion-body"]'),
+    }
+
+    if (!elements.modalAccordionHeader) return console.error('No modal accordion header found.')
+    if (!elements.modalAccordionBody) return console.error('No modal accordion body found.')
+
+    elements.modalAccordionHeader.addEventListener('click', () => {
+      elements.modalAccordionBody.classList.toggle('is-active')
+      elements.modalAccordionHeader.classList.toggle('is-active')
+    })
+  }
+
+  window.cfProductModal.buildATC = (props) => {
+    const {id, variants, title, element, numberOfVariant, isCustomSwag, tags, preventPurchase } = props
+    const isDonation = tags.includes('donation')
+
+    const elements = {
+      form: document.querySelector('[data-js-element="modal-content-form"]'),
+      modal: document.getElementById("modal"),
+    }
+
+    const disableSubmitButton = () => {
+      elements.form.querySelector('button').setAttribute('disabled', true)
+      elements.form.querySelector('button span').innerHTML = 'This gift selected'
+    }
+
+    if (!elements.form) return console.error('No form found.')
+    if (element.classList.contains('is-selected')) disableSubmitButton()
+
+    elements.form.addEventListener('submit', (e) => {
+      e.preventDefault()
+
+      let selectedProduct = `Product Title: ${title} | Variant Title: ${variants[0].title} | Variant Sku: ${variants[0].sku} | Variant Id: ${variants[0].id} | Product Id: ${id} | Product Tags: ${tags.replaceAll(',', ' ')}`;
+
+      if (isDonation) {
+        const organizationName = document.getElementById('donation-write-organization').value
+        const organizationWebsite = document.getElementById('donation-organization-website').value
+
+        selectedProduct = `Product Title: ${title} | Variant Title: ${variants[0].title} | Variant Sku: ${variants[0].sku} | Variant Id: ${variants[0].id} | Product Id: ${id} | Organization Name: ${organizationName} | Organization Website: ${organizationWebsite}`
+      }
+
+      if (numberOfVariant > 1) {
+        selectedProduct = `Product Title: ${title} | Variant Title: ${window.modalSelectedVariant.title} | Variant Sku: ${window.modalSelectedVariant.sku} | Variant Id: ${window.modalSelectedVariant.id} | Product Id: ${id} | Product Tags: ${tags.replaceAll(',', ' ')}`
+      }
+
+      if (isCustomSwag) {
+        window.cfProductCardAdd(selectedProduct, 'Custom Swag', element)
+      } else {
+        window.cfProductCardAdd(selectedProduct, 'Main Gift', element)
+      }
+
+      disableSubmitButton()
+      window.closeModal(elements.modal)
+    })
+  }
+
+  window.cfProductModalVariantSelector = (props) => {
+    const { variants } = props
+    const variantOptions = [...document.querySelectorAll('[data-js-element="variant-option"]')]
+
+    const selectVariant = (e) => {
+
+      {% comment %} if e is undefined get the first available variants {% endcomment %}
+      {% comment %} might need to check agaisnt inventory_quantity {% endcomment %}
+      if (!e) {
+
+        if (!window.modalSelectedVariant) {
+          const firstVariant = variants[0]
+          window.modalSelectedVariant = firstVariant
+
+          {% comment %} variantoptions has variant.title as a value, check it {% endcomment %}
+          variantOptions.forEach((option) => {
+            if (option.value === firstVariant.title) {
+              option.setAttribute('checked', true)
+            }
+          }) 
+        } else {
+          {% comment %} variantoptions has variant.title as a value, check it {% endcomment %}
+          variantOptions.forEach((option) => {
+            if (option.value === window.modalSelectedVariant.title) {
+              option.setAttribute('checked', true)
+            }
+          })
+        }
+
+      } else {
+        const option1 = variants.find((variant) => variant.title === e.target.value).option1
+        const option2 = variants.find((variant) => variant.title === e.target.value).option2
+        const option3 = variants.find((variant) => variant.title === e.target.value).option3
+
+        const selectedVariant = variants.find((variant) => variant.option1 === option1 && variant.option2 === option2 && variant.option3 === option3)
+
+        window.modalSelectedVariant = selectedVariant
+      }
+    }
+
+    selectVariant()
+    variantOptions.forEach((option) => option.addEventListener('change', selectVariant))
+  }
+
+
+
+
+
+</script>

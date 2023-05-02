@@ -1,0 +1,150 @@
+<div id="corporate-product-submission" style="display: none">
+  <div class="popup-overlay" data-js-element="close-popup"></div>
+  <div class="popup-content">
+    <h3 class="popup-title margin-bottom margin-small">Order submitted</h3>
+    <p class="popup-body margin-bottom margin-small">Rhoncus quisque gravida sed scelerisque. In quis tellus tortor tincidunt hendrerit pretium. Dignissim turpis tellus condimentum elit ut.</p>
+
+    <div class="popup-ctas display-flex gap-1">
+      <button data-js-element="send-gifts" class="button">
+        Start another order
+      </button>
+      <button data-js-element="dashboard" class="button secondary">
+        View dashboard
+      </button>
+    </div>
+    
+    <button class="popup-close-button" data-js-element="close-popup">
+      <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="0.5" y="0.5" width="47" height="47" rx="23.5" fill="white"/>
+        <path d="M30.8348 30.3634L30.3633 30.8348C30.103 31.0951 29.6809 31.0951 29.4205 30.8348L23.9994 25.4136L18.5782 30.8347C18.3179 31.0951 17.8958 31.0951 17.6354 30.8347L17.164 30.3633C16.9037 30.103 16.9037 29.6809 17.164 29.4205L22.5852 23.9994L17.164 18.5782C16.9037 18.3179 16.9037 17.8958 17.164 17.6354L17.6354 17.164C17.8958 16.9037 18.3179 16.9037 18.5782 17.164L23.9994 22.5852L29.4205 17.164C29.6809 16.9037 30.103 16.9037 30.3633 17.164L30.8348 17.6354C31.0951 17.8958 31.0951 18.3179 30.8348 18.5782L25.4136 23.9994L30.8348 29.4205C31.0951 29.6809 31.0951 30.103 30.8348 30.3634Z" fill="black"/>
+        <rect x="0.5" y="0.5" width="47" height="47" rx="23.5" stroke="#E0E0E0"/>
+      </svg>
+    </button>
+  </div>
+</div>
+
+<style>
+  #corporate-product-submission,
+  #inventory-insufficient {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: auto;
+  }
+
+  .popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: block !important;
+  }
+
+  .popup-close-button {
+    border: unset;
+    background: transparent;
+  }
+
+  .popup-content {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 5rem;
+    background-color: var(--color-secondary);
+    border-radius: 1.5rem;
+    padding: 2rem;
+    max-width: 768px;
+    width: 100%;
+  }
+
+  .popup-title {
+    margin-top: 0;
+  }
+
+  .popup-body {
+    {% comment %} margin-bottom: 20px; {% endcomment %}
+  }
+
+  .popup-link {
+    color: blue;
+    text-decoration: underline;
+  }
+
+  .popup-close-button {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    font-size: 1.5em;
+    color: gray;
+    cursor: pointer;
+  }
+
+  {% comment %} max-width 500 make popup-ctas flex direction column {% endcomment %}
+  @media screen and (max-width: 500px) {
+    .popup-ctas {
+      flex-direction: column;
+    }
+  }
+</style>
+
+<script type="module">
+  document.addEventListener('airtable-address-added', function (e) {
+    {% comment %} Close previously open popup {% endcomment %}
+    document.querySelector('#single-address-popup').style.display = 'none';
+
+    {% comment %}  {% endcomment %}
+    document.querySelector('#corporate-product-submission').style.display = 'flex';
+  });
+
+  const initProductSubmissionPopup = () => {
+    const elements = {
+      close: [...document.querySelectorAll('[data-js-element="close-popup"]')],
+      sendGiftsButton: document.querySelector('[data-js-element="send-gifts"]'),
+      dashboardButton: document.querySelectorAll('[data-js-element="dashboard"]'),
+      sendGiftsLink: document.querySelector('[data-js-element="send-gifts-link"]'),
+      dashboardLink: document.querySelector('[data-js-element="dashboard-link"]'),
+    };
+
+    const eventHandler = {
+      closePopup: () => {
+        document.querySelector('#corporate-product-submission').style.display = 'none';
+      },
+    };
+
+    elements.sendGiftsButton.addEventListener('click', () => {
+      window.scrollTo(0, 0);
+      eventHandler.closePopup();
+      elements.sendGiftsLink.click();
+    });
+
+    elements.dashboardButton.forEach((element) => {
+      element.addEventListener('click', () => {
+        window.scrollTo(0, 0);
+        eventHandler.closePopup();
+        elements.dashboardLink.click();
+      });
+    });
+
+    elements.close.forEach((element) => {
+      element.addEventListener('click', () => {
+        eventHandler.closePopup();
+      });
+    });
+
+    document.addEventListener('keyup', function (e) {
+      if (e.keyCode === 27) {
+        eventHandler.closePopup();
+      }
+    });
+  };
+
+  initProductSubmissionPopup();
+</script>

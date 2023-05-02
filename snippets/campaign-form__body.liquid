@@ -1,0 +1,177 @@
+{{ 'swiper.css' | asset_url | stylesheet_tag }}
+
+{% render 'campaign-form__product-card' %}
+{% render 'campaign-form__product-card-functions' %}
+{% render 'campaign-form__product-modal' %}
+
+<style>
+  .swiper .icon-next-arrow {
+    right: 1rem;
+  }
+
+  .swiper .icon-prev-arrow {
+    left: 1rem;
+  }
+
+  .cf-body {
+    overflow: hidden;
+  }
+
+  {% comment %} max-width 600 {% endcomment %}
+
+  @media (max-width: 600px) {
+    .cf-body_products-slider {
+      overflow: visible !important;
+    }
+  }
+
+  .cf-product-card .button {
+    height: 2.5rem;
+  }
+  
+  .cf-product-card .button.secondary {
+    background-color: var(--color-white);
+  }
+</style>
+
+{% comment %} Main Products {% endcomment %}
+
+<div class="cf-body w-full cf_main-products-slider" data-js-element="animated-section">
+  <div class="cf-body_spacing padding-vertical padding-large">
+    <div class="cf-body_container container display-flex">
+      <div class="cf-body_text display-flex padding-vertical padding-medium flex-direction-column">
+        <h2 class="padding-bottom padding-medium">Select your gift</h2>
+        <p>Pick <span data-js-element="number-of-selectable-gifts"></span> of the <span data-js-element="number-of-main-gifts">4</span> following options</p>
+      </div>
+    </div>
+    <div class="container">
+      <div
+        class="cf-body_products-slider main display-flex gap-1 swiper"
+        data-js-element="products-slider-main"
+      >
+        <div class="swiper-wrapper"></div>
+
+        {% render 'icon-prev-arrow' %}
+        {% render 'icon-next-arrow' %}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% comment %} Custom Products {% endcomment %}
+
+<div class="cf-body w-full cf_custom-products-slider" data-js-element="animated-section">
+  <div class="cf-body_spacing padding-vertical padding-large">
+    <div class="cf-body_container container display-flex">
+      <div class="cf-body_text display-flex padding-vertical padding-medium flex-direction-column">
+        <h2 class="padding-bottom padding-medium">Select your custom swag</h2>
+        <p>Pick 1 of the <span data-js-element="number-of-custom-gifts">2</span> following options</p>
+      </div>
+    </div>
+    <div class="container">
+      <div
+        class="cf-body_products-slider custom display-flex gap-1 swiper"
+        data-js-element="products-slider-custom"
+      >
+        <div class="swiper-wrapper"></div>
+
+        {% render 'icon-prev-arrow' %}
+        {% render 'icon-next-arrow' %}
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type="module">
+  window.campaignForm.buildBody = (props) => {
+    const { products, airtableProducts, numberOfSelectableGifts } = props
+
+    {% comment %} set number of selectable main gifts by user {% endcomment %}
+    window.campaignForm.numberOfSelectableGifts = numberOfSelectableGifts
+    
+    const elements = {
+      mainProductsSlider: document.querySelector('[data-js-element="products-slider-main"]'),
+      customProductsSlider: document.querySelector('[data-js-element="products-slider-custom"]'),
+      numberOfMainGiftsElement: document.querySelector('[data-js-element="number-of-main-gifts"]'),
+      numberOfCustomGiftsElement: document.querySelector('[data-js-element="number-of-custom-gifts"]'),
+      numberOfSelectableGiftsElement: document.querySelector('[data-js-element="number-of-selectable-gifts"]'),
+    }
+    
+    if (!elements.mainProductsSlider) return
+    
+    {% comment %} get number of main gifts {% endcomment %}
+    const numberOfMainGifts = products.filter(p => !p.product.tags.toLowerCase().includes('custom')).length;
+    const numberOfCustomGifts = products.filter(p => p.product.tags.toLowerCase().includes('custom')).length;
+    
+    elements.numberOfSelectableGiftsElement.innerHTML = numberOfSelectableGifts;
+    elements.numberOfMainGiftsElement.innerHTML = numberOfMainGifts;
+    elements.numberOfCustomGiftsElement.innerHTML = numberOfCustomGifts;
+
+    const newProducts = products.map((item) => {
+      const airtableProduct = airtableProducts.find(p => +p.product_id === item.product.id)
+
+      const newVariants = item.product.variants.filter((variant) => {
+        return airtableProduct.variant_ids.find(v => +v === variant.id)
+      })
+
+      return {
+        ...item,
+        product: {
+          ...item.product,
+          variants: newVariants
+        }
+      }
+    })
+
+    newProducts.every(p => !p.product.tags.toLowerCase().includes('custom')) && elements.customProductsSlider.closest('.cf_custom-products-slider').remove();
+
+    newProducts.forEach((item) => {
+      const productCard = window.cfProductCard(item)
+      const tags = item.product.tags
+
+      if (tags && tags.toLowerCase().includes('custom')) {
+        elements.customProductsSlider.querySelector('.swiper-wrapper').insertAdjacentHTML('beforeend', productCard);
+      } else {
+        elements.mainProductsSlider.querySelector('.swiper-wrapper').insertAdjacentHTML('beforeend', productCard);
+      }
+
+      const productElement = elements.mainProductsSlider.querySelector(`[data-product-id="${item.product.id}"]`) || elements.customProductsSlider.querySelector(`[data-product-id="${item.product.id}"]`);
+      const event = new CustomEvent('product-card-added', { detail: { productElement, data: item } });
+
+      document.dispatchEvent(event);
+    });
+
+    {% comment %} init slider {% endcomment %}
+
+    const swiperConfig = {
+      spaceBetween: 24,
+      freeMode: true,
+      slidesPerView: 1.2,
+      mousewheel: {
+          forceToAxis: true,
+        },
+      navigation: {
+        nextEl: '.icon-next-arrow',
+        prevEl: '.icon-prev-arrow',
+      },
+      breakpoints: {
+        // when window width is >= 320px
+        1100: {
+          slidesPerView: 3,
+        },
+        800: {
+          slidesPerView: 2,
+        },
+        600: {
+          slidesPerView: 2,
+        },
+      }
+    }
+
+    const mainSlider = new window.Swiper(elements.mainProductsSlider, swiperConfig);    
+    const customSlider = new window.Swiper(elements.customProductsSlider, swiperConfig);
+  };
+
+
+
+</script>

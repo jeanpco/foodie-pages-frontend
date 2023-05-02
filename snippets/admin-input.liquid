@@ -1,0 +1,68 @@
+<div class="field-group {{ class }}">
+  <label class="text-size-tiny uppercase" id="Admin-{{ name }}">{{ label }}</label>
+
+  {% if type == 'textarea' %}
+    <textarea
+      data-js-element="input"
+      id="Admin-{{ name }}"
+      name="{{ name }}"
+      class="field_input"
+      placeholder="{{ placeholder }}"
+      {% if airtable_type %}
+        data-airtable-type="{{ airtable_type }}"
+      {% endif %}
+      {% if required %}
+        required
+      {% endif %}
+    ></textarea>
+
+  {% else %}
+    <input
+      data-js-element="input"
+      id="Admin-{{ name }}"
+      type="{{ type }}"
+      name="{{ name }}"
+      class="field_input"
+      {% if type == 'number' %}
+        value="1"
+      {% else %}
+        value="{{ value }}"
+      {% endif %}
+      aria-required="true"
+      autocorrect="off"
+      autocapitalize="off"
+      placeholder="{{ placeholder }}"
+      {% if airtable_type %}
+        data-airtable-type="{{ airtable_type }}"
+      {% endif %}
+      {% if type == 'number' %}
+        min="1"
+      {% endif %}
+      {% if required %}
+        required
+      {% endif %}
+      {% if type == 'file' %}
+        accept="image/png, image/jpeg"
+      {% endif %}
+    >
+  {% endif %}
+</div>
+
+{% if type == 'file' %}
+  <script type="module">
+    {% comment %} get closest input of type file {% endcomment %}
+
+    const fileInput = document.querySelector('input[type="file"]');
+
+    {% comment %} check if the size is larger then 200 kb otherwise clear file and throw an alert {% endcomment %}
+    fileInput.addEventListener('change', function(e) {
+      if (e.target.files.length === 0) return;
+
+      const file = e.target.files[0];
+      if (file.size > 1000000) {
+        alert('File is too big!');
+        fileInput.value = '';
+      }
+    });
+  </script>
+{% endif %}

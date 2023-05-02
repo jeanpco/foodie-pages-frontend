@@ -16,6 +16,15 @@
       window.customFunctions = window.customFunctions || {};
     </script>
 
+    {% comment %} ! This is being used to manage states for super admin dash and submit your gifts (/pages/form) pages. {% endcomment %}
+    <script>
+      window.campaignForm = {}; // global variable
+      window.campaignForm.state = {} // state that will be submitted to the backend (airtable)
+      window.campaignForm.numberOfSelectableGifts = 1 // default
+    </script>
+    
+    {% render 'backend-utils-functions' %}
+
     <title>
       {{ page_title }}
       {%- if current_tags %} &ndash; tagged "{{ current_tags | join: ', ' }}"{% endif -%}
@@ -344,11 +353,22 @@
       <link rel="stylesheet" href="{{ 'component-predictive-search.css' | asset_url }}" media="print" onload="this.media='all'">
     {%- endif -%}
 
-    <script>document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
-    if (Shopify.designMode) {
-      document.documentElement.classList.add('shopify-design-mode');
-    }
+    <script>
+      document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
+
+      if (Shopify.designMode) {
+        document.documentElement.classList.add('shopify-design-mode');
+      }
     </script>
+
+    {% render 'google-tag-manager' %}
+    {% render 'google-tag-email-subscription' %}
+    {% render 'google-tag-view-catalogue' %}
+    {% render 'google-tag-get-a-quote' %}
+    {% render 'google-tag-contact' %}
+    {% render 'google-tag-sign-in' %}
+    {% render 'google-tag-sign-up' %}
+    {% comment %} Add to cart conversion rate tracking is at the bottom of the body, it needs the elements rendered to work as it carries more logic {% endcomment %}
   </head>
 
   <body>
@@ -358,6 +378,7 @@
 
     {%- render 'cart-drawer' -%}
 
+    {% section 'announcement-banner' %}
     {% section 'header' %}
     
     <main id="MainContent" class="content-for-layout focus-none" role="main" tabindex="-1">
@@ -424,5 +445,7 @@
 
       revealSwiperArrows()
     </script>
+
+    {% render 'google-tag-add-to-cart' %}
   </body>
 </html>

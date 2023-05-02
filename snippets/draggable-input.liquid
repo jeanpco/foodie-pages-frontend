@@ -1,0 +1,41 @@
+{% comment %} name, value, text, type {% endcomment %}
+
+<div class="titlebar display-flex gap-1 background-color-grey-50 padding-small" data-js-element="draggable-input">
+  {% comment %} draggable handle {% endcomment %}
+  <div class="titlebar__handle">
+    {% render 'draggable-icon' %}
+  </div>
+
+  {% comment %} Field Label {% endcomment %}
+  {% render 'admin-input', name: name, placeholder: 'Enter the input name', value: value, type: 'text', label: 'Field Label*', required: required %}
+
+  {% comment %} Field Types {% endcomment %}
+  <div class="field-group pos-rel">
+    <label class="text-size-tiny uppercase" id="admin-field-types">Field types</label>
+    <div class="field-group_select">
+      <select
+        data-js-element="select"
+        id="admin-field-types"
+        name="Field Types"
+        class="field_input"
+        aria-required="true"
+      >
+        <option {% if type == 'text' %}selected{% endif %} value="text">Text</option>
+        <option {% if type == 'email' %}selected{% endif %} value="email">Email</option>
+        <option {% if type == 'phone' %}selected{% endif %} value="phone">Phone</option>
+        <option disabled value="dropdown">Dropdown</option>
+      </select>
+      <div class="select-icon pointer-events-off">
+        {% render 'admin-select-arrow-icon' %}
+      </div>
+    </div>
+  </div>
+
+  <div style="opacity: 0.5; cursor: not-allowed;" class="pointer-events-off">
+    {% comment %} Field Options {% endcomment %}
+    {% render 'admin-input', name: 'Field options', placeholder: "e.g: Option1, Option2, Option2", type: 'text', label: 'Field options*', required %}
+  </div>
+
+  {% comment %} Close Icon {% endcomment %}
+  {% render 'campaign-form__icon-close' %}
+</div>

@@ -1,6 +1,11 @@
 <script src="{{ 'inview.min.js' | asset_url }}"></script>
 <script src="https://unpkg.com/split-type"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js" integrity="sha512-VEBjfxWUOyzl0bAwh4gdLEaQyDYPvLrZql3pw1ifgb6fhEvZl9iDDehwHZ+dsMzA0Jfww8Xt7COSZuJ/slxc4Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script
+  src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"
+  integrity="sha512-VEBjfxWUOyzl0bAwh4gdLEaQyDYPvLrZql3pw1ifgb6fhEvZl9iDDehwHZ+dsMzA0Jfww8Xt7COSZuJ/slxc4Q=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+></script>
 
 <style>
   .line {
@@ -20,6 +25,25 @@
   .animation-stagger {
     opacity: 0;
     transform: translateY(20px);
+  }
+
+  [data-js-element="animated-section"] small,
+  [data-js-element="animated-section"] h1,
+  [data-js-element="animated-section"] h2,
+  [data-js-element="animated-section"] p,
+  [data-js-element="animated-section"] .field-group,
+  [data-js-element="animated-section"] [data-js-element="cf-product-card"] {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  [data-js-element="animated-section"] .cf-header_image {
+    opacity: 0;
+    transform: scale(1.1);
+  }
+
+  .sticky-banner {
+    transform: translateY(100%);
   }
 
   .mega-menu[open] [data-js-element="animation-stagger-parent"] [data-js-element] {
@@ -83,6 +107,7 @@
 </style>
 
 <script type="module">
+  
   CSSPlugin.defaultTransformPerspective = 1200;
 
   const initAnimation = () => {
@@ -94,8 +119,6 @@
     const filteredRegularHeadings = regularHeadings.filter(heading => {
       return !heading.querySelector('span, a, p')
     })
-
-    // @TODO: Get all h1 and h2 HTML elements on the page with no children in it
     
     const headings = [
       ...richTextHeadings, 
@@ -151,6 +174,64 @@
     {% comment %} staggerMenuElements(); {% endcomment %}
   }
 
-  initAnimation()
-  
+  const initCampaignFormAnimation = () => {
+    {% comment %} data-js-element="animated-section" {% endcomment %}
+
+    gsap.to('.loading', {
+      transform: 'translateY(-100%)',
+      ease: 'power4.out',
+    })
+
+    inView('[data-js-element="animated-section"]').on('enter', (section) => {
+      {% comment %} get all h1, p, small {% endcomment %}
+      const children = Array.from(section.querySelectorAll('small, h1, h2, p, [data-js-element="cf-product-card"], .field-group'))
+      {% comment %} find cf-header_image {% endcomment %}
+      const headerImage = section.querySelector('[data-js-element="animated-section"] .cf-header_image')
+
+      gsap.to(children, {
+        y: '0%',
+        opacity: 1,
+        duration: 1,
+        ease: 'power4.out',
+        transform: 'skewY(0deg)',
+        stagger: {
+          each: 0.2,
+          from: 'start',
+        },
+      })
+
+      gsap.to(headerImage, {
+        y: '0%',
+        opacity: 1,
+        duration: 1,
+        ease: 'power4.out',
+        transform: 'scale(1)',
+        delay: 0.5,
+      })      
+    })
+
+    {% comment %} animate sticky-banner {% endcomment %}
+    gsap.to('.sticky-banner', {
+      y: '0%',
+      duration: 0.5,
+      ease: 'power4.out',
+      transform: 'translateY(0)',
+      delay: 1,
+    })
+    
+  }
+
+  if (!window.location.href.includes('form?client') || !window.location.href.includes('account?campaign=create')) {
+    initAnimation()
+  }
+
+  {% comment %} animate the campaign form {% endcomment %}
+  document.addEventListener('campaign-form-loading', (e) => {
+    const isLoading = e.detail;
+
+    if (isLoading === false) {
+      initCampaignFormAnimation()
+    }
+  })
+
 </script>

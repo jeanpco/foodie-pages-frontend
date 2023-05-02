@@ -3,10 +3,10 @@
     "main": {
       "type": "module-hero",
       "settings": {
-        "overline": "About us",
-        "title": "<p>Hi, we’re foodiepages<\/p>",
+        "overline": "Careers",
+        "title": "<p>Interested in joining the team?<\/p>",
         "heading_style": "h2",
-        "body": "Since day one, our goal has been to help people discover and connect with awesome, under-the radar brands. A few sleepless nights, 10 years, and a growing team later, we’re still at it. We look forward to being your destination for gifts with intention.",
+        "body": "For nearly a decade, we've created gift boxes that support small businesses and today we are more focussed than ever on becoming Canada's most loved gifting brand.\nCheck out our job listings below.",
         "image": "shopify:\/\/shop_images\/My_project.jpg",
         "enable_card_style": false,
         "text_vertical_alignment": "center",
@@ -22,7 +22,7 @@
           "type": "features",
           "settings": {
             "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/placeholder-svg-square.svg?v=1666645913",
-            "title": "Storytelling",
+            "title": "Value 1",
             "body": "Behind every great gift is a great story. We believe in creating thoughtful gifts that tell a story and deepen relationships.",
             "cta_text": "",
             "cta_link": ""
@@ -32,7 +32,7 @@
           "type": "features",
           "settings": {
             "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/placeholder-svg-square.svg?v=1666645913",
-            "title": "Connection",
+            "title": "Value 2",
             "body": "Connection is a crucial part of the human experience. We create lasting connections through shared stories, values, and, most importantly, thoughtful and personalized gifts.",
             "cta_text": "",
             "cta_link": ""
@@ -42,7 +42,7 @@
           "type": "features",
           "settings": {
             "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/placeholder-svg-square.svg?v=1666645913",
-            "title": "Love It, or Leave It",
+            "title": "Value 3",
             "body": "Every product has been tested and tasted – and then some. If it doesn't make the cut, it doesn't make it on our site.",
             "cta_text": "",
             "cta_link": ""
@@ -52,7 +52,7 @@
           "type": "features",
           "settings": {
             "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/placeholder-svg-square.svg?v=1666645913",
-            "title": "Never Settle",
+            "title": "Value 4",
             "body": "You expect a lot from us, and that's not taken for granted. We're always hustling to earn your business, and we work extra hard for that moment of wow.",
             "cta_text": "",
             "cta_link": ""
@@ -66,17 +66,92 @@
         "29189724-18f8-43ad-ad45-9aea0d08c6f0"
       ],
       "settings": {
-        "overline": "The best gifting service in Canada",
-        "title": "<p>How we see it<\/p>",
+        "overline": "Our values are everything",
+        "title": "<p>A few things we've always believed<\/p>",
         "heading_style": "h2",
-        "body": "Here are a few things we've always believed to be important.",
+        "body": "",
         "cta_text": "",
-        "cta_link": "shopify:\/\/pages\/how-it-works"
+        "cta_link": ""
+      }
+    },
+    "e41c01d2-a096-4fea-afcf-4443c3dfd019": {
+      "type": "module-vertical-tabs",
+      "blocks": {
+        "a659630c-07df-4a2c-91f3-0d4b2a5dc1ab": {
+          "type": "tab",
+          "settings": {
+            "overline": "FULL TIME",
+            "title": "Placeholder job",
+            "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ut lorem qui lectus molestie malesuada vitae vel purus.",
+            "cta_text": "Apply now",
+            "cta_link": "https:\/\/www.linkedin.com\/"
+          }
+        },
+        "82e393a4-759c-4669-9b6a-1c2e87062abc": {
+          "type": "tab",
+          "settings": {
+            "overline": "FULL TIME",
+            "title": "Placeholder job",
+            "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ut lorem qui lectus molestie malesuada vitae vel purus.",
+            "cta_text": "Apply Now",
+            "cta_link": "shopify:\/\/pages\/contact-us"
+          }
+        }
+      },
+      "block_order": [
+        "a659630c-07df-4a2c-91f3-0d4b2a5dc1ab",
+        "82e393a4-759c-4669-9b6a-1c2e87062abc"
+      ],
+      "settings": {
+        "overline": "get in touch",
+        "title": "<p>Open Positions<\/p>",
+        "heading_style": "h2",
+        "cta_text": "View all",
+        "cta_link": "https:\/\/www.linkedin.com\/company\/foodiepages-ca\/jobs\/",
+        "body": "Don't see a job listed that fits? \nEmail erin@foodiepages.ca with a pitch for why you're interested in working with us. Bonus points for creativity. As a growing company, we're always on the lookout for great talent.",
+        "secondary_cta_text": "Get in touch",
+        "secondary_cta_link": "mailto:erin@foodiepages.ca"
+      }
+    },
+    "a9b4c335-2262-4070-a3a8-a782d4902a31": {
+      "type": "module-testimonials",
+      "blocks": {
+        "92360469-32ab-4260-b955-ea73239b30a3": {
+          "type": "testimonial",
+          "settings": {
+            "text": "Foodiepages has been a trusted partner of Dynacare for several years, providing quality, trusted and reliable services for important gifts for staff, clients, and executives."
+          }
+        },
+        "0ab8a709-ddff-4df1-81b7-43554f55317f": {
+          "type": "testimonial",
+          "settings": {
+            "text": "Foodiepages has been a trusted partner of Dynacare for several years, providing quality, trusted and reliable services for important gifts for staff, clients, and executives."
+          }
+        },
+        "1a0b1840-4cfd-4a2d-8dbc-a6a43b52094e": {
+          "type": "testimonial",
+          "settings": {
+            "text": "Foodiepages has been a trusted partner of Dynacare for several years, providing quality, trusted and reliable services for important gifts for staff, clients, and executives."
+          }
+        }
+      },
+      "block_order": [
+        "92360469-32ab-4260-b955-ea73239b30a3",
+        "0ab8a709-ddff-4df1-81b7-43554f55317f",
+        "1a0b1840-4cfd-4a2d-8dbc-a6a43b52094e"
+      ],
+      "settings": {
+        "overline": "Good Words",
+        "title": "<p>Testimonials<\/p>",
+        "cta_text": "Shop now",
+        "cta_link": ""
       }
     }
   },
   "order": [
     "main",
-    "b5797203-b142-444b-be2c-d6e9d37312fe"
+    "b5797203-b142-444b-be2c-d6e9d37312fe",
+    "e41c01d2-a096-4fea-afcf-4443c3dfd019",
+    "a9b4c335-2262-4070-a3a8-a782d4902a31"
   ]
 }

@@ -1,10 +1,12 @@
 {{ 'corporate-orders.css' | asset_url | stylesheet_tag }}
+{{ 'loading.css' | asset_url | stylesheet_tag }}
 
 <div class="loading">
   <div class="loading-container text-align-center">
     <div class="loading-spinner"></div>
     <p class="text-size-tiny margin-top margin-small">
-      Retrieving Sale Orders {{ customer.name }}.<br>Thank you for your patience.
+      Retrieving Sale Orders {{ customer.name }}.<br>
+      Thank you for your patience.
     </p>
   </div>
 </div>
@@ -12,8 +14,12 @@
 <table id="sos-inventory-table"></table>
 
 <script type="module">
+  
+  
+  
+  
 
-  const loadingElement = (style) => `
+const loadingElement = (style) => `
   <div style="${style}" class="loading inline-loading">
     <div class="loading-container">
       <div class="loading-spinner"></div>
@@ -21,8 +27,9 @@
   </div>
 `
 
-  const backendURL = 'https://foodie-pages-backend.herokuapp.com'
-  {% comment %} const backendURL = 'http://localhost:8080' {% endcomment %}
+  {% comment %} 'http://localhost:8080' {% endcomment %}
+  {% comment %} 'https://foodiepagesbackend.onrender.com'{% endcomment %}
+  const backendURL = 'https://foodiepages.herokuapp.com'
 
   {% comment %} 
     UTILS
@@ -72,8 +79,13 @@
 
   const getUPSTrackingStatus = (trackingNumber) => {
     if (!trackingNumber) return;
-    return fetch(`${backendURL}/api/ups?trackingNumber=${trackingNumber}`)
-      .then(response => response.json())
+    
+    try {
+      return fetch(`${backendURL}/api/ups?trackingNumber=${trackingNumber}`)
+        .then(response => response.json())
+    } catch (error) {
+      console.error(error)
+    }
   }
 
 
@@ -254,7 +266,9 @@
         const items = order.items;
         const address = order.shipTo;
         const shipDate = new Date(order.shipDate);
-        const formattedShipDate = `${shipDate.toLocaleString('default', { month: 'short' })} ${shipDate.getDate()}, ${shipDate.getFullYear()}`
+        const localShipDate = new Date(shipDate.getTime() + shipDate.getTimezoneOffset() * 60 * 1000);
+
+        const formattedShipDate = `${localShipDate.toLocaleString('default', { month: 'short' })} ${localShipDate.getDate()}, ${localShipDate.getFullYear()}`;
 
         const orderShipments = shipments.filter(shipment => shipment.orderId === order.orderId);
 
@@ -322,8 +336,10 @@
   {% endcomment %}
 
   const getUPSTrackingDetails = async (shipments) => {
-    shipments.sort((a, b) => new Date(b.shipDate) - new Date(a.shipDate)).forEach(async ship => {
+    {% comment %} get the first 2 items from shipments {% endcomment %}
+    {% comment %} const firstTwoShipments = shipments.slice(0, 2); {% endcomment %}
 
+    shipments.sort((a, b) => new Date(b.shipDate) - new Date(a.shipDate)).forEach(async ship => {
       if (!ship.trackingNumber) return;
 
       let statusType = null;
@@ -336,21 +352,27 @@
         statusType = upsShipment.statusType;
         statusDescription = upsShipment.statusDescription;
       } else {
-        const upsShipment = await getUPSTrackingStatus(ship.trackingNumber);
 
-        if (upsShipment.trackResponse.shipment[0].warnings && upsShipment.trackResponse.shipment[0].warnings[0].message) {
-          statusType = upsShipment.trackResponse.shipment[0].warnings[0].message;
-          statusDescription = upsShipment.trackResponse.shipment[0].warnings[0].message
-        } else {
-          statusType = upsShipment.trackResponse.shipment[0].package[0].activity[0].status.type;
-          statusDescription = upsShipment.trackResponse.shipment[0].package[0].activity[0].status.description;
+        try {
+          const upsShipment = await getUPSTrackingStatus(ship.trackingNumber);
+
+          if (upsShipment.trackResponse.shipment[0].warnings && upsShipment.trackResponse.shipment[0].warnings[0].message) {
+            statusType = upsShipment.trackResponse.shipment[0].warnings[0].message;
+            statusDescription = upsShipment.trackResponse.shipment[0].warnings[0].message
+          } else {
+            statusType = upsShipment.trackResponse.shipment[0].package[0].activity[0].status.type;
+            statusDescription = upsShipment.trackResponse.shipment[0].package[0].activity[0].status.description;
+          }
+  
+          {% comment %} save the data for next time around {% endcomment %}
+          sessionStorage.setItem(ship.trackingNumber, JSON.stringify({
+            statusType,
+            statusDescription
+          })) 
+
+        } catch (error) {
+          console.error(error)
         }
-
-        {% comment %} save the data for next time around {% endcomment %}
-        sessionStorage.setItem(ship.trackingNumber, JSON.stringify({
-          statusType,
-          statusDescription
-        })) 
       }
 
       updateTrackingDetails(ship.trackingNumber, statusType, statusDescription)
@@ -360,6 +382,7 @@
     const trackingShipDates = [...document.querySelectorAll('.ship-date')];
 
     trackingShipDates.forEach(track => {
+      if (!track) return
       const row = track.closest('tr')
       const loading = row.querySelector('.inline-loading')
 
@@ -379,7 +402,7 @@
   const updateTrackingDetails = (trackingNumber, statusType, statusDescription) => {
 
     const trackingNumberElement = document.querySelector(`[data-tracking-number="${trackingNumber}"]`);
-    const trackingLoading = trackingNumberElement.closest('tr').querySelector('.inline-loading');
+    const trackingLoading = trackingNumberElement && trackingNumberElement.closest('tr').querySelector('.inline-loading');
     
     if (trackingLoading) {
       trackingLoading.style.display = 'none';
@@ -429,7 +452,6 @@
         <th class="text-size-tiny uppercase text-color-grey-600">Campaign Name</th>
         <th class="text-size-tiny uppercase text-color-grey-600">Order #</th>
         <th class="text-size-tiny uppercase text-color-grey-600">Order Date</th>
-        <th class="text-size-tiny uppercase text-color-grey-600"># of boxes left</th>
         <th class="text-size-tiny uppercase text-color-grey-600">Delivery Status</th>
         <th class="text-size-tiny uppercase text-color-grey-600">Details</th>
       `
@@ -441,7 +463,7 @@
           return acc + line.quantity
         }, 0)
 
-        let deliveryStatus = 'Not Delivered'
+        let deliveryStatus = 'Not Shipped'
 
         {% comment %} If any shipment linked shipments, shipment is partially completed {% endcomment %}
         if (saleOrder && saleOrder.linkedShipments && saleOrder.linkedShipments.length > 0) {
@@ -461,12 +483,14 @@
         const date = new Date(saleOrder.date)
         const formattedDate = date.toLocaleDateString('en-CA', { month: 'long', day: 'numeric', year: 'numeric' })   
 
+        const campaignName = saleOrder.customFields.find(customField => customField.name === 'Campaign Name')
+
         const tableRow = document.createElement('tr')
 
         tableRow.innerHTML = `
           <td class="text-size-small">
             <p class="text-size-tiny uppercase text-color-grey-600 hide-mobile-landscape-and-up">Campaign Name</p>
-            <span>Unnamed</span>
+            <span>${campaignName && campaignName.value ? campaignName.value : 'Unnamed'}</span>
           </td>
           <td class="text-size-small">
             <p class="text-size-tiny uppercase text-color-grey-600 hide-mobile-landscape-and-up">Order #</p>
@@ -475,10 +499,6 @@
           <td class="text-size-small">
             <p class="text-size-tiny uppercase text-color-grey-600 hide-mobile-landscape-and-up">Order Date</p>
             <span>${formattedDate}</span>
-          </td>
-          <td class="text-size-small">
-            <p class="text-size-tiny uppercase text-color-grey-600 hide-mobile-landscape-and-up"># of boxes left</p>
-            <span>${totalQuantity - totalShipped}</span>
           </td>
           <td class="text-size-small">
             <p class="text-size-tiny uppercase text-color-grey-600 hide-mobile-landscape-and-up">Delivery Status</p>
@@ -511,4 +531,8 @@
   }
 
   getSOSSaleOrdersFromCustomerId()
+
+
+
+
 </script>

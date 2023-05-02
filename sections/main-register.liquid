@@ -29,6 +29,13 @@
       %}
   
       {%- form 'create_customer', novalidate: 'novalidate', class: 'margin-top margin-large' -%}
+
+        {%- if form.posted_successfully? -%}
+          <script>
+            gtag_report_sign_up(window.location);
+          </script>
+        {%- endif -%}
+
         {%- if form.errors -%}
           <h3 class="form__message text-size-small margin-bottom margin-small" tabindex="-1" autofocus>
             <svg aria-hidden="true" focusable="false" role="presentation">

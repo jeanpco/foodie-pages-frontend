@@ -1,0 +1,37 @@
+<!--
+  Event snippet for Add to cart conversion page
+  In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen
+  link or button.
+-->
+<script type="module">
+  function gtag_report_add_to_cart(url) {
+    {% comment %} var callback = function () {
+      if (typeof url != 'undefined') {
+        window.location = url;
+      }
+    }; {% endcomment %}
+    gtag('event', 'conversion', {
+      send_to: 'AW-10939394994/xZS5COfl1twDELLXp-Ao',
+      event_callback: () => {},
+    });
+    return false;
+  }
+
+  const initAddToCartGTagReport = () => {
+    {% comment %} get all forms that have an action of /cart/add {% endcomment %}
+    const addToCartForms = Array.from(document.querySelectorAll('[data-type="add-to-cart-form"]'));
+    const getBoxBuilderForm = document.querySelector('#bxp-bldr-form');
+    const forms = [...addToCartForms, getBoxBuilderForm];
+
+    forms.forEach(form => {
+      if (form) {
+        form.addEventListener('submit', () => {
+          gtag_report_add_to_cart(window.location)
+        })
+      }
+    })
+    
+  }
+
+  initAddToCartGTagReport();
+</script>

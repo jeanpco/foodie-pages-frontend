@@ -27,8 +27,10 @@
 
 <style>
 
-  .view-order-alert-container {
-
+  .view-order-alert-container .alert-banner {
+    min-height: 56px;
+    z-index: 1;
+    position: relative;
   }
 
   dialog[aria-controls="view-order"] .dialog-modal-container {
@@ -47,8 +49,8 @@
     position: relative;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    min-height: 17rem;
+    justify-content: flex-start;
+    min-height: 20rem;
   }
 
   .view-order_container .loading {

@@ -1,3 +1,5 @@
+{{ 'modal.css' | asset_url | stylesheet_tag }}
+
 <div class="padding-bottom padding-large">
       {% render 'module-header', 
         title: settings.contact_form_title, 
@@ -96,13 +98,23 @@
     
         {%- if form.posted_successfully? -%}
 
+            <script>
+              gtag_report_conversion(window.location);
+            </script>
+
             {% unless template == 'page.contact' %}
               <script type="module">      
                 window.initDownloadFromForm()
-              </script>
+              </script>            
             {% endunless %}
+
+            {% if template == 'page.contact' %}
+              <script>
+                gtag_report_contact(window.location);
+              </script>
+            {% endif %}
     
-          <div style="display: flex; flex-direction: column; align-items: center; justify-content: center;" class="text-align-center">
+          <div style="display: flex; flex-direction: column; align-items: center; justify-content: center;" class="text-align-center modal-thank-you-message">
             <h3 class="text-size-tiny text-color-grey-500 form__message" id="Contact-success--{{ id }}" tabindex="-1" autofocus>
               {% render 'icon-success' %}
               {{ settings.contact_form_success_message }}
