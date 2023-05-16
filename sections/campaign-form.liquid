@@ -29,6 +29,7 @@
 <script type="module">
   
   
+  
 
   function removeSpacesAndBackslashes(str) {
     return str.replace(/}\s*{/g, '} {').replace(/\\/g, '');
@@ -46,7 +47,7 @@
     const campaignNameParam = urlParams.get('campaign');
     const clientIdParam = urlParams.get('client');
 
-    const pageData = await window.getAirtableTableById({ campaignNameParam, clientIdParam })
+    const pageData = await window.getAirtableTableById({ campaignNameParam, clientIdParam })    
     const rawData = pageData.data.campaignRow.fields
 
     const data = {
@@ -96,6 +97,7 @@
       generateError(`Something went wrong while trying to initiate your gift selection. </br>Please contact your administrator.`)
     }
   })
+
 
 
 

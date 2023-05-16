@@ -3,6 +3,12 @@
   
   
   
+  
+  
+  
+  
+  
+  
     
   import wretch from 'https://cdn.skypack.dev/wretch/dist/bundle/wretch.all.min.mjs'
   const backendURL = 'https://foodiepages.herokuapp.com'
@@ -185,8 +191,6 @@
 
   window.airtableCreateCampaign = async ({ inputs, formArray, gifts }) => {
 
-      console.log(inputs)
-
       const pageData = await wretch(`${backendURL}/api/airtable-create-campaign`).
         post({
           inputs,
@@ -236,6 +240,12 @@
 
       return pageData
   } 
+
+
+
+
+
+
 
 
 
