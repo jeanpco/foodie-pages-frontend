@@ -410,8 +410,6 @@
       const activeCampaigns = [...document.querySelectorAll('.corporate-campaigns-products')];
       const activeCampaignsContainer = activeCampaigns.find((campaign) => !campaign.classList.contains('is-disabled'));
 
-      console.log(activeCampaigns)
-
       const state = window.campaignForm.state;
       const mainGifts = state['Main Gift'];
       const customGifts = state['Custom Swag'];
@@ -432,13 +430,8 @@
         };
       });
 
-      console.log(activeCampaignsContainer)
-
-
       // Filter out items with matching data-product-id
       const productCards = activeCampaignsContainer.querySelectorAll('[data-js-element="cf-product-card"]');
-
-      {% comment %} console.log(productCards); {% endcomment %}
 
       const filteredProductCards = Array.from(productCards).filter((card) => {
         const productId = card.getAttribute('data-product-id');
@@ -480,13 +473,6 @@
 
       return lowestInventory;
     };
-
-      {% comment %} document.addEventListener('gift-state-changed', (e) => {
-        setTimeout(() => {
-          const inventory = getLowestInventory();
-          console.log(inventory)
-        }, 1000)
-      }); {% endcomment %}
 
     const submitAddressesToAirtable = async (jsonData) => {
       elements.submitMultipleAddressesLoading.classList.remove('is-hidden');

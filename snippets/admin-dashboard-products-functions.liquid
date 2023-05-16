@@ -1,9 +1,12 @@
 <script type="module">
+  
+  
+  
+  
   import wretch from 'https://cdn.skypack.dev/wretch/dist/bundle/wretch.all.min.mjs'
 
   window.createCampaignFns.getExistingCampaign = (props) => {
     {% comment %} http://127.0.0.1:9292/account?campaign=update&client=371&campaign-name=christmas-campaign {% endcomment %}
-    console.log(props)
   }
 
   window.createCampaignFns.createProductsGrid = (products) => {
@@ -84,6 +87,10 @@
       window.createCampaignFns.getProducts(value)
     })
   })
+
+
+
+
 
 
 

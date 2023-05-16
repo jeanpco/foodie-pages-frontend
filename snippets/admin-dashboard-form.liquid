@@ -116,6 +116,7 @@
 <script type="module">
   
   
+  
   {% comment %} get data-js-element="draggable" {% endcomment %}
   const startDraggability = () => {
     
@@ -145,8 +146,6 @@
       closeButton.addEventListener('click', (e) => {
         e.preventDefault();
         const draggableInput = closeButton.closest('[data-js-element="draggable-input"]');
-
-        console.log(draggableInput)
 
         draggableInput.classList.add('is-being-removed');
         setTimeout(() => {
@@ -235,6 +234,7 @@
   }
 
   window.addEventListener('DOMContentLoaded', initForm)
+
 
 
 </script>
