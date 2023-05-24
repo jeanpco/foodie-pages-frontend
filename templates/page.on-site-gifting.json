@@ -27,7 +27,7 @@
         "overline": "Event Gifting",
         "title": "<p>On-Site Gifting<\/p>",
         "heading_style": "h1",
-        "body": "Deliver instant gratification anywhere, on-site. Our impressive Pop Up Shops invite people to select a gift of their choice sourced from independent brands and makers, enjoy it during your event, and take it home with them.",
+        "body": "Deliver instant gratification anywhere, on-site. Our impressive Gifting Pop Ups invite people to select a gift of their choice, take it home or have it delivered to them.",
         "image": "shopify:\/\/shop_images\/LeavesofTrees_Customers.jpg",
         "enable_card_style": false,
         "text_vertical_alignment": "flex-end",
@@ -44,7 +44,7 @@
           "settings": {
             "overline": "Step 1",
             "title": "Plan",
-            "body": "Tell us about your event and goals. No matter the location, we’ll meet you there.",
+            "body": "Tell us about your event and goals. No matter the location, we’ll meet you there!",
             "cta_text": "Get in touch",
             "cta_link": ""
           }
@@ -54,7 +54,7 @@
           "settings": {
             "overline": "Step 2",
             "title": "Discover",
-            "body": "There's a heck of a lot of stuff out there. We've sorted through it and rounded up the most exciting new giftable items from independent brands. We’ll curate a gift selection that your participants won’t find anywhere else.",
+            "body": "There's a heck of a lot of stuff out there. We've sorted through it and rounded up the most exciting new finds from independent brands. We’ll curate a gift selection that your participants won’t find anywhere else.",
             "cta_text": "Get in touch",
             "cta_link": ""
           }
@@ -64,7 +64,7 @@
           "settings": {
             "overline": "Step 3",
             "title": "Select",
-            "body": "We reject the notion that corporate gifting has to be blah. Our Pop Up Shops are an immersive experience to discover something new. Recipients can select a gift to enjoy on site, or specify a preferred shipping address for streamlined delivery to their doorstep.",
+            "body": "We reject the notion that corporate gifting has to be blah. Our Gifting Pop Ups are an immersive experience to discover something new. Recipients can select a gift to enjoy on site, or have it delivered to their doorstep.",
             "cta_text": "Get in touch",
             "cta_link": ""
           }
