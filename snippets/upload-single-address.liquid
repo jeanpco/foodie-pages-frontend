@@ -135,6 +135,18 @@
           %}
         </div>
 
+        <div class="half-width">
+          {%
+            render 'input',
+            label: 'Company',
+            placeholder: 'Enter your country',
+            name: 'companyName',
+            type: 'text',
+            required: false,
+            value: form.companyName,
+          %}
+        </div>
+
         <div>
           <h3 class="popup-title margin-bottom margin-small">Add a gift message</h3>
           <p class="popup-body">
