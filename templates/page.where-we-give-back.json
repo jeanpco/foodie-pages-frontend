@@ -3,11 +3,10 @@
     "main": {
       "type": "module-hero",
       "settings": {
-        "overline": "",
-        "title": "<p>Giving back is in our DNA<\/p>",
+        "overline": "giving back",
+        "title": "<p>Community is in our DNA<\/p>",
         "heading_style": "h2",
         "body": "Gifting is about connection. We want to foster connection through community, and we want you to be a part of it! To us, this means putting people and our communities first in the decisions that we make: procuring small batch products sourced from local businesses, practicing environmental consciousness in every step of our gift assembly process, and giving back to the community.",
-        "image": "shopify:\/\/shop_images\/My_project.jpg",
         "enable_card_style": false,
         "text_vertical_alignment": "center",
         "layout_style": "two-columns",
@@ -15,8 +14,42 @@
         "trusted_by_text": ""
       }
     },
+    "09298fc1-0dec-4400-bc9f-488ea97e1fa7": {
+      "type": "module-split-content",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/ParlSnacks.png",
+        "overline": "",
+        "title": "<p>Send one gift, support many small businesses. <\/p>",
+        "heading_style": "h1",
+        "body": "From our beginning in 2012, our goal has been to showcase and celebrate small businesses. We seek out the best small batch products crafted by emerging and established brands.",
+        "layout_style": "content-left"
+      }
+    },
+    "98617d86-7ff6-4709-8c83-4278ba79e81f": {
+      "type": "module-split-content",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/ParlSnacks.png",
+        "overline": "",
+        "title": "<p>Giving back to local charities<\/p>",
+        "heading_style": "h1",
+        "body": "We believe giving back is essential to community building and helps others have access to the resources they need, when they need them. We set aside 1% from every sale and donate to local charities. Our 2023 pledge will be donated to the following causes that align with our values:\n\nCanadian Mental Health Association in support of Mental Health Awareness. Mental health is a cause that we are deeply passionate about as a brand. In any given year, 1 in 5 people in Canada will personally experience a mental health problem or illness.\n\nDaily Bread Food Bank in support of closing the gap on food insecurity. Visits to food banks in some areas of the country have quadrupled since the COVID-19 pandemic.\n\nFor every review (good or bad), we also donate an additional $1 to these organizations. If you have ordered from us before, we encourage you to leave a review on Google or Facebook.",
+        "layout_style": "content-right"
+      }
+    },
+    "2945c3e5-4abe-4c2d-8e55-f48243d3a692": {
+      "type": "module-split-content",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/ParlSnacks.png",
+        "overline": "",
+        "title": "<p>Planet-friendly packaing<\/p>",
+        "heading_style": "h1",
+        "body": "We believe that climate change is a very real and serious issue.  We know that gifting is not always environmentally friendly; we aim to be conscious and proactive about the environmental impact of our gifts, and encourage our clients likewise. \n\nOur gift boxes are locally produced in Toronto and are made from 90%+ post-consumer recycled material, and can of course be recycled themselves.\n\nPlastic-free shipping. We prioritize using recycled materials whenever possible.  For example, while we feel bubble wrap is the preferred way to protect glass for long distance shipping, we only purchase materials with post-industrial content \n\nBy stocking Canadian-made products we keep the distance goods travel from suppliers to us and you at a minimum resulting in a reduced carbon.\n\nWe will continue to make improvements in our sustainability achievements.",
+        "layout_style": "content-left"
+      }
+    },
     "b5797203-b142-444b-be2c-d6e9d37312fe": {
       "type": "module-features",
+      "disabled": true,
       "blocks": {
         "2c55f2d5-0c58-4b13-af11-302a514fa449": {
           "type": "features",
@@ -76,6 +109,7 @@
     },
     "823bd50c-3555-4282-8b34-ab0e8584323d": {
       "type": "module-vertical-tabs",
+      "disabled": true,
       "blocks": {
         "db40d850-e629-4e9b-b0e8-d2d20e4414ad": {
           "type": "tab",
@@ -150,6 +184,7 @@
     },
     "05ea480d-037b-4297-9c3d-d6160866116b": {
       "type": "module-columns",
+      "disabled": true,
       "blocks": {
         "765a0837-b3a6-417e-a20d-8c4151c40912": {
           "type": "card",
@@ -239,6 +274,9 @@
   },
   "order": [
     "main",
+    "09298fc1-0dec-4400-bc9f-488ea97e1fa7",
+    "98617d86-7ff6-4709-8c83-4278ba79e81f",
+    "2945c3e5-4abe-4c2d-8e55-f48243d3a692",
     "b5797203-b142-444b-be2c-d6e9d37312fe",
     "823bd50c-3555-4282-8b34-ab0e8584323d",
     "05ea480d-037b-4297-9c3d-d6160866116b",
