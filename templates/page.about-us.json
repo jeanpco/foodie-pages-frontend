@@ -3,10 +3,10 @@
     "main": {
       "type": "module-hero",
       "settings": {
-        "overline": "Meet one of the fastest growing corporate gifting companies of 2022",
+        "overline": "one of the fastest growing gifting companies of 2022",
         "title": "<p>Hi, we’re foodiepages<\/p>",
         "heading_style": "h2",
-        "body": "",
+        "body": "We're setting out to freshen-up the old-fashioned gift basket industry with modern gift baskets that are designed to be delicious, beautiful, delightful, and comforting any time of year.",
         "image": "shopify:\/\/shop_images\/My_project.jpg",
         "enable_card_style": false,
         "text_vertical_alignment": "center",
@@ -23,7 +23,7 @@
           "settings": {
             "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/book.svg?v=1669133706",
             "title": "Storytelling",
-            "body": "Behind every great gift is a great story. We make it easy to shop and create custom gifts that support the values most important to you.",
+            "body": "Behind every great gift is a great story. We make it easy to shop and create custom gifts that support the small brands and values that are most important to you.",
             "cta_text": "",
             "cta_link": ""
           }
@@ -33,7 +33,7 @@
           "settings": {
             "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/team.svg?v=1669133706",
             "title": "Connection",
-            "body": "Gifting is about connection. We create lasting connections through shared stories, values, and, most importantly, thoughtful and personalized gifts.",
+            "body": "Human connection is a bond that’s formed when people feel seen and valued. We help create authentic connections through modern, relevant gifts (with a handwritten gift message too!)",
             "cta_text": "",
             "cta_link": ""
           }
@@ -53,7 +53,7 @@
           "settings": {
             "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/badge_with_star.svg?v=1669133892",
             "title": "Never Settle",
-            "body": "You expect a lot from us, and that's not taken for granted. We're always hustling to earn your business, and we work extra hard for that moment of wow.",
+            "body": "We’re setting out to freshen-up the gift basket industry. Whether it's eco-friendly packaging, the latest finds from small businesses, or handwritten gift messages, we work extra hard for that moment of WOW.",
             "cta_text": "",
             "cta_link": ""
           }
