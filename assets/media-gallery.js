@@ -72,6 +72,14 @@ if (!customElements.get('media-gallery')) {
     setActiveThumbnail(thumbnail) {
       if (!this.elements.thumbnails || !thumbnail) return;
 
+      thumbnail.parentElement
+        .querySelectorAll('li')
+        .forEach((element) =>
+          element.classList.remove('hide-mobile-landscape-and-up')
+      );
+      
+      thumbnail.classList.add('hide-mobile-landscape-and-up');
+
       this.elements.thumbnails.querySelectorAll('button').forEach((element) => element.removeAttribute('aria-current'));
       thumbnail.querySelector('button').setAttribute('aria-current', true);
       if (this.elements.thumbnails.isSlideVisible(thumbnail, 10)) return;

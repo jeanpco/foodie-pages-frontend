@@ -946,8 +946,8 @@
                     </li>
                   {%- endif -%}
                   {%- for media in product.media -%}
-                    {%- unless media.id == product.selected_or_first_available_variant.featured_media.id -%}
-                      {%- liquid
+
+                    {%- liquid
                         capture media_index
                           if media.media_type == 'model'
                             increment model_index_right
@@ -1002,6 +1002,9 @@
                           >
                         </button>
                       </li>
+
+                    {%- unless media.id == product.selected_or_first_available_variant.featured_media.id -%}
+                      
                     {%- endunless -%}
                   {%- endfor -%}
                 </ul>
