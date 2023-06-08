@@ -95,6 +95,32 @@
   
   
   
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
   window.customerCollections = [
     {% for collection in collections %}
       {% if collection.metafields.custom.customer_id != blank %}
@@ -135,11 +161,6 @@
           sosInventory: product.sosInventory,
         };
       } else {
-        console.log('matches a product id', {
-          ...product.matchingVariant,
-          sosInventory: product.sosInventory,
-        })
-
         mergedProducts[product.id].variants.push({
           ...product.matchingVariant,
           sosInventory: product.sosInventory,
@@ -153,6 +174,7 @@
   }
 
   window.productsGenerateCampaigns = async ({ campaigns, products, container }) => {
+
     if (!campaigns.length) return emptyState(container);
 
     const elements = {
@@ -166,11 +188,12 @@
 
       let campaignItems = itemsWithSku.map((item) => {
         const line = campaign.lines.find((line) => line.item.id === item.id);
-        const product = products.find((product) =>
-          product.variants.find(
-            (v) => v.sku && v.sku.toLowerCase() === item.sku.toLowerCase()
-          )
-        );
+
+        const product = products.find((product) => {
+          return product.variants.find((v) => {
+            return v.sku && v.sku.toLowerCase() === item.sku.toLowerCase()
+          })
+        });
       
         if (!product) return;
       
@@ -187,7 +210,6 @@
           sosInventory,
         };
       });
-
       
       // Merge products with the same product_id
       campaignItems = mergeProducts(campaignItems);
@@ -259,6 +281,32 @@
       return elements.activeCampaigns.appendChild(campaignDivContainer);
     })
   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

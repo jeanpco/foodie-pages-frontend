@@ -1,0 +1,442 @@
+{
+  "sections": {
+    "main": {
+      "type": "module-hero",
+      "settings": {
+        "overline": "About us",
+        "title": "<p>Hi, we’re foodiepages<\/p>",
+        "heading_style": "h2",
+        "body": "Since day one, our goal has been to help people discover and connect with awesome, under-the radar brands. A few sleepless nights, 10 years, and a growing team later, we’re still at it. We look forward to being your destination for gifts with intention.",
+        "image": "shopify:\/\/shop_images\/My_project.jpg",
+        "enable_card_style": false,
+        "text_vertical_alignment": "center",
+        "layout_style": "two-columns",
+        "background_color": "background-color-azul-verdoso-10",
+        "trusted_by_text": ""
+      }
+    },
+    "module-logos": {
+      "type": "module-logos",
+      "blocks": {
+        "748ccdc5-9a8b-45b6-b061-9ffd30abe201": {
+          "type": "logo",
+          "settings": {
+            "title": "",
+            "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/raymond_james.png?v=1669828930"
+          }
+        },
+        "40f4d366-8b7b-44c9-8704-d359507db252": {
+          "type": "logo",
+          "settings": {
+            "title": "",
+            "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/cassels_542bb4cc-44d2-4d20-a197-da06fe4689ba.png?v=1669828929"
+          }
+        },
+        "d07f1643-a2d3-49cc-98e3-8e4bba46a18f": {
+          "type": "logo",
+          "settings": {
+            "title": "",
+            "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/symcor_b9357813-b484-475f-a457-1cabae619ca7.png?v=1669828929"
+          }
+        },
+        "dfb8e18d-79bf-4c03-badc-31eebed2d0ff": {
+          "type": "logo",
+          "settings": {
+            "title": "",
+            "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/cf_019873d1-94be-47d8-a819-4e68b6d147ed.png?v=1669828929"
+          }
+        },
+        "aabfe99d-68a0-4df6-b3de-a82de3ba6146": {
+          "type": "logo",
+          "settings": {
+            "title": "",
+            "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/liberty.png?v=1669828929"
+          }
+        },
+        "55857477-115b-4287-bffb-988b2c5bd289": {
+          "type": "logo",
+          "settings": {
+            "title": "",
+            "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/sickkids_c7de2290-1f61-47e8-8428-49da09acd284.png?v=1669828929"
+          }
+        },
+        "1340fe6b-fbd1-4540-9fe0-e6d87e671083": {
+          "type": "logo",
+          "settings": {
+            "title": "",
+            "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/blg_feddcfdf-e30b-4fc4-bf27-e2d3e3ae6d6e.png?v=1669828929"
+          }
+        },
+        "199d783c-9d51-4392-8181-33d0daac9ee0": {
+          "type": "logo",
+          "settings": {
+            "title": "",
+            "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/economical-insurance.png?v=1669828929"
+          }
+        },
+        "eb0c10dd-e01c-4b14-aec0-ea4ce715ae31": {
+          "type": "logo",
+          "settings": {
+            "title": "",
+            "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/economical-insurance.png?v=1669828929"
+          }
+        },
+        "0865e9f5-a14b-40d4-bd87-795b61f9b0d4": {
+          "type": "logo",
+          "settings": {
+            "title": "",
+            "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/mcmillan_f234291a-3a4f-4a20-b0e7-73fa73d5df8b.png?v=1669828930"
+          }
+        },
+        "085d48a7-c26e-403e-a598-181b788c068a": {
+          "type": "logo",
+          "settings": {
+            "title": "",
+            "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/blakes_5d4da28a-7b8a-4875-be97-743c99773be9.png?v=1669828929"
+          }
+        },
+        "d4e8fa15-4474-4a0e-9b86-13c0338845d2": {
+          "type": "logo",
+          "settings": {
+            "title": "",
+            "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/shopify_c70861cb-2dce-4d8e-9ae2-ee5fc8e4736f.png?v=1669828929"
+          }
+        },
+        "7ca7f0a8-4113-477f-aaad-ed05f3908f1a": {
+          "type": "logo",
+          "settings": {
+            "title": "",
+            "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/oxford_a5da89cb-99d3-453e-a9e1-b4d0ca514a5e.png?v=1669828930"
+          }
+        },
+        "bb5bab37-21d2-4b31-9735-c28be4f32d54": {
+          "type": "logo",
+          "settings": {
+            "title": "",
+            "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/properly_f0aa6df0-ce89-4b08-a114-9b8c0977e74b.png?v=1669828930"
+          }
+        },
+        "8075376b-dcdf-4d36-b0d4-a7ac1b5794c3": {
+          "type": "logo",
+          "settings": {
+            "title": "",
+            "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/deloitte_ed30cda7-1792-47ee-9751-b72d36793c84.png?v=1669828930"
+          }
+        },
+        "ddc9da8c-b636-4e2f-bc0d-d75d5901b55f": {
+          "type": "logo",
+          "settings": {
+            "title": "",
+            "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/desjardins_0aab0af9-e08a-4704-8d04-a08c29cbe120.png?v=1669828929"
+          }
+        },
+        "61387c58-6460-4564-a47f-2bcb6d523f57": {
+          "type": "logo",
+          "settings": {
+            "title": "",
+            "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/bayer_bayer.png?v=1669828929"
+          }
+        },
+        "38bab869-3919-4a11-bd0a-3791f0b18a99": {
+          "type": "logo",
+          "settings": {
+            "title": "",
+            "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/mattamy.png?v=1669828929"
+          }
+        },
+        "f7067fbb-77fa-49d5-92b4-4522a1bca652": {
+          "type": "logo",
+          "settings": {
+            "title": "",
+            "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/laurentian.png?v=1669828929"
+          }
+        },
+        "ee28d21c-7f0f-44d3-95e4-eb2bdf85e760": {
+          "type": "logo",
+          "settings": {
+            "title": "",
+            "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/canada-life.png?v=1669828929"
+          }
+        },
+        "f6929b23-1929-4c48-84bb-5b9837d19cf7": {
+          "type": "logo",
+          "settings": {
+            "title": "",
+            "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/xero_a8b3f4da-9174-4bce-9075-d320278a30bd.png?v=1669828929"
+          }
+        },
+        "8e0a54ed-86fa-463f-9b60-49a7d5e9977e": {
+          "type": "logo",
+          "settings": {
+            "title": "",
+            "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/rsm_0fda06d9-2612-46f4-a56a-5229d7562d79.png?v=1669828929"
+          }
+        },
+        "c1618b47-b322-46fe-8384-c3fb10dfd45d": {
+          "type": "logo",
+          "settings": {
+            "title": "",
+            "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/osler_bb27896d-99e9-431f-afe6-492b16caef6f.png?v=1669828929"
+          }
+        },
+        "c238321c-37fc-477e-99b7-7bef23826d87": {
+          "type": "logo",
+          "settings": {
+            "title": "",
+            "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/irving_a9087ba8-9373-4c4d-ac77-b3f047f6653f.png?v=1669828929"
+          }
+        },
+        "1f592594-06ad-4ca9-a86d-5ac899f1ed07": {
+          "type": "logo",
+          "settings": {
+            "title": "",
+            "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/bmo_1f88f30b-1897-4421-b1f5-0fe16fe75105.png?v=1669828929"
+          }
+        },
+        "d6277abe-ee3b-4be4-a8ce-4916d8f2d3f1": {
+          "type": "logo",
+          "settings": {
+            "title": "",
+            "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/rbc_675ee409-8a4c-438a-a73e-7f54c339e023.png?v=1669828929"
+          }
+        },
+        "a99570f5-b9a2-40a6-a2f5-a75f8010e121": {
+          "type": "logo",
+          "settings": {
+            "title": "",
+            "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/bell_1d2ac2f8-73ce-428e-bf68-ecd85c3b99f9.png?v=1669828930"
+          }
+        },
+        "2e3384fb-1532-4f05-92ab-5839a239d530": {
+          "type": "logo",
+          "settings": {
+            "title": "",
+            "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/accenture_564a5b45-2052-48d4-8444-fa0065d36c73.png?v=1669828929"
+          }
+        }
+      },
+      "block_order": [
+        "748ccdc5-9a8b-45b6-b061-9ffd30abe201",
+        "40f4d366-8b7b-44c9-8704-d359507db252",
+        "d07f1643-a2d3-49cc-98e3-8e4bba46a18f",
+        "dfb8e18d-79bf-4c03-badc-31eebed2d0ff",
+        "aabfe99d-68a0-4df6-b3de-a82de3ba6146",
+        "55857477-115b-4287-bffb-988b2c5bd289",
+        "1340fe6b-fbd1-4540-9fe0-e6d87e671083",
+        "199d783c-9d51-4392-8181-33d0daac9ee0",
+        "0865e9f5-a14b-40d4-bd87-795b61f9b0d4",
+        "085d48a7-c26e-403e-a598-181b788c068a",
+        "d4e8fa15-4474-4a0e-9b86-13c0338845d2",
+        "7ca7f0a8-4113-477f-aaad-ed05f3908f1a",
+        "bb5bab37-21d2-4b31-9735-c28be4f32d54",
+        "8075376b-dcdf-4d36-b0d4-a7ac1b5794c3",
+        "ddc9da8c-b636-4e2f-bc0d-d75d5901b55f",
+        "61387c58-6460-4564-a47f-2bcb6d523f57",
+        "38bab869-3919-4a11-bd0a-3791f0b18a99",
+        "f7067fbb-77fa-49d5-92b4-4522a1bca652",
+        "ee28d21c-7f0f-44d3-95e4-eb2bdf85e760",
+        "f6929b23-1929-4c48-84bb-5b9837d19cf7",
+        "8e0a54ed-86fa-463f-9b60-49a7d5e9977e",
+        "c1618b47-b322-46fe-8384-c3fb10dfd45d",
+        "c238321c-37fc-477e-99b7-7bef23826d87",
+        "1f592594-06ad-4ca9-a86d-5ac899f1ed07",
+        "d6277abe-ee3b-4be4-a8ce-4916d8f2d3f1",
+        "a99570f5-b9a2-40a6-a2f5-a75f8010e121",
+        "2e3384fb-1532-4f05-92ab-5839a239d530"
+      ],
+      "settings": {
+        "overline": "Trusted by the world's best companies"
+      }
+    },
+    "b5797203-b142-444b-be2c-d6e9d37312fe": {
+      "type": "module-features",
+      "blocks": {
+        "2c55f2d5-0c58-4b13-af11-302a514fa449": {
+          "type": "features",
+          "settings": {
+            "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/placeholder-svg-square.svg?v=1666645913",
+            "title": "Storytelling",
+            "body": "Behind every great gift is a great story. We believe in creating thoughtful gifts that tell a story and deepen relationships.",
+            "cta_text": "",
+            "cta_link": ""
+          }
+        },
+        "fae23ace-5ca1-43a0-a58b-9c5d1bef7e5b": {
+          "type": "features",
+          "settings": {
+            "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/placeholder-svg-square.svg?v=1666645913",
+            "title": "Connection",
+            "body": "Connection is a crucial part of the human experience. We create lasting connections through shared stories, values, and, most importantly, thoughtful and personalized gifts.",
+            "cta_text": "",
+            "cta_link": ""
+          }
+        },
+        "94353301-183f-4ec1-9b25-4d500681640f": {
+          "type": "features",
+          "settings": {
+            "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/placeholder-svg-square.svg?v=1666645913",
+            "title": "Love It, or Leave It",
+            "body": "Every product has been tested and tasted – and then some. If it doesn't make the cut, it doesn't make it on our site.",
+            "cta_text": "",
+            "cta_link": ""
+          }
+        },
+        "29189724-18f8-43ad-ad45-9aea0d08c6f0": {
+          "type": "features",
+          "settings": {
+            "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/placeholder-svg-square.svg?v=1666645913",
+            "title": "Never Settle",
+            "body": "You expect a lot from us, and that's not taken for granted. We're always hustling to earn your business, and we work extra hard for that moment of wow.",
+            "cta_text": "",
+            "cta_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "2c55f2d5-0c58-4b13-af11-302a514fa449",
+        "fae23ace-5ca1-43a0-a58b-9c5d1bef7e5b",
+        "94353301-183f-4ec1-9b25-4d500681640f",
+        "29189724-18f8-43ad-ad45-9aea0d08c6f0"
+      ],
+      "settings": {
+        "overline": "The best gifting service in Canada",
+        "title": "<p>How we see it<\/p>",
+        "heading_style": "h2",
+        "body": "Here are a few things we've always believed to be important.",
+        "cta_text": "",
+        "cta_link": "shopify:\/\/pages\/how-it-works"
+      }
+    },
+    "823bd50c-3555-4282-8b34-ab0e8584323d": {
+      "type": "module-vertical-tabs",
+      "blocks": {
+        "db40d850-e629-4e9b-b0e8-d2d20e4414ad": {
+          "type": "tab",
+          "settings": {
+            "overline": "",
+            "title": "Celebrating Makers",
+            "body": "We are committed to sourcing small. We work with 100s of small, independently-owned businesses, most of them woman-owned. We care about the stories behind each product and the passion that drives entrepreneurs from idea to launch."
+          }
+        },
+        "ab7fff74-0668-4779-9c58-a3781089ca61": {
+          "type": "tab",
+          "settings": {
+            "overline": "",
+            "title": "Quality Ingredients",
+            "body": "xxx"
+          }
+        },
+        "2d4083b3-581a-4ade-b225-6f2117a93f50": {
+          "type": "tab",
+          "settings": {
+            "overline": "",
+            "title": "Combine Joy & Utility",
+            "body": "We cut through the noise so you don't have to, seeking out products with heart and soul."
+          }
+        },
+        "47847899-6a08-4443-881a-c2133258173d": {
+          "type": "tab",
+          "settings": {
+            "overline": "",
+            "title": "Consciously Crafted",
+            "body": ""
+          }
+        },
+        "a25db7f7-6489-43d4-89c5-e1e47404b228": {
+          "type": "tab",
+          "disabled": true,
+          "settings": {
+            "overline": "Step 5",
+            "title": "Software + Stores",
+            "body": "Ship, track and manage gifts all from your couch (or office chair). No more dusty supply closets or shipping boxes under your desk."
+          }
+        }
+      },
+      "block_order": [
+        "db40d850-e629-4e9b-b0e8-d2d20e4414ad",
+        "ab7fff74-0668-4779-9c58-a3781089ca61",
+        "2d4083b3-581a-4ade-b225-6f2117a93f50",
+        "47847899-6a08-4443-881a-c2133258173d",
+        "a25db7f7-6489-43d4-89c5-e1e47404b228"
+      ],
+      "settings": {
+        "overline": "What's inside counts",
+        "title": "<p>We're all in on <em>small<\/em> brands<\/p>",
+        "heading_style": "h2",
+        "image": "shopify:\/\/shop_images\/Image_3468c917-9e51-49ab-9d3c-fa357152af3b.png",
+        "cta_text": "Get in touch",
+        "cta_link": "",
+        "body": "",
+        "secondary_cta_text": "Get in touch",
+        "secondary_cta_link": ""
+      }
+    },
+    "05ea480d-037b-4297-9c3d-d6160866116b": {
+      "type": "module-columns",
+      "blocks": {
+        "765a0837-b3a6-417e-a20d-8c4151c40912": {
+          "type": "card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/My_project_1.jpg",
+            "title": "Barbet",
+            "body": "In an attempt to manage a health condition, Katie decided to go alcohol-free. While she didn’t miss drinking, she did miss the comfort and connection that alcohol provided in social settings. This led the sister duo, Katie and Andrea, to create full-bodied blends of elevated sparkling water that you can drink straight out of the can – or even mix with spirits if you consume alcohol.",
+            "cta_text": "",
+            "cta_link": "#contact"
+          }
+        },
+        "2799395e-848f-4345-9be1-4844c0f3b341": {
+          "type": "card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/My_project_2.jpg",
+            "title": "Sade Baron",
+            "body": "With the health of skin and planet top of mind,  mother-daughter duo Sade and Rachel Baron set out to create a line of high-quality, vegan body care products crafted with nutrient-rich superfoods. Backed by a journey of research and experimentation, every Sade Baron product is designed to replenish, moisturize, and prep your skin so it can look and feel its best.",
+            "cta_text": "",
+            "cta_link": ""
+          }
+        },
+        "1a1d97cc-0c9f-4023-b4cf-a2188c76fa3e": {
+          "type": "card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Screen_Shot_2022-11-20_at_9.09.14_PM.png",
+            "title": "Eatable",
+            "body": "Charlene and Vince left their desk jobs to pursue a lifelong passion for food, and started a journey to create a perfect pairing of two loves: snacking and alcohol. Their alcohol-infused popcorns are made with non-GMO corn kernels from Ontario farms and butter from local dairy farmers.",
+            "cta_text": "",
+            "cta_link": "#contact"
+          }
+        },
+        "81289acb-6a37-4c70-84ec-d781a6d0b072": {
+          "type": "card",
+          "disabled": true,
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Image.jpg",
+            "title": "Client Appreciation Gifts",
+            "body": "Show your appreciation with a branded and personalized gift.",
+            "cta_text": "Get a quote",
+            "cta_link": "#corporate-contact"
+          }
+        }
+      },
+      "block_order": [
+        "765a0837-b3a6-417e-a20d-8c4151c40912",
+        "2799395e-848f-4345-9be1-4844c0f3b341",
+        "1a1d97cc-0c9f-4023-b4cf-a2188c76fa3e",
+        "81289acb-6a37-4c70-84ec-d781a6d0b072"
+      ],
+      "settings": {
+        "overline": "meet the makers",
+        "title": "Supplier Spotlight",
+        "body": "We get excited about brands that resonate deeply with our customers.",
+        "cta_text": "Shop Gift Boxes",
+        "cta_link": "shopify:\/\/collections\/gift-baskets",
+        "heading_style": "h2"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "module-logos",
+    "b5797203-b142-444b-be2c-d6e9d37312fe",
+    "823bd50c-3555-4282-8b34-ab0e8584323d",
+    "05ea480d-037b-4297-9c3d-d6160866116b"
+  ]
+}

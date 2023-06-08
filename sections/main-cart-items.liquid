@@ -138,9 +138,19 @@
                         {%- endfor -%}
                       </ul>
 
-                      <a data-js-element="gift-message" class="link gift-message_link text-size-small" data-quantity="{{ item.quantity }}" data-gift-message="{{ hasGiftMessageWihValue }}" href="#gift-message" data-index="{{ item.index | plus: 1 }}">
-                        {% if hasGiftMessageWihValue != blank %}Update gift message{% else %}Add gift message{% endif %}
-                      </a>
+                      {% assign allow_gift_message = false %}
+
+                      {% for collection in item.product.collections %}
+                        {% if collection.title == 'Curated Gift Boxes' or collection.title == 'Box Builder Collection' %}
+                          {% assign allow_gift_message = true %}
+                        {% endif %}
+                      {% endfor %}
+
+                      {% if item.product.type != 'Packaging' and item.product.template_suffix == 'boxbuilder' or allow_gift_message %}
+                        <a data-js-element="gift-message" class="link gift-message_link text-size-small" data-quantity="{{ item.quantity }}" data-gift-message="{{ hasGiftMessageWihValue }}" href="#gift-message" data-index="{{ item.index | plus: 1 }}">
+                          {% if hasGiftMessageWihValue != blank %}Update gift message{% else %}Add gift message{% endif %}
+                        </a>
+                      {% endif %}
                     </td>
   
                     {% comment %} <td class="cart-item__totals right medium-hide large-up-hide">

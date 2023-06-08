@@ -36,11 +36,17 @@
   
   
   
+  
+  
+  
+  
+  
+  
+  
   window.createCampaignFns = {}
 
   window.createCampaignFns.getExistingCampaign = (props) => {
     {% comment %} http://127.0.0.1:9292/account?campaign=update&client=371&campaign-name=christmas-campaign {% endcomment %}
-    console.log(props)
   }
 
   window.createCampaignFns.watchForFormSubmit = () => {
@@ -103,8 +109,6 @@
           }
         } else {
           const file = input.files[0];
-
-          console.log(file)
 
           if (!file) {
             return {
@@ -228,6 +232,13 @@
 
     productCards.forEach(card => card.classList.remove('is-selected'))
   }
+
+
+
+
+
+
+
 
 
 

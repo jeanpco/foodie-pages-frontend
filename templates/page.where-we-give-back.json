@@ -3,11 +3,10 @@
     "main": {
       "type": "module-hero",
       "settings": {
-        "overline": "one of the fastest growing gifting companies of 2022",
-        "title": "<p>Hi, we’re foodiepages<\/p>",
+        "overline": "giving back",
+        "title": "<p>Community is in our DNA<\/p>",
         "heading_style": "h2",
-        "body": "We're setting out to freshen-up the old-fashioned gift basket industry with modern, eco-friendly gifts that are designed to be elevated and impactful any time of year.",
-        "image": "shopify:\/\/shop_images\/Screen_Shot_2022-11-15_at_5.04.39_PM_6bf64d73-8293-4cc3-99e5-c85cf593f649.png",
+        "body": "Gifting is about connection. We want to foster connection through community, and we want you to be a part of it! To us, this means putting people and our communities first in the decisions that we make: procuring small batch products sourced from local businesses, practicing environmental consciousness in every step of our gift assembly process, and giving back to the community.",
         "enable_card_style": false,
         "text_vertical_alignment": "center",
         "layout_style": "two-columns",
@@ -15,15 +14,49 @@
         "trusted_by_text": ""
       }
     },
+    "98617d86-7ff6-4709-8c83-4278ba79e81f": {
+      "type": "module-split-content",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/ParlSnacks.png",
+        "overline": "",
+        "title": "<p>Giving back to local charities<\/p>",
+        "heading_style": "h2",
+        "body": "We believe giving back is essential to community building and helps others have access to the resources they need, when they need them. We set aside 1% from every sale and donate to local charities. Our 2023 pledge will be donated to the following causes that align with our values:\n\nCanadian Mental Health Association in support of Mental Health Awareness. Mental health is a cause that we are deeply passionate about as a brand. In any given year, 1 in 5 people in Canada will personally experience a mental health problem or illness.\n\nDaily Bread Food Bank in support of closing the gap on food insecurity. Visits to food banks in some areas of the country have quadrupled since the COVID-19 pandemic.\n\nFor every review (good or bad), we also donate an additional $1 to these organizations. If you have ordered from us before, we encourage you to leave a review on Google or Facebook.",
+        "layout_style": "content-left"
+      }
+    },
+    "09298fc1-0dec-4400-bc9f-488ea97e1fa7": {
+      "type": "module-split-content",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/ParlSnacks.png",
+        "overline": "",
+        "title": "<p>Send one gift, support many small businesses. <\/p>",
+        "heading_style": "h2",
+        "body": "From our beginning in 2012, our goal has been to showcase and celebrate small businesses. We seek out the best small batch products crafted by emerging and established brands.",
+        "layout_style": "content-right"
+      }
+    },
+    "2945c3e5-4abe-4c2d-8e55-f48243d3a692": {
+      "type": "module-split-content",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/ParlSnacks.png",
+        "overline": "",
+        "title": "<p>Planet-friendly packaging<\/p>",
+        "heading_style": "h2",
+        "body": "We believe that climate change is a very real and serious issue.  We know that gifting is not always environmentally friendly; we aim to be conscious and proactive about the environmental impact of our gifts, and encourage our clients likewise. \n\nOur gift boxes are locally produced in Toronto and are made from 90%+ post-consumer recycled material, and can of course be recycled themselves.\n\nPlastic-free shipping. We prioritize using recycled materials whenever possible.  For example, while we feel bubble wrap is the preferred way to protect glass for long distance shipping, we only purchase materials with post-industrial content \n\nBy stocking Canadian-made products we keep the distance goods travel from suppliers to us and you at a minimum resulting in a reduced carbon.\n\nWe will continue to make improvements in our sustainability achievements.",
+        "layout_style": "content-left"
+      }
+    },
     "b5797203-b142-444b-be2c-d6e9d37312fe": {
       "type": "module-features",
+      "disabled": true,
       "blocks": {
         "2c55f2d5-0c58-4b13-af11-302a514fa449": {
           "type": "features",
           "settings": {
             "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/book.svg?v=1669133706",
             "title": "Storytelling",
-            "body": "Behind every great gift is a great story. We make it easy to shop and create custom gifts that support the small brands and values that are most important to you.",
+            "body": "Behind every great gift is a great story. We believe in creating thoughtful gifts that tell a story and deepen relationships.",
             "cta_text": "",
             "cta_link": ""
           }
@@ -33,7 +66,7 @@
           "settings": {
             "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/team.svg?v=1669133706",
             "title": "Connection",
-            "body": "Human connection is a bond that’s formed when people feel seen and valued. We help create authentic connections through modern, relevant gifts (with a handwritten gift message, too!)",
+            "body": "Connection is a crucial part of the human experience. We create lasting connections through shared stories, values, and, most importantly, thoughtful and personalized gifts.",
             "cta_text": "",
             "cta_link": ""
           }
@@ -42,8 +75,8 @@
           "type": "features",
           "settings": {
             "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/heart.svg?v=1669133706",
-            "title": "Community",
-            "body": "As a women and family-owned business, we believe in using our platform to support (and give back to) people and issues that are under-represented whenever we can.",
+            "title": "Love It, or Leave It",
+            "body": "Every product has been tested and tasted – and then some. If it doesn't make the cut, it doesn't make it on our site.",
             "cta_text": "",
             "cta_link": ""
           }
@@ -53,7 +86,7 @@
           "settings": {
             "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/badge_with_star.svg?v=1669133892",
             "title": "Never Settle",
-            "body": "Whether it's eco-friendly packaging, the latest finds from small businesses, or handwritten gift messages, we work extra hard for that moment of WOW.",
+            "body": "You expect a lot from us, and that's not taken for granted. We're always hustling to earn your business, and we work extra hard for that moment of wow.",
             "cta_text": "",
             "cta_link": ""
           }
@@ -66,7 +99,7 @@
         "29189724-18f8-43ad-ad45-9aea0d08c6f0"
       ],
       "settings": {
-        "overline": "The best gift baskets in Canada",
+        "overline": "The best gifting service in Canada",
         "title": "<p>How we see it<\/p>",
         "heading_style": "h2",
         "body": "Here are a few things we've always believed to be important.",
@@ -74,20 +107,9 @@
         "cta_link": "shopify:\/\/pages\/how-it-works"
       }
     },
-    "8f69f41d-ab2e-49b8-831d-4ed41aaf0509": {
-      "type": "module-split-content",
-      "disabled": true,
-      "settings": {
-        "image": "shopify:\/\/shop_images\/Untitled_design.png",
-        "overline": "",
-        "title": "<p>Gifts that <em>celebrate<\/em> small business<\/p>",
-        "heading_style": "h1",
-        "body": "Each foodiepages gift basket is designed with premium goods from diverse, independently-owned makers and brands across Canada.",
-        "layout_style": "content-left"
-      }
-    },
     "823bd50c-3555-4282-8b34-ab0e8584323d": {
       "type": "module-vertical-tabs",
+      "disabled": true,
       "blocks": {
         "db40d850-e629-4e9b-b0e8-d2d20e4414ad": {
           "type": "tab",
@@ -152,7 +174,7 @@
         "overline": "What's inside counts",
         "title": "<p>We're all in on <em>small<\/em> brands.<\/p>",
         "heading_style": "h2",
-        "image": "shopify:\/\/shop_images\/Untitled_design.png",
+        "image": "shopify:\/\/shop_images\/Image.jpg",
         "cta_text": "Get in touch",
         "cta_link": "#contact",
         "body": "",
@@ -162,6 +184,7 @@
     },
     "05ea480d-037b-4297-9c3d-d6160866116b": {
       "type": "module-columns",
+      "disabled": true,
       "blocks": {
         "765a0837-b3a6-417e-a20d-8c4151c40912": {
           "type": "card",
@@ -251,8 +274,10 @@
   },
   "order": [
     "main",
+    "98617d86-7ff6-4709-8c83-4278ba79e81f",
+    "09298fc1-0dec-4400-bc9f-488ea97e1fa7",
+    "2945c3e5-4abe-4c2d-8e55-f48243d3a692",
     "b5797203-b142-444b-be2c-d6e9d37312fe",
-    "8f69f41d-ab2e-49b8-831d-4ed41aaf0509",
     "823bd50c-3555-4282-8b34-ab0e8584323d",
     "05ea480d-037b-4297-9c3d-d6160866116b",
     "582103a2-47d5-46e9-9ba6-ede2b4f3963b"

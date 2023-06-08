@@ -1,8 +1,18 @@
 <!-- Send a Gift Page -->
 <!-- Heading and description for the Send a Gift page -->
 <div class="padding-left padding-large tablet-padding-0">
-  <h1 class="margin-bottom margin-small line-height-1-3">Send a gift</h1>
-  <p class="text-size-medium margin-bottom margin-small">Select a box to ship now.</p>
+  <h1 class="margin-bottom margin-small line-height-1-3">Send Gifts</h1>
+  <p class="text-size-medium margin-bottom margin-small">
+    <span>Ship a single pre-purchased gift, or upload multiple addresses to request a bulk shipment of gifts.</span>
+    <ul>
+      <li><strong>Step 1.</strong> Choose the gift(s), swag item(s) or insert(s) that you want to send.</li>
+      <li>
+        <strong>Step 2.</strong> Under ‘Shipping Instructions”, select whether you want to send to a single person, or
+        upload a file to send gifts to multiple recipients.
+      </li>
+      <li><strong>Step 3.</strong> Select the ‘Submit’ button and foodiepages will begin organizing your send.</li>
+    </ul>
+  </p>
 
   <!-- Display corporate products -->
   <div class="margin-bottom margin-large">
@@ -15,11 +25,12 @@
   </div>
 
   <!-- Section for uploading recipient CSV file -->
-  <h2 class="heading-style-h3 margin-bottom margin-small">Upload recipient CSV</h2>
+  <h2 class="heading-style-h3 margin-bottom margin-small">Shipping Instructions</h2>
   <p class="margin-bottom margin-medium">
-    Select "Upload your CSV file now" if you have more then 1 address to upload. To send a single gift, select "Single
-    person". If you do not have our CSV file to add your addresses, download it below under "Download CSV template". If
-    you are experiencing any difficulties, please communicate with your account manager.
+    To send a single gift, select “Single person”.<br>
+    <br>
+    To ship to multiple addresses, select ”Upload your CSV file now”. If you do do not have our CSV file to add your
+    addresses, download it below under “Download CSV template”.
   </p>
 
   <!-- Render upload multiple addresses and single address components -->
@@ -28,7 +39,7 @@
 
   <p class="text-size-medium margin-bottom margin-small">Don't have our template?</p>
   <a
-    href="https://cdn.shopify.com/s/files/1/0264/5000/2013/files/foodie-pages-multiple-addresses-upload-template.csv?v=1681144641"
+    href="https://cdn.shopify.com/s/files/1/0264/5000/2013/files/upload-template.csv?v=1684252770"
     target="_blank"
     data-js-element="download-csv-template"
     class="button secondary"
@@ -269,6 +280,13 @@
         type: "text",
         options: "",
         required: true,
+        airtable_type: "singleLineText"
+      },
+      {
+        label: "Country Name",
+        type: "text",
+        options: "",
+        required: false,
         airtable_type: "singleLineText"
       },
       {

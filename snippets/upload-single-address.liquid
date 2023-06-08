@@ -12,14 +12,14 @@
   <div class="popup-overlay" data-js-element="close-popup"></div>
   <div class="popup-content">
     <h3 class="popup-title margin-bottom margin-small">Send a single gift</h3>
-    <p class="popup-body margin-bottom margin-large">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    <p class="popup-body margin-bottom margin-large">Ship a pre-purchased gift to a single recipient.</p>
     <form data-js-element="single-address-form">
       <div class="single-address-form_container field-wrapper width-control margin-bottom margin-medium flex flex-wrap justify-content-between row-gap-2 text-align-left">
         <div class="half-width">
           {%
             render 'input',
-            label: 'Firstname',
-            placeholder: 'Your firstname',
+            label: 'First Name',
+            placeholder: 'Your first name',
             name: 'firstname',
             type: 'text',
             required: true,
@@ -30,8 +30,8 @@
         <div class="half-width">
           {%
             render 'input',
-            label: 'Lastname',
-            placeholder: 'Your lastname',
+            label: 'Last Name',
+            placeholder: 'Your last name',
             name: 'lastname',
             type: 'text',
             required: true,
@@ -135,9 +135,23 @@
           %}
         </div>
 
+        <div class="half-width">
+          {%
+            render 'input',
+            label: 'Company',
+            placeholder: 'Enter your country',
+            name: 'companyName',
+            type: 'text',
+            required: false,
+            value: form.companyName,
+          %}
+        </div>
+
         <div>
           <h3 class="popup-title margin-bottom margin-small">Add a gift message</h3>
-          <p class="popup-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <p class="popup-body">
+            Type in your message below. A real human will hand write your message and include it in your gift.
+          </p>
         </div>
 
         <div class="field-group">

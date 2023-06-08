@@ -27,7 +27,7 @@
         "overline": "Event Gifting",
         "title": "<p>On-Site Gifting<\/p>",
         "heading_style": "h1",
-        "body": "Deliver instant gratification anywhere, on-site. Our impressive Pop Up Shops invite people to select a gift of their choice sourced from independent brands and makers, enjoy it during your event, and take it home with them.",
+        "body": "Deliver instant gratification anywhere, on-site. Whether your next event is a company offsite or a conference for tens of thousands, foodiepages can help bring it to life. Our impressive Gifting Pop Ups invite people to select a gift of their choice, take it home, or have it delivered to their doorstep.",
         "image": "shopify:\/\/shop_images\/LeavesofTrees_Customers.jpg",
         "enable_card_style": false,
         "text_vertical_alignment": "flex-end",
@@ -44,7 +44,7 @@
           "settings": {
             "overline": "Step 1",
             "title": "Plan",
-            "body": "Tell us about your event and goals. No matter the location, we’ll meet you there.",
+            "body": "Tell us about your event and goals. No matter the location, we’ll meet you there!",
             "cta_text": "Get in touch",
             "cta_link": ""
           }
@@ -54,7 +54,7 @@
           "settings": {
             "overline": "Step 2",
             "title": "Discover",
-            "body": "There's a heck of a lot of stuff out there. We've sorted through it and rounded up the most exciting new giftable items from independents. We’ll curate a selection of items that your participants won’t find anywhere else.",
+            "body": "There's a heck of a lot of stuff out there. We've sorted through it and rounded up the most exciting new finds from independent brands. We’ll curate a gift selection that your participants won’t find anywhere else.",
             "cta_text": "Get in touch",
             "cta_link": ""
           }
@@ -64,7 +64,7 @@
           "settings": {
             "overline": "Step 3",
             "title": "Select",
-            "body": "We reject the notion that corporate gifting has to be blah. Our Pop Up Shops immerse people in an authentic experience to discover and find a gift that fits them. Once selected, recipients enter their preferred mailing address for easy delivery to their doorstep.",
+            "body": "We reject the notion that corporate gifting has to be blah. Our Gifting Pop Ups are an immersive experience to discover something new. Recipients can select a gift to enjoy on site, or have it delivered to their doorstep.",
             "cta_text": "Get in touch",
             "cta_link": ""
           }
@@ -187,8 +187,8 @@
           "type": "features",
           "settings": {
             "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/placeholder-svg-square.svg?v=1666645913",
-            "title": "Immersive experiences",
-            "body": "Discover hard-to-find and independent brands that you don't see everywhere else.",
+            "title": "Discovery",
+            "body": "Discover the one-of-a kinds and local must-haves you didn’t know you couldn’t live without.",
             "cta_text": "",
             "cta_link": ""
           }
@@ -198,7 +198,7 @@
           "settings": {
             "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/placeholder-svg-square.svg?v=1666645913",
             "title": "On-site staff",
-            "body": "Friendly professionals answer participants' questions and tell them about the items.",
+            "body": "Friendly professionals answer questions and share product knowledge.",
             "cta_text": "",
             "cta_link": ""
           }
@@ -208,7 +208,7 @@
           "settings": {
             "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/placeholder-svg-square.svg?v=1666645913",
             "title": "Gift with purpose",
-            "body": "Support brands whose values you share, like BIPOC, female founded, social-impact-driven, or sustainable.",
+            "body": "Support brands whose values you share, like BIPOC-owned, female founded, social-impact-driven, or sustainable.",
             "cta_text": "",
             "cta_link": ""
           }
@@ -249,7 +249,7 @@
         "title": "<p>Elevate your next event!<\/p>",
         "heading_style": "h2",
         "body": "Connect with our Gifting Experts to learn more about our On-Site Gifting Pop Ups.",
-        "image": "shopify:\/\/shop_images\/FoodiePages_66_20230227_AvenuePhoto-removebg-preview.png",
+        "image": "shopify:\/\/shop_images\/Screen_Shot_2022-11-15_at_5.04.39_PM_6bf64d73-8293-4cc3-99e5-c85cf593f649.png",
         "enable_card_style": true,
         "text_vertical_alignment": "center",
         "layout_style": "two-columns",

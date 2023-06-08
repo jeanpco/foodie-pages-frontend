@@ -116,6 +116,12 @@
 <script type="module">
   
   
+  
+  
+  
+  
+  
+  
   {% comment %} get data-js-element="draggable" {% endcomment %}
   const startDraggability = () => {
     
@@ -145,8 +151,6 @@
       closeButton.addEventListener('click', (e) => {
         e.preventDefault();
         const draggableInput = closeButton.closest('[data-js-element="draggable-input"]');
-
-        console.log(draggableInput)
 
         draggableInput.classList.add('is-being-removed');
         setTimeout(() => {
@@ -185,6 +189,8 @@
     {% comment %} get data-js-element="add-fields" {% endcomment %}
     const addFields = document.querySelector('[data-js-element="add-fields"]');
 
+    let count = 1;
+
     {% comment %} add new input on click {% endcomment %}
     addFields.addEventListener('click', (e) => {
       e.preventDefault();
@@ -200,17 +206,22 @@
         
           <div class="field-group ">
             <label class="text-size-tiny uppercase" id="Admin-Email">Field Label*</label>
-            <input data-js-element="input" id="Admin-Email" type="text" name="Email" class="field_input" aria-required="true" autocorrect="off" autocapitalize="off" placeholder="Enter the input name">
+            <input data-js-element="input" id="Admin-custom${count}" type="text" name="custom${count}" class="field_input" aria-required="true" autocorrect="off" autocapitalize="off" placeholder="Enter the input name">
           </div>
 
           <div class="field-group">
             <label class="text-size-tiny uppercase" id="admin-field-types">Field types</label>
-            <select data-js-element="select" id="admin-field-types" name="Field Types" class="field_input" aria-required="true">
-              <option selected value="text">Text</option>
-              <option value="email">Email</option>
-              <option value="phone">Phone</option>
-              <option disabled value="dropdown">Dropdown</option>
-            </select>
+            <div class="field-group_select">
+              <select data-js-element="select" id="admin-field-types" name="Field Types" class="field_input" aria-required="true">
+                <option selected value="text">Text</option>
+                <option value="email">Email</option>
+                <option value="phone">Phone</option>
+                <option disabled value="dropdown">Dropdown</option>
+              </select>
+              <div class="select-icon pointer-events-off">
+                {% render 'admin-select-arrow-icon' %}
+              </div>
+            </div>
           </div>
         
           <div style="opacity: 0.5; cursor: not-allowed;" class="pointer-events-off">
@@ -231,10 +242,17 @@
 
       startDraggability()
       enableFieldsRemoval()
+      count += 1;
     })
   }
 
   window.addEventListener('DOMContentLoaded', initForm)
+
+
+
+
+
+
 
 
 </script>

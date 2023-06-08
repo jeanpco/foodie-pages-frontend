@@ -56,9 +56,9 @@
       ],
       "settings": {
         "overline": "",
-        "title": "<p>A better gift basket, for food people.<\/p>",
+        "title": "<p>Meet the modern gift basket.<\/p>",
         "heading_style": "h1",
-        "body": "Our mission is simple: to help people feel seen, known and valued through modern gift baskets that showcase the most exciting finds from small brands.",
+        "body": "Our mission is simple: to help people feel seen, known and valued through modern, eco-friendly gift baskets that showcase the most exciting finds from small brands.",
         "image": "shopify:\/\/shop_images\/HomepageImage_Export.png",
         "enable_card_style": false,
         "text_vertical_alignment": "flex-end",
@@ -74,9 +74,9 @@
           "type": "tab",
           "settings": {
             "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/icon_1_147x125_crop_center.png?v=1663723952",
-            "tab_text": "Gifting for good",
+            "tab_text": "Gifts with meaning",
             "title": "Gifts that tell a story.",
-            "body": "Our gifts showcase small businesses, including BIPOC, LGBTQ+ and female-founded, social-impact driven, and sustainable brands. Sharing their stories with you is one of our greatest joys.",
+            "body": "Our gifts showcase small businesses, including BIPOC, female-founded, social-impact driven, and sustainable brands. Sharing their stories with you is one of our greatest joys.",
             "cta_text": "",
             "cta_link": "shopify:\/\/collections\/gift-baskets",
             "image": "shopify:\/\/shop_images\/4to3-Cropped3.jpg"
@@ -86,9 +86,9 @@
           "type": "tab",
           "settings": {
             "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/icon_2_154x123_crop_center.png?v=1663723952",
-            "tab_text": "Quality over quantity",
-            "title": "Less is more.",
-            "body": "What makes us different is our commitment to quality products and the makers behind them. We also keep our footprint small by working with local businesses.",
+            "tab_text": "Eco-conscious",
+            "title": "Quality over quantity.",
+            "body": "You'll never find generic brands or cheap \"filler\" products here. Cellophane? No way! We prioritize eco-friendly packaging, and we consciously curate high quality items from brands who are trying to do things better.",
             "cta_text": "",
             "cta_link": "shopify:\/\/collections\/gift-baskets",
             "image": "shopify:\/\/shop_images\/4to3-Cropped2.jpg"
@@ -140,7 +140,7 @@
       ],
       "settings": {
         "overline": "How we do it",
-        "title": "<p>The <em>best<\/em> gifting service in Canada<\/p>"
+        "title": "<p>The <em>best<\/em> gift baskets in Canada<\/p>"
       }
     },
     "module-tag-slider": {
@@ -324,7 +324,7 @@
         "overline": "",
         "title": "<p>Corporate gifting <em>done right<\/em><\/p>",
         "heading_style": "h2",
-        "body": "We're not about boring or generic corporate gift boxes. We'll bring your vision to life with modern gifts that live up to your brand and its values.",
+        "body": "We're not about boring, generic or wasteful corporate gifts. We'll bring your vision to life with modern gift boxes that live up to your brand and its values.",
         "image": "shopify:\/\/shop_images\/CarePackage_Home_Screen_2.png",
         "enable_card_style": true,
         "text_vertical_alignment": "center",
