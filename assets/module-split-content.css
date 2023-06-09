@@ -63,3 +63,16 @@
     margin-top: 0; 
   }
 }
+
+.split-content_content .module-header_rte p{
+  margin-top: var(--spacing-small-desktop);
+  color: var(--color-grey-500);
+}
+.split-content_content .module-header_rte ul{
+  padding-left: 1.25rem;
+}
+.split-content_content .module-header_rte ul li{
+  list-style-type: disc;
+  margin-top: var(--spacing-small-desktop);
+  color: var(--color-grey-500);
+}
