@@ -11,7 +11,7 @@
   
     
   import wretch from 'https://cdn.skypack.dev/wretch/dist/bundle/wretch.all.min.mjs'
-  const backendURL = 'http://localhost:8080'
+  const backendURL = 'https://foodiepages.herokuapp.com'
 
   {% comment %} 
   'http://localhost:8080' 
@@ -118,8 +118,6 @@
 
   window.getShopifyProducts = async (ids) => {
 
-    console.log(ids)
-
     const pageData = await wretch(`${backendURL}/api/get-shopify-collections`)
       .post(ids)
       .badRequest((err) => {
@@ -144,11 +142,7 @@
       return 'No Products';
     }
 
-    console.log('all products', pageData.data.products)
-
     const products = pageData.data.products.filter(p => p.status === 'active')
-
-    console.log('active products', products)
 
     return products;
   }
