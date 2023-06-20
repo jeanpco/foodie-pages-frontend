@@ -189,8 +189,8 @@
               ${option.values.map((value, index) => `
                 <div class="field-group variant-select">
                   <input
-                    data-js-element="variant-option"
-                    type="radio"
+                    data-js-element="variant-option"                    
+                    type="{% if multiple_variants_selectable == true %}checkbox{% else %}radio{% endif %}"
                     id="${ option.name }--${value}"
                     name="${ option.name }"
                     value="${ value }"
@@ -290,7 +290,7 @@
       }
 
       if (numberOfVariant > 1) {
-        selectedProduct = `Product Title: ${title} | Variant Title: ${window.modalSelectedVariant.title} | Variant Sku: ${window.modalSelectedVariant.sku} | Variant Id: ${window.modalSelectedVariant.id} | Product Id: ${id} | Product Tags: ${tags.replaceAll(',', ' ')}`
+        selectedProduct = `Product Title: ${title} | Variant Title: ${window.modalSelectedVariant.title} | Variant Sku: ${window.modalSelectedVariant.sku} | Variant Id: ${window.modalSelectedMultipleVariants.length > 0 ? window.modalSelectedMultipleVariants.join('+') : window.modalSelectedVariant.id} | Product Id: ${id} | Product Tags: ${tags.replaceAll(',', ' ')}`
       }
 
       if (isCustomSwag) {
@@ -307,6 +307,7 @@
   window.cfProductModalVariantSelector = (props) => {
     const { variants } = props
     const variantOptions = [...document.querySelectorAll('[data-js-element="variant-option"]')]
+    window.modalSelectedMultipleVariants = []
 
     const selectVariant = (e) => {
 
@@ -315,15 +316,18 @@
       if (!e) {
 
         if (!window.modalSelectedVariant) {
-          const firstVariant = variants[0]
-          window.modalSelectedVariant = firstVariant
+          {% if multiple_variants_selectable == false %}
+            const firstVariant = variants[0]
+            window.modalSelectedVariant = firstVariant
+            window.modalSelectedMultipleVariants[firstVariant.id]
 
-          {% comment %} variantoptions has variant.title as a value, check it {% endcomment %}
-          variantOptions.forEach((option) => {
-            if (option.value === firstVariant.title) {
-              option.setAttribute('checked', true)
-            }
-          }) 
+            {% comment %} variantoptions has variant.title as a value, check it {% endcomment %}
+            variantOptions.forEach((option) => {
+              if (option.value === firstVariant.title) {
+                option.setAttribute('checked', true)
+              }
+            }) 
+          {% endif %}
         } else {
           {% comment %} variantoptions has variant.title as a value, check it {% endcomment %}
           variantOptions.forEach((option) => {
@@ -340,6 +344,16 @@
 
         const selectedVariant = variants.find((variant) => variant.option1 === option1 && variant.option2 === option2 && variant.option3 === option3)
 
+        if (window.modalSelectedMultipleVariants.includes(selectedVariant.id)) {
+          // Variant ID already exists, remove it
+          window.modalSelectedMultipleVariants = window.modalSelectedMultipleVariants.filter((variantId) => variantId !== selectedVariant.id);
+        } else {
+          // Variant ID doesn't exist, add it
+          window.modalSelectedMultipleVariants.push(selectedVariant.id);
+        }
+
+        window.modalSelectedMultipleVariants = [...new Set(window.modalSelectedMultipleVariants)];
+
         window.modalSelectedVariant = selectedVariant
       }
     }
@@ -347,9 +361,5 @@
     selectVariant()
     variantOptions.forEach((option) => option.addEventListener('change', selectVariant))
   }
-
-
-
-
 
 </script>

@@ -153,7 +153,8 @@
   padding-bottom: 0.7rem !important;
 }
 
-.cf_modal-variant-selector .variant-select input[type="radio"] {
+.cf_modal-variant-selector .variant-select input[type="radio"],
+.cf_modal-variant-selector .variant-select input[type="checkbox"] {
   position: absolute;
   opacity: 0;
   width: 100%;
@@ -163,7 +164,9 @@
 
 /* add disabled state */
 .cf_modal-variant-selector .variant-select input[type="radio"]:disabled + label,
-.cf_modal-variant-selector .variant-select input[type="radio"]:disabled {
+.cf_modal-variant-selector .variant-select input[type="radio"]:disabled,
+.cf_modal-variant-selector .variant-select input[type="checkbox"]:disabled + label,
+.cf_modal-variant-selector .variant-select input[type="checkbox"]:disabled {
   cursor: not-allowed;
 }
 
@@ -175,11 +178,13 @@
   transition: all 0.2s;
 }
 
-.cf_modal-variant-selector .variant-select input[type="radio"]:hover + label {
+.cf_modal-variant-selector .variant-select input[type="radio"]:hover + label,
+.cf_modal-variant-selector .variant-select input[type="checkbox"]:hover + label {
   border-color: var(--color-tertiary);
 }
 
-.cf_modal-variant-selector .variant-select input[type="radio"]:checked + label {
+.cf_modal-variant-selector .variant-select input[type="radio"]:checked + label,
+.cf_modal-variant-selector .variant-select input[type="checkbox"]:checked + label {
   background-color: var(--color-tertiary);
   color: var(--color-secondary);
   border-color: var(--color-tertiary);
