@@ -109,22 +109,23 @@
             "cta_link": ""
           }
         },
-        "ab7fff74-0668-4779-9c58-a3781089ca61": {
-          "type": "tab",
-          "settings": {
-            "overline": "",
-            "title": "Expert Curation",
-            "body": "Our team is committed to helping you discover the most unique and exciting small batch goods from across Canada. We take chances on new brands you may not yet see elsewhere. With a wide selection of 100s of brands, you’ll have a blast discovering new trends.",
-            "cta_text": "Get in touch",
-            "cta_link": ""
-          }
-        },
         "47847899-6a08-4443-881a-c2133258173d": {
           "type": "tab",
           "settings": {
             "overline": "",
             "title": "Diversity & Inclusion",
             "body": "Our business is built on the idea that it is time to increase diversity and inclusion in corporate gifting. We source from underrepresented small businesses and independent makers, and work to share diverse perspectives.",
+            "cta_text": "Get in touch",
+            "cta_link": ""
+          }
+        },
+        "ab7fff74-0668-4779-9c58-a3781089ca61": {
+          "type": "tab",
+          "disabled": true,
+          "settings": {
+            "overline": "",
+            "title": "Expert Curation",
+            "body": "Our team is committed to helping you discover the most unique and exciting small batch goods from across Canada. We take chances on new brands you may not yet see elsewhere. With a wide selection of 100s of brands, you’ll have a blast discovering new trends.",
             "cta_text": "Get in touch",
             "cta_link": ""
           }
@@ -144,8 +145,8 @@
       "block_order": [
         "2d4083b3-581a-4ade-b225-6f2117a93f50",
         "db40d850-e629-4e9b-b0e8-d2d20e4414ad",
-        "ab7fff74-0668-4779-9c58-a3781089ca61",
         "47847899-6a08-4443-881a-c2133258173d",
+        "ab7fff74-0668-4779-9c58-a3781089ca61",
         "a25db7f7-6489-43d4-89c5-e1e47404b228"
       ],
       "settings": {
