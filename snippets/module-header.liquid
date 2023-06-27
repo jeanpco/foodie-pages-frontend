@@ -22,6 +22,9 @@
   {% if body != blank %}
     <p class="margin-top margin-small text-color-grey-500">{{ body }}</p>
   {% endif %}
+  {% if body_rte != blank %}
+    <div class="module-header_rte">{{ body_rte }}</div>
+  {% endif %}
 
   {% if cta_text != blank and cta_link != blank %}
     <div class="margin-auto">
