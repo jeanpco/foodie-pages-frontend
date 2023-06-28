@@ -31,10 +31,10 @@
       "settings": {
         "image": "shopify:\/\/shop_images\/Giving_Back_-_pic1.png",
         "overline": "",
-        "title": "<p>Send one gift, support many small businesses<\/p>",
+        "title": "<p>Send one gift, support many small businesses.<\/p>",
         "heading_style": "h2",
         "body": "",
-        "body_rte": "<p>In a world where products can be sourced from any corner of the earth, we choose to source our products in Canada. We seek out the best goods from small brands who prioritize craftsmanship, quality and transparency.<\/p>",
+        "body_rte": "<p>In a world where products can be sourced from any corner of the earth, we choose to source our products in Canada. <\/p><p>From drinks and snacks to homewares and wellness, we take pride in sourcing products that are made locally by small businesses who value craftsmanship, quality and transparency.<\/p>",
         "layout_style": "content-right"
       }
     },
