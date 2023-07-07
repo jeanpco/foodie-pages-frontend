@@ -2,24 +2,28 @@
 
 {% assign enable_card_style = section.settings.enable_card_style %}
 
+{% if section.blocks.size < 2 %}
+  {% assign text_align = 'text-align-center' %}
+{% else %}
+  {% assign text_align = 'left' %}
+{% endif %}
 
 <div class="{% if enable_card_style %}padding-vertical padding-huge{% endif %}">
   <div class="{% if enable_card_style %}container{% endif %}">
     <div class="hero-background {% if enable_card_style %}is-card-style{% endif %} {{ section.settings.background_color }}">
       <div class="padding-vertical padding-xlarge">
         <div class="hero-container padding-horizontal padding-xxlarge mobile-padding-medium {% unless enable_card_style %}container{% endunless %} {{ section.settings.layout_style }}">
-          <div class="hero-content {{ section.settings.layout_style }}">
+          <div class="hero-content {{ text_align }} {{ section.settings.layout_style }}" {% if section.blocks.size < 2 %}style="width: 100%;"{% endif %}>
             <div class="hero-content_primary">
-              {% render 'module-header', 
-                overline: section.settings.overline, 
-                title: section.settings.title,
-                text_horizontal_alignment: 'left',
-                heading_style: section.settings.heading_style,
-              %}
+              {% render 'module-header'
+               , overline: section.settings.overline,
+               title: section.settings.title,
+               text_horizontal_alignment: text_align,
+               heading_style: section.settings.heading_style, %}
             </div>
             <div class="hero-content_secondary">
               {% if section.settings.body != blank %}
-                <p class="hero-content_body margin-top margin-medium">{{ section.settings.body }}</p> 
+                <p class="hero-content_body margin-top margin-medium">{{ section.settings.body }}</p>
               {% endif %}
 
               {% assign ctasArray = section.blocks | where: "type", "cta" %}
@@ -30,14 +34,11 @@
 
                   {% for block in ctasArray %}
                     <div class="margin-top mobile-margin-xsmall">
-                      <a 
-                        class="button {% if forloop.first %}margin-right margin-small{% endif %}{% if forloop.first == false %} secondary{% endif %}" 
-                        href="{{ block.settings.cta_link }}"
-                      >
+                      <a class="button {% if forloop.first %}margin-right margin-small{% endif %}{% if forloop.first == false %} secondary{% endif %}" href="{{ block.settings.cta_link }}">
                         <span>{{ block.settings.cta_text }}</span>
                       </a>
                     </div>
-                  {% endfor %} 
+                  {% endfor %}
                 </div>
               {% endif %}
 
@@ -50,8 +51,11 @@
                     <p class="hero-content_trusted_by__text text-size-tiny text-color-grey-400 uppercase margin-bottom margin-small">{{ section.settings.trusted_by_text }}</p>
                     <div class="hero-content_grid">
                       {% for block in trustedByArray %}
-                        <img class="hero-content_trusted_by__logo" src="{{ block.settings.icon_url }}" alt="{{ block.settings.icon_alt_text }}" />
-                      {% endfor %} 
+                        <img
+                          class="hero-content_trusted_by__logo"
+                          src="{{ block.settings.icon_url }}"
+                          alt="{{ block.settings.icon_alt_text }}" />
+                      {% endfor %}
                     </div>
                   </div>
                 </div>
@@ -61,9 +65,8 @@
           {% if section.settings.image %}
             <div class="hero-image {{ section.settings.layout_style }}">
               {{ section.settings.image | image_url: width: 800 | image_tag:
-                loading: 'lazy',
-                widths: '550, 720, 990, 1100, 1500, 2200, 3000'
-              }}
+               loading: 'lazy',
+               widths: '550, 720, 990, 1100, 1500, 2200, 3000' }}
             </div>
           {% endif %}
         </div>
@@ -75,169 +78,154 @@
 <style>
   .hero-container {
     display: flex;
-    align-items: {{ section.settings.text_vertical_alignment }};
+    align-items: {{ section.settings.text_vertical_alignment }}
+    ;
     justify-content: space-between;
   }
 </style>
 
 {% schema %}
-{
-  "name": "Hero",
-  "tag": "section",
-  "class": "section section-hero",
-  "settings": [
-    {
-      "type": "text",
-      "id": "overline",
-      "default": "Quick shop",
-      "label": "Overline"
-    },
-    {
-      "type": "richtext",
-      "id": "title",
-      "default": "<p>Gifts that <i>celebrate</i> small business</p>",
-      "label": "Title"
-    },
-    {
-      "type": "select",
-      "id": "heading_style",
-      "options": [
-        {
-          "value": "h2",
-          "label": "Heading 2"
-        },
-        {
-          "value": "h1",
-          "label": "Heading 1"
-        }
-      ],
-      "default": "h1",
-      "label": "Heading style"
-    },
-    {
-      "type": "textarea",
-      "id": "body",
-      "default": "Each foodiepages gift basket is designed with premium goods from diverse, independently-owned makers and brands across Canada.",
-      "label": "Body"
-    },
-    {
-      "type": "image_picker",
-      "id": "image",
-      "label": "Image"
-    },
-    {
-      "type": "header",
-      "content": "Layout Settings"
-    },
-    {
-      "type": "checkbox",
-      "id": "enable_card_style",
-      "label": "Enable Card Style"
-    },
-    {
-      "type": "select",
-      "id": "text_vertical_alignment",
-      "options": [
-        {
-          "value": "flex-end",
-          "label": "Bottom"
-        },
-        {
-          "value": "center",
-          "label": "Center"
-        }
-      ],
-      "default": "flex-end",
-      "label": "Text Vertical Alignment (Desktop)"
-    },
-    {
-      "type": "select",
-      "id": "layout_style",
-      "options": [
-        {
-          "value": "two-columns",
-          "label": "Two Columns"
-        },
-        {
-          "value": "rows",
-          "label": "Rows"
-        }
-      ],
-      "default": "two-columns",
-      "label": "Layout Style"
-    },
-    {
-      "type": "select",
-      "id": "background_color",
-      "options": [
-        {
-          "value": "background-color-azul-verdoso-10",
-          "label": "Color - Azul Verdoso 10"
-        },
-        {
-          "value": "background-color-mar-10",
-          "label": "Color - Mar 10"
-        },
-        {
-          "value": "background-color-secondary",
-          "label": "Color - White"
-        }
-      ],
-      "default": "background-color-azul-verdoso-10",
-      "label": "Background Color"
-    },
-    {
-      "type": "header",
-      "content": "Trusted By Settings"
-    },
-    {
-      "type": "text",
-      "id": "trusted_by_text",
-      "default": "Trusted by",
-      "label": "Trusted by - Text"
-    }
-  ],
-  "blocks": [
-    {
-      "type": "cta",
-      "name": "CTA",
-      "limit": 2,
-      "settings": [
-        {
-          "type": "text",
-          "id": "cta_text",
-          "default": "Shop all",
-          "label": "CTA Text"
-        },
-        {
-          "type": "url",
-          "id": "cta_link",
-          "label": "CTA Link"
-        }
-      ]
-    },
-    {
-      "type": "trusted_by",
-      "name": "Trusted By",
-      "limit": 8,
-      "settings": [
-        {
-          "type": "url",
-          "id": "icon_url",
-          "label": "Icon"
-        },
-        {
-          "type": "text",
-          "id": "icon_alt_text",
-          "label": "Icon Alt Text"
-        }
-      ]
-    }
-  ],
-  "presets": [
-    {
-      "name": "Hero"
-    }
-  ]
-}
+  {
+    "name": "Hero",
+    "tag": "section",
+    "class": "section section-hero",
+    "settings": [
+      {
+        "type": "text",
+        "id": "overline",
+        "default": "Quick shop",
+        "label": "Overline"
+      },
+      {
+        "type": "richtext",
+        "id": "title",
+        "default": "<p>Gifts that <i>celebrate</i> small business</p>",
+        "label": "Title"
+      },
+      {
+        "type": "select",
+        "id": "heading_style",
+        "options": [
+          {
+            "value": "h2",
+            "label": "Heading 2"
+          }, {
+            "value": "h1",
+            "label": "Heading 1"
+          }
+        ],
+        "default": "h1",
+        "label": "Heading style"
+      },
+      {
+        "type": "textarea",
+        "id": "body",
+        "default": "Each foodiepages gift basket is designed with premium goods from diverse, independently-owned makers and brands across Canada.",
+        "label": "Body"
+      }, {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Image"
+      }, {
+        "type": "header",
+        "content": "Layout Settings"
+      }, {
+        "type": "checkbox",
+        "id": "enable_card_style",
+        "label": "Enable Card Style"
+      }, {
+        "type": "select",
+        "id": "text_vertical_alignment",
+        "options": [
+          {
+            "value": "flex-end",
+            "label": "Bottom"
+          }, {
+            "value": "center",
+            "label": "Center"
+          }
+        ],
+        "default": "flex-end",
+        "label": "Text Vertical Alignment (Desktop)"
+      }, {
+        "type": "select",
+        "id": "layout_style",
+        "options": [
+          {
+            "value": "two-columns",
+            "label": "Two Columns"
+          }, {
+            "value": "rows",
+            "label": "Rows"
+          }
+        ],
+        "default": "two-columns",
+        "label": "Layout Style"
+      }, {
+        "type": "select",
+        "id": "background_color",
+        "options": [
+          {
+            "value": "background-color-azul-verdoso-10",
+            "label": "Color - Azul Verdoso 10"
+          }, {
+            "value": "background-color-mar-10",
+            "label": "Color - Mar 10"
+          }, {
+            "value": "background-color-secondary",
+            "label": "Color - White"
+          }
+        ],
+        "default": "background-color-azul-verdoso-10",
+        "label": "Background Color"
+      }, {
+        "type": "header",
+        "content": "Trusted By Settings"
+      }, {
+        "type": "text",
+        "id": "trusted_by_text",
+        "default": "Trusted by",
+        "label": "Trusted by - Text"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "cta",
+        "name": "CTA",
+        "limit": 2,
+        "settings": [
+          {
+            "type": "text",
+            "id": "cta_text",
+            "default": "Shop all",
+            "label": "CTA Text"
+          }, {
+            "type": "url",
+            "id": "cta_link",
+            "label": "CTA Link"
+          }
+        ]
+      }, {
+        "type": "trusted_by",
+        "name": "Trusted By",
+        "limit": 8,
+        "settings": [
+          {
+            "type": "url",
+            "id": "icon_url",
+            "label": "Icon"
+          }, {
+            "type": "text",
+            "id": "icon_alt_text",
+            "label": "Icon Alt Text"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Hero"
+      }
+    ]
+  }
 {% endschema %}
