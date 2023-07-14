@@ -85,8 +85,6 @@
     }
   ];
 
-  console.log('window.customerCollections', window.customerCollections)
-
   const emptyState = (container) => {
     const elements = {
       emptyState: container.querySelector('[data-js-element="products-empty-state"]'),
@@ -97,8 +95,6 @@
 
   function mergeProducts(products) {
     const mergedProducts = {};
-
-    console.log('products', products)
   
     products.forEach((product) => {
 
@@ -127,8 +123,6 @@
   }
 
   window.productsGenerateCampaigns = async ({ campaigns, products, container }) => {
-
-    console.log('campaigns', campaigns)
 
     if (!campaigns.length) return emptyState(container);
 
