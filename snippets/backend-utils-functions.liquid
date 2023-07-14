@@ -128,8 +128,6 @@
       })
       .res((res) => res.json());
 
-    console.log('pageData.data.products', pageData.data.products)
-
     if (!pageData.data.products) {
       return 'No Products';
     }

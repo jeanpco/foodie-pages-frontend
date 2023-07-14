@@ -70,57 +70,6 @@
 </style>
 
 <script type="module">
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
   window.customerCollections = [
     {% for collection in collections %}
       {% if collection.metafields.custom.customer_id != blank %}
@@ -136,6 +85,8 @@
     }
   ];
 
+  console.log('window.customerCollections', window.customerCollections)
+
   const emptyState = (container) => {
     const elements = {
       emptyState: container.querySelector('[data-js-element="products-empty-state"]'),
@@ -146,6 +97,8 @@
 
   function mergeProducts(products) {
     const mergedProducts = {};
+
+    console.log('products', products)
   
     products.forEach((product) => {
 
