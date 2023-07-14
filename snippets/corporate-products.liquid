@@ -128,6 +128,8 @@
 
   window.productsGenerateCampaigns = async ({ campaigns, products, container }) => {
 
+    console.log('campaigns', campaigns)
+
     if (!campaigns.length) return emptyState(container);
 
     const elements = {
@@ -163,6 +165,8 @@
           sosInventory,
         };
       });
+
+      console.log('gets here')
       
       // Merge products with the same product_id
       campaignItems = mergeProducts(campaignItems);
