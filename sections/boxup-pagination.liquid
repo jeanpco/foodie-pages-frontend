@@ -132,7 +132,7 @@
                             <strong>{{product.title}}</strong>
                             <select class="bxp-bldr-form-control bxp-mt-10" img="{{product.featured_image.src | img_url: '300x'}}" name="bxp-select_{{product.id}}" id="bxp-select_{{product.id}}">
                                 {%- if product.options.size > 1 -%}
-                                    {%- assign label = "{{Select}}..." -%}
+                                    {%- assign label = "Select..." -%}
                                 {%- else -%}
                                     {%- capture label -%}{{translate_choose}} {{product.options.first}}...{%- endcapture -%}
                                 {%- endif -%}
