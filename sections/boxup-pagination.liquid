@@ -678,6 +678,7 @@
                                     <span class="bxp-bldr-qty-down">-</span>
                                     {% assign variantPrice = variant.price | money %}
                                     {% render 'product-bundle-atc', price: variantPrice %}
+                                    <span class="bxp-bldr-item_price"><span class="bxp-bldr-add-text"></span> {{variant.price | money}}</span>
                                     <span class="bxp-bldr-qty-up">+</span>
                                 </div>
                                 {% else %}
