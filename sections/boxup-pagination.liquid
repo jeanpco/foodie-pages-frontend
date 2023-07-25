@@ -682,6 +682,7 @@
                                 </div>
                                 {% else %}
                                 {% assign variantPrice = variant.price | money %}
+                                    <span class="bxp-bldr-item_price"><span class="bxp-bldr-add-text"></span> {{variant.price | money}}</span>
                                     {% render 'product-bundle-atc', price: variantPrice %}
                                 {% endif %}
                             {% else %}
