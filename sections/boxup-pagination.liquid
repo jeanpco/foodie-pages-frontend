@@ -124,6 +124,7 @@
                             <div class="bldr-dark-btn">
                                 <span class="bxp-bldr-qty-down">-</span>
                                 {% render 'product-bundle-atc', price: product.price | money %}
+                                <script>console.log({{product.price|json}})</script>
                                 <span class="bxp-bldr-qty-up">+</span>
                             </div>
                             {%- else -%}
