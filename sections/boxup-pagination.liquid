@@ -123,19 +123,13 @@
                             {%- if showQty == 'true' -%}
                             <div class="bldr-dark-btn">
                                 <span class="bxp-bldr-qty-down">-</span>
-                                <span class="bxp-bldr-item_price button">
-                                  <span>
-                                      <span class="bxp-bldr-add-text"></span> {{ product.price | money }}
-                                  </span>
-                                </span>
+                                {% assign variantPrice = variant.price | money %}
+                                {% render 'product-bundle-atc', price: product.price | money %}
                                 <span class="bxp-bldr-qty-up">+</span>
                             </div>
                             {%- else -%}
-                            <span class="bxp-bldr-item_price button">
-                              <span>
-                                  <span class="bxp-bldr-add-text"></span> {{ product.price | money }}
-                              </span>
-                            </span>
+                                {% assign variantPrice = variant.price | money %}
+                                {% render 'product-bundle-atc', price: product.price | money %}
                             {%- endif -%}
                             <strong>{{product.title}}</strong>
                             <select class="bxp-bldr-form-control bxp-mt-10" img="{{product.featured_image.src | img_url: '300x'}}" name="bxp-select_{{product.id}}" id="bxp-select_{{product.id}}">
@@ -266,19 +260,13 @@
                                 {%- if showQty == 'true' -%}
                                 <div class="bldr-dark-btn">
                                     <span class="bxp-bldr-qty-down">-</span>
-                                    <span class="bxp-bldr-item_price button">
-                                      <span>
-                                          <span class="bxp-bldr-add-text"></span> {{ product.price | money }}
-                                      </span>
-                                    </span>
+                                {% assign variantPrice = variant.price | money %}
+                                {% render 'product-bundle-atc', price: product.price | money %}
                                     <span class="bxp-bldr-qty-up">+</span>
                                 </div>
                                 {%- else -%}
-                                <span class="bxp-bldr-item_price button">
-                                  <span>
-                                      <span class="bxp-bldr-add-text"></span> {{ product.price | money }}
-                                  </span>
-                                </span>
+                                {% assign variantPrice = variant.price | money %}
+                                {% render 'product-bundle-atc', price: product.price | money %}
                                 {%- endif -%}
                             {%- else -%}
                                 <span class="bxp-bldr-sold_out">{{translate_soldOut}}</span>
@@ -476,10 +464,12 @@
                             {% if showQty == 'true' %}
                             <div class="bldr-dark-btn">
                                 <span class="bxp-bldr-qty-down">-</span>
+                                {% assign variantPrice = variant.price | money %}
                                 {% render 'product-bundle-atc', price: product.price | money %}
                                 <span class="bxp-bldr-qty-up">+</span>
                             </div>
                             {% else %}
+                                {% assign variantPrice = variant.price | money %}
                                 {% render 'product-bundle-atc', price: product.price | money %}
                             {% endif %}
                             <strong>{{product.title}}</strong>
@@ -591,13 +581,19 @@
                                 {% if showQty == 'true' %}
                                 <div class="bldr-dark-btn">
                                     <span class="bxp-bldr-qty-down">-</span>
-                                    {% assign variantPrice = variant.price | money %}
-                                    {% render 'product-bundle-atc', price: variantPrice %}
+                                    <span class="bxp-bldr-item_price button">
+                                      <span>
+                                          <span class="bxp-bldr-add-text"></span> {{ product.price | money }}
+                                      </span>
+                                    </span>
                                     <span class="bxp-bldr-qty-up">+</span>
                                 </div>
                                 {% else %}
-                                {% assign variantPrice = variant.price | money %}
-                                    {% render 'product-bundle-atc', price: variantPrice %}
+                                <span class="bxp-bldr-item_price button">
+                                  <span>
+                                      <span class="bxp-bldr-add-text"></span> {{ product.price | money }}
+                                  </span>
+                                </span>
                                 {% endif %}
                             {% else %}
                                 <span class="bxp-bldr-sold_out">{{translate_soldOut}}</span>
@@ -690,13 +686,19 @@
                                 {% if showQty == 'true' %}
                                 <div class="bldr-dark-btn">
                                     <span class="bxp-bldr-qty-down">-</span>
-                                    {% assign variantPrice = variant.price | money %}
-                                    {% render 'product-bundle-atc', price: variantPrice %}
+                                    <span class="bxp-bldr-item_price button">
+                                      <span>
+                                          <span class="bxp-bldr-add-text"></span> {{ product.price | money }}
+                                      </span>
+                                    </span>
                                     <span class="bxp-bldr-qty-up">+</span>
                                 </div>
                                 {% else %}
-                                {% assign variantPrice = variant.price | money %}
-                                    {% render 'product-bundle-atc', price: variantPrice %}
+                                <span class="bxp-bldr-item_price button">
+                                  <span>
+                                      <span class="bxp-bldr-add-text"></span> {{ product.price | money }}
+                                  </span>
+                                </span>
                                 {% endif %}
                             {% else %}
                             <span class="bxp-bldr-sold_out">{{translate_soldOut}}</span>
