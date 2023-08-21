@@ -33,7 +33,7 @@
           "settings": {
             "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/team.svg?v=1669133706",
             "title": "Connection",
-            "body": "Human connection is a bond that’s formed when people feel seen and valued. We help create authentic connections through modern, relevant gifts (with a handwritten gift message, too!)",
+            "body": "Human connection is a bond that’s formed when people feel seen and valued. We help nourish connections through modern, relevant gifts (with a handwritten gift message, too!)",
             "cta_text": "",
             "cta_link": ""
           }
@@ -83,6 +83,7 @@
         "title": "<p>Gifts that <em>celebrate<\/em> small business<\/p>",
         "heading_style": "h1",
         "body": "Each foodiepages gift basket is designed with premium goods from diverse, independently-owned makers and brands across Canada.",
+        "body_rte": "",
         "layout_style": "content-left"
       }
     },
@@ -223,7 +224,6 @@
     },
     "582103a2-47d5-46e9-9ba6-ede2b4f3963b": {
       "type": "module-hero",
-      "disabled": true,
       "blocks": {
         "a0cdd988-b288-4542-9434-6c35f9543944": {
           "type": "cta",
@@ -236,6 +236,7 @@
       "block_order": [
         "a0cdd988-b288-4542-9434-6c35f9543944"
       ],
+      "disabled": true,
       "settings": {
         "overline": "",
         "title": "<p>Get in touch!<\/p>",
