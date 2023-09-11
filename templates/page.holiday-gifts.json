@@ -21,7 +21,7 @@
         "body": "Discover new personalized options, new inventory, and ready-to-ship gift ideas that celebrate Canadian small businesses. \n\nGet ahead of the game and pre-order the packages that often sell out during the season. Join the waitlist to be the first to view our 2023 Holiday Catalog!",
         "image": "shopify:\/\/shop_images\/09A1760.jpg",
         "enable_card_style": false,
-        "text_vertical_alignment": "flex-end",
+        "text_vertical_alignment": "center",
         "layout_style": "two-columns",
         "background_color": "background-color-azul-verdoso-10",
         "trusted_by_text": ""
@@ -179,6 +179,7 @@
     },
     "product-recommendations": {
       "type": "product-recommendations",
+      "disabled": true,
       "settings": {
         "overline": "ready-to-ship holiday gifts",
         "title": "<p>Top Holiday Picks<\/p>",
