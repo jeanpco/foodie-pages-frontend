@@ -87,9 +87,9 @@
           "type": "tab",
           "settings": {
             "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/icon_1_147x125_crop_center.png?v=1663723952",
-            "tab_text": "Values-based gifting",
+            "tab_text": "Gifts with meaning",
             "title": "Gifts that tell a story.",
-            "body": "We source exclusively from small and underrepresented businesses across the country. Sharing their stories and values with you is one of our greatest joys.",
+            "body": "Our gifts showcase Canadian small businesses, including BIPOC, female-founded, social-impact driven, and sustainable brands. Sharing their stories with you is one of our greatest joys.",
             "cta_text": "",
             "cta_link": "shopify:\/\/pages\/about-us",
             "image": "shopify:\/\/shop_images\/4to3-Cropped3.jpg"
@@ -99,9 +99,9 @@
           "type": "tab",
           "settings": {
             "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/icon_2_154x123_crop_center.png?v=1663723952",
-            "tab_text": "Sustainability",
-            "title": "Less is more.",
-            "body": "We always prioritize quality over quantity. When it comes to selecting products for our gifts, beautiful design and impeccable quality are non-negotiable. We also try to keep our footprint small by working with local businesses.",
+            "tab_text": "Eco-conscious",
+            "title": "Quality over quantity.",
+            "body": "You'll never find generic brands or cheap \"filler\" products here. Cellophane? No way. We prioritize eco-friendly packaging, and we consciously curate high quality items from brands who are trying to do things better.",
             "cta_text": "",
             "cta_link": "\/",
             "image": "shopify:\/\/shop_images\/4to3-Cropped2.jpg"
@@ -111,7 +111,7 @@
           "type": "tab",
           "settings": {
             "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/icon_3_156x118_crop_center.png?v=1663723952",
-            "tab_text": "Worldwide shipping",
+            "tab_text": "Fast shipping",
             "title": "Easy and speedy shipping.",
             "body": "We can bulk ship to one location or 100s of individual addresses, worldwide. We make the entire process seamless.",
             "cta_text": "",
@@ -123,7 +123,7 @@
           "type": "tab",
           "settings": {
             "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/icon_4_123x131_crop_center.png?v=1663723952",
-            "tab_text": "100% custom gift design",
+            "tab_text": "Custom gift design",
             "title": "A fresh take on corporate gifting.",
             "body": "For larger orders, leverage our design services for a fully custom gift. From the products to the packaging, we'll create something memorable that reflects your brand, goals, and values.",
             "cta_text": "",
@@ -135,7 +135,7 @@
           "type": "tab",
           "settings": {
             "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/icon_5_101x120_crop_center.png?v=1663723952",
-            "tab_text": "10+ years of experience",
+            "tab_text": "10+ years of gifting",
             "title": "Expert gifters.",
             "body": "For 10 years, we've been your go-to for gifting. That also means we've been your go-to to discover all of the best small brands in one place. Trust us to help you select a gift that aligns with your values, fits in your budget, and gets there on time.",
             "cta_text": "",
