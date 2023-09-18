@@ -6,8 +6,8 @@
         "02d55e23-f307-4138-a9bd-10d797daa746": {
           "type": "cta",
           "settings": {
-            "cta_text": "Browse Holiday Catalog",
-            "cta_link": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/foodiepages_Holiday_2022_Catalog_NOV1.pdf?v=1667394129"
+            "cta_text": "Join The Waitlist",
+            "cta_link": "shopify:\/\/pages\/contact-us"
           }
         }
       },
@@ -15,13 +15,13 @@
         "02d55e23-f307-4138-a9bd-10d797daa746"
       ],
       "settings": {
-        "overline": "2022 HOLIDAY GIFT GUIDE",
-        "title": "<p>The Yummiest Way to Corporate Gift!<\/p>",
+        "overline": "coming soon",
+        "title": "<p>Our 2023 Holiday Gift Catalog<\/p>",
         "heading_style": "h1",
-        "body": "Who says business gifts need to feel corporate?",
+        "body": "Discover new personalized options, new inventory, and ready-to-ship gift ideas that celebrate Canadian small businesses. \n\nGet ahead of the game and pre-order the packages that often sell out during the season. Join the waitlist to be the first to view our 2023 Holiday Catalog!",
         "image": "shopify:\/\/shop_images\/09A1760.jpg",
         "enable_card_style": false,
-        "text_vertical_alignment": "flex-end",
+        "text_vertical_alignment": "center",
         "layout_style": "two-columns",
         "background_color": "background-color-azul-verdoso-10",
         "trusted_by_text": ""
@@ -41,7 +41,7 @@
           "type": "card",
           "settings": {
             "title": "Step 1: Pick Your Gifts",
-            "body": "Browse our 2022 Ready-to-Ship Holiday Gift Box Catalog. Find the perfect holiday gift for everyone on your list.",
+            "body": "Browse our 2023 Ready-to-Ship Holiday Gift Box Catalog. Find the perfect holiday gift for everyone on your list.",
             "cta_text": "View Holiday Catalog",
             "cta_link": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/foodiepages_Holiday_2022_Catalog_NOV1.pdf?v=1667394129"
           }
@@ -70,6 +70,7 @@
         "2799395e-848f-4345-9be1-4844c0f3b341",
         "1a1d97cc-0c9f-4023-b4cf-a2188c76fa3e"
       ],
+      "disabled": true,
       "settings": {
         "overline": "",
         "title": "",
@@ -86,9 +87,9 @@
           "type": "tab",
           "settings": {
             "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/icon_1_147x125_crop_center.png?v=1663723952",
-            "tab_text": "Values-based gifting",
+            "tab_text": "Gifts with meaning",
             "title": "Gifts that tell a story.",
-            "body": "We source exclusively from small and underrepresented businesses across the country. Sharing their stories and values with you is one of our greatest joys.",
+            "body": "Our gifts showcase Canadian small businesses, including BIPOC, female-founded, social-impact driven, and sustainable brands. Sharing their stories with you is one of our greatest joys.",
             "cta_text": "",
             "cta_link": "shopify:\/\/pages\/about-us",
             "image": "shopify:\/\/shop_images\/4to3-Cropped3.jpg"
@@ -98,9 +99,9 @@
           "type": "tab",
           "settings": {
             "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/icon_2_154x123_crop_center.png?v=1663723952",
-            "tab_text": "Sustainability",
-            "title": "Less is more.",
-            "body": "We always prioritize quality over quantity. When it comes to selecting products for our gifts, beautiful design and impeccable quality are non-negotiable. We also try to keep our footprint small by working with local businesses.",
+            "tab_text": "Eco-conscious",
+            "title": "Quality over quantity.",
+            "body": "You'll never find generic brands or cheap \"filler\" products here. Cellophane? No way. We prioritize eco-friendly packaging, and we consciously curate high quality items from brands who are trying to do things better.",
             "cta_text": "",
             "cta_link": "\/",
             "image": "shopify:\/\/shop_images\/4to3-Cropped2.jpg"
@@ -110,7 +111,7 @@
           "type": "tab",
           "settings": {
             "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/icon_3_156x118_crop_center.png?v=1663723952",
-            "tab_text": "Worldwide shipping",
+            "tab_text": "Fast shipping",
             "title": "Easy and speedy shipping.",
             "body": "We can bulk ship to one location or 100s of individual addresses, worldwide. We make the entire process seamless.",
             "cta_text": "",
@@ -122,7 +123,7 @@
           "type": "tab",
           "settings": {
             "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/icon_4_123x131_crop_center.png?v=1663723952",
-            "tab_text": "100% custom gift design",
+            "tab_text": "Custom gift design",
             "title": "A fresh take on corporate gifting.",
             "body": "For larger orders, leverage our design services for a fully custom gift. From the products to the packaging, we'll create something memorable that reflects your brand, goals, and values.",
             "cta_text": "",
@@ -134,7 +135,7 @@
           "type": "tab",
           "settings": {
             "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/icon_5_101x120_crop_center.png?v=1663723952",
-            "tab_text": "10+ years of experience",
+            "tab_text": "10+ years of gifting",
             "title": "Expert gifters.",
             "body": "For 10 years, we've been your go-to for gifting. That also means we've been your go-to to discover all of the best small brands in one place. Trust us to help you select a gift that aligns with your values, fits in your budget, and gets there on time.",
             "cta_text": "",
@@ -178,6 +179,7 @@
     },
     "product-recommendations": {
       "type": "product-recommendations",
+      "disabled": true,
       "settings": {
         "overline": "ready-to-ship holiday gifts",
         "title": "<p>Top Holiday Picks<\/p>",

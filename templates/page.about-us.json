@@ -6,7 +6,7 @@
         "overline": "one of the fastest growing gifting companies of 2022",
         "title": "<p>Hi, we’re foodiepages<\/p>",
         "heading_style": "h2",
-        "body": "We're setting out to freshen-up the old-fashioned gift basket industry with modern, eco-friendly gifts that are designed to be elevated and impactful any time of year.",
+        "body": "We're setting out to freshen-up the old-fashioned gift basket industry with modern, eco-friendly gifts that are designed to nourish personal and professional relationships.",
         "image": "shopify:\/\/shop_images\/Screen_Shot_2022-11-15_at_5.04.39_PM_6bf64d73-8293-4cc3-99e5-c85cf593f649.png",
         "enable_card_style": false,
         "text_vertical_alignment": "center",
@@ -23,7 +23,7 @@
           "settings": {
             "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/book.svg?v=1669133706",
             "title": "Storytelling",
-            "body": "Behind every great gift is a great story. We make it easy to shop and create custom gifts that support the small brands and values that are most important to you.",
+            "body": "Say goodbye to traditional, generic gift baskets. The best gifts have personal stories which is why we source unique items from small businesses across Canada.",
             "cta_text": "",
             "cta_link": ""
           }
@@ -32,8 +32,8 @@
           "type": "features",
           "settings": {
             "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/team.svg?v=1669133706",
-            "title": "Connection",
-            "body": "Human connection is a bond that’s formed when people feel seen and valued. We help create authentic connections through modern, relevant gifts (with a handwritten gift message, too!)",
+            "title": "Human Connection",
+            "body": "In a world where relationships are too often digital first, building real human connection, and nourishing it, is more important than ever.",
             "cta_text": "",
             "cta_link": ""
           }
@@ -42,8 +42,8 @@
           "type": "features",
           "settings": {
             "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/heart.svg?v=1669133706",
-            "title": "Community",
-            "body": "As a women and family-owned business, we believe in using our platform to support (and give back to) people and issues that are under-represented whenever we can.",
+            "title": "Giving Back",
+            "body": "As a women and family-owned business, we believe in using our platform to support (and give back to) people and issues that are under-represented.",
             "cta_text": "",
             "cta_link": ""
           }
@@ -83,28 +83,29 @@
         "title": "<p>Gifts that <em>celebrate<\/em> small business<\/p>",
         "heading_style": "h1",
         "body": "Each foodiepages gift basket is designed with premium goods from diverse, independently-owned makers and brands across Canada.",
+        "body_rte": "",
         "layout_style": "content-left"
       }
     },
     "823bd50c-3555-4282-8b34-ab0e8584323d": {
       "type": "module-vertical-tabs",
       "blocks": {
+        "2d4083b3-581a-4ade-b225-6f2117a93f50": {
+          "type": "tab",
+          "settings": {
+            "overline": "",
+            "title": "Commitment to Quality",
+            "body": "Our goal is simple: offer the very best stuff we can get our hands on. We have found that the highest quality goods come from small batch, local makers and we, like you, know there are no substitutes for quality.",
+            "cta_text": "Get in touch",
+            "cta_link": ""
+          }
+        },
         "db40d850-e629-4e9b-b0e8-d2d20e4414ad": {
           "type": "tab",
           "settings": {
             "overline": "",
             "title": "Celebrating Makers",
-            "body": "We are committed to sourcing small. We work with 100s of small, independently-owned businesses across Canada. We care about the stories behind each product and the passion that drives entrepreneurs from idea to launch.",
-            "cta_text": "Get in touch",
-            "cta_link": ""
-          }
-        },
-        "ab7fff74-0668-4779-9c58-a3781089ca61": {
-          "type": "tab",
-          "settings": {
-            "overline": "",
-            "title": "Expert Curation",
-            "body": "Our team is committed to helping you discover the most unique and exciting small batch goods from across Canada. We take chances on new brands you may not yet see elsewhere. With a wide selection of 100s of brands, you’ll have a blast discovering new trends.",
+            "body": "We work with 100s of small and independently-owned businesses. These Canadian makers, craftspeople, wine makers, beer brewers and brands are truly the best of the best. We are so proud to support their unwavering commitment and dedication to their craft.",
             "cta_text": "Get in touch",
             "cta_link": ""
           }
@@ -114,17 +115,18 @@
           "settings": {
             "overline": "",
             "title": "Diversity & Inclusion",
-            "body": "Our business is built on the idea that it is time to increase diversity and inclusion in corporate gifting. We source from underrepresented small businesses and independent makers, and work to share diverse perspectives.",
+            "body": "Our business is built on the idea that it is time to increase diversity and inclusion in corporate gifting. We source from diverse and underrepresented small businesses, and work to share diverse perspectives.",
             "cta_text": "Get in touch",
             "cta_link": ""
           }
         },
-        "2d4083b3-581a-4ade-b225-6f2117a93f50": {
+        "ab7fff74-0668-4779-9c58-a3781089ca61": {
           "type": "tab",
+          "disabled": true,
           "settings": {
             "overline": "",
-            "title": "Commitment to Quality",
-            "body": "We cut through the noise so you don't have to, seeking out high quality goods with heart and soul. Each brand goes through a rigorous selection process to make sure we have a collection of products that are truly the best of the best.",
+            "title": "Expert Curation",
+            "body": "Our team is committed to helping you discover the most unique and exciting small batch goods from across Canada. We take chances on new brands you may not yet see elsewhere. With a wide selection of 100s of brands, you’ll have a blast discovering new trends.",
             "cta_text": "Get in touch",
             "cta_link": ""
           }
@@ -142,10 +144,10 @@
         }
       },
       "block_order": [
-        "db40d850-e629-4e9b-b0e8-d2d20e4414ad",
-        "ab7fff74-0668-4779-9c58-a3781089ca61",
-        "47847899-6a08-4443-881a-c2133258173d",
         "2d4083b3-581a-4ade-b225-6f2117a93f50",
+        "db40d850-e629-4e9b-b0e8-d2d20e4414ad",
+        "47847899-6a08-4443-881a-c2133258173d",
+        "ab7fff74-0668-4779-9c58-a3781089ca61",
         "a25db7f7-6489-43d4-89c5-e1e47404b228"
       ],
       "settings": {
@@ -222,7 +224,6 @@
     },
     "582103a2-47d5-46e9-9ba6-ede2b4f3963b": {
       "type": "module-hero",
-      "disabled": true,
       "blocks": {
         "a0cdd988-b288-4542-9434-6c35f9543944": {
           "type": "cta",
@@ -235,6 +236,7 @@
       "block_order": [
         "a0cdd988-b288-4542-9434-6c35f9543944"
       ],
+      "disabled": true,
       "settings": {
         "overline": "",
         "title": "<p>Get in touch!<\/p>",

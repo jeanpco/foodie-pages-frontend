@@ -2339,3 +2339,7 @@ details-disclosure > details {
     outline: transparent solid 1px;
   }
 }
+
+.bxp-bldr-form-control.bxp-mt-10 {
+  padding: 0.5rem!important;
+}

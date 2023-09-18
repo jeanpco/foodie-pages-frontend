@@ -56,9 +56,9 @@
       ],
       "settings": {
         "overline": "",
-        "title": "<p>Meet the modern gift basket.<\/p>",
+        "title": "<p><em>Nourishing<\/em> connections<\/p>",
         "heading_style": "h1",
-        "body": "Our mission is simple: to help people feel seen, known and valued through modern, eco-friendly gift baskets that showcase the most exciting finds from small brands.",
+        "body": "Our mission is simple: to make people feel seen, known and valued through elevated, eco-friendly gifts that showcase the most exciting finds from small Canadian brands.",
         "image": "shopify:\/\/shop_images\/HomepageImage_Export.png",
         "enable_card_style": false,
         "text_vertical_alignment": "flex-end",
@@ -76,7 +76,7 @@
             "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/icon_1_147x125_crop_center.png?v=1663723952",
             "tab_text": "Gifts with meaning",
             "title": "Gifts that tell a story.",
-            "body": "Our gifts showcase small businesses, including BIPOC, female-founded, social-impact driven, and sustainable brands. Sharing their stories with you is one of our greatest joys.",
+            "body": "Our gifts showcase Canadian small businesses, including BIPOC, female-founded, social-impact driven, and sustainable brands. Sharing their stories with you is one of our greatest joys.",
             "cta_text": "",
             "cta_link": "shopify:\/\/collections\/gift-baskets",
             "image": "shopify:\/\/shop_images\/4to3-Cropped3.jpg"

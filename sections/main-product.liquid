@@ -624,7 +624,16 @@
                         value="{{ product.selected_or_first_available_variant.id }}"
                         disabled
                       >
+
+<div id="gsAppContainer" class="gs__app-container"></div>
+
+
+                      
                       <div class="product-form__buttons">
+
+
+
+                      
                         <div
                           class="product-form__input product-form__quantity{% if settings.inputs_shadow_vertical_offset != 0 and settings.inputs_shadow_vertical_offset < 0 %} product-form__quantity-top{% endif %}"
                           {{ block.shopify_attributes }}

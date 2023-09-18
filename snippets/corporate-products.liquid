@@ -70,57 +70,6 @@
 </style>
 
 <script type="module">
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
   window.customerCollections = [
     {% for collection in collections %}
       {% if collection.metafields.custom.customer_id != blank %}
@@ -210,6 +159,8 @@
           sosInventory,
         };
       });
+
+      console.log('gets here')
       
       // Merge products with the same product_id
       campaignItems = mergeProducts(campaignItems);
