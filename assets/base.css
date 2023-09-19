@@ -2343,3 +2343,10 @@ details-disclosure > details {
 .bxp-bldr-form-control.bxp-mt-10 {
   padding: 0.5rem!important;
 }
+
+#gs__toggle-box{
+  margin-bottom: 40px;
+}
+#gs__toggle-box label{
+  font-size: 20px;
+}

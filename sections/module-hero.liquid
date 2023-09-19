@@ -8,6 +8,7 @@
   {% assign text_align = 'left' %}
 {% endif %}
 
+{% if product.metafields.custom.hide_recommended_products_and_gifting_banner != true %}
 <div class="{% if enable_card_style %}padding-vertical padding-huge{% endif %}">
   <div class="{% if enable_card_style %}container{% endif %}">
     <div class="hero-background {% if enable_card_style %}is-card-style{% endif %} {{ section.settings.background_color }}">
@@ -83,7 +84,7 @@
     justify-content: space-between;
   }
 </style>
-
+{% endif %}
 {% schema %}
   {
     "name": "Hero",
