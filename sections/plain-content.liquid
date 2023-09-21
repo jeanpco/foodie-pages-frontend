@@ -3,7 +3,7 @@
 {% assign title = section.settings.title %}
 
 {% if template == 'collection' %}
-  {% assign body = collection.description | strip_html %}
+  {% assign body = collection.description %}
   {% assign overline = collection.metafields.custom.overline %}
   {% assign title = collection.title %}
 {% endif %}
@@ -47,7 +47,7 @@
       "default": "{{ collection.title }}"
     },
     {
-      "type": "text",
+      "type": "richtext",
       "id": "body",
       "label": "Body"
     },
