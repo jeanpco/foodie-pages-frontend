@@ -1,16 +1,5 @@
 {
   "sections": {
-    "7e4c1c21-85d4-4fc6-a6bc-7d28bba47d9b": {
-      "type": "module-split-content",
-      "settings": {
-        "overline": "Quick shop",
-        "title": "<p>{{ collection.title }}<\/p>",
-        "heading_style": "h1",
-        "body": "Each foodiepages gift basket is designed with premium goods from diverse, independently-owned makers and brands across Canada.",
-        "body_rte": "",
-        "layout_style": "content-right"
-      }
-    },
     "banner": {
       "type": "plain-content",
       "settings": {
@@ -32,7 +21,6 @@
     }
   },
   "order": [
-    "7e4c1c21-85d4-4fc6-a6bc-7d28bba47d9b",
     "banner",
     "product-grid"
   ]
