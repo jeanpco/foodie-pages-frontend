@@ -1,5 +1,15 @@
 {{ 'module-split-content.css' | asset_url | stylesheet_tag }}
 
+{% if template.name == 'collection' %}
+  {% if section.settings.image_height_auto %} 
+    <style>
+      .split-content_image img{
+        height: auto;
+      }
+    </style>
+  {% endif %} 
+{% endif %}
+
 <div class="split-content container">
   <div class="split-content_container margin-vertical margin-huge {{ section.settings.layout_style }}">
 
@@ -72,6 +82,11 @@
       "type": "image_picker",
       "id": "image",
       "label": "Image"
+    },
+    {
+      "type": "checkbox",
+      "id":"image_height_auto",
+      "label": "Set image height to default"
     },
     {
       "type": "text",

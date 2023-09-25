@@ -1,3 +1,4 @@
+{% if product.metafields.custom.hide_recommended_products_and_gifting_banner != true %}
 {{ 'swiper.css' | asset_url | stylesheet_tag }}
 
 <link rel="stylesheet" href="{{ 'section-product-recommendations.css' | asset_url }}" media="print" onload="this.media='all'">
@@ -56,7 +57,7 @@
   {% endif %}
 
 </div>
-
+{% endif %}
 {% schema %}
 {
   "name": "Product Recommendations",
