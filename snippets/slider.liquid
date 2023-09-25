@@ -3,13 +3,18 @@
   <div class="swiper-wrapper padding-bottom padding-xlarge">            
 
     {% for item in items %}
-      <li class="product-card-container swiper-slide">
-        {% render 'card-pdp',
-          card_product: item,
-          show_quick_add: false,
-          section_id: id,
-        %}
-      </li>
+
+      {% if item.metafields.custom.hide_from_search %}
+        {% continue %}
+      {% else %}
+        <li class="product-card-container swiper-slide">
+          {% render 'card-pdp',
+            card_product: item,
+            show_quick_add: false,
+            section_id: id,
+          %}
+        </li>
+      {% endif %}
 
       {% if forloop.index == 2 and settings.promo_title != blank %}
         <li class="product-card-container swiper-slide">
