@@ -6,7 +6,7 @@
         "overline": "one of the fastest growing gifting companies of 2022",
         "title": "<p>Hi, we’re foodiepages<\/p>",
         "heading_style": "h2",
-        "body": "We're setting out to freshen-up the old-fashioned gift basket industry with modern, eco-friendly gifts that are designed to nourish personal and professional relationships.",
+        "body": "We're setting out to freshen-up the old-fashioned gift basket industry with modern, eco-friendly gifts that are designed to be elevated and impactful any time of year.",
         "image": "shopify:\/\/shop_images\/Screen_Shot_2022-11-15_at_5.04.39_PM_6bf64d73-8293-4cc3-99e5-c85cf593f649.png",
         "enable_card_style": false,
         "text_vertical_alignment": "center",
@@ -23,7 +23,7 @@
           "settings": {
             "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/book.svg?v=1669133706",
             "title": "Storytelling",
-            "body": "The best gifts have personal stories which is why we source unique items from small businesses across Canada.",
+            "body": "The best gifts have personal stories which is why we source unique items from small brands across Canada.",
             "cta_text": "",
             "cta_link": ""
           }
@@ -79,6 +79,7 @@
       "disabled": true,
       "settings": {
         "image": "shopify:\/\/shop_images\/Untitled_design.png",
+        "image_height_auto": false,
         "overline": "",
         "title": "<p>Gifts that <em>celebrate<\/em> small business<\/p>",
         "heading_style": "h1",
