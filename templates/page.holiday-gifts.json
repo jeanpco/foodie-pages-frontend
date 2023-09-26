@@ -6,8 +6,8 @@
         "02d55e23-f307-4138-a9bd-10d797daa746": {
           "type": "cta",
           "settings": {
-            "cta_text": "Join The Waitlist",
-            "cta_link": "shopify:\/\/pages\/contact-us"
+            "cta_text": "Browse Holiday Catalog",
+            "cta_link": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/Foodiepages_2023_Holiday_Catalogue.pdf?v=1695741438"
           }
         }
       },
@@ -15,10 +15,10 @@
         "02d55e23-f307-4138-a9bd-10d797daa746"
       ],
       "settings": {
-        "overline": "coming soon",
+        "overline": "Holiday Gift Guide",
         "title": "<p>Our 2023 Holiday Gift Catalog<\/p>",
         "heading_style": "h1",
-        "body": "Discover new personalized options, new inventory, and ready-to-ship gift ideas that celebrate Canadian small businesses. \n\nGet ahead of the game and pre-order the packages that often sell out during the season. Join the waitlist to be the first to view our 2023 Holiday Catalog!",
+        "body": "Who says business gifts need to feel corporate? Our 2023 Holiday Catalog includes new personalized gift options and ready-to-ship gift ideas that celebrate Canadian small businesses.",
         "image": "shopify:\/\/shop_images\/09A1760.jpg",
         "enable_card_style": false,
         "text_vertical_alignment": "center",
@@ -29,7 +29,6 @@
     },
     "540551bc-af60-4262-9fa5-9c86a6e53957": {
       "type": "image",
-      "disabled": true,
       "settings": {
         "image": "shopify:\/\/shop_images\/0001_2.jpg"
       }
