@@ -272,8 +272,8 @@
         border: 1px solid var(--color-grey-200);
     }
     .bxp-bldr-item label img {
-        min-height: 300px;
-        max-height: 450px;
+        min-height: 300px !important;
+        max-height: 450px !important;
         height: 30vw;
         margin: 0;
         padding: 2rem;
