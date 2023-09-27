@@ -60,10 +60,8 @@
         {%- endif -%}
         <div class="card__content">        
           <div class="card__information">
-            <h3 class="card__heading{% if show_excerpt %} h2{% endif %}">
-              <a href="{{ article.url }}" class="full-unstyled-link">
-                {{ article.title | truncate: 50 | escape }}
-              </a>
+            <h3 class="card__heading{% if show_excerpt %} h2{% endif %} text-color-tertiary">
+              {{ article.title | truncate: 50 | escape }}
             </h3>
             <div class="article-card__info caption-with-letter-spacing h5">
               {%- if show_date -%}
@@ -100,9 +98,7 @@
       <div class="card__content">
         <div class="card__information">
           <h3 class="card__heading{% if show_excerpt %} h2{% endif %}">
-            <a href="{{ article.url }}" class="full-unstyled-link">
-              {{ article.title | truncate: 50 | escape }}
-            </a>
+            {{ article.title | truncate: 50 | escape }}
           </h3>
           <div class="article-card__info caption-with-letter-spacing h5">
             {%- if show_date -%}
@@ -135,6 +131,7 @@
           </div>
         {%- endif -%}  
       </div>
+      <a href="{{ article.url }}" class="read-more">Read more</a>
     </div>
   </div>
 {%- endif -%}

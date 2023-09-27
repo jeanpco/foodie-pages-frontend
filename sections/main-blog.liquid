@@ -17,8 +17,9 @@
 {%- endstyle -%}
 
 {%- paginate blog.articles by 6 -%}
-  <div class="main-blog page-width section-{{ section.id }}-padding">
-    <h1 class="title--primary">{{ blog.title | escape }}</h1>
+<div class="page-wrapper background-color-azul-verdoso-10">
+  <div class="container">
+    {% comment %} <h1 class="title--primary">{{ blog.title | escape }}</h1> {% endcomment %}
 
     <div class="blog-articles {% if section.settings.layout == 'collage' %}blog-articles--collage{% endif %}">
       {%- for article in blog.articles -%}
@@ -40,6 +41,7 @@
       {%- render 'pagination', paginate: paginate -%}
     {%- endif -%}
   </div>
+</div>
 {%- endpaginate -%}
 
 {% schema %}

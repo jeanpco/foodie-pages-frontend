@@ -1,12 +1,41 @@
 {
   "sections": {
+    "ec20a39c-b809-48ac-8796-5d8a1e120a70": {
+      "type": "module-split-content",
+      "disabled": true,
+      "settings": {
+        "image": "shopify:\/\/shop_images\/Mask_group.png",
+        "image_height_auto": false,
+        "overline": "",
+        "title": "<p>Welcome!<\/p>",
+        "heading_style": "h1",
+        "body": "Each foodiepages gift basket is designed with premium goods from diverse, independently-owned makers and brands across Canada.",
+        "body_rte": "",
+        "layout_style": "content-left"
+      }
+    },
+    "c12d9046-7e39-4bae-b364-ae93e165f018": {
+      "type": "module-hero",
+      "settings": {
+        "overline": "",
+        "title": "<p>Welcome!<\/p>",
+        "heading_style": "h1",
+        "body": "Each foodiepages gift basket is designed with premium goods from diverse, independently-owned makers and brands across Canada.",
+        "image": "shopify:\/\/shop_images\/Mask_group.png",
+        "enable_card_style": true,
+        "text_vertical_alignment": "center",
+        "layout_style": "two-columns",
+        "background_color": "background-color-secondary",
+        "trusted_by_text": "Trusted by"
+      }
+    },
     "main": {
       "type": "main-blog",
       "settings": {
         "layout": "grid",
         "show_image": true,
         "image_height": "medium",
-        "show_date": true,
+        "show_date": false,
         "show_author": false,
         "padding_top": 36,
         "padding_bottom": 36
@@ -14,6 +43,8 @@
     }
   },
   "order": [
+    "ec20a39c-b809-48ac-8796-5d8a1e120a70",
+    "c12d9046-7e39-4bae-b364-ae93e165f018",
     "main"
   ]
 }

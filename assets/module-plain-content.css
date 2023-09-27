@@ -1,0 +1,10 @@
+.plain-content_header p {
+    margin-top: var(--spacing-small-desktop);
+}
+.plain-content_header ul{
+    padding-left: 1.25rem;
+}
+.plain-content_header ul li{
+    list-style-type: disc;
+    margin-top: var(--spacing-small-desktop);
+}
