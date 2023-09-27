@@ -1,5 +1,9 @@
 
-    .bxp-overlay-icon {
+    .bxp-bldr-step{
+        max-width: var(--width-desktop);
+        margin: auto;
+    }
+   .bxp-overlay-icon {
         display: none;
     }
     .bxp-deselect {
@@ -179,8 +183,8 @@
         margin-bottom: 2rem;
     }
     .bxp-bldr-col-md-4.bxp-bldr-col-lg-3.bxp-mt-15 {
-        flex: 0 0 calc(25% - 0.75rem);
-        max-width: calc(25% - 0.75rem);
+        flex: 0 0 calc(25% - 0.75rem) !important;
+        max-width: calc(25% - 0.75rem) !important;
         padding: 0;
         margin: 0;
     }
@@ -200,8 +204,8 @@
             margin-bottom: 2.5rem;
         }
         .bxp-bldr-col-md-4.bxp-bldr-col-lg-3.bxp-mt-15 {
-            flex: 100%;
-            max-width: 100%;
+            flex: 100% !important;
+            max-width: 100% !important;
         }
         .bxp-bldr-row.bxp-bldr-justify-content-center:not(.bxp-step-content) {
             flex-direction: column;
