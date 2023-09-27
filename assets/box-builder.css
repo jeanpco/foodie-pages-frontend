@@ -3,6 +3,10 @@
         max-width: var(--width-desktop);
         margin: auto;
     }
+    .bxp-bldr-row{
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
    .bxp-overlay-icon {
         display: none;
     }
@@ -44,8 +48,6 @@
     .bxp-bldr-row.bxp-step-box.bxp-flex {
         margin-bottom: 2rem;
         border-radius: 24px;
-        margin-left: 0 !important;
-        margin-right: 0 !important;
     }
     .bxp-reset {
         right: 20px;
