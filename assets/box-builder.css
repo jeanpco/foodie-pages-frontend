@@ -1,5 +1,13 @@
 
-    .bxp-overlay-icon {
+    .bxp-bldr-step{
+        max-width: var(--width-desktop);
+        margin: auto;
+    }
+    .bxp-bldr-row{
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+   .bxp-overlay-icon {
         display: none;
     }
     .bxp-deselect {
@@ -166,9 +174,9 @@
     }
     .bxp-bldr-col-md-3,
     .bxp-bldr-col-md-4 {
-        flex: 0 0 calc(33.333333% - 0.6666666667rem);
-        max-width: calc(33.333333% - 0.6666666667rem);
-        padding: 0;
+        flex: 0 0 calc(33.333333% - 0.6666666667rem) !important;
+        max-width: calc(33.333333% - 0.6666666667rem) !important;
+        padding: 0 !important;
     }
     .bxp-bldr-col-md-6 {
         flex: 0 0 calc(50% - 1rem);
@@ -179,8 +187,8 @@
         margin-bottom: 2rem;
     }
     .bxp-bldr-col-md-4.bxp-bldr-col-lg-3.bxp-mt-15 {
-        flex: 0 0 calc(25% - 0.75rem);
-        max-width: calc(25% - 0.75rem);
+        flex: 0 0 calc(25% - 0.75rem) !important;
+        max-width: calc(25% - 0.75rem) !important;
         padding: 0;
         margin: 0;
     }
@@ -200,8 +208,8 @@
             margin-bottom: 2.5rem;
         }
         .bxp-bldr-col-md-4.bxp-bldr-col-lg-3.bxp-mt-15 {
-            flex: 100%;
-            max-width: 100%;
+            flex: 100% !important;
+            max-width: 100% !important;
         }
         .bxp-bldr-row.bxp-bldr-justify-content-center:not(.bxp-step-content) {
             flex-direction: column;
@@ -246,8 +254,8 @@
         .bxp-bldr-col-md-3,
         .bxp-bldr-col-md-4,
         .bxp-bldr-col-md-6 {
-            flex: 0 0 100%;
-            max-width: 100%;
+            flex: 0 0 100% !important;
+            max-width: 100% !important;
             padding: 0;
         } 
       } 
@@ -272,8 +280,8 @@
         border: 1px solid var(--color-grey-200);
     }
     .bxp-bldr-item label img {
-        min-height: 300px;
-        max-height: 450px;
+        min-height: 300px !important;
+        max-height: 450px !important;
         height: 30vw;
         margin: 0;
         padding: 2rem;
@@ -359,3 +367,4 @@
         margin-bottom: 1rem;
         color: var(--color-grey-800);
     }
+    
