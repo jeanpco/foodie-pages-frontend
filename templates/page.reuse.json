@@ -1,272 +1,24 @@
 {
   "sections": {
-    "main": {
-      "type": "module-hero",
-      "settings": {
-        "overline": "giving back",
-        "title": "<p>Community is in our DNA<\/p>",
-        "heading_style": "h2",
-        "body": "Gifting is about connection. We want to foster connection through community, and we want you to be a part of it! To us, this means putting people and our communities first in the decisions that we make: procuring small batch products sourced from local businesses, practicing environmental consciousness in every step of our gift assembly process, and giving back to the community.",
-        "enable_card_style": false,
-        "text_vertical_alignment": "center",
-        "layout_style": "two-columns",
-        "background_color": "background-color-azul-verdoso-10",
-        "trusted_by_text": ""
-      }
-    },
-    "98617d86-7ff6-4709-8c83-4278ba79e81f": {
-      "type": "module-split-content",
-      "settings": {
-        "image": "shopify:\/\/shop_images\/Untitled_design_1.png",
-        "overline": "",
-        "title": "<p>Donating 1% to charities<\/p>",
-        "heading_style": "h2",
-        "body": "",
-        "body_rte": "<p>We believe giving back is essential to community building and helps others have access to the resources they need, when they need them. We set aside 1% from every gift box sold through our website and donate to local charities. Our 2023 pledge will be donated to the following causes that align with our values:<br\/><\/p><ul><li>Canadian Mental Health Association in support of Mental Health Awareness. Mental health is a cause that we are deeply passionate about as a brand. In any given year, 1 in 5 people in Canada will personally experience a mental health problem or illness.<\/li><li>Daily Bread Food Bank in support of closing the gap on food insecurity. Visits to food banks in some areas of the country have quadrupled since the COVID-19 pandemic.<\/li><\/ul><p>For every review (good or bad), we also donate an additional $1 to these organizations. If you have ordered from us before, we encourage you to leave a review on <a href=\"https:\/\/www.google.com\/maps\/place\/foodiepages\/@43.6259675,-79.6565061,17z\/data=!3m1!4b1!4m6!3m5!1s0x882b471d8860043f:0x104fcba9058a7ad1!8m2!3d43.6259675!4d-79.6565061!16s%2Fg%2F11rq2cx6tt?entry=ttu\" target=\"_blank\" title=\"https:\/\/www.google.com\/maps\/place\/foodiepages\/@43.6259675,-79.6565061,17z\/data=!3m1!4b1!4m6!3m5!1s0x882b471d8860043f:0x104fcba9058a7ad1!8m2!3d43.6259675!4d-79.6565061!16s%2Fg%2F11rq2cx6tt?entry=ttu\">Google<\/a> or <a href=\"https:\/\/www.facebook.com\/FoodiePages.ca\/reviews\" target=\"_blank\" title=\"https:\/\/www.facebook.com\/FoodiePages.ca\/reviews\">Facebook<\/a>.<\/p>",
-        "layout_style": "content-left"
-      }
-    },
-    "09298fc1-0dec-4400-bc9f-488ea97e1fa7": {
-      "type": "module-split-content",
-      "settings": {
-        "image": "shopify:\/\/shop_images\/Giving_Back_-_pic1.png",
-        "overline": "",
-        "title": "<p>Send one gift, support many small businesses.<\/p>",
-        "heading_style": "h2",
-        "body": "",
-        "body_rte": "<p>In a world where products can be sourced from any corner of the earth, we choose to source our products in Canada. <\/p><p>From drinks and snacks to homewares and wellness, we take pride in sourcing products that are made locally by small businesses who value craftsmanship, quality and transparency.<\/p>",
-        "layout_style": "content-right"
-      }
-    },
-    "2945c3e5-4abe-4c2d-8e55-f48243d3a692": {
-      "type": "module-split-content",
-      "settings": {
-        "image": "shopify:\/\/shop_images\/09A2126.jpg",
-        "overline": "",
-        "title": "<p>Caring about the environment<\/p>",
-        "heading_style": "h2",
-        "body": "",
-        "body_rte": "<p>We care deeply about the environment and our impact on it. We know that gifting is not always environmentally friendly; we aim to be conscious and proactive about the environmental impact of our gifts, and encourage our clients likewise. <\/p><ul><li>Our gift boxes are locally produced in Toronto and are made from 90%+ post-consumer recycled material, and can of course be recycled themselves.<\/li><li>We prioritize using recycled materials whenever possible.  For example, while we feel bubble wrap is the preferred way to protect glass for long distance shipping, we only purchase materials with post-industrial content. <\/li><li>By stocking Canadian-made products we keep the distance goods travel from suppliers to us and you at a minimum resulting in a reduced carbon.<\/li><\/ul><p>We will continue to make improvements in our sustainability achievements.<\/p>",
-        "layout_style": "content-left"
-      }
-    },
-    "b5797203-b142-444b-be2c-d6e9d37312fe": {
-      "type": "module-features",
-      "blocks": {
-        "2c55f2d5-0c58-4b13-af11-302a514fa449": {
-          "type": "features",
-          "settings": {
-            "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/book.svg?v=1669133706",
-            "title": "Storytelling",
-            "body": "Behind every great gift is a great story. We believe in creating thoughtful gifts that tell a story and deepen relationships.",
-            "cta_text": "",
-            "cta_link": ""
-          }
-        },
-        "fae23ace-5ca1-43a0-a58b-9c5d1bef7e5b": {
-          "type": "features",
-          "settings": {
-            "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/team.svg?v=1669133706",
-            "title": "Connection",
-            "body": "Connection is a crucial part of the human experience. We create lasting connections through shared stories, values, and, most importantly, thoughtful and personalized gifts.",
-            "cta_text": "",
-            "cta_link": ""
-          }
-        },
-        "94353301-183f-4ec1-9b25-4d500681640f": {
-          "type": "features",
-          "settings": {
-            "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/heart.svg?v=1669133706",
-            "title": "Love It, or Leave It",
-            "body": "Every product has been tested and tasted – and then some. If it doesn't make the cut, it doesn't make it on our site.",
-            "cta_text": "",
-            "cta_link": ""
-          }
-        },
-        "29189724-18f8-43ad-ad45-9aea0d08c6f0": {
-          "type": "features",
-          "settings": {
-            "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/badge_with_star.svg?v=1669133892",
-            "title": "Never Settle",
-            "body": "You expect a lot from us, and that's not taken for granted. We're always hustling to earn your business, and we work extra hard for that moment of wow.",
-            "cta_text": "",
-            "cta_link": ""
-          }
-        }
-      },
-      "block_order": [
-        "2c55f2d5-0c58-4b13-af11-302a514fa449",
-        "fae23ace-5ca1-43a0-a58b-9c5d1bef7e5b",
-        "94353301-183f-4ec1-9b25-4d500681640f",
-        "29189724-18f8-43ad-ad45-9aea0d08c6f0"
-      ],
-      "disabled": true,
-      "settings": {
-        "overline": "The best gifting service in Canada",
-        "title": "<p>How we see it<\/p>",
-        "heading_style": "h2",
-        "body": "Here are a few things we've always believed to be important.",
-        "cta_text": "",
-        "cta_link": "shopify:\/\/pages\/how-it-works"
-      }
-    },
-    "823bd50c-3555-4282-8b34-ab0e8584323d": {
-      "type": "module-vertical-tabs",
-      "blocks": {
-        "db40d850-e629-4e9b-b0e8-d2d20e4414ad": {
-          "type": "tab",
-          "settings": {
-            "overline": "",
-            "title": "Celebrating Makers",
-            "body": "We are committed to sourcing small. We work with 100s of small, independently-owned businesses across Canada. We care about the stories behind each product and the passion that drives entrepreneurs from idea to launch.",
-            "cta_text": "Get in touch",
-            "cta_link": ""
-          }
-        },
-        "ab7fff74-0668-4779-9c58-a3781089ca61": {
-          "type": "tab",
-          "settings": {
-            "overline": "",
-            "title": "Expert Curation",
-            "body": "Our team is committed to helping you discover the most unique and exciting small batch goods from across Canada. We take chances on new brands you may not yet see elsewhere. With a wide selection of 100s of brands, you’ll have a blast discovering new trends.",
-            "cta_text": "Get in touch",
-            "cta_link": ""
-          }
-        },
-        "47847899-6a08-4443-881a-c2133258173d": {
-          "type": "tab",
-          "settings": {
-            "overline": "",
-            "title": "Diversity & Inclusion",
-            "body": "Our business is built on the idea that it is time to increase diversity and inclusion in corporate gifting. We source from underrepresented small businesses and independent makers, and work to share diverse perspectives.",
-            "cta_text": "Get in touch",
-            "cta_link": ""
-          }
-        },
-        "2d4083b3-581a-4ade-b225-6f2117a93f50": {
-          "type": "tab",
-          "settings": {
-            "overline": "",
-            "title": "Commitment to Quality",
-            "body": "We cut through the noise so you don't have to, seeking out high quality goods with heart and soul. Each brand goes through a rigorous selection process to make sure we have a collection of products that are truly the best of the best.",
-            "cta_text": "Get in touch",
-            "cta_link": ""
-          }
-        },
-        "a25db7f7-6489-43d4-89c5-e1e47404b228": {
-          "type": "tab",
-          "disabled": true,
-          "settings": {
-            "overline": "Step 5",
-            "title": "Software + Stores",
-            "body": "Ship, track and manage gifts all from your couch (or office chair). No more dusty supply closets or shipping boxes under your desk.",
-            "cta_text": "Get in touch",
-            "cta_link": ""
-          }
-        }
-      },
-      "block_order": [
-        "db40d850-e629-4e9b-b0e8-d2d20e4414ad",
-        "ab7fff74-0668-4779-9c58-a3781089ca61",
-        "47847899-6a08-4443-881a-c2133258173d",
-        "2d4083b3-581a-4ade-b225-6f2117a93f50",
-        "a25db7f7-6489-43d4-89c5-e1e47404b228"
-      ],
-      "disabled": true,
-      "settings": {
-        "overline": "What's inside counts",
-        "title": "<p>We're all in on <em>small<\/em> brands.<\/p>",
-        "heading_style": "h2",
-        "image": "shopify:\/\/shop_images\/Image.jpg",
-        "cta_text": "Get in touch",
-        "cta_link": "#contact",
-        "body": "",
-        "secondary_cta_text": "Get in touch",
-        "secondary_cta_link": ""
-      }
-    },
-    "05ea480d-037b-4297-9c3d-d6160866116b": {
-      "type": "module-columns",
-      "blocks": {
-        "765a0837-b3a6-417e-a20d-8c4151c40912": {
-          "type": "card",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/My_project_1.jpg",
-            "title": "Barbet",
-            "body": "In an attempt to manage a health condition, Katie decided to go alcohol-free. While she didn’t miss drinking, she did miss the comfort and connection that alcohol provided in social settings. This led Katie and her sister Andrea to create a line of full-bodied, elevated sparkling waters that you can drink straight out of the can – or even mix with spirits.",
-            "cta_text": "",
-            "cta_link": "#contact"
-          }
-        },
-        "2799395e-848f-4345-9be1-4844c0f3b341": {
-          "type": "card",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/My_project_2.jpg",
-            "title": "Sade Baron",
-            "body": "With the health of skin and planet top of mind,  mother-daughter duo Sade and Rachel Baron set out to create a line of high-quality, vegan body care products crafted with nutrient-rich superfoods. Backed by a journey of research and experimentation, every Sade Baron product is designed to replenish, moisturize, and prep your skin so it can look and feel its best.",
-            "cta_text": "",
-            "cta_link": ""
-          }
-        },
-        "1a1d97cc-0c9f-4023-b4cf-a2188c76fa3e": {
-          "type": "card",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/Screen_Shot_2022-11-20_at_9.09.14_PM.png",
-            "title": "Eatable",
-            "body": "Charlene and Vince left their desk jobs to pursue a lifelong passion for food, and started a journey to create a perfect pairing of two loves: snacking and alcohol. Their alcohol-infused popcorns are made with non-GMO corn kernels from Ontario farms and butter from local dairy farmers.",
-            "cta_text": "",
-            "cta_link": "#contact"
-          }
-        },
-        "81289acb-6a37-4c70-84ec-d781a6d0b072": {
-          "type": "card",
-          "disabled": true,
-          "settings": {
-            "image": "shopify:\/\/shop_images\/Image.jpg",
-            "title": "Client Appreciation Gifts",
-            "body": "Show your appreciation with a branded and personalized gift.",
-            "cta_text": "Get a quote",
-            "cta_link": "#corporate-contact"
-          }
-        }
-      },
-      "block_order": [
-        "765a0837-b3a6-417e-a20d-8c4151c40912",
-        "2799395e-848f-4345-9be1-4844c0f3b341",
-        "1a1d97cc-0c9f-4023-b4cf-a2188c76fa3e",
-        "81289acb-6a37-4c70-84ec-d781a6d0b072"
-      ],
-      "disabled": true,
-      "settings": {
-        "overline": "meet the makers",
-        "title": "Supplier Spotlight",
-        "body": "We get excited about brands that resonate deeply with our customers.",
-        "cta_text": "Shop gift boxes",
-        "cta_link": "shopify:\/\/collections\/gift-baskets",
-        "heading_style": "h2"
-      }
-    },
     "582103a2-47d5-46e9-9ba6-ede2b4f3963b": {
       "type": "module-hero",
       "blocks": {
         "a0cdd988-b288-4542-9434-6c35f9543944": {
           "type": "cta",
           "settings": {
-            "cta_text": "Learn more",
-            "cta_link": "shopify:\/\/pages\/contact-us"
+            "cta_text": "Book a Pick Up with UPS",
+            "cta_link": "https:\/\/wwwapps.ups.com\/pickup\/schedule?loc=en_CA"
           }
         }
       },
       "block_order": [
         "a0cdd988-b288-4542-9434-6c35f9543944"
       ],
-      "disabled": true,
       "settings": {
-        "overline": "",
-        "title": "<p>Get in touch!<\/p>",
+        "overline": "A Sustainable Gifting Ecosystem",
+        "title": "<p>Gifting and Giving Back<\/p>",
         "heading_style": "h2",
-        "body": "Each foodiepages gift basket is designed with premium goods from diverse, independently-owned makers and brands across Canada.",
-        "image": "shopify:\/\/shop_images\/Frame_43428_2.png",
+        "body": "We are on a mission to make every part of our business more sustainable. Our wood crates are handmade in Canada, and are designed to be reused. If you don’t have a use for this crate, you can send it back to us to use again instead of sending it to the landfill.\n\nReturns are easy:\n\n1. Put the empty wood crate back in the shipping box.\n2. Use the pre-paid return shipping label included with your gif to send the crate back to us.",
         "enable_card_style": true,
         "text_vertical_alignment": "center",
         "layout_style": "two-columns",
@@ -276,13 +28,6 @@
     }
   },
   "order": [
-    "main",
-    "98617d86-7ff6-4709-8c83-4278ba79e81f",
-    "09298fc1-0dec-4400-bc9f-488ea97e1fa7",
-    "2945c3e5-4abe-4c2d-8e55-f48243d3a692",
-    "b5797203-b142-444b-be2c-d6e9d37312fe",
-    "823bd50c-3555-4282-8b34-ab0e8584323d",
-    "05ea480d-037b-4297-9c3d-d6160866116b",
     "582103a2-47d5-46e9-9ba6-ede2b4f3963b"
   ]
 }
