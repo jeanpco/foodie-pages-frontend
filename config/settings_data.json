@@ -239,7 +239,7 @@
       "announcement-banner": {
         "type": "announcement-banner",
         "settings": {
-          "show_banner": true,
+          "show_banner": false,
           "text": "Happy Holidays! All orders placed after Friday, 12\/22 at noon EST will be shipped the week of 1\/8!",
           "link": ""
         }
