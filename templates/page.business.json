@@ -322,10 +322,10 @@
       "settings": {
         "image": "shopify:\/\/shop_images\/Image.jpg",
         "image_height_auto": false,
-        "overline": "Corporate Gifting",
-        "title": "<p>Curate and send hundreds of gifts at a time<\/p>",
+        "overline": "",
+        "title": "<p>Stand out by supporting <em>small<\/em><\/p>",
         "heading_style": "h2",
-        "body": "Choose from a selection of pre-curated gifts, or build your own custom gift box. All of our custom gifts are filled with high quality locally-sourced goods and designed to delight your team.",
+        "body": "Engage employees, stand out to clients and elevate events with custom corporate gifts that share your company values. Our products are hand-picked from Canadian brands, supporting small business legends.",
         "body_rte": "",
         "layout_style": "content-left"
       }
