@@ -479,6 +479,21 @@
         "trusted_by_text": "Trusted by"
       }
     },
+    "fda3c8e7-0321-460c-b8b8-b9edd8abe0e7": {
+      "type": "product-recommendations",
+      "disabled": true,
+      "settings": {
+        "overline": "Small batch standouts",
+        "title": "<p>Curated Gift Boxes<\/p>",
+        "body": "Discover unique gifts they’ll truly remember.",
+        "collection": "gift-baskets",
+        "icon_url": "",
+        "promo_title": "",
+        "promo_body": "",
+        "promo_cta_text": "Shop all",
+        "promo_cta_link": ""
+      }
+    },
     "ada08afb-e351-43c7-83ae-1d4cb75ae1b2": {
       "type": "module-testimonials",
       "blocks": {
@@ -546,6 +561,7 @@
     "19291dd4-710b-4313-9d7d-4847e4b2ab64",
     "67c66074-dbe7-48ca-909f-8416d2e86d32",
     "d5778432-2fd8-4a16-8893-9bb2eaa2e555",
+    "fda3c8e7-0321-460c-b8b8-b9edd8abe0e7",
     "ada08afb-e351-43c7-83ae-1d4cb75ae1b2",
     "3d380ef2-30ad-4948-8fdf-6906d4063a49"
   ]
