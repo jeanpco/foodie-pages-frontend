@@ -42,9 +42,9 @@
           "type": "features",
           "settings": {
             "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/placeholder-svg-square.svg?v=1666645913",
-            "title": "Value 3",
-            "body": "Worldwide fulfillment to one location or 100s of addresses.",
-            "cta_text": "Learn More",
+            "title": "No Contracts",
+            "body": "Only pay for redeemed gifts with no order minimums",
+            "cta_text": "",
             "cta_link": "shopify:\/\/pages\/contact-us"
           }
         },
