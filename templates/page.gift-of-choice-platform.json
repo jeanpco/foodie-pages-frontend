@@ -98,11 +98,21 @@
             "cta_link": ""
           }
         },
+        "tab_nepkn6": {
+          "type": "tab",
+          "settings": {
+            "overline": "Step 1",
+            "title": "Create a Campaign",
+            "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ut lorem qui lectus molestie malesuada vitae vel purus.",
+            "cta_text": "Get in touch",
+            "cta_link": ""
+          }
+        },
         "2d4083b3-581a-4ade-b225-6f2117a93f50": {
           "type": "tab",
           "settings": {
             "overline": "STEP 3",
-            "title": "Send Out The Link",
+            "title": "Share the URL",
             "body": "Once the page is setup, you're ready to send the URL to whoever you want.",
             "cta_text": "",
             "cta_link": ""
@@ -122,6 +132,7 @@
       "block_order": [
         "db40d850-e629-4e9b-b0e8-d2d20e4414ad",
         "ab7fff74-0668-4779-9c58-a3781089ca61",
+        "tab_nepkn6",
         "2d4083b3-581a-4ade-b225-6f2117a93f50",
         "tab_aKdwKT"
       ],
