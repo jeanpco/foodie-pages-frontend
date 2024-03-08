@@ -138,8 +138,8 @@
       ],
       "settings": {
         "overline": "How it works",
-        "title": "<p>Get Up and Running <em>in less than 24 hours<\/em><\/p>",
-        "heading_style": "h1",
+        "title": "<ul><li>Easy Set up<\/li><li>No Contracts<\/li><\/ul>",
+        "heading_style": "h2",
         "cta_text": "Get in touch",
         "cta_link": "",
         "body": "",
