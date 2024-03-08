@@ -152,11 +152,11 @@
         "a25db7f7-6489-43d4-89c5-e1e47404b228"
       ],
       "settings": {
-        "overline": "What's inside counts",
-        "title": "<p>We're all in on <em>small<\/em> brands.<\/p>",
+        "overline": "",
+        "title": "<p>About Us<\/p>",
         "heading_style": "h2",
         "image": "shopify:\/\/shop_images\/Untitled_design.png",
-        "cta_text": "Get in touch",
+        "cta_text": "",
         "cta_link": "#contact",
         "body": "",
         "secondary_cta_text": "Get in touch",
