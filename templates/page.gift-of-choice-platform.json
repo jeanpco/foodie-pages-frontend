@@ -82,7 +82,7 @@
           "type": "tab",
           "settings": {
             "overline": "STEP 1",
-            "title": "Select gifts within your budget",
+            "title": "Set Your Budget",
             "body": "PLACEHOLDER",
             "cta_text": "Get in touch",
             "cta_link": ""
@@ -102,7 +102,7 @@
           "type": "tab",
           "settings": {
             "overline": "STEP 3",
-            "title": "You Send Out The Link",
+            "title": "Send Out The Link",
             "body": "We offer a wide range of planet-friendly packaging. From fast turn around stock options to custom-printed mailer boxes and keepsake bags.",
             "cta_text": "Get in touch",
             "cta_link": ""
