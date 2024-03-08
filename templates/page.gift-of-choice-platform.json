@@ -52,9 +52,9 @@
           "type": "features",
           "settings": {
             "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/placeholder-svg-square.svg?v=1666645913",
-            "title": "Value 4",
-            "body": "Expert advice based on data and our 10+ years of experience.",
-            "cta_text": "Learn More",
+            "title": "Real-Time Delivery Tracking",
+            "body": "Access tracking numbers for every gift redeemed",
+            "cta_text": "",
             "cta_link": "shopify:\/\/pages\/experiences"
           }
         }
