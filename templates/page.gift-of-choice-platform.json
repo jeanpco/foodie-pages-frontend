@@ -112,8 +112,8 @@
           "type": "tab",
           "settings": {
             "overline": "Step 4",
-            "title": "Employees Pick Their Gift",
-            "body": "Upon receiving the URL, employees can select their preferred gift and submit an order, with any financial transaction. Simply pick the gift and advise where to send it.",
+            "title": "Recipients Pick a Gift",
+            "body": "Upon receiving the URL, recipients can select their preferred gift and submit their address, without any payment.",
             "cta_text": "",
             "cta_link": ""
           }
