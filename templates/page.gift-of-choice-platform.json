@@ -138,8 +138,8 @@
       ],
       "settings": {
         "overline": "How it works",
-        "title": "<ul><li>Easy Set up<\/li><li>No Contracts<\/li><\/ul>",
-        "heading_style": "h2",
+        "title": "<p>Gifting Campaigns<\/p><p><em>Simplified<\/em><\/p>",
+        "heading_style": "h1",
         "cta_text": "Get in touch",
         "cta_link": "",
         "body": "",
