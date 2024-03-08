@@ -162,9 +162,9 @@
           "type": "card",
           "settings": {
             "image": "shopify:\/\/shop_images\/Image.jpg",
-            "title": "Client Appreciation Gifts",
-            "body": "Show your appreciation with a branded and personalized gift.",
-            "cta_text": "Get a quote",
+            "title": "Marketing & Events",
+            "body": "Send a thank-you to webinar attendees or let people select a gift for pick up at an upcoming event.",
+            "cta_text": "Book a Demo",
             "cta_link": "#corporate-contact"
           }
         }
