@@ -81,8 +81,8 @@
         "db40d850-e629-4e9b-b0e8-d2d20e4414ad": {
           "type": "tab",
           "settings": {
-            "overline": "",
-            "title": "1. Select gifts within your budget",
+            "overline": "STEP 1",
+            "title": "Select gifts within your budget",
             "body": "PLACEHOLDER",
             "cta_text": "Get in touch",
             "cta_link": ""
