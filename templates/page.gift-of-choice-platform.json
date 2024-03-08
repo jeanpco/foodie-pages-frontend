@@ -107,12 +107,23 @@
             "cta_text": "Get in touch",
             "cta_link": ""
           }
+        },
+        "tab_aKdwKT": {
+          "type": "tab",
+          "settings": {
+            "overline": "Step 4",
+            "title": "Employees Pick Their Gift",
+            "body": "PLACEHOLDER",
+            "cta_text": "",
+            "cta_link": ""
+          }
         }
       },
       "block_order": [
         "db40d850-e629-4e9b-b0e8-d2d20e4414ad",
         "ab7fff74-0668-4779-9c58-a3781089ca61",
-        "2d4083b3-581a-4ade-b225-6f2117a93f50"
+        "2d4083b3-581a-4ade-b225-6f2117a93f50",
+        "tab_aKdwKT"
       ],
       "settings": {
         "overline": "How it works",
