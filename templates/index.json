@@ -165,17 +165,9 @@
         "c0b96aab-ebea-45f5-883d-582f92cab111": {
           "type": "collection",
           "settings": {
-            "title": "Build-A-Box",
+            "title": "Create Your Own",
             "collection": "box-builder-collection-main-website",
             "cta_link": "shopify:\/\/products\/custom-gift-box"
-          }
-        },
-        "f00d0e50-db70-498b-9cbe-dac1ab8c7341": {
-          "type": "collection",
-          "settings": {
-            "title": "Under $75",
-            "collection": "under-75",
-            "cta_link": "shopify:\/\/collections\/under-75"
           }
         },
         "1ed4348a-d03e-4198-a7e5-c2ac4b470fb3": {
@@ -184,6 +176,14 @@
             "title": "Gourmet",
             "collection": "gourmet-gift-baskets-canada",
             "cta_link": "shopify:\/\/collections\/gourmet-gift-baskets-canada"
+          }
+        },
+        "f00d0e50-db70-498b-9cbe-dac1ab8c7341": {
+          "type": "collection",
+          "settings": {
+            "title": "Under $75",
+            "collection": "under-75",
+            "cta_link": "shopify:\/\/collections\/under-75"
           }
         },
         "000af700-bcb5-4e04-852c-35a79a7eca43": {
@@ -200,8 +200,8 @@
         "6771ce22-b64c-42dd-b6a7-f03fa2cf7df9",
         "f2d9af43-61a5-4c7b-8cdf-81d774905352",
         "c0b96aab-ebea-45f5-883d-582f92cab111",
-        "f00d0e50-db70-498b-9cbe-dac1ab8c7341",
         "1ed4348a-d03e-4198-a7e5-c2ac4b470fb3",
+        "f00d0e50-db70-498b-9cbe-dac1ab8c7341",
         "000af700-bcb5-4e04-852c-35a79a7eca43"
       ],
       "settings": {
