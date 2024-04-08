@@ -3,10 +3,10 @@
     "main": {
       "type": "module-hero",
       "settings": {
-        "overline": "GIFT-OF-CHOICE PLATFORM",
-        "title": "<p>Let employees pick a gift they <em>actually<\/em> want<\/p>",
+        "overline": "",
+        "title": "<p>Gift-of-Choice Campaigns<\/p>",
         "heading_style": "h1",
-        "body": "...because WHAT you gift and where it comes from matters.",
+        "body": "The secure, streamlined way to collect preferences and recipient information for all your gift orders.",
         "image": "shopify:\/\/shop_images\/Image_5655e50a-9fb2-4b42-bf65-e82938753d53.png",
         "enable_card_style": false,
         "text_vertical_alignment": "center",
@@ -18,32 +18,32 @@
     "b5797203-b142-444b-be2c-d6e9d37312fe": {
       "type": "module-features",
       "blocks": {
-        "2c55f2d5-0c58-4b13-af11-302a514fa449": {
-          "type": "features",
-          "settings": {
-            "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/House_Icon_ad18bb28-6228-4917-b026-bbbb22d709f4.png?v=1709871943",
-            "title": "No Address?  No Problem!",
-            "body": "Employees submit their preferred address to claim their gift in a simple form.",
-            "cta_text": "",
-            "cta_link": "shopify:\/\/pages\/about-us"
-          }
-        },
         "fae23ace-5ca1-43a0-a58b-9c5d1bef7e5b": {
           "type": "features",
           "settings": {
             "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/Gift_icon_f2970925-5a93-4fb7-9bcd-735d9ee4908f.png?v=1709871376",
-            "title": "Gift the Right Gift",
-            "body": "Employees pick their preferred gift from a set of pre-curated gifts that align with your brand and budget.",
+            "title": "Multiple Gift Options",
+            "body": "Recipients get to choose exactly what they want! Our products are crafted by small brands and consistently receive five-star reviews in retail.",
             "cta_text": "",
             "cta_link": ""
+          }
+        },
+        "2c55f2d5-0c58-4b13-af11-302a514fa449": {
+          "type": "features",
+          "settings": {
+            "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/House_Icon_ad18bb28-6228-4917-b026-bbbb22d709f4.png?v=1709871943",
+            "title": "Fully Automated Fulfillment",
+            "body": "Your shareable URL aggregates all of your recipient gift preferences and shipping details. Using your recipients' preferences, gifts are fulfilled directly from Foodiepages.",
+            "cta_text": "",
+            "cta_link": "shopify:\/\/pages\/about-us"
           }
         },
         "94353301-183f-4ec1-9b25-4d500681640f": {
           "type": "features",
           "settings": {
             "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/Contract_Icon2.png?v=1709871849",
-            "title": "No Contracts",
-            "body": "Only pay for redeemed gifts with no order minimums",
+            "title": "No Wasted Gifts",
+            "body": "You set the budget, and only pay for gifts that get redeemed.",
             "cta_text": "",
             "cta_link": "shopify:\/\/pages\/contact-us"
           }
@@ -52,25 +52,25 @@
           "type": "features",
           "settings": {
             "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/Truck_Icon_LG.png?v=1709871590",
-            "title": "Real-Time Delivery Tracking",
-            "body": "Access tracking numbers for every gift redeemed",
+            "title": "Delivery Status Tracking",
+            "body": "View real-time gift delivery status and access tracking numbers with ease while thank you’s roll in, and we handle the rest!",
             "cta_text": "",
             "cta_link": "shopify:\/\/pages\/experiences"
           }
         }
       },
       "block_order": [
-        "2c55f2d5-0c58-4b13-af11-302a514fa449",
         "fae23ace-5ca1-43a0-a58b-9c5d1bef7e5b",
+        "2c55f2d5-0c58-4b13-af11-302a514fa449",
         "94353301-183f-4ec1-9b25-4d500681640f",
         "29189724-18f8-43ad-ad45-9aea0d08c6f0"
       ],
       "settings": {
-        "overline": "BENEFITS",
-        "title": "<p>Take guesswork out of gifting<\/p>",
+        "overline": "",
+        "title": "<p>Take <em>guesswork<\/em> out of gifting<\/p>",
         "heading_style": "h2",
-        "body": "Empower employees to pick and ship their gift.  With no contracts or order minimums, gifting just got a whole lot simpler.",
-        "cta_text": "How It Works",
+        "body": "No more guessing at sizes or messy spreadsheets. Gift-of-Choice Campaigns allow you to collect your recipients' address info, size preference, and more, with just an email address.",
+        "cta_text": "",
         "cta_link": "shopify:\/\/pages\/how-it-works",
         "image": "shopify:\/\/shop_images\/Image_5655e50a-9fb2-4b42-bf65-e82938753d53.png"
       }
