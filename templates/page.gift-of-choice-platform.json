@@ -23,7 +23,7 @@
           "settings": {
             "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/Gift_icon_f2970925-5a93-4fb7-9bcd-735d9ee4908f.png?v=1709871376",
             "title": "Multiple Gift Options",
-            "body": "Recipients get to choose exactly what they want! Our products are crafted by small brands and consistently receive five-star reviews in retail.",
+            "body": "Appreciate anyone, anywhere, anytime with a gift of their choice. From custom curation of high quality products, to branded merchandise and custom gifts, we are here to make your people feel seen and valued.",
             "cta_text": "",
             "cta_link": ""
           }
@@ -70,8 +70,8 @@
         "title": "<p>Take <em>guesswork<\/em> out of gifting<\/p>",
         "heading_style": "h2",
         "body": "No more guessing at sizes or messy spreadsheets. Gift-of-Choice Campaigns allow you to collect your recipients' address info, size preference, and more, with just an email address.",
-        "cta_text": "",
-        "cta_link": "shopify:\/\/pages\/how-it-works",
+        "cta_text": "Contact us",
+        "cta_link": "#Contact Us",
         "image": "shopify:\/\/shop_images\/Image_5655e50a-9fb2-4b42-bf65-e82938753d53.png"
       }
     },
@@ -125,6 +125,7 @@
         "2d4083b3-581a-4ade-b225-6f2117a93f50",
         "tab_aKdwKT"
       ],
+      "disabled": true,
       "settings": {
         "overline": "How it works",
         "title": "<p>Gifting Campaigns<\/p><p><em>Simplified<\/em><\/p>",
@@ -186,6 +187,7 @@
         "1a1d97cc-0c9f-4023-b4cf-a2188c76fa3e",
         "81289acb-6a37-4c70-84ec-d781a6d0b072"
       ],
+      "disabled": true,
       "settings": {
         "overline": "GIFT-OF-CHOICE PLATFORM",
         "title": "Use Cases",
@@ -213,7 +215,7 @@
         "overline": "GET STARTED",
         "title": "<p>Ready to elevate your corporate gifting game? <\/p>",
         "heading_style": "h2",
-        "body": "Discover why thousands of leading Canadian companies trust Foodiepages with their corporate gifting. Let's explore the possibilities together!",
+        "body": "Discover why leading Canadian companies trust Foodiepages with their corporate gifting. Let's explore the possibilities together!",
         "image": "shopify:\/\/shop_images\/Frame_43428_2.png",
         "enable_card_style": true,
         "text_vertical_alignment": "center",
