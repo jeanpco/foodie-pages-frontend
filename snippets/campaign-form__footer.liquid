@@ -244,7 +244,7 @@
     today.setHours(0, 0, 0, 0);
     endDateFormatted.setHours(0, 0, 0, 0);
     
-    if (endDateFormatted <= today) {
+    if (endDateFormatted < today) {
       elements.submitFormButtonEl.innerText = `Gift Selection ended on ${endDate}`;
       elements.submitFormButtonEl.setAttribute('disabled', true);
     }
