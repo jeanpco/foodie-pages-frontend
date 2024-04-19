@@ -125,11 +125,27 @@
         "background_color": "background-color-mar-10",
         "trusted_by_text": "Trusted by"
       }
+    },
+    "1713547490814fc9d6": {
+      "type": "apps",
+      "blocks": {
+        "judge_me_reviews_review_widget_tgDDPF": {
+          "type": "shopify:\/\/apps\/judge-me-reviews\/blocks\/review_widget\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "judge_me_reviews_review_widget_tgDDPF"
+      ],
+      "settings": {
+      }
     }
   },
   "order": [
     "main",
     "product-recommendations",
-    "26f84045-3ccb-4414-8c41-4b9ae7745a78"
+    "26f84045-3ccb-4414-8c41-4b9ae7745a78",
+    "1713547490814fc9d6"
   ]
 }
