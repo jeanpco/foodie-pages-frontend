@@ -254,6 +254,14 @@
         "disabled": false,
         "settings": {
         }
+      },
+      "13787645888186966329": {
+        "type": "shopify:\/\/apps\/bundle-builder-custom-bundles\/blocks\/bundle_builder\/0616c381-b470-4395-b013-48a4995ac72a",
+        "disabled": false,
+        "settings": {
+          "product": "",
+          "proxy_path": "\/apps\/builder"
+        }
       }
     }
   },
