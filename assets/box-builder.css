@@ -367,4 +367,10 @@
         margin-bottom: 1rem;
         color: var(--color-grey-800);
     }
+
+.rt-SelectTriggerInner {
+    visibility: hidden;
+
+}
+
     
