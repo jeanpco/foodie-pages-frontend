@@ -368,7 +368,7 @@
         color: var(--color-grey-800);
     }
 
-.rt-SelectTriggerInner {
+.rt-Flex.rt-r-fd-row.rt-r-gap-2 {
     visibility: hidden;
 
 }
