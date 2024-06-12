@@ -14,10 +14,22 @@
 <table id="sos-inventory-table"></table>
 
 <script type="module">
+
+{% comment %} 'http://localhost:8080' {% endcomment %}
+{% comment %} 'https://foodiepagesbackend.onrender.com'{% endcomment %}
+const backendURL = 'https://foodiepages.herokuapp.com'
   
-  
-  
-  
+let upsBearerToken = ''
+
+document.addEventListener('DOMContentLoaded', async () => {
+  await getUpsBearerToken()
+})
+
+{% comment %} 
+  FRONTEND
+
+  Loading Element
+{% endcomment %}
 
 const loadingElement = (style) => `
   <div style="${style}" class="loading inline-loading">
@@ -26,10 +38,6 @@ const loadingElement = (style) => `
     </div>
   </div>
 `
-
-  {% comment %} 'http://localhost:8080' {% endcomment %}
-  {% comment %} 'https://foodiepagesbackend.onrender.com'{% endcomment %}
-  const backendURL = 'https://foodiepages.herokuapp.com'
 
   {% comment %} 
     UTILS
@@ -81,8 +89,20 @@ const loadingElement = (style) => `
     if (!trackingNumber) return;
     
     try {
-      return fetch(`${backendURL}/api/ups?trackingNumber=${trackingNumber}`)
+      return fetch(`${backendURL}/api/ups?trackingNumber=${trackingNumber}&upsBearerToken=${upsBearerToken}`)
         .then(response => response.json())
+    } catch (error) {
+      console.error(error)
+    }
+  }
+
+  const getUpsBearerToken = async () => {
+    
+    try {
+      const response = await fetch(`${backendURL}/api/generate-ups-token`)
+      const data = await response.json()
+
+      upsBearerToken = data.token
     } catch (error) {
       console.error(error)
     }
@@ -322,7 +342,7 @@ const loadingElement = (style) => `
 
       if (!shipments.length) return
 
-      getUPSTrackingDetails(shipments)
+      getUPSTrackingDetails(shipments, upsBearerToken)
 
     } catch (error) {
       console.error(error)
