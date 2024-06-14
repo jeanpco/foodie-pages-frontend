@@ -21,10 +21,6 @@ const backendURL = 'https://foodiepages.herokuapp.com'
   
 let upsBearerToken = ''
 
-document.addEventListener('DOMContentLoaded', async () => {
-  await getUpsBearerToken()
-})
-
 {% comment %} 
   FRONTEND
 
@@ -158,7 +154,7 @@ const loadingElement = (style) => `
         window.shipStationStores = payload;
 
         if (localStorage.getItem('saleOrders')) {
-          buildTableFromSaleOrders(JSON.parse(localStorage.getItem('saleOrders')))
+          return buildTableFromSaleOrders(JSON.parse(localStorage.getItem('saleOrders')))
         }
     
         try {
@@ -550,9 +546,10 @@ const loadingElement = (style) => `
     }
   }
 
-  getSOSSaleOrdersFromCustomerId()
-
-
-
+  
+  document.addEventListener('DOMContentLoaded', async () => {
+    getSOSSaleOrdersFromCustomerId()
+    await getUpsBearerToken()
+  })
 
 </script>
