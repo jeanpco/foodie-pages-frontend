@@ -1,3 +1,12 @@
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin theme editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
 {
   "sections": {
     "module-hero": {
@@ -167,7 +176,7 @@
           "settings": {
             "title": "Build-A-Box",
             "collection": "box-builder-collection-main-website",
-            "cta_link": "shopify:\/\/products\/build-your-own-box-1"
+            "cta_link": "shopify:\/\/products\/build-your-own-box-main-website"
           }
         },
         "f00d0e50-db70-498b-9cbe-dac1ab8c7341": {
