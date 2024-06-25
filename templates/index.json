@@ -1,3 +1,12 @@
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin theme editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
 {
   "sections": {
     "module-hero": {
@@ -167,7 +176,7 @@
           "settings": {
             "title": "Create Your Own",
             "collection": "box-builder-collection-main-website",
-            "cta_link": "shopify:\/\/products\/custom-gift-box"
+            "cta_link": "shopify:\/\/products\/build-your-own-box-main-website"
           }
         },
         "1ed4348a-d03e-4198-a7e5-c2ac4b470fb3": {
