@@ -143,6 +143,7 @@
     let uploadedCSV = null;
 
     const tableToJson = (table) => {
+
       const headers = Array.from(table.querySelectorAll('th'))
         .slice(1)
         .map((th) => th.textContent);
@@ -237,6 +238,9 @@
 
           reader.onload = function (e) {
             const csv = e.target.result;
+
+            console.log('=====> csv', csv)
+
             const form = csvToTable(csv);
             const csvFormContainer = document.getElementById('csvForm');
 
@@ -353,7 +357,7 @@
 
       const header = document.createElement('tr');
 
-      const columnTitles = [
+      {% comment %} const columnTitles = [
         '',
         'Recipient First Name',
         'Recipient Last Name',
@@ -367,6 +371,22 @@
         'Zip/Postal',
         'Gift Message',
         'Company Name',
+      ]; {% endcomment %}
+
+      const columnTitles = [
+        '',
+        'Company Name',
+        'Recipient First Name',
+        'Recipient Last Name',
+        'Address Line 1',
+        'Address Line 2', // Added the Phone Number field
+        'City',
+        'Province Code',
+        'Zip/Postal',
+        'Country Code',
+        'Phone Number',
+        'To Email',
+        'Gift Message',
       ];
 
       columnTitles.forEach((title) => {
@@ -387,18 +407,18 @@
           rowIndexCell.textContent = index + 1;
           row.appendChild(rowIndexCell);
 
-          row.appendChild(createEditableCell(values[0], true));
-          row.appendChild(createEditableCell(values[1], true));
-          row.appendChild(createEditableCell(values[2], false));
-          row.appendChild(createEditableCell(values[3], false));
-          row.appendChild(createEditableCell(values[4], true)); // Updated to include the Phone Number field
-          row.appendChild(createEditableCell(values[5] || '', false));
-          row.appendChild(createEditableCell(values[6], true));
-          row.appendChild(createEditableCell(values[7], true));
-          row.appendChild(createEditableCell(values[8], true));
-          row.appendChild(createEditableCell(values[9], true));
-          row.appendChild(createEditableCell(values[10] || '', false));
-          row.appendChild(createEditableCell(values[11] || '', false));
+          row.appendChild(createEditableCell(values[0], false)); // Company Name
+          row.appendChild(createEditableCell(values[1], true));  // Recipient First Name
+          row.appendChild(createEditableCell(values[2], true));  // Recipient Last Name
+          row.appendChild(createEditableCell(values[3], true));  // Address Line 1
+          row.appendChild(createEditableCell(values[4] || '', false)); // Address Line 2
+          row.appendChild(createEditableCell(values[5], true));  // City
+          row.appendChild(createEditableCell(values[6], true));  // Province Code
+          row.appendChild(createEditableCell(values[7], true));  // Zip/Postal
+          row.appendChild(createEditableCell(values[8], true));  // Country Code
+          row.appendChild(createEditableCell(values[9] || '', false)); // Phone Number
+          row.appendChild(createEditableCell(values[10], true)); // To Email
+          row.appendChild(createEditableCell(values[11] || '', false)); // Gift Message
           table.appendChild(row);
         }
       });
