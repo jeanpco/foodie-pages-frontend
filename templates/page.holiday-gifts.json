@@ -1,3 +1,12 @@
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin theme editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
 {
   "sections": {
     "main": {
@@ -16,9 +25,9 @@
       ],
       "settings": {
         "overline": "Holiday Gift Guide",
-        "title": "<p>The 2023 Holiday Collection<\/p>",
+        "title": "<p>The 2024 Holiday Collection<\/p>",
         "heading_style": "h1",
-        "body": "Who says business gifts need to feel corporate? Our 2023 Holiday Catalog includes new personalized gift options and 100% Canadian-made small-batch goodies that will stand out and impress.",
+        "body": "Who says business gifts need to feel corporate? Our 2024 Holiday Catalogue includes new personalized gift options and 100% Canadian-made small-batch goodies that will stand out and impress.",
         "image": "shopify:\/\/shop_images\/09A1760.jpg",
         "enable_card_style": false,
         "text_vertical_alignment": "center",
