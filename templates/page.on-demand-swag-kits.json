@@ -368,29 +368,29 @@
           "type": "tab",
           "settings": {
             "overline": "Step 1",
-            "title": "Create a Campaign",
-            "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ut lorem qui lectus molestie malesuada vitae vel purus.",
-            "cta_text": "Get in touch",
+            "title": "Select Your Box",
+            "body": "Select from a range of carefully curated gift options that include custom-branded merchandise and locally sourced Canadian products.",
+            "cta_text": "",
             "cta_link": ""
           }
         },
         "c734e5f4-0d34-4f15-b375-5e99b1596327": {
           "type": "tab",
           "settings": {
-            "overline": "Step 1",
-            "title": "Create a Campaign",
-            "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ut lorem qui lectus molestie malesuada vitae vel purus.",
-            "cta_text": "Get in touch",
+            "overline": "Step 2",
+            "title": "Upload Your Logo",
+            "body": "Upload your company logo for personalized merchandise that makes your gift uniquely yours.",
+            "cta_text": "",
             "cta_link": ""
           }
         },
         "b1a2e1e0-af63-4eea-bb4e-8839ab001a7d": {
           "type": "tab",
           "settings": {
-            "overline": "Step 1",
-            "title": "Create a Campaign",
-            "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ut lorem qui lectus molestie malesuada vitae vel purus.",
-            "cta_text": "Get in touch",
+            "overline": "Step 3",
+            "title": "Deliver with Care",
+            "body": "We’ll handle the packaging and delivery, ensuring your team or clients receive their gifts, beautifully wrapped and on time.",
+            "cta_text": "",
             "cta_link": ""
           }
         },
@@ -413,7 +413,7 @@
       ],
       "settings": {
         "overline": "How it works",
-        "title": "<p>Exceptional times call for <em>exceptional </em>gifts</p>",
+        "title": "<p>How it works</p>",
         "heading_style": "h2",
         "cta_text": "Get in touch",
         "cta_link": "shopify://pages/contact-us",
