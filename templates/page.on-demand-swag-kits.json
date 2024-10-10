@@ -353,8 +353,8 @@
         "99e17bc6-8c7d-4127-9269-5ed3314e7bc8"
       ],
       "settings": {
-        "overline": "Low Minimums, Big Impact",
-        "title": "Why choose our On-Demand Gifts?",
+        "overline": "",
+        "title": "Why choose our On-Demand Swag Gifts?",
         "body": "",
         "cta_text": "",
         "cta_link": "#corporate-contact",
@@ -393,32 +393,21 @@
             "cta_text": "",
             "cta_link": ""
           }
-        },
-        "417f32f3-5d14-4399-9a0a-3fa4950fa18d": {
-          "type": "tab",
-          "settings": {
-            "overline": "Step 1",
-            "title": "Create a Campaign",
-            "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ut lorem qui lectus molestie malesuada vitae vel purus.",
-            "cta_text": "Get in touch",
-            "cta_link": ""
-          }
         }
       },
       "block_order": [
         "0bc0438d-4de4-406b-9b99-82223592e434",
         "c734e5f4-0d34-4f15-b375-5e99b1596327",
-        "b1a2e1e0-af63-4eea-bb4e-8839ab001a7d",
-        "417f32f3-5d14-4399-9a0a-3fa4950fa18d"
+        "b1a2e1e0-af63-4eea-bb4e-8839ab001a7d"
       ],
       "settings": {
         "overline": "How it works",
-        "title": "<p>How it works</p>",
+        "title": "<p>How It Works</p>",
         "heading_style": "h2",
         "cta_text": "Get in touch",
         "cta_link": "shopify://pages/contact-us",
-        "body": "Couldn’t find what you were looking for? write to us at",
-        "secondary_cta_text": "example@mail.com",
+        "body": "",
+        "secondary_cta_text": "",
         "secondary_cta_link": "mailto:example@mail.com"
       }
     },
