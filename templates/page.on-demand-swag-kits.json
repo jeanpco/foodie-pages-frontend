@@ -273,10 +273,10 @@
         "image": "shopify://shop_images/Image.jpg",
         "image_height_auto": false,
         "overline": "",
-        "title": "<p>Stand out by supporting <em>small</em></p>",
+        "title": "<p>What's <em>inside</em>?</p>",
         "heading_style": "h2",
-        "body": "Engage employees and stand out to clients with custom corporate gifts that share your company values. Our products are hand-picked from Canadian brands, supporting small business legends.",
-        "body_rte": "",
+        "body": "",
+        "body_rte": "<p>Each gift box features a mix of branded merchandise and handpicked products from small Canadian businesses. You’ll find a combination of:</p><ul><li>Custom mugs, water bottles, or notebooks with your logo.</li><li>Locally roasted coffee, artisanal chocolates, and gourmet snacks.</li><li>Scented candles, eco-friendly products, and more – all from Canadian small businesses.</li></ul>",
         "layout_style": "content-left"
       }
     },
@@ -441,7 +441,6 @@
     },
     "fda3c8e7-0321-460c-b8b8-b9edd8abe0e7": {
       "type": "product-recommendations",
-      "disabled": true,
       "settings": {
         "overline": "Small batch standouts",
         "title": "<p>Curated Gift Boxes</p>",
@@ -492,6 +491,7 @@
         "6cd624df-edf9-4889-b6a5-7a3cffad7274",
         "982db299-9c2c-4ba4-9ede-5b0fd0f3b29f"
       ],
+      "disabled": true,
       "settings": {
         "overline": "Our happy customers",
         "title": "<p>Don’t just take it from us</p>",
