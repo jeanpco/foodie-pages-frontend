@@ -416,18 +416,6 @@
     },
     "ff6debb7-9198-4031-89bf-4dba97bf8f37": {
       "type": "module-split-content",
-      "blocks": {
-        "bb7441af-23eb-413e-9e53-583d86d17048": {
-          "type": "cta",
-          "settings": {
-            "cta_text": "Make an Inquiry",
-            "cta_link": "#corporate-contact"
-          }
-        }
-      },
-      "block_order": [
-        "bb7441af-23eb-413e-9e53-583d86d17048"
-      ],
       "settings": {
         "image": "shopify://shop_images/Image.jpg",
         "image_height_auto": false,
