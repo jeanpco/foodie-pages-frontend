@@ -15,14 +15,14 @@
         "19806096-63a2-4a47-8ace-62ad44b1c836": {
           "type": "cta",
           "settings": {
-            "cta_text": "Custom Gifts Inquiry",
+            "cta_text": "Get started",
             "cta_link": "#corporate-contact"
           }
         },
         "b851d519-4870-4981-9906-52b4404d2953": {
           "type": "cta",
           "settings": {
-            "cta_text": "Download Catalog",
+            "cta_text": "Download more info",
             "cta_link": "#download-catalogue"
           }
         }
@@ -250,6 +250,7 @@
         "a99570f5-b9a2-40a6-a2f5-a75f8010e121",
         "2e3384fb-1532-4f05-92ab-5839a239d530"
       ],
+      "disabled": true,
       "settings": {
         "overline": "Trusted by Canada's leading companies"
       }
@@ -311,9 +312,8 @@
         "0d45905e-ac44-49ba-a59d-128cacbe1c96": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/Untitled_design_14.png",
-            "title": "New Hire Kits",
-            "body": "Start new hires off right with a perfectly-branded welcome gift that makes them feel valued from Day 1.",
+            "title": "No Minimum Order Quantity",
+            "body": "Say goodbye to high order minimums! Whether you need 1 gift or 100, we make it easy for small teams to send personalized, meaningful gifts that leave a lasting impression.",
             "cta_text": "",
             "cta_link": "/"
           }
@@ -321,9 +321,8 @@
         "faec134e-e72c-4f0d-8052-11bb37fec86a": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/Untitled_design_15.png",
-            "title": "Milestone Gifts",
-            "body": "Celebrate employee anniversaries, achievements and birthdays with automated ongoing gift campaigns.",
+            "title": "Celebrate Small Businesses",
+            "body": "Each gift includes unique products from the best small brands across Canada, helping you support small businesses while giving your team something truly special.",
             "cta_text": "",
             "cta_link": "/"
           }
@@ -331,9 +330,8 @@
         "640e588a-8b8f-49e9-8151-8d7f751d35ac": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/Untitled_design_16.png",
-            "title": "Company Retreat",
-            "body": "Show appreciation to your team and reinforce company culture.",
+            "title": "Branded Merchandise Meets Unique Goods",
+            "body": "Elevate your corporate gifting by combining custom branded items with high-quality, handpicked treats. From gourmet snacks to artisan coffee, our gift boxes showcase unique goods.",
             "cta_text": "",
             "cta_link": "/"
           }
@@ -341,9 +339,8 @@
         "99e17bc6-8c7d-4127-9269-5ed3314e7bc8": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/Screen_Shot_2023-03-08_at_11.13.00_AM.jpg",
-            "title": "Client Holiday Gifts",
-            "body": "Express gratitude to clients while creating reciprocity and brand loyalty.",
+            "title": "Customizable & Effortless",
+            "body": "Choose from a variety of gift combinations, add your company logo, and let us handle the rest. It’s simple, thoughtful, and memorable.",
             "cta_text": "",
             "cta_link": "/"
           }
@@ -357,7 +354,7 @@
       ],
       "settings": {
         "overline": "Corporate solutions",
-        "title": "Corporate Solutions",
+        "title": "Why Choose our On-Demand Gifts?",
         "body": "We help businesses connect with people and make lasting impressions.",
         "cta_text": "Get a Quote",
         "cta_link": "#corporate-contact",
@@ -414,7 +411,6 @@
         "b1a2e1e0-af63-4eea-bb4e-8839ab001a7d",
         "417f32f3-5d14-4399-9a0a-3fa4950fa18d"
       ],
-      "disabled": true,
       "settings": {
         "overline": "How it works",
         "title": "<p>Exceptional times call for <em>exceptional </em>gifts</p>",
