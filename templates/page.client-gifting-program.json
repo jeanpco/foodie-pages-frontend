@@ -103,9 +103,9 @@
         "2d4083b3-581a-4ade-b225-6f2117a93f50": {
           "type": "tab",
           "settings": {
-            "overline": "",
-            "title": "Who is Foodiepages?",
-            "body": "Foodiepages was founded by Erin Maynes. The idea started with a purpose rather than a product. She wanted to build a business that would help keep people connected and spread a bit of joy in the world.",
+            "overline": "Step 1",
+            "title": "Reach Out to Us",
+            "body": "Start by contacting our team to set up your company's custom gifting portal.",
             "cta_text": "",
             "cta_link": ""
           }
@@ -113,9 +113,9 @@
         "db40d850-e629-4e9b-b0e8-d2d20e4414ad": {
           "type": "tab",
           "settings": {
-            "overline": "",
-            "title": "So what makes Foodiepages different?",
-            "body": "Our soulful brand, customizable gifts, Canadian supply chain, eco-friendly packaging, and incredible customer service mean we stand out from the crowd – which is exactly where we like to be.",
+            "overline": "Step 2",
+            "title": "Curate Your Portal",
+            "body": "We'll help you handpick a selection of premium gifts from small and independent brands that align with your key gifting occasions.",
             "cta_text": "",
             "cta_link": ""
           }
@@ -123,9 +123,9 @@
         "47847899-6a08-4443-881a-c2133258173d": {
           "type": "tab",
           "settings": {
-            "overline": "",
-            "title": "How does Foodiepages support local?",
-            "body": "In a world where products can be sourced from any corner of the earth, we choose to source our products in Canada. With everything from women-owned to sustainable, local and more, our gifts stand out with quality and purpose.\n\nThrough our Positive Impact Pledge, we are committed to donating 1% from every gift box sold through our website to local charities.",
+            "overline": "Step 3",
+            "title": "Approve Branded Collateral",
+            "body": "Ensure every gift is consistently on-brand by reviewing and approving the branded materials that will accompany your gifts.",
             "cta_text": "",
             "cta_link": ""
           }
@@ -134,9 +134,9 @@
           "type": "tab",
           "disabled": true,
           "settings": {
-            "overline": "",
-            "title": "Expert Curation",
-            "body": "Our team is committed to helping you discover the most unique and exciting small batch goods from across Canada. We take chances on new brands you may not yet see elsewhere. With a wide selection of 100s of brands, you’ll have a blast discovering new trends.",
+            "overline": "Step 4",
+            "title": "Sit Back & Let Us Do The Rest",
+            "body": "Once your portal is live, your team can easily select and send gifts on-demand—no pre-orders, no minimums. We’ll handle the rest, from packaging to shipping, so your clients receive thoughtful, beautifully branded gifts across North America.",
             "cta_text": "Get in touch",
             "cta_link": ""
           }
@@ -162,7 +162,7 @@
       ],
       "settings": {
         "overline": "",
-        "title": "<p>About Us</p>",
+        "title": "<p>How It Works</p>",
         "heading_style": "h2",
         "image": "shopify://shop_images/Untitled_design.png",
         "cta_text": "",
