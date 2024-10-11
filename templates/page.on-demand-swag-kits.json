@@ -417,13 +417,13 @@
     "ff6debb7-9198-4031-89bf-4dba97bf8f37": {
       "type": "module-split-content",
       "settings": {
-        "image": "shopify://shop_images/Image.jpg",
+        "image": "shopify://shop_images/Untitled_design_17_73f7796a-f698-436c-9d68-fb8f26ec8db5.png",
         "image_height_auto": false,
         "overline": "",
         "title": "<p>What's <em>inside</em>?</p>",
         "heading_style": "h2",
         "body": "",
-        "body_rte": "<p>Each gift box features a mix of branded merchandise and handpicked products from small Canadian businesses. You’ll find a combination of:</p><ul><li>Custom mugs, water bottles, or notebooks with your logo.</li><li>Locally roasted coffee, artisanal chocolates, and gourmet snacks.</li><li>Scented candles, eco-friendly products, and more – all from Canadian small businesses.</li></ul>",
+        "body_rte": "<p>Each gift box features a mix of branded merchandise and handpicked products from our top-selling small brands. You’ll find a combination of:</p><ul><li>Custom mugs, water bottles, or notebooks with your logo.</li><li>Locally roasted coffee, artisanal chocolates, and gourmet snacks.</li><li>Scented candles, eco-friendly products, and more – all from Canadian small businesses.</li></ul>",
         "layout_style": "content-left"
       }
     },
