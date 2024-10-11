@@ -20,7 +20,7 @@
         "enable_card_style": false,
         "text_vertical_alignment": "center",
         "layout_style": "two-columns",
-        "background_color": "background-color-azul-verdoso-10",
+        "background_color": "background-color-mar-10",
         "trusted_by_text": ""
       }
     },
@@ -248,9 +248,9 @@
       ],
       "settings": {
         "overline": "",
-        "title": "<p>Get in touch!</p>",
+        "title": "<p>Curious about our client gifting programs&gt;</p>",
         "heading_style": "h2",
-        "body": "Each foodiepages gift basket is designed with premium goods from diverse, independently-owned makers and brands across Canada.",
+        "body": "Submit your email and someone from our team will beb intouch.",
         "image": "shopify://shop_images/Frame_43428_2.png",
         "enable_card_style": true,
         "text_vertical_alignment": "center",
