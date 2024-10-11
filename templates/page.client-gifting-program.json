@@ -222,6 +222,7 @@
         "1a1d97cc-0c9f-4023-b4cf-a2188c76fa3e",
         "81289acb-6a37-4c70-84ec-d781a6d0b072"
       ],
+      "disabled": true,
       "settings": {
         "overline": "meet the makers",
         "title": "Supplier Spotlight",
@@ -245,7 +246,6 @@
       "block_order": [
         "a0cdd988-b288-4542-9434-6c35f9543944"
       ],
-      "disabled": true,
       "settings": {
         "overline": "",
         "title": "<p>Get in touch!</p>",
