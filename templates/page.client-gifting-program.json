@@ -1,0 +1,272 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "module-hero",
+      "settings": {
+        "overline": "one of the fastest growing gifting companies in Canada",
+        "title": "<p>Hi, we’re Foodiepages</p>",
+        "heading_style": "h2",
+        "body": "We're setting out to freshen-up the old-fashioned gift basket industry with modern, eco-friendly gifts that are designed to be elevated and impactful any time of year.",
+        "image": "shopify://shop_images/Screen_Shot_2022-11-15_at_5.04.39_PM_6bf64d73-8293-4cc3-99e5-c85cf593f649.png",
+        "enable_card_style": false,
+        "text_vertical_alignment": "center",
+        "layout_style": "two-columns",
+        "background_color": "background-color-azul-verdoso-10",
+        "trusted_by_text": ""
+      }
+    },
+    "b5797203-b142-444b-be2c-d6e9d37312fe": {
+      "type": "module-features",
+      "blocks": {
+        "2c55f2d5-0c58-4b13-af11-302a514fa449": {
+          "type": "features",
+          "settings": {
+            "icon_url": "https://cdn.shopify.com/s/files/1/0264/5000/2013/files/book.svg?v=1669133706",
+            "title": "Storytelling",
+            "body": "Storytelling is the number one way to connect with others. We believe the best gifts tell stories, eliciting attention and giving the recipient something meaningful to remember.",
+            "cta_text": "",
+            "cta_link": ""
+          }
+        },
+        "fae23ace-5ca1-43a0-a58b-9c5d1bef7e5b": {
+          "type": "features",
+          "settings": {
+            "icon_url": "https://cdn.shopify.com/s/files/1/0264/5000/2013/files/team.svg?v=1669133706",
+            "title": "Human Connection",
+            "body": "In a world where relationships are too often digital first, building real human connection, and nourishing it, is more important than ever.",
+            "cta_text": "",
+            "cta_link": ""
+          }
+        },
+        "94353301-183f-4ec1-9b25-4d500681640f": {
+          "type": "features",
+          "settings": {
+            "icon_url": "https://cdn.shopify.com/s/files/1/0264/5000/2013/files/heart.svg?v=1669133706",
+            "title": "Giving Back",
+            "body": "As a women and family-owned business, we believe in using our platform to support (and give back to) people and issues that are under-represented.",
+            "cta_text": "",
+            "cta_link": ""
+          }
+        },
+        "29189724-18f8-43ad-ad45-9aea0d08c6f0": {
+          "type": "features",
+          "settings": {
+            "icon_url": "https://cdn.shopify.com/s/files/1/0264/5000/2013/files/badge_with_star.svg?v=1669133892",
+            "title": "Never Settle",
+            "body": "Whether it's eco-friendly packaging, the latest finds from small businesses, or handwritten gift messages, we work extra hard for that moment of WOW.",
+            "cta_text": "",
+            "cta_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "2c55f2d5-0c58-4b13-af11-302a514fa449",
+        "fae23ace-5ca1-43a0-a58b-9c5d1bef7e5b",
+        "94353301-183f-4ec1-9b25-4d500681640f",
+        "29189724-18f8-43ad-ad45-9aea0d08c6f0"
+      ],
+      "settings": {
+        "overline": "The best gift baskets in Canada",
+        "title": "<p>How we see it</p>",
+        "heading_style": "h2",
+        "body": "Here are a few things we've always believed to be important.",
+        "cta_text": "",
+        "cta_link": "shopify://pages/how-it-works"
+      }
+    },
+    "8f69f41d-ab2e-49b8-831d-4ed41aaf0509": {
+      "type": "module-split-content",
+      "disabled": true,
+      "settings": {
+        "image": "shopify://shop_images/Untitled_design.png",
+        "image_height_auto": false,
+        "overline": "",
+        "title": "<p>Gifts that <em>celebrate</em> small business</p>",
+        "heading_style": "h1",
+        "body": "Each foodiepages gift basket is designed with premium goods from diverse, independently-owned makers and brands across Canada.",
+        "body_rte": "",
+        "layout_style": "content-left"
+      }
+    },
+    "823bd50c-3555-4282-8b34-ab0e8584323d": {
+      "type": "module-vertical-tabs",
+      "blocks": {
+        "2d4083b3-581a-4ade-b225-6f2117a93f50": {
+          "type": "tab",
+          "settings": {
+            "overline": "",
+            "title": "Who is Foodiepages?",
+            "body": "Foodiepages was founded by Erin Maynes. The idea started with a purpose rather than a product. She wanted to build a business that would help keep people connected and spread a bit of joy in the world.",
+            "cta_text": "",
+            "cta_link": ""
+          }
+        },
+        "db40d850-e629-4e9b-b0e8-d2d20e4414ad": {
+          "type": "tab",
+          "settings": {
+            "overline": "",
+            "title": "So what makes Foodiepages different?",
+            "body": "Our soulful brand, customizable gifts, Canadian supply chain, eco-friendly packaging, and incredible customer service mean we stand out from the crowd – which is exactly where we like to be.",
+            "cta_text": "",
+            "cta_link": ""
+          }
+        },
+        "47847899-6a08-4443-881a-c2133258173d": {
+          "type": "tab",
+          "settings": {
+            "overline": "",
+            "title": "How does Foodiepages support local?",
+            "body": "In a world where products can be sourced from any corner of the earth, we choose to source our products in Canada. With everything from women-owned to sustainable, local and more, our gifts stand out with quality and purpose.\n\nThrough our Positive Impact Pledge, we are committed to donating 1% from every gift box sold through our website to local charities.",
+            "cta_text": "",
+            "cta_link": ""
+          }
+        },
+        "ab7fff74-0668-4779-9c58-a3781089ca61": {
+          "type": "tab",
+          "disabled": true,
+          "settings": {
+            "overline": "",
+            "title": "Expert Curation",
+            "body": "Our team is committed to helping you discover the most unique and exciting small batch goods from across Canada. We take chances on new brands you may not yet see elsewhere. With a wide selection of 100s of brands, you’ll have a blast discovering new trends.",
+            "cta_text": "Get in touch",
+            "cta_link": ""
+          }
+        },
+        "a25db7f7-6489-43d4-89c5-e1e47404b228": {
+          "type": "tab",
+          "disabled": true,
+          "settings": {
+            "overline": "Step 5",
+            "title": "Software + Stores",
+            "body": "Ship, track and manage gifts all from your couch (or office chair). No more dusty supply closets or shipping boxes under your desk.",
+            "cta_text": "Get in touch",
+            "cta_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "2d4083b3-581a-4ade-b225-6f2117a93f50",
+        "db40d850-e629-4e9b-b0e8-d2d20e4414ad",
+        "47847899-6a08-4443-881a-c2133258173d",
+        "ab7fff74-0668-4779-9c58-a3781089ca61",
+        "a25db7f7-6489-43d4-89c5-e1e47404b228"
+      ],
+      "settings": {
+        "overline": "",
+        "title": "<p>About Us</p>",
+        "heading_style": "h2",
+        "image": "shopify://shop_images/Untitled_design.png",
+        "cta_text": "",
+        "cta_link": "#contact",
+        "body": "",
+        "secondary_cta_text": "Get in touch",
+        "secondary_cta_link": ""
+      }
+    },
+    "05ea480d-037b-4297-9c3d-d6160866116b": {
+      "type": "module-columns",
+      "blocks": {
+        "765a0837-b3a6-417e-a20d-8c4151c40912": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/My_project_1.jpg",
+            "title": "Barbet",
+            "body": "In an attempt to manage a health condition, Katie decided to go alcohol-free. While she didn’t miss drinking, she did miss the comfort and connection that alcohol provided in social settings. This led Katie and her sister Andrea to create a line of full-bodied, elevated sparkling waters that you can drink straight out of the can – or even mix with spirits.",
+            "cta_text": "",
+            "cta_link": "#contact"
+          }
+        },
+        "2799395e-848f-4345-9be1-4844c0f3b341": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/My_project_2.jpg",
+            "title": "Sade Baron",
+            "body": "With the health of skin and planet top of mind,  mother-daughter duo Sade and Rachel Baron set out to create a line of high-quality, vegan body care products crafted with nutrient-rich superfoods. Backed by a journey of research and experimentation, every Sade Baron product is designed to replenish, moisturize, and prep your skin so it can look and feel its best.",
+            "cta_text": "",
+            "cta_link": ""
+          }
+        },
+        "1a1d97cc-0c9f-4023-b4cf-a2188c76fa3e": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/Screen_Shot_2022-11-20_at_9.09.14_PM.png",
+            "title": "Eatable",
+            "body": "Charlene and Vince left their desk jobs to pursue a lifelong passion for food, and started a journey to create a perfect pairing of two loves: snacking and alcohol. Their alcohol-infused popcorns are made with non-GMO corn kernels from Ontario farms and butter from local dairy farmers.",
+            "cta_text": "",
+            "cta_link": "#contact"
+          }
+        },
+        "81289acb-6a37-4c70-84ec-d781a6d0b072": {
+          "type": "card",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/Image.jpg",
+            "title": "Client Appreciation Gifts",
+            "body": "Show your appreciation with a branded and personalized gift.",
+            "cta_text": "Get a quote",
+            "cta_link": "#corporate-contact"
+          }
+        }
+      },
+      "block_order": [
+        "765a0837-b3a6-417e-a20d-8c4151c40912",
+        "2799395e-848f-4345-9be1-4844c0f3b341",
+        "1a1d97cc-0c9f-4023-b4cf-a2188c76fa3e",
+        "81289acb-6a37-4c70-84ec-d781a6d0b072"
+      ],
+      "settings": {
+        "overline": "meet the makers",
+        "title": "Supplier Spotlight",
+        "body": "We have found that the highest quality goods come from small batch, local brands and we, like you, know there are no substitutes for quality.",
+        "cta_text": "Shop gift boxes",
+        "cta_link": "shopify://collections/gift-baskets",
+        "heading_style": "h2"
+      }
+    },
+    "582103a2-47d5-46e9-9ba6-ede2b4f3963b": {
+      "type": "module-hero",
+      "blocks": {
+        "a0cdd988-b288-4542-9434-6c35f9543944": {
+          "type": "cta",
+          "settings": {
+            "cta_text": "Learn more",
+            "cta_link": "shopify://pages/contact-us"
+          }
+        }
+      },
+      "block_order": [
+        "a0cdd988-b288-4542-9434-6c35f9543944"
+      ],
+      "disabled": true,
+      "settings": {
+        "overline": "",
+        "title": "<p>Get in touch!</p>",
+        "heading_style": "h2",
+        "body": "Each foodiepages gift basket is designed with premium goods from diverse, independently-owned makers and brands across Canada.",
+        "image": "shopify://shop_images/Frame_43428_2.png",
+        "enable_card_style": true,
+        "text_vertical_alignment": "center",
+        "layout_style": "two-columns",
+        "background_color": "background-color-mar-10",
+        "trusted_by_text": "Trusted by"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "b5797203-b142-444b-be2c-d6e9d37312fe",
+    "8f69f41d-ab2e-49b8-831d-4ed41aaf0509",
+    "823bd50c-3555-4282-8b34-ab0e8584323d",
+    "05ea480d-037b-4297-9c3d-d6160866116b",
+    "582103a2-47d5-46e9-9ba6-ede2b4f3963b"
+  ]
+}
