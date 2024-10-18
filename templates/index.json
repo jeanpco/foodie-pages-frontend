@@ -1,12 +1,12 @@
 /*
-* ------------------------------------------------------------
-* IMPORTANT: The contents of this file are auto-generated.
-*
-* This file may be updated by the Shopify admin theme editor
-* or related systems. Please exercise caution as any changes
-* made to this file may be overwritten.
-* ------------------------------------------------------------
-*/
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "module-hero": {
@@ -16,41 +16,41 @@
           "type": "cta",
           "settings": {
             "cta_text": "SHOP OUR GIFTS",
-            "cta_link": "shopify:\/\/collections\/gift-baskets"
+            "cta_link": "shopify://collections/gift-baskets"
           }
         },
         "0a79a883-faf9-4609-8190-ce1392d3723b": {
           "type": "cta",
           "settings": {
             "cta_text": "CORPORATE GIFTING",
-            "cta_link": "shopify:\/\/pages\/corporate-gifting"
+            "cta_link": "shopify://pages/corporate-gifting"
           }
         },
         "7e63476c-2c94-4994-b3dd-640813bcc65b": {
           "type": "trusted_by",
           "settings": {
-            "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/Bell.png?v=1668884605",
+            "icon_url": "https://cdn.shopify.com/s/files/1/0264/5000/2013/files/Bell.png?v=1668884605",
             "icon_alt_text": "Bell Canada"
           }
         },
         "78b14c75-4b50-4101-83ac-06ff54813f08": {
           "type": "trusted_by",
           "settings": {
-            "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/Shopify.png?v=1668884605",
+            "icon_url": "https://cdn.shopify.com/s/files/1/0264/5000/2013/files/Shopify.png?v=1668884605",
             "icon_alt_text": "Shopify"
           }
         },
         "4d3e89e3-d2e6-4f06-8fcc-a9551dba6173": {
           "type": "trusted_by",
           "settings": {
-            "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/Deloitte.png?v=1668884605",
+            "icon_url": "https://cdn.shopify.com/s/files/1/0264/5000/2013/files/Deloitte.png?v=1668884605",
             "icon_alt_text": "Deloitte"
           }
         },
         "376b3cc3-baa8-4c5a-a246-d3c2a833f8b2": {
           "type": "trusted_by",
           "settings": {
-            "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/RBC-Royal-Bank.png?v=1669131687",
+            "icon_url": "https://cdn.shopify.com/s/files/1/0264/5000/2013/files/RBC-Royal-Bank.png?v=1669131687",
             "icon_alt_text": "RBC"
           }
         }
@@ -65,10 +65,10 @@
       ],
       "settings": {
         "overline": "",
-        "title": "<p>Gifts that <br\/><em>nourish connections<\/em><\/p>",
+        "title": "<p>Gift baskets that are <em>twice as good</em></p>",
         "heading_style": "h1",
         "body": "Our mission is simple: to make people feel seen, known and valued through elevated gifts that showcase the most exciting finds from small Canadian brands.",
-        "image": "shopify:\/\/shop_images\/Spring_Homepage_Open.png",
+        "image": "shopify://shop_images/Spring_Homepage_Open.png",
         "enable_card_style": false,
         "text_vertical_alignment": "flex-end",
         "layout_style": "two-columns",
@@ -82,61 +82,61 @@
         "2fe0704d-6ca9-4bdf-8869-4644f4802edb": {
           "type": "tab",
           "settings": {
-            "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/icon_1_147x125_crop_center.png?v=1663723952",
+            "icon_url": "https://cdn.shopify.com/s/files/1/0264/5000/2013/files/icon_1_147x125_crop_center.png?v=1663723952",
             "tab_text": "Gifts with meaning",
             "title": "Gifts with meaning",
             "body": "Say goodbye to generic gift baskets. With everything from women-owned to sustainable, local and more, our shelves are stocked with the newest and most exciting brands in Canada.",
             "cta_text": "",
-            "cta_link": "shopify:\/\/collections\/gift-baskets",
-            "image": "shopify:\/\/shop_images\/4to3-Cropped3.jpg"
+            "cta_link": "shopify://collections/gift-baskets",
+            "image": "shopify://shop_images/4to3-Cropped3.jpg"
           }
         },
         "cb796b97-5135-4a60-b2fa-c710855e013a": {
           "type": "tab",
           "settings": {
-            "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/icon_2_154x123_crop_center.png?v=1663723952",
+            "icon_url": "https://cdn.shopify.com/s/files/1/0264/5000/2013/files/icon_2_154x123_crop_center.png?v=1663723952",
             "tab_text": "Earth-friendly",
             "title": "Earth-friendly",
             "body": "We prioritize earth-friendly packaging, and we consciously curate quality items from brands who are trying to do things better.",
             "cta_text": "",
-            "cta_link": "shopify:\/\/collections\/gift-baskets",
-            "image": "shopify:\/\/shop_images\/4to3-Cropped2.jpg"
+            "cta_link": "shopify://collections/gift-baskets",
+            "image": "shopify://shop_images/4to3-Cropped2.jpg"
           }
         },
         "82370e0b-29ef-4ff4-9ed1-ff7fd169f7ff": {
           "type": "tab",
           "settings": {
-            "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/icon_4_123x131_crop_center.png?v=1663723952",
+            "icon_url": "https://cdn.shopify.com/s/files/1/0264/5000/2013/files/icon_4_123x131_crop_center.png?v=1663723952",
             "tab_text": "Custom gift design",
             "title": "Custom gift design",
             "body": "For larger orders, leverage our design services for fully custom corporate gifts. From the products to the packaging, we'll create something memorable that reflects your brand, goals, and values.",
             "cta_text": "",
-            "cta_link": "shopify:\/\/pages\/corporate-gifting",
-            "image": "shopify:\/\/shop_images\/4to3-Cropped5.jpg"
+            "cta_link": "shopify://pages/corporate-gifting",
+            "image": "shopify://shop_images/4to3-Cropped5.jpg"
           }
         },
         "881fd230-0ff5-475a-80ab-394c30599557": {
           "type": "tab",
           "settings": {
-            "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/icon_3_156x118_crop_center.png?v=1663723952",
+            "icon_url": "https://cdn.shopify.com/s/files/1/0264/5000/2013/files/icon_3_156x118_crop_center.png?v=1663723952",
             "tab_text": "Worldwide shipping",
             "title": "Worldwide shipping",
             "body": "We can bulk ship to one location or 100s of individual addresses, worldwide. We make the entire process seamless.",
             "cta_text": "",
-            "cta_link": "shopify:\/\/collections\/gift-baskets",
-            "image": "shopify:\/\/shop_images\/4x3_28_20191211_FoodiePages_AvenuePhoto.png"
+            "cta_link": "shopify://collections/gift-baskets",
+            "image": "shopify://shop_images/4x3_28_20191211_FoodiePages_AvenuePhoto.png"
           }
         },
         "3732abc5-67af-4c3c-85d8-758c6aea36c1": {
           "type": "tab",
           "settings": {
-            "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/icon_5_101x120_crop_center.png?v=1663723952",
+            "icon_url": "https://cdn.shopify.com/s/files/1/0264/5000/2013/files/icon_5_101x120_crop_center.png?v=1663723952",
             "tab_text": "Happiness guarantee",
             "title": "Happiness guarantee",
             "body": "We exist to make people's day. That's why if you're not 100% satisfied, we promise to make it right. Our team will always go the extra mile to make it right.",
             "cta_text": "",
-            "cta_link": "shopify:\/\/collections\/gift-baskets",
-            "image": "shopify:\/\/shop_images\/4to3-Cropped1.jpg"
+            "cta_link": "shopify://collections/gift-baskets",
+            "image": "shopify://shop_images/4to3-Cropped1.jpg"
           }
         }
       },
@@ -149,7 +149,7 @@
       ],
       "settings": {
         "overline": "How we do it",
-        "title": "<p>The <em>best<\/em> gift baskets in Canada<\/p>"
+        "title": "<p>The <em>best</em> gift baskets in Canada</p>"
       }
     },
     "module-tag-slider": {
@@ -160,7 +160,7 @@
           "settings": {
             "title": "New Arrivals",
             "collection": "new-arrivals",
-            "cta_link": "shopify:\/\/collections\/new-arrivals"
+            "cta_link": "shopify://collections/new-arrivals"
           }
         },
         "f2d9af43-61a5-4c7b-8cdf-81d774905352": {
@@ -168,7 +168,7 @@
           "settings": {
             "title": "Self Care & Wellness",
             "collection": "gifts-that-give-back",
-            "cta_link": "https:\/\/www.foodiepages.ca\/collections\/self-care-gift-baskets"
+            "cta_link": "https://www.foodiepages.ca/collections/self-care-gift-baskets"
           }
         },
         "c0b96aab-ebea-45f5-883d-582f92cab111": {
@@ -176,7 +176,7 @@
           "settings": {
             "title": "Create Your Own",
             "collection": "box-builder-collection-main-website",
-            "cta_link": "shopify:\/\/products\/build-your-own-box-1"
+            "cta_link": "shopify://products/build-your-own-box-1"
           }
         },
         "1ed4348a-d03e-4198-a7e5-c2ac4b470fb3": {
@@ -184,7 +184,7 @@
           "settings": {
             "title": "Gourmet",
             "collection": "gourmet-gift-baskets-canada",
-            "cta_link": "shopify:\/\/collections\/gourmet-gift-baskets-canada"
+            "cta_link": "shopify://collections/gourmet-gift-baskets-canada"
           }
         },
         "f00d0e50-db70-498b-9cbe-dac1ab8c7341": {
@@ -192,7 +192,7 @@
           "settings": {
             "title": "Under $75",
             "collection": "under-75",
-            "cta_link": "shopify:\/\/collections\/under-75"
+            "cta_link": "shopify://collections/under-75"
           }
         },
         "000af700-bcb5-4e04-852c-35a79a7eca43": {
@@ -215,7 +215,7 @@
       ],
       "settings": {
         "overline": "Quick Shop",
-        "title": "<p>Explore gift baskets by category<\/p>",
+        "title": "<p>Explore gift baskets by category</p>",
         "cta_text": "Shop now"
       }
     },
@@ -223,12 +223,12 @@
       "type": "module-featured-products",
       "settings": {
         "overline": "curated gift boxes",
-        "title": "<p>Most <em>wanted<\/em> gifts<\/p>",
+        "title": "<p>Most <em>wanted</em> gifts</p>",
         "body": "Discover beautifully packaged products from small companies doing big things.",
         "cta_text": "SHOP ALL",
-        "cta_link": "shopify:\/\/collections\/gift-baskets",
+        "cta_link": "shopify://collections/gift-baskets",
         "collection": "gift-baskets",
-        "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/Frame_43418.png?v=1665521287",
+        "icon_url": "https://cdn.shopify.com/s/files/1/0264/5000/2013/files/Frame_43418.png?v=1665521287",
         "promo_title": "Looking for gifts for your company?",
         "promo_body": "Whether it's 25 or 2,500 custom gifts, we've done it. Get in touch with our team today.",
         "promo_cta_text": "View catalog",
@@ -242,7 +242,7 @@
           "type": "cta",
           "settings": {
             "cta_text": "LEARN MORE",
-            "cta_link": "shopify:\/\/pages\/corporate-gifting"
+            "cta_link": "shopify://pages/corporate-gifting"
           }
         },
         "54c84020-796f-46f9-a861-eecbf0f12ebf": {
@@ -256,7 +256,7 @@
           "type": "trusted_by",
           "disabled": true,
           "settings": {
-            "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/Bell.png?v=1668884605",
+            "icon_url": "https://cdn.shopify.com/s/files/1/0264/5000/2013/files/Bell.png?v=1668884605",
             "icon_alt_text": ""
           }
         },
@@ -264,7 +264,7 @@
           "type": "trusted_by",
           "disabled": true,
           "settings": {
-            "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/Shopify.png?v=1668884605",
+            "icon_url": "https://cdn.shopify.com/s/files/1/0264/5000/2013/files/Shopify.png?v=1668884605",
             "icon_alt_text": ""
           }
         },
@@ -272,7 +272,7 @@
           "type": "trusted_by",
           "disabled": true,
           "settings": {
-            "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/Deloitte.png?v=1668884605",
+            "icon_url": "https://cdn.shopify.com/s/files/1/0264/5000/2013/files/Deloitte.png?v=1668884605",
             "icon_alt_text": ""
           }
         },
@@ -280,7 +280,7 @@
           "type": "trusted_by",
           "disabled": true,
           "settings": {
-            "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/RBC-Royal-Bank.png?v=1669131687",
+            "icon_url": "https://cdn.shopify.com/s/files/1/0264/5000/2013/files/RBC-Royal-Bank.png?v=1669131687",
             "icon_alt_text": ""
           }
         },
@@ -288,7 +288,7 @@
           "type": "trusted_by",
           "disabled": true,
           "settings": {
-            "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0601\/1709\/0544\/files\/Path.svg?v=1664989934",
+            "icon_url": "https://cdn.shopify.com/s/files/1/0601/1709/0544/files/Path.svg?v=1664989934",
             "icon_alt_text": ""
           }
         },
@@ -296,7 +296,7 @@
           "type": "trusted_by",
           "disabled": true,
           "settings": {
-            "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0601\/1709\/0544\/files\/Path.svg?v=1664989934",
+            "icon_url": "https://cdn.shopify.com/s/files/1/0601/1709/0544/files/Path.svg?v=1664989934",
             "icon_alt_text": ""
           }
         },
@@ -304,7 +304,7 @@
           "type": "trusted_by",
           "disabled": true,
           "settings": {
-            "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0601\/1709\/0544\/files\/Path.svg?v=1664989934",
+            "icon_url": "https://cdn.shopify.com/s/files/1/0601/1709/0544/files/Path.svg?v=1664989934",
             "icon_alt_text": ""
           }
         },
@@ -312,7 +312,7 @@
           "type": "trusted_by",
           "disabled": true,
           "settings": {
-            "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0601\/1709\/0544\/files\/Path.svg?v=1664989934",
+            "icon_url": "https://cdn.shopify.com/s/files/1/0601/1709/0544/files/Path.svg?v=1664989934",
             "icon_alt_text": ""
           }
         }
@@ -331,10 +331,10 @@
       ],
       "settings": {
         "overline": "",
-        "title": "<p>Corporate gifting <em>done right<\/em><\/p>",
+        "title": "<p>Corporate gifting <em>done right</em></p>",
         "heading_style": "h2",
         "body": "We're not about boring, generic or wasteful corporate gifts. We'll bring your vision to life with modern corporate gifts that live up to your brand and its values.",
-        "image": "shopify:\/\/shop_images\/Corporate_Gift_Image_c7869c92-b6a7-4eae-96c7-179012bd5da2.png",
+        "image": "shopify://shop_images/Corporate_Gift_Image_c7869c92-b6a7-4eae-96c7-179012bd5da2.png",
         "enable_card_style": true,
         "text_vertical_alignment": "center",
         "layout_style": "two-columns",
@@ -349,189 +349,189 @@
           "type": "logo",
           "settings": {
             "title": "",
-            "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/raymond_james.png?v=1669828930"
+            "icon_url": "https://cdn.shopify.com/s/files/1/0264/5000/2013/files/raymond_james.png?v=1669828930"
           }
         },
         "40f4d366-8b7b-44c9-8704-d359507db252": {
           "type": "logo",
           "settings": {
             "title": "",
-            "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/cassels_542bb4cc-44d2-4d20-a197-da06fe4689ba.png?v=1669828929"
+            "icon_url": "https://cdn.shopify.com/s/files/1/0264/5000/2013/files/cassels_542bb4cc-44d2-4d20-a197-da06fe4689ba.png?v=1669828929"
           }
         },
         "d07f1643-a2d3-49cc-98e3-8e4bba46a18f": {
           "type": "logo",
           "settings": {
             "title": "",
-            "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/symcor_b9357813-b484-475f-a457-1cabae619ca7.png?v=1669828929"
+            "icon_url": "https://cdn.shopify.com/s/files/1/0264/5000/2013/files/symcor_b9357813-b484-475f-a457-1cabae619ca7.png?v=1669828929"
           }
         },
         "dfb8e18d-79bf-4c03-badc-31eebed2d0ff": {
           "type": "logo",
           "settings": {
             "title": "",
-            "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/cf_019873d1-94be-47d8-a819-4e68b6d147ed.png?v=1669828929"
+            "icon_url": "https://cdn.shopify.com/s/files/1/0264/5000/2013/files/cf_019873d1-94be-47d8-a819-4e68b6d147ed.png?v=1669828929"
           }
         },
         "aabfe99d-68a0-4df6-b3de-a82de3ba6146": {
           "type": "logo",
           "settings": {
             "title": "",
-            "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/liberty.png?v=1669828929"
+            "icon_url": "https://cdn.shopify.com/s/files/1/0264/5000/2013/files/liberty.png?v=1669828929"
           }
         },
         "55857477-115b-4287-bffb-988b2c5bd289": {
           "type": "logo",
           "settings": {
             "title": "",
-            "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/sickkids_c7de2290-1f61-47e8-8428-49da09acd284.png?v=1669828929"
+            "icon_url": "https://cdn.shopify.com/s/files/1/0264/5000/2013/files/sickkids_c7de2290-1f61-47e8-8428-49da09acd284.png?v=1669828929"
           }
         },
         "1340fe6b-fbd1-4540-9fe0-e6d87e671083": {
           "type": "logo",
           "settings": {
             "title": "",
-            "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/blg_feddcfdf-e30b-4fc4-bf27-e2d3e3ae6d6e.png?v=1669828929"
+            "icon_url": "https://cdn.shopify.com/s/files/1/0264/5000/2013/files/blg_feddcfdf-e30b-4fc4-bf27-e2d3e3ae6d6e.png?v=1669828929"
           }
         },
         "199d783c-9d51-4392-8181-33d0daac9ee0": {
           "type": "logo",
           "settings": {
             "title": "",
-            "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/economical-insurance.png?v=1669828929"
+            "icon_url": "https://cdn.shopify.com/s/files/1/0264/5000/2013/files/economical-insurance.png?v=1669828929"
           }
         },
         "0865e9f5-a14b-40d4-bd87-795b61f9b0d4": {
           "type": "logo",
           "settings": {
             "title": "",
-            "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/mcmillan_f234291a-3a4f-4a20-b0e7-73fa73d5df8b.png?v=1669828930"
+            "icon_url": "https://cdn.shopify.com/s/files/1/0264/5000/2013/files/mcmillan_f234291a-3a4f-4a20-b0e7-73fa73d5df8b.png?v=1669828930"
           }
         },
         "085d48a7-c26e-403e-a598-181b788c068a": {
           "type": "logo",
           "settings": {
             "title": "",
-            "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/blakes_5d4da28a-7b8a-4875-be97-743c99773be9.png?v=1669828929"
+            "icon_url": "https://cdn.shopify.com/s/files/1/0264/5000/2013/files/blakes_5d4da28a-7b8a-4875-be97-743c99773be9.png?v=1669828929"
           }
         },
         "d4e8fa15-4474-4a0e-9b86-13c0338845d2": {
           "type": "logo",
           "settings": {
             "title": "",
-            "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/shopify_c70861cb-2dce-4d8e-9ae2-ee5fc8e4736f.png?v=1669828929"
+            "icon_url": "https://cdn.shopify.com/s/files/1/0264/5000/2013/files/shopify_c70861cb-2dce-4d8e-9ae2-ee5fc8e4736f.png?v=1669828929"
           }
         },
         "7ca7f0a8-4113-477f-aaad-ed05f3908f1a": {
           "type": "logo",
           "settings": {
             "title": "",
-            "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/oxford_a5da89cb-99d3-453e-a9e1-b4d0ca514a5e.png?v=1669828930"
+            "icon_url": "https://cdn.shopify.com/s/files/1/0264/5000/2013/files/oxford_a5da89cb-99d3-453e-a9e1-b4d0ca514a5e.png?v=1669828930"
           }
         },
         "bb5bab37-21d2-4b31-9735-c28be4f32d54": {
           "type": "logo",
           "settings": {
             "title": "",
-            "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/properly_f0aa6df0-ce89-4b08-a114-9b8c0977e74b.png?v=1669828930"
+            "icon_url": "https://cdn.shopify.com/s/files/1/0264/5000/2013/files/properly_f0aa6df0-ce89-4b08-a114-9b8c0977e74b.png?v=1669828930"
           }
         },
         "8075376b-dcdf-4d36-b0d4-a7ac1b5794c3": {
           "type": "logo",
           "settings": {
             "title": "",
-            "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/deloitte_ed30cda7-1792-47ee-9751-b72d36793c84.png?v=1669828930"
+            "icon_url": "https://cdn.shopify.com/s/files/1/0264/5000/2013/files/deloitte_ed30cda7-1792-47ee-9751-b72d36793c84.png?v=1669828930"
           }
         },
         "ddc9da8c-b636-4e2f-bc0d-d75d5901b55f": {
           "type": "logo",
           "settings": {
             "title": "",
-            "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/desjardins_0aab0af9-e08a-4704-8d04-a08c29cbe120.png?v=1669828929"
+            "icon_url": "https://cdn.shopify.com/s/files/1/0264/5000/2013/files/desjardins_0aab0af9-e08a-4704-8d04-a08c29cbe120.png?v=1669828929"
           }
         },
         "61387c58-6460-4564-a47f-2bcb6d523f57": {
           "type": "logo",
           "settings": {
             "title": "",
-            "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/bayer_bayer.png?v=1669828929"
+            "icon_url": "https://cdn.shopify.com/s/files/1/0264/5000/2013/files/bayer_bayer.png?v=1669828929"
           }
         },
         "38bab869-3919-4a11-bd0a-3791f0b18a99": {
           "type": "logo",
           "settings": {
             "title": "",
-            "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/mattamy.png?v=1669828929"
+            "icon_url": "https://cdn.shopify.com/s/files/1/0264/5000/2013/files/mattamy.png?v=1669828929"
           }
         },
         "f7067fbb-77fa-49d5-92b4-4522a1bca652": {
           "type": "logo",
           "settings": {
             "title": "",
-            "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/laurentian.png?v=1669828929"
+            "icon_url": "https://cdn.shopify.com/s/files/1/0264/5000/2013/files/laurentian.png?v=1669828929"
           }
         },
         "ee28d21c-7f0f-44d3-95e4-eb2bdf85e760": {
           "type": "logo",
           "settings": {
             "title": "",
-            "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/canada-life.png?v=1669828929"
+            "icon_url": "https://cdn.shopify.com/s/files/1/0264/5000/2013/files/canada-life.png?v=1669828929"
           }
         },
         "f6929b23-1929-4c48-84bb-5b9837d19cf7": {
           "type": "logo",
           "settings": {
             "title": "",
-            "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/xero_a8b3f4da-9174-4bce-9075-d320278a30bd.png?v=1669828929"
+            "icon_url": "https://cdn.shopify.com/s/files/1/0264/5000/2013/files/xero_a8b3f4da-9174-4bce-9075-d320278a30bd.png?v=1669828929"
           }
         },
         "8e0a54ed-86fa-463f-9b60-49a7d5e9977e": {
           "type": "logo",
           "settings": {
             "title": "",
-            "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/rsm_0fda06d9-2612-46f4-a56a-5229d7562d79.png?v=1669828929"
+            "icon_url": "https://cdn.shopify.com/s/files/1/0264/5000/2013/files/rsm_0fda06d9-2612-46f4-a56a-5229d7562d79.png?v=1669828929"
           }
         },
         "c1618b47-b322-46fe-8384-c3fb10dfd45d": {
           "type": "logo",
           "settings": {
             "title": "",
-            "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/osler_bb27896d-99e9-431f-afe6-492b16caef6f.png?v=1669828929"
+            "icon_url": "https://cdn.shopify.com/s/files/1/0264/5000/2013/files/osler_bb27896d-99e9-431f-afe6-492b16caef6f.png?v=1669828929"
           }
         },
         "c238321c-37fc-477e-99b7-7bef23826d87": {
           "type": "logo",
           "settings": {
             "title": "",
-            "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/irving_a9087ba8-9373-4c4d-ac77-b3f047f6653f.png?v=1669828929"
+            "icon_url": "https://cdn.shopify.com/s/files/1/0264/5000/2013/files/irving_a9087ba8-9373-4c4d-ac77-b3f047f6653f.png?v=1669828929"
           }
         },
         "1f592594-06ad-4ca9-a86d-5ac899f1ed07": {
           "type": "logo",
           "settings": {
             "title": "",
-            "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/bmo_1f88f30b-1897-4421-b1f5-0fe16fe75105.png?v=1669828929"
+            "icon_url": "https://cdn.shopify.com/s/files/1/0264/5000/2013/files/bmo_1f88f30b-1897-4421-b1f5-0fe16fe75105.png?v=1669828929"
           }
         },
         "d6277abe-ee3b-4be4-a8ce-4916d8f2d3f1": {
           "type": "logo",
           "settings": {
             "title": "",
-            "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/rbc_675ee409-8a4c-438a-a73e-7f54c339e023.png?v=1669828929"
+            "icon_url": "https://cdn.shopify.com/s/files/1/0264/5000/2013/files/rbc_675ee409-8a4c-438a-a73e-7f54c339e023.png?v=1669828929"
           }
         },
         "a99570f5-b9a2-40a6-a2f5-a75f8010e121": {
           "type": "logo",
           "settings": {
             "title": "",
-            "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/bell_1d2ac2f8-73ce-428e-bf68-ecd85c3b99f9.png?v=1669828930"
+            "icon_url": "https://cdn.shopify.com/s/files/1/0264/5000/2013/files/bell_1d2ac2f8-73ce-428e-bf68-ecd85c3b99f9.png?v=1669828930"
           }
         },
         "2e3384fb-1532-4f05-92ab-5839a239d530": {
           "type": "logo",
           "settings": {
             "title": "",
-            "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/accenture_564a5b45-2052-48d4-8444-fa0065d36c73.png?v=1669828929"
+            "icon_url": "https://cdn.shopify.com/s/files/1/0264/5000/2013/files/accenture_564a5b45-2052-48d4-8444-fa0065d36c73.png?v=1669828929"
           }
         }
       },
@@ -575,28 +575,28 @@
           "type": "testimonial",
           "settings": {
             "text": "Foodiepages has been a trusted partner of Dynacare for several years, providing quality, trusted and reliable services for important gifts for staff, clients, and executives. Not only are they thorough and dependable – but Foodiepages also makes strategic and impactful recommendations for us to bring our gifting to the next level. The costs are affordable and they go the extra mile to ensure the recipient(s) feel important and valued. I would recommend Foodiepages to anyone looking for a quality gifting partner.",
-            "image": "shopify:\/\/shop_images\/Dynacare.png"
+            "image": "shopify://shop_images/Dynacare.png"
           }
         },
         "5a9625b0-d533-4873-9e69-ed01dccf2d33": {
           "type": "testimonial",
           "settings": {
             "text": "Before Foodiepages, we didn't have a formal New Hire gifting program. Now that we've moved to a hybrid workforce model, partnering with Foodiepages has allowed us to streamline the process, ensure a consistent, memorable and welcoming onboarding experience for all new employees, whether they are in the office or working remotely.",
-            "image": "shopify:\/\/shop_images\/Symcor.png"
+            "image": "shopify://shop_images/Symcor.png"
           }
         },
         "90ef79c2-d540-4cf3-aa0c-ff6af8769aef": {
           "type": "testimonial",
           "settings": {
             "text": "We've had the pleasure of working with the Foodiepages team on gifts for our company of 500+ on numerous occasions over the past couple of years. The Foodiepages team offers the highest level of customer service and curates gifts that perfectly fit the occasion you are celebrating. No detail is ever forgotten, and even the shipping process has always been top-notch. I would highly recommend working with Foodiepages for individual gift boxes, or large-scale corporate gifting projects.",
-            "image": "shopify:\/\/shop_images\/Jobber.png"
+            "image": "shopify://shop_images/Jobber.png"
           }
         },
         "20ab2288-3c55-4bac-9b41-9d5e76f2153d": {
           "type": "testimonial",
           "settings": {
             "text": "Our experience with Foodiepages has been incredible and the feedback from our employees has been fantastic. We love the local & diverse vendors they have partnered with. We are excited to continue working with them in the future.",
-            "image": "shopify:\/\/shop_images\/Prodigy.png"
+            "image": "shopify://shop_images/Prodigy.png"
           }
         },
         "08490811-f40b-41f0-9609-d353019e95fd": {
@@ -604,7 +604,7 @@
           "disabled": true,
           "settings": {
             "text": "Foodiepages has been a trusted partner of Dynacare for several years, providing quality, trusted and reliable services for important gifts for staff, clients, and executives. Not only are they thorough and dependable – but Foodiepages also makes strategic and impactful recommendations for us to bring our gifting to the next level. The costs are affordable and they go the extra mile to ensure the recipient(s) feel important and valued. I would recommend Foodiepages to anyone looking for a quality gifting partner.",
-            "image": "shopify:\/\/shop_images\/Symcor_Symcor_Releases_Real_time_API_Helping_Financial_Instituti_copy.png"
+            "image": "shopify://shop_images/Symcor_Symcor_Releases_Real_time_API_Helping_Financial_Instituti_copy.png"
           }
         }
       },
@@ -617,15 +617,15 @@
       ],
       "settings": {
         "overline": "Our happy customers",
-        "title": "<p>Don’t just take it from us<\/p>",
+        "title": "<p>Don’t just take it from us</p>",
         "cta_text": "",
-        "cta_link": "shopify:\/\/pages\/contact-us"
+        "cta_link": "shopify://pages/contact-us"
       }
     },
     "7932d37c-a24c-4fe9-827f-8714687431af": {
       "type": "module-newsletter",
       "settings": {
-        "title": "<p>We have <em>high standards<\/em><\/p><p>for emails too.<\/p>",
+        "title": "<p>We have <em>high standards</em></p><p>for emails too.</p>",
         "body": "Sign up with your email to receive news and updates on our new gift box releases.",
         "input_text": "Enter your email",
         "submit_button_text": "SIGN UP",
