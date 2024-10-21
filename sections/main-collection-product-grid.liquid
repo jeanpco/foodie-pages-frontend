@@ -2,7 +2,14 @@
 {{ 'component-loading-overlay.css' | asset_url | stylesheet_tag }}
 {{ 'component-card.css' | asset_url | stylesheet_tag }}
 {{ 'component-price.css' | asset_url | stylesheet_tag }}
-
+{% if collection.handle == 'lloyd-sadd-gifting-portal' or collection.handle == 'bns-gift-portal' %}
+  <style>
+    .header-wrapper,
+    .announcement-bar{
+      display: none;
+    }
+  </style>
+{% endif %}
 <div class="section-{{ section.id }}-padding">
 
   <div class="">
