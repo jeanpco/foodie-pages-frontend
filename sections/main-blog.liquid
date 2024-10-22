@@ -15,9 +15,8 @@
     }
   }
 {%- endstyle -%}
-
 {%- paginate blog.articles by 6 -%}
-<div class="page-wrapper background-color-azul-verdoso-10">
+<div class="page-wrapper">
   <div class="container">
     {% comment %} <h1 class="title--primary">{{ blog.title | escape }}</h1> {% endcomment %}
 
@@ -48,7 +47,7 @@
 {
   "name": "Blog grid - DO NOT USE",
   "tag": "section",
-  "class": "section",
+  "class": "section articles",
   "settings": [
     {
       "type": "header",
