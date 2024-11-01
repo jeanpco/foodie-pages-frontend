@@ -258,6 +258,13 @@
     "module_split_content_c8A94K": {
       "type": "module-split-content",
       "blocks": {
+        "cta_JqhDJU": {
+          "type": "cta",
+          "settings": {
+            "cta_text": "Shop all",
+            "cta_link": ""
+          }
+        },
         "cta_VFgRrx": {
           "type": "cta",
           "settings": {
@@ -267,6 +274,7 @@
         }
       },
       "block_order": [
+        "cta_JqhDJU",
         "cta_VFgRrx"
       ],
       "disabled": true,
@@ -339,6 +347,17 @@
     "67c66074-dbe7-48ca-909f-8416d2e86d32": {
       "type": "module-vertical-tabs",
       "blocks": {
+        "tab_hr4VXC": {
+          "type": "tab",
+          "disabled": true,
+          "settings": {
+            "overline": "Step 1",
+            "title": "Create a Campaign",
+            "body": "",
+            "cta_text": "Get in touch",
+            "cta_link": ""
+          }
+        },
         "0bc0438d-4de4-406b-9b99-82223592e434": {
           "type": "tab",
           "settings": {
@@ -371,6 +390,7 @@
         }
       },
       "block_order": [
+        "tab_hr4VXC",
         "0bc0438d-4de4-406b-9b99-82223592e434",
         "c734e5f4-0d34-4f15-b375-5e99b1596327",
         "b1a2e1e0-af63-4eea-bb4e-8839ab001a7d"
