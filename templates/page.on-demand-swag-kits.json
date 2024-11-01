@@ -16,7 +16,7 @@
           "type": "cta",
           "settings": {
             "cta_text": "Get started",
-            "cta_link": "#corporate-contact"
+            "cta_link": "shopify://pages/contact-us"
           }
         },
         "b851d519-4870-4981-9906-52b4404d2953": {
