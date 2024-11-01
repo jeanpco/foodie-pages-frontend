@@ -288,25 +288,7 @@
           "type": "card",
           "settings": {
             "title": "No Minimum Order Quantity",
-            "body": "Say goodbye to high order minimums! Whether you need 1 gift or 100, we make it easy for small teams to send personalized, meaningful gifts that leave a lasting impression.",
-            "cta_text": "",
-            "cta_link": "/"
-          }
-        },
-        "faec134e-e72c-4f0d-8052-11bb37fec86a": {
-          "type": "card",
-          "settings": {
-            "title": "Support Small Businesses",
-            "body": "Each gift includes unique products from the best small brands across Canada, helping you support small businesses while giving your team something truly special.",
-            "cta_text": "",
-            "cta_link": "/"
-          }
-        },
-        "640e588a-8b8f-49e9-8151-8d7f751d35ac": {
-          "type": "card",
-          "settings": {
-            "title": "Branded Merchandise Meets Premium Local Treats",
-            "body": "Elevate your corporate gifting by combining custom branded items with high-quality, handpicked treats. From gourmet snacks to artisan coffee, our gift boxes showcase premium local treats.",
+            "body": "Whether you need 1 gift or 100, we make it easy for small teams to send personalized, meaningful gifts that leave a lasting impression.",
             "cta_text": "",
             "cta_link": "/"
           }
@@ -314,8 +296,26 @@
         "99e17bc6-8c7d-4127-9269-5ed3314e7bc8": {
           "type": "card",
           "settings": {
-            "title": "Customizable & Effortless",
-            "body": "Choose from a variety of gift combinations, add your company logo, and let us handle the rest. It’s simple, thoughtful, and memorable.",
+            "title": "Reduce Waste & Save Space",
+            "body": "Only order what you need—no more piles of unused swag cluttering up your space.",
+            "cta_text": "",
+            "cta_link": "/"
+          }
+        },
+        "faec134e-e72c-4f0d-8052-11bb37fec86a": {
+          "type": "card",
+          "settings": {
+            "title": "Curated for Impact",
+            "body": "Each kit features unique local snacks and high-quality branded merch, perfect for new hires, client appreciation, or team celebrations.",
+            "cta_text": "",
+            "cta_link": "/"
+          }
+        },
+        "640e588a-8b8f-49e9-8151-8d7f751d35ac": {
+          "type": "card",
+          "settings": {
+            "title": "Give Back",
+            "body": "Like all our gifts, 1% of  sales are donated to Daily Bread Food Bank and Canadian Mental Health Association.",
             "cta_text": "",
             "cta_link": "/"
           }
@@ -323,9 +323,9 @@
       },
       "block_order": [
         "0d45905e-ac44-49ba-a59d-128cacbe1c96",
+        "99e17bc6-8c7d-4127-9269-5ed3314e7bc8",
         "faec134e-e72c-4f0d-8052-11bb37fec86a",
-        "640e588a-8b8f-49e9-8151-8d7f751d35ac",
-        "99e17bc6-8c7d-4127-9269-5ed3314e7bc8"
+        "640e588a-8b8f-49e9-8151-8d7f751d35ac"
       ],
       "settings": {
         "overline": "",
