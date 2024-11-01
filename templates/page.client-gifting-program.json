@@ -17,7 +17,7 @@
         "heading_style": "h2",
         "body": "Our Client Gifting Portals make it easy for your team to send premium, branded corporate gifts that make a lasting impression. With no pre-orders or minimums, choose from a curated selection of high-quality gifts from small, independent brands—all featuring your company’s logo.",
         "image": "shopify://shop_images/ClientPortal_1.png",
-        "enable_card_style": false,
+        "enable_card_style": true,
         "text_vertical_alignment": "center",
         "layout_style": "two-columns",
         "background_color": "background-color-mar-10",
