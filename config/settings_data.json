@@ -1,12 +1,12 @@
 /*
-* ------------------------------------------------------------
-* IMPORTANT: The contents of this file are auto-generated.
-*
-* This file may be updated by the Shopify admin theme editor
-* or related systems. Please exercise caution as any changes
-* made to this file may be overwritten.
-* ------------------------------------------------------------
-*/
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "current": {
     "search_enabled": true,
@@ -79,10 +79,10 @@
     "sold_out_badge_color_scheme": "inverse",
     "accent_icons": "text",
     "social_twitter_link": "",
-    "social_linkedin_link": "https:\/\/www.linkedin.com\/company\/foodiepages-ca",
-    "social_facebook_link": "https:\/\/www.facebook.com\/FoodiePages.ca\/",
+    "social_linkedin_link": "https://www.linkedin.com/company/foodiepages-ca",
+    "social_facebook_link": "https://www.facebook.com/FoodiePages.ca/",
     "social_pinterest_link": "",
-    "social_instagram_link": "https:\/\/www.instagram.com\/foodiepages\/?hl=en",
+    "social_instagram_link": "https://www.instagram.com/foodiepages/?hl=en",
     "social_tiktok_link": "",
     "social_tumblr_link": "",
     "social_snapchat_link": "",
@@ -91,12 +91,12 @@
     "predictive_search_enabled": true,
     "predictive_search_show_vendor": false,
     "predictive_search_show_price": false,
-    "favicon": "shopify:\/\/shop_images\/foodie-fav.png",
+    "favicon": "shopify://shop_images/foodie-fav.png",
     "currency_code_enabled": false,
     "cart_type": "drawer",
     "show_vendor": false,
     "show_cart_note": false,
-    "download_catalogue_icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/gift-icon.svg?v=1666200818",
+    "download_catalogue_icon_url": "https://cdn.shopify.com/s/files/1/0264/5000/2013/files/gift-icon.svg?v=1666200818",
     "download_catalogue_title": "Download our corporate brochure",
     "download_catalogue_body": "",
     "download_catalogue_input_firstname_label": "First name",
@@ -108,7 +108,7 @@
     "download_catalogue_input_company_label": "Company",
     "download_catalogue_input_company_placeholder": "Your company",
     "download_catalogue_cta_text": "Download",
-    "download_catalogue_download_file_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/Foodiepages_Corporate_Gift_Guide-FW2022.pdf?v=1662043318",
+    "download_catalogue_download_file_url": "https://cdn.shopify.com/s/files/1/0264/5000/2013/files/Foodiepages_Corporate_Gift_Guide-FW2022.pdf?v=1662043318",
     "download_catalogue_success_message": "Thanks for contacting us. We'll get back to you as soon as possible.",
     "contact_form_title": "Contact us",
     "contact_form_body": "Please let us know how we can help you!",
@@ -142,7 +142,7 @@
     "corporate_contact_form_input_message_placeholder": "Enter order details",
     "corporate_contact_form_cta_text": "Submit",
     "corporate_contact_form_success_message": "Thank you for your inquiry! We'll get back to you shortly.",
-    "checkout_logo_image": "shopify:\/\/shop_images\/foodie-logo.png",
+    "checkout_logo_image": "shopify://shop_images/foodie-logo.png",
     "checkout_logo_size": "small",
     "checkout_body_background_color": "#fafafa",
     "checkout_input_background_color_mode": "white",
@@ -173,21 +173,21 @@
           "4e4a9124-bcde-410f-bdca-b2efa39cbf43": {
             "type": "highlighted_item",
             "settings": {
-              "associated_parent_menu_url": "shopify:\/\/pages\/holiday-gifts",
+              "associated_parent_menu_url": "shopify://pages/holiday-gifts",
               "highlighted_product": "",
-              "highlighted_image": "shopify:\/\/shop_images\/Untitled_design_17_692338a4-e5da-4f34-92ca-f88e3bdbcd58.png",
+              "highlighted_image": "shopify://shop_images/Untitled_design_17_692338a4-e5da-4f34-92ca-f88e3bdbcd58.png",
               "highlighted_title": "Featured: 2024 Holiday Gifts",
               "highlighted_body": "",
-              "highlighted_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/Foodiepages_Catalogue_HO24.pdf?v=1725729854"
+              "highlighted_url": "https://cdn.shopify.com/s/files/1/0264/5000/2013/files/Foodiepages_Catalogue_HO24.pdf?v=1725729854"
             }
           },
           "46207620-2739-4e9b-b05b-9042ffa5a46e": {
             "type": "highlighted_item",
             "disabled": true,
             "settings": {
-              "associated_parent_menu_url": "shopify:\/\/pages\/corporate-gifting",
+              "associated_parent_menu_url": "shopify://pages/corporate-gifting",
               "highlighted_product": "",
-              "highlighted_image": "shopify:\/\/shop_images\/Image_3468c917-9e51-49ab-9d3c-fa357152af3b.png",
+              "highlighted_image": "shopify://shop_images/Image_3468c917-9e51-49ab-9d3c-fa357152af3b.png",
               "highlighted_title": "Join our corporate program",
               "highlighted_body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
               "highlighted_url": "#corporate-contact"
@@ -242,31 +242,28 @@
           "footer-0"
         ],
         "settings": {
-          "image": "shopify:\/\/shop_images\/foodie-logo.png",
+          "image": "shopify://shop_images/foodie-logo.png",
           "legal_menu": "legal-menu"
         }
       },
       "announcement-banner": {
         "type": "announcement-banner",
         "settings": {
-          "show_banner": false,
-          "text": "Happy Holidays! All orders placed after Friday, 12\/22 at noon EST will be shipped the week of 1\/8!",
-          "link": ""
+          "show_banner": true,
+          "text": "We are shipping daily with UPS! Ready to get started on Holiday Corporate Gifting? Let's talk!",
+          "link": "https://www.foodiepages.ca/pages/contact-us"
         }
       }
     },
-    "content_for_index": [
-
-    ],
+    "content_for_index": [],
     "blocks": {
       "14060646107696862457": {
-        "type": "shopify:\/\/apps\/judge-me-reviews\/blocks\/judgeme_core\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+        "type": "shopify://apps/judge-me-reviews/blocks/judgeme_core/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
         "disabled": false,
-        "settings": {
-        }
+        "settings": {}
       },
       "13787645888186966329": {
-        "type": "shopify:\/\/apps\/bundle-builder-custom-bundles\/blocks\/bundle_builder\/0616c381-b470-4395-b013-48a4995ac72a",
+        "type": "shopify://apps/bundle-builder-custom-bundles/blocks/bundle_builder/0616c381-b470-4395-b013-48a4995ac72a",
         "disabled": false,
         "settings": {
           "product": ""
