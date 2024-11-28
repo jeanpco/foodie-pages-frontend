@@ -7,7 +7,7 @@
  * made to this file may be overwritten.
  * ------------------------------------------------------------
  */
- {
+{
   "sections": {
     "main": {
       "type": "module-hero",
@@ -37,6 +37,7 @@
         "heading_style": "h1",
         "body": "Foodiepages makes it easy to customize unique corporate gifts for employees, clients, and sales prospects, and deliver them globally.",
         "image": "shopify://shop_images/Corporate_Gift_Image.png",
+        "supporting_image": "shopify://shop_images/Reviews.png",
         "enable_card_style": false,
         "text_vertical_alignment": "flex-end",
         "layout_style": "two-columns",
@@ -251,7 +252,8 @@
         "2e3384fb-1532-4f05-92ab-5839a239d530"
       ],
       "settings": {
-        "overline": "Trusted by Canada's leading companies"
+        "overline": "Trusted by Canada's leading companies",
+        "animate_logos": true
       }
     },
     "ff6debb7-9198-4031-89bf-4dba97bf8f37": {
