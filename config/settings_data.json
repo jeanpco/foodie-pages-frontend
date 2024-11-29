@@ -268,6 +268,13 @@
         "settings": {
           "product": ""
         }
+      },
+      "12601257459161342390": {
+        "type": "shopify://apps/giftship/blocks/giftship/26bd5756-d344-471d-baf8-ba6267b82da9",
+        "disabled": false,
+        "settings": {
+          "gs_drawer_cart": false
+        }
       }
     }
   },
