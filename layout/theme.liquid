@@ -333,11 +333,6 @@
     {{ 'general-utilities.css' | asset_url | stylesheet_tag }}
     {{ 'icons.css' | asset_url | stylesheet_tag }}
 
-    {% if request.path == '/a/ms/cart/' %}
-      {{ 'multi-ship.css' | asset_url | stylesheet_tag }}
-      {% render 'multi-ship' %}
-    {% endif %}
-
     {% if request.path == '/apps/builder' %}
       {{ 'box-builder.css' | asset_url | stylesheet_tag }}
     {% endif %}
@@ -369,10 +364,6 @@
     {% render 'google-tag-sign-in' %}
     {% render 'google-tag-sign-up' %}
     {% comment %} Add to cart conversion rate tracking is at the bottom of the body, it needs the elements rendered to work as it carries more logic {% endcomment %}
-  
- {% render 'multiship' %} 
-
- {% render 'giftship' %} 
 </head>
 
   <body class="{{ template.name }}">
@@ -382,6 +373,13 @@
 
     {%- render 'cart-drawer' -%}
 
+    {% if request.path == '/a/gs/cart/' %}
+      {% comment %} {{ 'multi-ship.css' | asset_url | stylesheet_tag }}
+      {% render 'multi-ship' %} {% endcomment %}
+    {% else %}
+      {%- render 'cart-drawer' -%}
+    {% endif %}
+    
     {% section 'announcement-banner' %}
     {% section 'header' %}
     
