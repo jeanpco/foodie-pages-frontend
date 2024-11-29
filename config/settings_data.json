@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "current": {
     "search_enabled": true,
@@ -70,10 +79,10 @@
     "sold_out_badge_color_scheme": "inverse",
     "accent_icons": "text",
     "social_twitter_link": "",
-    "social_linkedin_link": "https:\/\/www.linkedin.com\/company\/foodiepages-ca",
-    "social_facebook_link": "https:\/\/www.facebook.com\/FoodiePages.ca\/",
+    "social_linkedin_link": "https://www.linkedin.com/company/foodiepages-ca",
+    "social_facebook_link": "https://www.facebook.com/FoodiePages.ca/",
     "social_pinterest_link": "",
-    "social_instagram_link": "https:\/\/www.instagram.com\/foodiepages\/?hl=en",
+    "social_instagram_link": "https://www.instagram.com/foodiepages/?hl=en",
     "social_tiktok_link": "",
     "social_tumblr_link": "",
     "social_snapchat_link": "",
@@ -82,12 +91,12 @@
     "predictive_search_enabled": true,
     "predictive_search_show_vendor": false,
     "predictive_search_show_price": false,
-    "favicon": "shopify:\/\/shop_images\/foodie-fav.png",
+    "favicon": "shopify://shop_images/foodie-fav.png",
     "currency_code_enabled": false,
     "cart_type": "drawer",
     "show_vendor": false,
     "show_cart_note": false,
-    "download_catalogue_icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/gift-icon.svg?v=1666200818",
+    "download_catalogue_icon_url": "https://cdn.shopify.com/s/files/1/0264/5000/2013/files/gift-icon.svg?v=1666200818",
     "download_catalogue_title": "Download our corporate brochure",
     "download_catalogue_body": "",
     "download_catalogue_input_firstname_label": "First name",
@@ -99,7 +108,7 @@
     "download_catalogue_input_company_label": "Company",
     "download_catalogue_input_company_placeholder": "Your company",
     "download_catalogue_cta_text": "Download",
-    "download_catalogue_download_file_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/Foodiepages_Corporate_Gift_Guide-FW2022.pdf?v=1662043318",
+    "download_catalogue_download_file_url": "https://cdn.shopify.com/s/files/1/0264/5000/2013/files/Foodiepages_Corporate_Gift_Guide-FW2022.pdf?v=1662043318",
     "download_catalogue_success_message": "Thanks for contacting us. We'll get back to you as soon as possible.",
     "contact_form_title": "Contact us",
     "contact_form_body": "Please let us know how we can help you!",
@@ -133,7 +142,7 @@
     "corporate_contact_form_input_message_placeholder": "Enter order details",
     "corporate_contact_form_cta_text": "Submit",
     "corporate_contact_form_success_message": "Thank you for your inquiry! We'll get back to you shortly.",
-    "checkout_logo_image": "shopify:\/\/shop_images\/foodie-logo.png",
+    "checkout_logo_image": "shopify://shop_images/foodie-logo.png",
     "checkout_logo_size": "small",
     "checkout_body_background_color": "#fafafa",
     "checkout_input_background_color_mode": "white",
@@ -164,7 +173,7 @@
           "4e4a9124-bcde-410f-bdca-b2efa39cbf43": {
             "type": "highlighted_item",
             "settings": {
-              "associated_parent_menu_url": "shopify:\/\/collections\/gift-baskets",
+              "associated_parent_menu_url": "shopify://collections/gift-baskets",
               "highlighted_product": "crowd-pleasers-gift-box",
               "highlighted_title": "",
               "highlighted_body": "",
@@ -175,9 +184,9 @@
             "type": "highlighted_item",
             "disabled": true,
             "settings": {
-              "associated_parent_menu_url": "shopify:\/\/pages\/corporate-gifting",
+              "associated_parent_menu_url": "shopify://pages/corporate-gifting",
               "highlighted_product": "",
-              "highlighted_image": "shopify:\/\/shop_images\/Image_3468c917-9e51-49ab-9d3c-fa357152af3b.png",
+              "highlighted_image": "shopify://shop_images/Image_3468c917-9e51-49ab-9d3c-fa357152af3b.png",
               "highlighted_title": "Join our corporate program",
               "highlighted_body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
               "highlighted_url": "#corporate-contact"
@@ -232,7 +241,7 @@
           "footer-0"
         ],
         "settings": {
-          "image": "shopify:\/\/shop_images\/foodie-logo.png",
+          "image": "shopify://shop_images/foodie-logo.png",
           "legal_menu": "legal-menu"
         }
       },
@@ -245,9 +254,16 @@
         }
       }
     },
-    "content_for_index": [
-
-    ]
+    "content_for_index": [],
+    "blocks": {
+      "12601257459161342390": {
+        "type": "shopify://apps/giftship/blocks/giftship/26bd5756-d344-471d-baf8-ba6267b82da9",
+        "disabled": false,
+        "settings": {
+          "gs_drawer_cart": true
+        }
+      }
+    }
   },
   "presets": {
     "Default": {
