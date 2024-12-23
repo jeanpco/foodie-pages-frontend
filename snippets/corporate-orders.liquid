@@ -151,6 +151,9 @@ const loadingElement = (style) => `
 
     try {
       getShipStationStores().then(payload => {
+
+        console.log(payload)
+
         window.shipStationStores = payload;
 
         if (localStorage.getItem('saleOrders')) {

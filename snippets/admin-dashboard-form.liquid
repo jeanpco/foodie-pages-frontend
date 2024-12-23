@@ -114,30 +114,27 @@
 </form>
 
 <script type="module">
-  
-  
-  
-  
-  
-  
-  
-  
-  {% comment %} get data-js-element="draggable" {% endcomment %}
+  let sortableInstance;
+
   const startDraggability = () => {
-    
     const elements = {
       draggable: document.querySelector('[data-js-element="draggable"]')
     }
 
-    const sortable = new Draggable.Sortable(elements.draggable, {
-        draggable: '[data-js-element="draggable-input"]',
-        handle: '.titlebar__handle',
-        swapAnimation: {
-            duration: 300,
-            easingFunction: 'ease-in-out',
-            vertical: true
-        },
-        plugins: [Draggable.Plugins.SwapAnimation]
+    // Destroy existing instance if it exists
+    if (sortableInstance) {
+      sortableInstance.destroy();
+    }
+
+    sortableInstance = new Draggable.Sortable(elements.draggable, {
+      draggable: '[data-js-element="draggable-input"]',
+      handle: '.titlebar__handle',
+      swapAnimation: {
+        duration: 300,
+        easingFunction: 'ease-in-out',
+        vertical: true
+      },
+      plugins: [Draggable.Plugins.SwapAnimation]
     });
   }
 
@@ -247,12 +244,5 @@
   }
 
   window.addEventListener('DOMContentLoaded', initForm)
-
-
-
-
-
-
-
 
 </script>
