@@ -249,7 +249,7 @@
       "announcement-banner": {
         "type": "announcement-banner",
         "settings": {
-          "show_banner": true,
+          "show_banner": false,
           "text": "We are shipping daily with UPS! Ready to get started on Holiday Corporate Gifting? Let's talk!",
           "link": "https://www.foodiepages.ca/pages/contact-us"
         }
