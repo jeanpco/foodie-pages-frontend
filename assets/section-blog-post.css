@@ -25,6 +25,16 @@
   height: 33rem;
 }
 
+.article-template__hero-adapt{
+  border-radius: 35px;
+}
+.article-template__hero-adapt img{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 @media screen and (min-width: 750px) and (max-width: 989px) {
   .article-template__hero-small {
     height: 22rem;
