@@ -67,7 +67,7 @@
         "overline": "",
         "title": "<p>Gifts that are <em>twice as good</em></p>",
         "heading_style": "h1",
-        "body": "Our mission is simple: to make people feel seen, known, and valued with thoughtfully curated gift baskets featuring the most exciting finds from Canadian small businesses.",
+        "body": "Personalized gift baskets that make people feel seen, known, and valued—featuring the most exciting finds from small brands. Fully customizable, no minimum orders.",
         "image": "shopify://shop_images/HomepageHoliday_v2.png",
         "enable_card_style": false,
         "text_vertical_alignment": "flex-end",
@@ -565,7 +565,8 @@
         "2e3384fb-1532-4f05-92ab-5839a239d530"
       ],
       "settings": {
-        "overline": "Trusted by the world's best companies"
+        "overline": "Trusted by the world's best companies",
+        "animate_logos": true
       }
     },
     "module-testimonials": {
