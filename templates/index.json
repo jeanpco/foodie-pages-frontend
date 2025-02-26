@@ -117,6 +117,7 @@
         },
         "881fd230-0ff5-475a-80ab-394c30599557": {
           "type": "tab",
+          "disabled": true,
           "settings": {
             "icon_url": "https://cdn.shopify.com/s/files/1/0264/5000/2013/files/icon_3_156x118_crop_center.png?v=1663723952",
             "tab_text": "Worldwide shipping",
