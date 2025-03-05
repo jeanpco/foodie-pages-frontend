@@ -15,15 +15,15 @@
         "fb0b7578-d3a7-47df-9c96-0f6374f1d2dd": {
           "type": "cta",
           "settings": {
-            "cta_text": "SHOP OUR GIFTS",
+            "cta_text": "SHOP CURATED GIFTS",
             "cta_link": "shopify://collections/gift-baskets"
           }
         },
         "0a79a883-faf9-4609-8190-ce1392d3723b": {
           "type": "cta",
           "settings": {
-            "cta_text": "CORPORATE GIFTING",
-            "cta_link": "https://www.foodiepages.ca/pages/holiday-gifts"
+            "cta_text": "START CUSTOMIZING",
+            "cta_link": "https://www.foodiepages.ca/apps/builder?b=Tkp0UuO6VTqRLVZgzDGJk84y"
           }
         },
         "7e63476c-2c94-4994-b3dd-640813bcc65b": {
