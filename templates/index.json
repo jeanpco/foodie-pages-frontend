@@ -70,7 +70,7 @@
         "body": "Thoughtfully curated, beautifully packaged, and filled with small-batch goods people actually want. No fluff, no fillers - just really good gifts.",
         "image": "shopify://shop_images/HomepageImage_v2.png",
         "enable_card_style": false,
-        "text_vertical_alignment": "flex-end",
+        "text_vertical_alignment": "center",
         "layout_style": "two-columns",
         "background_color": "background-color-azul-verdoso-10",
         "trusted_by_text": "Trusted by"
