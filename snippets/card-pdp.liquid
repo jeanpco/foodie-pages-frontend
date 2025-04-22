@@ -55,6 +55,11 @@
     <h3 class="heading-style-h6 color-grey-700 text-weight-semibold">
       {{ card_product.title | escape }}
     </h3>
+    <!-- Start of Judge.me code -->
+      <div style='{{ jm_style }}' class='jdgm-widget jdgm-preview-badge' data-id='{{ card_product.id }}' data-auto-install='false'>
+        {{ card_product.metafields.judgeme.badge }}
+      </div>
+      <!-- End of Judge.me code -->
     <div class="product-card-price margin-top margin-xxsmall">
       {% render 'price', product: card_product, price_class: '' %}
     </div>
