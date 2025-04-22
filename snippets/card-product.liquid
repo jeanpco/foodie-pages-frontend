@@ -152,6 +152,11 @@
               {{ card_product.title | escape }}
             </a>
           </h3>
+          <!-- Start of Judge.me code -->
+      <div style='{{ jm_style }}' class='jdgm-widget jdgm-preview-badge' data-id='{{ card_product.id }}' data-auto-install='false'>
+        {{ card_product.metafields.judgeme.badge }}
+      </div>
+      <!-- End of Judge.me code -->
           <div class="card-information">
             {%- if show_vendor -%}
               <span class="visually-hidden">{{ 'accessibility.vendor' | t }}</span>
