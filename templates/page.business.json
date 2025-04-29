@@ -35,7 +35,7 @@
         "overline": "",
         "title": "<h2>Say goodbye to generic corporate gifts</h2>",
         "heading_style": "h1",
-        "body": "Send thoughtful, branded gifts that build real relationships.",
+        "body": "Send branded gifts that build real relationships. Whether you’re welcoming a new hire, appreciating a client, or celebrating a milestone, Foodiepages helps you deliver meaningful, beautifully packaged gifts that reflect your company’s values and purpose.",
         "image": "shopify://shop_images/Corporate_Gift_Image.png",
         "supporting_image": "shopify://shop_images/unnamed_update.png",
         "enable_card_style": false,
@@ -302,7 +302,7 @@
         "overline": "",
         "title": "<p>Stand out by supporting <em>small</em></p>",
         "heading_style": "h2",
-        "body": "Engage employees and stand out to clients with custom corporate gifts that share your company values. Our products are hand-picked from Canadian brands, supporting small business legends.",
+        "body": "Every gift supports small businesses and local makers. Plus, 1% of every order goes to Canadian food banks.",
         "body_rte": "",
         "layout_style": "content-left"
       }
