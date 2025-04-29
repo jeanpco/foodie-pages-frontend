@@ -307,6 +307,32 @@
         "layout_style": "content-left"
       }
     },
+    "module_split_content_mnPBJ9": {
+      "type": "module-split-content",
+      "blocks": {
+        "cta_ErrWYR": {
+          "type": "cta",
+          "settings": {
+            "cta_text": "Make an Inquiry",
+            "cta_link": "#corporate-contact"
+          }
+        }
+      },
+      "block_order": [
+        "cta_ErrWYR"
+      ],
+      "disabled": true,
+      "settings": {
+        "image": "shopify://shop_images/Image.jpg",
+        "image_height_auto": false,
+        "overline": "",
+        "title": "<p>Gifts that drive results</p>",
+        "heading_style": "h2",
+        "body": "Our clients use gifting to increase client loyalty, improve employee engagement, and create stronger sales relationships.",
+        "body_rte": "",
+        "layout_style": "content-left"
+      }
+    },
     "19291dd4-710b-4313-9d7d-4847e4b2ab64": {
       "type": "module-columns",
       "blocks": {
@@ -535,6 +561,7 @@
     "module-logos",
     "module_split_content_c8A94K",
     "ff6debb7-9198-4031-89bf-4dba97bf8f37",
+    "module_split_content_mnPBJ9",
     "19291dd4-710b-4313-9d7d-4847e4b2ab64",
     "67c66074-dbe7-48ca-909f-8416d2e86d32",
     "d5778432-2fd8-4a16-8893-9bb2eaa2e555",
