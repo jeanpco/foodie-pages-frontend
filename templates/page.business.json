@@ -143,6 +143,7 @@
         },
         "ddc9da8c-b636-4e2f-bc0d-d75d5901b55f": {
           "type": "logo",
+          "disabled": true,
           "settings": {
             "title": "",
             "icon_url": "https://cdn.shopify.com/s/files/1/0264/5000/2013/files/desjardins_0aab0af9-e08a-4704-8d04-a08c29cbe120.png?v=1669828929"
@@ -272,7 +273,7 @@
       ],
       "settings": {
         "overline": "Trusted by Companies Who Prioritize Relationships",
-        "animate_logos": true
+        "animate_logos": false
       }
     },
     "module_split_content_c8A94K": {
