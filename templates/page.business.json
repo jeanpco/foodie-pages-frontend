@@ -50,6 +50,7 @@
       "blocks": {
         "748ccdc5-9a8b-45b6-b061-9ffd30abe201": {
           "type": "logo",
+          "disabled": true,
           "settings": {
             "title": "",
             "icon_url": "https://cdn.shopify.com/s/files/1/0264/5000/2013/files/raymond_james.png?v=1669828930"
@@ -57,6 +58,7 @@
         },
         "d07f1643-a2d3-49cc-98e3-8e4bba46a18f": {
           "type": "logo",
+          "disabled": true,
           "settings": {
             "title": "",
             "icon_url": "https://cdn.shopify.com/s/files/1/0264/5000/2013/files/symcor_b9357813-b484-475f-a457-1cabae619ca7.png?v=1669828929"
@@ -71,6 +73,7 @@
         },
         "aabfe99d-68a0-4df6-b3de-a82de3ba6146": {
           "type": "logo",
+          "disabled": true,
           "settings": {
             "title": "",
             "icon_url": "https://cdn.shopify.com/s/files/1/0264/5000/2013/files/liberty.png?v=1669828929"
@@ -78,6 +81,7 @@
         },
         "55857477-115b-4287-bffb-988b2c5bd289": {
           "type": "logo",
+          "disabled": true,
           "settings": {
             "title": "",
             "icon_url": "https://cdn.shopify.com/s/files/1/0264/5000/2013/files/sickkids_c7de2290-1f61-47e8-8428-49da09acd284.png?v=1669828929"
@@ -85,6 +89,7 @@
         },
         "1340fe6b-fbd1-4540-9fe0-e6d87e671083": {
           "type": "logo",
+          "disabled": true,
           "settings": {
             "title": "",
             "icon_url": "https://cdn.shopify.com/s/files/1/0264/5000/2013/files/blg_feddcfdf-e30b-4fc4-bf27-e2d3e3ae6d6e.png?v=1669828929"
@@ -92,6 +97,7 @@
         },
         "199d783c-9d51-4392-8181-33d0daac9ee0": {
           "type": "logo",
+          "disabled": true,
           "settings": {
             "title": "",
             "icon_url": "https://cdn.shopify.com/s/files/1/0264/5000/2013/files/economical-insurance.png?v=1669828929"
@@ -99,6 +105,7 @@
         },
         "0865e9f5-a14b-40d4-bd87-795b61f9b0d4": {
           "type": "logo",
+          "disabled": true,
           "settings": {
             "title": "McMillan LLP",
             "icon_url": "https://cdn.shopify.com/s/files/1/0264/5000/2013/files/mcmillan_f234291a-3a4f-4a20-b0e7-73fa73d5df8b.png?v=1669828930"
@@ -120,6 +127,7 @@
         },
         "7ca7f0a8-4113-477f-aaad-ed05f3908f1a": {
           "type": "logo",
+          "disabled": true,
           "settings": {
             "title": "",
             "icon_url": "https://cdn.shopify.com/s/files/1/0264/5000/2013/files/oxford_a5da89cb-99d3-453e-a9e1-b4d0ca514a5e.png?v=1669828930"
@@ -127,6 +135,7 @@
         },
         "8075376b-dcdf-4d36-b0d4-a7ac1b5794c3": {
           "type": "logo",
+          "disabled": true,
           "settings": {
             "title": "",
             "icon_url": "https://cdn.shopify.com/s/files/1/0264/5000/2013/files/deloitte_ed30cda7-1792-47ee-9751-b72d36793c84.png?v=1669828930"
@@ -141,6 +150,7 @@
         },
         "61387c58-6460-4564-a47f-2bcb6d523f57": {
           "type": "logo",
+          "disabled": true,
           "settings": {
             "title": "",
             "icon_url": "https://cdn.shopify.com/s/files/1/0264/5000/2013/files/bayer_bayer.png?v=1669828929"
@@ -148,6 +158,7 @@
         },
         "38bab869-3919-4a11-bd0a-3791f0b18a99": {
           "type": "logo",
+          "disabled": true,
           "settings": {
             "title": "",
             "icon_url": "https://cdn.shopify.com/s/files/1/0264/5000/2013/files/mattamy.png?v=1669828929"
@@ -155,6 +166,7 @@
         },
         "f7067fbb-77fa-49d5-92b4-4522a1bca652": {
           "type": "logo",
+          "disabled": true,
           "settings": {
             "title": "",
             "icon_url": "https://cdn.shopify.com/s/files/1/0264/5000/2013/files/laurentian.png?v=1669828929"
@@ -162,6 +174,7 @@
         },
         "ee28d21c-7f0f-44d3-95e4-eb2bdf85e760": {
           "type": "logo",
+          "disabled": true,
           "settings": {
             "title": "",
             "icon_url": "https://cdn.shopify.com/s/files/1/0264/5000/2013/files/canada-life.png?v=1669828929"
@@ -169,6 +182,7 @@
         },
         "f6929b23-1929-4c48-84bb-5b9837d19cf7": {
           "type": "logo",
+          "disabled": true,
           "settings": {
             "title": "",
             "icon_url": "https://cdn.shopify.com/s/files/1/0264/5000/2013/files/xero_a8b3f4da-9174-4bce-9075-d320278a30bd.png?v=1669828929"
@@ -176,6 +190,7 @@
         },
         "8e0a54ed-86fa-463f-9b60-49a7d5e9977e": {
           "type": "logo",
+          "disabled": true,
           "settings": {
             "title": "",
             "icon_url": "https://cdn.shopify.com/s/files/1/0264/5000/2013/files/rsm_0fda06d9-2612-46f4-a56a-5229d7562d79.png?v=1669828929"
@@ -183,6 +198,7 @@
         },
         "c1618b47-b322-46fe-8384-c3fb10dfd45d": {
           "type": "logo",
+          "disabled": true,
           "settings": {
             "title": "",
             "icon_url": "https://cdn.shopify.com/s/files/1/0264/5000/2013/files/osler_bb27896d-99e9-431f-afe6-492b16caef6f.png?v=1669828929"
@@ -190,6 +206,7 @@
         },
         "c238321c-37fc-477e-99b7-7bef23826d87": {
           "type": "logo",
+          "disabled": true,
           "settings": {
             "title": "",
             "icon_url": "https://cdn.shopify.com/s/files/1/0264/5000/2013/files/irving_a9087ba8-9373-4c4d-ac77-b3f047f6653f.png?v=1669828929"
@@ -211,6 +228,7 @@
         },
         "a99570f5-b9a2-40a6-a2f5-a75f8010e121": {
           "type": "logo",
+          "disabled": true,
           "settings": {
             "title": "",
             "icon_url": "https://cdn.shopify.com/s/files/1/0264/5000/2013/files/bell_1d2ac2f8-73ce-428e-bf68-ecd85c3b99f9.png?v=1669828930"
@@ -218,6 +236,7 @@
         },
         "2e3384fb-1532-4f05-92ab-5839a239d530": {
           "type": "logo",
+          "disabled": true,
           "settings": {
             "title": "",
             "icon_url": "https://cdn.shopify.com/s/files/1/0264/5000/2013/files/accenture_564a5b45-2052-48d4-8444-fa0065d36c73.png?v=1669828929"
