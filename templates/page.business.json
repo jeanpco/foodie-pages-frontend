@@ -296,7 +296,7 @@
         "image_height_auto": false,
         "overline": "Why Foodiepages for corporate gifting?",
         "title": "<p>Custom gifting, made <em>easy</em></p>",
-        "heading_style": "h2",
+        "heading_style": "h1",
         "body": "Personalized gifts that combine your brand with unique items from small and independent Canadian brands.",
         "body_rte": "",
         "layout_style": "content-right"
@@ -343,12 +343,12 @@
       ],
       "disabled": true,
       "settings": {
-        "image": "shopify://shop_images/Image.jpg",
+        "image": "shopify://shop_images/Untitled_design_18.png",
         "image_height_auto": false,
         "overline": "",
-        "title": "<p>Gifts that drive results</p>",
+        "title": "<p>Strengthen relationships</p>",
         "heading_style": "h2",
-        "body": "Our clients use gifting to increase client loyalty, improve employee engagement, and create stronger sales relationships.",
+        "body": "We, like you, know that your business is driven by the quality of its relationships. Our clients use gifting to increase client loyalty, improve employee engagement, and create stronger sales relationships.",
         "body_rte": "",
         "layout_style": "content-left"
       }
