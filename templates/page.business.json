@@ -35,7 +35,7 @@
         "overline": "",
         "title": "<p>Gifting that drives<em> business outcomes</em></p>",
         "heading_style": "h1",
-        "body": "Whether you’re welcoming a new hire, appreciating a client, or celebrating a milestone, Foodiepages helps you design premium gifts that reflect your company’s values and purpose.",
+        "body": "Whether you’re welcoming a new hire, appreciating a client, or celebrating a milestone, Foodiepages helps you strengthen relationships with premium gifts customized for your brand.",
         "image": "shopify://shop_images/Corporate_Gift_Image.png",
         "supporting_image": "shopify://shop_images/unnamed_update.png",
         "enable_card_style": false,
@@ -281,6 +281,7 @@
       "blocks": {
         "cta_VFgRrx": {
           "type": "cta",
+          "disabled": true,
           "settings": {
             "cta_text": "Make an Inquiry",
             "cta_link": "#corporate-contact"
@@ -290,11 +291,10 @@
       "block_order": [
         "cta_VFgRrx"
       ],
-      "disabled": true,
       "settings": {
-        "image": "shopify://shop_images/Image.jpg",
+        "image": "shopify://shop_images/Untitled_design_17_9748d897-9a2f-47db-ac87-0f133610d6be.png",
         "image_height_auto": false,
-        "overline": "Why Foodiepages",
+        "overline": "Why Foodiepages?",
         "title": "<p>Custom gifting, made <em>easy</em></p>",
         "heading_style": "h2",
         "body": "Personalized gifts that combine your brand with unique items from small and independent Canadian brands.",
@@ -319,7 +319,7 @@
       "settings": {
         "image": "shopify://shop_images/Image.jpg",
         "image_height_auto": false,
-        "overline": "why foodiepages",
+        "overline": "",
         "title": "<p>Values-aligned and impact-driven</p>",
         "heading_style": "h2",
         "body": "Every gift supports small businesses and local makers. Plus, 1% of every order goes to Canadian food banks.",
