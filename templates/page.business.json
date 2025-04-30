@@ -38,10 +38,10 @@
         "body": "Whether you’re welcoming a new hire, appreciating a client, or celebrating a milestone, Foodiepages helps you strengthen relationships with premium gifts customized for your brand.",
         "image": "shopify://shop_images/Corporate_Gift_Image.png",
         "supporting_image": "shopify://shop_images/unnamed_update.png",
-        "enable_card_style": false,
+        "enable_card_style": true,
         "text_vertical_alignment": "center",
         "layout_style": "two-columns",
-        "background_color": "background-color-azul-verdoso-10",
+        "background_color": "background-color-secondary",
         "trusted_by_text": "Trusted by"
       }
     },
