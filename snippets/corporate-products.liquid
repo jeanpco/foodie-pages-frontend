@@ -97,9 +97,10 @@
     const mergedProducts = {};
   
     products.forEach((product) => {
-
+      if (!product) {
+        return;
+      }
       
-      if (!product) return;
       if (!mergedProducts[product.id]) {
         mergedProducts[product.id] = {
           ...product,
@@ -119,12 +120,49 @@
       }
     });
   
-    return Object.values(mergedProducts);
+    const result = Object.values(mergedProducts);
+    return result;
   }
 
-  window.productsGenerateCampaigns = async ({ campaigns, products, container }) => {
+  window.productsGenerateCampaigns = ({ campaigns, products, container }) => {
+    // Create a list of all SKUs from the customer's campaign items
+    const customerCampaignSkus = campaigns
+      .flatMap(campaign => campaign.items.data)
+      .filter(item => item && item.sku)
+      .map(item => item.sku.toLowerCase());
+    
+    // More strict filtering to only include exact SKU matches
+    const customerProducts = [];
+    
+    // For each campaign item SKU, find the matching product
+    customerCampaignSkus.forEach(campaignSku => {
+      // Find products with matching SKUs
+      const matchingProducts = products.filter(product => {
+        if (!product.variants || product.variants.length === 0) return false;
+        
+        return product.variants.some(variant => {
+          const match = variant.sku && variant.sku.toLowerCase() === campaignSku;
+          return match;
+        });
+      });
+      
+      // Add matching products to the customer products array if not already included
+      matchingProducts.forEach(product => {
+        if (!customerProducts.some(p => p.id === product.id)) {
+          customerProducts.push(product);
+        }
+      });
+    });
 
-    if (!campaigns.length) return emptyState(container);
+    if (!campaigns || !campaigns.length) {
+      container.innerHTML = `
+        <div class="corporate-campaigns-products__empty-state">
+          <h4 class="heading-style-h4">No campaigns found</h4>
+          <p>You don't have any campaigns yet. Create a campaign to get started.</p>
+        </div>
+      `;
+      return;
+    }
 
     const elements = {
       activeCampaigns: container.querySelector('[data-js-element="active-campaigns"]'),  
@@ -135,20 +173,79 @@
       const items = campaign.items.data;
       const itemsWithSku = items.filter(item => item.sku)
 
-      let campaignItems = itemsWithSku.map((item) => {
+      // Convert itemsWithSku to a Promise-based map so we can use async/await
+      let campaignItemsPromises = itemsWithSku.map(async (item) => {
         const line = campaign.lines.find((line) => line.item.id === item.id);
-
-        const product = products.find((product) => {
-          return product.variants.find((v) => {
-            return v.sku && v.sku.toLowerCase() === item.sku.toLowerCase()
-          })
+        
+        // Find product by SKU match in the filtered customer products list
+        let product = customerProducts.find((product) => {
+          if (!product.variants) return false;
+          return product.variants.some((v) => {
+            const match = v.sku && item.sku && v.sku.toLowerCase() === item.sku.toLowerCase();
+            return match;
+          });
         });
+        
+        // If product not found in collections, try to fetch it directly by SKU
+        if (!product && item.sku) {
+          try {
+            // Check if we have a cached version of this product
+            const cachedProduct = window.sessionStorage.getItem(`product_${item.sku}`);
+            if (cachedProduct) {
+              product = JSON.parse(cachedProduct);
+            } else {
+              // Fetch the product directly by SKU
+              product = await window.getProductBySku(item.sku);
+              
+              // Cache the product for future use
+              if (product) {
+                window.sessionStorage.setItem(`product_${item.sku}`, JSON.stringify(product));
+              }
+            }
+          } catch (error) {
+            console.error('Error fetching product by SKU:', error);
+          }
+        }
+        
+        // If still no product found, create a fallback
+        if (!product) {
+          // Create a fallback product using the item data
+          product = {
+            id: item.id,
+            title: item.name || 'Product ' + item.sku,
+            handle: 'product-' + item.sku.toLowerCase().replace(/[^a-z0-9]/g, '-'),
+            tags: '',  // String instead of array
+            variants: [{
+              id: item.id + '000',
+              title: 'Default',
+              sku: item.sku,
+              price: item.price || 0,
+              available: true,
+              inventory_quantity: line ? (line.quantity - line.shipped) : 0
+            }],
+            images: [],
+            image: null,
+            // Add all required properties for the product modal
+            options: [{ name: 'Title', position: 1, values: ['Default'] }],
+            body_html: '<p>No product description available.</p>',
+            product_type: '',
+            vendor: '',
+            metafields: { metafields: [] }
+          };
+        }
       
-        if (!product) return;
-      
-        const matchingVariant = product.variants.find((v) => {
-          return v.sku && v.sku.toLowerCase() === item.sku.toLowerCase()
-        });
+        // Find the matching variant by SKU
+        let matchingVariant = null;
+        if (product && product.variants) {
+          matchingVariant = product.variants.find((v) => {
+            return v.sku && item.sku && v.sku.toLowerCase() === item.sku.toLowerCase();
+          });
+          
+          if (!matchingVariant) {
+            // If no exact match, use the first variant as fallback
+            matchingVariant = product.variants[0];
+          }
+        }
 
         const sosInventory =
           line.quantity - line.shipped > 0 ? line.quantity - line.shipped : 0;
@@ -160,26 +257,27 @@
         };
       });
 
-      console.log('gets here')
+      // Handle the product promises
+      Promise.all(campaignItemsPromises).then(campaignItems => {
       
       // Merge products with the same product_id
-      campaignItems = mergeProducts(campaignItems);
+      const mergedItems = mergeProducts(campaignItems);
       
       {% comment %} refactor "campaignItems" only to return item that have different id {% endcomment %}
-      campaignItems = campaignItems.filter((item, index, array) => {
-        return index === array.findIndex((p) => (
-          p.id === item.id
-        ))
-      })
+      const uniqueItems = mergedItems.filter((item, index, array) => {
+        return item && index === array.findIndex((p) => p && p.id === item.id);
+      });
+      
+      // Filter out any undefined or null items first
+      const validCampaignItems = uniqueItems.filter(p => p);
       
       const gifts = {
-        main: campaignItems.filter(p => p).filter(p => !p.tags || !p.tags.includes('custom')),
-        custom: campaignItems.filter(p => p).filter(p => p.tags && p.tags.includes('custom'))
+        main: validCampaignItems.filter(p => !p.tags || !p.tags.includes('custom')),
+        custom: validCampaignItems.filter(p => p.tags && p.tags.includes('custom'))
       }
-
+      
       const hasGifts = gifts.main.length > 0 || gifts.custom.length > 0;
       const hideButtons = container.dataset.jsContainer !== 'send-gifts'
-
       const html = hasGifts ? `
         <div data-js-element="" class="corporate-campaigns-products">
           <div class="divider background-color-azul-verdoso-100"></div>
@@ -191,10 +289,12 @@
               <h5 data-js-element="main-gifts-title" class="heading-style-h3 margin-bottom margin-large">Main Gifts</h5>
               <div data-js-element="main-gifts-grid" class="products-grid main margin-top margin-small">
                 ${gifts.main.map(product => {
-                  return window.cfProductCard({ 
-                    product, 
-                    options: { reOrder: true, hideButtons, inventory: product.sosInventory } 
-                  })
+                  // Create the item structure expected by cfProductCard
+                  const item = {
+                    product: product
+                  };
+                  
+                  return window.cfProductCard(item)
                 }).join('')}
               </div>
             </div>
@@ -204,10 +304,12 @@
               <h5 data-js-element="custom-gifts-title" class="heading-style-h3 margin-bottom margin-large">Custom Swag and Inserts</h5>
               <div data-js-element="custom-gifts-grid" class="products-grid custom margin-top margin-small">
                 ${gifts.custom.map(product => {
-                  return window.cfProductCard({ 
-                    product, 
-                    options: { reOrder: true, hideButtons, inventory: product.sosInventory } 
-                  })
+                  // Create the item structure expected by cfProductCard
+                  const item = {
+                    product: product
+                  };
+                  
+                  return window.cfProductCard(item)
                 }).join('')}
               </div>
             </div>
@@ -230,6 +332,7 @@
       loadingProducts.classList.add('is-hidden');
 
       return elements.activeCampaigns.appendChild(campaignDivContainer);
+    });
     })
   }
 

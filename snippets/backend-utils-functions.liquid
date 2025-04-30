@@ -4,7 +4,7 @@
   const backendURL = 'https://foodiepages.herokuapp.com'
 
   {% comment %} 
-  'http://localhost:8080' 
+  'http://localhost:8080'
   'https://foodiepages.herokuapp.com'
   {% endcomment %}
 
@@ -135,6 +135,43 @@
     const products = pageData.data.products.filter(p => p.status === 'active')
 
     return products;
+  }
+  
+  // Function to fetch a specific product by SKU
+  window.getProductBySku = async (sku) => {
+    try {
+      console.log('Fetching product by SKU:', sku);
+      const response = await wretch(`${backendURL}/api/get-product-by-sku?sku=${encodeURIComponent(sku)}`)
+        .get()
+        .badRequest((err) => {
+          console.log('400', err)
+          throw err;
+        })
+        .unauthorized((err) => {
+          console.log('401', err)
+          throw err;
+        })
+        .notFound((err) => {
+          console.log('404', err)
+          return { data: null };
+        })
+        .internalError((err) => {
+          console.log('500', err)
+          throw err;
+        })
+        .res((res) => res.json());
+        
+      if (response.data && response.data.product) {
+        console.log('Found product by SKU:', response.data.product.title);
+        return response.data.product;
+      }
+      
+      console.log('No product found by SKU:', sku);
+      return null;
+    } catch (error) {
+      console.error('Error fetching product by SKU:', error);
+      return null;
+    }
   }
 
   {% comment %}  

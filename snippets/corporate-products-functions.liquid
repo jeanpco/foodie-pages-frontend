@@ -86,40 +86,96 @@
     const customerData = await fetchCustomer();
     const salesOrder = await fetchSalesOrder(customerData.data);
 
+    console.log(salesOrder);
+
     const fetchSosItems = async (itemIds) => {
+      if (!itemIds || !itemIds.length) {
+        return { data: [] };
+      }
+      
       const storageKey = `sos_items_${itemIds.join('_')}`;
       const storedItems = window.sessionStorage.getItem(storageKey);
     
       if (storedItems) {
         return JSON.parse(storedItems);
       } else {
-        const fetchedItems = await window.getSosItems(itemIds);
-        window.sessionStorage.setItem(storageKey, JSON.stringify(fetchedItems));
-        return fetchedItems;
+        try {
+          const fetchedItems = await window.getSosItems(itemIds);
+          window.sessionStorage.setItem(storageKey, JSON.stringify(fetchedItems));
+          return fetchedItems;
+        } catch (error) {
+          console.error('Error fetching SOS items:', error);
+          // Return an empty result instead of failing
+          return { data: [] };
+        }
       }
     };
   
-    const campaigns = salesOrder.data.map(async (so) => {
-      const itemIds = so.lines.map((line) => line.item.id);
-      const items = await fetchSosItems(itemIds);
-      const campaignNameObject = so.customFields.find((cf) => cf.name === 'Campaign Name');
-    
-      return {
-        name: campaignNameObject ? campaignNameObject.value : null,
-        items,
-        lines: so.lines,
-      };
-    });
-  
-    const resolvedCampaigns = await Promise.all(campaigns);
-    const products = await getShopifyProducts();
+    try {
+      const campaigns = salesOrder.data.map(async (so) => {
+        try {
+          // Safely extract item IDs
+          const itemIds = so.lines && so.lines.length > 0 
+            ? so.lines.filter(line => line && line.item).map(line => line.item.id).filter(id => id)
+            : [];
+          
+          // Safely fetch items
+          let items = { data: [] };
+          if (itemIds.length > 0) {
+            items = await fetchSosItems(itemIds);
+          }
+          
+          // Safely extract campaign name
+          const campaignNameObject = so.customFields && so.customFields.length > 0
+            ? so.customFields.find((cf) => cf && cf.name === 'Campaign Name')
+            : null;
 
-    const containers = [...document.querySelectorAll('[data-js-container]')];  
-    containers.forEach(async (container) => {
-      await window.productsGenerateCampaigns({ campaigns: resolvedCampaigns, products, container });
-    })
+          console.log('campaignNameObject ======>', campaignNameObject)
+          console.log('so.lines ======>', so.lines)
+        
+          return {
+            name: campaignNameObject ? campaignNameObject.value : null,
+            items,
+            lines: so.lines || [],
+          };
+        } catch (error) {
+          console.error('Error processing campaign:', error);
+          // Return a minimal valid campaign object instead of failing
+          return {
+            name: 'Campaign (Error Loading)',
+            items: { data: [] },
+            lines: [],
+          };
+        }
+      });
 
-    reorderProducts();
+      const resolvedCampaigns = await Promise.all(campaigns);
+      const products = await getShopifyProducts();
+
+      const containers = [...document.querySelectorAll('[data-js-container]')];  
+
+      containers.forEach(async (container) => {
+        await window.productsGenerateCampaigns({ campaigns: resolvedCampaigns, products, container });
+      });
+
+      reorderProducts();
+    } catch (error) {
+      console.error('Error loading products:', error);
+      // Hide loading indicator in case of error
+      const containers = [...document.querySelectorAll('[data-js-container]')];
+      containers.forEach(container => {
+        const loadingProducts = container.querySelector('[data-js-element="loading-products"]');
+        if (loadingProducts) {
+          loadingProducts.classList.add('is-hidden');
+        }
+        
+        // Show error message to user
+        const errorElement = document.createElement('div');
+        errorElement.className = 'text-align-center padding-top padding-large';
+        errorElement.innerHTML = '<p class="text-color-red-100">There was an error loading your products. Please refresh the page or try again later.</p>';
+        container.appendChild(errorElement);
+      });
+    }
   });
   
 
