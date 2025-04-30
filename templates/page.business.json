@@ -294,6 +294,7 @@
       "blocks": {
         "bb7441af-23eb-413e-9e53-583d86d17048": {
           "type": "cta",
+          "disabled": true,
           "settings": {
             "cta_text": "Make an Inquiry",
             "cta_link": "#corporate-contact"
@@ -335,7 +336,7 @@
         "overline": "",
         "title": "<p>Custom gifting, made easy</p>",
         "heading_style": "h2",
-        "body": "Personalized gifts that combine your brand with unique items from small and independent Canadian brands.",
+        "body": "We specialize in gifts, merch, and more that is modern, memorable, and the best reflection of your brand.",
         "body_rte": "",
         "layout_style": "content-right"
       }
