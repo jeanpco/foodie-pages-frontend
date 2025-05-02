@@ -74,6 +74,8 @@
   }
 
   window.getSosSalesOrder = async (query) => {
+    query = query.replace('#', '');
+
     const url = query ? `${backendURL}/api/get-sale-orders?query=${query}` : `${backendURL}/api/get-sale-orders`;
   
     const pageData = await wretch(url) // Base url
@@ -138,7 +140,7 @@
   }
   
   // Function to fetch a specific product by SKU
-  window.getProductBySku = async (sku) => {
+  window.getProductBySku = async (sku) => { 
     try {
       console.log('Fetching product by SKU:', sku);
       const response = await wretch(`${backendURL}/api/get-product-by-sku?sku=${encodeURIComponent(sku)}`)

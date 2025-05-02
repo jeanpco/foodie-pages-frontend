@@ -70,6 +70,7 @@
     }
   
     const fetchSalesOrder = async (customer) => {
+
       if (sosSalesOrder) {
         return JSON.parse(sosSalesOrder);
       } else {
@@ -86,7 +87,8 @@
     const customerData = await fetchCustomer();
     const salesOrder = await fetchSalesOrder(customerData.data);
 
-    console.log(salesOrder);
+    console.log('customerData ===============>', customerData)
+    console.log('salesOrder ===============>', salesOrder);
 
     const fetchSosItems = async (itemIds) => {
       if (!itemIds || !itemIds.length) {
@@ -129,9 +131,6 @@
           const campaignNameObject = so.customFields && so.customFields.length > 0
             ? so.customFields.find((cf) => cf && cf.name === 'Campaign Name')
             : null;
-
-          console.log('campaignNameObject ======>', campaignNameObject)
-          console.log('so.lines ======>', so.lines)
         
           return {
             name: campaignNameObject ? campaignNameObject.value : null,
@@ -150,6 +149,7 @@
       });
 
       const resolvedCampaigns = await Promise.all(campaigns);
+
       const products = await getShopifyProducts();
 
       const containers = [...document.querySelectorAll('[data-js-container]')];  

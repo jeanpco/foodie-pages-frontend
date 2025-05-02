@@ -71,6 +71,7 @@
   transition: opacity 0.2s ease-in, transform 0.2s ease-in;
   width: 100%;
   justify-content: center;
+  flex-direction: column;
 }
 
 /* max-width 990 */
