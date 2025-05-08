@@ -181,6 +181,7 @@
       "block_order": [
         "dff9231c-7adf-4ad2-853d-f2b72d77f49b"
       ],
+      "disabled": true,
       "settings": {
         "overline": "No addresses, no problem",
         "title": "<p>Don’t have an address to send to?</p>",
