@@ -53,9 +53,9 @@
           "type": "card",
           "settings": {
             "image": "shopify://shop_images/CelebrateBaby2025_ece35eac-caae-4a09-8876-09999d088e65.jpg",
-            "title": "Ready-To-Ship Corporate Gifts",
-            "body": "Premium, ready-to-ship gifts featuring standout items from small businesses, plus the option to add your logo & message.",
-            "cta_text": "Shop Now",
+            "title": "Blakes",
+            "body": "",
+            "cta_text": "",
             "cta_link": "https://www.foodiepages.ca/collections/gift-baskets"
           }
         },
@@ -63,9 +63,9 @@
           "type": "card",
           "settings": {
             "image": "shopify://shop_images/On-Demand-Office-Essentials-_-Crewneck-_-Notebook-2025.jpg",
-            "title": "Print-On-Demand Merch Kits",
-            "body": "High-impact branded gifts, with no minimum order quantity and shipped on-demand. Ideal for new hires, sales prospecting, and client appreciation.",
-            "cta_text": "Learn More",
+            "title": "Shopify",
+            "body": "",
+            "cta_text": "",
             "cta_link": "https://www.foodiepages.ca/pages/on-demand-swag-kits"
           }
         },
@@ -73,9 +73,9 @@
           "type": "card",
           "settings": {
             "image": "shopify://shop_images/Untitled_design_14.png",
-            "title": "Fully Customized & Branded Gifts",
-            "body": "Design-forward 100% custom gifts that leave a lasting impression. From branded apparel to premium snacks, we create gifts that represent your brand.",
-            "cta_text": "Start a Custom Order",
+            "title": "Symcor",
+            "body": "",
+            "cta_text": "",
             "cta_link": "#corporate-contact"
           }
         },
@@ -99,7 +99,7 @@
       "settings": {
         "overline": "corporate case studies",
         "title": "Our Work",
-        "body": "We obsess over creating meaningful moments, making it easy for you to elevate your brand with expertly curated and beautifully designed products.",
+        "body": "Custom gifting, endless options.",
         "cta_text": "Get a Quote",
         "cta_link": "#corporate-contact",
         "heading_style": "h2"
