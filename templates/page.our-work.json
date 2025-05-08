@@ -9,43 +9,6 @@
  */
 {
   "sections": {
-    "main": {
-      "type": "module-hero",
-      "blocks": {
-        "19806096-63a2-4a47-8ace-62ad44b1c836": {
-          "type": "cta",
-          "settings": {
-            "cta_text": "GET A CUSTOM QUOTE",
-            "cta_link": "#corporate-contact"
-          }
-        },
-        "b851d519-4870-4981-9906-52b4404d2953": {
-          "type": "cta",
-          "settings": {
-            "cta_text": "DOWNLOAD CATALOGUE",
-            "cta_link": "#download-catalogue"
-          }
-        }
-      },
-      "block_order": [
-        "19806096-63a2-4a47-8ace-62ad44b1c836",
-        "b851d519-4870-4981-9906-52b4404d2953"
-      ],
-      "disabled": true,
-      "settings": {
-        "overline": "",
-        "title": "<p>Corporate gifts they'll <em>actually</em> use</p>",
-        "heading_style": "h1",
-        "body": "When business gifts stand out, they get remembered. And so do you.",
-        "image": "shopify://shop_images/Corporate_Gift_Image.png",
-        "supporting_image": "shopify://shop_images/unnamed_update.png",
-        "enable_card_style": true,
-        "text_vertical_alignment": "center",
-        "layout_style": "two-columns",
-        "background_color": "background-color-azul-verdoso-10",
-        "trusted_by_text": "Trusted by"
-      }
-    },
     "19291dd4-710b-4313-9d7d-4847e4b2ab64": {
       "type": "module-columns",
       "blocks": {
@@ -270,7 +233,6 @@
     }
   },
   "order": [
-    "main",
     "19291dd4-710b-4313-9d7d-4847e4b2ab64",
     "67c66074-dbe7-48ca-909f-8416d2e86d32",
     "d5778432-2fd8-4a16-8893-9bb2eaa2e555",
