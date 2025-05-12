@@ -15,7 +15,7 @@
         "0d45905e-ac44-49ba-a59d-128cacbe1c96": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/Blakes_Maple_Duo_Set.png",
+            "image": "shopify://shop_images/FoodiePages_52_20230227_AvenuePhoto.jpg",
             "title": "Blakes",
             "body": "",
             "cta_text": "",
@@ -25,8 +25,8 @@
         "faec134e-e72c-4f0d-8052-11bb37fec86a": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/FoodiePages_59_20230227_AvenuePhoto.jpg",
-            "title": "Shopify",
+            "image": "shopify://shop_images/017_20220114_FoodiePages_RBCSO114.jpg",
+            "title": "RBC",
             "body": "",
             "cta_text": "",
             "cta_link": "https://www.foodiepages.ca/pages/on-demand-swag-kits"
@@ -35,7 +35,7 @@
         "640e588a-8b8f-49e9-8151-8d7f751d35ac": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/Untitled_design_14.png",
+            "image": "shopify://shop_images/015_20220224_FoodiePages_AvenuePhoto-_1.jpg",
             "title": "Symcor",
             "body": "",
             "cta_text": "",
@@ -45,8 +45,8 @@
         "99e17bc6-8c7d-4127-9269-5ed3314e7bc8": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/Screen_Shot_2024-04-19_at_1.15.53_PM.png",
-            "title": "#paid",
+            "image": "shopify://shop_images/DT---3.jpg",
+            "title": "Destination Toronto",
             "body": "",
             "cta_text": "",
             "cta_link": "#contact"
@@ -64,6 +64,43 @@
         "title": "Our Work",
         "body": "",
         "cta_text": "Get a Quote",
+        "cta_link": "#corporate-contact",
+        "heading_style": "h2"
+      }
+    },
+    "module_columns_aHfqYX": {
+      "type": "module-columns",
+      "blocks": {
+        "card_anWDQd": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/FoodiePages_61_20230227_AvenuePhoto.jpg",
+            "title": "Swyft",
+            "body": "",
+            "cta_text": "",
+            "cta_link": "https://www.foodiepages.ca/collections/gift-baskets"
+          }
+        },
+        "card_dDqzEy": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/MD-Beach-Day-Gift-Set-V3---08_2024.jpg",
+            "title": "MD Management",
+            "body": "",
+            "cta_text": "",
+            "cta_link": "https://www.foodiepages.ca/pages/on-demand-swag-kits"
+          }
+        }
+      },
+      "block_order": [
+        "card_anWDQd",
+        "card_dDqzEy"
+      ],
+      "settings": {
+        "overline": "",
+        "title": "",
+        "body": "",
+        "cta_text": "",
         "cta_link": "#corporate-contact",
         "heading_style": "h2"
       }
@@ -234,6 +271,7 @@
   },
   "order": [
     "19291dd4-710b-4313-9d7d-4847e4b2ab64",
+    "module_columns_aHfqYX",
     "67c66074-dbe7-48ca-909f-8416d2e86d32",
     "d5778432-2fd8-4a16-8893-9bb2eaa2e555",
     "fda3c8e7-0321-460c-b8b8-b9edd8abe0e7",
