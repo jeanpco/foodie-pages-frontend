@@ -193,3 +193,21 @@
 .article-template__back:last-child {
   margin-bottom: 3.2rem;
 }
+.article-template .container .article-template__content{
+  max-width: 550px;
+  margin: auto;
+}
+/* Content styles */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+  margin-top: 24px;
+  margin-bottom: 12px;
+}
+p,
+ul{
+  margin-bottom: 24px;
+}

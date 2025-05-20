@@ -11,7 +11,7 @@
 {% if product.metafields.custom.hide_recommended_products_and_gifting_banner != true %}
 <div class="{% if enable_card_style %}padding-vertical padding-huge{% endif %}">
   <div class="{% if enable_card_style %}container{% endif %}">
-    <div class="hero-background {% if enable_card_style %}is-card-style{% endif %} {{ section.settings.background_color }}">
+<div class="hero-background {% if enable_card_style %}is-card-style{% endif %} {% if section.settings.background_overwrite_enabled == false %} {{ section.settings.background_color }} {% endif %}" {% if section.settings.background_overwrite_enabled %}style="background-color: {{ section.settings.background_color_overwrite }}"{% endif %}>
       <div class="padding-vertical padding-xlarge">
         <div class="hero-container padding-horizontal padding-xxlarge mobile-padding-medium {% unless enable_card_style %}container{% endunless %} {{ section.settings.layout_style }}">
           <div class="hero-content {{ text_align }} {{ section.settings.layout_style }}" {% if section.settings.image == blank %}style="width: 100%;"{% endif %}>
@@ -191,6 +191,19 @@
         ],
         "default": "background-color-azul-verdoso-10",
         "label": "Background Color"
+      }, 
+      {
+        "type": "checkbox",
+        "id": "background_overwrite_enabled",
+        "label": "Enable Background Color Overwrite",
+        "default": false,
+        "info": "If enabled, the background color overwrite will be used instead of the selected background color."
+      },
+      {
+        "type": "color",
+        "id": "background_color_overwrite",
+        "label": "Background color overwrite",
+        "visible_if": "{{ section.settings.background_overwrite_enabled }}"
       }, {
         "type": "header",
         "content": "Trusted By Settings"
