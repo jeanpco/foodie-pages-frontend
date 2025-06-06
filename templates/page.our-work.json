@@ -1,0 +1,281 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "19291dd4-710b-4313-9d7d-4847e4b2ab64": {
+      "type": "module-columns",
+      "blocks": {
+        "0d45905e-ac44-49ba-a59d-128cacbe1c96": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/FoodiePages_52_20230227_AvenuePhoto.jpg",
+            "title": "Blakes",
+            "body": "",
+            "cta_text": "",
+            "cta_link": "https://www.foodiepages.ca/collections/gift-baskets"
+          }
+        },
+        "faec134e-e72c-4f0d-8052-11bb37fec86a": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/017_20220114_FoodiePages_RBCSO114.jpg",
+            "title": "RBC",
+            "body": "",
+            "cta_text": "",
+            "cta_link": "https://www.foodiepages.ca/pages/on-demand-swag-kits"
+          }
+        },
+        "640e588a-8b8f-49e9-8151-8d7f751d35ac": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/015_20220224_FoodiePages_AvenuePhoto-_1.jpg",
+            "title": "Symcor",
+            "body": "",
+            "cta_text": "",
+            "cta_link": "#corporate-contact"
+          }
+        },
+        "99e17bc6-8c7d-4127-9269-5ed3314e7bc8": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/DT---3.jpg",
+            "title": "Destination Toronto",
+            "body": "",
+            "cta_text": "",
+            "cta_link": "#contact"
+          }
+        }
+      },
+      "block_order": [
+        "0d45905e-ac44-49ba-a59d-128cacbe1c96",
+        "faec134e-e72c-4f0d-8052-11bb37fec86a",
+        "640e588a-8b8f-49e9-8151-8d7f751d35ac",
+        "99e17bc6-8c7d-4127-9269-5ed3314e7bc8"
+      ],
+      "settings": {
+        "overline": "corporate case studies",
+        "title": "Our Work",
+        "body": "",
+        "cta_text": "Get a Quote",
+        "cta_link": "#corporate-contact",
+        "heading_style": "h2"
+      }
+    },
+    "module_columns_aHfqYX": {
+      "type": "module-columns",
+      "blocks": {
+        "card_anWDQd": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/FoodiePages_61_20230227_AvenuePhoto.jpg",
+            "title": "Swyft",
+            "body": "",
+            "cta_text": "",
+            "cta_link": "https://www.foodiepages.ca/collections/gift-baskets"
+          }
+        },
+        "card_dDqzEy": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/MD-Beach-Day-Gift-Set-V3---08_2024.jpg",
+            "title": "MD Management",
+            "body": "",
+            "cta_text": "",
+            "cta_link": "https://www.foodiepages.ca/pages/on-demand-swag-kits"
+          }
+        }
+      },
+      "block_order": [
+        "card_anWDQd",
+        "card_dDqzEy"
+      ],
+      "settings": {
+        "overline": "",
+        "title": "",
+        "body": "",
+        "cta_text": "",
+        "cta_link": "#corporate-contact",
+        "heading_style": "h2"
+      }
+    },
+    "67c66074-dbe7-48ca-909f-8416d2e86d32": {
+      "type": "module-vertical-tabs",
+      "blocks": {
+        "0bc0438d-4de4-406b-9b99-82223592e434": {
+          "type": "tab",
+          "settings": {
+            "overline": "Step 1",
+            "title": "Create a Campaign",
+            "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ut lorem qui lectus molestie malesuada vitae vel purus.",
+            "cta_text": "Get in touch",
+            "cta_link": ""
+          }
+        },
+        "c734e5f4-0d34-4f15-b375-5e99b1596327": {
+          "type": "tab",
+          "settings": {
+            "overline": "Step 1",
+            "title": "Create a Campaign",
+            "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ut lorem qui lectus molestie malesuada vitae vel purus.",
+            "cta_text": "Get in touch",
+            "cta_link": ""
+          }
+        },
+        "b1a2e1e0-af63-4eea-bb4e-8839ab001a7d": {
+          "type": "tab",
+          "settings": {
+            "overline": "Step 1",
+            "title": "Create a Campaign",
+            "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ut lorem qui lectus molestie malesuada vitae vel purus.",
+            "cta_text": "Get in touch",
+            "cta_link": ""
+          }
+        },
+        "417f32f3-5d14-4399-9a0a-3fa4950fa18d": {
+          "type": "tab",
+          "settings": {
+            "overline": "Step 1",
+            "title": "Create a Campaign",
+            "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ut lorem qui lectus molestie malesuada vitae vel purus.",
+            "cta_text": "Get in touch",
+            "cta_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "0bc0438d-4de4-406b-9b99-82223592e434",
+        "c734e5f4-0d34-4f15-b375-5e99b1596327",
+        "b1a2e1e0-af63-4eea-bb4e-8839ab001a7d",
+        "417f32f3-5d14-4399-9a0a-3fa4950fa18d"
+      ],
+      "disabled": true,
+      "settings": {
+        "overline": "How it works",
+        "title": "<p>Exceptional times call for <em>exceptional </em>gifts</p>",
+        "heading_style": "h2",
+        "cta_text": "Get in touch",
+        "cta_link": "shopify://pages/contact-us",
+        "body": "Couldn’t find what you were looking for? write to us at",
+        "secondary_cta_text": "example@mail.com",
+        "secondary_cta_link": "mailto:example@mail.com"
+      }
+    },
+    "d5778432-2fd8-4a16-8893-9bb2eaa2e555": {
+      "type": "module-hero",
+      "blocks": {
+        "dff9231c-7adf-4ad2-853d-f2b72d77f49b": {
+          "type": "cta",
+          "settings": {
+            "cta_text": "Learn more",
+            "cta_link": "shopify://pages/corporate-gifting"
+          }
+        }
+      },
+      "block_order": [
+        "dff9231c-7adf-4ad2-853d-f2b72d77f49b"
+      ],
+      "disabled": true,
+      "settings": {
+        "overline": "No addresses, no problem",
+        "title": "<p>Don’t have an address to send to?</p>",
+        "heading_style": "h2",
+        "body": "Each foodiepages gift basket is designed with premium goods from diverse, independently-owned makers and brands across Canada.",
+        "image": "shopify://shop_images/Frame_43428_2.png",
+        "enable_card_style": true,
+        "text_vertical_alignment": "center",
+        "layout_style": "two-columns",
+        "background_color": "background-color-mar-10",
+        "trusted_by_text": "Trusted by"
+      }
+    },
+    "fda3c8e7-0321-460c-b8b8-b9edd8abe0e7": {
+      "type": "product-recommendations",
+      "disabled": true,
+      "settings": {
+        "overline": "Small batch standouts",
+        "title": "<p>Curated Gift Boxes</p>",
+        "body": "Discover unique gifts they’ll truly remember.",
+        "collection": "gift-baskets",
+        "icon_url": "",
+        "promo_title": "",
+        "promo_body": "",
+        "promo_cta_text": "Shop all",
+        "promo_cta_link": ""
+      }
+    },
+    "ada08afb-e351-43c7-83ae-1d4cb75ae1b2": {
+      "type": "module-testimonials",
+      "blocks": {
+        "e57b2477-e95f-4251-9502-f25f570daae6": {
+          "type": "testimonial",
+          "settings": {
+            "text": "Foodiepages has been a trusted partner of Dynacare for several years, providing quality, trusted and reliable services for important gifts for staff, clients, and executives. Not only are they thorough and dependable – but Foodiepages also makes strategic and impactful recommendations for us to bring our gifting to the next level.",
+            "image": "shopify://shop_images/Dynacare.png"
+          }
+        },
+        "aae994ac-b7c7-4b43-9697-deb07ffad3e4": {
+          "type": "testimonial",
+          "settings": {
+            "text": "We've had the pleasure of working with the Foodiepages team on gifts for our company of 500+ on numerous occasions over the past couple of years. The Foodiepages team offers the highest level of customer service and curates gifts that perfectly fit the occasion you are celebrating. No detail is ever forgotten, and even the shipping process has always been top-notch. I would highly recommend working with Foodiepages for individual gift boxes, or large-scale corporate gifting projects.",
+            "image": "shopify://shop_images/Jobber.png"
+          }
+        },
+        "6cd624df-edf9-4889-b6a5-7a3cffad7274": {
+          "type": "testimonial",
+          "settings": {
+            "text": "Before Foodiepages, we didn't have a formal New Hire gifting program. Now that we've moved to a hybrid workforce model, partnering with Foodiepages has allowed us to streamline the process, ensure a consistent, memorable and welcoming onboarding experience for all new employees, whether they are in the office or working remotely.",
+            "image": "shopify://shop_images/Symcor.png"
+          }
+        },
+        "982db299-9c2c-4ba4-9ede-5b0fd0f3b29f": {
+          "type": "testimonial",
+          "settings": {
+            "text": "Our company has used foodiepages for multiple employee appreciation and end-of-year celebration boxes. Our experience with foodiepages has been incredible and the feedback from our employees has been fantastic. We love the local & diverse vendors they have partnered with. We are excited to continue working with them in the future.",
+            "image": "shopify://shop_images/Prodigy.png"
+          }
+        }
+      },
+      "block_order": [
+        "e57b2477-e95f-4251-9502-f25f570daae6",
+        "aae994ac-b7c7-4b43-9697-deb07ffad3e4",
+        "6cd624df-edf9-4889-b6a5-7a3cffad7274",
+        "982db299-9c2c-4ba4-9ede-5b0fd0f3b29f"
+      ],
+      "disabled": true,
+      "settings": {
+        "overline": "Our happy customers",
+        "title": "<p>Don’t just take it from us</p>",
+        "cta_text": "Get in touch",
+        "cta_link": "#contact"
+      }
+    },
+    "3d380ef2-30ad-4948-8fdf-6906d4063a49": {
+      "type": "module-cta-banner",
+      "settings": {
+        "overline": "Quick shop",
+        "heading_style": "h2",
+        "title": "<p>Gifts that <em>celebrate</em> small business</p>",
+        "body": "Each foodiepages gift basket is designed with premium goods from diverse, independently-owned makers and brands across Canada.",
+        "image": "shopify://shop_images/109690423_3445893215421577_4016513816616394806_n_copy_1.png",
+        "cta_text": "Learn more",
+        "cta_link": ""
+      }
+    }
+  },
+  "order": [
+    "19291dd4-710b-4313-9d7d-4847e4b2ab64",
+    "module_columns_aHfqYX",
+    "67c66074-dbe7-48ca-909f-8416d2e86d32",
+    "d5778432-2fd8-4a16-8893-9bb2eaa2e555",
+    "fda3c8e7-0321-460c-b8b8-b9edd8abe0e7",
+    "ada08afb-e351-43c7-83ae-1d4cb75ae1b2",
+    "3d380ef2-30ad-4948-8fdf-6906d4063a49"
+  ]
+}
