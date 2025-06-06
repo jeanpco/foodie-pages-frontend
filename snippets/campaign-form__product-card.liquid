@@ -52,6 +52,8 @@
         <h4 data-js-element="cf-product-card_title" class="font-weight-semibold cf-product-card_title heading-style-h6">
           ${product.title || 'Product Title Placeholder'}
         </h4>
+
+        {% unless request.path contains "pages/form" %}
         <p class="text-size-tiny text-color-grey-400 margin-vertical margin-xxsmall" data-inventory="${product.sosInventory}">
             <span class="text-color-grey-600 font-weight-semibold">Total inventory: ${product.sosInventory} unit${product.sosInventory > 1 ? 's' : ''}</span></br>
             ${product.variants.map(v => {
@@ -64,6 +66,7 @@
               `
             }).join('')}
           </p>
+        {% endunless %}
         ${options && options.reOrder ? `
           <a data-js-element="reorder" class="link margin-top margin-xxsmall" href="#new-products">
             Reorder
