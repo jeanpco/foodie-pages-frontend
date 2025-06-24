@@ -262,13 +262,6 @@
         "disabled": false,
         "settings": {}
       },
-      "13787645888186966329": {
-        "type": "shopify://apps/bundle-builder-custom-bundles/blocks/bundle_builder/0616c381-b470-4395-b013-48a4995ac72a",
-        "disabled": false,
-        "settings": {
-          "product": ""
-        }
-      },
       "12601257459161342390": {
         "type": "shopify://apps/giftship/blocks/giftship/26bd5756-d344-471d-baf8-ba6267b82da9",
         "disabled": false,
