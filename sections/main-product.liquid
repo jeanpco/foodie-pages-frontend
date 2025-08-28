@@ -394,7 +394,7 @@
                       <div class="accordion__content rte background-color-mar-10" id="ProductAccordion-{{ block.id }}-{{ section.id }}">
                         {% for variant in product.variants %}
                           <div data-variant-id="{{ variant.id }}" data-js-element="variant-details" class="variant-details {% if product.selected_or_first_available_variant.id == variant.id %}is-visible{% endif %}">
-                            {{ variant.metafields.custom.details | newline_to_br }}
+                            {{ variant.metafields.custom.details_formatted | metafield_tag }}
                           </div>
                         {% endfor %}
                       </div>
