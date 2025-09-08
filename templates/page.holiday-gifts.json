@@ -1,12 +1,12 @@
 /*
-* ------------------------------------------------------------
-* IMPORTANT: The contents of this file are auto-generated.
-*
-* This file may be updated by the Shopify admin theme editor
-* or related systems. Please exercise caution as any changes
-* made to this file may be overwritten.
-* ------------------------------------------------------------
-*/
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "main": {
@@ -15,8 +15,8 @@
         "02d55e23-f307-4138-a9bd-10d797daa746": {
           "type": "cta",
           "settings": {
-            "cta_text": "Browse Holiday Catalog",
-            "cta_link": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/Foodiepages_Catalogue_HO24.pdf?v=1725729854"
+            "cta_text": "View Holiday Catalogue",
+            "cta_link": ""
           }
         }
       },
@@ -25,10 +25,10 @@
       ],
       "settings": {
         "overline": "Holiday Gift Guide",
-        "title": "<p>The 2024 Holiday Collection<\/p>",
+        "title": "<p>The 2025 Holiday Collection</p>",
         "heading_style": "h1",
-        "body": "Who says business gifts need to feel corporate? Our 2024 Holiday Catalog includes new personalized gift options and 100% Canadian-made small-batch goodies that will stand out and impress.",
-        "image": "shopify:\/\/shop_images\/Untitled_design_17.png",
+        "body": "Who says business gifts need to feel corporate? Our 2025 Holiday Catalog includes new personalized gift options and 100% Canadian-made small-batch goodies that will stand out and impress.",
+        "image": "shopify://shop_images/Untitled_design_17.png",
         "enable_card_style": false,
         "text_vertical_alignment": "center",
         "layout_style": "two-columns",
@@ -40,7 +40,7 @@
       "type": "image",
       "disabled": true,
       "settings": {
-        "image": "shopify:\/\/shop_images\/0001_2.jpg"
+        "image": "shopify://shop_images/0001_2.jpg"
       }
     },
     "05ea480d-037b-4297-9c3d-d6160866116b": {
@@ -52,7 +52,7 @@
             "title": "Step 1: Pick Your Gifts",
             "body": "Browse our 2024 Holiday Catalog. Find the perfect holiday gift for everyone on your list.",
             "cta_text": "View Holiday Catalog",
-            "cta_link": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/Foodiepages_Catalogue_HO24.pdf?v=1725729854"
+            "cta_link": "https://cdn.shopify.com/s/files/1/0264/5000/2013/files/Foodiepages_Catalogue_HO24.pdf?v=1725729854"
           }
         },
         "2799395e-848f-4345-9be1-4844c0f3b341": {
@@ -61,7 +61,7 @@
             "title": "Step 2: Complete the Order Form",
             "body": "Fill out our handy order form with all of the recipients’ info (and don’t forget to add a gift message).",
             "cta_text": "Download Order Form",
-            "cta_link": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/Foodiepages-Gift-Concierge-Order-Form-Holiday-2024.xlsx?v=1725730306"
+            "cta_link": "https://cdn.shopify.com/s/files/1/0264/5000/2013/files/Foodiepages-Gift-Concierge-Order-Form-Holiday-2024.xlsx?v=1725730306"
           }
         },
         "1a1d97cc-0c9f-4023-b4cf-a2188c76fa3e": {
@@ -84,7 +84,7 @@
         "title": "",
         "body": "",
         "cta_text": "",
-        "cta_link": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/foodiepages_Holiday_2022_Catalog_NOV1.pdf?v=1667394129",
+        "cta_link": "https://cdn.shopify.com/s/files/1/0264/5000/2013/files/foodiepages_Holiday_2022_Catalog_NOV1.pdf?v=1667394129",
         "heading_style": "h2"
       }
     },
@@ -94,61 +94,61 @@
         "881fd230-0ff5-475a-80ab-394c30599557": {
           "type": "tab",
           "settings": {
-            "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/icon_1_147x125_crop_center.png?v=1663723952",
+            "icon_url": "https://cdn.shopify.com/s/files/1/0264/5000/2013/files/icon_1_147x125_crop_center.png?v=1663723952",
             "tab_text": "Gifts with meaning",
             "title": "Gifts with meaning.",
             "body": "Our gifts showcase Canadian small businesses, including BIPOC, female-founded, social-impact driven, and sustainable brands. Sharing their stories with you is one of our greatest joys.",
             "cta_text": "",
-            "cta_link": "shopify:\/\/pages\/about-us",
-            "image": "shopify:\/\/shop_images\/4to3-Cropped3.jpg"
+            "cta_link": "shopify://pages/about-us",
+            "image": "shopify://shop_images/4to3-Cropped3.jpg"
           }
         },
         "3732abc5-67af-4c3c-85d8-758c6aea36c1": {
           "type": "tab",
           "settings": {
-            "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/icon_2_154x123_crop_center.png?v=1663723952",
+            "icon_url": "https://cdn.shopify.com/s/files/1/0264/5000/2013/files/icon_2_154x123_crop_center.png?v=1663723952",
             "tab_text": "Planet-friendly",
             "title": "Planet-friendly",
             "body": "We prioritize eco-friendly packaging, and we consciously curate high quality items from brands who are trying to do things better.",
             "cta_text": "",
-            "cta_link": "\/",
-            "image": "shopify:\/\/shop_images\/Untitled_design_16_09c4770f-4273-4526-a7f6-3c30fe15ed7c.png"
+            "cta_link": "/",
+            "image": "shopify://shop_images/Untitled_design_16_09c4770f-4273-4526-a7f6-3c30fe15ed7c.png"
           }
         },
         "82370e0b-29ef-4ff4-9ed1-ff7fd169f7ff": {
           "type": "tab",
           "settings": {
-            "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/icon_3_156x118_crop_center.png?v=1663723952",
+            "icon_url": "https://cdn.shopify.com/s/files/1/0264/5000/2013/files/icon_3_156x118_crop_center.png?v=1663723952",
             "tab_text": "Worldwide shipping",
             "title": "Easy and speedy shipping.",
             "body": "We can bulk ship to one location or 100s of individual addresses, worldwide. We make the entire process seamless.",
             "cta_text": "",
-            "cta_link": "\/",
-            "image": "shopify:\/\/shop_images\/4x3_28_20191211_FoodiePages_AvenuePhoto.png"
+            "cta_link": "/",
+            "image": "shopify://shop_images/4x3_28_20191211_FoodiePages_AvenuePhoto.png"
           }
         },
         "2fe0704d-6ca9-4bdf-8869-4644f4802edb": {
           "type": "tab",
           "settings": {
-            "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/icon_4_123x131_crop_center.png?v=1663723952",
+            "icon_url": "https://cdn.shopify.com/s/files/1/0264/5000/2013/files/icon_4_123x131_crop_center.png?v=1663723952",
             "tab_text": "Custom gift design",
             "title": "A fresh take on corporate gifting.",
             "body": "For larger orders, leverage our design services for a fully custom gift. From the products to the packaging, we'll create something memorable that reflects your brand, goals, and values.",
             "cta_text": "",
-            "cta_link": "\/",
-            "image": "shopify:\/\/shop_images\/4to3-Cropped5.jpg"
+            "cta_link": "/",
+            "image": "shopify://shop_images/4to3-Cropped5.jpg"
           }
         },
         "cb796b97-5135-4a60-b2fa-c710855e013a": {
           "type": "tab",
           "settings": {
-            "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/icon_5_101x120_crop_center.png?v=1663723952",
+            "icon_url": "https://cdn.shopify.com/s/files/1/0264/5000/2013/files/icon_5_101x120_crop_center.png?v=1663723952",
             "tab_text": "Happiness guarantee",
             "title": "Make their day.",
             "body": "We exist to make people's day. That's why if you're not 100% satisfied, we promise to make it right. Our team will always go the extra mile to make it right.",
             "cta_text": "",
-            "cta_link": "\/",
-            "image": "shopify:\/\/shop_images\/4to3-Cropped1.jpg"
+            "cta_link": "/",
+            "image": "shopify://shop_images/4to3-Cropped1.jpg"
           }
         }
       },
@@ -161,7 +161,7 @@
       ],
       "settings": {
         "overline": "",
-        "title": "<p>Why <em>Foodiepages<\/em>?<\/p>"
+        "title": "<p>Why <em>Foodiepages</em>?</p>"
       }
     },
     "module-testimonials": {
@@ -171,7 +171,7 @@
           "type": "testimonial",
           "settings": {
             "text": "Our company has used Foodiepages for multiple employee appreciation and end-of-year celebration boxes.\n<br>\n<br>\nOur experience with Foodiepages has been incredible and the feedback from our employees has been fantastic. We love the local & diverse vendors they have partnered with, we have sent over 400 boxes to our employees in Canada and the US.\n<br>\n<br>\nIt has been a wonderful experience working with the Foodipages team, and we are excited to continue working with them in the future.",
-            "image": "shopify:\/\/shop_images\/Prodigy.png"
+            "image": "shopify://shop_images/Prodigy.png"
           }
         }
       },
@@ -180,7 +180,7 @@
       ],
       "settings": {
         "overline": "Some nice words",
-        "title": "<p>Don’t just take it from us<\/p>",
+        "title": "<p>Don’t just take it from us</p>",
         "cta_text": "Get in touch",
         "cta_link": "#corporate-contact"
       }
@@ -190,10 +190,10 @@
       "disabled": true,
       "settings": {
         "overline": "ready-to-ship holiday gifts",
-        "title": "<p>Top Holiday Picks<\/p>",
+        "title": "<p>Top Holiday Picks</p>",
         "body": "Check off everyone on your gift list with our wide variety of ready-to-ship holiday gifts.",
         "collection": "holiday-gift-baskets",
-        "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/Frame_43418.png?v=1665521287",
+        "icon_url": "https://cdn.shopify.com/s/files/1/0264/5000/2013/files/Frame_43418.png?v=1665521287",
         "promo_title": "Let’s create something special together.",
         "promo_body": "Do you have a complex order in mind, or just want some tips on finding the right gift? Tell us about your gifting needs and a member of our team will get in touch soon.",
         "promo_cta_text": "Start Order",
