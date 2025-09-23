@@ -90,11 +90,31 @@
             "cta_text": "",
             "cta_link": "https://www.foodiepages.ca/pages/on-demand-swag-kits"
           }
+        },
+        "card_BQWmYU": {
+          "type": "card",
+          "settings": {
+            "title": "",
+            "body": "",
+            "cta_text": "Get a quote",
+            "cta_link": ""
+          }
+        },
+        "card_HBXUQj": {
+          "type": "card",
+          "settings": {
+            "title": "",
+            "body": "",
+            "cta_text": "Get a quote",
+            "cta_link": ""
+          }
         }
       },
       "block_order": [
         "card_anWDQd",
-        "card_dDqzEy"
+        "card_dDqzEy",
+        "card_BQWmYU",
+        "card_HBXUQj"
       ],
       "settings": {
         "overline": "",
@@ -192,6 +212,8 @@
         "text_vertical_alignment": "center",
         "layout_style": "two-columns",
         "background_color": "background-color-mar-10",
+        "background_overwrite_enabled": false,
+        "background_color_overwrite": "",
         "trusted_by_text": "Trusted by"
       }
     },
@@ -258,6 +280,7 @@
     },
     "3d380ef2-30ad-4948-8fdf-6906d4063a49": {
       "type": "module-cta-banner",
+      "disabled": true,
       "settings": {
         "overline": "Quick shop",
         "heading_style": "h2",
