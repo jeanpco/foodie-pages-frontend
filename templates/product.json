@@ -41,34 +41,6 @@
             "picker_type": "button"
           }
         },
-        "video_greet_gift_messages_video_greet_aELBa8": {
-          "type": "shopify://apps/video-greet-gift-messages/blocks/video-greet/df4fa3e1-0f09-4c28-8730-57c66b50767d",
-          "settings": {
-            "horizontal_alignment": "stretch",
-            "button_p": "",
-            "button_m": "",
-            "custom_css": "",
-            "hide_collection_list": [],
-            "reload_sections": "",
-            "button_locales": false,
-            "button_gift_text": "",
-            "button_title": "Want to include a video gift message?",
-            "button_title_added": "Added to cart",
-            "button_instructions": "You'll get an email after payment to record your video message.",
-            "button_helpertext": "The recipient receives a QR code attached to your gift order — they scan the QR code with their phone to get your message.",
-            "note_char_limit": 120,
-            "button_title_font_size": 14,
-            "button_instructions_font_size": 12,
-            "button_border_radius": 5,
-            "button_header_color": "#286b77",
-            "gift_icon_color": "#286b77",
-            "border_color": "#286b77",
-            "button_checkbox_color": "#15414b",
-            "button_icon_color": "#ffffff",
-            "button_title_color": "#000000",
-            "button_background_color": "#ffffff"
-          }
-        },
         "buy_buttons": {
           "type": "buy_buttons",
           "settings": {
@@ -101,7 +73,6 @@
         "tags",
         "price",
         "variant_picker",
-        "video_greet_gift_messages_video_greet_aELBa8",
         "buy_buttons",
         "30d0b0b9-e8a9-49a3-8455-abac982ffadc",
         "description",
