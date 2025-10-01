@@ -33,7 +33,7 @@
       ],
       "settings": {
         "overline": "Holiday Gift Guide",
-        "title": "<p>The 2025 Holiday Collection</p>",
+        "title": "<p>Holiday Gifting <em>made exceptional</em></p>",
         "heading_style": "h1",
         "body": "This season, give gifts that feel personal, not corporate. Our Holiday 2025 Catalogue is filled with hand-picked, Canadian-made goodies and customizable touches that show genuine appreciation and leave a lasting impression.",
         "image": "shopify://shop_images/HomepageHoliday_v2_3168f4cb-7ed2-40ce-b386-b571317abb5a.png",
@@ -41,6 +41,8 @@
         "text_vertical_alignment": "center",
         "layout_style": "two-columns",
         "background_color": "background-color-azul-verdoso-10",
+        "background_overwrite_enabled": false,
+        "background_color_overwrite": "",
         "trusted_by_text": ""
       }
     },
