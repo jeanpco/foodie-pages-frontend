@@ -94,7 +94,8 @@
         "card_BQWmYU": {
           "type": "card",
           "settings": {
-            "title": "",
+            "image": "shopify://shop_images/TraneHolidayPackaging.jpg",
+            "title": "Trane Canada",
             "body": "",
             "cta_text": "Get a quote",
             "cta_link": ""
@@ -103,7 +104,8 @@
         "card_HBXUQj": {
           "type": "card",
           "settings": {
-            "title": "",
+            "image": "shopify://shop_images/Screenshot_2025-10-02_at_3.42.42_PM.png",
+            "title": "Rose Rocket",
             "body": "",
             "cta_text": "Get a quote",
             "cta_link": ""
