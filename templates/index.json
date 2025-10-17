@@ -68,11 +68,13 @@
         "title": "<p>Gifts that are <em>twice as good</em></p>",
         "heading_style": "h1",
         "body": "Thoughtfully curated, beautifully packaged, and filled with premium goods people actually want. No fluff, no fillers - just really good gifts.",
-        "image": "shopify://shop_images/HomepageImage_v3.png",
+        "image": "shopify://shop_images/HomepageImage_171025_transparent.png",
         "enable_card_style": false,
         "text_vertical_alignment": "flex-end",
         "layout_style": "two-columns",
         "background_color": "background-color-azul-verdoso-10",
+        "background_overwrite_enabled": true,
+        "background_color_overwrite": "#f2eae6",
         "trusted_by_text": "Trusted by"
       }
     },
@@ -340,6 +342,8 @@
         "text_vertical_alignment": "center",
         "layout_style": "two-columns",
         "background_color": "background-color-azul-verdoso-10",
+        "background_overwrite_enabled": false,
+        "background_color_overwrite": "",
         "trusted_by_text": "Trusted by"
       }
     },
