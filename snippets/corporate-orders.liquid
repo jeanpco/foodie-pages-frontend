@@ -21,6 +21,10 @@ const backendURL = 'https://foodiepages.herokuapp.com'
   
 let upsBearerToken = ''
 
+{% comment %} Get customer ID from Shopify customer object {% endcomment %}
+const customerId = {{ customer.id | default: 'null' }};
+console.log('Customer ID:', customerId);
+
 {% comment %} 
   FRONTEND
 
@@ -159,21 +163,65 @@ const loadingElement = (style) => `
     
         try {
           fetch(`${backendURL}/api/get-sale-orders`)
-            .then(response => response.json())
+            .then(response => {
+              if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+              }
+              return response.json();
+            })
             .then(data => {
-              const saleOrders = data.data.filter(saleOrder => {
-                return +saleOrder.customer.id === +{{ id }}
-              })
+              console.log('Sale orders data:', data);
+              
+              if (!data || !data.data) {
+                console.error('No sale orders data received');
+                buildTableFromSaleOrders([]);
+                return;
+              }
+              let saleOrders = data.data;
+              
+              // Filter by customer ID if available
+              if (customerId && customerId !== null) {
+                saleOrders = data.data.filter(saleOrder => {
+                  const matches = +saleOrder.customer.id === +customerId;
+                  console.log(`Checking order ${saleOrder.number}: customer ID ${saleOrder.customer.id} vs ${customerId} = ${matches}`);
+                  return matches;
+                });
+                console.log(`Filtered ${saleOrders.length} orders for customer ${customerId}`);
+              } else {
+                console.warn('No customer ID available, showing all orders');
+              }
     
               window.localStorage.setItem('saleOrders', JSON.stringify(saleOrders))
     
               buildTableFromSaleOrders(saleOrders);
             })
+            .catch(error => {
+              console.error('Error fetching sale orders:', error);
+              // Show error message to user
+              const table = document.getElementById('sos-inventory-table');
+              const loading = document.querySelector('.loading');
+              loading.style.display = 'none';
+              table.innerHTML = `
+                <div class="text-align-center padding-medium display-flex justify-content-center flex-direction-column gap-1 align-items-center">
+                  <p class="text-size-small text-color-error">Failed to load orders. Please try again later.</p>
+                  <p class="text-size-tiny text-color-grey-600">Error: ${error.message}</p>
+                </div>
+              `;
+            });
         } catch (error) {
-          console.error(error)
+          console.error('Fetch error:', error)
         }
       }).catch(error => {
-        console.error(error)
+        console.error('ShipStation stores error:', error);
+        // Show error message for ShipStation failure
+        const table = document.getElementById('sos-inventory-table');
+        const loading = document.querySelector('.loading');
+        loading.style.display = 'none';
+        table.innerHTML = `
+          <div class="text-align-center padding-medium display-flex justify-content-center flex-direction-column gap-1 align-items-center">
+            <p class="text-size-small text-color-error">Failed to load shipping information. Please try again later.</p>
+          </div>
+        `;
       })  
     } catch (error) {
       console.error(error)
