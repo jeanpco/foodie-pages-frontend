@@ -244,11 +244,22 @@
       .join('');
 
     const today = new Date();
-    const endDateFormatted = new Date(endDate);
     today.setHours(0, 0, 0, 0);
-    endDateFormatted.setHours(0, 0, 0, 0);
     
-    if (endDateFormatted < today) {
+    let endDateFormatted = null;
+    let campaignHasEnded = false;
+    
+    if (endDate) {
+      endDateFormatted = new Date(endDate);
+      if (!isNaN(endDateFormatted.getTime())) {
+        endDateFormatted.setHours(0, 0, 0, 0);
+        campaignHasEnded = endDateFormatted < today;
+      } else {
+        console.warn('Invalid end date provided:', endDate);
+      }
+    }
+    
+    if (campaignHasEnded) {
       elements.submitFormButtonEl.innerText = `Gift Selection ended on ${endDate}`;
       elements.submitFormButtonEl.setAttribute('disabled', true);
     }
@@ -334,10 +345,11 @@
         customGiftsState, 
         fullState: state,
         endDateFormatted,
-        today 
+        today,
+        campaignHasEnded
       });
 
-      if (endDateFormatted > today) {
+      if (!campaignHasEnded) {
         ifAtleastOneMainGiftIsSelected(mainGiftsState)
       } else {
         console.warn('Campaign end date has passed, button will remain disabled');
