@@ -117,9 +117,13 @@
   const ifAtleastOneMainGiftIsSelected = (state) => {
     const submitFormButtonEl = document.querySelector('[data-js-element="submit-form-button"]');
 
+    console.log('Checking if main gift selected:', { state, isTruthy: !!state });
+
     if (state) {
+      console.log('Enabling submit button');
       submitFormButtonEl.removeAttribute('disabled');
     } else {
+      console.log('Disabling submit button');
       submitFormButtonEl.setAttribute('disabled', true);
     }
   }
@@ -292,8 +296,8 @@
       const numberOfCommasInCustomGiftsState = (state['Custom Swag'] && state['Custom Swag'].match(/,/g) || []).length;
 
       {% comment %} if there is more than 1 comma in the main gift state, split on the first comma {% endcomment %}
-      const mainGiftsState = numberOfCommasInMainGiftsState > 1 ? state['Main Gift'].split(',', 1) : state['Main Gift'] && state['Main Gift'].split(',');
-      const customGiftsState = numberOfCommasInCustomGiftsState > 1 ? state['Custom Swag'].split(',', 1) : state['Custom Swag'] && state['Custom Swag'].split(',');
+      const mainGiftsState = state['Main Gift'] ? (numberOfCommasInMainGiftsState > 1 ? state['Main Gift'].split(',', 1) : state['Main Gift'].split(',')) : null;
+      const customGiftsState = state['Custom Swag'] ? (numberOfCommasInCustomGiftsState > 1 ? state['Custom Swag'].split(',', 1) : state['Custom Swag'].split(',')) : null;
 
       {% comment %} get number of selected main gift product cards {% endcomment %}
       const numberOfSelectedMainGifts = mainGiftProductCards.filter(card => card.classList.contains('is-selected')).length;
@@ -325,9 +329,18 @@
         stickyCustomGiftsEl.innerText = ''
       }
 
+      console.log('Gift state changed:', { 
+        mainGiftsState, 
+        customGiftsState, 
+        fullState: state,
+        endDateFormatted,
+        today 
+      });
+
       if (endDateFormatted > today) {
         ifAtleastOneMainGiftIsSelected(mainGiftsState)
       } else {
+        console.warn('Campaign end date has passed, button will remain disabled');
         return;
       }
     })
