@@ -1,6 +1,5 @@
 <script type="module">
 
-  import wretch from 'https://cdn.skypack.dev/wretch/dist/bundle/wretch.all.min.mjs'
   const backendURL = 'https://foodiepages.herokuapp.com'
 
   {% comment %} 
@@ -17,27 +16,32 @@
   window.getSosCustomers = async (id) => {
     const url = id ? `${backendURL}/api/sos_customer?id=${id}` : `${backendURL}/api/sos_customer`;
 
-    const pageData = await wretch(url)
-      .get()
-      .badRequest((err) => {
-        console.log('400', err);
-        throw err;
-      })
-      .unauthorized((err) => {
-        console.log('401', err);
-        throw err;
-      })
-      .notFound((err) => {
+    try {
+      const response = await fetch(url);
+      
+      if (response.status === 400) {
+        console.log('400', response);
+        throw new Error('Bad Request');
+      }
+      if (response.status === 401) {
+        console.log('401', response);
+        throw new Error('Unauthorized');
+      }
+      if (response.status === 404) {
         window.generateError(`Something went wrong while trying to get your SOS Customers. Please contact your developer.`);
-        throw err;
-      })
-      .internalError((err) => {
-        console.log('500', err);
-        throw err;
-      })
-      .res((res) => res.json());
-
-    return pageData;
+        throw new Error('Not Found');
+      }
+      if (response.status >= 500) {
+        console.log('500', response);
+        throw new Error('Internal Server Error');
+      }
+      
+      const pageData = await response.json();
+      return pageData;
+    } catch (error) {
+      console.error('Error fetching SOS customers:', error);
+      throw error;
+    }
   }
 
   window.getSosItems = async (ids) => {
@@ -49,28 +53,32 @@
 
     const url = ids ? `${backendURL}/api/get-sos-item?ids=${ids}` : `${backendURL}/api/get-sos-item`;
 
-    const pageData = await wretch(url) // Base url
-      // Authorization header
-      .get() // GET request
-      .badRequest((err) => {
-        console.log('400', err);
-        throw err;
-      })
-      .unauthorized((err) => {
-        console.log('401', err);
-        throw err;
-      })
-      .notFound((err) => {
+    try {
+      const response = await fetch(url);
+      
+      if (response.status === 400) {
+        console.log('400', response);
+        throw new Error('Bad Request');
+      }
+      if (response.status === 401) {
+        console.log('401', response);
+        throw new Error('Unauthorized');
+      }
+      if (response.status === 404) {
         window.generateError(`Something went wrong while trying to get your SOS Customers. Please contact your developer.`);
-        throw err;
-      })
-      .internalError((err) => {
-        console.log('500', err);
-        throw err;
-      })
-      .res((res) => res.json());
-
-    return pageData;
+        throw new Error('Not Found');
+      }
+      if (response.status >= 500) {
+        console.log('500', response);
+        throw new Error('Internal Server Error');
+      }
+      
+      const pageData = await response.json();
+      return pageData;
+    } catch (error) {
+      console.error('Error fetching SOS items:', error);
+      throw error;
+    }
   }
 
   window.getSosSalesOrder = async (query) => {
@@ -78,28 +86,32 @@
 
     const url = query ? `${backendURL}/api/get-sale-orders?query=${query}` : `${backendURL}/api/get-sale-orders`;
   
-    const pageData = await wretch(url) // Base url
-      // Authorization header
-      .get() // GET request
-      .badRequest((err) => {
-        console.log('400', err);
-        throw err;
-      })
-      .unauthorized((err) => {
-        console.log('401', err);
-        throw err;
-      })
-      .notFound((err) => {
+    try {
+      const response = await fetch(url);
+      
+      if (response.status === 400) {
+        console.log('400', response);
+        throw new Error('Bad Request');
+      }
+      if (response.status === 401) {
+        console.log('401', response);
+        throw new Error('Unauthorized');
+      }
+      if (response.status === 404) {
         window.generateError(`Something went wrong while trying to get your SOS Customers. Please contact your developer.`);
-        throw err;
-      })
-      .internalError((err) => {
-        console.log('500', err);
-        throw err;
-      })
-      .res((res) => res.json());
-
-    return pageData;
+        throw new Error('Not Found');
+      }
+      if (response.status >= 500) {
+        console.log('500', response);
+        throw new Error('Internal Server Error');
+      }
+      
+      const pageData = await response.json();
+      return pageData;
+    } catch (error) {
+      console.error('Error fetching SOS sales order:', error);
+      throw error;
+    }
   }
 
   {% comment %}  
@@ -110,62 +122,75 @@
 
   window.getShopifyProducts = async (ids) => {
 
-    const pageData = await wretch(`${backendURL}/api/get-shopify-collections`)
-      .post(ids)
-      .badRequest((err) => {
-        console.log('400', err)
-        throw err;
-      })
-      .unauthorized((err) => {
-        console.log('401', err)
-        throw err;
-      })
-      .notFound((err) => {
-        console.log('404', err)
-        throw err;
-      })
-      .internalError((err) => {
-        console.log('500', err)
-        throw err;
-      })
-      .res((res) => res.json());
+    try {
+      const response = await fetch(`${backendURL}/api/get-shopify-collections`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(ids)
+      });
+      
+      if (response.status === 400) {
+        console.log('400', response);
+        throw new Error('Bad Request');
+      }
+      if (response.status === 401) {
+        console.log('401', response);
+        throw new Error('Unauthorized');
+      }
+      if (response.status === 404) {
+        console.log('404', response);
+        throw new Error('Not Found');
+      }
+      if (response.status >= 500) {
+        console.log('500', response);
+        throw new Error('Internal Server Error');
+      }
+      
+      const pageData = await response.json();
+      
+      if (!pageData.data.products) {
+        return 'No Products';
+      }
 
-    if (!pageData.data.products) {
-      return 'No Products';
+      const products = pageData.data.products.filter(p => p.status === 'active')
+
+      return products;
+    } catch (error) {
+      console.error('Error fetching Shopify products:', error);
+      throw error;
     }
-
-    const products = pageData.data.products.filter(p => p.status === 'active')
-
-    return products;
   }
   
   // Function to fetch a specific product by SKU
   window.getProductBySku = async (sku) => { 
     try {
       console.log('Fetching product by SKU:', sku);
-      const response = await wretch(`${backendURL}/api/get-product-by-sku?sku=${encodeURIComponent(sku)}`)
-        .get()
-        .badRequest((err) => {
-          console.log('400', err)
-          throw err;
-        })
-        .unauthorized((err) => {
-          console.log('401', err)
-          throw err;
-        })
-        .notFound((err) => {
-          console.log('404', err)
-          return { data: null };
-        })
-        .internalError((err) => {
-          console.log('500', err)
-          throw err;
-        })
-        .res((res) => res.json());
+      const response = await fetch(`${backendURL}/api/get-product-by-sku?sku=${encodeURIComponent(sku)}`);
+      
+      if (response.status === 400) {
+        console.log('400', response);
+        throw new Error('Bad Request');
+      }
+      if (response.status === 401) {
+        console.log('401', response);
+        throw new Error('Unauthorized');
+      }
+      if (response.status === 404) {
+        console.log('404', response);
+        return null;
+      }
+      if (response.status >= 500) {
+        console.log('500', response);
+        throw new Error('Internal Server Error');
+      }
+      
+      const data = await response.json();
         
-      if (response.data && response.data.product) {
-        console.log('Found product by SKU:', response.data.product.title);
-        return response.data.product;
+      if (data.data && data.data.product) {
+        console.log('Found product by SKU:', data.data.product.title);
+        return data.data.product;
       }
       
       console.log('No product found by SKU:', sku);
@@ -192,82 +217,104 @@
       formState = [formState];
     }
   
-    const pageData = await wretch(
-      `${backendURL}/api/airtable-create-campaign-entry?campaignName=${campaignName}&customerId=${customerId}`
-    ) // Base url
-      // Authorization header
-      .post({
-        formState, // Pass the whole formState array
-        giftState,
-      }) // Post data
-      .badRequest((err) => {
-        throw err;
-      })
-      .unauthorized((err) => {
-        throw err;
-      })
-      .notFound((err) => {
-        throw err;
-      })
-      .internalError((err) => {
-        throw err;
-      })
-      .res((res) => res.json());
-  
-    return [pageData]; // Return the result in an array
+    try {
+      const response = await fetch(
+        `${backendURL}/api/airtable-create-campaign-entry?campaignName=${campaignName}&customerId=${customerId}`,
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            formState,
+            giftState,
+          })
+        }
+      );
+      
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      
+      const pageData = await response.json();
+      return [pageData];
+    } catch (error) {
+      console.error('Error creating Airtable entries:', error);
+      throw error;
+    }
   };  
   
 
   window.airtableCreateCampaign = async ({ inputs, formArray, gifts }) => {
 
-      const pageData = await wretch(`${backendURL}/api/airtable-create-campaign`).
-        post({
+    try {
+      const response = await fetch(`${backendURL}/api/airtable-create-campaign`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
           inputs,
           formArray,
           gifts
-        }).badRequest((err) => {
-          console.log('400', err)
-          throw err;
-        }).unauthorized((err) => {
-          console.log('401', err)
-          throw err;
-        }).notFound((err) => {
-          generateError(`Something went wrong while trying to get your SOS Customers. Please contact your developer.`)
-          throw err;
-        }) .internalError((err) => {
-          console.log('500', err)
-          throw err;
-        }).res((res) => res.json()); // Parse response as JSON
-
+        })
+      });
+      
+      if (response.status === 400) {
+        console.log('400', response);
+        throw new Error('Bad Request');
+      }
+      if (response.status === 401) {
+        console.log('401', response);
+        throw new Error('Unauthorized');
+      }
+      if (response.status === 404) {
+        generateError(`Something went wrong while trying to get your SOS Customers. Please contact your developer.`);
+        throw new Error('Not Found');
+      }
+      if (response.status >= 500) {
+        console.log('500', response);
+        throw new Error('Internal Server Error');
+      }
+      
+      const pageData = await response.json();
       return pageData;
+    } catch (error) {
+      console.error('Error creating Airtable campaign:', error);
+      throw error;
+    }
   }
 
   window.getAirtableTableById = async ({ campaignNameParam, clientIdParam }) => {
     
-    const pageData = await wretch(
-      `${backendURL}/api/airtable-admin-base?campaignName=${campaignNameParam}&customerId=${clientIdParam}`
-    )
-      .get() // GET request
-      .badRequest((err) => {
-        console.log('400', err)
-        throw err;
-      }) // Handle 400 errors
-      .unauthorized((err) => {
-        console.log('401', err)
-        throw err;
-      }) // Handle 401 errors
-      .notFound((err) => {
-
-        generateError(`Something went wrong while trying to initiate your gift selection (Campaign Name: ${campaignNameParam}). Please contact your administrator.`)
-        throw err;
-      }) // Handle 404 errors
-      .internalError((err) => {
-        console.log('500', err)
-        throw err;
-      }) // Handle 500 errors
-      .res((res) => res.json()); // Parse response as JSON
-
-      return pageData
+    try {
+      const response = await fetch(
+        `${backendURL}/api/airtable-admin-base?campaignName=${campaignNameParam}&customerId=${clientIdParam}`
+      );
+      
+      if (response.status === 400) {
+        console.log('400', response);
+        throw new Error('Bad Request');
+      }
+      if (response.status === 401) {
+        console.log('401', response);
+        throw new Error('Unauthorized');
+      }
+      if (response.status === 404) {
+        generateError(`Something went wrong while trying to initiate your gift selection (Campaign Name: ${campaignNameParam}). Please contact your administrator.`);
+        throw new Error('Not Found');
+      }
+      if (response.status >= 500) {
+        console.log('500', response);
+        throw new Error('Internal Server Error');
+      }
+      
+      const pageData = await response.json();
+      return pageData;
+    } catch (error) {
+      console.error('Error fetching Airtable table:', error);
+      throw error;
+    }
   } 
 
 
