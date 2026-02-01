@@ -66,7 +66,7 @@
       "settings": {
         "overline": "",
         "title": "<p>Send something that means something.</p>",
-        "heading_style": "h1",
+        "heading_style": "h2",
         "body": "Thoughtfully curated, beautifully packaged, and filled with small-batch goods from Canadian brands - no fluff, no fillers, just thoughtful gifts with real impact.",
         "image": "shopify://shop_images/HomepageImage_171025_transparent.png",
         "enable_card_style": false,
