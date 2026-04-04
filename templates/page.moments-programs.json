@@ -33,7 +33,7 @@
       ],
       "settings": {
         "overline": "MOMENTS PROGRAMS",
-        "title": "<p>The most trusted businesses don't leave relationships to chance.</p>",
+        "title": "<p>The most trusted businesses don't leave  relationships to chance.</p>",
         "heading_style": "h2",
         "body": "Intention isn't the problem. Consistency is. A Moments Program gives you the system to strengthen your most important relationships continuously — not just when the calendar tells you to.",
         "image": "shopify://shop_images/Screen_Shot_2022-11-15_at_5.04.39_PM.png",
@@ -53,9 +53,9 @@
           "type": "card",
           "settings": {
             "image": "shopify://shop_images/Image_ece8a130-10d5-442c-8531-af02ad89d323.jpg",
-            "title": "New Hire Onboarding Kits",
-            "body": "Say a big first hello to new employees and interns with an information pack and gift box.",
-            "cta_text": "Get a quote",
+            "title": "Moments create connection.",
+            "body": "The brands people remember aren't the ones who sold them something — they're the ones who made them feel something. 83% of people who received a thoughtful gift said it made them feel closer to the brand behind it.— Sendoso",
+            "cta_text": "",
             "cta_link": "#corporate-contact"
           }
         },
@@ -63,8 +63,8 @@
           "type": "card",
           "settings": {
             "image": "shopify://shop_images/Image_4156cd82-50c2-40f5-ab2f-94ea44745172.jpg",
-            "title": "Milestone Gifts",
-            "body": "Whether a birthday, anniversary or retirement – it’s worth celebrating.",
+            "title": "Moments build loyalty.",
+            "body": "A single gesture at the right time can shift the entire trajectory of a relationship, personally and professionally. Customers with an emotional connection to a brand have a 306% higher lifetime value.— Accenture",
             "cta_text": "",
             "cta_link": ""
           }
@@ -72,15 +72,16 @@
         "1a1d97cc-0c9f-4023-b4cf-a2188c76fa3e": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/Image.png",
-            "title": "Event Gifts",
-            "body": "No event is complete without a gift or keepsake to take home.",
-            "cta_text": "Get a quote",
+            "image": "shopify://shop_images/icon_1.png",
+            "title": "Moments compound.",
+            "body": "Every meaningful interaction builds on the last. Investing in moments consistently isn't just good culture — it's good business. A 5% increase in retention can drive up to a 95% increase in profit.— Harvard Business Review",
+            "cta_text": "",
             "cta_link": "#corporate-contact"
           }
         },
         "81289acb-6a37-4c70-84ec-d781a6d0b072": {
           "type": "card",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/Image.jpg",
             "title": "Client Appreciation Gifts",
