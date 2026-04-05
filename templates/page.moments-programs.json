@@ -244,7 +244,7 @@
         "a0cdd988-b288-4542-9434-6c35f9543944": {
           "type": "cta",
           "settings": {
-            "cta_text": "Learn more",
+            "cta_text": "Book a Moments Mapping session",
             "cta_link": "shopify://pages/contact-us"
           }
         }
@@ -254,9 +254,9 @@
       ],
       "settings": {
         "overline": "",
-        "title": "<p>Get in touch!</p>",
+        "title": "<p>Ready to make your moments matter?</p>",
         "heading_style": "h2",
-        "body": "Each foodiepages gift basket is designed with premium goods from diverse, independently-owned makers and brands across Canada.",
+        "body": "Book a complimentary Moments Mapping session and leave with a clear picture of where your relationships are being left to chance.",
         "image": "shopify://shop_images/Frame_43428_2.png",
         "enable_card_style": true,
         "text_vertical_alignment": "center",
