@@ -217,6 +217,7 @@
         "94353301-183f-4ec1-9b25-4d500681640f",
         "29189724-18f8-43ad-ad45-9aea0d08c6f0"
       ],
+      "disabled": true,
       "settings": {
         "overline": "Handpicked. Intentional. Memorable.",
         "title": "<p>Bespoke gift experiences, endless options.</p>",
@@ -233,7 +234,7 @@
         "a0cdd988-b288-4542-9434-6c35f9543944": {
           "type": "cta",
           "settings": {
-            "cta_text": "Book a Moments Mapping session",
+            "cta_text": "Book a Moments Mapping Session",
             "cta_link": "shopify://pages/contact-us"
           }
         }
