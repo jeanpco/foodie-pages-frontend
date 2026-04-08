@@ -15,14 +15,14 @@
         "02d55e23-f307-4138-a9bd-10d797daa746": {
           "type": "cta",
           "settings": {
-            "cta_text": "See the programs",
+            "cta_text": "Explore the Programs",
             "cta_link": ""
           }
         },
         "c048c51b-1b9b-4987-9088-f581437cc840": {
           "type": "cta",
           "settings": {
-            "cta_text": "Book a Moments Mapping session",
+            "cta_text": "Book a Moments Mapping Session",
             "cta_link": ""
           }
         }
@@ -35,7 +35,7 @@
         "overline": "MOMENTS PROGRAMS",
         "title": "<p>Trusted brands don't leave  relationships to chance.</p>",
         "heading_style": "h1",
-        "body": "Intention isn't the problem. Consistency is. A Moments Program gives you the system to strengthen your most important relationships continuously — not just when the calendar tells you to.",
+        "body": "Intention isn't the problem. Consistency is. Without a system, even the best teams miss the moments that matter - and relationships quietly weaken over time. A Moments Program gives you a structured way to show up consistently, so your most important relationships don’t depend on memory, bandwidth, or timing.",
         "image": "shopify://shop_images/Screen_Shot_2022-11-15_at_5.04.39_PM.png",
         "enable_card_style": false,
         "text_vertical_alignment": "center",
@@ -54,7 +54,7 @@
           "settings": {
             "image": "shopify://shop_images/Image_ece8a130-10d5-442c-8531-af02ad89d323.jpg",
             "title": "Moments create connection.",
-            "body": "The brands people remember aren't the ones who sold them something — they're the ones who made them feel something. 83% of people who received a thoughtful gift said it made them feel closer to the brand behind it.— Sendoso",
+            "body": "The brands people remember aren’t the ones who sold them something - they’re the ones who made them feel something. 83% of people who receive a thoughtful gesture feel closer to the brand behind it.— Sendoso",
             "cta_text": "",
             "cta_link": "#corporate-contact"
           }
@@ -100,7 +100,7 @@
       "custom_css": [],
       "settings": {
         "overline": "why we exist",
-        "title": "We believe in the power of moments to strengthen relationships.",
+        "title": "Relationships aren’t lost all at once — they fade in missed moments.",
         "body": "",
         "cta_text": "",
         "cta_link": "#corporate-contact",
