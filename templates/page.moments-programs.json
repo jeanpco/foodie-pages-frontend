@@ -54,7 +54,7 @@
           "settings": {
             "image": "shopify://shop_images/Image_ece8a130-10d5-442c-8531-af02ad89d323.jpg",
             "title": "Moments create connection.",
-            "body": "The brands people remember aren’t the ones who sold them something - they’re the ones who made them feel something. 83% of people who receive a thoughtful gesture feel closer to the brand behind it.— Sendoso",
+            "body": "The brands people remember aren’t the ones who sold them something - they’re the ones who made them feel something. 83% of people who receive a thoughtful gesture feel closer to the brand behind it.",
             "cta_text": "",
             "cta_link": "#corporate-contact"
           }
@@ -64,7 +64,7 @@
           "settings": {
             "image": "shopify://shop_images/Image_4156cd82-50c2-40f5-ab2f-94ea44745172.jpg",
             "title": "Moments build loyalty.",
-            "body": "A single gesture at the right time can shift the entire trajectory of a relationship, personally and professionally. Customers with an emotional connection to a brand have a 306% higher lifetime value.— Accenture",
+            "body": "A single well-timed interaction can strengthen a relationship. But when those moments are missed, delayed, or inconsistent, the opposite happens — relationships stall, or worse, drift.",
             "cta_text": "",
             "cta_link": ""
           }
@@ -74,19 +74,8 @@
           "settings": {
             "image": "shopify://shop_images/icon_1.png",
             "title": "Moments compound.",
-            "body": "Every meaningful interaction builds on the last. Investing in moments consistently isn't just good culture — it's good business. A 5% increase in retention can drive up to a 95% increase in profit.— Harvard Business Review",
+            "body": "Every meaningful interaction builds on the last. Without consistency, that momentum breaks. With it, relationships deepen — driving retention, loyalty, and long-term value.",
             "cta_text": "",
-            "cta_link": "#corporate-contact"
-          }
-        },
-        "81289acb-6a37-4c70-84ec-d781a6d0b072": {
-          "type": "card",
-          "disabled": true,
-          "settings": {
-            "image": "shopify://shop_images/Image.jpg",
-            "title": "Client Appreciation Gifts",
-            "body": "Show your appreciation with a branded and personalized gift.",
-            "cta_text": "Get a quote",
             "cta_link": "#corporate-contact"
           }
         }
@@ -94,13 +83,12 @@
       "block_order": [
         "765a0837-b3a6-417e-a20d-8c4151c40912",
         "2799395e-848f-4345-9be1-4844c0f3b341",
-        "1a1d97cc-0c9f-4023-b4cf-a2188c76fa3e",
-        "81289acb-6a37-4c70-84ec-d781a6d0b072"
+        "1a1d97cc-0c9f-4023-b4cf-a2188c76fa3e"
       ],
       "custom_css": [],
       "settings": {
         "overline": "why we exist",
-        "title": "Without a system, key moments are missed – and relationships quietly weaken.",
+        "title": "Moments don't just strengthen relationships – they drive measurable growth.",
         "body": "",
         "cta_text": "",
         "cta_link": "#corporate-contact",
