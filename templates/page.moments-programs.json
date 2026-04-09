@@ -95,6 +95,42 @@
         "heading_style": "h1"
       }
     },
+    "rich_text_YVUrYX": {
+      "type": "rich-text",
+      "blocks": {
+        "text_j3RqHx": {
+          "type": "text",
+          "settings": {
+            "text": "<h5>\"<em>Showing up when you remember is easy. Showing up consistently </em>– <em>at the right moments, for the right people, all year long </em>– <em>that's what actually builds trust. Moments Programs is our answer to that.</em>\" — Erin, Founder & CEO, Foodiepages</h5>"
+          }
+        },
+        "button_3XW49c": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "text_j3RqHx",
+        "button_3XW49c"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "background-2",
+        "full_width": true,
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
     "823bd50c-3555-4282-8b34-ab0e8584323d": {
       "type": "module-vertical-tabs",
       "blocks": {
@@ -158,7 +194,7 @@
       ],
       "settings": {
         "overline": "our approach",
-        "title": "<p>The system behind consistent, meaningful moments</p>",
+        "title": "<p>The system behind relationship moments</p>",
         "heading_style": "h2",
         "cta_text": "Get in touch",
         "cta_link": "#contact",
@@ -256,49 +292,14 @@
         "background_color_overwrite": "",
         "trusted_by_text": "Trusted by"
       }
-    },
-    "rich_text_YVUrYX": {
-      "type": "rich-text",
-      "blocks": {
-        "text_j3RqHx": {
-          "type": "text",
-          "settings": {
-            "text": "<h5>\"<em>Showing up when you remember is easy. Showing up consistently </em>– <em>at the right moments, for the right people, all year long </em>– <em>that's what actually builds trust. Moments Programs is our answer to that.</em>\" — Erin, Founder & CEO, Foodiepages</h5>"
-          }
-        },
-        "button_3XW49c": {
-          "type": "button",
-          "settings": {
-            "button_label": "Button label",
-            "button_link": "",
-            "button_style_secondary": false,
-            "button_label_2": "",
-            "button_link_2": "",
-            "button_style_secondary_2": false
-          }
-        }
-      },
-      "block_order": [
-        "text_j3RqHx",
-        "button_3XW49c"
-      ],
-      "name": "t:sections.rich-text.presets.name",
-      "settings": {
-        "desktop_content_position": "center",
-        "content_alignment": "center",
-        "color_scheme": "background-1",
-        "full_width": true,
-        "padding_top": 40,
-        "padding_bottom": 52
-      }
     }
   },
   "order": [
     "main",
     "05ea480d-037b-4297-9c3d-d6160866116b",
+    "rich_text_YVUrYX",
     "823bd50c-3555-4282-8b34-ab0e8584323d",
     "b5797203-b142-444b-be2c-d6e9d37312fe",
-    "582103a2-47d5-46e9-9ba6-ede2b4f3963b",
-    "rich_text_YVUrYX"
+    "582103a2-47d5-46e9-9ba6-ede2b4f3963b"
   ]
 }
