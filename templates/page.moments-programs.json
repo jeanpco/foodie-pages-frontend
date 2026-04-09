@@ -271,7 +271,7 @@
           "type": "cta",
           "settings": {
             "cta_text": "Book a Moments Mapping Session",
-            "cta_link": "shopify://pages/contact-us"
+            "cta_link": "https://calendar.app.google/6vSDJn5He5Vge4vb8"
           }
         }
       },
