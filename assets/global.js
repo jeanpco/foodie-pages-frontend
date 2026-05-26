@@ -798,16 +798,18 @@ class VariantSelects extends HTMLElement {
   }
 
   updateMedia() {
-    if (!this.currentVariant) return;
-    if (!this.currentVariant.featured_media) return;
+  if (!this.currentVariant) return;
+  if (!this.currentVariant.featured_media) return;  // ← add this if not already there
 
-    const mediaGalleries = document.querySelectorAll(`[id^="MediaGallery-${this.dataset.section}"]`);
-    mediaGalleries.forEach(mediaGallery => {
-      // find any li within that element that would be display: none; and remove the style
-      Array.from(mediaGallery.querySelectorAll('.thumbnail-list__item')).forEach(el => el.removeAttribute('style'))
-
-      mediaGallery.setActiveMedia(`${this.dataset.section}-${this.currentVariant.featured_media.id}`, true)
-    });
+  const mediaGalleries = document.querySelectorAll(`[id^="MediaGallery-${this.dataset.section}"]`);
+  mediaGalleries.forEach(mediaGallery => {
+    Array.from(mediaGallery.querySelectorAll('.thumbnail-list__item')).forEach(el => el.removeAttribute('style'));
+    try {
+      mediaGallery.setActiveMedia(`${this.dataset.section}-${this.currentVariant.featured_media.id}`, true);
+    } catch(e) {
+      console.warn('setActiveMedia failed:', e);
+    }
+  });
 
     const modalContent = document.querySelector(`#ProductModal-${this.dataset.section} .product-media-modal__content`);
     if (!modalContent) return;
