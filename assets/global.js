@@ -754,8 +754,10 @@ class VariantSelects extends HTMLElement {
   constructor() {
     super();
     this.addEventListener('change', (event) => {
-      // Ensure checked state is set before processing
-      if (event.target.type === 'radio') {
+      if (event.target.tagName === 'INPUT' && event.target.type === 'radio') {
+        // Manually uncheck siblings first, then check target
+        const name = event.target.name;
+        this.querySelectorAll(`input[name="${name}"]`).forEach(i => i.checked = false);
         event.target.checked = true;
       }
       this.onVariantChange();
