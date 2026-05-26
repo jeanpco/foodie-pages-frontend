@@ -753,7 +753,13 @@ customElements.define('slideshow-component', SlideshowComponent);
 class VariantSelects extends HTMLElement {
   constructor() {
     super();
-    this.addEventListener('change', this.onVariantChange);
+    this.addEventListener('change', (event) => {
+      // Ensure checked state is set before processing
+      if (event.target.type === 'radio') {
+        event.target.checked = true;
+      }
+      this.onVariantChange();
+    });
   }
 
   onVariantChange() {
