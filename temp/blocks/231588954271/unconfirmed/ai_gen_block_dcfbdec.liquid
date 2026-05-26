@@ -1,6 +1,425 @@
+{% doc %}
+  @prompt
+    Fix the variant selector JavaScript so that when a variant is selected, the price updates correctly and the Add to Cart button is enabled. Currently selecting the "Add Sparkling Wine" variant does not update the price from $105 to $125 and the Add to Cart button remains greyed out. The product has one option called "Add-on" with values "Base Gift Box" and "Add Sparkling Wine".
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-product-variant-selector-{{ ai_gen_id }} {
+    display: block;
+    width: {{ block.settings.desktop_width_percent }}%;
+    max-width: 100%;
+    padding: 24px;
+    background-color: {{ block.settings.background_color }};
+    border-radius: {{ block.settings.border_radius }}px;
+  }
+
+  .ai-product-variant-selector__title-{{ ai_gen_id }} {
+    font-size: {{ block.settings.title_size }}px;
+    color: {{ block.settings.text_color }};
+    margin: 0 0 16px;
+  }
+
+  .ai-product-variant-selector__price-{{ ai_gen_id }} {
+    font-size: {{ block.settings.price_size }}px;
+    color: {{ block.settings.text_color }};
+    font-weight: 600;
+    margin: 0 0 20px;
+  }
+
+  .ai-product-variant-selector__option-label-{{ ai_gen_id }} {
+    display: block;
+    font-size: 14px;
+    color: {{ block.settings.text_color }};
+    margin-bottom: 8px;
+    font-weight: 500;
+  }
+
+  .ai-product-variant-selector__select-{{ ai_gen_id }} {
+    width: 100%;
+    padding: 12px 16px;
+    font-size: 16px;
+    border: 1px solid {{ block.settings.border_color }};
+    border-radius: {{ block.settings.input_border_radius }}px;
+    background-color: #ffffff;
+    margin-bottom: 20px;
+    cursor: pointer;
+  }
+
+  .ai-product-variant-selector__button-{{ ai_gen_id }} {
+    width: 100%;
+    padding: 16px 24px;
+    font-size: 16px;
+    font-weight: 600;
+    background-color: {{ block.settings.button_color }};
+    color: {{ block.settings.button_text_color }};
+    border: none;
+    border-radius: {{ block.settings.button_border_radius }}px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, opacity 0.3s ease;
+  }
+
+  .ai-product-variant-selector__button-{{ ai_gen_id }}:hover:not(:disabled) {
+    background-color: {{ block.settings.button_hover_color }};
+  }
+
+  .ai-product-variant-selector__button-{{ ai_gen_id }}:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  .ai-product-variant-selector__error-{{ ai_gen_id }} {
+    color: #d82c0d;
+    font-size: 14px;
+    margin-top: 8px;
+    display: none;
+  }
+
+  .ai-product-variant-selector__error-{{ ai_gen_id }}.active {
+    display: block;
+  }
+{% endstyle %}
+
+<product-variant-selector-{{ ai_gen_id }}
+  class="ai-product-variant-selector-{{ ai_gen_id }}"
+  data-product-id="{{ product.id }}"
+  {{ block.shopify_attributes }}
+>
+  {% if block.settings.show_title and product.title %}
+    <h2 class="ai-product-variant-selector__title-{{ ai_gen_id }}">{{ product.title }}</h2>
+  {% endif %}
+
+  <div class="ai-product-variant-selector__price-{{ ai_gen_id }}" data-price-display>
+    {{ product.selected_or_first_available_variant.price | money }}
+  </div>
+
+  {% if product.has_only_default_variant %}
+    <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}" data-variant-id>
+  {% else %}
+    {% for option in product.options_with_values %}
+      <div class="ai-product-variant-selector__option-{{ ai_gen_id }}">
+        <label class="ai-product-variant-selector__option-label-{{ ai_gen_id }}" for="option-{{ option.position }}-{{ ai_gen_id }}">
+          {{ option.name }}
+        </label>
+        <select
+          id="option-{{ option.position }}-{{ ai_gen_id }}"
+          class="ai-product-variant-selector__select-{{ ai_gen_id }}"
+          data-option-select
+          data-option-position="{{ option.position }}"
+        >
+          {% for value in option.values %}
+            <option
+              value="{{ value | escape }}"
+              {% if option.selected_value == value %}selected{% endif %}
+            >
+              {{ value }}
+            </option>
+          {% endfor %}
+        </select>
+      </div>
+    {% endfor %}
+    <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}" data-variant-id>
+  {% endif %}
+
+  <button
+    type="submit"
+    class="ai-product-variant-selector__button-{{ ai_gen_id }}"
+    data-add-to-cart
+    {% unless product.selected_or_first_available_variant.available %}disabled{% endunless %}
+  >
+    {% if product.selected_or_first_available_variant.available %}
+      {{ block.settings.button_text }}
+    {% else %}
+      {{ block.settings.sold_out_text }}
+    {% endif %}
+  </button>
+
+  <div class="ai-product-variant-selector__error-{{ ai_gen_id }}" data-error-message></div>
+
+  <script type="application/json" data-product-json>
+    {{ product | json }}
+  </script>
+</product-variant-selector-{{ ai_gen_id }}>
+
+<script>
+  (function() {
+    class ProductVariantSelector{{ ai_gen_id }} extends HTMLElement {
+      constructor() {
+        super();
+        this.productData = null;
+        this.currentVariant = null;
+      }
+
+      connectedCallback() {
+        const productJson = this.querySelector('[data-product-json]');
+        if (productJson) {
+          this.productData = JSON.parse(productJson.textContent);
+          this.currentVariant = this.productData.selected_or_first_available_variant;
+        }
+
+        this.optionSelects = this.querySelectorAll('[data-option-select]');
+        this.priceDisplay = this.querySelector('[data-price-display]');
+        this.addToCartButton = this.querySelector('[data-add-to-cart]');
+        this.variantIdInput = this.querySelector('[data-variant-id]');
+        this.errorMessage = this.querySelector('[data-error-message]');
+
+        this.setupEventListeners();
+      }
+
+      setupEventListeners() {
+        this.optionSelects.forEach((select) => {
+          select.addEventListener('change', () => this.onOptionChange());
+        });
+
+        this.addToCartButton.addEventListener('click', (e) => this.onAddToCart(e));
+      }
+
+      onOptionChange() {
+        const selectedOptions = this.getSelectedOptions();
+        const matchedVariant = this.findMatchingVariant(selectedOptions);
+
+        if (matchedVariant) {
+          this.currentVariant = matchedVariant;
+          this.updateUI(matchedVariant);
+        }
+      }
+
+      getSelectedOptions() {
+        const options = [];
+        this.optionSelects.forEach((select) => {
+          options.push(select.value);
+        });
+        return options;
+      }
+
+      findMatchingVariant(selectedOptions) {
+        return this.productData.variants.find((variant) => {
+          return selectedOptions.every((option, index) => {
+            return variant.options[index] === option;
+          });
+        });
+      }
+
+      updateUI(variant) {
+        if (this.priceDisplay) {
+          const price = this.formatMoney(variant.price);
+          this.priceDisplay.textContent = price;
+        }
+
+        if (this.variantIdInput) {
+          this.variantIdInput.value = variant.id;
+        }
+
+        if (this.addToCartButton) {
+          if (variant.available) {
+            this.addToCartButton.disabled = false;
+            this.addToCartButton.textContent = this.addToCartButton.getAttribute('data-available-text') || '{{ block.settings.button_text }}';
+          } else {
+            this.addToCartButton.disabled = true;
+            this.addToCartButton.textContent = this.addToCartButton.getAttribute('data-sold-out-text') || '{{ block.settings.sold_out_text }}';
+          }
+        }
+
+        this.hideError();
+      }
+
+      formatMoney(cents) {
+        const amount = cents / 100;
+        return new Intl.NumberFormat('{{ localization.language.iso_code }}', {
+          style: 'currency',
+          currency: '{{ cart.currency.iso_code }}'
+        }).format(amount);
+      }
+
+      onAddToCart(e) {
+        e.preventDefault();
+
+        if (!this.currentVariant || !this.currentVariant.available) {
+          this.showError('This variant is not available');
+          return;
+        }
+
+        const formData = {
+          items: [{
+            id: this.currentVariant.id,
+            quantity: 1
+          }]
+        };
+
+        fetch('/cart/add.js', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(formData)
+        })
+        .then(response => response.json())
+        .then(data => {
+          window.dispatchEvent(new Event('cart:updated'));
+          this.hideError();
+        })
+        .catch((error) => {
+          this.showError('Unable to add to cart. Please try again.');
+        });
+      }
+
+      showError(message) {
+        if (this.errorMessage) {
+          this.errorMessage.textContent = message;
+          this.errorMessage.classList.add('active');
+        }
+      }
+
+      hideError() {
+        if (this.errorMessage) {
+          this.errorMessage.classList.remove('active');
+        }
+      }
+    }
+
+    customElements.define('product-variant-selector-{{ ai_gen_id }}', ProductVariantSelector{{ ai_gen_id }});
+  })();
+</script>
+
 {% schema %}
- {
-   "name": "AI_Block",
-   "tag": "shopify-ai-generated-block"
- }
+{
+  "name": "Product variant selector",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_title",
+      "label": "Show product title",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Add to cart button text",
+      "default": "Add to Cart"
+    },
+    {
+      "type": "text",
+      "id": "sold_out_text",
+      "label": "Sold out button text",
+      "default": "Sold Out"
+    },
+    {
+      "type": "header",
+      "content": "Style"
+    },
+    {
+      "type": "range",
+      "id": "desktop_width_percent",
+      "label": "Desktop width",
+      "min": 50,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default": 100
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#121212"
+    },
+    {
+      "type": "color",
+      "id": "border_color",
+      "label": "Border color",
+      "default": "#cccccc"
+    },
+    {
+      "type": "range",
+      "id": "border_radius",
+      "label": "Container border radius",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "default": 8
+    },
+    {
+      "type": "range",
+      "id": "input_border_radius",
+      "label": "Input border radius",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "default": 4
+    },
+    {
+      "type": "header",
+      "content": "Typography"
+    },
+    {
+      "type": "range",
+      "id": "title_size",
+      "label": "Title size",
+      "min": 16,
+      "max": 48,
+      "step": 2,
+      "unit": "px",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "price_size",
+      "label": "Price size",
+      "min": 14,
+      "max": 36,
+      "step": 2,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "header",
+      "content": "Button"
+    },
+    {
+      "type": "color",
+      "id": "button_color",
+      "label": "Button color",
+      "default": "#121212"
+    },
+    {
+      "type": "color",
+      "id": "button_hover_color",
+      "label": "Button hover color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Button text color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "button_border_radius",
+      "label": "Button border radius",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "default": 4
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product variant selector"
+    }
+  ]
+}
 {% endschema %}
