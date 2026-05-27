@@ -371,6 +371,27 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     {% render 'google-tag-sign-in' %}
     {% render 'google-tag-sign-up' %}
     {% comment %} Add to cart conversion rate tracking is at the bottom of the body, it needs the elements rendered to work as it carries more logic {% endcomment %}
+     <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Foodiepages",
+  "url": "https://www.foodiepages.ca",
+  "logo": "https://www.foodiepages.ca/cdn/shop/files/foodie-logo.png?v=1666030986",
+  "description": "Foodiepages is a Canadian corporate gifting company offering curated gift boxes, custom corporate gifts, and managed Moments Programs. All gifts feature products from small Canadian businesses, with eco-friendly packaging and a 1% charitable giving pledge on every purchase.",
+  "foundingDate": "2012",
+  "founder": {
+    "@type": "Person",
+    "name": "Erin Maynes"
+  },
+  "areaServed": "Canada",
+  "sameAs": [
+    "https://www.linkedin.com/company/foodiepages-ca",
+    "https://www.instagram.com/foodiepages",
+    "https://www.facebook.com/FoodiePages.ca"
+  ]
+}
+</script>
 </head>
 
   <body class="{{ template.name }}">
