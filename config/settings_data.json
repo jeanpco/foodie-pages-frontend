@@ -249,7 +249,7 @@
       "announcement-banner": {
         "type": "announcement-banner",
         "settings": {
-          "show_banner": true,
+          "show_banner": false,
           "text": "🇨🇦 Gifts that celebrate Canadian small businesses 🇨🇦",
           "link": ""
         }
