@@ -121,7 +121,8 @@
             "title": "We handle everything. Full stop.",
             "body": "Inventory, kitting, personalization, and delivery - managed entirely by our team. Your people flag the moment. The right gift arrives for the right person at the right time. Nothing falls on your firm to manage.",
             "cta_text": "",
-            "cta_link": ""
+            "cta_link": "",
+            "image": "shopify://shop_images/Untitled_design_19_49b8def0-7592-4493-9a33-b5da1bc181d3.png"
           }
         }
       },
@@ -394,10 +395,10 @@
         "3780c6c2-0180-43b2-b0ff-607d92877325"
       ],
       "settings": {
-        "overline": "",
-        "title": "<p>Corporate gifting <em>done right</em></p>",
+        "overline": "why it matters",
+        "title": "<p>Outreach is cheap. Presence is rare. That's the advantage.</p>",
         "heading_style": "h2",
-        "body": "We're not about boring, generic or wasteful corporate gifts. We'll bring your vision to life with modern corporate gifts that live up to your brand and its values.",
+        "body": "Inboxes are full. Digital touchpoints are automated. In that environment, showing up with something real - a thoughtful gift, a handwritten note, a moment that says we were thinking of you - isn't just nice. It's noticed. It's remembered. It compounds.",
         "image": "shopify://shop_images/Corporate_Gift_Image_c7869c92-b6a7-4eae-96c7-179012bd5da2.png",
         "enable_card_style": true,
         "text_vertical_alignment": "center",
