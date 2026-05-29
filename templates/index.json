@@ -86,6 +86,57 @@
         "trusted_by_text": "trusted by teams at"
       }
     },
+    "module_tabs_FrbdWL": {
+      "type": "module-tabs",
+      "blocks": {
+        "tab_dec7a7": {
+          "type": "tab",
+          "settings": {
+            "icon_url": "https://cdn.shopify.com/s/files/1/0264/5000/2013/files/01.png?v=1780083668",
+            "tab_text": "EXPERIENCE DESIGN",
+            "title": "We map the moments that matter.",
+            "body": "Using our Experience Design Framework, we identify the touchpoints that matter most - from onboarding to milestones to referrals -  and build a program around them.",
+            "cta_text": "",
+            "cta_link": "",
+            "image": "shopify://shop_images/Untitled_design_18_87de0eb9-1565-4150-8cc5-5d09aaa0190e.png"
+          }
+        },
+        "tab_bUaDNx": {
+          "type": "tab",
+          "settings": {
+            "icon_url": "https://cdn.shopify.com/s/files/1/0264/5000/2013/files/01_1.png?v=1780083668",
+            "tab_text": "CURATED MOMENTS",
+            "title": "We source experiences, not baskets.",
+            "body": "Forget generic baskets. Our vendor network is handpicked and on trend — from women-owned, sustainable, and local gems. Every moment is designed, considered and curated to land.",
+            "cta_text": "",
+            "cta_link": "",
+            "image": "shopify://shop_images/4to3-Cropped1.jpg"
+          }
+        },
+        "tab_btHaXr": {
+          "type": "tab",
+          "settings": {
+            "icon_url": "https://cdn.shopify.com/s/files/1/0264/5000/2013/files/01_2.png?v=1780083668",
+            "tab_text": "END-TO-END DELIVERY",
+            "title": "We handle everything. Full stop.",
+            "body": "Inventory, kitting, personalization, and delivery - managed entirely by our team. Your people flag the moment. The right gift arrives for the right person at the right time. Nothing falls on your firm to manage.",
+            "cta_text": "",
+            "cta_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "tab_dec7a7",
+        "tab_bUaDNx",
+        "tab_btHaXr"
+      ],
+      "disabled": true,
+      "name": "How It Works",
+      "settings": {
+        "overline": "How it works",
+        "title": "<p><strong>We build the system. You show up.</strong></p><p>Foodiepages isn't a gifting vendor or a logistics company. We're the missing partner between the two — combining experience design, curated gifting, and fulfillment into one fully managed program.</p>"
+      }
+    },
     "module-tabs": {
       "type": "module-tabs",
       "blocks": {
@@ -158,6 +209,7 @@
         "881fd230-0ff5-475a-80ab-394c30599557",
         "3732abc5-67af-4c3c-85d8-758c6aea36c1"
       ],
+      "name": "Why Foodiepages",
       "settings": {
         "overline": "Why Foodiepages",
         "title": "<p>The <em>best</em> gifting service in Canada</p>"
@@ -645,68 +697,17 @@
         "submit_button_text": "SIGN UP",
         "success_message": "Thank you for subscribing!"
       }
-    },
-    "module_tabs_FrbdWL": {
-      "type": "module-tabs",
-      "blocks": {
-        "tab_dec7a7": {
-          "type": "tab",
-          "settings": {
-            "icon_url": "https://cdn.shopify.com/s/files/1/0264/5000/2013/files/01.png?v=1780083668",
-            "tab_text": "EXPERIENCE DESIGN",
-            "title": "We map the moments that matter.",
-            "body": "Using our Experience Design Framework, we identify the touchpoints that matter most - from onboarding to milestones to referrals -  and build a program around them.",
-            "cta_text": "",
-            "cta_link": "",
-            "image": "shopify://shop_images/Untitled_design_18_87de0eb9-1565-4150-8cc5-5d09aaa0190e.png"
-          }
-        },
-        "tab_bUaDNx": {
-          "type": "tab",
-          "settings": {
-            "icon_url": "https://cdn.shopify.com/s/files/1/0264/5000/2013/files/01_1.png?v=1780083668",
-            "tab_text": "CURATED MOMENTS",
-            "title": "We source experiences, not baskets.",
-            "body": "Forget generic baskets. Our vendor network is handpicked and on trend — from women-owned, sustainable, and local gems. Every moment is designed, considered and curated to land.",
-            "cta_text": "",
-            "cta_link": "",
-            "image": "shopify://shop_images/4to3-Cropped1.jpg"
-          }
-        },
-        "tab_btHaXr": {
-          "type": "tab",
-          "settings": {
-            "icon_url": "https://cdn.shopify.com/s/files/1/0264/5000/2013/files/01_2.png?v=1780083668",
-            "tab_text": "END-TO-END DELIVERY",
-            "title": "We handle everything. Full stop.",
-            "body": "Inventory, kitting, personalization, and delivery - managed entirely by our team. Your people flag the moment. The right gift arrives for the right person at the right time. Nothing falls on your firm to manage.",
-            "cta_text": "",
-            "cta_link": ""
-          }
-        }
-      },
-      "block_order": [
-        "tab_dec7a7",
-        "tab_bUaDNx",
-        "tab_btHaXr"
-      ],
-      "disabled": true,
-      "name": "How It Works",
-      "settings": {
-        "overline": "How it works",
-        "title": "<p>We build the system. You show up.</p>"
-      }
     }
   },
   "order": [
     "module-hero",
+    "module_tabs_FrbdWL",
     "module-tabs",
     "module-tag-slider",
     "module-featured-products",
     "5810d53f-1644-49ef-8085-4cce0ae7ae81",
     "module-testimonials",
     "2d251c42-859a-4639-9dd7-d9f859e749b3",
-    "7932d37c-a24c-4fe9-827f-8714687431af",
-    "module_tabs_FrbdWL"
+    "7932d37c-a24c-4fe9-827f-8714687431af"
   ]
 }
