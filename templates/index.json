@@ -396,9 +396,9 @@
       ],
       "settings": {
         "overline": "why it matters",
-        "title": "<p>Outreach is cheap. Presence is rare. That's the advantage.</p>",
+        "title": "<p>Outreach is cheap. Presence is rare. </p>",
         "heading_style": "h2",
-        "body": "Inboxes are full. Digital touchpoints are automated. In that environment, showing up with something real - a thoughtful gift, a handwritten note, a moment that says we were thinking of you - isn't just nice. It's noticed. It's remembered. It compounds.",
+        "body": "Inboxes are full. Touchpoints are automated. In that environment, showing up with something real - a thoughtful gift, a handwritten note, a moment that says we were thinking of you - isn't just nice. It's noticed. It's remembered. It compounds.",
         "image": "shopify://shop_images/Corporate_Gift_Image_c7869c92-b6a7-4eae-96c7-179012bd5da2.png",
         "enable_card_style": true,
         "text_vertical_alignment": "center",
@@ -458,7 +458,7 @@
       ],
       "settings": {
         "overline": "client stories",
-        "title": "<p>What consistent relationship moments look like in practice</p>",
+        "title": "<p>What relationship moments look like in practice</p>",
         "cta_text": "",
         "cta_link": "shopify://pages/contact-us"
       }
