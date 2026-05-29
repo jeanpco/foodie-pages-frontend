@@ -142,13 +142,6 @@
             "icon_url": "https://cdn.shopify.com/s/files/1/0264/5000/2013/files/economical-insurance.png?v=1669828929"
           }
         },
-        "logo_MPPweN": {
-          "type": "logo",
-          "settings": {
-            "title": "",
-            "icon_url": ""
-          }
-        },
         "0865e9f5-a14b-40d4-bd87-795b61f9b0d4": {
           "type": "logo",
           "settings": {
@@ -159,14 +152,14 @@
         "085d48a7-c26e-403e-a598-181b788c068a": {
           "type": "logo",
           "settings": {
-            "title": "",
+            "title": "Blakes LLP",
             "icon_url": "https://cdn.shopify.com/s/files/1/0264/5000/2013/files/blakes_5d4da28a-7b8a-4875-be97-743c99773be9.png?v=1669828929"
           }
         },
         "d4e8fa15-4474-4a0e-9b86-13c0338845d2": {
           "type": "logo",
           "settings": {
-            "title": "",
+            "title": "Shopify",
             "icon_url": "https://cdn.shopify.com/s/files/1/0264/5000/2013/files/shopify_c70861cb-2dce-4d8e-9ae2-ee5fc8e4736f.png?v=1669828929"
           }
         },
@@ -292,7 +285,6 @@
         "55857477-115b-4287-bffb-988b2c5bd289",
         "1340fe6b-fbd1-4540-9fe0-e6d87e671083",
         "199d783c-9d51-4392-8181-33d0daac9ee0",
-        "logo_MPPweN",
         "0865e9f5-a14b-40d4-bd87-795b61f9b0d4",
         "085d48a7-c26e-403e-a598-181b788c068a",
         "d4e8fa15-4474-4a0e-9b86-13c0338845d2",
