@@ -86,14 +86,81 @@
         "trusted_by_text": "trusted by teams at"
       }
     },
+    "module_tabs_FrbdWL": {
+      "type": "module-tabs",
+      "blocks": {
+        "tab_dec7a7": {
+          "type": "tab",
+          "settings": {
+            "icon_url": "https://cdn.shopify.com/s/files/1/0264/5000/2013/files/01.png?v=1780083668",
+            "tab_text": "EXPERIENCE DESIGN",
+            "title": "We map the moments that matter.",
+            "body": "Using our Experience Design Framework, we identify the touchpoints that matter most - from onboarding to milestones to referrals -  and build a program around them.",
+            "cta_text": "",
+            "cta_link": "",
+            "image": "shopify://shop_images/Untitled_design_18_87de0eb9-1565-4150-8cc5-5d09aaa0190e.png"
+          }
+        },
+        "tab_bUaDNx": {
+          "type": "tab",
+          "settings": {
+            "icon_url": "https://cdn.shopify.com/s/files/1/0264/5000/2013/files/01_1.png?v=1780083668",
+            "tab_text": "CURATED MOMENTS",
+            "title": "We source experiences, not baskets.",
+            "body": "Forget generic baskets. Our vendor network is handpicked and on trend — from women-owned, sustainable, and local gems. Every moment is designed, considered and curated to land.",
+            "cta_text": "",
+            "cta_link": "",
+            "image": "shopify://shop_images/4to3-Cropped1.jpg"
+          }
+        },
+        "tab_btHaXr": {
+          "type": "tab",
+          "settings": {
+            "icon_url": "https://cdn.shopify.com/s/files/1/0264/5000/2013/files/01_2.png?v=1780083668",
+            "tab_text": "END-TO-END DELIVERY",
+            "title": "We handle everything. Full stop.",
+            "body": "Inventory, kitting, personalization, and delivery - managed entirely by our team. Your people flag the moment. The right gift arrives for the right person at the right time. Nothing falls on your firm to manage.",
+            "cta_text": "",
+            "cta_link": "",
+            "image": "shopify://shop_images/Untitled_design_19_49b8def0-7592-4493-9a33-b5da1bc181d3.png"
+          }
+        }
+      },
+      "block_order": [
+        "tab_dec7a7",
+        "tab_bUaDNx",
+        "tab_btHaXr"
+      ],
+      "name": "How It Works",
+      "settings": {
+        "overline": "How it works",
+        "title": "<p>We build the system. You show up.</p>"
+      }
+    },
+    "module-featured-products": {
+      "type": "module-featured-products",
+      "settings": {
+        "overline": "ready-to-ship gifts",
+        "title": "<p>Not ready for a program? Start here.</p>",
+        "body": "Every great relationship starts somewhere. Shop our curated ready-to-ship gifts - Canadian-made, planet-friendly, delivered across North America.",
+        "cta_text": "SHOP ALL GIFTS",
+        "cta_link": "shopify://collections/gift-baskets",
+        "collection": "gift-baskets",
+        "icon_url": "https://cdn.shopify.com/s/files/1/0264/5000/2013/files/Frame_43418.png?v=1665521287",
+        "promo_title": "Sending gifts regularly?",
+        "promo_body": "A Foodiepages program gives you better gifts, better timing, and a system that runs itself.",
+        "promo_cta_text": "See programs",
+        "promo_cta_link": "https://www.foodiepages.ca/pages/moments-programs"
+      }
+    },
     "5810d53f-1644-49ef-8085-4cce0ae7ae81": {
       "type": "module-hero",
       "blocks": {
         "d5048f1b-509c-474f-92ca-047ab6b71a4c": {
           "type": "cta",
           "settings": {
-            "cta_text": "BOOK A MOMENTS MAPPING SESSION",
-            "cta_link": "https://calendar.app.google/6vSDJn5He5Vge4vb8"
+            "cta_text": "EXPLORE MOMENTS PROGRAMS",
+            "cta_link": "shopify://pages/moments-programs"
           }
         },
         "54c84020-796f-46f9-a861-eecbf0f12ebf": {
@@ -186,66 +253,15 @@
         "overline": "why it matters",
         "title": "<p>Outreach is cheap. Presence is rare. </p>",
         "heading_style": "h2",
-        "body": "Inboxes are full. Touchpoints are automated. In that environment, showing up with something real - a thoughtful gift, a handwritten note, a moment that says we were thinking of you - isn't just nice. It's noticed. It's remembered. It compounds.",
+        "body": "Inboxes are full. Touchpoints are automated. In this environment, showing up with something real - a thoughtful gift, a handwritten note, a moment that says we were thinking of you - isn't just nice. It's noticed. It's remembered. It compounds.",
         "image": "shopify://shop_images/HomepageImage_Export.png",
         "enable_card_style": true,
         "text_vertical_alignment": "center",
         "layout_style": "two-columns",
-        "background_color": "background-color-azul-verdoso-10",
+        "background_color": "background-color-mar-10",
         "background_overwrite_enabled": false,
         "background_color_overwrite": "",
         "trusted_by_text": "Trusted by"
-      }
-    },
-    "module_tabs_FrbdWL": {
-      "type": "module-tabs",
-      "blocks": {
-        "tab_dec7a7": {
-          "type": "tab",
-          "settings": {
-            "icon_url": "https://cdn.shopify.com/s/files/1/0264/5000/2013/files/01.png?v=1780083668",
-            "tab_text": "EXPERIENCE DESIGN",
-            "title": "We map the moments that matter.",
-            "body": "Using our Experience Design Framework, we identify the touchpoints that matter most - from onboarding to milestones to referrals -  and build a program around them.",
-            "cta_text": "",
-            "cta_link": "",
-            "image": "shopify://shop_images/Untitled_design_18_87de0eb9-1565-4150-8cc5-5d09aaa0190e.png"
-          }
-        },
-        "tab_bUaDNx": {
-          "type": "tab",
-          "settings": {
-            "icon_url": "https://cdn.shopify.com/s/files/1/0264/5000/2013/files/01_1.png?v=1780083668",
-            "tab_text": "CURATED MOMENTS",
-            "title": "We source experiences, not baskets.",
-            "body": "Forget generic baskets. Our vendor network is handpicked and on trend — from women-owned, sustainable, and local gems. Every moment is designed, considered and curated to land.",
-            "cta_text": "",
-            "cta_link": "",
-            "image": "shopify://shop_images/4to3-Cropped1.jpg"
-          }
-        },
-        "tab_btHaXr": {
-          "type": "tab",
-          "settings": {
-            "icon_url": "https://cdn.shopify.com/s/files/1/0264/5000/2013/files/01_2.png?v=1780083668",
-            "tab_text": "END-TO-END DELIVERY",
-            "title": "We handle everything. Full stop.",
-            "body": "Inventory, kitting, personalization, and delivery - managed entirely by our team. Your people flag the moment. The right gift arrives for the right person at the right time. Nothing falls on your firm to manage.",
-            "cta_text": "",
-            "cta_link": "",
-            "image": "shopify://shop_images/Untitled_design_19_49b8def0-7592-4493-9a33-b5da1bc181d3.png"
-          }
-        }
-      },
-      "block_order": [
-        "tab_dec7a7",
-        "tab_bUaDNx",
-        "tab_btHaXr"
-      ],
-      "name": "How It Works",
-      "settings": {
-        "overline": "How it works",
-        "title": "<p>We build the system. You show up.</p>"
       }
     },
     "module-tabs": {
@@ -393,22 +409,6 @@
         "overline": "Quick Shop",
         "title": "<p>Explore gift baskets by category</p>",
         "cta_text": "Shop now"
-      }
-    },
-    "module-featured-products": {
-      "type": "module-featured-products",
-      "settings": {
-        "overline": "ready-to-ship gifts",
-        "title": "<p>Not ready for a program? Start here.</p>",
-        "body": "Every great relationship starts somewhere. Shop our curated ready-to-ship gifts - Canadian-made, planet-friendly, delivered across North America.",
-        "cta_text": "SHOP ALL GIFTS",
-        "cta_link": "shopify://collections/gift-baskets",
-        "collection": "gift-baskets",
-        "icon_url": "https://cdn.shopify.com/s/files/1/0264/5000/2013/files/Frame_43418.png?v=1665521287",
-        "promo_title": "Sending gifts regularly?",
-        "promo_body": "A Foodiepages program gives you better gifts, better timing, and a system that runs itself.",
-        "promo_cta_text": "See programs",
-        "promo_cta_link": "https://www.foodiepages.ca/pages/moments-programs"
       }
     },
     "module-testimonials": {
@@ -706,10 +706,10 @@
   "order": [
     "module-hero",
     "module_tabs_FrbdWL",
-    "module-tabs",
-    "module-tag-slider",
     "module-featured-products",
     "5810d53f-1644-49ef-8085-4cce0ae7ae81",
+    "module-tabs",
+    "module-tag-slider",
     "module-testimonials",
     "2d251c42-859a-4639-9dd7-d9f859e749b3",
     "7932d37c-a24c-4fe9-827f-8714687431af"
