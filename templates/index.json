@@ -130,10 +130,11 @@
         "tab_bUaDNx",
         "tab_btHaXr"
       ],
+      "disabled": true,
       "name": "How It Works",
       "settings": {
         "overline": "How it works",
-        "title": "<p><strong>We build the system. You show up.</strong></p><p>Foodiepages isn't a gifting vendor or a logistics company. We're the missing partner between the two — combining experience design, curated gifting, and fulfillment into one fully managed program.</p>"
+        "title": "<p>We build the system. You show up.</p>"
       }
     },
     "module-tabs": {
