@@ -130,7 +130,6 @@
         "tab_bUaDNx",
         "tab_btHaXr"
       ],
-      "disabled": true,
       "name": "How It Works",
       "settings": {
         "overline": "How it works",
@@ -209,6 +208,7 @@
         "881fd230-0ff5-475a-80ab-394c30599557",
         "3732abc5-67af-4c3c-85d8-758c6aea36c1"
       ],
+      "disabled": true,
       "name": "Why Foodiepages",
       "settings": {
         "overline": "Why Foodiepages",
@@ -276,6 +276,7 @@
         "f00d0e50-db70-498b-9cbe-dac1ab8c7341",
         "000af700-bcb5-4e04-852c-35a79a7eca43"
       ],
+      "disabled": true,
       "settings": {
         "overline": "Quick Shop",
         "title": "<p>Explore gift baskets by category</p>",
@@ -285,17 +286,17 @@
     "module-featured-products": {
       "type": "module-featured-products",
       "settings": {
-        "overline": "curated gift boxes",
-        "title": "<p>Most <em>wanted</em> gifts</p>",
-        "body": "Discover beautifully packaged products from small companies doing big things.",
-        "cta_text": "SHOP ALL",
+        "overline": "ready-to-ship gifts",
+        "title": "<p>Not ready for a program? Start here.</p>",
+        "body": "Every great relationship starts somewhere. Shop our curated ready-to-ship gifts - Canadian-made, planet-friendly, delivered coast to coast.",
+        "cta_text": "SHOP ALL GIFTS",
         "cta_link": "shopify://collections/gift-baskets",
         "collection": "gift-baskets",
         "icon_url": "https://cdn.shopify.com/s/files/1/0264/5000/2013/files/Frame_43418.png?v=1665521287",
-        "promo_title": "Looking for gifts for your company?",
-        "promo_body": "Whether it's 25 or 2,500 custom gifts, we've done it. Get in touch with our team today.",
-        "promo_cta_text": "View catalog",
-        "promo_cta_link": "#download-catalogue"
+        "promo_title": "Sending gifts regularly?",
+        "promo_body": "A Foodiepages program gives you better gifts, better timing, and a system that runs itself.",
+        "promo_cta_text": "See programs",
+        "promo_cta_link": "https://www.foodiepages.ca/pages/moments-programs"
       }
     },
     "5810d53f-1644-49ef-8085-4cce0ae7ae81": {
