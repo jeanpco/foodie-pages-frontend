@@ -12,18 +12,19 @@
     "module-hero": {
       "type": "module-hero",
       "blocks": {
-        "fb0b7578-d3a7-47df-9c96-0f6374f1d2dd": {
-          "type": "cta",
-          "settings": {
-            "cta_text": "SHOP CURATED GIFTS",
-            "cta_link": "shopify://collections/gift-baskets"
-          }
-        },
         "0a79a883-faf9-4609-8190-ce1392d3723b": {
           "type": "cta",
           "settings": {
-            "cta_text": "EXPLORE MOMENTS PROGRAMS",
+            "cta_text": "SEE HOW PROGRAMS WORK",
             "cta_link": "shopify://pages/moments-programs"
+          }
+        },
+        "fb0b7578-d3a7-47df-9c96-0f6374f1d2dd": {
+          "type": "cta",
+          "disabled": true,
+          "settings": {
+            "cta_text": "SHOP CURATED GIFTS",
+            "cta_link": "shopify://collections/gift-baskets"
           }
         },
         "7e63476c-2c94-4994-b3dd-640813bcc65b": {
@@ -56,8 +57,8 @@
         }
       },
       "block_order": [
-        "fb0b7578-d3a7-47df-9c96-0f6374f1d2dd",
         "0a79a883-faf9-4609-8190-ce1392d3723b",
+        "fb0b7578-d3a7-47df-9c96-0f6374f1d2dd",
         "7e63476c-2c94-4994-b3dd-640813bcc65b",
         "78b14c75-4b50-4101-83ac-06ff54813f08",
         "4d3e89e3-d2e6-4f06-8fcc-a9551dba6173",
@@ -75,7 +76,7 @@
         "background_color": "background-color-azul-verdoso-10",
         "background_overwrite_enabled": true,
         "background_color_overwrite": "#f2eae6",
-        "trusted_by_text": "Trusted by"
+        "trusted_by_text": "Trusted by teams at"
       }
     },
     "module-tabs": {
