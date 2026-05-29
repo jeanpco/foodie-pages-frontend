@@ -40,7 +40,7 @@
         "enable_card_style": false,
         "text_vertical_alignment": "center",
         "layout_style": "rows",
-        "background_color": "background-color-azul-verdoso-10",
+        "background_color": "background-color-secondary",
         "background_overwrite_enabled": false,
         "background_color_overwrite": "",
         "trusted_by_text": "Trusted by"
