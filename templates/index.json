@@ -467,7 +467,7 @@
     },
     "custom_liquid_4DVBU4": {
       "type": "custom-liquid",
-      "name": "t:sections.custom-liquid.presets.name",
+      "name": "Common Questions",
       "settings": {
         "custom_liquid": "<section class=\"fp-faq-section\">\n  <div class=\"fp-faq-inner\">\n    <small class=\"overline module-header_overline text-size-tiny uppercase text-color-tertiary margin-bottom margin-xxsmall mobile-margin-xsmall text-weight-semibold\">Common questions</small>\n    <h2 class=\"fp-faq-title\">Probably wondering…</h2>\n\n    <div class=\"fp-faq-grid\">\n      <div class=\"fp-faq-item\">\n        <div class=\"fp-faq-q\">Is this just corporate gifting with a fancier name?</div>\n        <div class=\"fp-faq-a\">No. Corporate gifting is a product - you buy it, it ships, done. A relationship moments program is a strategy. We design the touchpoints across your client lifecycle, source the gifts, personalize them, manage the delivery, and review the program with you quarterly. You end up with sronger professional relationships - and a way to maintain them at scale.</div>\n      </div>\n      <div class=\"fp-faq-item\">\n        <div class=\"fp-faq-q\">How is this different from Baskits or any other gifting comapny?</div>\n        <div class=\"fp-faq-a\">Baskits and other gifting companies think about <em>what</em> to send. We think about <em>when</em> to show up, <em>why</em> it matters to that specific relationship, and how to make it happen consistently across your entire client base. They're product companies. We're a relationship strategy.</div>\n      </div>\n      <div class=\"fp-faq-item\">\n        <div class=\"fp-faq-q\">We already spend money on client gifts. Does this replace that?</div>\n        <div class=\"fp-faq-a\">Yes. What's currently reactive and ad hoc becomes intentional and consistent. The spend matters less than whether it's working - and right now, most corporate gifting isn't.</div>\n      </div>\n      <div class=\"fp-faq-item\">\n        <div class=\"fp-faq-q\">Do you ship across North America?</div>\n        <div class=\"fp-faq-a\">We handle all logistics, anywhere in North America. Every gift is sourced from Canadian-made, women-owned, and sustainable brands - so what you send reflects well on you and your values.</div>\n      </div>\n      <div class=\"fp-faq-item\">\n        <div class=\"fp-faq-q\">How long does it take to get started?</div>\n        <div class=\"fp-faq-a\">Most programs are up and running within 4–6 weeks. That includes your relationship mappng session, gift curation, and first delivery. We'll walk you through every step.</div>\n      </div>\n      <div class=\"fp-faq-item\">\n        <div class=\"fp-faq-q\">What if we only have a few key relationships right now?</div>\n        <div class=\"fp-faq-a\">Some of our best programs run on 10 to 15 relationships. Depth beats volume every time.</div>\n      </div>\n    </div>\n  </div>\n</section>\n\n<style>\n  .fp-faq-section {\n    background: #FFFFFF;\n    padding: 80px 48px;\n  }\n  .fp-faq-inner {\n    max-width: 1120px;\n    margin: 0 auto;\n  }\n  .fp-faq-title {\n    font-size: 40px;\n    font-weight: 700;\n    color: #1F3323;\n    margin-bottom: 48px;\n    line-height: 1.15;\n    letter-spacing: -0.5px;\n  }\n  .fp-faq-grid {\n    display: grid;\n    grid-template-columns: 1fr 1fr;\n    gap: 32px;\n  }\n  .fp-faq-q {\n    font-size: 16px;\n    font-weight: 700;\n    color: #1F3323;\n    margin-bottom: 10px;\n    line-height: 1.4;\n  }\n  .fp-faq-a {\n    font-size: 14px;\n    color: #5C5C5C;\n    line-height: 1.65;\n  }\n  .fp-faq-a a {\n    color: #C0552A;\n    text-decoration: none;\n    font-weight: 500;\n  }\n  @media (max-width: 768px) {\n    .fp-faq-grid { grid-template-columns: 1fr; }\n    .fp-faq-section { padding: 60px 24px; }\n    .fp-faq-title { font-size: 28px; }\n  }\n</style>",
         "color_scheme": "background-1",
@@ -478,13 +478,6 @@
     "2d251c42-859a-4639-9dd7-d9f859e749b3": {
       "type": "module-logos",
       "blocks": {
-        "748ccdc5-9a8b-45b6-b061-9ffd30abe201": {
-          "type": "logo",
-          "settings": {
-            "title": "Raymond James logo",
-            "icon_url": "https://cdn.shopify.com/s/files/1/0264/5000/2013/files/raymond_james.png?v=1669828930"
-          }
-        },
         "40f4d366-8b7b-44c9-8704-d359507db252": {
           "type": "logo",
           "settings": {
@@ -506,25 +499,11 @@
             "icon_url": "https://cdn.shopify.com/s/files/1/0264/5000/2013/files/cf_019873d1-94be-47d8-a819-4e68b6d147ed.png?v=1669828929"
           }
         },
-        "aabfe99d-68a0-4df6-b3de-a82de3ba6146": {
-          "type": "logo",
-          "settings": {
-            "title": "Liberty Mutual logo",
-            "icon_url": "https://cdn.shopify.com/s/files/1/0264/5000/2013/files/liberty.png?v=1669828929"
-          }
-        },
         "55857477-115b-4287-bffb-988b2c5bd289": {
           "type": "logo",
           "settings": {
             "title": "SickKids",
             "icon_url": "https://cdn.shopify.com/s/files/1/0264/5000/2013/files/sickkids_c7de2290-1f61-47e8-8428-49da09acd284.png?v=1669828929"
-          }
-        },
-        "1340fe6b-fbd1-4540-9fe0-e6d87e671083": {
-          "type": "logo",
-          "settings": {
-            "title": "BLG",
-            "icon_url": "https://cdn.shopify.com/s/files/1/0264/5000/2013/files/blg_feddcfdf-e30b-4fc4-bf27-e2d3e3ae6d6e.png?v=1669828929"
           }
         },
         "199d783c-9d51-4392-8181-33d0daac9ee0": {
@@ -558,15 +537,8 @@
         "7ca7f0a8-4113-477f-aaad-ed05f3908f1a": {
           "type": "logo",
           "settings": {
-            "title": "",
+            "title": "Blakes logo",
             "icon_url": "https://cdn.shopify.com/s/files/1/0264/5000/2013/files/oxford_a5da89cb-99d3-453e-a9e1-b4d0ca514a5e.png?v=1669828930"
-          }
-        },
-        "bb5bab37-21d2-4b31-9735-c28be4f32d54": {
-          "type": "logo",
-          "settings": {
-            "title": "",
-            "icon_url": "https://cdn.shopify.com/s/files/1/0264/5000/2013/files/properly_f0aa6df0-ce89-4b08-a114-9b8c0977e74b.png?v=1669828930"
           }
         },
         "8075376b-dcdf-4d36-b0d4-a7ac1b5794c3": {
@@ -669,19 +641,15 @@
         }
       },
       "block_order": [
-        "748ccdc5-9a8b-45b6-b061-9ffd30abe201",
         "40f4d366-8b7b-44c9-8704-d359507db252",
         "d07f1643-a2d3-49cc-98e3-8e4bba46a18f",
         "dfb8e18d-79bf-4c03-badc-31eebed2d0ff",
-        "aabfe99d-68a0-4df6-b3de-a82de3ba6146",
         "55857477-115b-4287-bffb-988b2c5bd289",
-        "1340fe6b-fbd1-4540-9fe0-e6d87e671083",
         "199d783c-9d51-4392-8181-33d0daac9ee0",
         "0865e9f5-a14b-40d4-bd87-795b61f9b0d4",
         "085d48a7-c26e-403e-a598-181b788c068a",
         "d4e8fa15-4474-4a0e-9b86-13c0338845d2",
         "7ca7f0a8-4113-477f-aaad-ed05f3908f1a",
-        "bb5bab37-21d2-4b31-9735-c28be4f32d54",
         "8075376b-dcdf-4d36-b0d4-a7ac1b5794c3",
         "ddc9da8c-b636-4e2f-bc0d-d75d5901b55f",
         "61387c58-6460-4564-a47f-2bcb6d523f57",
