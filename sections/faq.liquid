@@ -1,0 +1,118 @@
+<section class="faq-section">
+  <div class="faq-container">
+    <h2 class="faq-title">Frequently Asked Questions</h2>
+
+    <div class="faq-item">
+      <button class="faq-question">What makes Foodiepages different from a corporate gifting vendor?</button>
+      <div class="faq-answer">
+        <p>Most gifting vendors focus on what to send. We focus on when to show up, why it matters, and how to do it consistently across your entire client lifecycle. We combine experience design, curated gifting, and end-to-end fulfillment into one program — so appreciation doesn't fall on one person to manage.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">What is a Relationship Moments program?</button>
+      <div class="faq-answer">
+        <p>A Relationship Moments program is a structured system for showing up for your most important clients, partners, or employees at the moments that matter — onboarding, milestones, renewals, referrals, and more. We map the moments across your relationship lifecycle and build a program that delivers them reliably, on your behalf.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">Can we customize gifts for individual clients?</button>
+      <div class="faq-answer">
+        <p>Yes — and this is a core part of what we do. Every moment can be personalized: recipient names on packaging, milestone-specific configurations, and handwritten elements for key relationships. Consistency at scale doesn't mean impersonal at scale.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">Is this just for big companies?</button>
+      <div class="faq-answer">
+        <p>No. Our programs are designed for professional services firms and high-touch B2B companies of all sizes — from boutique wealth managers and law firms to mid-sized consulting practices. If you have named client relationships you care about, we can build a program that fits your scale.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">What does a program typically cost?</button>
+      <div class="faq-answer">
+        <p>Programs start at $15,000 annually and scale based on the number of relationships, frequency of moments, and customization level. We offer three tiers — Starter, Growth, and Signature — designed to grow with your business.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">How do we get started?</button>
+      <div class="faq-answer">
+        <p>We start with a discovery conversation to understand your client relationships, existing touchpoints, and goals. From there, we design a program and handle everything on an ongoing basis. <a href="/pages/contact">Book a call →</a></p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<style>
+  .faq-section {
+    padding: 60px 20px;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  .faq-title {
+    font-size: 2rem;
+    margin-bottom: 40px;
+    text-align: center;
+  }
+  .faq-item {
+    border-bottom: 1px solid #e0e0e0;
+    padding: 20px 0;
+  }
+  .faq-question {
+    background: none;
+    border: none;
+    width: 100%;
+    text-align: left;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .faq-question::after {
+    content: '+';
+    font-size: 1.5rem;
+    font-weight: 300;
+    transition: transform 0.2s;
+  }
+  .faq-question.open::after {
+    content: '−';
+  }
+  .faq-answer {
+    display: none;
+    padding-top: 12px;
+    color: #555;
+    line-height: 1.6;
+  }
+  .faq-answer.open {
+    display: block;
+  }
+</style>
+
+<script>
+  document.querySelectorAll('.faq-question').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var answer = this.nextElementSibling;
+      var isOpen = answer.classList.contains('open');
+      document.querySelectorAll('.faq-answer').forEach(function(a) { a.classList.remove('open'); });
+      document.querySelectorAll('.faq-question').forEach(function(q) { q.classList.remove('open'); });
+      if (!isOpen) {
+        answer.classList.add('open');
+        this.classList.add('open');
+      }
+    });
+  });
+</script>
+
+{% schema %}
+{
+  "name": "FAQ",
+  "settings": []
+}
+{% endschema %}
