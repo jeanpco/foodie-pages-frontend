@@ -1,17 +1,28 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "main": {
       "type": "module-hero",
       "settings": {
-        "overline": "one of the fastest growing gifting companies in Canada",
-        "title": "<p>Hi, we’re Foodiepages<\/p>",
+        "overline": "canada's relationship moments company",
+        "title": "<p>Most businesses know relationships matter. Very few have a system for showing up.</p>",
         "heading_style": "h2",
-        "body": "We're setting out to freshen-up the old-fashioned gift basket industry with modern, eco-friendly gifts that are designed to be elevated and impactful any time of year.",
-        "image": "shopify:\/\/shop_images\/Screen_Shot_2022-11-15_at_5.04.39_PM_6bf64d73-8293-4cc3-99e5-c85cf593f649.png",
+        "body": "We've never been more connected, and yet the moments that actually land are rarer than ever. Everything is automated, optimized, and efficient, and in that environment, showing up with something genuinely human doesn't just feel good. It's remembered. Most companies want that. Very few have a system for it. That's what we build.",
+        "image": "shopify://shop_images/Screen_Shot_2022-11-15_at_5.04.39_PM_6bf64d73-8293-4cc3-99e5-c85cf593f649.png",
         "enable_card_style": false,
         "text_vertical_alignment": "center",
         "layout_style": "two-columns",
         "background_color": "background-color-azul-verdoso-10",
+        "background_overwrite_enabled": false,
+        "background_color_overwrite": "",
         "trusted_by_text": ""
       }
     },
@@ -21,7 +32,7 @@
         "2c55f2d5-0c58-4b13-af11-302a514fa449": {
           "type": "features",
           "settings": {
-            "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/book.svg?v=1669133706",
+            "icon_url": "https://cdn.shopify.com/s/files/1/0264/5000/2013/files/book.svg?v=1669133706",
             "title": "Storytelling",
             "body": "Storytelling is the number one way to connect with others. We believe the best gifts tell stories, eliciting attention and giving the recipient something meaningful to remember.",
             "cta_text": "",
@@ -31,7 +42,7 @@
         "fae23ace-5ca1-43a0-a58b-9c5d1bef7e5b": {
           "type": "features",
           "settings": {
-            "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/team.svg?v=1669133706",
+            "icon_url": "https://cdn.shopify.com/s/files/1/0264/5000/2013/files/team.svg?v=1669133706",
             "title": "Human Connection",
             "body": "In a world where relationships are too often digital first, building real human connection, and nourishing it, is more important than ever.",
             "cta_text": "",
@@ -41,7 +52,7 @@
         "94353301-183f-4ec1-9b25-4d500681640f": {
           "type": "features",
           "settings": {
-            "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/heart.svg?v=1669133706",
+            "icon_url": "https://cdn.shopify.com/s/files/1/0264/5000/2013/files/heart.svg?v=1669133706",
             "title": "Giving Back",
             "body": "As a women and family-owned business, we believe in using our platform to support (and give back to) people and issues that are under-represented.",
             "cta_text": "",
@@ -51,7 +62,7 @@
         "29189724-18f8-43ad-ad45-9aea0d08c6f0": {
           "type": "features",
           "settings": {
-            "icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0264\/5000\/2013\/files\/badge_with_star.svg?v=1669133892",
+            "icon_url": "https://cdn.shopify.com/s/files/1/0264/5000/2013/files/badge_with_star.svg?v=1669133892",
             "title": "Never Settle",
             "body": "Whether it's eco-friendly packaging, the latest finds from small businesses, or handwritten gift messages, we work extra hard for that moment of WOW.",
             "cta_text": "",
@@ -67,21 +78,21 @@
       ],
       "settings": {
         "overline": "The best gift baskets in Canada",
-        "title": "<p>How we see it<\/p>",
+        "title": "<p>How we see it</p>",
         "heading_style": "h2",
         "body": "Here are a few things we've always believed to be important.",
         "cta_text": "",
-        "cta_link": "shopify:\/\/pages\/how-it-works"
+        "cta_link": "shopify://pages/how-it-works"
       }
     },
     "8f69f41d-ab2e-49b8-831d-4ed41aaf0509": {
       "type": "module-split-content",
       "disabled": true,
       "settings": {
-        "image": "shopify:\/\/shop_images\/Untitled_design.png",
+        "image": "shopify://shop_images/Untitled_design.png",
         "image_height_auto": false,
         "overline": "",
-        "title": "<p>Gifts that <em>celebrate<\/em> small business<\/p>",
+        "title": "<p>Gifts that <em>celebrate</em> small business</p>",
         "heading_style": "h1",
         "body": "Each foodiepages gift basket is designed with premium goods from diverse, independently-owned makers and brands across Canada.",
         "body_rte": "",
@@ -153,9 +164,9 @@
       ],
       "settings": {
         "overline": "",
-        "title": "<p>About Us<\/p>",
+        "title": "<p>About Us</p>",
         "heading_style": "h2",
-        "image": "shopify:\/\/shop_images\/Untitled_design.png",
+        "image": "shopify://shop_images/Untitled_design.png",
         "cta_text": "",
         "cta_link": "#contact",
         "body": "",
@@ -169,7 +180,7 @@
         "765a0837-b3a6-417e-a20d-8c4151c40912": {
           "type": "card",
           "settings": {
-            "image": "shopify:\/\/shop_images\/My_project_1.jpg",
+            "image": "shopify://shop_images/My_project_1.jpg",
             "title": "Barbet",
             "body": "In an attempt to manage a health condition, Katie decided to go alcohol-free. While she didn’t miss drinking, she did miss the comfort and connection that alcohol provided in social settings. This led Katie and her sister Andrea to create a line of full-bodied, elevated sparkling waters that you can drink straight out of the can – or even mix with spirits.",
             "cta_text": "",
@@ -179,7 +190,7 @@
         "2799395e-848f-4345-9be1-4844c0f3b341": {
           "type": "card",
           "settings": {
-            "image": "shopify:\/\/shop_images\/My_project_2.jpg",
+            "image": "shopify://shop_images/My_project_2.jpg",
             "title": "Sade Baron",
             "body": "With the health of skin and planet top of mind,  mother-daughter duo Sade and Rachel Baron set out to create a line of high-quality, vegan body care products crafted with nutrient-rich superfoods. Backed by a journey of research and experimentation, every Sade Baron product is designed to replenish, moisturize, and prep your skin so it can look and feel its best.",
             "cta_text": "",
@@ -189,7 +200,7 @@
         "1a1d97cc-0c9f-4023-b4cf-a2188c76fa3e": {
           "type": "card",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Screen_Shot_2022-11-20_at_9.09.14_PM.png",
+            "image": "shopify://shop_images/Screen_Shot_2022-11-20_at_9.09.14_PM.png",
             "title": "Eatable",
             "body": "Charlene and Vince left their desk jobs to pursue a lifelong passion for food, and started a journey to create a perfect pairing of two loves: snacking and alcohol. Their alcohol-infused popcorns are made with non-GMO corn kernels from Ontario farms and butter from local dairy farmers.",
             "cta_text": "",
@@ -200,7 +211,7 @@
           "type": "card",
           "disabled": true,
           "settings": {
-            "image": "shopify:\/\/shop_images\/Image.jpg",
+            "image": "shopify://shop_images/Image.jpg",
             "title": "Client Appreciation Gifts",
             "body": "Show your appreciation with a branded and personalized gift.",
             "cta_text": "Get a quote",
@@ -219,7 +230,7 @@
         "title": "Supplier Spotlight",
         "body": "We have found that the highest quality goods come from small batch, local brands and we, like you, know there are no substitutes for quality.",
         "cta_text": "Shop gift boxes",
-        "cta_link": "shopify:\/\/collections\/gift-baskets",
+        "cta_link": "shopify://collections/gift-baskets",
         "heading_style": "h2"
       }
     },
@@ -230,7 +241,7 @@
           "type": "cta",
           "settings": {
             "cta_text": "Learn more",
-            "cta_link": "shopify:\/\/pages\/contact-us"
+            "cta_link": "shopify://pages/contact-us"
           }
         }
       },
@@ -240,14 +251,16 @@
       "disabled": true,
       "settings": {
         "overline": "",
-        "title": "<p>Get in touch!<\/p>",
+        "title": "<p>Get in touch!</p>",
         "heading_style": "h2",
         "body": "Each foodiepages gift basket is designed with premium goods from diverse, independently-owned makers and brands across Canada.",
-        "image": "shopify:\/\/shop_images\/Frame_43428_2.png",
+        "image": "shopify://shop_images/Frame_43428_2.png",
         "enable_card_style": true,
         "text_vertical_alignment": "center",
         "layout_style": "two-columns",
         "background_color": "background-color-mar-10",
+        "background_overwrite_enabled": false,
+        "background_color_overwrite": "",
         "trusted_by_text": "Trusted by"
       }
     }
