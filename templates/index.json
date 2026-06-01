@@ -89,52 +89,52 @@
     "module_tabs_FrbdWL": {
       "type": "module-tabs",
       "blocks": {
-        "tab_dec7a7": {
-          "type": "tab",
-          "settings": {
-            "icon_url": "https://cdn.shopify.com/s/files/1/0264/5000/2013/files/01.png?v=1780083668",
-            "tab_text": "MOMENT MAPPING",
-            "title": "We map the moments that matter.",
-            "body": "Using our Moments Mapping Framework, we identify the touchpoints that matter most - from onboarding to milestones to referrals -  and build a program around them.",
-            "cta_text": "",
-            "cta_link": "",
-            "image": "shopify://shop_images/Untitled_design_18_87de0eb9-1565-4150-8cc5-5d09aaa0190e.png"
-          }
-        },
         "tab_bUaDNx": {
           "type": "tab",
           "settings": {
-            "icon_url": "https://cdn.shopify.com/s/files/1/0264/5000/2013/files/01_1.png?v=1780083668",
-            "tab_text": "EXPERIENCE DESIGN",
-            "title": "We source experiences, not baskets.",
-            "body": "Forget generic baskets. Our vendor network is handpicked and on trend — from women-owned, sustainable, and local gems. Every moment is designed, considered and curated to land.",
-            "cta_text": "",
-            "cta_link": "",
+            "icon_url": "https://cdn.shopify.com/s/files/1/0264/5000/2013/files/01.png?v=1780083668",
+            "tab_text": "READY-TO-SHIP GIFTS",
+            "title": "Show up well. No lead time required.",
+            "body": "Forget generic baskets. Shop beautifully curated gifts for client appreciation, teams, and events. Canadian-made, planet-friendly, delivered across North America.",
+            "cta_text": "Shop gifts →",
+            "cta_link": "shopify://collections/gift-baskets",
             "image": "shopify://shop_images/4to3-Cropped1.jpg"
           }
         },
         "tab_btHaXr": {
           "type": "tab",
           "settings": {
-            "icon_url": "https://cdn.shopify.com/s/files/1/0264/5000/2013/files/01_2.png?v=1780083668",
-            "tab_text": "END-TO-END DELIVERY",
-            "title": "We handle everything. Full stop.",
-            "body": "Inventory, kitting, personalization, and delivery - managed entirely by our team. Your people flag the moment. The right gift arrives for the right person at the right time. Nothing falls on your firm to manage.",
-            "cta_text": "",
-            "cta_link": "",
+            "icon_url": "https://cdn.shopify.com/s/files/1/0264/5000/2013/files/01_1.png?v=1780083668",
+            "tab_text": "CUSTOM CORPORATE GIFTS",
+            "title": "Your brand. Your moment. Built for scale.",
+            "body": "Custom-designed gifts tailored to your brand and occasion. Branded packaging, bespoke curation, and bulk fulfillment - all handled for you.",
+            "cta_text": "Get a quote →",
+            "cta_link": "shopify://pages/contact-us",
             "image": "shopify://shop_images/Untitled_design_19_49b8def0-7592-4493-9a33-b5da1bc181d3.png"
+          }
+        },
+        "tab_dec7a7": {
+          "type": "tab",
+          "settings": {
+            "icon_url": "https://cdn.shopify.com/s/files/1/0264/5000/2013/files/01_2.png?v=1780083668",
+            "tab_text": "MOMENTS PROGRAMS",
+            "title": "Stop leaving your best relationships to chance.",
+            "body": "Ongoing client care programs that help you stay connected to clients all year long. We design the moments, source the gifts, and manage everything - so nothing falls on your team.",
+            "cta_text": "See how programs work",
+            "cta_link": "shopify://pages/moments-programs",
+            "image": "shopify://shop_images/Untitled_design_18_87de0eb9-1565-4150-8cc5-5d09aaa0190e.png"
           }
         }
       },
       "block_order": [
-        "tab_dec7a7",
         "tab_bUaDNx",
-        "tab_btHaXr"
+        "tab_btHaXr",
+        "tab_dec7a7"
       ],
-      "name": "How It Works",
+      "name": "Ways to work with us",
       "settings": {
-        "overline": "How it works",
-        "title": "<p>We build the system. You show up.</p>"
+        "overline": "Ways to work with us",
+        "title": "<p>Every relationship starts somewhere,</p>"
       }
     },
     "module-featured-products": {
