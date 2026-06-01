@@ -134,15 +134,15 @@
       "name": "Ways to work with us",
       "settings": {
         "overline": "Ways to work with us",
-        "title": "<p>Every relationship starts somewhere,</p>"
+        "title": "<p>Every relationship starts somewhere.</p>"
       }
     },
     "module-featured-products": {
       "type": "module-featured-products",
       "settings": {
         "overline": "ready-to-ship gifts",
-        "title": "<p>Not ready for a program? Start here.</p>",
-        "body": "Every great relationship starts somewhere. Shop our curated ready-to-ship gifts - Canadian-made, planet-friendly, delivered across North America.",
+        "title": "<p>Most <em>wanted</em> gifts</p>",
+        "body": "Shop our curated ready-to-ship gifts - Canadian-made, planet-friendly, delivered across North America.",
         "cta_text": "SHOP ALL GIFTS",
         "cta_link": "shopify://collections/gift-baskets",
         "collection": "gift-baskets",
