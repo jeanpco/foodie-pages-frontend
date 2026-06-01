@@ -21,6 +21,7 @@
         },
         "fb0b7578-d3a7-47df-9c96-0f6374f1d2dd": {
           "type": "cta",
+          "disabled": true,
           "settings": {
             "cta_text": "SHOP GIFTS",
             "cta_link": "shopify://collections/gift-baskets"
@@ -142,7 +143,7 @@
       "settings": {
         "overline": "ready-to-ship gifts",
         "title": "<p>Most <em>wanted</em> gifts</p>",
-        "body": "Shop our curated ready-to-ship gifts - Canadian-made, planet-friendly, delivered across North America.",
+        "body": "Canadian-made, planet-friendly, delivered across North America.",
         "cta_text": "SHOP ALL GIFTS",
         "cta_link": "shopify://collections/gift-baskets",
         "collection": "gift-baskets",
