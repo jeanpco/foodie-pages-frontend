@@ -671,6 +671,55 @@
         "submit_button_text": "SIGN UP",
         "success_message": "Thank you for subscribing!"
       }
+    },
+    "module_columns_i9FPhx": {
+      "type": "module-columns",
+      "blocks": {
+        "card_k96xha": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/83stat.png",
+            "title": "",
+            "body": "",
+            "cta_text": "Get a quote",
+            "cta_link": ""
+          }
+        },
+        "card_MHADCd": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/306stat.png",
+            "title": "",
+            "body": "",
+            "cta_text": "Get a quote",
+            "cta_link": ""
+          }
+        },
+        "card_kmgChC": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/95stat.png",
+            "title": "",
+            "body": "",
+            "cta_text": "Get a quote",
+            "cta_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "card_k96xha",
+        "card_MHADCd",
+        "card_kmgChC"
+      ],
+      "name": "Columns",
+      "settings": {
+        "overline": "Corporate solutions",
+        "title": "Intention isn't the problem. Consistency is.",
+        "body": "A Moments Program gives you the system to strengthen your most important relationships continuously — not just when the calendar tells you to.",
+        "cta_text": "",
+        "cta_link": "",
+        "heading_style": "h2"
+      }
     }
   },
   "order": [
@@ -678,6 +727,7 @@
     "module_tabs_FrbdWL",
     "module-featured-products",
     "5810d53f-1644-49ef-8085-4cce0ae7ae81",
+    "module_columns_i9FPhx",
     "module-tabs",
     "module-tag-slider",
     "module-testimonials",
