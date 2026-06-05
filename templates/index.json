@@ -271,7 +271,7 @@
         "card_k96xha": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/83stat.png",
+            "image": "shopify://shop_images/83_Stat.png",
             "title": "",
             "body": "",
             "cta_text": "Get a quote",
@@ -281,7 +281,7 @@
         "card_MHADCd": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/306stat.png",
+            "image": "shopify://shop_images/306_Stat.png",
             "title": "",
             "body": "",
             "cta_text": "Get a quote",
@@ -291,7 +291,7 @@
         "card_kmgChC": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/95stat.png",
+            "image": "shopify://shop_images/95_Stat.png",
             "title": "",
             "body": "",
             "cta_text": "Get a quote",
