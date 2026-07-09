@@ -1,0 +1,419 @@
+<!--
+  qa-report skill — worked reference template (Allard & Emond house style).
+  Duplicate this, swap the copy + __IMG_<key>__ tokens for the current review,
+  then run scripts/build-report.py to inline the images. Do NOT link fonts or
+  remote assets — the Artifact CSP blocks every external host. No doctype/html/
+  head/body tags: the Artifact publisher supplies that skeleton.
+-->
+<style>
+  :root{
+    --ink:#191b21; --paper:#faf8f5; --card:#ffffff;
+    --line:#e8e4dd; --line-strong:#dcd6cc;
+    --muted:#6b6862; --muted-soft:#8a867e;
+    --brand:#e0521f; --brand-ink:#a63a12;
+    --blue:#1e3a5c; --blue-soft:#2c5480;
+    --live:#2c7a57; --live-bg:#e7f2ec;
+    --parked:#b26a12; --parked-bg:#fbf1e0;
+    --shot:#f1ede6;
+    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,Roboto,Helvetica,Arial,sans-serif;
+    --mono:ui-monospace,"SF Mono","Cascadia Code",Menlo,Consolas,monospace;
+  }
+  *{box-sizing:border-box}
+  body,figure{margin:0}
+  .wrap{background:var(--paper);color:var(--ink);font-family:var(--sans);
+    line-height:1.55;-webkit-font-smoothing:antialiased;font-size:16px}
+  .page{max-width:1080px;margin:0 auto;padding:0 22px 96px}
+
+  /* ---------- header ---------- */
+  header.masthead{background:var(--blue);color:#fff;margin:0 -22px 0;padding:0}
+  .masthead-inner{max-width:1080px;margin:0 auto;padding:38px 22px 34px}
+  .kicker{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;
+    color:#9db7d1;display:flex;align-items:center;gap:10px}
+  .kicker::before{content:"";width:26px;height:2px;background:var(--brand);display:inline-block}
+  h1.title{font-size:clamp(28px,4.4vw,42px);line-height:1.05;letter-spacing:-.02em;
+    text-wrap:balance;margin:14px 0 10px;font-weight:700}
+  .subtitle{color:#c8d6e4;max-width:60ch;font-size:15.5px}
+  .meta{display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:20px;font-size:13.5px;color:#aec3d7}
+  .meta b{color:#fff;font-weight:600}
+  .meta a{color:#fff;text-decoration:underline;text-underline-offset:2px;text-decoration-color:var(--brand)}
+
+  /* ---------- stat band ---------- */
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);
+    border:1px solid var(--line);border-radius:14px;overflow:hidden;margin:26px 0 8px}
+  .stat{background:var(--card);padding:18px 20px}
+  .stat .n{font-size:30px;font-weight:700;letter-spacing:-.02em;font-variant-numeric:tabular-nums;line-height:1}
+  .stat.good .n{color:var(--live)} .stat.hold .n{color:var(--parked)} .stat.brandn .n{color:var(--brand)}
+  .stat .l{font-size:12.5px;color:var(--muted);margin-top:7px;line-height:1.3}
+  @media(max-width:680px){.stats{grid-template-columns:repeat(2,1fr)}}
+
+  .legend{display:flex;flex-wrap:wrap;gap:8px 18px;align-items:center;
+    font-size:13px;color:var(--muted);margin:18px 0 6px}
+  .legend .pill{margin:0}
+
+  /* ---------- section ---------- */
+  section.grp{margin-top:52px}
+  .grp-head{display:flex;align-items:baseline;gap:14px;border-bottom:2px solid var(--ink);
+    padding-bottom:10px;margin-bottom:6px}
+  .grp-num{font-family:var(--mono);font-size:13px;color:var(--brand);font-weight:600}
+  .grp-head h2{font-size:20px;letter-spacing:-.01em;margin:0;font-weight:700}
+  .grp-note{color:var(--muted);font-size:14px;margin:14px 0 0;max-width:74ch}
+
+  /* ---------- item card ---------- */
+  .item{background:var(--card);border:1px solid var(--line);border-radius:16px;
+    padding:22px 22px 24px;margin-top:22px}
+  .item-top{display:flex;flex-wrap:wrap;align-items:center;gap:10px 12px}
+  .chip{font-family:var(--mono);font-size:12px;font-weight:600;color:var(--brand-ink);
+    background:#fbeee8;border:1px solid #f2d8cb;border-radius:7px;padding:3px 8px;letter-spacing:.02em}
+  .item-top h3{font-size:17px;margin:0;font-weight:650;letter-spacing:-.01em;flex:1 1 auto;min-width:200px}
+  .pill{font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;
+    padding:4px 9px;border-radius:20px;white-space:nowrap}
+  .pill.live{color:var(--live);background:var(--live-bg);border:1px solid #bfe0cd}
+  .pill.hold{color:var(--parked);background:var(--parked-bg);border:1px solid #ecd6ac}
+
+  .rows{margin-top:16px;display:grid;gap:9px}
+  .row{display:grid;grid-template-columns:78px 1fr;gap:12px;font-size:14.5px}
+  .row .k{font-family:var(--mono);font-size:11.5px;text-transform:uppercase;letter-spacing:.05em;
+    color:var(--muted-soft);padding-top:2px}
+  .row .v{color:#33312d}
+  .row .v b{color:var(--ink);font-weight:650}
+
+  /* ---------- before/after ---------- */
+  .ba{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:18px}
+  .ba.solo{grid-template-columns:1fr}
+  .ba.trio{grid-template-columns:repeat(3,1fr)}
+  .ba.quad{grid-template-columns:repeat(2,1fr)}
+  figure.shot{position:relative;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--shot)}
+  figure.shot img{display:block;width:100%;height:clamp(190px,27vw,290px);object-fit:contain;background:var(--shot)}
+  figure.shot.tall img{height:clamp(240px,40vw,420px)}
+  figcaption{position:absolute;top:9px;left:9px;font-family:var(--mono);font-size:10.5px;font-weight:600;
+    letter-spacing:.08em;text-transform:uppercase;padding:3px 8px;border-radius:6px;color:#fff}
+  figcaption.b{background:rgba(60,56,50,.86)}
+  figcaption.a{background:rgba(44,122,87,.92)}
+  .cap{font-size:12.5px;color:var(--muted-soft);margin-top:8px;text-align:center}
+  @media(max-width:640px){.ba,.ba.trio,.ba.quad{grid-template-columns:1fr}}
+
+  /* ---------- technical footnote ---------- */
+  .tech{margin-top:16px;padding-top:13px;border-top:1px dashed var(--line-strong);
+    font-family:var(--mono);font-size:11.5px;color:var(--muted);
+    display:flex;flex-wrap:wrap;gap:5px 16px;line-height:1.5}
+  .tech span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%}
+  .tech b{color:#4a4741;font-weight:600}
+
+  /* ---------- redirect table ---------- */
+  .tbl-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:12px;margin-top:16px}
+  table{border-collapse:collapse;width:100%;font-size:13px;min-width:640px}
+  th,td{text-align:left;padding:9px 13px;border-bottom:1px solid var(--line)}
+  th{background:#f4f1ec;font-size:11px;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);font-weight:600}
+  tr:last-child td{border-bottom:none}
+  td.src,td.dst{font-family:var(--mono);font-size:11.5px}
+  td.was{color:#a33;text-decoration:line-through;text-decoration-color:#d9a}
+  td.now{color:var(--live)}
+  .tbl-more{font-size:13px;color:var(--muted);padding:10px 13px;background:#faf8f4}
+
+  /* ---------- awaiting ---------- */
+  .item.await{background:linear-gradient(0deg,#fdfaf4,#fff);border-color:#ecd9b6}
+  .need{margin-top:14px;background:var(--parked-bg);border:1px solid #ecd6ac;border-radius:10px;
+    padding:12px 15px;font-size:14px}
+  .need .h{font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:.06em;
+    color:var(--parked);font-weight:700;margin-bottom:5px}
+  .need ul{margin:0;padding-left:18px} .need li{margin:3px 0}
+
+  footer.foot{margin-top:60px;padding-top:22px;border-top:1px solid var(--line);
+    font-size:13px;color:var(--muted-soft);display:flex;flex-wrap:wrap;gap:6px 18px;justify-content:space-between}
+  a{color:var(--brand-ink)}
+  .lead{font-size:14.5px;color:#33312d}
+</style>
+
+<div class="wrap">
+  <header class="masthead">
+    <div class="masthead-inner">
+      <div class="kicker">Allard &amp; Emond · Website QA</div>
+      <h1 class="title">Client-review punch-list — what changed, with proof</h1>
+      <p class="subtitle">Every item from the July client review, each shown in its broken state and its fixed
+        state. All fixes below are deployed and verified on the staging site.</p>
+      <div class="meta">
+        <span>Reviewed <b>July&nbsp;7,&nbsp;2026</b></span>
+        <span>Environment <b><a href="https://allardemond-v2-frontend.vercel.app">allardemond-v2-frontend.vercel.app</a></b></span>
+        <span>Source <b>Client feedback doc + meeting notes</b></span>
+      </div>
+    </div>
+  </header>
+
+  <div class="page">
+    <div class="stats">
+      <div class="stat good"><div class="n">13</div><div class="l">Fixes deployed &amp; verified live</div></div>
+      <div class="stat brandn"><div class="n">24</div><div class="l">Total page/section slots touched</div></div>
+      <div class="stat brandn"><div class="n">20</div><div class="l">Dead SEO redirects repaired</div></div>
+      <div class="stat hold"><div class="n">4</div><div class="l">Items waiting on client assets</div></div>
+    </div>
+    <div class="legend">
+      <span>How to read:</span>
+      <span class="pill live">Live</span><span>= deployed &amp; confirmed on staging</span>
+      <span class="pill hold">Awaiting client</span><span>= blocked on a photo or a decision</span>
+    </div>
+
+    <!-- ============ 01 NAV & LINKS ============ -->
+    <section class="grp">
+      <div class="grp-head"><span class="grp-num">01</span><h2>Navigation &amp; links</h2></div>
+      <p class="grp-note">Two structural bugs that quietly sent visitors — and Google — to the wrong place.</p>
+
+      <article class="item">
+        <div class="item-top"><span class="chip">B1</span>
+          <h3>English menu was jumping to French pages (and vice-versa)</h3>
+          <span class="pill live">Live</span></div>
+        <div class="rows">
+          <div class="row"><div class="k">Reported</div><div class="v">Clicking <b>Blog</b> in the English menu landed on the <b>French</b> blog; French menu links dropped visitors onto English pages.</div></div>
+          <div class="row"><div class="k">Cause</div><div class="v">Three separate faults: a leftover migration redirect forcing <code>/blog → /fr/blog</code>, menu links that skipped the language prefix, and case-study cards that kept the old menu bar on screen after a click.</div></div>
+          <div class="row"><div class="k">Fixed</div><div class="v">Removed the bad redirect and language-locked every menu and card link. English stays English, French stays French.</div></div>
+        </div>
+        <div class="ba">
+          <figure class="shot"><figcaption class="b">Before · clicked EN “Blog”</figcaption><img src="__IMG_b1-before__" alt="English Blog click landing on the French blog"></figure>
+          <figure class="shot"><figcaption class="a">After</figcaption><img src="__IMG_b1-after__" alt="English Blog click now landing on the English blog"></figure>
+        </div>
+        <div class="tech"><span><b>Route</b> /blog · site-wide nav</span><span><b>Fix</b> HeaderNavClient + CaseStudiesSection + redirects doc</span><span><b>Verified</b> curl /blog → 200</span></div>
+      </article>
+
+      <article class="item">
+        <div class="item-top"><span class="chip">SEO</span>
+          <h3>20 old Google-indexed links were dead-ending on 404s</h3>
+          <span class="pill live">Live</span></div>
+        <div class="rows">
+          <div class="row"><div class="k">Found</div><div class="v">The site carries 109 redirects from the old URLs. Testing every one end-to-end, <b>20 landed on a 404</b> — all English legacy links (<code>/en/…</code>) pointed at the English route but with a leftover <b>French</b> slug that no longer exists.</div></div>
+          <div class="row"><div class="k">Fixed</div><div class="v">Re-pointed all 20 to the correct English page (confirmed each returns 200). The other 89 redirects were verified healthy and left alone.</div></div>
+        </div>
+        <div class="tbl-wrap"><table>
+          <thead><tr><th>Old link</th><th>Was landing on (404)</th><th>Now lands on (200)</th></tr></thead>
+          <tbody>
+            <tr><td class="src">/en/ac-installation</td><td class="was">…/installation-de-climatisation</td><td class="now">/services/cooling-installation</td></tr>
+            <tr><td class="src">/en/furnace-installation</td><td class="was">…/installation-de-fournaise</td><td class="now">/services/heating-installation/furnace</td></tr>
+            <tr><td class="src">/en/heat-pump-repair</td><td class="was">…/reparations-de-chauffage…</td><td class="now">/services/maintenance-and-repairs/repairs</td></tr>
+            <tr><td class="src">/en/mini-split-installation</td><td class="was">…/thermopompe-sans-conduits…</td><td class="now">/services/heat-pump-installation/ductless-mini-split</td></tr>
+            <tr><td class="src">/category/thermopumps-2</td><td class="was">/services/installation-de-heat-pump</td><td class="now">/services/heat-pump-installation</td></tr>
+          </tbody>
+        </table></div>
+        <div class="tbl-more">…plus 15 more of the same pattern (AC / furnace / heat-pump / HVAC maintenance &amp; repair links). Full list in the redirects panel.</div>
+        <div class="tech"><span><b>Note</b> live edge cache refreshes these within ~5&nbsp;min of the change</span></div>
+      </article>
+    </section>
+
+    <!-- ============ 02 IMAGERY ============ -->
+    <section class="grp">
+      <div class="grp-head"><span class="grp-num">02</span><h2>Imagery &amp; content corrections</h2></div>
+      <p class="grp-note">The client’s image notes — wrong products, missing brand logos, off-brand equipment, and a season that didn’t match the story.</p>
+
+      <article class="item">
+        <div class="item-top"><span class="chip">A1 · C9</span>
+          <h3>Air-filter page was showing heat pumps</h3>
+          <span class="pill live">Live</span></div>
+        <div class="rows">
+          <div class="row"><div class="k">Reported</div><div class="v">All three “Our Air Filter Solutions” cards showed a <b>York heat pump</b> with heat-pump copy — on the air-filter page.</div></div>
+          <div class="row"><div class="k">Fixed</div><div class="v">Replaced with three real filter products (Aprilaire media cleaner, pleated MERV 8–11, high-efficiency MERV 13), each with new studio photography and bilingual copy.</div></div>
+        </div>
+        <div class="ba">
+          <figure class="shot"><figcaption class="b">Before</figcaption><img src="__IMG_af-before__" alt="Air filter cards showing heat pumps"></figure>
+          <figure class="shot"><figcaption class="a">After</figcaption><img src="__IMG_af-after__" alt="Air filter cards showing real filter products"></figure>
+        </div>
+        <div class="tech"><span><b>Page</b> /services/air-filters (EN + FR)</span><span><b>Check</b> “York HH8” references on page = 0</span></div>
+      </article>
+
+      <article class="item">
+        <div class="item-top"><span class="chip">C2 · C4</span>
+          <h3>Geothermal was shown as an off-brand outdoor unit</h3>
+          <span class="pill live">Live</span></div>
+        <div class="rows">
+          <div class="row"><div class="k">Reported</div><div class="v">The homepage tile was just an icon, and the menu card showed a “Thermolec” air-source unit — not the ground-source basement setup A&amp;E actually installs.</div></div>
+          <div class="row"><div class="k">Fixed</div><div class="v">New basement mechanical-room geothermal image (vertical cabinet, manifold, expansion tank) on both the homepage tile and the menu card.</div></div>
+        </div>
+        <div class="ba">
+          <figure class="shot"><figcaption class="b">Before · menu card</figcaption><img src="__IMG_geo-before__" alt="Off-brand Thermolec unit on the geothermal menu card"></figure>
+          <figure class="shot"><figcaption class="a">After · homepage tile</figcaption><img src="__IMG_geo-after__" alt="New basement geothermal image"></figure>
+        </div>
+        <div class="tech"><span><b>Where</b> Homepage services grid + Company menu card</span></div>
+      </article>
+
+      <article class="item">
+        <div class="item-top"><span class="chip">C5</span>
+          <h3>Heat-pump image sat on the ground</h3>
+          <span class="pill live">Live</span></div>
+        <div class="rows">
+          <div class="row"><div class="k">Reported</div><div class="v">The “What is a heat pump?” image showed the unit on a ground pad — against A&amp;E’s wall-mount standard for Quebec snow.</div></div>
+          <div class="row"><div class="k">Fixed</div><div class="v">Re-shot on a steel wall bracket, elevated, Moovair branding, summer light.</div></div>
+        </div>
+        <div class="ba">
+          <figure class="shot"><figcaption class="b">Before</figcaption><img src="__IMG_hp-before__" alt="Heat pump on the ground"></figure>
+          <figure class="shot"><figcaption class="a">After</figcaption><img src="__IMG_hp-after__" alt="Heat pump wall-mounted"></figure>
+        </div>
+        <div class="tech"><span><b>Page</b> /services/heat-pump-installation</span></div>
+      </article>
+
+      <article class="item">
+        <div class="item-top"><span class="chip">C6</span>
+          <h3>Heating hero furnace had no brand</h3>
+          <span class="pill live">Live</span></div>
+        <div class="rows">
+          <div class="row"><div class="k">Reported</div><div class="v">Correct basement furnace scene, but the client wanted a real brand on the unit.</div></div>
+          <div class="row"><div class="k">Fixed</div><div class="v">Added a clean <b>York</b> decal to the furnace — same photo, composition untouched. Also updates the page’s social-share image.</div></div>
+        </div>
+        <div class="ba">
+          <figure class="shot"><figcaption class="b">Before</figcaption><img src="__IMG_heat-before__" alt="Furnace with no brand"></figure>
+          <figure class="shot"><figcaption class="a">After · York</figcaption><img src="__IMG_heat-after__" alt="Furnace with York branding"></figure>
+        </div>
+        <div class="tech"><span><b>Page</b> /services/heating-installation</span></div>
+      </article>
+
+      <article class="item">
+        <div class="item-top"><span class="chip">C7</span>
+          <h3>Cooling hero unit was cut off</h3>
+          <span class="pill live">Live</span></div>
+        <div class="rows">
+          <div class="row"><div class="k">Reported</div><div class="v">The wall unit sat at the very top edge, clipped by the crop and hidden behind the menu bar.</div></div>
+          <div class="row"><div class="k">Fixed</div><div class="v">Re-shot with headroom so the full unit reads clearly, Moovair, summer.</div></div>
+        </div>
+        <div class="ba">
+          <figure class="shot"><figcaption class="b">Before · clipped</figcaption><img src="__IMG_cool-before__" alt="Cooling hero clipped at top"></figure>
+          <figure class="shot"><figcaption class="a">After</figcaption><img src="__IMG_cool-after__" alt="Cooling hero fully visible"></figure>
+        </div>
+        <div class="tech"><span><b>Page</b> /services/cooling-installation</span></div>
+      </article>
+
+      <article class="item">
+        <div class="item-top"><span class="chip">C8</span>
+          <h3>Humidifiers needed Aprilaire branding</h3>
+          <span class="pill live">Live</span></div>
+        <div class="rows">
+          <div class="row"><div class="k">Reported</div><div class="v">Hero and “why install” images were right, but unbranded.</div></div>
+          <div class="row"><div class="k">Fixed</div><div class="v">Added an <b>Aprilaire</b> logo to both units — compositions preserved.</div></div>
+        </div>
+        <div class="ba">
+          <figure class="shot"><figcaption class="b">Before · hero</figcaption><img src="__IMG_hum-before__" alt="Humidifier hero unbranded"></figure>
+          <figure class="shot"><figcaption class="a">After · Aprilaire</figcaption><img src="__IMG_hum-after__" alt="Humidifier hero with Aprilaire"></figure>
+        </div>
+        <div class="tech"><span><b>Page</b> /services/humidifiers · hero + secondary image</span></div>
+      </article>
+
+      <article class="item">
+        <div class="item-top"><span class="chip">C13</span>
+          <h3>“January furnace emergency” showed a summer house</h3>
+          <span class="pill live">Live</span></div>
+        <div class="rows">
+          <div class="row"><div class="k">Reported</div><div class="v">The Emergency Furnace Replacement case study — about a furnace dying in mid-January — pictured a green summer lawn.</div></div>
+          <div class="row"><div class="k">Fixed</div><div class="v">Same house, re-rendered in Quebec winter (snow, bare trees). A deliberate exception to the summer-only rule, because the story is about winter.</div></div>
+        </div>
+        <div class="ba">
+          <figure class="shot"><figcaption class="b">Before · summer</figcaption><img src="__IMG_furn-before__" alt="Summer house on winter furnace story"></figure>
+          <figure class="shot"><figcaption class="a">After · winter</figcaption><img src="__IMG_furn-after__" alt="Winter house matching the story"></figure>
+        </div>
+        <div class="tech"><span><b>Where</b> /case-studies · Emergency Furnace Replacement</span></div>
+      </article>
+    </section>
+
+    <!-- ============ 03 WALL-MOUNT SWEEP ============ -->
+    <section class="grp">
+      <div class="grp-head"><span class="grp-num">03</span><h2>Site-wide wall-mount sweep</h2></div>
+      <p class="grp-note">The client’s rule: outdoor units must be shown <b>mounted on a wall bracket, off the ground</b> — a
+        ground unit would be buried by Quebec snow. The review flagged one tile; a full sweep of every page with an
+        outdoor unit found <b>four more</b> still on the ground. All are now wall-mounted.</p>
+
+      <article class="item">
+        <div class="item-top"><span class="chip">C1 · sweep</span>
+          <h3>Four extra ground-mounted units, corrected</h3>
+          <span class="pill live">Live</span></div>
+        <div class="rows">
+          <div class="row"><div class="k">Swept</div><div class="v">Homepage heat-pump tile, Heat-Pump Installation hero, Central Heat Pump &amp; Central AC sub-pages, and the “Complete Home Comfort” case study — every outdoor condenser was on a ground pad.</div></div>
+          <div class="row"><div class="k">Fixed</div><div class="v">Regenerated each on a wall bracket, elevated, summer, correct brand. Ductless and cold-climate pages were already compliant and left as-is.</div></div>
+        </div>
+        <figure class="shot tall" style="margin-top:6px"><figcaption class="b">Before · sweep contact sheet (ground-mounted units)</figcaption><img src="__IMG_sweep-before__" alt="Contact sheet of ground-mounted units"></figure>
+        <div class="ba trio" style="margin-top:14px">
+          <figure class="shot"><figcaption class="a">After · Heat-pump hero</figcaption><img src="__IMG_sweep-a1__" alt="Heat pump hero wall-mounted"></figure>
+          <figure class="shot"><figcaption class="a">After · Central heat pump</figcaption><img src="__IMG_sweep-a2__" alt="Central heat pump wall-mounted"></figure>
+          <figure class="shot"><figcaption class="a">After · Central AC</figcaption><img src="__IMG_sweep-a3__" alt="Central AC wall-mounted"></figure>
+        </div>
+        <div class="ba" style="margin-top:14px">
+          <figure class="shot"><figcaption class="b">Before · “Complete Home Comfort” case study</figcaption><img src="__IMG_cs-before__" alt="Case study ground-mounted unit"></figure>
+          <figure class="shot"><figcaption class="a">After</figcaption><img src="__IMG_cs-after__" alt="Case study wall-mounted unit"></figure>
+        </div>
+        <div class="tech"><span><b>Pages</b> home · /services/heat-pump-installation (+ central-heat-pump) · /services/cooling-installation/central-air-conditioning · /case-studies</span></div>
+      </article>
+    </section>
+
+    <!-- ============ 04 BLOG ============ -->
+    <section class="grp">
+      <div class="grp-head"><span class="grp-num">04</span><h2>Blog covers</h2></div>
+      <article class="item">
+        <div class="item-top"><span class="chip">C14</span>
+          <h3>Migrated articles already use their original covers</h3>
+          <span class="pill live">Verified</span></div>
+        <div class="rows">
+          <div class="row"><div class="k">Question</div><div class="v">Julien asked whether the blog covers were still the original images from the old site.</div></div>
+          <div class="row"><div class="k">Answer</div><div class="v">Yes. All <b>42 migrated articles</b> were cross-checked against the live old site — every cover is byte-for-byte the original. No change needed.</div></div>
+          <div class="row"><div class="k">Flag</div><div class="v">Three <b>net-new</b> articles have no old-site original and currently use placeholder covers — a client decision (keep, or supply/generate): “Understanding Government HVAC Grants”, “Heat Pump vs. Central AC”, “Prepare Your Furnace for Winter”.</div></div>
+        </div>
+      </article>
+    </section>
+
+    <!-- ============ 05 AWAITING ============ -->
+    <section class="grp">
+      <div class="grp-head"><span class="grp-num">05</span><h2>Waiting on client assets</h2></div>
+      <p class="grp-note">These four are ready to execute the moment the client sends the missing photo or decision. They’re
+        blocked on purpose — each would otherwise mean inventing a person’s face, which A&amp;E has asked us never to do.</p>
+
+      <article class="item await">
+        <div class="item-top"><span class="chip">C3 · C10</span>
+          <h3>Swap the foreman’s likeness for an approved employee</h3>
+          <span class="pill hold">Awaiting client</span></div>
+        <div class="rows">
+          <div class="row"><div class="k">Ask</div><div class="v">Remove a specific foreman’s AI-likeness from the homepage “Our Services” tile, the Services menu cards, and the Repairs banner; replace with an approved team member.</div></div>
+        </div>
+        <div class="need"><div class="h">To unblock — need from client</div>
+          <ul>
+            <li>The approved employee’s reference photo(s) (shoot #19/20/13/22/25, or “Billy”).</li>
+            <li>Confirmation of which current images actually show the foreman.</li>
+          </ul>
+          <div style="margin-top:8px;font-size:13px;color:var(--muted)">Then ≈30&nbsp;min: a face-swap across the three slots.</div>
+        </div>
+      </article>
+
+      <article class="item await">
+        <div class="item-top"><span class="chip">C11</span>
+          <h3>Protection Plan hero → real photoshoot image</h3>
+          <span class="pill hold">Awaiting client</span></div>
+        <div class="rows">
+          <div class="row"><div class="k">Ask</div><div class="v">Replace the AI-looking hero (woman on a couch) with photoshoot <b>image 18</b>, extended on the sides to fit the wide hero. (Not image 25 — it’s used just below.)</div></div>
+        </div>
+        <div class="need"><div class="h">To unblock — need from client</div>
+          <ul><li>Photoshoot “image 18” (missing from the current Figma library).</li></ul>
+          <div style="margin-top:8px;font-size:13px;color:var(--muted)">Then ≈15&nbsp;min: extend sides → crop → place hero.</div>
+        </div>
+      </article>
+
+      <article class="item await">
+        <div class="item-top"><span class="chip">About</span>
+          <h3>Company timeline — 1990 &amp; 1995 photos</h3>
+          <span class="pill hold">Awaiting client</span></div>
+        <div class="rows">
+          <div class="row"><div class="k">Ask</div><div class="v">Period-appropriate images for the early timeline entries. “Today” can be pulled from the shoot; the historical years cannot be invented.</div></div>
+        </div>
+        <div class="need"><div class="h">To unblock — need from client</div>
+          <ul><li>Any archival A&amp;E photos from the early years (or approval to use a neutral period image).</li></ul>
+        </div>
+      </article>
+
+      <article class="item await">
+        <div class="item-top"><span class="chip">Blog</span>
+          <h3>Covers for 3 net-new articles</h3>
+          <span class="pill hold">Awaiting client</span></div>
+        <div class="rows">
+          <div class="row"><div class="k">Ask</div><div class="v">Decide whether the three new articles (see §04) keep their placeholder covers or get supplied/generated art.</div></div>
+        </div>
+        <div class="need"><div class="h">To unblock — need from client</div>
+          <ul><li>Keep-as-is, or provide covers — then we place them.</li></ul>
+        </div>
+      </article>
+    </section>
+
+    <footer class="foot">
+      <span>Allard &amp; Emond — website QA review</span>
+      <span>Prepared by Field Office · July&nbsp;7,&nbsp;2026</span>
+    </footer>
+  </div>
+</div>
