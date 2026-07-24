@@ -1,16 +1,45 @@
-<section style="background:#FFF7F2; padding:100px 0;">
-  <div style="max-width:900px; margin:0 auto; padding:0 32px;">
+<section style="background: #FFF7F2; padding: 100px 0;">
+  <div style="max-width: 900px; margin: 0 auto; padding: 0 32px;">
 
-    <p style="font-size:13px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:#01737D; margin-bottom:18px;">{{ section.settings.eyebrow }}</p>
+    <!-- LABEL: mundial regular, 12pt (16px), letter-spacing 3%, line-height 150%, uppercase -->
+    <p style="
+      font-family: 'mundial', sans-serif;
+      font-weight: 400;
+      font-size: 0.75rem;
+      letter-spacing: 0.03em;
+      line-height: 1.5;
+      text-transform: uppercase;
+      color: #286B77;
+      margin-bottom: 18px;
+    ">{{ section.settings.eyebrow }}</p>
 
-    <h2 style="font-family:'Mundial', sans-serif; font-size:48px; font-weight:400; line-height:1.2; letter-spacing:0; color:#2C2823; margin-bottom:36px;">
+    <!-- H2: mundial regular, 48pt (3rem desktop / 2.5rem tablet / 2rem mobile), line-height 120%, letter-spacing 0 -->
+    <h2 style="
+      font-family: 'mundial', sans-serif;
+      font-weight: 400;
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1.2;
+      letter-spacing: 0;
+      color: #000000;
+      margin-bottom: 36px;
+    ">
       {{ section.settings.headline_regular }}
-      <span style="color:#01737D; font-style:italic;">{{ section.settings.headline_accent }}</span>
+      <span style="color: #286B77;">{{ section.settings.headline_accent }}</span>
     </h2>
 
-    <div style="height:1px; background:#D9CFC4; margin-bottom:36px;"></div>
+    <!-- DIVIDER -->
+    <div style="height: 1px; background: #D9CFC4; margin-bottom: 36px;"></div>
 
-    <p style="font-family:'Mundial', sans-serif; font-weight:400; font-size:16px; letter-spacing:0.03em; line-height:1.5; text-transform:uppercase; color:#01737D; margin-bottom:18px;">{{ section.settings.body_text }}</p>
+    <!-- BODY: mundial light, 18pt (body large), letter-spacing 0, line-height 140% -->
+    <p style="
+      font-family: 'mundial', sans-serif;
+      font-weight: 300;
+      font-size: 1.125rem;
+      line-height: 1.4;
+      letter-spacing: 0;
+      color: #000000;
+      max-width: 760px;
+    ">{{ section.settings.body_text }}</p>
 
   </div>
 </section>
@@ -34,7 +63,7 @@
     {
       "type": "text",
       "id": "headline_accent",
-      "label": "Headline — Accent Text (teal, italic)",
+      "label": "Headline — Accent Text (teal)",
       "default": "Very little is designed for what happens after."
     },
     {
