@@ -1,0 +1,104 @@
+<section style="background: #EDF6F9; padding: 100px 0;">
+  <div style="max-width: 1120px; margin: 0 auto; padding: 0 32px;">
+    <div style="display: flex; gap: 64px; flex-wrap: wrap;">
+
+      <!-- LEFT: WHO IT'S FOR -->
+      <div style="flex: 1; min-width: 280px;">
+
+        <!-- LABEL -->
+        <p style="
+          font-family: 'mundial', sans-serif;
+          font-weight: 400;
+          font-size: 0.75rem;
+          letter-spacing: 0.03em;
+          line-height: 1.5;
+          text-transform: uppercase;
+          color: #286B77;
+          margin: 0 0 16px 0;
+        ">{{ section.settings.who_eyebrow }}</p>
+
+        <!-- BODY REGULAR -->
+        <p style="
+          font-family: 'mundial', sans-serif;
+          font-weight: 400;
+          font-size: 1rem;
+          line-height: 1.5;
+          letter-spacing: 0;
+          color: #000000;
+          margin: 0;
+        ">{{ section.settings.who_text }}</p>
+
+      </div>
+
+      <!-- DIVIDER LINE (vertical on desktop) -->
+      <div style="width: 1px; background: #D9CFC4; align-self: stretch; min-height: 1px;"></div>
+
+      <!-- RIGHT: THE GOAL -->
+      <div style="flex: 1; min-width: 280px;">
+
+        <!-- LABEL -->
+        <p style="
+          font-family: 'mundial', sans-serif;
+          font-weight: 400;
+          font-size: 0.75rem;
+          letter-spacing: 0.03em;
+          line-height: 1.5;
+          text-transform: uppercase;
+          color: #286B77;
+          margin: 0 0 16px 0;
+        ">{{ section.settings.goal_eyebrow }}</p>
+
+        <!-- GOAL STATEMENT: kepler-std italic, larger -->
+        <p style="
+          font-family: 'kepler-std', serif;
+          font-style: italic;
+          font-weight: 500;
+          font-size: clamp(1.25rem, 2.5vw, 1.625rem);
+          line-height: 1.4;
+          letter-spacing: 0;
+          color: #000000;
+          margin: 0;
+        ">{{ section.settings.goal_text }}</p>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Who It's For",
+  "settings": [
+    {
+      "type": "text",
+      "id": "who_eyebrow",
+      "label": "Left Eyebrow",
+      "default": "Who It's For"
+    },
+    {
+      "type": "textarea",
+      "id": "who_text",
+      "label": "Who It's For — Body Text",
+      "default": "Leaders responsible for retention across top accounts and strategic relationships — the clients whose loyalty can't be assumed just because the work is good, the product is strong, or the service is reliable."
+    },
+    {
+      "type": "text",
+      "id": "goal_eyebrow",
+      "label": "Right Eyebrow",
+      "default": "The Goal"
+    },
+    {
+      "type": "textarea",
+      "id": "goal_text",
+      "label": "Goal Statement",
+      "default": "Make your most important clients feel known, valued, and remembered — consistently, not just at renewal."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Who It's For"
+    }
+  ]
+}
+{% endschema %}
