@@ -12,15 +12,16 @@
     "main": {
       "type": "module-hero",
       "settings": {
-        "overline": "Introducing Client Gifting Portals",
-        "title": "<p>Client gifting, simplified: premium branded gifts <em>on-demand</em>.</p>",
+        "overline": "Program 02 — For Existing Clients",
+        "title": "<p>Strengthen the relationship.</p>",
         "heading_style": "h2",
-        "body": "Our Client Gifting Portals make it easy for your team to send premium, branded corporate gifts that make a lasting impression. With no pre-orders or minimums, choose from a curated selection of high-quality gifts from small, independent brands—all featuring your company’s logo.",
-        "image": "shopify://shop_images/ClientPortal_1.png",
-        "enable_card_style": true,
-        "text_vertical_alignment": "center",
+        "body": "Deepen loyalty beyond excellent work.",
+        "enable_card_style": false,
+        "text_vertical_alignment": "flex-end",
         "layout_style": "two-columns",
         "background_color": "background-color-mar-10",
+        "background_overwrite_enabled": false,
+        "background_color_overwrite": "#006D77",
         "trusted_by_text": ""
       }
     },
@@ -31,8 +32,8 @@
           "type": "features",
           "settings": {
             "icon_url": "https://cdn.shopify.com/s/files/1/0264/5000/2013/files/OnDemand.png?v=1730487637",
-            "title": "On-Demand Gifting",
-            "body": "Purchase and ship gifts across North America, as needed, without any pre-orders or MOQs.",
+            "title": "Identify",
+            "body": "your most important client relationships",
             "cta_text": "",
             "cta_link": ""
           }
@@ -41,8 +42,8 @@
           "type": "features",
           "settings": {
             "icon_url": "https://cdn.shopify.com/s/files/1/0264/5000/2013/files/ConsistentBranding.png?v=1730487637",
-            "title": "Consistent Branding",
-            "body": "Every gift features your company’s branding, ensuring a professional and polished presentation.",
+            "title": "Map",
+            "body": "anniversaries, milestones, transitions — the moments that matter",
             "cta_text": "",
             "cta_link": ""
           }
@@ -51,8 +52,8 @@
           "type": "features",
           "settings": {
             "icon_url": "https://cdn.shopify.com/s/files/1/0264/5000/2013/files/SmallBusiness.png?v=1730487637",
-            "title": "Support Small Businesses",
-            "body": "We source gifts from independent brands, giving your gifts a unique touch while supporting local communities.",
+            "title": "Design",
+            "body": "a meaningful expression for each one",
             "cta_text": "",
             "cta_link": ""
           }
@@ -61,8 +62,8 @@
           "type": "features",
           "settings": {
             "icon_url": "https://cdn.shopify.com/s/files/1/0264/5000/2013/files/GivesBack.png?v=1730487637",
-            "title": "Give Back",
-            "body": "1% of every gift sale supports Canadian charities like the Daily Bread Food Bank and Canadian Mental Health Association.",
+            "title": "Execute",
+            "body": "on schedule, all year, without the file landing on your desk",
             "cta_text": "",
             "cta_link": ""
           }
@@ -75,10 +76,10 @@
         "29189724-18f8-43ad-ad45-9aea0d08c6f0"
       ],
       "settings": {
-        "overline": "",
-        "title": "<p>Key Benefits</p>",
+        "overline": "how it works",
+        "title": "<p>Moments tied to real signals in the relationship.</p>",
         "heading_style": "h2",
-        "body": "Make connections. Nurture relationships. Grow revenue.",
+        "body": "Flagged, curated, and delivered without adding to your team's workload  - the same five-step system behind every Moments program.",
         "cta_text": "",
         "cta_link": "shopify://pages/how-it-works"
       }
@@ -251,11 +252,12 @@
         "title": "<p>Curious about our client gifting programs?</p>",
         "heading_style": "h2",
         "body": "Submit your email and someone from our team will be in touch!",
-        "image": "shopify://shop_images/Blakes_-_Holiday_Cheers.png",
         "enable_card_style": true,
         "text_vertical_alignment": "center",
         "layout_style": "two-columns",
         "background_color": "background-color-mar-10",
+        "background_overwrite_enabled": false,
+        "background_color_overwrite": "",
         "trusted_by_text": "Trusted by"
       }
     }
