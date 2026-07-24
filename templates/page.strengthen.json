@@ -21,7 +21,7 @@
         "layout_style": "two-columns",
         "background_color": "background-color-mar-10",
         "background_overwrite_enabled": false,
-        "background_color_overwrite": "#006D77",
+        "background_color_overwrite": "#006d77",
         "trusted_by_text": ""
       }
     },
@@ -82,6 +82,20 @@
         "body": "Flagged, curated, and delivered without adding to your team's workload  - the same five-step system behind every Moments program.",
         "cta_text": "",
         "cta_link": "shopify://pages/how-it-works"
+      }
+    },
+    "proof_moments_JzVraV": {
+      "type": "proof-moments",
+      "name": "Proof — Moments",
+      "settings": {
+        "quote": "The YOSS Platform runs a full moments program across their client relationships - birthdays, celebrations, referral appreciation - because loyalty shouldn't depend on whoever remembers to send a card.",
+        "client_name": "Gavin Merwin, CTO at The YOSS Platform",
+        "stat_1_number": "306%",
+        "stat_1_label": "higher lifetime value for customers with an emotional connection to a brand",
+        "stat_1_source": "ACCENTURE",
+        "stat_2_number": "95%",
+        "stat_2_label": "increase in profit from just a 5% increase in retention",
+        "stat_2_source": "HARVARD BUSINESS REVIEW"
       }
     },
     "8f69f41d-ab2e-49b8-831d-4ed41aaf0509": {
@@ -260,14 +274,26 @@
         "background_color_overwrite": "",
         "trusted_by_text": "Trusted by"
       }
+    },
+    "shift_moments_gRqy8U": {
+      "type": "shift-moments",
+      "name": "The Shift",
+      "settings": {
+        "eyebrow": "The Shift",
+        "headline_regular": "Most firms invest everything in winning the engagement.",
+        "headline_accent": "Very little is designed for what happens after.",
+        "body_text": "Your best clients are already being approached by competitors promising to do it cheaper, faster, or better. The companies that stay genuinely close between transactions are harder to replace — and harder to pitch against. Loyalty isn't built in the winning. It's built in the staying."
+      }
     }
   },
   "order": [
     "main",
     "b5797203-b142-444b-be2c-d6e9d37312fe",
+    "proof_moments_JzVraV",
     "8f69f41d-ab2e-49b8-831d-4ed41aaf0509",
     "823bd50c-3555-4282-8b34-ab0e8584323d",
     "05ea480d-037b-4297-9c3d-d6160866116b",
-    "582103a2-47d5-46e9-9ba6-ede2b4f3963b"
+    "582103a2-47d5-46e9-9ba6-ede2b4f3963b",
+    "shift_moments_gRqy8U"
   ]
 }
