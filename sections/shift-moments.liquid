@@ -1,0 +1,53 @@
+<section style="background:#FFF7F2; padding:100px 0;">
+  <div style="max-width:900px; margin:0 auto; padding:0 32px;">
+
+    <p style="font-size:13px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:#01737D; margin-bottom:18px;">{{ section.settings.eyebrow }}</p>
+
+    <h2 style="font-family:Georgia,serif; font-size:32px; font-weight:300; line-height:1.35; color:#2C2823; margin-bottom:36px;">
+      {{ section.settings.headline_regular }}
+      <span style="color:#01737D; font-style:italic;">{{ section.settings.headline_accent }}</span>
+    </h2>
+
+    <div style="height:1px; background:#D9CFC4; margin-bottom:36px;"></div>
+
+    <p style="font-size:17px; color:#5E5955; max-width:760px; line-height:1.7;">{{ section.settings.body_text }}</p>
+
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "The Shift",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow Label",
+      "default": "The Shift"
+    },
+    {
+      "type": "text",
+      "id": "headline_regular",
+      "label": "Headline — Regular Text",
+      "default": "Most companies invest everything in winning the client."
+    },
+    {
+      "type": "text",
+      "id": "headline_accent",
+      "label": "Headline — Accent Text (teal, italic)",
+      "default": "Very little is designed for what happens after."
+    },
+    {
+      "type": "textarea",
+      "id": "body_text",
+      "label": "Body Text",
+      "default": "Your best clients are already being approached by competitors promising to do it cheaper, faster, or better. The companies that stay genuinely close between transactions are harder to replace — and harder to pitch against. Loyalty isn't built in the winning. It's built in the staying."
+    }
+  ],
+  "presets": [
+    {
+      "name": "The Shift"
+    }
+  ]
+}
+{% endschema %}
