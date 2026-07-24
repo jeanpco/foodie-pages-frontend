@@ -88,6 +88,7 @@
       "type": "proof-moments",
       "name": "Proof — Moments",
       "settings": {
+        "eyebrow": "Proof",
         "quote": "The YOSS Platform runs a full moments program across their client relationships - birthdays, celebrations, referral appreciation - because loyalty shouldn't depend on whoever remembers to send a card.",
         "client_name": "Gavin Merwin, CTO at The YOSS Platform",
         "stat_1_number": "306%",
@@ -280,8 +281,8 @@
       "name": "The Shift",
       "settings": {
         "eyebrow": "The Shift",
-        "headline_regular": "Most companies invest everything in winning the client.",
-        "headline_accent": "Very little is designed for what happens after.",
+        "headline_regular": "Most companies invest everything in winning the client. Very little is designed for what happens after.",
+        "headline_accent": "",
         "body_text": "Your best clients are already being approached by competitors promising to do it cheaper, faster, or better. The companies that stay genuinely close between transactions are harder to replace — and harder to pitch against. Loyalty isn't built in the winning. It's built in the staying."
       }
     }
