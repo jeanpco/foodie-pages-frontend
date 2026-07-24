@@ -1,0 +1,93 @@
+<section style="background:#FFF0ED; padding:80px 0;">
+  <div style="max-width:1120px; margin:0 auto; padding:0 32px;">
+    <div style="display:flex; gap:80px; align-items:flex-start; flex-wrap:wrap;">
+
+      <!-- Quote -->
+      <div style="flex:1.1; min-width:280px;">
+        <p style="font-size:13px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:#01737D; margin-bottom:20px;">Proof</p>
+        <blockquote style="font-family:Georgia,serif; font-size:22px; line-height:1.5; font-style:italic; color:#2C2823; border-left:3px solid #01737D; padding-left:28px;">
+          {{ section.settings.quote }}
+          <span style="display:block; margin-top:16px; font-family:sans-serif; font-style:normal; font-size:13px; font-weight:700; letter-spacing:1px; color:#01737D; text-transform:uppercase;">{{ section.settings.client_name }}</span>
+        </blockquote>
+      </div>
+
+      <!-- Stats -->
+      <div style="flex:0.9; min-width:240px;">
+        <div style="display:flex; gap:40px;">
+          <div style="flex:1;">
+            <div style="font-family:Georgia,serif; font-size:44px; color:#01737D; line-height:1;">{{ section.settings.stat_1_number }}</div>
+            <div style="font-size:13px; color:#5E5955; margin-top:10px; line-height:1.4;">{{ section.settings.stat_1_label }}</div>
+            <div style="font-size:10px; font-weight:700; letter-spacing:1px; color:#2C2823; margin-top:8px;">{{ section.settings.stat_1_source }}</div>
+          </div>
+          <div style="flex:1;">
+            <div style="font-family:Georgia,serif; font-size:44px; color:#01737D; line-height:1;">{{ section.settings.stat_2_number }}</div>
+            <div style="font-size:13px; color:#5E5955; margin-top:10px; line-height:1.4;">{{ section.settings.stat_2_label }}</div>
+            <div style="font-size:10px; font-weight:700; letter-spacing:1px; color:#2C2823; margin-top:8px;">{{ section.settings.stat_2_source }}</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Proof — Moments",
+  "settings": [
+    {
+      "type": "textarea",
+      "id": "quote",
+      "label": "Quote",
+      "default": "McCarthy Tétrault runs a full moments program across their client relationships — birthdays, retirements, celebrations, seasonal touchpoints — because loyalty shouldn't depend on whoever remembers to send a card."
+    },
+    {
+      "type": "text",
+      "id": "client_name",
+      "label": "Client Name",
+      "default": "McCarthy Tétrault"
+    },
+    {
+      "type": "text",
+      "id": "stat_1_number",
+      "label": "Stat 1 Number",
+      "default": "306%"
+    },
+    {
+      "type": "textarea",
+      "id": "stat_1_label",
+      "label": "Stat 1 Label",
+      "default": "higher lifetime value for customers with an emotional connection to a brand"
+    },
+    {
+      "type": "text",
+      "id": "stat_1_source",
+      "label": "Stat 1 Source",
+      "default": "ACCENTURE"
+    },
+    {
+      "type": "text",
+      "id": "stat_2_number",
+      "label": "Stat 2 Number",
+      "default": "95%"
+    },
+    {
+      "type": "textarea",
+      "id": "stat_2_label",
+      "label": "Stat 2 Label",
+      "default": "increase in profit from just a 5% increase in retention"
+    },
+    {
+      "type": "text",
+      "id": "stat_2_source",
+      "label": "Stat 2 Source",
+      "default": "HARVARD BUSINESS REVIEW"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Proof — Moments"
+    }
+  ]
+}
+{% endschema %}
