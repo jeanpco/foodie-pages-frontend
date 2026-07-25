@@ -182,13 +182,13 @@
         "a25db7f7-6489-43d4-89c5-e1e47404b228"
       ],
       "settings": {
-        "overline": "",
-        "title": "<p>How It Works</p>",
+        "overline": "how it works",
+        "title": "<p>Moments tied to real relationship signals.</p>",
         "heading_style": "h2",
         "image": "shopify://shop_images/ClientPortal_2.png",
         "cta_text": "",
         "cta_link": "#contact",
-        "body": "",
+        "body": "Flagged, curated, and delivered without adding to your team's workload — the same five-step system behind every Foodiepages program.",
         "secondary_cta_text": "Get in touch",
         "secondary_cta_link": ""
       }
