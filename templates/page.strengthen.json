@@ -139,6 +139,17 @@
         "statement": "The cost of losing one key client almost always exceeds the cost of a year-long program to keep them. Silent attrition - the client who never complains, just quietly stops calling - is the risk this closes.",
         "body_text": ""
       }
+    },
+    "cta_moments_37GKwz": {
+      "type": "cta-moments",
+      "name": "CTA — Moments",
+      "settings": {
+        "eyebrow": "Let's Build This Together",
+        "headline": "What could this look like for your most important clients?",
+        "subtext": "",
+        "button_label": "Book a Relationship Architecture Session",
+        "button_url": "https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1H-XyijhNxlXQ8Kv_f3eYSiZ6W1xouaGd3yJo5AxakOLXf5e8GW5F_RtGkr97dp8gW2jOi1-pK"
+      }
     }
   },
   "order": [
@@ -148,6 +159,7 @@
     "8f69f41d-ab2e-49b8-831d-4ed41aaf0509",
     "823bd50c-3555-4282-8b34-ab0e8584323d",
     "proof_moments_JzVraV",
-    "budget_holder_moments_E6d88t"
+    "budget_holder_moments_E6d88t",
+    "cta_moments_37GKwz"
   ]
 }
