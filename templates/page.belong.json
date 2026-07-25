@@ -13,10 +13,10 @@
       "type": "hero-strengthen",
       "name": "Hero — Strengthen",
       "settings": {
-        "eyebrow": "Program 02 — For Existing Clients",
-        "headline": "Strengthen the relationship.",
-        "subhead": "Deepen loyalty beyond the transaction.",
-        "button_label": "Book a Relationship Architecture Session",
+        "eyebrow": "Program 03 — For Employees",
+        "headline": "Belong here.",
+        "subhead": "Make every person on your team feel welcomed, appreciated, and celebrated - consistently, not just when someone remembers.",
+        "button_label": "Talk to us about your team",
         "button_url": "https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1H-XyijhNxlXQ8Kv_f3eYSiZ6W1xouaGd3yJo5AxakOLXf5e8GW5F_RtGkr97dp8gW2jOi1-pK"
       }
     },
@@ -25,9 +25,9 @@
       "name": "The Shift",
       "settings": {
         "eyebrow": "The Shift",
-        "headline_regular": "Every company has a plan for winning the client. Almost none have a plan for keeping them.",
+        "headline_regular": "Most companies treat employee recognition as a once-a-year gesture. We think that's backwards.",
         "headline_accent": "",
-        "body_text": "Your best clients are already being approached by competitors promising to do it cheaper, faster, or better. The companies that stay genuinely close between transactions are harder to replace — and harder to pitch against."
+        "body_text": "Culture us built in the welcome on day one, the acknowledgment of a milestone, the gift that arrives when someone has a baby - not because HR remembered, but because there's a system that does."
       }
     },
     "who_its_for_moments_yhdBYq": {
@@ -35,7 +35,7 @@
       "name": "Who It's For",
       "settings": {
         "who_eyebrow": "Who It's For",
-        "who_text": "Leaders responsible for retention across top accounts and strategic relationships — the clients whose loyalty can't be assumed just because the work is good, the product is strong, or the service is reliable.",
+        "who_text": "HR, People & Culture, and operations leaders who want employee recognition to feel personal and consistent — not dependent on whoever happens to remember.",
         "goal_eyebrow": "The Goal",
         "goal_text": "Deepen loyalty beyond excellent work."
       }
