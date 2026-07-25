@@ -16,7 +16,7 @@
         "eyebrow": "Program 01 — For Acquisition & Prospecting",
         "headline": "Earn the relationship.",
         "subhead": "Your 25 best future clients are already out there.Let's make them feel it.",
-        "button_label": "Book a Relationship Architecture Session",
+        "button_label": "Book a free Moments Conversation",
         "button_url": "https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1H-XyijhNxlXQ8Kv_f3eYSiZ6W1xouaGd3yJo5AxakOLXf5e8GW5F_RtGkr97dp8gW2jOi1-pK"
       }
     },
@@ -109,10 +109,10 @@
         "title": "<p>Consistent, research-backed engagement.</p>",
         "heading_style": "h2",
         "image": "shopify://shop_images/ClientPortal_2.png",
-        "cta_text": "",
-        "cta_link": "#contact",
+        "cta_text": "Book a free Moments Conversation",
+        "cta_link": "https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1H-XyijhNxlXQ8Kv_f3eYSiZ6W1xouaGd3yJo5AxakOLXf5e8GW5F_RtGkr97dp8gW2jOi1-pK",
         "body": "",
-        "secondary_cta_text": "Get in touch",
+        "secondary_cta_text": "",
         "secondary_cta_link": ""
       }
     },
