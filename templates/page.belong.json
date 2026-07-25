@@ -61,8 +61,8 @@
           "type": "tab",
           "settings": {
             "overline": "Step 1",
-            "title": "Identify",
-            "body": "your most important client relationships",
+            "title": "Map",
+            "body": "the moments that matter across your employee relationship (onboarding, anniversaries, promotions, life milestones)",
             "cta_text": "",
             "cta_link": ""
           }
@@ -71,8 +71,8 @@
           "type": "tab",
           "settings": {
             "overline": "Step 2",
-            "title": "Map",
-            "body": "anniversaries, milestones, transitions — the moments that matter",
+            "title": "Design",
+            "body": "the right expression for each moment — curated, on-brand, personal",
             "cta_text": "",
             "cta_link": ""
           }
