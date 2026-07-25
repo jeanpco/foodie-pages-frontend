@@ -126,8 +126,8 @@
           "type": "tab",
           "settings": {
             "overline": "Step 1",
-            "title": "Reach Out to Us",
-            "body": "Start by contacting our team to set up your company's custom gifting portal.",
+            "title": "Identify",
+            "body": "your most important client relationships",
             "cta_text": "",
             "cta_link": ""
           }
@@ -136,8 +136,8 @@
           "type": "tab",
           "settings": {
             "overline": "Step 2",
-            "title": "Curate Your Portal",
-            "body": "We'll help you handpick a selection of premium gifts from small and independent brands that align with your key gifting occasions.",
+            "title": "Map",
+            "body": "anniversaries, milestones, transitions — the moments that matter",
             "cta_text": "",
             "cta_link": ""
           }
@@ -146,8 +146,8 @@
           "type": "tab",
           "settings": {
             "overline": "Step 3",
-            "title": "Approve Branded Collateral",
-            "body": "Ensure every gift is consistently on-brand by reviewing and approving the branded materials that will accompany your gifts.",
+            "title": "Design",
+            "body": "a meaningful expression for each one",
             "cta_text": "",
             "cta_link": ""
           }
@@ -184,11 +184,11 @@
       "settings": {
         "overline": "how it works",
         "title": "<p>Moments tied to real relationship signals.</p>",
-        "heading_style": "h2",
+        "heading_style": "h1",
         "image": "shopify://shop_images/ClientPortal_2.png",
         "cta_text": "",
         "cta_link": "#contact",
-        "body": "Flagged, curated, and delivered without adding to your team's workload — the same five-step system behind every Foodiepages program.",
+        "body": "",
         "secondary_cta_text": "Get in touch",
         "secondary_cta_link": ""
       }
