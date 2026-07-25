@@ -1,0 +1,98 @@
+<section style="background: #286B77; padding: 100px 0; text-align: center;">
+  <div style="max-width: 1120px; margin: 0 auto; padding: 0 32px;">
+
+    <!-- EYEBROW LABEL -->
+    <p style="
+      font-family: 'mundial', sans-serif;
+      font-weight: 400;
+      font-size: 0.75rem;
+      letter-spacing: 0.03em;
+      line-height: 1.5;
+      text-transform: uppercase;
+      color: #BFE3E6;
+      margin: 0 0 16px 0;
+    ">{{ section.settings.eyebrow }}</p>
+
+    <!-- H2 -->
+    <h2 style="
+      font-family: 'mundial', sans-serif;
+      font-weight: 400;
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1.2;
+      letter-spacing: 0;
+      color: #FFFFFF;
+      max-width: 640px;
+      margin: 0 auto 20px auto;
+    ">{{ section.settings.headline }}</h2>
+
+    <!-- SUBTEXT -->
+    <p style="
+      font-family: 'mundial', sans-serif;
+      font-weight: 400;
+      font-size: 1rem;
+      line-height: 1.5;
+      letter-spacing: 0;
+      color: #BFE3E6;
+      margin: 0 auto 36px auto;
+      max-width: 560px;
+    ">{{ section.settings.subtext }}</p>
+
+    <!-- CTA BUTTON -->
+    <a href="{{ section.settings.button_url }}" style="
+      display: inline-block;
+      background: #FFF7F2;
+      color: #15414B;
+      font-family: 'mundial', sans-serif;
+      font-weight: 600;
+      font-size: 0.9375rem;
+      line-height: 1;
+      letter-spacing: 0;
+      text-decoration: none;
+      padding: 16px 32px;
+      border-radius: 2px;
+    ">{{ section.settings.button_label }}</a>
+
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "CTA — Moments",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow Label",
+      "default": "Let's Build This Together"
+    },
+    {
+      "type": "text",
+      "id": "headline",
+      "label": "Headline",
+      "default": "What could this look like for your most important accounts?"
+    },
+    {
+      "type": "text",
+      "id": "subtext",
+      "label": "Subtext",
+      "default": "A Relationship Architecture Session is $2,500, fully credited toward your first engagement."
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button Text",
+      "default": "Book a Relationship Architecture Session"
+    },
+    {
+      "type": "url",
+      "id": "button_url",
+      "label": "Button URL"
+    }
+  ],
+  "presets": [
+    {
+      "name": "CTA — Moments"
+    }
+  ]
+}
+{% endschema %}
