@@ -1,0 +1,165 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "hero_strengthen_WCjrpU": {
+      "type": "hero-strengthen",
+      "name": "Hero — Strengthen",
+      "settings": {
+        "eyebrow": "Program 02 — For Existing Clients",
+        "headline": "Strengthen the relationship.",
+        "subhead": "Deepen loyalty beyond the transaction.",
+        "button_label": "Book a Relationship Architecture Session",
+        "button_url": "https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1H-XyijhNxlXQ8Kv_f3eYSiZ6W1xouaGd3yJo5AxakOLXf5e8GW5F_RtGkr97dp8gW2jOi1-pK"
+      }
+    },
+    "shift_moments_GDWYmf": {
+      "type": "shift-moments",
+      "name": "The Shift",
+      "settings": {
+        "eyebrow": "The Shift",
+        "headline_regular": "Every company has a plan for winning the client. Almost none have a plan for keeping them.",
+        "headline_accent": "",
+        "body_text": "Your best clients are already being approached by competitors promising to do it cheaper, faster, or better. The companies that stay genuinely close between transactions are harder to replace — and harder to pitch against."
+      }
+    },
+    "who_its_for_moments_yhdBYq": {
+      "type": "who-its-for-moments",
+      "name": "Who It's For",
+      "settings": {
+        "who_eyebrow": "Who It's For",
+        "who_text": "Leaders responsible for retention across top accounts and strategic relationships — the clients whose loyalty can't be assumed just because the work is good, the product is strong, or the service is reliable.",
+        "goal_eyebrow": "The Goal",
+        "goal_text": "Deepen loyalty beyond excellent work."
+      }
+    },
+    "8f69f41d-ab2e-49b8-831d-4ed41aaf0509": {
+      "type": "module-split-content",
+      "disabled": true,
+      "settings": {
+        "image": "shopify://shop_images/Untitled_design.png",
+        "image_height_auto": false,
+        "overline": "",
+        "title": "<p>Gifts that <em>celebrate</em> small business</p>",
+        "heading_style": "h1",
+        "body": "Each foodiepages gift basket is designed with premium goods from diverse, independently-owned makers and brands across Canada.",
+        "body_rte": "",
+        "layout_style": "content-left"
+      }
+    },
+    "823bd50c-3555-4282-8b34-ab0e8584323d": {
+      "type": "module-vertical-tabs",
+      "blocks": {
+        "2d4083b3-581a-4ade-b225-6f2117a93f50": {
+          "type": "tab",
+          "settings": {
+            "overline": "Step 1",
+            "title": "Identify",
+            "body": "your most important client relationships",
+            "cta_text": "",
+            "cta_link": ""
+          }
+        },
+        "db40d850-e629-4e9b-b0e8-d2d20e4414ad": {
+          "type": "tab",
+          "settings": {
+            "overline": "Step 2",
+            "title": "Map",
+            "body": "anniversaries, milestones, transitions — the moments that matter",
+            "cta_text": "",
+            "cta_link": ""
+          }
+        },
+        "47847899-6a08-4443-881a-c2133258173d": {
+          "type": "tab",
+          "settings": {
+            "overline": "Step 3",
+            "title": "Design",
+            "body": "a meaningful expression for each one",
+            "cta_text": "",
+            "cta_link": ""
+          }
+        },
+        "tab_EPLNXh": {
+          "type": "tab",
+          "settings": {
+            "overline": "Step 4",
+            "title": "Execute",
+            "body": "on schedule, all year, without the file landing on your desk",
+            "cta_text": "",
+            "cta_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "2d4083b3-581a-4ade-b225-6f2117a93f50",
+        "db40d850-e629-4e9b-b0e8-d2d20e4414ad",
+        "47847899-6a08-4443-881a-c2133258173d",
+        "tab_EPLNXh"
+      ],
+      "settings": {
+        "overline": "how it works",
+        "title": "<p>Moments tied to real relationship signals.</p>",
+        "heading_style": "h2",
+        "image": "shopify://shop_images/ClientPortal_2.png",
+        "cta_text": "",
+        "cta_link": "#contact",
+        "body": "",
+        "secondary_cta_text": "Get in touch",
+        "secondary_cta_link": ""
+      }
+    },
+    "proof_moments_JzVraV": {
+      "type": "proof-moments",
+      "name": "Proof — Moments",
+      "settings": {
+        "eyebrow": "Proof",
+        "quote": "\"The YOSS Platform runs a full moments program across our client relationships - birthdays, celebrations, referral appreciation - because loyalty shouldn't depend on whoever remembers to send a card.\"",
+        "client_name": "Gavin Merwin, CTO at The YOSS Platform",
+        "stat_1_number": "306%",
+        "stat_1_label": "higher lifetime value for customers with an emotional connection to a brand",
+        "stat_1_source": "ACCENTURE",
+        "stat_2_number": "95%",
+        "stat_2_label": "increase in profit from just a 5% increase in retention",
+        "stat_2_source": "HARVARD BUSINESS REVIEW"
+      }
+    },
+    "budget_holder_moments_E6d88t": {
+      "type": "budget-holder-moments",
+      "name": "Budget Holder",
+      "settings": {
+        "eyebrow": "For the Budget Holder",
+        "statement": "The cost of losing one key client almost always exceeds the cost of a year-long program to keep them. Silent attrition - the client who never complains, just quietly stops calling - is the risk this closes.",
+        "body_text": ""
+      }
+    },
+    "cta_moments_37GKwz": {
+      "type": "cta-moments",
+      "name": "CTA — Moments",
+      "settings": {
+        "eyebrow": "Let's Build This Together",
+        "headline": "What could this look like for your most important clients?",
+        "subtext": "",
+        "button_label": "Book a Relationship Architecture Session",
+        "button_url": "https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1H-XyijhNxlXQ8Kv_f3eYSiZ6W1xouaGd3yJo5AxakOLXf5e8GW5F_RtGkr97dp8gW2jOi1-pK"
+      }
+    }
+  },
+  "order": [
+    "hero_strengthen_WCjrpU",
+    "shift_moments_GDWYmf",
+    "who_its_for_moments_yhdBYq",
+    "8f69f41d-ab2e-49b8-831d-4ed41aaf0509",
+    "823bd50c-3555-4282-8b34-ab0e8584323d",
+    "proof_moments_JzVraV",
+    "budget_holder_moments_E6d88t",
+    "cta_moments_37GKwz"
+  ]
+}
