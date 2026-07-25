@@ -61,7 +61,7 @@
           "type": "tab",
           "settings": {
             "overline": "Step 1",
-            "title": "Identify",
+            "title": "Map",
             "body": "your most important client relationships",
             "cta_text": "",
             "cta_link": ""
@@ -71,8 +71,8 @@
           "type": "tab",
           "settings": {
             "overline": "Step 2",
-            "title": "Map",
-            "body": "anniversaries, milestones, transitions — the moments that matter",
+            "title": "Identify",
+            "body": "the moments that matter across the lifecycle",
             "cta_text": "",
             "cta_link": ""
           }
