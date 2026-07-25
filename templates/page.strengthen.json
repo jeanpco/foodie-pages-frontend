@@ -152,24 +152,13 @@
             "cta_link": ""
           }
         },
-        "ab7fff74-0668-4779-9c58-a3781089ca61": {
+        "tab_EPLNXh": {
           "type": "tab",
           "settings": {
             "overline": "Step 4",
-            "title": "Send Premium Branded Gifts",
-            "body": "Once your portal is live, your team can easily select and send gifts on-demand—no pre-orders, no minimums. We’ll handle the rest, from packaging to shipping, so your clients receive thoughtful, beautifully branded gifts across North America.",
-            "cta_text": "Get in touch",
-            "cta_link": ""
-          }
-        },
-        "a25db7f7-6489-43d4-89c5-e1e47404b228": {
-          "type": "tab",
-          "disabled": true,
-          "settings": {
-            "overline": "Step 5",
-            "title": "Software + Stores",
-            "body": "Ship, track and manage gifts all from your couch (or office chair). No more dusty supply closets or shipping boxes under your desk.",
-            "cta_text": "Get in touch",
+            "title": "Execute",
+            "body": "on schedule, all year, without the file landing on your desk",
+            "cta_text": "",
             "cta_link": ""
           }
         }
@@ -178,13 +167,12 @@
         "2d4083b3-581a-4ade-b225-6f2117a93f50",
         "db40d850-e629-4e9b-b0e8-d2d20e4414ad",
         "47847899-6a08-4443-881a-c2133258173d",
-        "ab7fff74-0668-4779-9c58-a3781089ca61",
-        "a25db7f7-6489-43d4-89c5-e1e47404b228"
+        "tab_EPLNXh"
       ],
       "settings": {
         "overline": "how it works",
         "title": "<p>Moments tied to real relationship signals.</p>",
-        "heading_style": "h1",
+        "heading_style": "h2",
         "image": "shopify://shop_images/ClientPortal_2.png",
         "cta_text": "",
         "cta_link": "#contact",
