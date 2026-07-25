@@ -1,0 +1,79 @@
+<section style="background: #FFF7F2; padding: 100px 0;">
+  <div style="max-width: 900px; margin: 0 auto; padding: 0 32px;">
+
+    <div style="
+      border-left: 4px solid #286B77;
+      padding: 40px 44px;
+      background: #FFFFFF;
+    ">
+
+      <!-- LABEL -->
+      <p style="
+        font-family: 'mundial', sans-serif;
+        font-weight: 400;
+        font-size: 0.75rem;
+        letter-spacing: 0.03em;
+        line-height: 1.5;
+        text-transform: uppercase;
+        color: #286B77;
+        margin: 0 0 16px 0;
+      ">{{ section.settings.eyebrow }}</p>
+
+      <!-- STATEMENT: kepler-std italic -->
+      <p style="
+        font-family: 'kepler-std', serif;
+        font-style: italic;
+        font-weight: 500;
+        font-size: clamp(1.125rem, 2vw, 1.375rem);
+        line-height: 1.5;
+        letter-spacing: 0;
+        color: #000000;
+        margin: 0 0 20px 0;
+      ">{{ section.settings.statement }}</p>
+
+      <!-- BODY REGULAR -->
+      <p style="
+        font-family: 'mundial', sans-serif;
+        font-weight: 400;
+        font-size: 1rem;
+        line-height: 1.5;
+        letter-spacing: 0;
+        color: #000000;
+        margin: 0;
+      ">{{ section.settings.body_text }}</p>
+
+    </div>
+
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Budget Holder",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow Label",
+      "default": "For the Budget Holder"
+    },
+    {
+      "type": "textarea",
+      "id": "statement",
+      "label": "Opening Statement",
+      "default": "The cost of losing one key client almost always exceeds the cost of a year-long program to keep them."
+    },
+    {
+      "type": "textarea",
+      "id": "body_text",
+      "label": "Body Text",
+      "default": "Silent attrition — the client who never complains, just quietly stops calling — is the risk this closes."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Budget Holder"
+    }
+  ]
+}
+{% endschema %}
