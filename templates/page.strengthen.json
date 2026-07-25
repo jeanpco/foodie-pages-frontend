@@ -9,80 +9,15 @@
  */
 {
   "sections": {
-    "main": {
-      "type": "module-hero",
+    "hero_strengthen_WCjrpU": {
+      "type": "hero-strengthen",
+      "name": "Hero — Strengthen",
       "settings": {
-        "overline": "Program 02 — For Existing Clients",
-        "title": "<p>Strengthen the relationship.</p>",
-        "heading_style": "h2",
-        "body": "Deepen loyalty beyond excellent work.",
-        "enable_card_style": false,
-        "text_vertical_alignment": "flex-end",
-        "layout_style": "two-columns",
-        "background_color": "background-color-mar-10",
-        "background_overwrite_enabled": false,
-        "background_color_overwrite": "#006d77",
-        "trusted_by_text": ""
-      }
-    },
-    "b5797203-b142-444b-be2c-d6e9d37312fe": {
-      "type": "module-features",
-      "blocks": {
-        "2c55f2d5-0c58-4b13-af11-302a514fa449": {
-          "type": "features",
-          "settings": {
-            "icon_url": "https://cdn.shopify.com/s/files/1/0264/5000/2013/files/OnDemand.png?v=1730487637",
-            "title": "Identify",
-            "body": "your most important client relationships",
-            "cta_text": "",
-            "cta_link": ""
-          }
-        },
-        "fae23ace-5ca1-43a0-a58b-9c5d1bef7e5b": {
-          "type": "features",
-          "settings": {
-            "icon_url": "https://cdn.shopify.com/s/files/1/0264/5000/2013/files/ConsistentBranding.png?v=1730487637",
-            "title": "Map",
-            "body": "anniversaries, milestones, transitions — the moments that matter",
-            "cta_text": "",
-            "cta_link": ""
-          }
-        },
-        "94353301-183f-4ec1-9b25-4d500681640f": {
-          "type": "features",
-          "settings": {
-            "icon_url": "https://cdn.shopify.com/s/files/1/0264/5000/2013/files/SmallBusiness.png?v=1730487637",
-            "title": "Design",
-            "body": "a meaningful expression for each one",
-            "cta_text": "",
-            "cta_link": ""
-          }
-        },
-        "29189724-18f8-43ad-ad45-9aea0d08c6f0": {
-          "type": "features",
-          "settings": {
-            "icon_url": "https://cdn.shopify.com/s/files/1/0264/5000/2013/files/GivesBack.png?v=1730487637",
-            "title": "Execute",
-            "body": "on schedule, all year, without the file landing on your desk",
-            "cta_text": "",
-            "cta_link": ""
-          }
-        }
-      },
-      "block_order": [
-        "2c55f2d5-0c58-4b13-af11-302a514fa449",
-        "fae23ace-5ca1-43a0-a58b-9c5d1bef7e5b",
-        "94353301-183f-4ec1-9b25-4d500681640f",
-        "29189724-18f8-43ad-ad45-9aea0d08c6f0"
-      ],
-      "disabled": true,
-      "settings": {
-        "overline": "how it works",
-        "title": "<p>Moments tied to real signals in the relationship.</p>",
-        "heading_style": "h2",
-        "body": "Flagged, curated, and delivered without adding to your team's workload  - the same five-step system behind every Moments program.",
-        "cta_text": "",
-        "cta_link": "shopify://pages/how-it-works"
+        "eyebrow": "Program 02 — For Existing Clients",
+        "headline": "Strengthen the relationship.",
+        "subhead": "Deepen loyalty beyond the transaction.",
+        "button_label": "Book a Relationship Architecture Session",
+        "button_url": "https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1H-XyijhNxlXQ8Kv_f3eYSiZ6W1xouaGd3yJo5AxakOLXf5e8GW5F_RtGkr97dp8gW2jOi1-pK"
       }
     },
     "shift_moments_GDWYmf": {
@@ -92,7 +27,7 @@
         "eyebrow": "The Shift",
         "headline_regular": "Every company has a plan for winning the client. Almost none have a plan for keeping them.",
         "headline_accent": "",
-        "body_text": "Your best clients are already being approached by competitors promising to do it cheaper, faster, or better. The companies that stay genuinely close between transactions are harder to replace — and harder to pitch against. Loyalty isn't built in the winning. It's built in the staying."
+        "body_text": "Your best clients are already being approached by competitors promising to do it cheaper, faster, or better. The companies that stay genuinely close between transactions are harder to replace — and harder to pitch against."
       }
     },
     "who_its_for_moments_yhdBYq": {
@@ -186,7 +121,7 @@
       "name": "Proof — Moments",
       "settings": {
         "eyebrow": "Proof",
-        "quote": "The YOSS Platform runs a full moments program across their client relationships - birthdays, celebrations, referral appreciation - because loyalty shouldn't depend on whoever remembers to send a card.",
+        "quote": "\"The YOSS Platform runs a full moments program across our client relationships - birthdays, celebrations, referral appreciation - because loyalty shouldn't depend on whoever remembers to send a card.\"",
         "client_name": "Gavin Merwin, CTO at The YOSS Platform",
         "stat_1_number": "306%",
         "stat_1_label": "higher lifetime value for customers with an emotional connection to a brand",
@@ -207,8 +142,7 @@
     }
   },
   "order": [
-    "main",
-    "b5797203-b142-444b-be2c-d6e9d37312fe",
+    "hero_strengthen_WCjrpU",
     "shift_moments_GDWYmf",
     "who_its_for_moments_yhdBYq",
     "8f69f41d-ab2e-49b8-831d-4ed41aaf0509",
