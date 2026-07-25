@@ -90,7 +90,7 @@
       "name": "The Shift",
       "settings": {
         "eyebrow": "The Shift",
-        "headline_regular": "Most companies invest everything in winning the client. Very little is designed for what happens after.",
+        "headline_regular": "Every company has a plan for winning the client. Almost none have a plan for keeping them.",
         "headline_accent": "",
         "body_text": "Your best clients are already being approached by competitors promising to do it cheaper, faster, or better. The companies that stay genuinely close between transactions are harder to replace — and harder to pitch against. Loyalty isn't built in the winning. It's built in the staying."
       }
@@ -204,34 +204,6 @@
         "statement": "The cost of losing one key client almost always exceeds the cost of a year-long program to keep them. Silent attrition - the client who never complains, just quietly stops calling - is the risk this closes.",
         "body_text": ""
       }
-    },
-    "582103a2-47d5-46e9-9ba6-ede2b4f3963b": {
-      "type": "module-hero",
-      "blocks": {
-        "a0cdd988-b288-4542-9434-6c35f9543944": {
-          "type": "cta",
-          "settings": {
-            "cta_text": "Contact us",
-            "cta_link": "shopify://pages/contact-us"
-          }
-        }
-      },
-      "block_order": [
-        "a0cdd988-b288-4542-9434-6c35f9543944"
-      ],
-      "settings": {
-        "overline": "",
-        "title": "<p>Curious about our client gifting programs?</p>",
-        "heading_style": "h2",
-        "body": "Submit your email and someone from our team will be in touch!",
-        "enable_card_style": true,
-        "text_vertical_alignment": "center",
-        "layout_style": "two-columns",
-        "background_color": "background-color-mar-10",
-        "background_overwrite_enabled": false,
-        "background_color_overwrite": "",
-        "trusted_by_text": "Trusted by"
-      }
     }
   },
   "order": [
@@ -242,7 +214,6 @@
     "8f69f41d-ab2e-49b8-831d-4ed41aaf0509",
     "823bd50c-3555-4282-8b34-ab0e8584323d",
     "proof_moments_JzVraV",
-    "budget_holder_moments_E6d88t",
-    "582103a2-47d5-46e9-9ba6-ede2b4f3963b"
+    "budget_holder_moments_E6d88t"
   ]
 }
