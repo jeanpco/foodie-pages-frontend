@@ -17,7 +17,7 @@
 
   {% endfor %}
 
-  {% assign item.price = item.price | plus: additionalCost %}
+  {% assign renamed_variable_item_2e_price = item.price | plus: additionalCost %}
 
   {%- assign giftship_price = item.price | plus: additionalCost -%}
 
@@ -37,4 +37,14 @@
 {% endif %}
 
 
-    
+    {%- comment -%}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{% assign item.price = item.price | plus: additionalCost %}"
+  to: "{% assign renamed_variable_item_2e_price = item.price | plus: additionalCost
+    %}"
+  position: 452..531
+{%- endcomment -%}

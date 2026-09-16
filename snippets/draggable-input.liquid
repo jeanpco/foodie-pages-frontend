@@ -33,9 +33,21 @@
 
   <div style="opacity: 0.5; cursor: not-allowed;" class="pointer-events-off">
     {% comment %} Field Options {% endcomment %}
-    {% render 'admin-input', name: 'Field options', placeholder: "e.g: Option1, Option2, Option2", type: 'text', label: 'Field options*', required %}
+    {% render 'admin-input', name: 'Field options', placeholder: "e.g: Option1, Option2, Option2", type: 'text', label: 'Field options*' %}
   </div>
 
   {% comment %} Close Icon {% endcomment %}
   {% render 'campaign-form__icon-close' %}
 </div>
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: '{% render ''admin-input'', name: ''Field options'', placeholder: "e.g: Option1,
+    Option2, Option2", type: ''text'', label: ''Field options*'', required %}'
+  to: '{% render ''admin-input'', name: ''Field options'', placeholder: "e.g: Option1,
+    Option2, Option2", type: ''text'', label: ''Field options*'' %}'
+  position: 1471..1606
+{% endcomment %}

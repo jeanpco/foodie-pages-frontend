@@ -123,11 +123,11 @@
                             {%- if showQty == 'true' -%}
                             <div class="bldr-dark-btn">
                                 <span class="bxp-bldr-qty-down">-</span>
-                                {% render 'product-bundle-atc', price: product.price | money %}
+                                {% render 'product-bundle-atc', price: product.price %}
                                 <span class="bxp-bldr-qty-up">+</span>
                             </div>
                             {%- else -%}
-                            {% render 'product-bundle-atc', price: product.price | money %}
+                            {% render 'product-bundle-atc', price: product.price %}
                             {%- endif -%}
                             <strong>{{product.title}}</strong>
                             <select class="bxp-bldr-form-control bxp-mt-10" img="{{product.featured_image.src | img_url: '300x'}}" name="bxp-select_{{product.id}}" id="bxp-select_{{product.id}}">
@@ -462,11 +462,11 @@
                             {% if showQty == 'true' %}
                             <div class="bldr-dark-btn">
                                 <span class="bxp-bldr-qty-down">-</span>
-                                {% render 'product-bundle-atc', price: product.price | money %}
+                                {% render 'product-bundle-atc', price: product.price %}
                                 <span class="bxp-bldr-qty-up">+</span>
                             </div>
                             {% else %}
-                                {% render 'product-bundle-atc', price: product.price | money %}
+                                {% render 'product-bundle-atc', price: product.price %}
                             {% endif %}
                             <strong>{{product.title}}</strong>
                             {% assign pDesc = product.description | strip_html | truncatewords: 28 %}
@@ -1066,4 +1066,22 @@
         margin-bottom: 1rem;
         color: var(--color-grey-800);
     }
-  </style>
+  </style>{%- comment -%}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{% render 'product-bundle-atc', price: product.price | money %}"
+  to: "{% render 'product-bundle-atc', price: product.price %}"
+  position: 7128..7183
+- from: "{% render 'product-bundle-atc', price: product.price | money %}"
+  to: "{% render 'product-bundle-atc', price: product.price %}"
+  position: 7359..7414
+- from: "{% render 'product-bundle-atc', price: product.price | money %}"
+  to: "{% render 'product-bundle-atc', price: product.price %}"
+  position: 31343..31398
+- from: "{% render 'product-bundle-atc', price: product.price | money %}"
+  to: "{% render 'product-bundle-atc', price: product.price %}"
+  position: 31576..31631
+{%- endcomment -%}
