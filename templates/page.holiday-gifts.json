@@ -33,9 +33,9 @@
       ],
       "settings": {
         "overline": "Holiday edit",
-        "title": "<p>Holiday Gifting <em>made exceptional</em></p>",
-        "heading_style": "h1",
-        "body": "This season, give gifts that feel personal, not corporate. We've spent the last few months looking for things worth putting in a box. <br><br>Our Holiday 2026 Catalogue is filled with hand-picked, Canadian-made goodies and customizable touches that show genuine appreciation and leave a lasting impression.",
+        "title": "<p>Corporate holiday gifts people <em>actually</em> want to receive</p>",
+        "heading_style": "h2",
+        "body": "Really good things, thoughtfully chosen from Canadian small businesses. Beautifully packaged, personalized and delivered—we handle the whole thing.",
         "image": "shopify://shop_images/HomepageHoliday_v2_3168f4cb-7ed2-40ce-b386-b571317abb5a.png",
         "enable_card_style": false,
         "text_vertical_alignment": "center",
@@ -151,11 +151,12 @@
         },
         "82370e0b-29ef-4ff4-9ed1-ff7fd169f7ff": {
           "type": "tab",
+          "disabled": true,
           "settings": {
-            "icon_url": "https://cdn.shopify.com/s/files/1/0264/5000/2013/files/icon_3_156x118_crop_center.png?v=1663723952",
-            "tab_text": "Worldwide shipping",
-            "title": "Easy and speedy shipping.",
-            "body": "We can bulk ship to one location or 100s of individual addresses, worldwide. We make the entire process seamless.",
+            "icon_url": "https://cdn.shopify.com/s/files/1/0264/5000/2013/files/Icon1.png?v=1740592447",
+            "tab_text": "Good to give back",
+            "title": "Good to give back",
+            "body": "1% of every order is donated to help support causes that matter.",
             "cta_text": "",
             "cta_link": "/",
             "image": "shopify://shop_images/4x3_28_20191211_FoodiePages_AvenuePhoto.png"
