@@ -105,9 +105,9 @@
           "type": "tab",
           "settings": {
             "icon_url": "https://cdn.shopify.com/s/files/1/0264/5000/2013/files/icon_1_147x125_crop_center.png?v=1663723952",
-            "tab_text": "Gifts with meaning",
-            "title": "Gifts with meaning.",
-            "body": "Our gifts showcase Canadian small businesses, including BIPOC, female-founded, social-impact driven, and sustainable brands. Sharing their stories with you is one of our greatest joys.",
+            "tab_text": "Gifts with purpose",
+            "title": "Gifts with purpose",
+            "body": "We seek out independent Canadian makers, producers and small businesses with a point of view – people making genuinely good things.",
             "cta_text": "",
             "cta_link": "shopify://pages/about-us",
             "image": "shopify://shop_images/4to3-Cropped3.jpg"
@@ -125,25 +125,13 @@
             "image": "shopify://shop_images/Untitled_design_16_09c4770f-4273-4526-a7f6-3c30fe15ed7c.png"
           }
         },
-        "82370e0b-29ef-4ff4-9ed1-ff7fd169f7ff": {
-          "type": "tab",
-          "settings": {
-            "icon_url": "https://cdn.shopify.com/s/files/1/0264/5000/2013/files/icon_3_156x118_crop_center.png?v=1663723952",
-            "tab_text": "Worldwide shipping",
-            "title": "Easy and speedy shipping.",
-            "body": "We can bulk ship to one location or 100s of individual addresses, worldwide. We make the entire process seamless.",
-            "cta_text": "",
-            "cta_link": "/",
-            "image": "shopify://shop_images/4x3_28_20191211_FoodiePages_AvenuePhoto.png"
-          }
-        },
         "2fe0704d-6ca9-4bdf-8869-4644f4802edb": {
           "type": "tab",
           "settings": {
             "icon_url": "https://cdn.shopify.com/s/files/1/0264/5000/2013/files/icon_4_123x131_crop_center.png?v=1663723952",
-            "tab_text": "Custom gift design",
-            "title": "A fresh take on corporate gifting.",
-            "body": "For larger orders, leverage our design services for a fully custom gift. From the products to the packaging, we'll create something memorable that reflects your brand, goals, and values.",
+            "tab_text": "Made to feel personal",
+            "title": "Made to feel personal",
+            "body": "Add your branding, a personalized card, video message, festive playlist, customized ornament and more.",
             "cta_text": "",
             "cta_link": "/",
             "image": "shopify://shop_images/4to3-Cropped5.jpg"
@@ -160,14 +148,26 @@
             "cta_link": "/",
             "image": "shopify://shop_images/4to3-Cropped1.jpg"
           }
+        },
+        "82370e0b-29ef-4ff4-9ed1-ff7fd169f7ff": {
+          "type": "tab",
+          "settings": {
+            "icon_url": "https://cdn.shopify.com/s/files/1/0264/5000/2013/files/icon_3_156x118_crop_center.png?v=1663723952",
+            "tab_text": "Worldwide shipping",
+            "title": "Easy and speedy shipping.",
+            "body": "We can bulk ship to one location or 100s of individual addresses, worldwide. We make the entire process seamless.",
+            "cta_text": "",
+            "cta_link": "/",
+            "image": "shopify://shop_images/4x3_28_20191211_FoodiePages_AvenuePhoto.png"
+          }
         }
       },
       "block_order": [
         "881fd230-0ff5-475a-80ab-394c30599557",
         "3732abc5-67af-4c3c-85d8-758c6aea36c1",
-        "82370e0b-29ef-4ff4-9ed1-ff7fd169f7ff",
         "2fe0704d-6ca9-4bdf-8869-4644f4802edb",
-        "cb796b97-5135-4a60-b2fa-c710855e013a"
+        "cb796b97-5135-4a60-b2fa-c710855e013a",
+        "82370e0b-29ef-4ff4-9ed1-ff7fd169f7ff"
       ],
       "settings": {
         "overline": "",
