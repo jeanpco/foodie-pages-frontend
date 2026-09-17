@@ -177,6 +177,13 @@
     "module-testimonials": {
       "type": "module-testimonials",
       "blocks": {
+        "testimonial_EgbyBC": {
+          "type": "testimonial",
+          "settings": {
+            "text": "Foodiepages' gift design, both the product selection and packaging, have consistently been a favourite for our clients.",
+            "image": "shopify://shop_images/tiktok_1.png"
+          }
+        },
         "413596fd-9194-4b45-a548-2a8f4a2b02e7": {
           "type": "testimonial",
           "settings": {
@@ -186,6 +193,7 @@
         }
       },
       "block_order": [
+        "testimonial_EgbyBC",
         "413596fd-9194-4b45-a548-2a8f4a2b02e7"
       ],
       "settings": {
