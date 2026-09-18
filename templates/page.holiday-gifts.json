@@ -151,7 +151,6 @@
         },
         "82370e0b-29ef-4ff4-9ed1-ff7fd169f7ff": {
           "type": "tab",
-          "disabled": true,
           "settings": {
             "icon_url": "https://cdn.shopify.com/s/files/1/0264/5000/2013/files/Icon1.png?v=1740592447",
             "tab_text": "Good to give back",
@@ -159,7 +158,7 @@
             "body": "1% of every order is donated to help support causes that matter.",
             "cta_text": "",
             "cta_link": "/",
-            "image": "shopify://shop_images/4x3_28_20191211_FoodiePages_AvenuePhoto.png"
+            "image": "shopify://shop_images/CharityLogos.png"
           }
         }
       },
