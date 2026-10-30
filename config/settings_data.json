@@ -249,8 +249,8 @@
       "announcement-banner": {
         "type": "announcement-banner",
         "settings": {
-          "show_banner": false,
-          "text": "The Foodiiepages Holiday Collection is here.",
+          "show_banner": true,
+          "text": "The Foodiepages Holiday Collection is here.",
           "link": ""
         }
       }
